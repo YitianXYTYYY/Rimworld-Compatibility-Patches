@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ExampleDef[defName="VWE_Gun_UraniumSlugRifle"]/statBases</xpath>
+		<value>
+			<statBases>
+				<AccuracyTouch>0.25</AccuracyTouch>
+				<AccuracyShort>0.50</AccuracyShort>
+				<AccuracyMedium>0.75</AccuracyMedium>
+				<AccuracyLong>0.95</AccuracyLong>
+				<RangedWeapon_Cooldown>2.0</RangedWeapon_Cooldown>
+				<DeteriorationRate>0</DeteriorationRate>
+				<Mass>40</Mass>
+				<Flammability>0</Flammability>
+				<WorkToMake>14000</WorkToMake>
+			</statBases>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ExampleDef[defName="VWE_Gun_UraniumSlugRifle"]/verbs/li/warmupTime</xpath>
+		<value>
+			<warmupTime>2</warmupTime>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ExampleDef[defName="VWE_Gun_UraniumSlugRifle"]/verbs/li/range</xpath>
+		<value>
+			<minRange>0</minRange>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ExampleDef[defName="VWE_Gun_UraniumSlugRifle"]/verbs/li/range</xpath>
+		<value>
+			<range>45.9</range>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ExampleDef[defName="VWE_Gun_UraniumSlugRifle"]/Rocket</xpath>
+		<value>
+			<Rocket>UraniumSlugRifle</Rocket>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/comps/li/verbProps/li/label</xpath>
+		<value>
+			<label>Uranium Slug Rifle</label>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/comps/li/verbProps/li/comps/li/MaxShots</xpath>
+		<value>
+			<MaxShots>20</MaxShots>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/comps/li/verbProps/li/comps/li/ItemsPerShot</xpath>
+		<value>
+			<ItemsPerShot>2</ItemsPerShot>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/comps/li/verbProps/li/comps/li/ReloadTimePerShot</xpath>
+		<value>
+			<ReloadTimePerShot>0.25</ReloadTimePerShot>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/comps/li/verbProps/li/comps/li/GenerateAmmo</xpath>
+		<value>
+			<GenerateAmmo>
+				<Steel>40~80</Steel>
+			</GenerateAmmo>
+		</value>
+	</Operation>
+</Patch>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Compabilities-XYTYYY</name>
+  <author>xytyyy</author>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <packageId>comp.xytyyy</packageId>
+  <modVersion>1.0.0</modVersion>
+  <description>Personal Made compatibility patches for mods.</description>
+  <modDependencies>
+    <li>
+      <packageId>zal.heavyweaponsreloading</packageId>
+      <displayName>Vanilla Weapons Expanded - Heavy - Reloading Patch (Continued)</displayName>
+    </li>
+  </modDependencies>
+  <loadAfter>
+  <li>zal.heavyweaponsreloading</li>
+  </loadAfter>
+</ModMetaData>
