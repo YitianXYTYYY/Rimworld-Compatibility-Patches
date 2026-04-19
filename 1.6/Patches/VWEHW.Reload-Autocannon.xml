@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]/statBases/</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]/statBases</xpath>
 		<value>
 			<statBases>
 				<AccuracyTouch>0.28</AccuracyTouch>
