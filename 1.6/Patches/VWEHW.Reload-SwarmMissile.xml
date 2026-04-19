@@ -1,55 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ExampleDef[defName="VWE_Gun_SwarmMissileLauncher"]/statBases/RangedWeapon_Cooldown</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]/statBases</xpath>
 		<value>
-			<RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
+			<statBases>
+				<RangedWeapon_Cooldown>3.5</RangedWeapon_Cooldown>
+				<Mass>30</Mass>
+    			<WorkToMake>20000</WorkToMake>
+			</statBases>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ExampleDef[defName="VWE_Gun_SwarmMissileLauncher"]/verbs/li/forcedMissRadius</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]/verbs/li/forcedMissRadius</xpath>
 		<value>
-			<forcedMissRadius>0.9</forcedMissRadius>
+			<forcedMissRadius>1.4</forcedMissRadius>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ExampleDef[defName="VWE_Gun_SwarmMissileLauncher"]/verbs/li/warmupTime</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]/verbs/li/warmupTime</xpath>
 		<value>
 			<warmupTime>2</warmupTime>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ExampleDef[defName="VWE_Gun_SwarmMissileLauncher"]/verbs/li/burstShotCount</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]/verbs/li/ticksBetweenBurstShots</xpath>
+		<value>
+			<ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]/verbs/li/burstShotCount</xpath>
 		<value>
 			<burstShotCount>5</burstShotCount>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ExampleDef[defName="VWE_Gun_SwarmMissileLauncher"]/verbs/li/label</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]/verbs/li/label</xpath>
 		<value>
 			<label>swarm missile launcher</label>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]/comps/li/verbProps/li/label</xpath>
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/label</xpath>
 		<value>
 			<label>swarm missile launcher</label>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]/comps/li/verbProps/li/comps/li/MaxShots</xpath>
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/MaxShots</xpath>
 		<value>
 			<MaxShots>25</MaxShots>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]/comps/li/verbProps/li/comps/li/ReloadTimePerShot</xpath>
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/ReloadTimePerShot</xpath>
 		<value>
 			<ReloadTimePerShot>0.6</ReloadTimePerShot>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]/comps/li/verbProps/li/comps/li/GenerateAmmo</xpath>
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/GenerateAmmo</xpath>
 		<value>
 			<GenerateAmmo>
 				<VWEHR_SwarmMissileAmmo>25~50</VWEHR_SwarmMissileAmmo>

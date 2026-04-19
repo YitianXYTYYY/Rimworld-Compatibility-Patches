@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ExampleDef[defName="VWE_Gun_Autocannon"]/statBases</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]/statBases/</xpath>
 		<value>
 			<statBases>
 				<AccuracyTouch>0.28</AccuracyTouch>
@@ -9,63 +9,61 @@
 				<AccuracyMedium>0.66</AccuracyMedium>
 				<AccuracyLong>0.50</AccuracyLong>
 				<RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
-				<DeteriorationRate>0</DeteriorationRate>
-				<Mass>30</Mass>
-				<Flammability>0</Flammability>
-				<WorkToMake>14000</WorkToMake>
+				<Mass>20</Mass>
+				<WorkToMake>30000</WorkToMake>
 			</statBases>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ExampleDef[defName="VWE_Gun_Autocannon"]/verbs/li/warmupTime</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]/verbs/li/warmupTime</xpath>
 		<value>
 			<warmupTime>1.5</warmupTime>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ExampleDef[defName="VWE_Gun_Autocannon"]/verbs/li/range</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]/verbs/li/minRange</xpath>
 		<value>
 			<minRange>0</minRange>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ExampleDef[defName="VWE_Gun_Autocannon"]/verbs/li/burstShotCount</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]/verbs/li/burstShotCount</xpath>
 		<value>
 			<burstShotCount>3</burstShotCount>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ExampleDef[defName="VWE_Gun_Autocannon"]/verbs/li/label</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]/verbs/li/label</xpath>
 		<value>
 			<label>autocannon</label>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li/verbProps/li/label</xpath>
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/label</xpath>
 		<value>
 			<label>autocannon</label>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li/verbProps/li/comps/li/MaxShots</xpath>
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/MaxShots</xpath>
 		<value>
 			<MaxShots>75</MaxShots>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/comps/li/verbProps/li/comps/li/ItemsPerShot</xpath>
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/ItemsPerShot</xpath>
 		<value>
 			<ItemsPerShot>2</ItemsPerShot>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li/verbProps/li/comps/li/ReloadTimePerShot</xpath>
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/ReloadTimePerShot</xpath>
 		<value>
 			<ReloadTimePerShot>0.1</ReloadTimePerShot>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li/verbProps/li/comps/li/GenerateAmmo</xpath>
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/GenerateAmmo</xpath>
 		<value>
 			<GenerateAmmo>
 				<Steel>150~300</Steel>

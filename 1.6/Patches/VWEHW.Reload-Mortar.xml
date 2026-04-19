@@ -1,39 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VWE_Gun_HandheldMortar"]/costList</xpath>
+		<value>
+			<ReinforcedBarrel>1</ReinforcedBarrel>
+		</value>
+	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ExampleDef[defName="VWE_Gun_HandheldMortar"]/statBases</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_HandheldMortar"]/statBases</xpath>
 		<value>
 			<statBases>
-				<RangedWeapon_Cooldown>8</RangedWeapon_Cooldown>
-				<DeteriorationRate>0</DeteriorationRate>
+				<RangedWeapon_Cooldown>6</RangedWeapon_Cooldown>
 				<Mass>30</Mass>
-				<Flammability>0</Flammability>
-				<WorkToMake>14000</WorkToMake>
+				<WorkToMake>10000</WorkToMake>
 			</statBases>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ExampleDef[defName="VWE_Gun_HandheldMortar"]/verbs/li/warmupTime</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_HandheldMortar"]/verbs/li/warmupTime</xpath>
 		<value>
 			<warmupTime>4</warmupTime>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ExampleDef[defName="VWE_Gun_HandheldMortar"]/verbs/li/label</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_HandheldMortar"]/verbs/li/label</xpath>
 		<value>
 			<label>handheld mortar</label>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="VWE_Gun_HandheldMortar"]/comps/li/verbProps/li/label</xpath>
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_HandheldMortar"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/label</xpath>
 		<value>
 			<label>handheld mortar</label>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="VWE_Gun_HandheldMortar"]/comps/li/verbProps/li/comps/li/ReloadTimePerShot</xpath>
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_HandheldMortar"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/ReloadTimePerShot</xpath>
 		<value>
-			<ReloadTimePerShot>4</ReloadTimePerShot>
+			<ReloadTimePerShot>2</ReloadTimePerShot>
 		</value>
 	</Operation>
 </Patch>
