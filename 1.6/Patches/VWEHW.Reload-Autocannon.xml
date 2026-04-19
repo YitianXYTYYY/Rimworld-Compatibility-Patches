@@ -35,21 +35,27 @@
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ExampleDef[defName="VWE_Gun_Autocannon"]/Rocket</xpath>
+		<xpath>Defs/ExampleDef[defName="VWE_Gun_Autocannon"]/verbs/li/label</xpath>
 		<value>
-			<Rocket>Autocannon</Rocket>
+			<label>autocannon</label>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
 		<xpath>/Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li/verbProps/li/label</xpath>
 		<value>
-			<label>Autocannon</label>
+			<label>autocannon</label>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
 		<xpath>/Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li/verbProps/li/comps/li/MaxShots</xpath>
 		<value>
-			<MaxShots>60</MaxShots>
+			<MaxShots>75</MaxShots>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/comps/li/verbProps/li/comps/li/ItemsPerShot</xpath>
+		<value>
+			<ItemsPerShot>2</ItemsPerShot>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
@@ -62,7 +68,7 @@
 		<xpath>/Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li/verbProps/li/comps/li/GenerateAmmo</xpath>
 		<value>
 			<GenerateAmmo>
-				<Steel>60~120</Steel>
+				<Steel>150~300</Steel>
 			</GenerateAmmo>
 		</value>
 	</Operation>

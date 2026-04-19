@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ExampleDef[defName="VWE_Gun_HandheldMortar"]/statBases</xpath>
+		<value>
+			<statBases>
+				<RangedWeapon_Cooldown>8</RangedWeapon_Cooldown>
+				<DeteriorationRate>0</DeteriorationRate>
+				<Mass>30</Mass>
+				<Flammability>0</Flammability>
+				<WorkToMake>14000</WorkToMake>
+			</statBases>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ExampleDef[defName="VWE_Gun_HandheldMortar"]/verbs/li/warmupTime</xpath>
+		<value>
+			<warmupTime>4</warmupTime>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ExampleDef[defName="VWE_Gun_HandheldMortar"]/verbs/li/label</xpath>
+		<value>
+			<label>handheld mortar</label>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_HandheldMortar"]/comps/li/verbProps/li/label</xpath>
+		<value>
+			<label>handheld mortar</label>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_HandheldMortar"]/comps/li/verbProps/li/comps/li/ReloadTimePerShot</xpath>
+		<value>
+			<ReloadTimePerShot>4</ReloadTimePerShot>
+		</value>
+	</Operation>
+</Patch>

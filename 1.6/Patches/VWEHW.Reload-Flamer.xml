@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ExampleDef[defName="VWE_Gun_HeavyFlamer"]/statBases/RangedWeapon_Cooldown</xpath>
+		<value>
+			<RangedWeapon_Cooldown>5</RangedWeapon_Cooldown>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ExampleDef[defName="VWE_Gun_HeavyFlamer"]/verbs/li/warmupTime</xpath>
+		<value>
+			<warmupTime>2</warmupTime>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ExampleDef[defName="VWE_Gun_HeavyFlamer"]/verbs/li/label</xpath>
+		<value>
+			<label>heavy flamer</label>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]/comps/li/verbProps/li/label</xpath>
+		<value>
+			<label>heavy flamer</label>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]/comps/li/verbProps/li/comps/li/MaxShots</xpath>
+		<value>
+			<MaxShots>15</MaxShots>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]/comps/li/verbProps/li/comps/li/ItemsPerShot</xpath>
+		<value>
+			<ItemsPerShot>5</ItemsPerShot>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]/comps/li/verbProps/li/comps/li/ReloadTimePerShot</xpath>
+		<value>
+			<ReloadTimePerShot>0.5</ReloadTimePerShot>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]/comps/li/verbProps/li/comps/li/GenerateAmmo</xpath>
+		<value>
+			<GenerateAmmo>
+				<Chemfuel>75~150</Chemfuel>
+			</GenerateAmmo>
+		</value>
+	</Operation>
+</Patch>

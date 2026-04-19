@@ -35,15 +35,15 @@
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ExampleDef[defName="VWE_Gun_UraniumSlugRifle"]/Rocket</xpath>
+		<xpath>Defs/ExampleDef[defName="VWE_Gun_UraniumSlugRifle"]/verbs/li/label</xpath>
 		<value>
-			<Rocket>UraniumSlugRifle</Rocket>
+			<label>uranium slug rifle</label>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
 		<xpath>/Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/comps/li/verbProps/li/label</xpath>
 		<value>
-			<label>Uranium Slug Rifle</label>
+			<label>uranium slug rifle</label>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
@@ -68,7 +68,7 @@
 		<xpath>/Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/comps/li/verbProps/li/comps/li/GenerateAmmo</xpath>
 		<value>
 			<GenerateAmmo>
-				<Steel>40~80</Steel>
+				<Uranium>40~80</Uranium>
 			</GenerateAmmo>
 		</value>
 	</Operation>
