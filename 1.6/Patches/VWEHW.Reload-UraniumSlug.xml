@@ -86,7 +86,7 @@
 			<xpath>Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]</xpath>
 			<value>
 				<weaponTags>
-					<li>ammoDef_Uranium/40/2</li>
+					<li>ammoDef_Uranium/25/2</li>
 				</weaponTags>
 			</value>
 		</match>

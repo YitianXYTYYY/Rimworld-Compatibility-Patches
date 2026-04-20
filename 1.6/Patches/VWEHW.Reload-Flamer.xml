@@ -74,7 +74,7 @@
 			<xpath>Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]</xpath>
 			<value>
 				<weaponTags>
-					<li>ammoDef_Chemfuel/75/5</li>
+					<li>ammoDef_Chemfuel/30/5</li>
 				</weaponTags>
 			</value>
 		</match>

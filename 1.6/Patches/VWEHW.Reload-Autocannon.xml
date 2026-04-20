@@ -86,7 +86,7 @@
 			<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]</xpath>
 			<value>
 				<weaponTags>
-					<li>ammoDef_Steel/150/2</li>
+					<li>ammoDef_Steel/75/2</li>
 				</weaponTags>
 			</value>
 		</match>
