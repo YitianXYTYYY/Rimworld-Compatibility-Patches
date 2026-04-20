@@ -8,14 +8,35 @@
 		<li>1.6</li>
 	</supportedVersions>
 	<url>https://github.com/YitianXYTYYY/Rimworld-Compatibility-Patches</url>
-	<description>Personal Made compatibility patches for mods.</description>
+	<description>
+		Personal Made compatibility patches for mods.
+	</description>
 	<modDependencies>
+	<li>
+		<packageId>JintuziLamian.Gene.XenoCosmetic</packageId>
+		<displayName>AFU Cosmetic Gene Expanded</displayName>
+		<steamWorkshopUrl>steam://url/CommunityFilePage/2880942803</steamWorkshopUrl>
+	</li>
+	<li>
+		<packageId>VanillaExpanded.VWEHW</packageId>
+		<displayName>Vanilla Weapons Expanded - Heavy Weapons</displayName>
+		<steamWorkshopUrl>steam://url/CommunityFilePage/2329126791</steamWorkshopUrl>
+	</li>
 	<li>
 		<packageId>zal.heavyweaponsreloading</packageId>
 		<displayName>Vanilla Weapons Expanded - Heavy - Reloading Patch (Continued)</displayName>
+		<steamWorkshopUrl>steam://url/CommunityFilePage/3283751362</steamWorkshopUrl>
+	</li>
+	<li>
+		<packageId>Mlie.YayosCombat3</packageId>
+		<displayName>Yayo's Combat 3 (Continued)</displayName>
+		<steamWorkshopUrl>steam://url/CommunityFilePage/2854006492</steamWorkshopUrl>
 	</li>
 	</modDependencies>
 	<loadAfter>
+		<li>JintuziLamian.Gene.XenoCosmetic</li>
 		<li>zal.heavyweaponsreloading</li>
+		<li>Mlie.YayosCombat3</li>
+		<li>Wara.toomanymods</li>
 	</loadAfter>
 </ModMetaData>

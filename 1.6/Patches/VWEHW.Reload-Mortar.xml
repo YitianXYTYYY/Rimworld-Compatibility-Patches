@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Yayo's Combat 3 (Continued)</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="VWE_Gun_HandheldMortar"]</xpath>
+			<value>
+				<weaponTags>
+					<li>ammo_none</li>
+				</weaponTags>
+			</value>
+		</match>
+	</Operation>
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="VWE_Gun_HandheldMortar"]/costList</xpath>
 		<value>

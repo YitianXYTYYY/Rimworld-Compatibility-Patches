@@ -58,4 +58,25 @@
 			</GenerateAmmo>
 		</value>
 	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Yayo's Combat 3 (Continued)</li>
+		</mods>
+		<match Class="PatchOperationRemove">
+			<xpath>Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]</xpath>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Yayo's Combat 3 (Continued)</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]</xpath>
+			<value>
+				<weaponTags>
+					<li>ammoDef_Chemfuel/75/5</li>
+				</weaponTags>
+			</value>
+		</match>
+	</Operation>
 </Patch>
