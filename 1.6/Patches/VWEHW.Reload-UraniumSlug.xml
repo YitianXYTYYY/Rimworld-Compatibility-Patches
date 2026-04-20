@@ -47,13 +47,13 @@
 	<Operation Class="PatchOperationReplace">
 		<xpath>/Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/MaxShots</xpath>
 		<value>
-			<MaxShots>20</MaxShots>
+			<MaxShots>15</MaxShots>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
 		<xpath>/Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/ItemsPerShot</xpath>
 		<value>
-			<ItemsPerShot>2</ItemsPerShot>
+			<ItemsPerShot>1</ItemsPerShot>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
@@ -66,7 +66,7 @@
 		<xpath>/Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/GenerateAmmo</xpath>
 		<value>
 			<GenerateAmmo>
-				<Uranium>40~80</Uranium>
+				<Uranium>15~30</Uranium>
 			</GenerateAmmo>
 		</value>
 	</Operation>
@@ -86,7 +86,7 @@
 			<xpath>Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]</xpath>
 			<value>
 				<weaponTags>
-					<li>ammoDef_Uranium/25/2</li>
+					<li>ammoDef_Uranium/15/1</li>
 				</weaponTags>
 			</value>
 		</match>
