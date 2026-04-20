@@ -12,7 +12,8 @@
 			<displayPriorityInXenotype>-110</displayPriorityInXenotype>
 		</value>
 	</Operation>
-	
+
+	<!-- <Base Game Genes -->
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/GeneDef[@Name="GeneHairStyleBase" or @Name="GeneBeardStyleBase" or @ParentName="GeneHairStyleBase" or @ParentName="GeneBeardStyleBase"]/displayCategory</xpath>
 		<value>
@@ -92,15 +93,7 @@
 		</value>
 	</Operation>
 
-
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/GeneDef[@Name="RS_GeneTentacleBase" or @ParentName="RS_GeneTentacleBase"]/displayCategory</xpath>
-		<value>
-			<displayCategory>Cosmetic_Body_ArmHand</displayCategory>
-		</value>
-	</Operation>
-
-
+	<!-- Mod Genes -->
 	<Operation Class="PatchOperationFindMod">
 		<mods>
 			<li>AFU Cosmetic Gene Expanded</li>
@@ -120,6 +113,17 @@
 			<xpath>Defs/GeneDef[@Name="AFU_HeadAttachmentGeneBase" or @ParentName="AFU_HeadAttachmentGeneBase"]/displayCategory</xpath>
 			<value>
 				<displayCategory>Cosmetic_Head_Ear</displayCategory>
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>AFU Cosmetic Gene Expanded</li>
+		</mods>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/GeneDef[@Name="AFU_BodyAttachmentGeneBase" or @ParentName="AFU_BodyAttachmentGeneBase"]/displayCategory</xpath>
+			<value>
+				<displayCategory>Cosmetic_Body_Tail</displayCategory>
 			</value>
 		</match>
 	</Operation>
@@ -145,4 +149,103 @@
 			</value>
 		</match>
 	</Operation>
+
+	<!-- Genepack Priority -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/GeneCategoryDef[defName="Archite"]</xpath>
+		<value>
+			<displayPriorityInGenepack>1000</displayPriorityInGenepack>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/GeneCategoryDef[defName="Ability"]</xpath>
+		<value>
+			<displayPriorityInGenepack>520</displayPriorityInGenepack>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/GeneCategoryDef[defName="Hemogen"]</xpath>
+		<value>
+			<displayPriorityInGenepack>510</displayPriorityInGenepack>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/GeneCategoryDef[defName="Healing"]</xpath>
+		<value>
+			<displayPriorityInGenepack>500</displayPriorityInGenepack>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/GeneCategoryDef[defName="Psychic"]</xpath>
+		<value>
+			<displayPriorityInGenepack>490</displayPriorityInGenepack>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/GeneCategoryDef[defName="Beauty"]</xpath>
+		<value>
+			<displayPriorityInGenepack>310</displayPriorityInGenepack>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/GeneCategoryDef[defName="Movement"]</xpath>
+		<value>
+			<displayPriorityInGenepack>470</displayPriorityInGenepack>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/GeneCategoryDef[defName="Mood"]</xpath>
+		<value>
+			<displayPriorityInGenepack>460</displayPriorityInGenepack>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/GeneCategoryDef[defName="Temperature"]</xpath>
+		<value>
+			<displayPriorityInGenepack>450</displayPriorityInGenepack>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/GeneCategoryDef[defName="ResistanceAndWeakness"]</xpath>
+		<value>
+			<displayPriorityInGenepack>440</displayPriorityInGenepack>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/GeneCategoryDef[defName="Violence"]</xpath>
+		<value>
+			<displayPriorityInGenepack>430</displayPriorityInGenepack>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/GeneCategoryDef[defName="Sleep"]</xpath>
+		<value>
+			<displayPriorityInGenepack>420</displayPriorityInGenepack>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/GeneCategoryDef[defName="Pain"]</xpath>
+		<value>
+			<displayPriorityInGenepack>410</displayPriorityInGenepack>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/GeneCategoryDef[defName="Aptitudes"]</xpath>
+		<value>
+			<displayPriorityInGenepack>200</displayPriorityInGenepack>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/GeneCategoryDef[defName="Drugs"]</xpath>
+		<value>
+			<displayPriorityInGenepack>0</displayPriorityInGenepack>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/GeneCategoryDef[defName="Reproduction"]</xpath>
+		<value>
+			<displayPriorityInGenepack>400</displayPriorityInGenepack>
+		</value>
+	</Operation>
+
 </Patch>

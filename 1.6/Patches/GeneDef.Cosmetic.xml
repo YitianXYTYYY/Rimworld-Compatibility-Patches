@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-
-
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/GeneDef[defName="Furskin"]/displayCategory</xpath>
 		<value>
 			<displayCategory>Cosmetic</displayCategory>
 		</value>
 	</Operation>
-
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/GeneDef[defName="Furskin"]/displayOrderInCategory</xpath>
+		<value>
+			<displayOrderInCategory>1000</displayOrderInCategory>
+		</value>
+	</Operation>
 
 	<Operation Class="PatchOperationFindMod">
 		<mods>
@@ -41,6 +44,30 @@
 			<xpath>Defs/GeneDef[defName="VRE_Leatherskin"]/displayCategory</xpath>
 			<value>
 				<displayCategory>Cosmetic</displayCategory>
+			</value>
+		</match>
+	</Operation>
+
+	
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Races Expanded - Genie</li>
+		</mods>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/GeneDef[defName="VRE_BlueBlood"]/displayCategory</xpath>
+			<value>
+				<displayCategory>Cosmetic_Blood</displayCategory>
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Races Expanded - Genie</li>
+		</mods>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/GeneDef[defName="VRE_BlueBlood"]/VRE_Hemophiliac</xpath>
+			<value>
+				<displayCategory>Cosmetic_Blood</displayCategory>
 			</value>
 		</match>
 	</Operation>

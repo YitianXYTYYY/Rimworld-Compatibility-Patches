@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Integrated Genes</li>
+		</mods>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/GeneCategoryDef[defName="Turn_GeneCategory_Fleshbeast"]/displayPriorityInXenotype</xpath>
+			<value>
+				<displayPriorityInXenotype>499</displayPriorityInXenotype>
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Races Expanded - Genie</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/GeneCategoryDef[defName="VRE_Curiosity"]</xpath>
+			<value>
+				<displayPriorityInGenepack>199</displayPriorityInGenepack>
+			</value>
+		</match>
+	</Operation>
+
+	
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Races Expanded - Archon</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/GeneCategoryDef[defName="VRE_Curiosity"]</xpath>
+			<value>
+				<displayPriorityInGenepack>199</displayPriorityInGenepack>
+			</value>
+		</match>
+	</Operation>
+</Patch>
