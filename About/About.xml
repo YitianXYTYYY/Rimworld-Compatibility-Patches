@@ -10,13 +10,10 @@
 	<url>https://github.com/YitianXYTYYY/Rimworld-Compatibility-Patches</url>
 	<description>
 		Personal Made compatibility patches for mods.
+		1.Heavy Weapon Reloading Patch with Yayo's Combat 3.
+		2.Categorize cosmetic genes for VRE mods, EyeGenes2 and AFU Cosmetic Gene Expanded.
 	</description>
 	<modDependencies>
-	<li>
-		<packageId>JintuziLamian.Gene.XenoCosmetic</packageId>
-		<displayName>AFU Cosmetic Gene Expanded</displayName>
-		<steamWorkshopUrl>steam://url/CommunityFilePage/2880942803</steamWorkshopUrl>
-	</li>
 	<li>
 		<packageId>VanillaExpanded.VWEHW</packageId>
 		<displayName>Vanilla Weapons Expanded - Heavy Weapons</displayName>
@@ -34,9 +31,11 @@
 	</li>
 	</modDependencies>
 	<loadAfter>
-		<li>JintuziLamian.Gene.XenoCosmetic</li>
 		<li>zal.heavyweaponsreloading</li>
 		<li>Mlie.YayosCombat3</li>
+		<li>JintuziLamian.Gene.XenoCosmetic</li>
+		<li>Oppey.EyeGenes2</li>
+		<li>ReSplice.XOTR.Core</li>
 		<li>Wara.toomanymods</li>
 	</loadAfter>
 </ModMetaData>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/GeneDef[defName="Furskin"]/displayCategory</xpath>
+		<value>
+			<displayCategory>Cosmetic</displayCategory>
+		</value>
+	</Operation>
+
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Races Expanded - Archon</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/GeneDef[defName="VRE_FacialSpots"]</xpath>
+			<value>
+				<iconColor>(0.75, 0.75, 0.75)</iconColor>
+				<displayCategory>Cosmetic</displayCategory>
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Races Expanded - Archon</li>
+		</mods>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/GeneDef[defName="VRE_FacialSpots"]/biostatCpx</xpath>
+			<value>
+				<biostatCpx>0</biostatCpx>
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Races Expanded - Archon</li>
+		</mods>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/GeneDef[defName="VRE_Leatherskin"]/displayCategory</xpath>
+			<value>
+				<displayCategory>Cosmetic</displayCategory>
+			</value>
+		</match>
+	</Operation>
+</Patch>
