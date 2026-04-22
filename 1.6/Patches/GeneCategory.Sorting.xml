@@ -2,12 +2,34 @@
 <Patch>
 	<Operation Class="PatchOperationFindMod">
 		<mods>
+			<li>Vanilla Quests Expanded - Ancients</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/GeneCategoryDef[defName="VQEA_ArchiteAptitudes"]</xpath>
+			<value>
+				<displayPriorityInGenepack>999.9</displayPriorityInGenepack>
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Races Expanded - Lycanthrope</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/GeneCategoryDef[defName="VRE_Morphs"]</xpath>
+			<value>
+				<displayPriorityInGenepack>999.8</displayPriorityInGenepack>
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
 			<li>Integrated Genes</li>
 		</mods>
 		<match Class="PatchOperationReplace">
 			<xpath>Defs/GeneCategoryDef[defName="Turn_GeneCategory_Fleshbeast"]/displayPriorityInXenotype</xpath>
 			<value>
-				<displayPriorityInXenotype>499</displayPriorityInXenotype>
+				<displayPriorityInXenotype>501</displayPriorityInXenotype>
 			</value>
 		</match>
 	</Operation>

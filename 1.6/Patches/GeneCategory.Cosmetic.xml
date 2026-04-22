@@ -21,12 +21,6 @@
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/GeneDef[@Name="GeneHairStyleBase" or @Name="GeneBeardStyleBase" or @ParentName="GeneHairStyleBase" or @ParentName="GeneBeardStyleBase"]/biostatCpx</xpath>
-		<value>
-			<biostatCpx>0</biostatCpx>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/GeneDef[@Name="GeneHairColorBase" or @ParentName="GeneHairColorBase"]/displayCategory</xpath>
 		<value>
 			<displayCategory>Cosmetic_Head_HairColor</displayCategory>

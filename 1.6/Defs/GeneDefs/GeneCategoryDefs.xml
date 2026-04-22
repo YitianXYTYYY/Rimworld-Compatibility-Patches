@@ -1,84 +1,99 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+	<GeneCategoryDef>
+		<defName>Health_Age</defName>
+		<label>aging</label>
+		<!-- Cosmetic -100 -->
+		<displayPriorityInXenotype>503</displayPriorityInXenotype>
+		<displayPriorityInGenepack>503</displayPriorityInGenepack>
+	</GeneCategoryDef>
 
 	<GeneCategoryDef>
-		<defName>Cosmetic_Blood</defName>
+		<defName>Health_Blood</defName>
 		<label>blood and flesh</label>
 		<!-- Cosmetic -100 -->
-		<displayPriorityInXenotype>501</displayPriorityInXenotype>
-		<displayPriorityInGenepack>501</displayPriorityInGenepack>
+		<displayPriorityInXenotype>502</displayPriorityInXenotype>
+		<displayPriorityInGenepack>502</displayPriorityInGenepack>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
-		<defName>Cosmetic_Flesh</defName>
-		<label>cosmetic - flesh</label>
+		<defName>Health_Cell</defName>
+		<label>cell stability</label>
 		<!-- Cosmetic -100 -->
-		<displayPriorityInXenotype>-97</displayPriorityInXenotype>
-		<displayPriorityInGenepack>-97</displayPriorityInGenepack>
+		<displayPriorityInXenotype>499</displayPriorityInXenotype>
+		<displayPriorityInGenepack>499</displayPriorityInGenepack>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
-		<defName>Cosmetic_Head_Hair</defName>
-		<label>cosmetic - hair</label>
+		<defName>Health_Eye</defName>
+		<label>Eye</label>
+		<!-- Cosmetic -100 -->
+		<displayPriorityInXenotype>499</displayPriorityInXenotype>
+		<displayPriorityInGenepack>499</displayPriorityInGenepack>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Cosmetic_Voice</defName>
+		<label>cosmetic - voice</label>
 		<!-- Cosmetic -100 -->
 		<displayPriorityInXenotype>-98</displayPriorityInXenotype>
 		<displayPriorityInGenepack>-98</displayPriorityInGenepack>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
-		<defName>Cosmetic_Head_HairColor</defName>
-		<label>cosmetic - hair color</label>
+		<defName>Cosmetic_Head_Jaw</defName>
+		<label>cosmetic - jaw</label>
 		<!-- Cosmetic -100 -->
 		<displayPriorityInXenotype>-99</displayPriorityInXenotype>
 		<displayPriorityInGenepack>-99</displayPriorityInGenepack>
 	</GeneCategoryDef>
 	
 	<GeneCategoryDef>
-		<defName>Cosmetic_Voice</defName>
-		<label>cosmetic - voice</label>
-		<!-- Cosmetic -100 -->
-		<displayPriorityInXenotype>-100</displayPriorityInXenotype>
-		<displayPriorityInGenepack>-100</displayPriorityInGenepack>
-	</GeneCategoryDef>
-
-	<GeneCategoryDef>
-		<defName>Cosmetic_Head_Jaw</defName>
-		<label>cosmetic - jaw</label>
+		<defName>Cosmetic_Head_Hair</defName>
+		<label>cosmetic - hair</label>
 		<!-- Cosmetic -100 -->
 		<displayPriorityInXenotype>-101</displayPriorityInXenotype>
 		<displayPriorityInGenepack>-101</displayPriorityInGenepack>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
-		<defName>Cosmetic_Head_Headbone</defName>
-		<label>cosmetic - headbone</label>
+		<defName>Cosmetic_Head_HairColor</defName>
+		<label>cosmetic - hair color</label>
 		<!-- Cosmetic -100 -->
 		<displayPriorityInXenotype>-102</displayPriorityInXenotype>
 		<displayPriorityInGenepack>-102</displayPriorityInGenepack>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
-		<defName>Cosmetic_Head_Ear</defName>
-		<label>cosmetic - ear</label>
-		<!-- Cosmetic -100 -->
-		<displayPriorityInXenotype>-103</displayPriorityInXenotype>
-		<displayPriorityInGenepack>-103</displayPriorityInGenepack>
-	</GeneCategoryDef>
-
-	<GeneCategoryDef>
-		<defName>Cosmetic_Head_Eye</defName>
-		<label>cosmetic - eye</label>
+		<defName>Cosmetic_Head_Headbone</defName>
+		<label>cosmetic - headbone</label>
 		<!-- Cosmetic -100 -->
 		<displayPriorityInXenotype>-104</displayPriorityInXenotype>
 		<displayPriorityInGenepack>-104</displayPriorityInGenepack>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
-		<defName>Cosmetic_Head_Nose</defName>
-		<label>cosmetic - nose</label>
+		<defName>Cosmetic_Head_Ear</defName>
+		<label>cosmetic - ear</label>
 		<!-- Cosmetic -100 -->
 		<displayPriorityInXenotype>-105</displayPriorityInXenotype>
 		<displayPriorityInGenepack>-105</displayPriorityInGenepack>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Cosmetic_Head_Eye</defName>
+		<label>cosmetic - eye</label>
+		<!-- Cosmetic -100 -->
+		<displayPriorityInXenotype>-106</displayPriorityInXenotype>
+		<displayPriorityInGenepack>-106</displayPriorityInGenepack>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Cosmetic_Head_Nose</defName>
+		<label>cosmetic - nose</label>
+		<!-- Cosmetic -100 -->
+		<displayPriorityInXenotype>-107</displayPriorityInXenotype>
+		<displayPriorityInGenepack>-107</displayPriorityInGenepack>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
