@@ -3,13 +3,13 @@
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/GeneDef[defName="Superclotting"]/displayCategory</xpath>
 		<value>
-			<displayCategory>Cosmetic_Blood</displayCategory>
+			<displayCategory>Health_Blood</displayCategory>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/GeneDef[defName="Furskin"]/displayCategory</xpath>
 		<value>
-			<displayCategory>Cosmetic</displayCategory>
+			<displayCategory>Health_Skin</displayCategory>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
@@ -55,7 +55,7 @@
 		<match Class="PatchOperationReplace">
 			<xpath>Defs/GeneDef[defName="VRE_Leatherskin"]/displayCategory</xpath>
 			<value>
-				<displayCategory>Cosmetic</displayCategory>
+				<displayCategory>Health_Skin</displayCategory>
 			</value>
 		</match>
 	</Operation>
@@ -67,7 +67,7 @@
 		<match Class="PatchOperationReplace">
 			<xpath>Defs/GeneDef[defName="VRE_RotBlood"]/displayCategory</xpath>
 			<value>
-				<displayCategory>Cosmetic_Blood</displayCategory>
+				<displayCategory>Health_Blood</displayCategory>
 			</value>
 		</match>
 	</Operation>
@@ -78,7 +78,7 @@
 		<match Class="PatchOperationReplace">
 			<xpath>Defs/GeneDef[defName="VRE_FungalFlesh"]/displayCategory</xpath>
 			<value>
-				<displayCategory>Cosmetic_Blood</displayCategory>
+				<displayCategory>Health_Blood</displayCategory>
 			</value>
 		</match>
 	</Operation>
@@ -101,7 +101,7 @@
 		<match Class="PatchOperationReplace">
 			<xpath>Defs/GeneDef[defName="VRE_BlueBlood"]/displayCategory</xpath>
 			<value>
-				<displayCategory>Cosmetic_Blood</displayCategory>
+				<displayCategory>Health_Blood</displayCategory>
 			</value>
 		</match>
 	</Operation>
@@ -112,7 +112,7 @@
 		<match Class="PatchOperationReplace">
 			<xpath>Defs/GeneDef[defName="VRE_Hemophiliac"]/displayCategory</xpath>
 			<value>
-				<displayCategory>Cosmetic_Blood</displayCategory>
+				<displayCategory>Health_Blood</displayCategory>
 			</value>
 		</match>
 	</Operation>
@@ -197,7 +197,7 @@
 		<match Class="PatchOperationReplace">
 			<xpath>Defs/GeneDef[defName="VRE_SapBlood"]/displayCategory</xpath>
 			<value>
-    			<displayCategory>Cosmetic_Blood</displayCategory>
+    			<displayCategory>Health_Blood</displayCategory>
 			</value>
 		</match>
 	</Operation>
@@ -251,31 +251,9 @@
 			<li>Vanilla Races Expanded - Pigskin</li>
 		</mods>
 		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[defName="VRE_ExtraMeat"]/displayCategory</xpath>
-			<value>
-    			<displayCategory>Cosmetic_Blood</displayCategory>
-			</value>
-		</match>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Vanilla Races Expanded - Pigskin</li>
-		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[defName="VRE_LowMeat"]/displayCategory</xpath>
-			<value>
-    			<displayCategory>Cosmetic_Blood</displayCategory>
-			</value>
-		</match>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Vanilla Races Expanded - Pigskin</li>
-		</mods>
-		<match Class="PatchOperationReplace">
 			<xpath>Defs/GeneDef[defName="VRE_PigSkin"]/displayCategory</xpath>
 			<value>
-    			<displayCategory>Cosmetic_Blood</displayCategory>
+    			<displayCategory>Health_Skin</displayCategory>
 			</value>
 		</match>
 	</Operation>
@@ -286,7 +264,7 @@
 		<match Class="PatchOperationReplace">
 			<xpath>Defs/GeneDef[defName="VRE_PorkFlesh"]/displayCategory</xpath>
 			<value>
-    			<displayCategory>Cosmetic_Blood</displayCategory>
+    			<displayCategory>Health_Blood</displayCategory>
 			</value>
 		</match>
 	</Operation>
@@ -310,7 +288,7 @@
 		<match Class="PatchOperationReplace">
 			<xpath>Defs/GeneDef[defName="VRESaurids_ScaleSkin"]/displayCategory</xpath>
 			<value>
-    			<displayCategory>Cosmetic</displayCategory>
+    			<displayCategory>Health_Skin</displayCategory>
 			</value>
 		</match>
 	</Operation>
@@ -372,7 +350,7 @@
 		<match Class="PatchOperationReplace">
 			<xpath>Defs/GeneDef[defName="VRE_BugBlood"]/displayCategory</xpath>
 			<value>
-    			<displayCategory>Cosmetic_Blood</displayCategory>
+    			<displayCategory>Health_Blood</displayCategory>
 			</value>
 		</match>
 	</Operation>
@@ -419,8 +397,9 @@
 		<match Class="PatchOperationReplace">
 			<xpath>Defs/GeneDef[defName="VRE_InsectFlesh"]/displayCategory</xpath>
 			<value>
-    			<displayCategory>Cosmetic_Blood</displayCategory>
+    			<displayCategory>Health_Blood</displayCategory>
 			</value>
 		</match>
 	</Operation>
+
 </Patch>

@@ -1,35 +1,94 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<GeneCategoryDef>
+		<defName>Archite_Ancient</defName>
+		<label>archite - ancient</label>
+		<displayPriorityInXenotype>1001</displayPriorityInXenotype>
+		<displayPriorityInGenepack>1001</displayPriorityInGenepack>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
 		<defName>Health_Age</defName>
 		<label>aging</label>
-		<!-- Cosmetic -100 -->
-		<displayPriorityInXenotype>503</displayPriorityInXenotype>
-		<displayPriorityInGenepack>503</displayPriorityInGenepack>
+		<displayPriorityInXenotype>504</displayPriorityInXenotype>
+		<displayPriorityInGenepack>504</displayPriorityInGenepack>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
 		<defName>Health_Blood</defName>
 		<label>blood and flesh</label>
-		<!-- Cosmetic -100 -->
 		<displayPriorityInXenotype>502</displayPriorityInXenotype>
 		<displayPriorityInGenepack>502</displayPriorityInGenepack>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
-		<defName>Health_Cell</defName>
-		<label>cell stability</label>
-		<!-- Cosmetic -100 -->
+		<defName>Health_Digestion</defName>
+		<label>digestion</label>
 		<displayPriorityInXenotype>499</displayPriorityInXenotype>
 		<displayPriorityInGenepack>499</displayPriorityInGenepack>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
+		<defName>Health_Cell</defName>
+		<label>cell stability</label>
+		<displayPriorityInXenotype>498</displayPriorityInXenotype>
+		<displayPriorityInGenepack>498</displayPriorityInGenepack>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Psychic_Meditation</defName>
+		<label>psychic - meditation</label>
+		<displayPriorityInXenotype>489</displayPriorityInXenotype>
+		<displayPriorityInGenepack>489</displayPriorityInGenepack>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Social</defName>
+		<label>social</label>
+		<displayPriorityInXenotype>431</displayPriorityInXenotype>
+		<displayPriorityInGenepack>431</displayPriorityInGenepack>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Violence</defName>
+		<label>violence - combat</label>
+		<displayPriorityInXenotype>429</displayPriorityInXenotype>
+		<displayPriorityInGenepack>429</displayPriorityInGenepack>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
 		<defName>Health_Eye</defName>
-		<label>Eye</label>
-		<!-- Cosmetic -100 -->
-		<displayPriorityInXenotype>499</displayPriorityInXenotype>
-		<displayPriorityInGenepack>499</displayPriorityInGenepack>
+		<label>sight</label>
+		<displayPriorityInXenotype>300</displayPriorityInXenotype>
+		<displayPriorityInGenepack>300</displayPriorityInGenepack>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Health_Skin</defName>
+		<label>skin protection</label>
+		<displayPriorityInXenotype>299</displayPriorityInXenotype>
+		<displayPriorityInGenepack>299</displayPriorityInGenepack>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Cosmetic_Body_ArmHand</defName>
+		<label>arms and hands</label>
+		<displayPriorityInXenotype>298</displayPriorityInXenotype>
+		<displayPriorityInGenepack>298</displayPriorityInGenepack>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Cosmetic_Body_Wing</defName>
+		<label>wings</label>
+		<displayPriorityInXenotype>297</displayPriorityInXenotype>
+		<displayPriorityInGenepack>297</displayPriorityInGenepack>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Cosmetic_Body_Tail</defName>
+		<label>tail</label>
+		<displayPriorityInXenotype>296</displayPriorityInXenotype>
+		<displayPriorityInGenepack>296</displayPriorityInGenepack>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
@@ -102,30 +161,6 @@
 		<!-- Cosmetic_Skin -110 -->
 		<displayPriorityInXenotype>-109</displayPriorityInXenotype>
 		<displayPriorityInGenepack>-109</displayPriorityInGenepack>
-	</GeneCategoryDef>
-
-	<GeneCategoryDef>
-		<defName>Cosmetic_Body_ArmHand</defName>
-		<label>cosmetic - arm and hand</label>
-		<!-- Cosmetic_Skin -110 -->
-		<displayPriorityInXenotype>-111</displayPriorityInXenotype>
-		<displayPriorityInGenepack>-111</displayPriorityInGenepack>
-	</GeneCategoryDef>
-
-	<GeneCategoryDef>
-		<defName>Cosmetic_Body_Wing</defName>
-		<label>cosmetic - wing</label>
-		<!-- Cosmetic_Skin -110 -->
-		<displayPriorityInXenotype>-112</displayPriorityInXenotype>
-		<displayPriorityInGenepack>-112</displayPriorityInGenepack>
-	</GeneCategoryDef>
-
-	<GeneCategoryDef>
-		<defName>Cosmetic_Body_Tail</defName>
-		<label>cosmetic - tail</label>
-		<!-- Cosmetic_Skin -110 -->
-		<displayPriorityInXenotype>-113</displayPriorityInXenotype>
-		<displayPriorityInGenepack>-113</displayPriorityInGenepack>
 	</GeneCategoryDef>
 
 </Defs>

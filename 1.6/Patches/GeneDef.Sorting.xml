@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+<!-- 
+1000 archite
+520 abilities
+510 hemogen
+500 health
+490 psychics
+470 movement
+460 mood
+450 temperature
+440 resistance and weakness
+430 violence
+420 sleep
+410 pain
+400 reproduction
+310 beauty
+270 miscellaneous
+200 aptitudes
+0 drugs
+-->
+	<!-- 1001 -->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Quests Expanded - Ancients</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[
+						defName="VQEA_Herculean" or
+						defName="VQEA_Prowess" or
+						defName="VQEA_BlurRunner" or
+						defName="VQEA_Woundless" or
+						defName="VQEA_Marksman" or
+						defName="VQEA_PerfectVision" or
+						defName="VQEA_PlasteelSkin" or
+						defName="VQEA_PlasteelClaws" or
+						defName="VQEA_Genius" or
+						defName="VQEA_Levitation" or
+						defName="VQEA_Serene" or
+						defName="VQEA_PassiveMeditation" or
+						defName="VQEA_Bulwark" or
+						defName="VQEA_Enormous" or
+						defName="VQEA_SubstanceImpervious" or
+						defName="VQEA_InfernoSpew" or
+						defName="VQEA_HellsphereBlast" or
+						defName="VQEA_Invisibility" or
+						defName="VQEA_SelfRepairingTissue" or
+						defName="VQEA_Electromagnetized" or
+						defName="VQEA_MatterPhasing"]/displayCategory</xpath>
+					<value>
+						<displayCategory>Archite_Ancient</displayCategory>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+	<!-- 999 -->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Quests Expanded - Ancients</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_MasterfulShooting"]</xpath>
+					<value>
+						<displayOrderInCategory>1</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_MasterfulMelee"]</xpath>
+					<value>
+						<displayOrderInCategory>2</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_MasterfulConstruction"]</xpath>
+					<value>
+						<displayOrderInCategory>3</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_MasterfulMining"]</xpath>
+					<value>
+						<displayOrderInCategory>4</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_MasterfulCooking"]</xpath>
+					<value>
+						<displayOrderInCategory>5</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_MasterfulPlants"]</xpath>
+					<value>
+						<displayOrderInCategory>6</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_MasterfulAnimals"]</xpath>
+					<value>
+						<displayOrderInCategory>7</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_MasterfulCrafting"]</xpath>
+					<value>
+						<displayOrderInCategory>8</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_MasterfulArtistic"]</xpath>
+					<value>
+						<displayOrderInCategory>9</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_MasterfulMedical"]</xpath>
+					<value>
+						<displayOrderInCategory>10</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_MasterfulSocial"]</xpath>
+					<value>
+						<displayOrderInCategory>11</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_MasterfulIntellectual"]</xpath>
+					<value>
+						<displayOrderInCategory>12</displayOrderInCategory>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+	<!-- 510 -->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Races Expanded - Sanguophage</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_Ecstasy" or defName="VRE_FilterInfection" or defName="VRE_Hemosmosis" or defName="VRE_ToxicCloud" or defName="VRE_HeartCrush" or defName="VRE_ViscuousGoo"]/displayCategory</xpath>
+					<value>
+						<displayCategory>Hemogen</displayCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="Hemogenic"]/displayOrderInCategory</xpath>
+					<value>
+						<displayOrderInCategory>-100</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_LowHemogenDrain"]/displayOrderInCategory</xpath>
+					<value>
+						<displayOrderInCategory>-11</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="HemogenDrain"]/displayOrderInCategory</xpath>
+					<value>
+						<displayOrderInCategory>-10</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_ExtremeHemogenDrain"]/displayOrderInCategory</xpath>
+					<value>
+						<displayOrderInCategory>-9</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="Deathrest"]</xpath>
+					<value>
+						<displayOrderInCategory>10</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="Bloodfeeder"]</xpath>
+					<value>
+						<displayOrderInCategory>20</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VRE_AnimalFeeder"or defName="VRE_CorpseFeeder" or defName="VRE_SanguoFeeder"]</xpath>
+					<value>
+						<displayOrderInCategory>21</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VRE_FilterInfection"]</xpath>
+					<value>
+						<displayOrderInCategory>30</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VRE_HeartCrush"]</xpath>
+					<value>
+						<displayOrderInCategory>90</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="LongjumpLegs" or defName="VRE_Hemosmosis"]</xpath>
+					<value>
+						<displayOrderInCategory>100</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="Coagulate" or defName="PiercingSpine" or defName="VRE_Ecstasy" or defName="VRE_ToxicCloud" or defName="VRE_ViscuousGoo"]</xpath>
+					<value>
+						<displayOrderInCategory>110</displayOrderInCategory>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+	<!-- 503 -->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Races Expanded - Pigskin</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_RapidAging" or defName="VRE_FastAging" or defName="VRE_SlowAging" or defName="VRE_EverGrowing"]/displayCategory</xpath>
+					<value>
+						<displayCategory>Health_Age</displayCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Vanilla Races Expanded - Phytokin</li>
+					</mods>
+					<match Class="PatchOperationSequence">
+						<operations>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/GeneDef[defName="VRE_ProgressiveAttunement"]/displayCategory</xpath>
+								<value>
+									<displayCategory>Health_Age</displayCategory>
+								</value>
+							</li>
+							<li Class="PatchOperationAdd">
+								<xpath>Defs/GeneDef[defName="VRE_ProgressiveAttunement"]/displayOrderInCategory</xpath>
+								<value>
+									<displayOrderInCategory>5000</displayOrderInCategory>
+								</value>
+							</li>
+						</operations>
+					</match>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+	<!-- 502 -->
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Races Expanded - Genie</li>
+				</mods>
+				<match Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_Hemophiliac"]/displayOrderInCategory</xpath>
+					<value>
+						<displayOrderInCategory>10</displayOrderInCategory>
+					</value>
+				</match>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[defName="Superclotting"]/displayOrderInCategory</xpath>
+				<value>
+					<displayOrderInCategory>11</displayOrderInCategory>
+				</value>
+			</li>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Races Expanded - Fungoid</li>
+				</mods>
+				<match Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_FungalFlesh"]/displayOrderInCategory</xpath>
+					<value>
+						<displayOrderInCategory>1000</displayOrderInCategory>
+					</value>
+				</match>
+			</li>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Races Expanded - Pigskin</li>
+				</mods>
+				<match Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_ExtraMeat" or defName="VRE_LowMeat"]/displayCategory</xpath>
+							<value>
+								<displayCategory>Health_Blood</displayCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_ExtraMeat"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>100</displayOrderInCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_LowMeat"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>101</displayOrderInCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_PorkFlesh"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>1010</displayOrderInCategory>
+							</value>
+						</li>
+					</operations>	
+				</match>
+			</li>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Races Expanded - Insector</li>
+				</mods>
+				<match Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_BugBlood"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>0</displayOrderInCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_InsectFlesh"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>1010</displayOrderInCategory>
+							</value>
+						</li>
+					</operations>	
+				</match>
+			</li>
+		</operations>
+	</Operation>
+
+	<!-- 499 -->
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[defName="RobustDigestion" or defName="StrongStomach"]/displayCategory</xpath>
+				<value>
+					<displayCategory>Health_Digestion</displayCategory>
+				</value>
+			</li>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Integrated Genes</li>
+				</mods>
+				<match Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="Turn_Gene_FrailDigestion"]/displayCategory</xpath>
+					<value>
+						<displayCategory>Health_Digestion</displayCategory>
+					</value>
+				</match>
+			</li>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Races Expanded - Pigskin</li>
+				</mods>
+				<match Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_Gluttonous"]/displayCategory</xpath>
+					<value>
+						<displayCategory>Health_Digestion</displayCategory>
+					</value>
+				</match>
+			</li>
+		</operations>
+	</Operation>
+
+</Patch>

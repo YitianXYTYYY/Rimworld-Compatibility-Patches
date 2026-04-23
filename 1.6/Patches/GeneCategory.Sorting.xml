@@ -4,10 +4,10 @@
 		<mods>
 			<li>Vanilla Quests Expanded - Ancients</li>
 		</mods>
-		<match Class="PatchOperationAdd">
-			<xpath>Defs/GeneCategoryDef[defName="VQEA_ArchiteAptitudes"]</xpath>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/GeneCategoryDef[defName="VQEA_ArchiteAptitudes"]/displayPriorityInXenotype</xpath>
 			<value>
-				<displayPriorityInGenepack>999.9</displayPriorityInGenepack>
+				<displayPriorityInXenotype>999</displayPriorityInXenotype>
 			</value>
 		</match>
 	</Operation>
@@ -15,10 +15,21 @@
 		<mods>
 			<li>Vanilla Races Expanded - Lycanthrope</li>
 		</mods>
-		<match Class="PatchOperationAdd">
-			<xpath>Defs/GeneCategoryDef[defName="VRE_Morphs"]</xpath>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/GeneCategoryDef[defName="VRE_Morphs"]/displayPriorityInXenotype</xpath>
 			<value>
-				<displayPriorityInGenepack>999.8</displayPriorityInGenepack>
+				<displayPriorityInXenotype>998</displayPriorityInXenotype>
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>ReSplice: Core</li>
+		</mods>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/GeneCategoryDef[defName="RS_DarkArchite"]/displayPriorityInXenotype</xpath>
+			<value>
+				<displayPriorityInXenotype>521</displayPriorityInXenotype>
 			</value>
 		</match>
 	</Operation>

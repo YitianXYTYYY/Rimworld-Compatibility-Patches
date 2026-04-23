@@ -143,6 +143,39 @@
 			</value>
 		</match>
 	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Races Expanded - Lycanthrope</li>
+		</mods>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/GeneDef[@Name="VRE_BodyBaseLycans" or @ParentName="VRE_BodyBaseLycans"]/displayCategory</xpath>
+			<value>
+				<displayCategory>Health_Skin</displayCategory>
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Races Expanded - Phytokin</li>
+		</mods>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/GeneDef[@Name="VRE_BodyBase" or @ParentName="VRE_BodyBase"]/displayCategory</xpath>
+			<value>
+				<displayCategory>Health_Skin</displayCategory>
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Races Expanded - Insector</li>
+		</mods>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/GeneDef[@Name="VRE_BodyBaseInsect" or @ParentName="VRE_BodyBaseInsect"]/displayCategory</xpath>
+			<value>
+				<displayCategory>Health_Skin</displayCategory>
+			</value>
+		</match>
+	</Operation>
 
 	<!-- Genepack Priority -->
 	<Operation Class="PatchOperationAdd">
