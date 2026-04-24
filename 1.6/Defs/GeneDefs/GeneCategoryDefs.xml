@@ -10,15 +10,15 @@
 	<GeneCategoryDef>
 		<defName>Health_Age</defName>
 		<label>aging</label>
-		<displayPriorityInXenotype>504</displayPriorityInXenotype>
-		<displayPriorityInGenepack>504</displayPriorityInGenepack>
+		<displayPriorityInXenotype>502</displayPriorityInXenotype>
+		<displayPriorityInGenepack>502</displayPriorityInGenepack>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
 		<defName>Health_Blood</defName>
 		<label>blood and flesh</label>
-		<displayPriorityInXenotype>502</displayPriorityInXenotype>
-		<displayPriorityInGenepack>502</displayPriorityInGenepack>
+		<displayPriorityInXenotype>501</displayPriorityInXenotype>
+		<displayPriorityInGenepack>501</displayPriorityInGenepack>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
@@ -50,7 +50,7 @@
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
-		<defName>Violence</defName>
+		<defName>Violence_Combat</defName>
 		<label>violence - combat</label>
 		<displayPriorityInXenotype>429</displayPriorityInXenotype>
 		<displayPriorityInGenepack>429</displayPriorityInGenepack>

@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/GeneDef[defName="Superclotting"]/displayCategory</xpath>
-		<value>
-			<displayCategory>Health_Blood</displayCategory>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/GeneDef[defName="Furskin"]/displayCategory</xpath>
 		<value>
 			<displayCategory>Health_Skin</displayCategory>

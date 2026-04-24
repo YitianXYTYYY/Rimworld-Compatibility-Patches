@@ -249,7 +249,7 @@
 								</value>
 							</li>
 							<li Class="PatchOperationAdd">
-								<xpath>Defs/GeneDef[defName="VRE_ProgressiveAttunement"]/displayOrderInCategory</xpath>
+								<xpath>Defs/GeneDef[defName="VRE_ProgressiveAttunement"]</xpath>
 								<value>
 									<displayOrderInCategory>5000</displayOrderInCategory>
 								</value>
@@ -268,18 +268,28 @@
 				<mods>
 					<li>Vanilla Races Expanded - Genie</li>
 				</mods>
-				<match Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="VRE_Hemophiliac"]/displayOrderInCategory</xpath>
-					<value>
-						<displayOrderInCategory>10</displayOrderInCategory>
-					</value>
+				<match Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_Hemophiliac"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>10</displayOrderInCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="Superclotting"]/displayCategory</xpath>
+							<value>
+								<displayCategory>Health_Blood</displayCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="Superclotting"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>11</displayOrderInCategory>
+							</value>
+						</li>
+					</operations>
 				</match>
-			</li>
-			<li Class="PatchOperationReplace">
-				<xpath>Defs/GeneDef[defName="Superclotting"]/displayOrderInCategory</xpath>
-				<value>
-					<displayOrderInCategory>11</displayOrderInCategory>
-				</value>
 			</li>
 			<li Class="PatchOperationFindMod">
 				<mods>
@@ -349,38 +359,287 @@
 		</operations>
 	</Operation>
 
-	<!-- 499 -->
+	<!-- 500 -->
 	<Operation Class="PatchOperationSequence">
 		<operations>
-			<li Class="PatchOperationReplace">
-				<xpath>Defs/GeneDef[defName="RobustDigestion" or defName="StrongStomach"]/displayCategory</xpath>
-				<value>
-					<displayCategory>Health_Digestion</displayCategory>
-				</value>
-			</li>
 			<li Class="PatchOperationFindMod">
 				<mods>
-					<li>Integrated Genes</li>
+					<li>Vanilla Races Expanded - Fungoid</li>
 				</mods>
 				<match Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_FungalRegeneration"]/displayOrderInCategory</xpath>
+					<value>
+						<displayOrderInCategory>100</displayOrderInCategory>
+					</value>
+				</match>
+			</li>
+
+		</operations>
+	</Operation>
+
+	<!-- 499 -->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Integrated Genes</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
 					<xpath>Defs/GeneDef[defName="Turn_Gene_FrailDigestion"]/displayCategory</xpath>
 					<value>
 						<displayCategory>Health_Digestion</displayCategory>
 					</value>
-				</match>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="RobustDigestion" or defName="StrongStomach"]/displayCategory</xpath>
+					<value>
+						<displayCategory>Health_Digestion</displayCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="StrongStomach"]/displayOrderInCategory</xpath>
+					<value>
+						<displayOrderInCategory>20</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Vanilla Races Expanded - Pigskin</li>
+					</mods>
+					<match Class="PatchOperationReplace">
+						<xpath>Defs/GeneDef[defName="VRE_Gluttonous"]/displayCategory</xpath>
+						<value>
+							<displayCategory>Health_Digestion</displayCategory>
+						</value>
+					</match>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+	<!-- 498 -->
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[@Name="CellInstabilityBase" or @ParentName="CellInstabilityBase"]/displayCategory</xpath>
+				<value>
+					<displayCategory>Health_Cell</displayCategory>
+				</value>
 			</li>
 			<li Class="PatchOperationFindMod">
 				<mods>
-					<li>Vanilla Races Expanded - Pigskin</li>
+					<li>Vanilla Races Expanded - Waster</li>
 				</mods>
 				<match Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="VRE_Gluttonous"]/displayCategory</xpath>
+					<xpath>Defs/GeneDef[defName="VRE_Instability_Progressive"]/displayCategory</xpath>
 					<value>
-						<displayCategory>Health_Digestion</displayCategory>
+						<displayCategory>Health_Cell</displayCategory>
 					</value>
 				</match>
 			</li>
 		</operations>
 	</Operation>
 
+	<!-- 489 -->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Integrated Genes</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="Turn_Gene_MeditationNeed"]/displayCategory</xpath>
+					<value>
+						<displayCategory>Psychic_Meditation</displayCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Vanilla Races Expanded - Archon</li>
+					</mods>
+					<match Class="PatchOperationReplace">
+						<xpath>Defs/GeneDef[defName="VRE_ExtremeMeditation" or defName="VRE_SwiftMeditation" or defName="VRE_SlowMeditation"]/displayCategory</xpath>
+						<value>
+							<displayCategory>Psychic_Meditation</displayCategory>
+						</value>
+					</match>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+	<!-- 460 -->
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Races Expanded - Lycanthrope</li>
+				</mods>
+				<match Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_PackMentality"]/displayCategory</xpath>
+							<value>
+								<displayCategory>Mood</displayCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationAdd">
+							<xpath>Defs/GeneDef[defName="VRE_PackMentality"]</xpath>
+							<value>
+								<displayOrderInCategory>1001</displayOrderInCategory>
+							</value>
+						</li>
+					</operations>
+				</match>
+			</li>
+		</operations>
+	</Operation>
+
+
+	<!-- 450 -->
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Races Expanded - Saurid</li>
+				</mods>
+				<match Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRESaurids_ColdBlooded"]/displayCategory</xpath>
+							<value>
+								<displayCategory>Temperature</displayCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationAdd">
+							<xpath>Defs/GeneDef[defName="VRESaurids_ColdBlooded"]</xpath>
+							<value>
+								<displayOrderInCategory>100</displayOrderInCategory>
+							</value>
+						</li>
+					</operations>
+				</match>
+			</li>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Races Expanded - Starjack</li>
+				</mods>
+				<match Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VREStarjack_Cryostasis"]/displayCategory</xpath>
+							<value>
+								<displayCategory>Temperature</displayCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationAdd">
+							<xpath>Defs/GeneDef[defName="VREStarjack_Cryostasis"]</xpath>
+							<value>
+								<displayOrderInCategory>110</displayOrderInCategory>
+							</value>
+						</li>
+					</operations>
+				</match>
+			</li>
+		</operations>
+	</Operation>
+
+	<!-- 440 -->
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Races Expanded - Fungoid</li>
+				</mods>
+				<match Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_TotalAntirotLungs" or defName="VRE_PartialAntirotLungs"]/displayCategory</xpath>
+							<value>
+								<displayCategory>ResistanceAndWeakness</displayCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_PartialAntirotLungs"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>31</displayOrderInCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_TotalAntirotLungs"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>32</displayOrderInCategory>
+							</value>
+						</li>
+					</operations>
+				</match>
+			</li>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Races Expanded - Starjack</li>
+				</mods>
+				<match Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VREStarjack_OxygenSensitivity_Mild"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>33</displayOrderInCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VREStarjack_OxygenSensitivity_Intense"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>34</displayOrderInCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VREStarjack_OxygenSensitivity_Extreme"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>35</displayOrderInCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VacuumResistance_Partial"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>36</displayOrderInCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VREStarjack_VacuumResistance_Total"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>37</displayOrderInCategory>
+							</value>
+						</li>
+					</operations>
+				</match>
+			</li>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Races Expanded - Lycanthrope</li>
+				</mods>
+				<match Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_LightSensitivity"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>55</displayOrderInCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_IntenseLightSensitivity"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>56</displayOrderInCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_Photophobia"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>57</displayOrderInCategory>
+							</value>
+						</li>
+					</operations>
+				</match>
+			</li>
+		</operations>
+	</Operation>
 </Patch>
