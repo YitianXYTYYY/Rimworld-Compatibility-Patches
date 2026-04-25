@@ -32,7 +32,7 @@
 		<match Class="PatchOperationReplace">
 			<xpath>Defs/GeneCategoryDef[defName="VREH_WeaponAptitudes"]/displayPriorityInXenotype</xpath>
 			<value>
-				<displayPriorityInXenotype>900</displayPriorityInXenotype>
+				<displayPriorityInXenotype>998</displayPriorityInXenotype>
 			</value>
 		</match>
 	</Operation>
@@ -43,7 +43,7 @@
 		<match Class="PatchOperationReplace">
 			<xpath>Defs/GeneCategoryDef[defName="VRE_Morphs"]/displayPriorityInXenotype</xpath>
 			<value>
-				<displayPriorityInXenotype>998</displayPriorityInXenotype>
+				<displayPriorityInXenotype>900</displayPriorityInXenotype>
 			</value>
 		</match>
 	</Operation>
@@ -62,22 +62,21 @@
 		<mods>
 			<li>Integrated Genes</li>
 		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneCategoryDef[defName="Turn_GeneCategory_Fleshbeast"]/displayPriorityInXenotype</xpath>
-			<value>
-				<displayPriorityInXenotype>501</displayPriorityInXenotype>
-			</value>
-		</match>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Integrated Genes</li>
-		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneCategoryDef[defName="Turn_GeneCategory_Slavery"]/displayPriorityInXenotype</xpath>
-			<value>
-				<displayPriorityInXenotype>379</displayPriorityInXenotype>
-			</value>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneCategoryDef[defName="Turn_GeneCategory_Fleshbeast"]/displayPriorityInXenotype</xpath>
+					<value>
+						<displayPriorityInXenotype>499</displayPriorityInXenotype>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneCategoryDef[defName="Turn_GeneCategory_Slavery"]/displayPriorityInXenotype</xpath>
+					<value>
+						<displayPriorityInXenotype>379</displayPriorityInXenotype>
+					</value>
+				</li>
+			</operations>
 		</match>
 	</Operation>
 

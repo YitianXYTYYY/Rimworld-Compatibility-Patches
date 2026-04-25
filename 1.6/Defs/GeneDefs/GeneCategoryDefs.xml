@@ -21,19 +21,19 @@
 	<GeneCategoryDef>
 		<defName>Health_Cell</defName>
 		<label>cell stability</label>
-		<displayPriorityInXenotype>499</displayPriorityInXenotype>
+		<displayPriorityInXenotype>498</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
 		<defName>Health_Digestion</defName>
 		<label>digestion</label>
-		<displayPriorityInXenotype>498</displayPriorityInXenotype>
+		<displayPriorityInXenotype>497</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
 		<defName>Health_Eye</defName>
 		<label>sight</label>
-		<displayPriorityInXenotype>497</displayPriorityInXenotype>
+		<displayPriorityInXenotype>496</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
