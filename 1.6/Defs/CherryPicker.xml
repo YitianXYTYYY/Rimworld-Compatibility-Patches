@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<CherryPicker.DefList MayRequire="Owlchemist.CherryPicker">
+		<defName>CherryPicker_XYTYYY</defName>
+		<label>uncheck this to enable basic removals</label>
+		<defs>
+			<li>GeneDef/AFU_BA_NineTailedFox</li>
+			<li>GeneDef/Turn_Gene_NaturalLeader</li>
+			<li>GeneDef/Turn_Gene_VariablePhenotype</li>
+			<li>GeneDef/Turn_Gene_ArchotechAttunement</li>
+			<li>GeneDef/Turn_Gene_LatentPsychic</li>
+		</defs>
+	</CherryPicker.DefList>
+
+</Defs>

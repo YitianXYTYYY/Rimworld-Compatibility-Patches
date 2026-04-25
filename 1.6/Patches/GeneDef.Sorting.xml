@@ -7,19 +7,19 @@
 500 health
 490 psychics
 470 movement
-460 mood
 450 temperature
 440 resistance and weakness
-430 violence
 420 sleep
 410 pain
 400 reproduction
+390 mood
+380 violence
 310 beauty
 270 miscellaneous
 200 aptitudes
 0 drugs
 -->
-	<!-- 1001 -->
+	<!-- 1001 archite ancient -->
 	<Operation Class="PatchOperationFindMod">
 		<mods>
 			<li>Vanilla Quests Expanded - Ancients</li>
@@ -27,8 +27,7 @@
 		<match Class="PatchOperationSequence">
 			<operations>
 				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[
-						defName="VQEA_Herculean" or
+					<xpath>Defs/GeneDef[defName="VQEA_Herculean" or
 						defName="VQEA_Prowess" or
 						defName="VQEA_BlurRunner" or
 						defName="VQEA_Woundless" or
@@ -57,7 +56,7 @@
 		</match>
 	</Operation>
 
-	<!-- 999 -->
+	<!-- 999 archite aptitude -->
 	<Operation Class="PatchOperationFindMod">
 		<mods>
 			<li>Vanilla Quests Expanded - Ancients</li>
@@ -140,7 +139,7 @@
 		</match>
 	</Operation>
 
-	<!-- 510 -->
+	<!-- 510 hemogen -->
 	<Operation Class="PatchOperationFindMod">
 		<mods>
 			<li>Vanilla Races Expanded - Sanguophage</li>
@@ -190,9 +189,21 @@
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
-					<xpath>Defs/GeneDef[defName="VRE_AnimalFeeder"or defName="VRE_CorpseFeeder" or defName="VRE_SanguoFeeder"]</xpath>
+					<xpath>Defs/GeneDef[defName="VRE_AnimalFeeder"]</xpath>
 					<value>
 						<displayOrderInCategory>21</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VRE_CorpseFeeder"]</xpath>
+					<value>
+						<displayOrderInCategory>22</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VRE_SanguoFeeder"]</xpath>
+					<value>
+						<displayOrderInCategory>23</displayOrderInCategory>
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
@@ -202,28 +213,58 @@
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
-					<xpath>Defs/GeneDef[defName="VRE_HeartCrush"]</xpath>
+					<xpath>Defs/GeneDef[defName="Coagulate"]</xpath>
 					<value>
-						<displayOrderInCategory>90</displayOrderInCategory>
+						<displayOrderInCategory>50</displayOrderInCategory>
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
-					<xpath>Defs/GeneDef[defName="LongjumpLegs" or defName="VRE_Hemosmosis"]</xpath>
+					<xpath>Defs/GeneDef[defName="VRE_Ecstasy"]</xpath>
+					<value>
+						<displayOrderInCategory>51</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="PiercingSpine"]</xpath>
+					<value>
+						<displayOrderInCategory>52</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VRE_ToxicCloud"]</xpath>
+					<value>
+						<displayOrderInCategory>53</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VRE_ViscuousGoo"]</xpath>
+					<value>
+						<displayOrderInCategory>54</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VRE_Hemosmosis"]</xpath>
 					<value>
 						<displayOrderInCategory>100</displayOrderInCategory>
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
-					<xpath>Defs/GeneDef[defName="Coagulate" or defName="PiercingSpine" or defName="VRE_Ecstasy" or defName="VRE_ToxicCloud" or defName="VRE_ViscuousGoo"]</xpath>
+					<xpath>Defs/GeneDef[defName="LongjumpLegs"]</xpath>
 					<value>
-						<displayOrderInCategory>110</displayOrderInCategory>
+						<displayOrderInCategory>101</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VRE_HeartCrush"]</xpath>
+					<value>
+						<displayOrderInCategory>200</displayOrderInCategory>
 					</value>
 				</li>
 			</operations>
 		</match>
 	</Operation>
 
-	<!-- 503 -->
+	<!-- 502 aging -->
 	<Operation Class="PatchOperationFindMod">
 		<mods>
 			<li>Vanilla Races Expanded - Pigskin</li>
@@ -261,9 +302,33 @@
 		</match>
 	</Operation>
 
-	<!-- 502 -->
+	<!-- 501 blood -->
 	<Operation Class="PatchOperationSequence">
 		<operations>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[defName="VRE_BlueBlood"]/displayOrderInCategory</xpath>
+				<value>
+					<displayOrderInCategory>-100</displayOrderInCategory>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[defName="VRE_BugBlood"]/displayOrderInCategory</xpath>
+				<value>
+					<displayOrderInCategory>-99</displayOrderInCategory>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[defName="VRE_SapBlood"]/displayOrderInCategory</xpath>
+				<value>
+					<displayOrderInCategory>-98</displayOrderInCategory>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[defName="VRE_RotBlood"]/displayOrderInCategory</xpath>
+				<value>
+					<displayOrderInCategory>-97</displayOrderInCategory>
+				</value>
+			</li>
 			<li Class="PatchOperationFindMod">
 				<mods>
 					<li>Vanilla Races Expanded - Genie</li>
@@ -271,35 +336,32 @@
 				<match Class="PatchOperationSequence">
 					<operations>
 						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_Hemophiliac" or defName="Superclotting"]/displayCategory</xpath>
+							<value>
+								<displayCategory>Health_Blood</displayCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationAdd">
+							<xpath>Defs/GeneDef[defName="VRE_Hemophiliac"]</xpath>
+							<value>
+								<customEffectDescriptions>
+									<li>Wounds bleed very quickly.</li>
+								</customEffectDescriptions>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
 							<xpath>Defs/GeneDef[defName="VRE_Hemophiliac"]/displayOrderInCategory</xpath>
 							<value>
 								<displayOrderInCategory>10</displayOrderInCategory>
 							</value>
 						</li>
 						<li Class="PatchOperationReplace">
-							<xpath>Defs/GeneDef[defName="Superclotting"]/displayCategory</xpath>
-							<value>
-								<displayCategory>Health_Blood</displayCategory>
-							</value>
-						</li>
-						<li Class="PatchOperationReplace">
 							<xpath>Defs/GeneDef[defName="Superclotting"]/displayOrderInCategory</xpath>
 							<value>
-								<displayOrderInCategory>11</displayOrderInCategory>
+								<displayOrderInCategory>20</displayOrderInCategory>
 							</value>
 						</li>
 					</operations>
-				</match>
-			</li>
-			<li Class="PatchOperationFindMod">
-				<mods>
-					<li>Vanilla Races Expanded - Fungoid</li>
-				</mods>
-				<match Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="VRE_FungalFlesh"]/displayOrderInCategory</xpath>
-					<value>
-						<displayOrderInCategory>1000</displayOrderInCategory>
-					</value>
 				</match>
 			</li>
 			<li Class="PatchOperationFindMod">
@@ -317,19 +379,19 @@
 						<li Class="PatchOperationReplace">
 							<xpath>Defs/GeneDef[defName="VRE_ExtraMeat"]/displayOrderInCategory</xpath>
 							<value>
-								<displayOrderInCategory>100</displayOrderInCategory>
+								<displayOrderInCategory>200</displayOrderInCategory>
 							</value>
 						</li>
 						<li Class="PatchOperationReplace">
 							<xpath>Defs/GeneDef[defName="VRE_LowMeat"]/displayOrderInCategory</xpath>
 							<value>
-								<displayOrderInCategory>101</displayOrderInCategory>
+								<displayOrderInCategory>201</displayOrderInCategory>
 							</value>
 						</li>
 						<li Class="PatchOperationReplace">
 							<xpath>Defs/GeneDef[defName="VRE_PorkFlesh"]/displayOrderInCategory</xpath>
 							<value>
-								<displayOrderInCategory>1010</displayOrderInCategory>
+								<displayOrderInCategory>301</displayOrderInCategory>
 							</value>
 						</li>
 					</operations>	
@@ -337,29 +399,30 @@
 			</li>
 			<li Class="PatchOperationFindMod">
 				<mods>
+					<li>Vanilla Races Expanded - Fungoid</li>
+				</mods>
+				<match Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_FungalFlesh"]/displayOrderInCategory</xpath>
+					<value>
+						<displayOrderInCategory>299</displayOrderInCategory>
+					</value>
+				</match>
+			</li>
+			<li Class="PatchOperationFindMod">
+				<mods>
 					<li>Vanilla Races Expanded - Insector</li>
 				</mods>
-				<match Class="PatchOperationSequence">
-					<operations>
-						<li Class="PatchOperationReplace">
-							<xpath>Defs/GeneDef[defName="VRE_BugBlood"]/displayOrderInCategory</xpath>
-							<value>
-								<displayOrderInCategory>0</displayOrderInCategory>
-							</value>
-						</li>
-						<li Class="PatchOperationReplace">
-							<xpath>Defs/GeneDef[defName="VRE_InsectFlesh"]/displayOrderInCategory</xpath>
-							<value>
-								<displayOrderInCategory>1010</displayOrderInCategory>
-							</value>
-						</li>
-					</operations>	
+				<match Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_InsectFlesh"]/displayOrderInCategory</xpath>
+					<value>
+						<displayOrderInCategory>300</displayOrderInCategory>
+					</value>
 				</match>
 			</li>
 		</operations>
 	</Operation>
 
-	<!-- 500 -->
+	<!-- 500 health -->
 	<Operation Class="PatchOperationSequence">
 		<operations>
 			<li Class="PatchOperationFindMod">
@@ -377,47 +440,7 @@
 		</operations>
 	</Operation>
 
-	<!-- 499 -->
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Integrated Genes</li>
-		</mods>
-		<match Class="PatchOperationSequence">
-			<operations>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="Turn_Gene_FrailDigestion"]/displayCategory</xpath>
-					<value>
-						<displayCategory>Health_Digestion</displayCategory>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="RobustDigestion" or defName="StrongStomach"]/displayCategory</xpath>
-					<value>
-						<displayCategory>Health_Digestion</displayCategory>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="StrongStomach"]/displayOrderInCategory</xpath>
-					<value>
-						<displayOrderInCategory>20</displayOrderInCategory>
-					</value>
-				</li>
-				<li Class="PatchOperationFindMod">
-					<mods>
-						<li>Vanilla Races Expanded - Pigskin</li>
-					</mods>
-					<match Class="PatchOperationReplace">
-						<xpath>Defs/GeneDef[defName="VRE_Gluttonous"]/displayCategory</xpath>
-						<value>
-							<displayCategory>Health_Digestion</displayCategory>
-						</value>
-					</match>
-				</li>
-			</operations>
-		</match>
-	</Operation>
-
-	<!-- 498 -->
+	<!-- 499 cell -->
 	<Operation Class="PatchOperationSequence">
 		<operations>
 			<li Class="PatchOperationReplace">
@@ -440,7 +463,102 @@
 		</operations>
 	</Operation>
 
-	<!-- 489 -->
+	<!-- 498 digestion -->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Integrated Genes</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="Turn_Gene_FrailDigestion" or defName="RobustDigestion" or defName="StrongStomach"]/displayCategory</xpath>
+					<value>
+						<displayCategory>Health_Digestion</displayCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="StrongStomach"]/displayOrderInCategory</xpath>
+					<value>
+						<displayOrderInCategory>20</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Vanilla Races Expanded - Pigskin</li>
+					</mods>
+					<match Class="PatchOperationReplace">
+						<xpath>Defs/GeneDef[defName="VRE_Gluttonous"]/displayCategory</xpath>
+						<value>
+							<displayCategory>Health_Digestion</displayCategory>
+						</value>
+					</match>
+				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Vanilla Races Expanded - Insector</li>
+					</mods>
+					<match Class="PatchOperationReplace">
+						<xpath>Defs/GeneDef[defName="VRE_InsectJellyDependency"]/displayCategory</xpath>
+						<value>
+							<displayCategory>Health_Digestion</displayCategory>
+						</value>
+					</match>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+	<!-- 497 eye -->
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[defName="Nearsighted" or defName="DarkVision"]/displayCategory</xpath>
+				<value>
+					<displayCategory>Health_Eye</displayCategory>
+				</value>
+			</li>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Integrated Genes</li>
+				</mods>
+				<match Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="Turn_Gene_Blindness"]/displayCategory</xpath>
+							<value>
+								<displayCategory>Health_Eye</displayCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="Turn_Gene_Blindness"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>0</displayOrderInCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationAdd">
+							<xpath>Defs/GeneDef[defName="Turn_Gene_Blindness"]/exclusionTags</xpath>
+							<value>
+								<li>VRE_SuperiorDarkVision</li>
+							</value>
+						</li>
+					</operations>
+				</match>
+			</li>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Races Expanded - Lycanthrope</li>
+				</mods>
+				<match Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_SuperiorDarkVision"]/displayCategory</xpath>
+					<value>
+						<displayCategory>Health_Eye</displayCategory>
+					</value>
+				</match>
+			</li>
+		</operations>
+	</Operation>
+
+	<!-- 489 meditation -->
 	<Operation Class="PatchOperationFindMod">
 		<mods>
 			<li>Integrated Genes</li>
@@ -468,35 +586,31 @@
 		</match>
 	</Operation>
 
-	<!-- 460 -->
+	<!-- 470 movement -->
 	<Operation Class="PatchOperationSequence">
 		<operations>
-			<li Class="PatchOperationFindMod">
-				<mods>
-					<li>Vanilla Races Expanded - Lycanthrope</li>
-				</mods>
-				<match Class="PatchOperationSequence">
-					<operations>
-						<li Class="PatchOperationReplace">
-							<xpath>Defs/GeneDef[defName="VRE_PackMentality"]/displayCategory</xpath>
-							<value>
-								<displayCategory>Mood</displayCategory>
-							</value>
-						</li>
-						<li Class="PatchOperationAdd">
-							<xpath>Defs/GeneDef[defName="VRE_PackMentality"]</xpath>
-							<value>
-								<displayOrderInCategory>1001</displayOrderInCategory>
-							</value>
-						</li>
-					</operations>
-				</match>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[defName="Unstoppable"]/displayCategory</xpath>
+				<value>
+					<displayCategory>Movement</displayCategory>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[defName="Unstoppable"]/displayOrderInCategory</xpath>
+				<value>
+					<displayOrderInCategory>400</displayOrderInCategory>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[defName="WebbedPhalanges"]/displayOrderInCategory</xpath>
+				<value>
+					<displayOrderInCategory>490</displayOrderInCategory>
+				</value>
 			</li>
 		</operations>
 	</Operation>
 
-
-	<!-- 450 -->
+	<!-- 450 temperature -->
 	<Operation Class="PatchOperationSequence">
 		<operations>
 			<li Class="PatchOperationFindMod">
@@ -544,7 +658,7 @@
 		</operations>
 	</Operation>
 
-	<!-- 440 -->
+	<!-- 440 resistance and weakness -->
 	<Operation Class="PatchOperationSequence">
 		<operations>
 			<li Class="PatchOperationFindMod">
@@ -580,20 +694,20 @@
 				</mods>
 				<match Class="PatchOperationSequence">
 					<operations>
-						<li Class="PatchOperationReplace">
-							<xpath>Defs/GeneDef[defName="VREStarjack_OxygenSensitivity_Mild"]/displayOrderInCategory</xpath>
+						<li Class="PatchOperationAdd">
+							<xpath>Defs/GeneDef[defName="VREStarjack_OxygenSensitivity_Mild"]</xpath>
 							<value>
 								<displayOrderInCategory>33</displayOrderInCategory>
 							</value>
 						</li>
-						<li Class="PatchOperationReplace">
-							<xpath>Defs/GeneDef[defName="VREStarjack_OxygenSensitivity_Intense"]/displayOrderInCategory</xpath>
+						<li Class="PatchOperationAdd">
+							<xpath>Defs/GeneDef[defName="VREStarjack_OxygenSensitivity_Intense"]</xpath>
 							<value>
 								<displayOrderInCategory>34</displayOrderInCategory>
 							</value>
 						</li>
-						<li Class="PatchOperationReplace">
-							<xpath>Defs/GeneDef[defName="VREStarjack_OxygenSensitivity_Extreme"]/displayOrderInCategory</xpath>
+						<li Class="PatchOperationAdd">
+							<xpath>Defs/GeneDef[defName="VREStarjack_OxygenSensitivity_Extreme"]</xpath>
 							<value>
 								<displayOrderInCategory>35</displayOrderInCategory>
 							</value>
@@ -604,13 +718,24 @@
 								<displayOrderInCategory>36</displayOrderInCategory>
 							</value>
 						</li>
-						<li Class="PatchOperationReplace">
-							<xpath>Defs/GeneDef[defName="VREStarjack_VacuumResistance_Total"]/displayOrderInCategory</xpath>
+						<li Class="PatchOperationAdd">
+							<xpath>Defs/GeneDef[defName="VREStarjack_VacuumResistance_Total"]</xpath>
 							<value>
 								<displayOrderInCategory>37</displayOrderInCategory>
 							</value>
 						</li>
 					</operations>
+				</match>
+			</li>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Races Expanded - Sanguophage</li>
+				</mods>
+				<match Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_Sensitivity_Dangerous"]/displayOrderInCategory</xpath>
+					<value>
+						<displayOrderInCategory>51</displayOrderInCategory>
+					</value>
 				</match>
 			</li>
 			<li Class="PatchOperationFindMod">
@@ -635,6 +760,477 @@
 							<xpath>Defs/GeneDef[defName="VRE_Photophobia"]/displayOrderInCategory</xpath>
 							<value>
 								<displayOrderInCategory>57</displayOrderInCategory>
+							</value>
+						</li>
+					</operations>
+				</match>
+			</li>
+		</operations>
+	</Operation>
+
+	<!-- 410 pain -->
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Races Expanded - Fungoid</li>
+				</mods>
+				<match Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_FungalArmor"]/displayCategory</xpath>
+							<value>
+								<displayCategory>Pain</displayCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_FungalArmor"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>15</displayOrderInCategory>
+							</value>
+						</li>
+					</operations>
+				</match>
+			</li>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Races Expanded - Hussar</li>
+				</mods>
+				<match Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VREH_BulletproofSkin" or defName="VREH_Toughness"]/displayCategory</xpath>
+							<value>
+								<displayCategory>Pain</displayCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VREH_Toughness"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>19</displayOrderInCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VREH_BulletproofSkin"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>100</displayOrderInCategory>
+							</value>
+						</li>
+					</operations>
+				</match>
+			</li>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Integrated Genes</li>
+				</mods>
+				<match Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationAttributeRemove">
+							<xpath>Defs/GeneDef[defName="Turn_Gene_ConstantPain"]</xpath>
+							<attribute>ParentName</attribute>
+						</li>
+						<li Class="PatchOperationAdd">
+							<xpath>Defs/GeneDef[defName="Turn_Gene_ConstantPain"]</xpath>
+							<value>
+								<displayCategory>Pain</displayCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="Turn_Gene_ConstantPain"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>40</displayOrderInCategory>
+							</value>
+						</li>
+					</operations>
+				</match>
+			</li>
+		</operations>
+	</Operation>
+
+	<!-- 400 reproduction -->
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Races Expanded - Highmate</li>
+				</mods>
+				<match Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VRE_LovinDependency"]</xpath>
+					<value>
+						<displayOrderInCategory>11</displayOrderInCategory>
+					</value>
+				</match>
+			</li>
+		</operations>
+	</Operation>
+
+	<!-- 390 mood -->
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Races Expanded - Lycanthrope</li>
+				</mods>
+				<match Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_PackMentality"]/displayCategory</xpath>
+							<value>
+								<displayCategory>Mood</displayCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationAdd">
+							<xpath>Defs/GeneDef[defName="VRE_PackMentality"]</xpath>
+							<value>
+								<displayOrderInCategory>1001</displayOrderInCategory>
+							</value>
+						</li>
+					</operations>
+				</match>
+			</li>
+		</operations>
+	</Operation>
+
+	<!-- 381 social -->
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[defName="KindInstinct"]/displayCategory</xpath>
+				<value>
+					<displayCategory>Social</displayCategory>
+				</value>
+			</li>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Races Expanded - Fungoid</li>
+				</mods>
+				<match Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_Telepathy"]/displayCategory</xpath>
+					<value>
+						<displayCategory>Social</displayCategory>
+					</value>
+				</match>
+			</li>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Races Expanded - Highmate</li>
+				</mods>
+				<match Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_Flirty" or defName="VRE_Distressed"]/displayCategory</xpath>
+							<value>
+								<displayCategory>Social</displayCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationConditional">
+							<xpath>/Defs/GeneDef[defName="VRE_Flirty"]/exclusionTags</xpath>
+							<nomatch Class="PatchOperationAdd">
+								<xpath>/Defs/GeneDef[defName="VRE_Flirty"]</xpath>
+								<value>
+									<exclusionTags>
+										<li>XYTYYY_RequireSpeechAbility</li>
+									</exclusionTags>
+								</value>
+							</nomatch>
+							<match Class="PatchOperationAdd">
+								<xpath>Defs/GeneDef[defName="VRE_Flirty"]/exclusionTags</xpath>
+								<value>
+									<li>XYTYYY_RequireSpeechAbility</li>
+								</value>
+							</match>
+						</li>
+					</operations>
+				</match>
+			</li>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Races Expanded - Hussar</li>
+				</mods>
+				<match Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VREH_Arrogant"]/displayCategory</xpath>
+					<value>
+						<displayCategory>Social</displayCategory>
+					</value>
+				</match>
+			</li>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Integrated Genes</li>
+				</mods>
+				<match Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="Turn_Gene_Speechless" or defName="Turn_Gene_TraitGrandeur"]/displayCategory</xpath>
+							<value>
+								<displayCategory>Social</displayCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="Turn_Gene_Speechless"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>-100</displayOrderInCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationAdd">
+							<xpath>Defs/GeneDef[defName="Turn_Gene_Speechless"]/exclusionTags</xpath>
+							<value>
+								<li>XYTYYY_RequireSpeechAbility</li>
+							</value>
+						</li>
+					</operations>
+				</match>
+			</li>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Races Expanded - Lycanthrope</li>
+				</mods>
+				<match Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_SpeechInability"]/displayCategory</xpath>
+							<value>
+								<displayCategory>Social</displayCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_SpeechInability"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>-100</displayOrderInCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationAdd">
+							<xpath>Defs/GeneDef[defName="VRE_SpeechInability"]/exclusionTags</xpath>
+							<value>
+								<li>XYTYYY_RequireSpeechAbility</li>
+							</value>
+						</li>
+						<li Class="PatchOperationFindMod">
+							<mods>
+								<li>Integrated Genes</li>
+							</mods>
+							<match Class="PatchOperationSequence">
+								<operations>
+									<li Class="PatchOperationAdd">
+										<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
+										<value>
+											<li>GeneDef/Turn_Gene_Speechless</li>
+										</value>
+									</li>
+									<li Class="PatchOperationReplace">
+										<xpath>Defs/GeneDef[defName="VRE_SpeechInability"]/iconPath</xpath>
+										<value>
+											<iconPath>UI/Icons/Genes/Gene_Speechless</iconPath>
+										</value>
+									</li>
+									<li Class="PatchOperationAdd">
+										<xpath>Defs/GeneDef[defName="VRE_SpeechInability"]/exclusionTags</xpath>
+										<value>
+											<li>Voice</li>
+											<li>Turn_Exclusion_Speechless</li>
+											<li>Turn_Exclusion_VREH_Speechless</li>
+											<li>Turn_Exclusion_Speechless_NaturalLeader</li>
+										</value>
+									</li>
+									<li Class="PatchOperationRemove">
+										<xpath>Defs/GeneDef[defName="VRE_SpeechInability"]/exclusionTags/li[text()='VRE_ExtremelyAggressiveAndSpeechInability']</xpath>
+									</li>
+									<li Class="PatchOperationAdd">
+										<xpath>Defs/GeneDef[defName="VRE_SpeechInability"]</xpath>
+										<value>
+											<symbolPack>
+												<prefixSymbols>
+													<li><symbol>hush</symbol></li>
+													<li><symbol>quiet</symbol></li>
+												</prefixSymbols>
+												<suffixSymbols>
+													<li><symbol>mute</symbol></li>
+												</suffixSymbols>
+											</symbolPack>
+										</value>
+									</li>
+									<li Class="PatchOperationAdd">
+										<xpath>Defs/ThoughtDef[defName="MissingTongue"]/nullifyingGenes</xpath>
+										<value>
+											<li>VRE_SpeechInability</li>
+										</value>
+									</li>
+								</operations>
+							</match>
+						</li>
+					</operations>
+				</match>
+			</li>
+		</operations>
+	</Operation>
+
+	<!-- 380 violence -->
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[defName="ViolenceDisabled"]/displayOrderInCategory</xpath>
+				<value>
+					<displayOrderInCategory>-100</displayOrderInCategory>
+				</value>
+			</li>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Races Expanded - Archon</li>
+				</mods>
+				<match Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_Maniac"]/displayCategory</xpath>
+							<value>
+								<displayCategory>Violence</displayCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_Maniac"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>22</displayOrderInCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationAdd">
+							<xpath>Defs/GeneDef[defName="ViolenceDisabled"]/exclusionTags</xpath>
+							<value>
+								<li>MeleeAttackSpeed</li>
+								<li>RangedAttackSpeed</li>
+							</value>
+						</li>
+					</operations>
+				</match>
+			</li>
+		</operations>
+	</Operation>
+
+	<!-- 379 enslavement -->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Integrated Genes</li>
+		</mods>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/GeneDef[defName="Turn_Gene_FreeSpirit"]/displayCategory</xpath>
+			<value>
+				<displayCategory>Turn_GeneCategory_Slavery</displayCategory>
+			</value>
+		</match>
+	</Operation>
+
+	<!-- 378 ranged -->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Races Expanded - Archon</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_FastShooter" or defName="VRE_SlowShooter"]/displayCategory</xpath>
+					<value>
+						<displayCategory>Violence_Ranged</displayCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_SlowShooter"]/displayOrderInCategory</xpath>
+					<value>
+						<displayOrderInCategory>10</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_FastShooter"]/displayOrderInCategory</xpath>
+					<value>
+						<displayOrderInCategory>20</displayOrderInCategory>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+	<!-- 377 melee -->
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[@Name="GeneMeleeDamageBase" or @ParentName="GeneMeleeDamageBase"]/displayCategory</xpath>
+				<value>
+					<displayCategory>Violence_Melee</displayCategory>
+				</value>
+			</li>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Races Expanded - Archon</li>
+				</mods>
+				<match Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_FastMeleeHitter" or defName="VRE_SlowMeleeHitter"]/displayCategory</xpath>
+							<value>
+								<displayCategory>Violence_Melee</displayCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_SlowMeleeHitter"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>100</displayOrderInCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_FastMeleeHitter"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>110</displayOrderInCategory>
+							</value>
+						</li>
+					</operations>
+				</match>
+			</li>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Races Expanded - Lycanthrope</li>
+				</mods>
+				<match Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_ImprovedDodge" or defName="VRE_SuperiorDodge" or defName="VRE_DodgeDisabled"]/displayCategory</xpath>
+							<value>
+								<displayCategory>Violence_Melee</displayCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_DodgeDisabled"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>200</displayOrderInCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_ImprovedDodge"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>220</displayOrderInCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="VRE_SuperiorDodge"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>221</displayOrderInCategory>
+							</value>
+						</li>
+					</operations>
+				</match>
+			</li>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Integrated Genes</li>
+				</mods>
+				<match Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="Turn_Gene_Duelist"]/displayCategory</xpath>
+							<value>
+								<displayCategory>Violence_Melee</displayCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[defName="Turn_Gene_Duelist"]/displayOrderInCategory</xpath>
+							<value>
+								<displayOrderInCategory>300</displayOrderInCategory>
 							</value>
 						</li>
 					</operations>

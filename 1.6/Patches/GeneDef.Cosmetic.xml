@@ -21,36 +21,30 @@
 
 	<Operation Class="PatchOperationFindMod">
 		<mods>
-			<li>Vanilla Races Expanded - Archon</li>
+			<li>Vanilla Races Expanded - Fungoid</li>
 		</mods>
-		<match Class="PatchOperationAdd">
-			<xpath>Defs/GeneDef[defName="VRE_FacialSpots"]</xpath>
-			<value>
-				<iconColor>(0.75, 0.75, 0.75)</iconColor>
-				<displayCategory>Cosmetic</displayCategory>
-			</value>
-		</match>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Vanilla Races Expanded - Archon</li>
-		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[defName="VRE_FacialSpots"]/biostatCpx</xpath>
-			<value>
-				<biostatCpx>0</biostatCpx>
-			</value>
-		</match>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Vanilla Races Expanded - Archon</li>
-		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[defName="VRE_Leatherskin"]/displayCategory</xpath>
-			<value>
-				<displayCategory>Health_Skin</displayCategory>
-			</value>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VRE_FacialSpots"]</xpath>
+					<value>
+						<iconColor>(0.75, 0.75, 0.75)</iconColor>
+						<displayCategory>Cosmetic</displayCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_FacialSpots"]/biostatCpx</xpath>
+					<value>
+						<biostatCpx>0</biostatCpx>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_Leatherskin"]/displayCategory</xpath>
+					<value>
+						<displayCategory>Health_Skin</displayCategory>
+					</value>
+				</li>
+			</operations>
 		</match>
 	</Operation>
 
@@ -59,18 +53,7 @@
 			<li>Vanilla Races Expanded - Fungoid</li>
 		</mods>
 		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[defName="VRE_RotBlood"]/displayCategory</xpath>
-			<value>
-				<displayCategory>Health_Blood</displayCategory>
-			</value>
-		</match>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Vanilla Races Expanded - Fungoid</li>
-		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[defName="VRE_FungalFlesh"]/displayCategory</xpath>
+			<xpath>Defs/GeneDef[defName="VRE_RotBlood" or defName="VRE_FungalFlesh"]/displayCategory</xpath>
 			<value>
 				<displayCategory>Health_Blood</displayCategory>
 			</value>
@@ -81,57 +64,21 @@
 		<mods>
 			<li>Vanilla Races Expanded - Genie</li>
 		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[defName="VRE_BlueBlood"]/biostatCpx</xpath>
-			<value>
-				<biostatCpx>0</biostatCpx>
-			</value>
-		</match>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Vanilla Races Expanded - Genie</li>
-		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[defName="VRE_BlueBlood"]/displayCategory</xpath>
-			<value>
-				<displayCategory>Health_Blood</displayCategory>
-			</value>
-		</match>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Vanilla Races Expanded - Genie</li>
-		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[defName="VRE_Hemophiliac"]/displayCategory</xpath>
-			<value>
-				<displayCategory>Health_Blood</displayCategory>
-			</value>
-		</match>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Vanilla Races Expanded - Genie</li>
-		</mods>
-		<match Class="PatchOperationAdd">
-			<xpath>Defs/GeneDef[defName="VRE_Hemophiliac"]</xpath>
-			<value>
-				<customEffectDescriptions>
-					<li>Wounds bleed very quickly.</li>
-				</customEffectDescriptions>
-			</value>
-		</match>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Vanilla Races Expanded - Genie</li>
-		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[defName="VRE_ElongatedHead"]/biostatCpx</xpath>
-			<value>
-				<biostatCpx>0</biostatCpx>
-			</value>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_BlueBlood"]/displayCategory</xpath>
+					<value>
+						<displayCategory>Health_Blood</displayCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_BlueBlood" or defName="VRE_ElongatedHead"]/biostatCpx</xpath>
+					<value>
+						<biostatCpx>0</biostatCpx>
+					</value>
+				</li>
+			</operations>
 		</match>
 	</Operation>
 
@@ -166,18 +113,7 @@
 			<li>Vanilla Races Expanded - Lycanthrope</li>
 		</mods>
 		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[defName="VRE_CanineEars"]/biostatCpx</xpath>
-			<value>
-				<biostatCpx>0</biostatCpx>
-			</value>
-		</match>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Vanilla Races Expanded - Lycanthrope</li>
-		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[defName="VRE_CanineNose"]/biostatCpx</xpath>
+			<xpath>Defs/GeneDef[defName="VRE_CanineEars" or defName="VRE_CanineNose"]/biostatCpx</xpath>
 			<value>
 				<biostatCpx>0</biostatCpx>
 			</value>
@@ -211,83 +147,58 @@
 		<mods>
 			<li>Vanilla Races Expanded - Pigskin</li>
 		</mods>
-		<match Class="PatchOperationAdd">
-			<xpath>Defs/GeneDef[defName="VRE_CurledTail"]</xpath>
-			<value>
-				<iconColor>(0.75, 0.75, 0.75)</iconColor>
-			</value>
-		</match>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Vanilla Races Expanded - Pigskin</li>
-		</mods>
-		<match Class="PatchOperationAdd">
-			<xpath>Defs/GeneDef[defName="VRE_MouthTusks"]</xpath>
-			<value>
-				<iconColor>(0.75, 0.75, 0.75)</iconColor>
-			</value>
-		</match>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Vanilla Races Expanded - Pigskin</li>
-		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[defName="VRE_MouthTusks"]/displayCategory</xpath>
-			<value>
-    			<displayCategory>Cosmetic</displayCategory>
-			</value>
-		</match>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Vanilla Races Expanded - Pigskin</li>
-		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[defName="VRE_PigSkin"]/displayCategory</xpath>
-			<value>
-    			<displayCategory>Health_Skin</displayCategory>
-			</value>
-		</match>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Vanilla Races Expanded - Pigskin</li>
-		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[defName="VRE_PorkFlesh"]/displayCategory</xpath>
-			<value>
-    			<displayCategory>Health_Blood</displayCategory>
-			</value>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_PorkFlesh"]/displayCategory</xpath>
+					<value>
+						<displayCategory>Health_Blood</displayCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_PigSkin"]/displayCategory</xpath>
+					<value>
+						<displayCategory>Health_Skin</displayCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_MouthTusks"]/displayCategory</xpath>
+					<value>
+						<displayCategory>Cosmetic</displayCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VRE_CurledTail" or defName="VRE_MouthTusks"]</xpath>
+					<value>
+						<iconColor>(0.75, 0.75, 0.75)</iconColor>
+					</value>
+				</li>
+			</operations>
 		</match>
 	</Operation>
 
-	
 	<Operation Class="PatchOperationFindMod">
 		<mods>
 			<li>Vanilla Races Expanded - Saurid</li>
 		</mods>
-		<match Class="PatchOperationAdd">
-			<xpath>Defs/GeneDef[defName="VRESaurids_GeckoTail"]</xpath>
-			<value>
-				<biostatCpx>0</biostatCpx>
-			</value>
-		</match>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Vanilla Races Expanded - Saurid</li>
-		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[defName="VRESaurids_ScaleSkin"]/displayCategory</xpath>
-			<value>
-    			<displayCategory>Health_Skin</displayCategory>
-			</value>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRESaurids_ScaleSkin"]/displayCategory</xpath>
+					<value>
+						<displayCategory>Health_Skin</displayCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VRESaurids_GeckoTail"]</xpath>
+					<value>
+						<biostatCpx>0</biostatCpx>
+					</value>
+				</li>
+			</operations>
 		</match>
 	</Operation>
 
-	
 	<Operation Class="PatchOperationFindMod">
 		<mods>
 			<li>Vanilla Races Expanded - Starjack</li>
@@ -304,25 +215,24 @@
 		<mods>
 			<li>Vanilla Races Expanded - Waster</li>
 		</mods>
-		<match Class="PatchOperationAdd">
-			<xpath>Defs/GeneDef[defName="VRE_GauntBody"]</xpath>
-			<value>
-				<iconColor>(0.75, 0.75, 0.75)</iconColor>
-				<exclusionTags>
-					<li>BodyType</li>
-				</exclusionTags>
-			</value>
-		</match>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Vanilla Races Expanded - Waster</li>
-		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[defName="VRE_GauntBody"]/displayCategory</xpath>
-			<value>
-    			<displayCategory>Cosmetic_BodyType</displayCategory>
-			</value>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_GauntBody"]/displayCategory</xpath>
+					<value>
+						<displayCategory>Cosmetic_BodyType</displayCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VRE_GauntBody"]</xpath>
+					<value>
+						<iconColor>(0.75, 0.75, 0.75)</iconColor>
+						<exclusionTags>
+							<li>BodyType</li>
+						</exclusionTags>
+					</value>
+				</li>
+			</operations>
 		</match>
 	</Operation>
 
@@ -330,69 +240,42 @@
 		<mods>
 			<li>Vanilla Races Expanded - Insector</li>
 		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[defName="VRE_BugBlood"]/biostatCpx</xpath>
-			<value>
-				<biostatCpx>0</biostatCpx>
-			</value>
-		</match>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Vanilla Races Expanded - Insector</li>
-		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[defName="VRE_BugBlood"]/displayCategory</xpath>
-			<value>
-    			<displayCategory>Health_Blood</displayCategory>
-			</value>
-		</match>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Vanilla Races Expanded - Insector</li>
-		</mods>
-		<match Class="PatchOperationAdd">
-			<xpath>Defs/GeneDef[defName="VRE_InsectAntennae"]</xpath>
-			<value>
-				<iconColor>(0.75, 0.75, 0.75)</iconColor>
-				<exclusionTags>
-					<li>Headbone</li>
-				</exclusionTags>
-			</value>
-		</match>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Vanilla Races Expanded - Insector</li>
-		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[defName="VRE_InsectAntennae"]/displayCategory</xpath>
-			<value>
-    			<displayCategory>Cosmetic_Head_Headbone</displayCategory>
-			</value>
-		</match>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Vanilla Races Expanded - Insector</li>
-		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[defName="VRE_InsectAntennae"]/biostatCpx</xpath>
-			<value>
-				<biostatCpx>0</biostatCpx>
-			</value>
-		</match>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Vanilla Races Expanded - Insector</li>
-		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[defName="VRE_InsectFlesh"]/displayCategory</xpath>
-			<value>
-    			<displayCategory>Health_Blood</displayCategory>
-			</value>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_BugBlood" or defName="VRE_InsectFlesh"]/displayCategory</xpath>
+					<value>
+						<displayCategory>Health_Blood</displayCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_BugBlood"]/biostatCpx</xpath>
+					<value>
+						<biostatCpx>0</biostatCpx>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_InsectAntennae"]/displayCategory</xpath>
+					<value>
+    					<displayCategory>Cosmetic_Head_Headbone</displayCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_InsectAntennae"]/biostatCpx</xpath>
+					<value>
+						<biostatCpx>0</biostatCpx>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VRE_InsectAntennae"]/</xpath>
+					<value>
+						<iconColor>(0.75, 0.75, 0.75)</iconColor>
+						<exclusionTags>
+							<li>Headbone</li>
+						</exclusionTags>
+					</value>
+				</li>
+			</operations>
 		</match>
 	</Operation>
 

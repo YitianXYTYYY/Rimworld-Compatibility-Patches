@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Patch>
+<Patch>	<!-- Genepack Priority -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/GeneCategoryDef[defName="Mood"]/displayPriorityInXenotype</xpath>
+		<value>
+			<displayPriorityInXenotype>390</displayPriorityInXenotype>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/GeneCategoryDef[defName="Violence"]/displayPriorityInXenotype</xpath>
+		<value>
+			<displayPriorityInXenotype>380</displayPriorityInXenotype>
+		</value>
+	</Operation>
+
+	<!-- Modded Categories -->
 	<Operation Class="PatchOperationFindMod">
 		<mods>
 			<li>Vanilla Quests Expanded - Ancients</li>
@@ -46,26 +60,14 @@
 	</Operation>
 	<Operation Class="PatchOperationFindMod">
 		<mods>
-			<li>Vanilla Races Expanded - Genie</li>
+			<li>Integrated Genes</li>
 		</mods>
-		<match Class="PatchOperationAdd">
-			<xpath>Defs/GeneCategoryDef[defName="VRE_Curiosity"]</xpath>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/GeneCategoryDef[defName="Turn_GeneCategory_Slavery"]/displayPriorityInXenotype</xpath>
 			<value>
-				<displayPriorityInGenepack>199</displayPriorityInGenepack>
+				<displayPriorityInXenotype>379</displayPriorityInXenotype>
 			</value>
 		</match>
 	</Operation>
 
-	
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Vanilla Races Expanded - Archon</li>
-		</mods>
-		<match Class="PatchOperationAdd">
-			<xpath>Defs/GeneCategoryDef[defName="VRE_Curiosity"]</xpath>
-			<value>
-				<displayPriorityInGenepack>199</displayPriorityInGenepack>
-			</value>
-		</match>
-	</Operation>
 </Patch>
