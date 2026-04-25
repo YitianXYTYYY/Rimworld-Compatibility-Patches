@@ -27,6 +27,17 @@
 	</Operation>
 	<Operation Class="PatchOperationFindMod">
 		<mods>
+			<li>Vanilla Races Expanded - Hussar</li>
+		</mods>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/GeneCategoryDef[defName="VREH_WeaponAptitudes"]/displayPriorityInXenotype</xpath>
+			<value>
+				<displayPriorityInXenotype>900</displayPriorityInXenotype>
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
 			<li>Vanilla Races Expanded - Lycanthrope</li>
 		</mods>
 		<match Class="PatchOperationReplace">

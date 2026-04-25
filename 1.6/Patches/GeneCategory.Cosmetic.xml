@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/GeneCategoryDef[defName="Cosmetic" or defName="Cosmetic_Skin"]/displayPriorityInGenepack</xpath>
+	</Operation>
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/GeneCategoryDef[defName="Cosmetic"]/displayPriorityInXenotype</xpath>
 		<value>
@@ -39,12 +42,6 @@
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/GeneDef[@Name="GeneJawBase" or @ParentName="GeneJawBase"]/displayCategory</xpath>
-		<value>
-			<displayCategory>Cosmetic_Head_Jaw</displayCategory>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/GeneDef[@Name="GeneHeadboneBase" or @ParentName="GeneHeadboneBase"]/displayCategory</xpath>
 		<value>
 			<displayCategory>Cosmetic_Head_Headbone</displayCategory>
@@ -59,7 +56,7 @@
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/GeneDef[@Name="GeneEyeColor" or @ParentName="GeneEyeColor"]/displayCategory</xpath>
 		<value>
-			<displayCategory>Cosmetic_Head_Eye</displayCategory>
+			<displayCategory>Cosmetic_Head_EyeColor</displayCategory>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
@@ -92,33 +89,46 @@
 		<mods>
 			<li>AFU Cosmetic Gene Expanded</li>
 		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[@Name="AFU_HeadboneGeneBase" or @ParentName="AFU_HeadboneGeneBase"]/displayCategory</xpath>
-			<value>
-				<displayCategory>Cosmetic_Head_Headbone</displayCategory>
-			</value>
-		</match>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>AFU Cosmetic Gene Expanded</li>
-		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[@Name="AFU_HeadAttachmentGeneBase" or @ParentName="AFU_HeadAttachmentGeneBase"]/displayCategory</xpath>
-			<value>
-				<displayCategory>Cosmetic_Head_Ear</displayCategory>
-			</value>
-		</match>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>AFU Cosmetic Gene Expanded</li>
-		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[@Name="AFU_BodyAttachmentGeneBase" or @ParentName="AFU_BodyAttachmentGeneBase"]/displayCategory</xpath>
-			<value>
-				<displayCategory>Cosmetic_Body_Tail</displayCategory>
-			</value>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[@Name="AFU_HeadboneGeneBase"]/displayCategory</xpath>
+					<value>
+						<displayCategory>Cosmetic_Head_Headbone</displayCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[@Name="AFU_HeadAttachmentGeneBase"]/displayCategory</xpath>
+					<value>
+						<displayCategory>Cosmetic_Head_Ear</displayCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[@Name="AFU_BodyAttachmentGeneBase"]/displayCategory</xpath>
+					<value>
+						<displayCategory>Cosmetic_Body_Tail</displayCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Big and Small - Framework</li>
+					</mods>
+					<match Class="PatchOperationAddModExtension">
+						<xpath>Defs/GeneDef[@Name="AFU_BodyAttachmentGeneBase"]</xpath>
+						<value>
+							<li Class="BigAndSmall.PawnExtension">
+								<thingDefSwap>BS_HumanoidWithTail</thingDefSwap>
+							</li>
+						</value>
+					</match>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[@ParentName="AFU_HeadboneGeneBase" or @ParentName="AFU_HeadAttachmentGeneBase" or @ParentName="AFU_BodyAttachmentGeneBase"]/displayOrderInCategory</xpath>
+					<value>
+						<displayOrderInCategory>-100</displayOrderInCategory>
+					</value>
+				</li>
+			</operations>
 		</match>
 	</Operation>
 	<Operation Class="PatchOperationFindMod">
@@ -126,9 +136,9 @@
 			<li>[BT] EyeGenes2 | Base - [NL] Facial Animation |</li>
 		</mods>
 		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[@Name="EyeGenes2Cosmetical" or @ParentName="EyeGenes2Cosmetical"]/displayCategory</xpath>
+			<xpath>Defs/GeneDef[@Name="EyeGenes2Cosmetical"]/displayCategory</xpath>
 			<value>
-				<displayCategory>Cosmetic_Head_Eye</displayCategory>
+				<displayCategory>Cosmetic_Head_EyeColor</displayCategory>
 			</value>
 		</match>
 	</Operation>
@@ -137,7 +147,7 @@
 			<li>ReSplice: Core</li>
 		</mods>
 		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[@Name="RS_GeneTentacleBase" or @ParentName="RS_GeneTentacleBase"]/displayCategory</xpath>
+			<xpath>Defs/GeneDef[@Name="RS_GeneTentacleBase"]/displayCategory</xpath>
 			<value>
 				<displayCategory>Cosmetic_Body_ArmHand</displayCategory>
 			</value>
@@ -148,7 +158,7 @@
 			<li>Vanilla Races Expanded - Lycanthrope</li>
 		</mods>
 		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[@Name="VRE_BodyBaseLycans" or @ParentName="VRE_BodyBaseLycans"]/displayCategory</xpath>
+			<xpath>Defs/GeneDef[@Name="VRE_BodyBaseLycans"]/displayCategory</xpath>
 			<value>
 				<displayCategory>Health_Skin</displayCategory>
 			</value>
@@ -159,7 +169,7 @@
 			<li>Vanilla Races Expanded - Phytokin</li>
 		</mods>
 		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[@Name="VRE_BodyBase" or @ParentName="VRE_BodyBase"]/displayCategory</xpath>
+			<xpath>Defs/GeneDef[@Name="VRE_BodyBase"]/displayCategory</xpath>
 			<value>
 				<displayCategory>Health_Skin</displayCategory>
 			</value>
@@ -170,7 +180,7 @@
 			<li>Vanilla Races Expanded - Insector</li>
 		</mods>
 		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[@Name="VRE_BodyBaseInsect" or @ParentName="VRE_BodyBaseInsect"]/displayCategory</xpath>
+			<xpath>Defs/GeneDef[@Name="VRE_BodyBaseInsect"]/displayCategory</xpath>
 			<value>
 				<displayCategory>Health_Skin</displayCategory>
 			</value>

@@ -127,8 +127,8 @@
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
-		<defName>Cosmetic_Head_Eye</defName>
-		<label>cosmetic - eye</label>
+		<defName>Cosmetic_Head_EyeColor</defName>
+		<label>cosmetic - eye color</label>
 		<!-- Cosmetic -100 -->
 		<displayPriorityInXenotype>-106</displayPriorityInXenotype>
 	</GeneCategoryDef>

@@ -72,6 +72,9 @@
 						<displayCategory>Health_Blood</displayCategory>
 					</value>
 				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/GeneDef[defName="VRE_ElongatedHead"]/displayCategory</xpath>
+				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/GeneDef[defName="VRE_BlueBlood" or defName="VRE_ElongatedHead"]/biostatCpx</xpath>
 					<value>
@@ -159,6 +162,12 @@
 					<xpath>Defs/GeneDef[defName="VRE_PigSkin"]/displayCategory</xpath>
 					<value>
 						<displayCategory>Health_Skin</displayCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_MouthTusks"]/displayCategory</xpath>
+					<value>
+						<displayCategory>Cosmetic</displayCategory>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
@@ -267,12 +276,15 @@
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
-					<xpath>Defs/GeneDef[defName="VRE_InsectAntennae"]/</xpath>
+					<xpath>Defs/GeneDef[defName="VRE_InsectAntennae"]</xpath>
 					<value>
 						<iconColor>(0.75, 0.75, 0.75)</iconColor>
-						<exclusionTags>
-							<li>Headbone</li>
-						</exclusionTags>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VRE_InsectAntennae"]/exclusionTags</xpath>
+					<value>
+						<li>Headbone</li>
 					</value>
 				</li>
 			</operations>
