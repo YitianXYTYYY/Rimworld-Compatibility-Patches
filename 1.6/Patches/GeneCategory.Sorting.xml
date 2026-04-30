@@ -49,6 +49,17 @@
 	</Operation>
 	<Operation Class="PatchOperationFindMod">
 		<mods>
+			<li>Vanilla Races Expanded - Waster</li>
+		</mods>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/GeneCategoryDef[defName="VREW_Mutations"]/displayPriorityInXenotype</xpath>
+			<value>
+				<displayPriorityInXenotype>800</displayPriorityInXenotype>
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
 			<li>ReSplice: Core</li>
 		</mods>
 		<match Class="PatchOperationReplace">

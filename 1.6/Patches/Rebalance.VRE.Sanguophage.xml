@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>	
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Races Expanded - Sanguophage</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_ExtremeHemogenDrain"]/biostatMet</xpath>
+					<value>
+						<biostatMet>9</biostatMet>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_Talons"]/capMods</xpath>
+					<value>
+						<capMods>
+							<li>
+								<capacity>Manipulation</capacity>
+								<offset>-0.1</offset>
+							</li>
+						</capMods>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>

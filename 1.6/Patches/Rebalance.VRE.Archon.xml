@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>	
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Races Expanded - Archon</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_PsychicAbility_MoreExtreme"]/statOffsets/PsychicSensitivity</xpath>
+					<value>
+						<PsychicSensitivity>0.8</PsychicSensitivity>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_HighEntropyCapacity"]/statFactors</xpath>
+					<value>		
+						<statFactors>
+							<PsychicEntropyMax>1.2</PsychicEntropyMax>
+						</statFactors>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_SlowMeleeHitter"]/statFactors</xpath>
+					<value>
+						<statFactors>
+							<MeleeCooldownFactor>1.2</MeleeCooldownFactor>
+						</statFactors>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_SlowShooter"]/statFactors</xpath>
+					<value>
+						<statFactors>
+							<RangedCooldownFactor>1.2</RangedCooldownFactor>
+						</statFactors>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_Leatherskin"]/statOffsets</xpath>
+					<value>		
+						<statOffsets>
+							<ArmorRating_Sharp>0.25</ArmorRating_Sharp>
+							<ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+						</statOffsets>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>

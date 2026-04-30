@@ -5,11 +5,7 @@
 		<defName>CherryPicker_XYTYYY</defName>
 		<label>uncheck this to enable basic removals</label>
 		<defs>
-			<li>GeneDef/AFU_BA_NineTailedFox</li>
-			<li>GeneDef/Turn_Gene_NaturalLeader</li>
-			<li>GeneDef/Turn_Gene_VariablePhenotype</li>
-			<li>GeneDef/Turn_Gene_ArchotechAttunement</li>
-			<li>GeneDef/Turn_Gene_LatentPsychic</li>
+			<li>ThingDef/Gun_AntiArmor_Rocket</li>
 		</defs>
 	</CherryPicker.DefList>
 

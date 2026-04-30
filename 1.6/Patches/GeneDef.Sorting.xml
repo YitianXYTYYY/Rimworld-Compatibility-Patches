@@ -27,29 +27,135 @@
 		<match Class="PatchOperationSequence">
 			<operations>
 				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="VQEA_Herculean" or
-						defName="VQEA_Prowess" or
-						defName="VQEA_BlurRunner" or
-						defName="VQEA_Woundless" or
-						defName="VQEA_Marksman" or
-						defName="VQEA_PerfectVision" or
-						defName="VQEA_PlasteelSkin" or
-						defName="VQEA_PlasteelClaws" or
-						defName="VQEA_Genius" or
-						defName="VQEA_Levitation" or
-						defName="VQEA_Serene" or
-						defName="VQEA_PassiveMeditation" or
-						defName="VQEA_Bulwark" or
-						defName="VQEA_Enormous" or
-						defName="VQEA_SubstanceImpervious" or
-						defName="VQEA_InfernoSpew" or
-						defName="VQEA_HellsphereBlast" or
-						defName="VQEA_Invisibility" or
-						defName="VQEA_SelfRepairingTissue" or
-						defName="VQEA_Electromagnetized" or
-						defName="VQEA_MatterPhasing"]/displayCategory</xpath>
+					<xpath>Defs/GeneDef[defName="VQEA_Herculean" or defName="VQEA_Prowess" or defName="VQEA_BlurRunner" or defName="VQEA_Woundless" or defName="VQEA_Marksman" or defName="VQEA_PerfectVision" or defName="VQEA_PlasteelSkin" or defName="VQEA_PlasteelClaws" or defName="VQEA_Genius" or defName="VQEA_Levitation" or defName="VQEA_Serene" or defName="VQEA_PassiveMeditation" or defName="VQEA_Bulwark" or defName="VQEA_Enormous" or defName="VQEA_SubstanceImpervious" or defName="VQEA_InfernoSpew" or defName="VQEA_HellsphereBlast" or defName="VQEA_Invisibility" or defName="VQEA_SelfRepairingTissue" or defName="VQEA_Electromagnetized" or defName="VQEA_MatterPhasing"]/displayCategory</xpath>
 					<value>
 						<displayCategory>Archite_Ancient</displayCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_Electromagnetized"]</xpath>
+					<value>
+						<displayOrderInCategory>-525</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_HellsphereBlast"]</xpath>
+					<value>
+						<displayOrderInCategory>-524</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_InfernoSpew"]</xpath>
+					<value>
+						<displayOrderInCategory>-523</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_Invisibility"]</xpath>
+					<value>
+						<displayOrderInCategory>-522</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_Levitation"]</xpath>
+					<value>
+						<displayOrderInCategory>-521</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_MatterPhasing"]</xpath>
+					<value>
+						<displayOrderInCategory>-520</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_SelfRepairingTissue"]</xpath>
+					<value>
+						<displayOrderInCategory>-501</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_Woundless"]</xpath>
+					<value>
+						<displayOrderInCategory>-500</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_PerfectVision"]</xpath>
+					<value>
+						<displayOrderInCategory>-496</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_PassiveMeditation"]</xpath>
+					<value>
+						<displayOrderInCategory>-489</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_BlurRunner"]</xpath>
+					<value>
+						<displayOrderInCategory>-470</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_Bulwark"]</xpath>
+					<value>
+						<displayOrderInCategory>-410</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_Serene"]</xpath>
+					<value>
+						<displayOrderInCategory>-380</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_Marksman"]</xpath>
+					<value>
+						<displayOrderInCategory>-378</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_Herculean"]</xpath>
+					<value>
+						<displayOrderInCategory>-377</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_Prowess"]</xpath>
+					<value>
+						<displayOrderInCategory>-376</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_PlasteelSkin"]</xpath>
+					<value>
+						<displayOrderInCategory>-299</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_PlasteelClaws"]</xpath>
+					<value>
+						<displayOrderInCategory>-298</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_Enormous"]</xpath>
+					<value>
+						<displayOrderInCategory>-270</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_Genius"]</xpath>
+					<value>
+						<displayOrderInCategory>-201</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_SubstanceImpervious"]</xpath>
+					<value>
+						<displayOrderInCategory>0</displayOrderInCategory>
 					</value>
 				</li>
 			</operations>
@@ -333,6 +439,47 @@
 				</li>
 			</operations>
 		</match>
+	</Operation>
+
+	<!-- 520 abilities -->
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/GeneDef[defName="AnimalWarcall"]</xpath>
+				<value>
+					<displayOrderInCategory>100</displayOrderInCategory>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/GeneDef[defName="AcidSpray"]</xpath>
+				<value>
+					<displayOrderInCategory>200</displayOrderInCategory>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/GeneDef[defName="FireSpew"]</xpath>
+				<value>
+					<displayOrderInCategory>210</displayOrderInCategory>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/GeneDef[defName="FoamSpray"]</xpath>
+				<value>
+					<displayOrderInCategory>220</displayOrderInCategory>
+				</value>
+			</li>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Races Expanded - Lycanthrope</li>
+				</mods>
+				<match Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VRE_WarHowl"]</xpath>
+					<value>
+						<displayOrderInCategory>290</displayOrderInCategory>
+					</value>
+				</match>
+			</li>
+		</operations>
 	</Operation>
 
 	<!-- 510 hemogen -->
@@ -817,11 +964,33 @@
 					<mods>
 						<li>Vanilla Races Expanded - Archon</li>
 					</mods>
-					<match Class="PatchOperationReplace">
-						<xpath>Defs/GeneDef[defName="VRE_ExtremeMeditation" or defName="VRE_SwiftMeditation" or defName="VRE_SlowMeditation"]/displayCategory</xpath>
-						<value>
-							<displayCategory>Psychic_Meditation</displayCategory>
-						</value>
+					<match Class="PatchOperationSequence">
+						<operations>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/GeneDef[defName="VRE_ExtremeMeditation" or defName="VRE_SwiftMeditation" or defName="VRE_SlowMeditation"]/displayCategory</xpath>
+								<value>
+									<displayCategory>Psychic_Meditation</displayCategory>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/GeneDef[defName="VRE_SlowMeditation"]/displayOrderInCategory</xpath>
+								<value>
+									<displayOrderInCategory>0</displayOrderInCategory>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/GeneDef[defName="VRE_SwiftMeditation"]/displayOrderInCategory</xpath>
+								<value>
+									<displayOrderInCategory>10</displayOrderInCategory>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/GeneDef[defName="VRE_ExtremeMeditation"]/displayOrderInCategory</xpath>
+								<value>
+									<displayOrderInCategory>20</displayOrderInCategory>
+								</value>
+							</li>
+						</operations>
 					</match>
 				</li>
 			</operations>

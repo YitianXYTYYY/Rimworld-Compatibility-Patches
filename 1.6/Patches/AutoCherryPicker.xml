@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>AFU Cosmetic Gene Expanded</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
+			<value>
+				<li>GeneDef/AFU_BA_NineTailedFox</li>
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Big and Small - Framework</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
+			<value>
+				<li>GeneDef/BS_FA_Keep_Brows</li>
+				<li>GeneDef/BS_FA_Keep_Lid</li>
+				<li>GeneDef/BS_FA_Keep_LidBrow</li>
+				<li>GeneDef/BS_FA_Keep_Eyes</li>
+				<li>GeneDef/BS_FacialAnimDisabled</li>
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Integrated Genes</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
+			<value>
+				<li>GeneDef/Turn_Gene_ArchotechAttunement</li>
+				<li>GeneDef/Turn_Gene_NaturalLeader</li>
+				<li>GeneDef/Turn_Gene_LatentPsychic</li>
+				<li>GeneDef/Turn_Gene_VariablePhenotype</li>
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Melee Animation</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
+			<value>
+				<li>ThingDef/AM_Weebstick</li>
+				<li>ThingDef/AM_LassoCloth</li>
+				<li>ThingDef/AM_LassoDevilstrand</li>
+				<li>ThingDef/AM_LassoHyperwave</li>
+			</value>
+		</match>
+	</Operation>
+</Patch>

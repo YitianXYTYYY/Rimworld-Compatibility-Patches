@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>	
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Integrated Genes</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<!-- 500 health -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="Turn_Gene_FleshbeastMutating"]/biostatCpx</xpath>
+					<value>
+						<biostatCpx>2</biostatCpx>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="Turn_Gene_FleshbeastBurster"]/biostatCpx</xpath>
+					<value>
+						<biostatCpx>3</biostatCpx>
+					</value>
+				</li>
+				<!-- 490 psychic -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="Turn_Gene_SlowNeuralHeat"]/statFactors</xpath>
+					<value>
+						<statFactors>
+							<PsychicEntropyRecoveryRate>0.8</PsychicEntropyRecoveryRate>
+						</statFactors>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/GeneDef[defName="Turn_Gene_FastNeuralHeat" or defName="Turn_Gene_VeryFastNeuralHeat"]/statFactors</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="Turn_Gene_FastNeuralHeat"]</xpath>
+					<value>
+						<statOffsets>
+							<PsychicEntropyRecoveryRate>0.04</PsychicEntropyRecoveryRate>
+						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="Turn_Gene_VeryFastNeuralHeat"]</xpath>
+					<value>
+						<statOffsets>
+							<PsychicEntropyRecoveryRate>0.06</PsychicEntropyRecoveryRate>
+						</statOffsets>
+					</value>
+				</li>
+				<!-- 486 ideology -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="Turn_Gene_BiosculptAccelerated"]/statOffsets</xpath>
+					<value>
+						<statOffsets>
+            				<BiosculpterOccupantSpeed>0.4</BiosculpterOccupantSpeed>
+						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="Turn_Gene_BiosculptNeed"]/statOffsets</xpath>
+					<value>
+						<statOffsets>
+            				<BiosculpterOccupantSpeed>0.2</BiosculpterOccupantSpeed>
+						</statOffsets>
+					</value>
+				</li>
+				<!-- 390 mood -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="Turn_Gene_Bliss"]/biostatCpx</xpath>
+					<value>
+						<biostatCpx>4</biostatCpx>
+					</value>
+				</li>
+				<!-- 380 violence -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="Turn_Gene_FreeSpirit"]/statFactors/RoyalFavorValue</xpath>
+					<value>
+        				<RoyalFavorValue MayRequire="Ludeon.RimWorld.Royalty">0.2</RoyalFavorValue>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="Turn_Gene_FreeSpirit"]/prisonBreakMTBFactor</xpath>
+					<value>
+        				<prisonBreakMTBFactor>0.8</prisonBreakMTBFactor>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="Turn_Gene_Duelist"]/biostatMet</xpath>
+					<value>
+						<biostatMet>-3</biostatMet>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="Turn_Gene_Duelist"]/statFactors</xpath>
+					<value>
+						<statFactors>
+							<MeleeHitChance>1.20</MeleeHitChance>
+							<MeleeDodgeChance>1.20</MeleeDodgeChance>
+						</statFactors>
+					</value>
+				</li>
+				<!-- 270 miscellaneous -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="Turn_Gene_MotivationLow"]/statFactors</xpath>
+					<value>
+						<statFactors>
+							<WorkSpeedGlobal>0.8</WorkSpeedGlobal>
+						</statFactors>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/GeneDef[defName="Turn_Gene_MotivationHigh"]/statFactors</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="Turn_Gene_MotivationHigh"]</xpath>
+					<value>
+						<statOffsets>
+							<WorkSpeedGlobal>0.2</WorkSpeedGlobal>
+						</statOffsets>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>

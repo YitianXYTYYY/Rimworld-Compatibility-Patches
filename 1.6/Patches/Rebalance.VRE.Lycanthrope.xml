@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>	
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Races Expanded - Lycanthrope</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_ImprovedDodge"]/statFactors</xpath>
+					<value>
+						<statFactors>
+							<MeleeDodgeChance>1.2</MeleeDodgeChance>
+						</statFactors>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_SuperiorDodge"]/biostatMet</xpath>
+					<value>
+						<biostatMet>-3</biostatMet>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_SuperiorDodge"]/statFactors</xpath>
+					<value>
+						<statFactors>
+							<MeleeDodgeChance>1.5</MeleeDodgeChance>
+						</statFactors>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VRE_CanineTail"]</xpath>
+					<value>
+						<biostatMet>-2</biostatMet>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_CanineTail"]/statOffsets</xpath>
+					<value>
+						<statOffsets>
+							<MoveSpeed>0.1</MoveSpeed>
+						</statOffsets>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>
