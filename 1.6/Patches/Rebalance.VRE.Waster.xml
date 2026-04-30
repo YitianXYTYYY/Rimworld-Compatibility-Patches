@@ -88,14 +88,14 @@
 								<label>moderate</label>
 								<minSeverity>0.20</minSeverity>
 								<statOffsets>
-									<MeleeDamageFactor>0.2</MeleeDamageFactor>
+									<MeleeDamageFactor>0.3</MeleeDamageFactor>
 								</statOffsets>
 							</li>
 							<li>
 								<label>extreme</label>
 								<minSeverity>0.50</minSeverity>
 								<statOffsets>
-									<MeleeDamageFactor>0.3</MeleeDamageFactor>
+									<MeleeDamageFactor>0.5</MeleeDamageFactor>
 								</statOffsets>
 							</li>
 						</stages>

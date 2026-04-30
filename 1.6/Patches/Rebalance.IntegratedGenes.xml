@@ -30,7 +30,7 @@
 					</value>
 				</li>
 				<li Class="PatchOperationRemove">
-					<xpath>Defs/GeneDef[defName="Turn_Gene_FastNeuralHeat" or defName="Turn_Gene_VeryFastNeuralHeat"]/statFactors</xpath>
+					<xpath>Defs/GeneDef[defName="Turn_Gene_FastNeuralHeat" or defName="Turn_Gene_VeryFastNeuralHeat"]/statFactors/PsychicEntropyRecoveryRate</xpath>
 				</li>
 				<li Class="PatchOperationAdd">
 					<xpath>Defs/GeneDef[defName="Turn_Gene_FastNeuralHeat"]</xpath>
@@ -101,16 +101,14 @@
 					</value>
 				</li>
 				<!-- 270 miscellaneous -->
-				<li Class="PatchOperationReplace">
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/GeneDef[defName="Turn_Gene_MotivationLow" or defName="Turn_Gene_MotivationHigh"]/statFactors/GeneralLaborSpeed</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
 					<xpath>Defs/GeneDef[defName="Turn_Gene_MotivationLow"]/statFactors</xpath>
 					<value>
-						<statFactors>
-							<WorkSpeedGlobal>0.8</WorkSpeedGlobal>
-						</statFactors>
+						<WorkSpeedGlobal>0.8</WorkSpeedGlobal>
 					</value>
-				</li>
-				<li Class="PatchOperationRemove">
-					<xpath>Defs/GeneDef[defName="Turn_Gene_MotivationHigh"]/statFactors</xpath>
 				</li>
 				<li Class="PatchOperationAdd">
 					<xpath>Defs/GeneDef[defName="Turn_Gene_MotivationHigh"]</xpath>

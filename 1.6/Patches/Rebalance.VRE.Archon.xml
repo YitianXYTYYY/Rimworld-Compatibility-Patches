@@ -14,11 +14,22 @@
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="VRE_HighEntropyCapacity"]/statFactors</xpath>
+					<xpath>Defs/GeneDef[defName="VRE_HighEntropyCapacity" or defName="VRE_ExtremeEntropyCapacity"]/statFactors/PsychicEntropyMax</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VRE_HighEntropyCapacity"]</xpath>
 					<value>		
-						<statFactors>
-							<PsychicEntropyMax>1.2</PsychicEntropyMax>
-						</statFactors>
+						<statOffsets>
+							<PsychicEntropyMax>10</PsychicEntropyMax>
+						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VRE_ExtremeEntropyCapacity"]</xpath>
+					<value>		
+						<statOffsets>
+							<PsychicEntropyMax>20</PsychicEntropyMax>
+						</statOffsets>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
