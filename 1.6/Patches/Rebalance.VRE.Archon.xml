@@ -13,7 +13,7 @@
 						<PsychicSensitivity>0.8</PsychicSensitivity>
 					</value>
 				</li>
-				<li Class="PatchOperationReplace">
+				<li Class="PatchOperationRemove">
 					<xpath>Defs/GeneDef[defName="VRE_HighEntropyCapacity" or defName="VRE_ExtremeEntropyCapacity"]/statFactors/PsychicEntropyMax</xpath>
 				</li>
 				<li Class="PatchOperationAdd">

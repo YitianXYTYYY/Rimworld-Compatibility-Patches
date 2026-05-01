@@ -51,5 +51,6 @@
 		<li>vanillaracesexpanded.starjack</li>
 		<li>vanillaracesexpanded.waster</li>
 		<li>vanillaracesexpanded.insector</li>
+		<li>Wara.toomanymods</li>
 	</loadAfter>
 </ModMetaData>

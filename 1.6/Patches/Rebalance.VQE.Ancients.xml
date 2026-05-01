@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>	
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Quests Expanded - Ancients</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/GeneDef[defName="VQEA_Herculean"]/statFactors/MeleeDamageFactor</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_Herculean"]</xpath>
+					<value>		
+						<statOffsets>
+							<MeleeDamageFactor>2</MeleeDamageFactor>
+						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/GeneDef[defName="VQEA_Prowess"]/statFactors/VQEA_Prowess</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_Prowess"]</xpath>
+					<value>
+						<statOffsets>
+							<VQEA_Prowess>2</VQEA_Prowess>
+						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/GeneDef[defName="VQEA_BlurRunner"]/statFactors/MoveSpeed</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_BlurRunner"]</xpath>
+					<value>
+						<capMods>
+							<li>
+								<capacity>Moving</capacity>
+								<offset>0.2</offset>
+							</li>
+						</capMods>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/GeneDef[defName="VQEA_Woundless"]/statFactors/InjuryHealingFactor</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_Woundless"]</xpath>
+					<value>
+						<statOffsets>
+							<InjuryHealingFactor>7</InjuryHealingFactor>
+						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VQEA_Marksman"]/statFactors/RangedCooldownFactor</xpath>
+					<value>
+						<RangedCooldownFactor>0.8</RangedCooldownFactor>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/GeneDef[defName="VQEA_PerfectVision"]/exclusionTags/li[text()="ShootingAccuracy"]</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_PerfectVision"]/exclusionTags</xpath>
+					<value>
+						<li>VQEA_PerfectVision</li>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VQEA_PerfectVision"]/statFactors</xpath>
+					<value>
+						<RangedCooldownFactor>0.8</RangedCooldownFactor>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_PerfectVision"]/exclusionTags</xpath>
+					<value>
+						<li>VQEA_PerfectVision</li>
+					</value>
+				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Integrated Genes</li>
+					</mods>
+					<match Class="PatchOperationConditional">
+						<success>Always</success>
+						<xpath>/Defs/GeneDef[defName = "Turn_Gene_Blindness"]/exclusionTags</xpath>
+						<nomatch Class="PatchOperationAdd">
+							<xpath>/Defs/GeneDef[defName = "Turn_Gene_Blindness"]</xpath>
+							<value>
+								<exclusionTags>
+									<li>VQEA_PerfectVision</li>
+								</exclusionTags>
+							</value>
+						</nomatch>
+						<match Class="PatchOperationAdd">
+							<xpath>/Defs/GeneDef[defName = "Turn_Gene_Blindness"]/exclusionTags</xpath>
+							<value>
+								<li>VQEA_PerfectVision</li>
+							</value>
+						</match>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional">
+					<success>Always</success>
+					<xpath>/Defs/GeneDef[defName = "Nearsighted"]/exclusionTags</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/GeneDef[defName = "Nearsighted"]</xpath>
+						<value>
+							<exclusionTags>
+								<li>VQEA_PerfectVision</li>
+							</exclusionTags>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/GeneDef[defName = "Nearsighted"]/exclusionTags</xpath>
+						<value>
+							<li>VQEA_PerfectVision</li>
+						</value>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional">
+					<success>Always</success>
+					<xpath>/Defs/GeneDef[defName = "DarkVision"]/exclusionTags</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/GeneDef[defName = "DarkVision"]</xpath>
+						<value>
+							<exclusionTags>
+								<li>VQEA_PerfectVision</li>
+							</exclusionTags>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/GeneDef[defName = "DarkVision"]/exclusionTags</xpath>
+						<value>
+							<li>VQEA_PerfectVision</li>
+						</value>
+					</match>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/GeneDef[defName="VQEA_PlasteelSkin"]/customEffectDescriptions</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/GeneDef[defName="VQEA_PlasteelSkin"]/modExtensions/li[@Class="VEF.Genes.GeneExtension"]</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_PerfectVision"]</xpath>
+					<value>
+						<statOffsets>
+							<ArmorRating_Sharp>0.50</ArmorRating_Sharp>
+							<ArmorRating_Blunt>0.40</ArmorRating_Blunt>
+							<ArmorRating_Heat>1.60</ArmorRating_Heat>
+						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/GeneDef[defName="VQEA_Genius"]/statFactors/VEF_GrowthPointMultiplier</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VQEA_Genius"]/statOffsets</xpath>
+					<value>
+						<VEF_GrowthPointMultiplier>2</VEF_GrowthPointMultiplier>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>

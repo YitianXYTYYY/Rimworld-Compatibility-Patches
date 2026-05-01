@@ -5,7 +5,7 @@
 		<xpath>Defs/GeneDef[defName="WoundHealing_Fast" or defName="WoundHealing_SuperFast"]/statFactors/InjuryHealingFactor</xpath>
 	</Operation>
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/GeneDef[defName="WoundHealing_Fast"]/statOffsets</xpath>
+		<xpath>Defs/GeneDef[defName="WoundHealing_Fast"]</xpath>
 		<value>
 			<statOffsets>
 				<InjuryHealingFactor>1</InjuryHealingFactor>
@@ -13,7 +13,7 @@
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/GeneDef[defName="WoundHealing_SuperFast"]/statOffsets</xpath>
+		<xpath>Defs/GeneDef[defName="WoundHealing_SuperFast"]</xpath>
 		<value>
 			<statOffsets>
 				<InjuryHealingFactor>3</InjuryHealingFactor>
@@ -25,7 +25,7 @@
 		<xpath>Defs/GeneDef[defName="MeleeDamage_Strong"]/statFactors/MeleeDamageFactor</xpath>
 	</Operation>
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/GeneDef[defName="MeleeDamage_Strong"]/statOffsets</xpath>
+		<xpath>Defs/GeneDef[defName="MeleeDamage_Strong"]</xpath>
 		<value>
 			<statOffsets>
 				<MeleeDamageFactor>0.5</MeleeDamageFactor>

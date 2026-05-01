@@ -7,12 +7,36 @@
 		</mods>
 		<match Class="PatchOperationSequence">
 			<operations>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="VRE_ImprovedDodge"]/statFactors</xpath>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/GeneDef[defName="VRE_SuperiorDarkVision"]/conditionalStatAffecters/li[@Class="VEF.Genes.ConditionalStatAffecter_Darkness"]/statFactors</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VRE_SuperiorDarkVision"]/conditionalStatAffecters/li[@Class="VEF.Genes.ConditionalStatAffecter_Darkness"]</xpath>
 					<value>
-						<statFactors>
-							<MeleeDodgeChance>1.2</MeleeDodgeChance>
-						</statFactors>
+						<statOffsets>
+							<WorkSpeedGlobal>0.1</WorkSpeedGlobal>
+							<MoveSpeed>0.2</MoveSpeed>
+							<ShootingAccuracyPawn>5</ShootingAccuracyPawn>
+							<MeleeHitChance>5</MeleeHitChance>
+							<MeleeDodgeChance>10</MeleeDodgeChance>
+						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/GeneDef[defName="VRE_ImprovedDodge" or defName="VRE_SuperiorDodge"]/statFactors/MeleeDodgeChance</xpath>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_ImprovedDodge"]/biostatMet</xpath>
+					<value>
+						<biostatMet>-2</biostatMet>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VRE_ImprovedDodge"]</xpath>
+					<value>
+						<statOffsets>
+							<MeleeDodgeChance>10</MeleeDodgeChance>
+						</statOffsets>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
@@ -21,26 +45,27 @@
 						<biostatMet>-3</biostatMet>
 					</value>
 				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="VRE_SuperiorDodge"]/statFactors</xpath>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VRE_SuperiorDodge"]</xpath>
 					<value>
-						<statFactors>
-							<MeleeDodgeChance>1.5</MeleeDodgeChance>
-						</statFactors>
+						<statOffsets>
+							<MeleeDodgeChance>15</MeleeDodgeChance>
+						</statOffsets>
 					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/GeneDef[defName="VRE_CanineTail"]/statOffsets/MoveSpeed</xpath>
 				</li>
 				<li Class="PatchOperationAdd">
 					<xpath>Defs/GeneDef[defName="VRE_CanineTail"]</xpath>
 					<value>
-						<biostatMet>-2</biostatMet>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="VRE_CanineTail"]/statOffsets</xpath>
-					<value>
-						<statOffsets>
-							<MoveSpeed>0.1</MoveSpeed>
-						</statOffsets>
+						<biostatMet>-1</biostatMet>
+						<capMods>
+							<li>
+								<capacity>Moving</capacity>
+								<offset>0.05</offset>
+							</li>
+						</capMods>
 					</value>
 				</li>
 			</operations>

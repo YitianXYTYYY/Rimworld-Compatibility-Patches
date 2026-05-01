@@ -32,19 +32,31 @@
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/GeneDef[defName="Turn_Gene_FastNeuralHeat" or defName="Turn_Gene_VeryFastNeuralHeat"]/statFactors/PsychicEntropyRecoveryRate</xpath>
 				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="Turn_Gene_FastNeuralHeat"]/biostatMet</xpath>
+					<value>
+						<biostatMet>-1</biostatMet>
+					</value>
+				</li>
 				<li Class="PatchOperationAdd">
 					<xpath>Defs/GeneDef[defName="Turn_Gene_FastNeuralHeat"]</xpath>
 					<value>
 						<statOffsets>
-							<PsychicEntropyRecoveryRate>0.04</PsychicEntropyRecoveryRate>
+							<PsychicEntropyRecoveryRate>0.06</PsychicEntropyRecoveryRate>
 						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="Turn_Gene_VeryFastNeuralHeat"]/biostatMet</xpath>
+					<value>
+						<biostatMet>-5</biostatMet>
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
 					<xpath>Defs/GeneDef[defName="Turn_Gene_VeryFastNeuralHeat"]</xpath>
 					<value>
 						<statOffsets>
-							<PsychicEntropyRecoveryRate>0.06</PsychicEntropyRecoveryRate>
+							<PsychicEntropyRecoveryRate>0.36</PsychicEntropyRecoveryRate>
 						</statOffsets>
 					</value>
 				</li>
@@ -91,14 +103,33 @@
 						<biostatMet>-3</biostatMet>
 					</value>
 				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="Turn_Gene_Duelist"]/statFactors</xpath>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/GeneDef[defName="Turn_Gene_Duelist"]/statFactors/MeleeDodgeChance</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/GeneDef[defName="Turn_Gene_Duelist"]/statFactors/MeleeHitChance</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="Turn_Gene_Duelist"]</xpath>
 					<value>
-						<statFactors>
-							<MeleeHitChance>1.20</MeleeHitChance>
-							<MeleeDodgeChance>1.20</MeleeDodgeChance>
-						</statFactors>
+						<statOffsets>
+							<MeleeHitChance>5</MeleeHitChance>
+							<MeleeDodgeChance>10</MeleeDodgeChance>
+						</statOffsets>
 					</value>
+				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Vanilla Quests Expanded - Ancients</li>
+					</mods>
+					<match Class="PatchOperationReplace">
+						<xpath>Defs/GeneDef[defName="Turn_Gene_Duelist"]/statOffsets</xpath>
+						<value>
+							<statOffsets>
+								<VQEA_Prowess>0.2</VQEA_Prowess>
+							</statOffsets>
+						</value>
+					</match>
 				</li>
 				<!-- 270 miscellaneous -->
 				<li Class="PatchOperationRemove">

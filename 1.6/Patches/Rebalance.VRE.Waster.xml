@@ -88,14 +88,14 @@
 								<label>moderate</label>
 								<minSeverity>0.20</minSeverity>
 								<statOffsets>
-									<MeleeDamageFactor>0.3</MeleeDamageFactor>
+									<MeleeDamageFactor>0.2</MeleeDamageFactor>
 								</statOffsets>
 							</li>
 							<li>
 								<label>extreme</label>
 								<minSeverity>0.50</minSeverity>
 								<statOffsets>
-									<MeleeDamageFactor>0.5</MeleeDamageFactor>
+									<MeleeDamageFactor>0.3</MeleeDamageFactor>
 								</statOffsets>
 							</li>
 						</stages>
@@ -117,12 +117,12 @@
 							<li>
 								<label>moderate</label>
 								<minSeverity>0.20</minSeverity>
-								<hungerRateFactorOffset>-0.3</hungerRateFactorOffset>
+								<hungerRateFactorOffset>-0.2</hungerRateFactorOffset>
 							</li>
 							<li>
 								<label>extreme</label>
 								<minSeverity>0.50</minSeverity>
-								<hungerRateFactorOffset>-0.5</hungerRateFactorOffset>
+								<hungerRateFactorOffset>-0.3</hungerRateFactorOffset>
 							</li>
 						</stages>
 					</value>
@@ -260,26 +260,23 @@
 							<li>
 								<label>minor</label>
 								<minSeverity>0.02</minSeverity>
-								<statFactors>
-									<AccuracyLong>1.1</AccuracyLong>
-									<AccuracyMedium>1.1</AccuracyMedium>
-								</statFactors>
+								<statOffsets>
+										<ShootingAccuracyPawn>1</ShootingAccuracyPawn>
+								</statOffsets>
 							</li>
 							<li>
 								<label>moderate</label>
 								<minSeverity>0.20</minSeverity>
-								<statFactors>
-									<AccuracyLong>1.2</AccuracyLong>
-									<AccuracyMedium>1.2</AccuracyMedium>
-								</statFactors>
+								<statOffsets>
+										<ShootingAccuracyPawn>3</ShootingAccuracyPawn>
+								</statOffsets>
 							</li>
 							<li>
 								<label>extreme</label>
 								<minSeverity>0.50</minSeverity>
-								<statFactors>
-									<AccuracyLong>1.3</AccuracyLong>
-									<AccuracyMedium>1.3</AccuracyMedium>
-								</statFactors>
+								<statOffsets>
+										<ShootingAccuracyPawn>6</ShootingAccuracyPawn>
+								</statOffsets>
 							</li>
 						</stages>
 					</value>

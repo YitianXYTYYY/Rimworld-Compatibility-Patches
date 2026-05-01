@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>	
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Races Expanded - Hussar</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/GeneDef[defName="VREH_Giant"]/statFactors/VEF_BodySize_Multiplier</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VREH_Giant"]</xpath>
+					<value>
+						<statOffsets>
+							<VEF_BodySize_Multiplier>0.10</VEF_BodySize_Multiplier>
+						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Simple Weapon Aptitudes for VRE - Hussars</li>
+					</mods>
+					<match Class="PatchOperationSequence">
+						<operations>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/GeneDef[defName="SEX_RangedWeaponAptitude"]/displayOrderInCategory</xpath>
+								<value>
+									<displayOrderInCategory>-100</displayOrderInCategory>
+								</value>
+							</li>
+							<li Class="PatchOperationRemove">
+								<xpath>Defs/GeneDef[defName="SEX_RangedWeaponAptitude"]/statFactors/ShootingAccuracyPawn</xpath>
+							</li>
+							<li Class="PatchOperationAdd">
+								<xpath>Defs/GeneDef[defName="SEX_RangedWeaponAptitude"]</xpath>
+								<value>
+									<displayCategory>Violence_Ranged</displayCategory>
+									<statOffsets>
+										<ShootingAccuracyPawn>10</ShootingAccuracyPawn>
+									</statOffsets>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/GeneDef[defName="SEX_MeleeWeaponAptitude"]/displayOrderInCategory</xpath>
+								<value>
+									<displayOrderInCategory>-100</displayOrderInCategory>
+								</value>
+							</li>
+							<li Class="PatchOperationRemove">
+								<xpath>Defs/GeneDef[defName="SEX_MeleeWeaponAptitude"]/statFactors/MeleeHitChance</xpath>
+							</li>
+							<li Class="PatchOperationAdd">
+								<xpath>Defs/GeneDef[defName="SEX_MeleeWeaponAptitude"]</xpath>
+								<value>
+									<displayCategory>Violence_Melee</displayCategory>
+									<statOffsets>
+										<MeleeHitChance>10</MeleeHitChance>
+									</statOffsets>
+								</value>
+							</li>
+						</operations>
+					</match>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>
