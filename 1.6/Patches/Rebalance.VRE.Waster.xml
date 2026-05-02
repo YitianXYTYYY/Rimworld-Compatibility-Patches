@@ -261,14 +261,14 @@
 								<label>minor</label>
 								<minSeverity>0.02</minSeverity>
 								<statOffsets>
-										<ShootingAccuracyPawn>1</ShootingAccuracyPawn>
+										<ShootingAccuracyPawn>2</ShootingAccuracyPawn>
 								</statOffsets>
 							</li>
 							<li>
 								<label>moderate</label>
 								<minSeverity>0.20</minSeverity>
 								<statOffsets>
-										<ShootingAccuracyPawn>3</ShootingAccuracyPawn>
+										<ShootingAccuracyPawn>4</ShootingAccuracyPawn>
 								</statOffsets>
 							</li>
 							<li>

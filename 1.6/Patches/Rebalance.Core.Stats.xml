@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/StatDef[defName="MeleeHitChance"]/postProcessCurve/points</xpath>
+		<value>
+			<points>
+				<li>(-24, 0.061)</li>
+				<li>(-14, 0.122)</li>
+				<li>(-6, 0.244)</li>
+				<li>(0, 0.488)</li>
+				<li>(4, 0.744)</li>
+				<li>(6, 0.872)</li>
+				<li>(10, 0.936)</li>
+				<li>(16, 0.968)</li>
+				<li>(24, 0.984)</li>
+				<li>(34, 0.992)</li>
+				<li>(46, 0.996)</li>
+				<li>(60, 0.998)</li>
+			</points>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/StatDef[defName="MeleeDodgeChance"]/postProcessCurve/points</xpath>
+		<value>
+			<points>
+				<li>(6, 0)</li>
+				<li>(10, 0.10)</li>
+				<li>(18, 0.20)</li>
+				<li>(30, 0.30)</li>
+				<li>(44, 0.40)</li>
+				<li>(60, 0.50)</li>
+			</points>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/StatDef[defName="ShootingAccuracyPawn"]/postProcessCurve/points</xpath>
+		<value>
+			<points>
+				<li>(-20, 0.34464)</li>
+				<li>(-10, 0.67232)</li>
+				<li>(-2, 0.83616)</li>
+				<li>(4, 0.91808)</li>
+				<li>(8, 0.95904)</li>
+				<li>(12, 0.97952)</li>
+				<li>(18, 0.98976)</li>
+				<li>(26, 0.99488)</li>
+				<li>(36, 0.99744)</li>
+				<li>(48, 0.99872)</li>
+				<li>(60, 0.99936)</li>
+				<li>(72, 0.99968)</li>
+				<li>(84, 0.99984)</li>
+				<li>(96, 0.99992)</li>
+				<li>(108, 0.99996)</li>
+				<li>(120, 0.99998)</li>
+				<li>(132, 0.99999)</li>
+			</points>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/StatDef[defName="VEF_VerbRangeFactor"]/toStringStyle</xpath>
+		<value>
+    		<toStringStyle>PercentZero</toStringStyle>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/StatDef[defName="VEF_RangedDodgeChance"]/toStringStyleUnfinalized</xpath>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/StatDef[defName="VEF_RangedDodgeChance"]</xpath>
+		<value>
+			<hideAtValue>0</hideAtValue>
+		</value>
+	</Operation>
+</Patch>

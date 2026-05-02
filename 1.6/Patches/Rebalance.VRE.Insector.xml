@@ -8,6 +8,12 @@
 		<match Class="PatchOperationSequence">
 			<operations>
 				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_InsectFlesh"]/biostatCpx</xpath>
+					<value>
+						<biostatCpx>1</biostatCpx>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
 					<xpath>Defs/GeneDef[defName="VRE_InsectSkin"]/statOffsets</xpath>
 					<value>
 						<statOffsets>

@@ -15,6 +15,11 @@
 	</description>
 	<modDependencies>
 	<li>
+		<packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
+		<displayName>Vanilla Expanded Framework</displayName>
+		<steamWorkshopUrl>steam://url/CommunityFilePage/2023507013</steamWorkshopUrl>
+	</li>
+	<li>
 		<packageId>VanillaExpanded.VWEHW</packageId>
 		<displayName>Vanilla Weapons Expanded - Heavy Weapons</displayName>
 		<steamWorkshopUrl>steam://url/CommunityFilePage/2329126791</steamWorkshopUrl>

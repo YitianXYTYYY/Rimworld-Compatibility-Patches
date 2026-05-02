@@ -97,12 +97,6 @@
         				<prisonBreakMTBFactor>0.8</prisonBreakMTBFactor>
 					</value>
 				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="Turn_Gene_Duelist"]/biostatMet</xpath>
-					<value>
-						<biostatMet>-3</biostatMet>
-					</value>
-				</li>
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/GeneDef[defName="Turn_Gene_Duelist"]/statFactors/MeleeDodgeChance</xpath>
 				</li>
@@ -113,8 +107,8 @@
 					<xpath>Defs/GeneDef[defName="Turn_Gene_Duelist"]</xpath>
 					<value>
 						<statOffsets>
-							<MeleeHitChance>5</MeleeHitChance>
-							<MeleeDodgeChance>10</MeleeDodgeChance>
+							<MeleeHitChance>4</MeleeHitChance>
+							<MeleeDodgeChance>4</MeleeDodgeChance>
 						</statOffsets>
 					</value>
 				</li>
@@ -126,7 +120,7 @@
 						<xpath>Defs/GeneDef[defName="Turn_Gene_Duelist"]/statOffsets</xpath>
 						<value>
 							<statOffsets>
-								<VQEA_Prowess>0.2</VQEA_Prowess>
+								<VQEA_Prowess>0.25</VQEA_Prowess>
 							</statOffsets>
 						</value>
 					</match>

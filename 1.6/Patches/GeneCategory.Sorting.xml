@@ -9,7 +9,13 @@
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/GeneCategoryDef[defName="Violence"]/displayPriorityInXenotype</xpath>
 		<value>
-			<displayPriorityInXenotype>380</displayPriorityInXenotype>
+			<displayPriorityInXenotype>418</displayPriorityInXenotype>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/GeneCategoryDef[defName="Beauty"]/displayPriorityInXenotype</xpath>
+		<value>
+			<displayPriorityInXenotype>401</displayPriorityInXenotype>
 		</value>
 	</Operation>
 
@@ -84,7 +90,7 @@
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/GeneCategoryDef[defName="Turn_GeneCategory_Slavery"]/displayPriorityInXenotype</xpath>
 					<value>
-						<displayPriorityInXenotype>379</displayPriorityInXenotype>
+						<displayPriorityInXenotype>409</displayPriorityInXenotype>
 					</value>
 				</li>
 			</operations>

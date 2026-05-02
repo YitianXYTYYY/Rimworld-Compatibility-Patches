@@ -31,33 +31,33 @@
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
-		<defName>Health_Eye</defName>
-		<label>sight</label>
-		<displayPriorityInXenotype>496</displayPriorityInXenotype>
-	</GeneCategoryDef>
-
-	<GeneCategoryDef>
 		<defName>Psychic_Meditation</defName>
 		<label>psychic - meditation</label>
 		<displayPriorityInXenotype>489</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
-		<defName>Social</defName>
-		<label>social</label>
-		<displayPriorityInXenotype>381</displayPriorityInXenotype>
+		<defName>Health_Eye</defName>
+		<label>sight</label>
+		<displayPriorityInXenotype>419</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
 		<defName>Violence_Ranged</defName>
 		<label>violence - ranged</label>
-		<displayPriorityInXenotype>378</displayPriorityInXenotype>
+		<displayPriorityInXenotype>417</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
 		<defName>Violence_Melee</defName>
 		<label>violence - melee</label>
-		<displayPriorityInXenotype>377</displayPriorityInXenotype>
+		<displayPriorityInXenotype>416</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Social</defName>
+		<label>social</label>
+		<displayPriorityInXenotype>402</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>

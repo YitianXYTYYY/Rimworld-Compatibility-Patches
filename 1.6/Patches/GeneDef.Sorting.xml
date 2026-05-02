@@ -924,12 +924,6 @@
 								<displayOrderInCategory>0</displayOrderInCategory>
 							</value>
 						</li>
-						<li Class="PatchOperationAdd">
-							<xpath>Defs/GeneDef[defName="Turn_Gene_Blindness"]/exclusionTags</xpath>
-							<value>
-								<li>VRE_SuperiorDarkVision</li>
-							</value>
-						</li>
 					</operations>
 				</match>
 			</li>
@@ -943,6 +937,18 @@
 						<displayCategory>Health_Eye</displayCategory>
 					</value>
 				</match>
+			</li>
+		</operations>
+	</Operation>
+
+	<!-- 490 psychic -->
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[defName="PsychicBonding"]/displayOrderInCategory</xpath>
+				<value>
+					<displayOrderInCategory>5000</displayOrderInCategory>
+				</value>
 			</li>
 		</operations>
 	</Operation>

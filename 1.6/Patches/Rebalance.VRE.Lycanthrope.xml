@@ -15,44 +15,44 @@
 					<value>
 						<statOffsets>
 							<WorkSpeedGlobal>0.1</WorkSpeedGlobal>
-							<MoveSpeed>0.2</MoveSpeed>
-							<ShootingAccuracyPawn>5</ShootingAccuracyPawn>
-							<MeleeHitChance>5</MeleeHitChance>
-							<MeleeDodgeChance>10</MeleeDodgeChance>
+							<ShootingAccuracyPawn>4</ShootingAccuracyPawn>
+							<MeleeHitChance>4</MeleeHitChance>
+							<MeleeDodgeChance>8</MeleeDodgeChance>
 						</statOffsets>
 					</value>
 				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Integrated Genes</li>
+					</mods>
+					<match Class="PatchOperationAdd">
+						<xpath>Defs/GeneDef[defName="Turn_Gene_Blindness"]/exclusionTags</xpath>
+						<value>
+							<li>VRE_SuperiorDarkVision</li>
+						</value>
+					</match>
+				</li>
+
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/GeneDef[defName="VRE_ImprovedDodge" or defName="VRE_SuperiorDodge"]/statFactors/MeleeDodgeChance</xpath>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="VRE_ImprovedDodge"]/biostatMet</xpath>
-					<value>
-						<biostatMet>-2</biostatMet>
-					</value>
 				</li>
 				<li Class="PatchOperationAdd">
 					<xpath>Defs/GeneDef[defName="VRE_ImprovedDodge"]</xpath>
 					<value>
 						<statOffsets>
-							<MeleeDodgeChance>10</MeleeDodgeChance>
+							<MeleeDodgeChance>4</MeleeDodgeChance>
 						</statOffsets>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="VRE_SuperiorDodge"]/biostatMet</xpath>
-					<value>
-						<biostatMet>-3</biostatMet>
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
 					<xpath>Defs/GeneDef[defName="VRE_SuperiorDodge"]</xpath>
 					<value>
 						<statOffsets>
-							<MeleeDodgeChance>15</MeleeDodgeChance>
+							<MeleeDodgeChance>8</MeleeDodgeChance>
 						</statOffsets>
 					</value>
 				</li>
+
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/GeneDef[defName="VRE_CanineTail"]/statOffsets/MoveSpeed</xpath>
 				</li>

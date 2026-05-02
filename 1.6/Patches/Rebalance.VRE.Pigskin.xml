@@ -44,6 +44,12 @@
 						<MeatAmount>0.5</MeatAmount>
 					</value>
 				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_PorkFlesh"]/biostatCpx</xpath>
+					<value>
+						<biostatCpx>1</biostatCpx>
+					</value>
+				</li>
 			</operations>
 		</match>
 	</Operation>

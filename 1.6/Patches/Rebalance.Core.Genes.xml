@@ -2,6 +2,26 @@
 <Patch>
 
 	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/GeneDef[defName="Immunity_Strong" or defName="Immunity_SuperStrong"]/statFactors/ImmunityGainSpeed</xpath>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/GeneDef[defName="Immunity_Strong"]</xpath>
+		<value>
+			<statOffsets>
+				<ImmunityGainSpeed>0.1</ImmunityGainSpeed>
+			</statOffsets>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/GeneDef[defName="Immunity_SuperStrong"]</xpath>
+		<value>
+			<statOffsets>
+				<ImmunityGainSpeed>0.5</ImmunityGainSpeed>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationRemove">
 		<xpath>Defs/GeneDef[defName="WoundHealing_Fast" or defName="WoundHealing_SuperFast"]/statFactors/InjuryHealingFactor</xpath>
 	</Operation>
 	<Operation Class="PatchOperationAdd">
@@ -19,6 +39,17 @@
 				<InjuryHealingFactor>3</InjuryHealingFactor>
 			</statOffsets>
 		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/GeneDef[defName="Nearsighted"]/statFactors/ShootingAccuracyFactor_Long</xpath>
+		<value>
+			<ShootingAccuracyFactor_Long>0.2</ShootingAccuracyFactor_Long>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/GeneDef[defName="ViolenceDisabled"]/exclusionTags/li[text()="ShootingAccuracy"]</xpath>
 	</Operation>
 
 	<Operation Class="PatchOperationRemove">
