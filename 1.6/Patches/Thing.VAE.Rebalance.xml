@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>	
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Armour Expanded</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingCategoryDef[defName="VAE_BootsAndGloves"]/parent</xpath>
+					<value>
+        				<parent>ApparelArmor</parent>
+					</value>
+				</li>
+				<!-- Medieval boots and gloves -->
+				<li Class="PatchOperationAttributeSet">
+					<xpath>Defs/ThingDef[defName="VAE_Footwear_PlateBoots" or defName="VAE_Handwear_PlateGloves"]/ParentName</xpath>
+					<attribute>ParentName</attribute>
+					<value>ArmorSmithableBase</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="VAE_Footwear_PlateBoots" or defName="VAE_Footwear_PlateBoots"]</xpath>
+					<value>
+						<thingSetMakerTags>
+							<li>RewardStandardQualitySuper</li>
+						</thingSetMakerTags>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="VAE_Footwear_PlateBoots" or defName="VAE_Handwear_PlateGloves"]/tradeTags</xpath>
+					<value>
+						<li>Clothing</li>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="VAE_Footwear_PlateBoots" or defName="VAE_Handwear_PlateGloves"]/colorGenerator</xpath>
+					<value>
+						<colorGenerator Class="ColorGenerator_Options">
+						<options>
+							<li>
+							<weight>10</weight>
+							<only>(0.33,0.33,0.33)</only>
+							</li>
+							<li>
+							<weight>10</weight>
+							<only>(0.65,0.65,0.65)</only>
+							</li>
+							<li>
+							<weight>6</weight>
+							<min>(0.3,0.3,0.3)</min>
+							<max>(0.5,0.5,0.5)</max>
+							</li>
+						</options>
+						</colorGenerator>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="VAE_Footwear_PlateBoots" or defName="VAE_Handwear_PlateGloves"]/recipeMaker</xpath>
+					<value>
+						<unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="VAE_Footwear_PlateBoots" or defName="VAE_Handwear_PlateGloves"]/recipeMaker/skillRequirements</xpath>
+					<value>
+						<skillRequirements>
+        					<Crafting>7</Crafting>
+						</skillRequirements>
+					</value>
+				</li>
+				<!-- Spacer boots and gloves -->
+				<li Class="PatchOperationAttributeSet">
+					<xpath>Defs/ThingDef[defName="VAE_Footwear_MarineBoots" or defName="VAE_Handwear_MarineGloves"]/ParentName</xpath>
+					<attribute>ParentName</attribute>
+					<value>ArmorMachineableBase</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="VAE_Footwear_MarineBoots" or defName="VAE_Handwear_MarineGloves"]</xpath>
+					<value>
+						<thingSetMakerTags>
+							<li>RewardStandardHighFreq</li>
+						</thingSetMakerTags>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="VAE_Footwear_MarineBoots" or defName="VAE_Handwear_MarineGloves"]/apparel</xpath>
+					<value>
+						<useDeflectMetalEffect>true</useDeflectMetalEffect>
+						<soundWear>Wear_PowerArmor</soundWear>
+						<soundRemove>Remove_PowerArmor</soundRemove>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="VAE_Footwear_MarineBoots" or defName="VAE_Handwear_MarineGloves"]/tradeTags</xpath>
+					<value>
+						<li>Clothing</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="VAE_Footwear_MarineBoots" or defName="VAE_Handwear_MarineGloves"]/recipeMaker</xpath>
+					<value>
+						<unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="VAE_Footwear_MarineBoots" or defName="VAE_Handwear_MarineGloves"]/recipeMaker/skillRequirements</xpath>
+					<value>
+						<skillRequirements>
+        					<Crafting>7</Crafting>
+						</skillRequirements>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>
