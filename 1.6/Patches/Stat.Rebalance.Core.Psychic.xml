@@ -41,9 +41,17 @@
 				<factorNormal>1</factorNormal>
 				<factorGood>1</factorGood>
 				<factorExcellent>1.5</factorExcellent>
-				<factorMasterwork>2</factorMasterwork>
-				<factorLegendary>3</factorLegendary>
+				<factorMasterwork>1.5</factorMasterwork>
+				<factorLegendary>2</factorLegendary>
 			</li>
+		</value>
+	</Operation>
+
+	<!-- royalty hediff -->
+	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
+		<xpath>Defs/HediffDef[defName="PsychicSensitizer"]/stages/li/statOffsets/PsychicSensitivity</xpath>
+		<value>
+			<PsychicSensitivity>0.4</PsychicSensitivity>
 		</value>
 	</Operation>
 
@@ -70,6 +78,38 @@
 		</value>
 	</Operation>
 
+	<!-- anomaly hediff -->
+	<Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Anomaly">
+		<xpath>Defs/HediffDef[defName="Voidsight" or defName="VoidTouched"]/stages/li/statFactors/StudyEfficiency</xpath>
+	</Operation>
+	<Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Anomaly">
+		<xpath>Defs/HediffDef[defName="Voidsight" or defName="VoidTouched"]/stages/li/statFactors/PsychicSensitivity</xpath>
+	</Operation>
+	<Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Anomaly">
+		<xpath>Defs/HediffDef[defName="Voidsight"]/stages/li</xpath>
+		<value>
+			<statOffsets>
+				<StudyEfficiency>0.2</StudyEfficiency>
+				<PsychicSensitivity>0.4</PsychicSensitivity>
+			</statOffsets>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Anomaly">
+		<xpath>Defs/HediffDef[defName="VoidTouched"]/stages/li</xpath>
+		<value>
+			<statOffsets>
+				<StudyEfficiency>1</StudyEfficiency>
+				<PsychicSensitivity>1</PsychicSensitivity>
+			</statOffsets>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Anomaly">
+		<xpath>Defs/HediffDef[defName="Psychophage"]/stages/li/statOffsets/PsychicSensitivity</xpath>
+		<value>
+			<PsychicSensitivity>0.6</PsychicSensitivity>
+		</value>
+	</Operation>
+
 	<!-- apparel -->
 	<Operation Class="PatchOperationRemove">
 		<xpath>Defs/ThingDef[defName="Apparel_PsychicFoilHelmet"]/equippedStatOffsets/PsychicSensitivity</xpath>
@@ -83,9 +123,15 @@
 
 	<!-- eltex -->
 	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-		<xpath>Defs/ThingDef[defName="Apparel_PsyfocusHelmet" or defName="Apparel_PsyfocusVest"]/equippedStatOffsets/PsychicSensitivityOffset</xpath>
+		<xpath>Defs/ThingDef[defName="Apparel_PsyfocusHelmet" or defName="Apparel_PsyfocusShirt" or defName="Apparel_PsyfocusVest"]/equippedStatOffsets/PsychicSensitivityOffset</xpath>
 		<value>
 			<PsychicSensitivityOffset>0.2</PsychicSensitivityOffset>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
+		<xpath>Defs/ThingDef[defName="Apparel_PsyfocusRobe"]/equippedStatOffsets/PsychicSensitivityOffset</xpath>
+		<value>
+			<PsychicSensitivityOffset>0.4</PsychicSensitivityOffset>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
