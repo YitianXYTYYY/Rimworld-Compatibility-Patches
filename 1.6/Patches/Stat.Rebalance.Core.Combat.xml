@@ -91,7 +91,7 @@
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-		<xpath>Defs/StatDef[defName="Apparel_Gunlink"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
+		<xpath>Defs/ThingDef[defName="Apparel_Gunlink"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
 		<value>
 			<ShootingAccuracyPawn>4</ShootingAccuracyPawn>
 		</value>
@@ -124,25 +124,25 @@
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
-		<xpath>Defs/StatDef[defName="Apparel_ArmorHelmetMechlordHelmet"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
+		<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetMechlordHelmet"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
 		<value>
 			<ShootingAccuracyPawn>-4</ShootingAccuracyPawn>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
-		<xpath>Defs/StatDef[defName="Apparel_ArmorHelmetMechlordHelmet"]/equippedStatOffsets/MeleeHitChance</xpath>
+		<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetMechlordHelmet"]/equippedStatOffsets/MeleeHitChance</xpath>
 		<value>
 			<MeleeHitChance>-1</MeleeHitChance>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
-		<xpath>Defs/StatDef[defName="Apparel_MechlordSuit"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
+		<xpath>Defs/ThingDef[defName="Apparel_MechlordSuit"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
 		<value>
 			<ShootingAccuracyPawn>-4</ShootingAccuracyPawn>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
-		<xpath>Defs/StatDef[defName="Apparel_MechlordSuit"]/equippedStatOffsets/MeleeHitChance</xpath>
+		<xpath>Defs/ThingDef[defName="Apparel_MechlordSuit"]/equippedStatOffsets/MeleeHitChance</xpath>
 		<value>
 			<MeleeHitChance>-1</MeleeHitChance>
 		</value>
@@ -153,7 +153,7 @@
 		<xpath>Defs/TraitDef[defName="ShootingAccuracy"]/degreeDatas/li[degree="1" or degree="-1"]/statOffsets/AimingDelayFactor</xpath>
 	</Operation>
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/TraitDef[defName="ShootingAccuracy"]/degreeDatas/li[degree="1"]/</xpath>
+		<xpath>Defs/TraitDef[defName="ShootingAccuracy"]/degreeDatas/li[degree="1"]</xpath>
 		<value>
 			<statFactors>
 				<AimingDelayFactor>1.2</AimingDelayFactor>
@@ -161,7 +161,7 @@
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/TraitDef[defName="ShootingAccuracy"]/degreeDatas/li[degree="-1"]/</xpath>
+		<xpath>Defs/TraitDef[defName="ShootingAccuracy"]/degreeDatas/li[degree="-1"]</xpath>
 		<value>
 			<statFactors>
 				<AimingDelayFactor>0.5</AimingDelayFactor>

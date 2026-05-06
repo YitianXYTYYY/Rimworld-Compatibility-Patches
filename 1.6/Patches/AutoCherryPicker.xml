@@ -54,4 +54,15 @@
 			</value>
 		</match>
 	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Armour Expanded</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
+			<value>
+				<li>ThingDef/VAE_Apparel_Shield_Riot</li>
+			</value>
+		</match>
+	</Operation>
 </Patch>

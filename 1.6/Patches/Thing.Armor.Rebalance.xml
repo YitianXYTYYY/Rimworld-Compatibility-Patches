@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Apparel_FlakVest" or defName="Apparel_FlakPants" or defName="Apparel_FlakJacket"]/equippedStatOffsets/MoveSpeed</xpath>
+		<value>
+			<MoveSpeed>-0.1</MoveSpeed>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="ApparelArmorPowerBase"]/equippedStatOffsets/MoveSpeed</xpath>
+		<value>
+			<MoveSpeed>-0.2</MoveSpeed>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+		<xpath>Defs/ThingDef[defName="Apparel_Vacsuit" or defName="Apparel_VacsuitChildren"]/equippedStatOffsets/MoveSpeed</xpath>
+		<value>
+			<MoveSpeed>-1.2</MoveSpeed>
+		</value>
+	</Operation>
+
 	<Operation Class="PatchOperationFindMod">
 		<mods>
 			<li>Vanilla Armour Expanded</li>
@@ -14,14 +33,44 @@
 					</value>
 				</li>
 
-				<!-- Medieval boots and gloves -->
+				<!-- label -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="VAE_Apparel_LightPlateArmor"]/label</xpath>
+					<value>
+						<label>plate light armor</label>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="VAE_Apparel_Chestplate"]/label</xpath>
+					<value>
+						<label>plate chest</label>
+					</value>
+				</li>
+
+				<!-- Medieval plate -->
 				<li Class="PatchOperationAttributeSet">
-					<xpath>Defs/ThingDef[defName="VAE_Footwear_PlateBoots" or defName="VAE_Handwear_PlateGloves"]/ParentName</xpath>
+					<xpath>Defs/ThingDef[defName="VAE_Apparel_LightPlateArmor" or 
+						defName="VAE_Apparel_PlateShoulderpads" or 
+						defName="VAE_Apparel_Chestplate" or 
+						defName="VAE_Apparel_Chainmail" or 
+						defName="VAE_Footwear_PlateBoots" or
+						defName="VAE_Handwear_PlateGloves"]</xpath>
 					<attribute>ParentName</attribute>
 					<value>ArmorSmithableBase</value>
 				</li>
+				<li Class="PatchOperationAttributeSet">
+					<xpath>Defs/ThingDef[defName="VAE_Apparel_PlateHelmet"]</xpath>
+					<attribute>ParentName</attribute>
+					<value>ArmorHelmetMakeableBase</value>
+				</li>
 				<li Class="PatchOperationAdd">
-					<xpath>Defs/ThingDef[defName="VAE_Footwear_PlateBoots" or defName="VAE_Footwear_PlateBoots"]</xpath>
+					<xpath>Defs/ThingDef[defName="VAE_Apparel_LightPlateArmor" or 
+						defName="VAE_Apparel_PlateShoulderpads" or 
+						defName="VAE_Apparel_Chestplate" or 
+						defName="VAE_Apparel_Chainmail" or 
+						defName="VAE_Apparel_PlateHelmet" or
+						defName="VAE_Footwear_PlateBoots" or
+						defName="VAE_Handwear_PlateGloves"]</xpath>
 					<value>
 						<thingSetMakerTags>
 							<li>RewardStandardQualitySuper</li>
@@ -29,57 +78,75 @@
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
-					<xpath>Defs/ThingDef[defName="VAE_Footwear_PlateBoots" or defName="VAE_Handwear_PlateGloves"]/tradeTags</xpath>
+					<xpath>Defs/ThingDef[defName="VAE_Apparel_LightPlateArmor" or 
+						defName="VAE_Apparel_PlateShoulderpads" or 
+						defName="VAE_Apparel_Chestplate" or 
+						defName="VAE_Apparel_Chainmail" or 
+						defName="VAE_Apparel_PlateHelmet" or
+						defName="VAE_Footwear_PlateBoots" or
+						defName="VAE_Handwear_PlateGloves"]/tradeTags</xpath>
 					<value>
 						<li>Clothing</li>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
-					<xpath>Defs/ThingDef[defName="VAE_Footwear_PlateBoots" or defName="VAE_Handwear_PlateGloves"]/colorGenerator</xpath>
+					<xpath>Defs/ThingDef[defName="VAE_Apparel_LightPlateArmor" or 
+						defName="VAE_Apparel_PlateShoulderpads" or 
+						defName="VAE_Apparel_Chestplate" or 
+						defName="VAE_Apparel_Chainmail" or 
+						defName="VAE_Apparel_PlateHelmet" or
+						defName="VAE_Footwear_PlateBoots" or
+						defName="VAE_Handwear_PlateGloves"]/colorGenerator</xpath>
 					<value>
 						<colorGenerator Class="ColorGenerator_Options">
-						<options>
-							<li>
-							<weight>10</weight>
-							<only>(0.33,0.33,0.33)</only>
-							</li>
-							<li>
-							<weight>10</weight>
-							<only>(0.65,0.65,0.65)</only>
-							</li>
-							<li>
-							<weight>6</weight>
-							<min>(0.3,0.3,0.3)</min>
-							<max>(0.5,0.5,0.5)</max>
-							</li>
-						</options>
+							<options>
+								<li>
+								<weight>10</weight>
+								<only>(0.33,0.33,0.33)</only>
+								</li>
+								<li>
+								<weight>10</weight>
+								<only>(0.65,0.65,0.65)</only>
+								</li>
+								<li>
+								<weight>6</weight>
+								<min>(0.3,0.3,0.3)</min>
+								<max>(0.5,0.5,0.5)</max>
+								</li>
+							</options>
 						</colorGenerator>
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
-					<xpath>Defs/ThingDef[defName="VAE_Footwear_PlateBoots" or defName="VAE_Handwear_PlateGloves"]/recipeMaker</xpath>
+					<xpath>Defs/ThingDef[defName="VAE_Apparel_LightPlateArmor" or 
+						defName="VAE_Apparel_PlateShoulderpads" or 
+						defName="VAE_Apparel_Chestplate" or 
+						defName="VAE_Apparel_Chainmail" or 
+						defName="VAE_Apparel_PlateHelmet" or
+						defName="VAE_Footwear_PlateBoots" or
+						defName="VAE_Handwear_PlateGloves"]/recipeMaker</xpath>
 					<value>
 						<unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
-					<xpath>Defs/ThingDef[defName="VAE_Footwear_PlateBoots" or defName="VAE_Handwear_PlateGloves"]/recipeMaker/skillRequirements</xpath>
+					<xpath>Defs/ThingDef[defName="VAE_Apparel_LightPlateArmor" or 
+						defName="VAE_Apparel_PlateShoulderpads" or 
+						defName="VAE_Apparel_Chestplate" or 
+						defName="VAE_Apparel_Chainmail" or 
+						defName="VAE_Apparel_PlateHelmet" or
+						defName="VAE_Footwear_PlateBoots" or
+						defName="VAE_Handwear_PlateGloves"]/recipeMaker/skillRequirements</xpath>
 					<value>
 						<skillRequirements>
         					<Crafting>7</Crafting>
 						</skillRequirements>
 					</value>
 				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/ThingDef[defName="VAE_Handwear_PlateGloves"]/equippedStatOffsets/WorkSpeedGlobal</xpath>
-					<value>
-						<WorkSpeedGlobal>-0.1</WorkSpeedGlobal>
-					</value>
-				</li>
 
 				<!-- Spacer boots and gloves -->
 				<li Class="PatchOperationAttributeSet">
-					<xpath>Defs/ThingDef[defName="VAE_Footwear_MarineBoots" or defName="VAE_Handwear_MarineGloves"]/ParentName</xpath>
+					<xpath>Defs/ThingDef[defName="VAE_Footwear_MarineBoots" or defName="VAE_Handwear_MarineGloves"]</xpath>
 					<attribute>ParentName</attribute>
 					<value>ArmorMachineableBase</value>
 				</li>
@@ -134,6 +201,12 @@
 
 				<!-- medieval -->
 				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="VAE_Handwear_PlateGloves"]/equippedStatOffsets/WorkSpeedGlobal</xpath>
+					<value>
+						<WorkSpeedGlobal>-0.1</WorkSpeedGlobal>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
 					<xpath>Defs/ThingDef[defName="VAE_Apparel_PlateShoulderpads"]/equippedStatOffsets/MoveSpeed</xpath>
 					<value>
 						<MoveSpeed>-0.1</MoveSpeed>
@@ -171,8 +244,19 @@
 						<MeleeDodgeChance>-4</MeleeDodgeChance>
 					</value>
 				</li>
-
 			</operations>
+		</match>
+	</Operation>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Races Expanded - Fungoid</li>
+		</mods>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[@Name="VREF_ApparelArmorAstrosuitBase"]/equippedStatOffsets/MoveSpeed</xpath>
+			<value>
+				<MoveSpeed>-0.4</MoveSpeed>
+			</value>
 		</match>
 	</Operation>
 
