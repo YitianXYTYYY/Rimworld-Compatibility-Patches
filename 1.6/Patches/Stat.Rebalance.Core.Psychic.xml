@@ -14,41 +14,37 @@
 			<defaultBaseValue>0.6</defaultBaseValue>
 		</value>
 	</Operation>
-	<Operation Class="PatchOperationSequence">
-		<operations>
-			<li Class="PatchOperationConditional">
-				<xpath>Defs/StatDef[defName = "PsychicSensitivityOffset"]/parts</xpath>
-				<nomatch Class="PatchOperationAdd">
-					<xpath>Defs/StatDef[defName="PsychicSensitivityOffset"]</xpath>
-					<value>
-						<parts/>
-					</value>
-				</nomatch>
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/StatDef[defName = "PsychicSensitivityOffset"]/parts</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/StatDef[defName="PsychicSensitivityOffset"]</xpath>
+			<value>
+				<parts/>
+			</value>
+		</nomatch>
+	</Operation>
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/StatDef[defName="PsychicSensitivityOffset"]/parts/li[@Class="StatPart_Quality"]</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/StatDef[defName="PsychicSensitivityOffset"]/parts</xpath>
+			<value>
+				<li Class="StatPart_Quality"/>
+			</value>
+		</nomatch>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/StatDef[defName="PsychicSensitivityOffset"]/parts/li[@Class="StatPart_Quality"]</xpath>
+		<value>
+			<li Class="StatPart_Quality">
+				<factorAwful>0.0</factorAwful>
+				<factorPoor>0.5</factorPoor>
+				<factorNormal>1</factorNormal>
+				<factorGood>1</factorGood>
+				<factorExcellent>1.5</factorExcellent>
+				<factorMasterwork>2</factorMasterwork>
+				<factorLegendary>3</factorLegendary>
 			</li>
-			<li Class="PatchOperationConditional">
-				<xpath>Defs/StatDef[defName="PsychicSensitivityOffset"]/parts/li[@Class="StatPart_Quality"]</xpath>
-				<nomatch Class="PatchOperationAdd">
-					<xpath>Defs/StatDef[defName="PsychicSensitivityOffset"]/parts</xpath>
-					<value>
-						<li Class="StatPart_Quality"/>
-					</value>
-				</nomatch>
-			</li>
-			<li Class="PatchOperationReplace">
-				<xpath>Defs/StatDef[defName="PsychicSensitivityOffset"]/parts/li[@Class="StatPart_Quality"]</xpath>
-				<value>
-					<li Class="StatPart_Quality">
-						<factorAwful>0.0</factorAwful>
-						<factorPoor>0.5</factorPoor>
-						<factorNormal>1</factorNormal>
-						<factorGood>1</factorGood>
-						<factorExcellent>1.5</factorExcellent>
-						<factorMasterwork>2</factorMasterwork>
-						<factorLegendary>3</factorLegendary>
-					</li>
-				</value>
-			</li>
-		</operations>
+		</value>
 	</Operation>
 
 	<!-- bioferrite -->
@@ -74,8 +70,9 @@
 		</value>
 	</Operation>
 
+	<!-- apparel -->
 	<Operation Class="PatchOperationRemove">
-		<xpath>Defs/ThingDef[defName="Apparel_PsychicFoilHelmet"]/equippedStatOffsets/PsychicSensitivityOffset</xpath>
+		<xpath>Defs/ThingDef[defName="Apparel_PsychicFoilHelmet"]/equippedStatOffsets/PsychicSensitivity</xpath>
 	</Operation>
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="Apparel_PsychicFoilHelmet"]/equippedStatOffsets</xpath>
@@ -97,7 +94,8 @@
 			<PsychicSensitivityOffset>0.6</PsychicSensitivityOffset>
 		</value>
 	</Operation>
-	
+
+	<!-- prestige armor -->	
 	<Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
 		<xpath>Defs/ThingDef[defName="Apparel_ArmorReconPrestige" or
 			defName="Apparel_ArmorHelmetReconPrestige" or 
@@ -167,6 +165,25 @@
 					<xpath>Defs/ThingDef[defName="VAE_Headgear_RoyalTrooperHelmet" or defName="VAE_Apparel_RoyalTrooperArmor" or defName="VAE_Headgear_RoyalSiegeHelmet" or defName="VAE_Apparel_RoyalSiegeArmor"]/equippedStatOffsets</xpath>
 					<value>
 						<PsychicSensitivityOffset>0.1</PsychicSensitivityOffset>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Races Expanded - Archon</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="VREA_Apparel_Archoplate"]/equippedStatOffsets/PsychicSensitivity</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="VREA_Apparel_Archoplate"]/equippedStatOffsets</xpath>
+					<value>
+						<PsychicSensitivityOffset>0.6</PsychicSensitivityOffset>
 					</value>
 				</li>
 			</operations>
