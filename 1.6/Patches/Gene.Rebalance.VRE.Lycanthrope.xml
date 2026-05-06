@@ -40,7 +40,7 @@
 					<xpath>Defs/GeneDef[defName="VRE_ImprovedDodge"]</xpath>
 					<value>
 						<statOffsets>
-							<MeleeDodgeChance>4</MeleeDodgeChance>
+							<MeleeDodgeChance>8</MeleeDodgeChance>
 						</statOffsets>
 					</value>
 				</li>
@@ -48,7 +48,7 @@
 					<xpath>Defs/GeneDef[defName="VRE_SuperiorDodge"]</xpath>
 					<value>
 						<statOffsets>
-							<MeleeDodgeChance>8</MeleeDodgeChance>
+							<MeleeDodgeChance>16</MeleeDodgeChance>
 						</statOffsets>
 					</value>
 				</li>

@@ -20,7 +20,7 @@
 					<xpath>Defs/GeneDef[defName="VRE_HighEntropyCapacity"]</xpath>
 					<value>		
 						<statOffsets>
-							<PsychicEntropyMax>10</PsychicEntropyMax>
+							<PsychicEntropyMax>5</PsychicEntropyMax>
 						</statOffsets>
 					</value>
 				</li>
@@ -28,7 +28,7 @@
 					<xpath>Defs/GeneDef[defName="VRE_ExtremeEntropyCapacity"]</xpath>
 					<value>		
 						<statOffsets>
-							<PsychicEntropyMax>20</PsychicEntropyMax>
+							<PsychicEntropyMax>10</PsychicEntropyMax>
 						</statOffsets>
 					</value>
 				</li>

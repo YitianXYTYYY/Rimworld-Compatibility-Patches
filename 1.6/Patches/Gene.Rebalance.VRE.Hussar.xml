@@ -30,6 +30,20 @@
 									<displayOrderInCategory>-100</displayOrderInCategory>
 								</value>
 							</li>
+							<li Class="PatchOperationAdd">
+								<xpath>Defs/GeneDef[defName="SEX_RangedWeaponAptitude" or defName="SEX_MeleeWeaponAptitude"]</xpath>
+								<value>
+									<exclusionTags>
+										<li>SEX_WeaponAptitude</li>
+									</exclusionTags>
+								</value>
+							</li>
+							<li Class="PatchOperationAdd">
+								<xpath>Defs/GeneDef[defName="ViolenceDisabled"]/exclusionTags</xpath>
+								<value>
+									<li>SEX_WeaponAptitude</li>
+								</value>
+							</li>
 							<li Class="PatchOperationRemove">
 								<xpath>Defs/GeneDef[defName="SEX_RangedWeaponAptitude"]/statFactors/ShootingAccuracyPawn</xpath>
 							</li>
@@ -58,20 +72,6 @@
 									<statOffsets>
 										<MeleeHitChance>8</MeleeHitChance>
 									</statOffsets>
-								</value>
-							</li>
-							<li Class="PatchOperationAdd">
-								<xpath>Defs/GeneDef[defName="SEX_RangedWeaponAptitude" or defName="SEX_MeleeWeaponAptitude"]</xpath>
-								<value>
-									<exclusionTags>
-										<li>SEX_WeaponAptitude</li>
-									</exclusionTags>
-								</value>
-							</li>
-							<li Class="PatchOperationAdd">
-								<xpath>Defs/GeneDef[defName="ViolenceDisabled"]/exclusionTags</xpath>
-								<value>
-									<li>SEX_WeaponAptitude</li>
 								</value>
 							</li>
 						</operations>

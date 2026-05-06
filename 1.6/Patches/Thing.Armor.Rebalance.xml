@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Patch>	
+<Patch>
 
 	<Operation Class="PatchOperationFindMod">
 		<mods>
@@ -13,6 +13,7 @@
         				<parent>ApparelArmor</parent>
 					</value>
 				</li>
+
 				<!-- Medieval boots and gloves -->
 				<li Class="PatchOperationAttributeSet">
 					<xpath>Defs/ThingDef[defName="VAE_Footwear_PlateBoots" or defName="VAE_Handwear_PlateGloves"]/ParentName</xpath>
@@ -69,6 +70,13 @@
 						</skillRequirements>
 					</value>
 				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="VAE_Handwear_PlateGloves"]/equippedStatOffsets/WorkSpeedGlobal</xpath>
+					<value>
+						<WorkSpeedGlobal>-0.1</WorkSpeedGlobal>
+					</value>
+				</li>
+
 				<!-- Spacer boots and gloves -->
 				<li Class="PatchOperationAttributeSet">
 					<xpath>Defs/ThingDef[defName="VAE_Footwear_MarineBoots" or defName="VAE_Handwear_MarineGloves"]/ParentName</xpath>
@@ -111,6 +119,59 @@
 						</skillRequirements>
 					</value>
 				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="VAE_Footwear_MarineBoots"]/equippedStatOffsets/MoveSpeed</xpath>
+					<value>
+						<MoveSpeed>0.1</MoveSpeed>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="VAE_Handwear_MarineGloves"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
+					<value>
+						<ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+					</value>
+				</li>
+
+				<!-- medieval -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="VAE_Apparel_PlateShoulderpads"]/equippedStatOffsets/MoveSpeed</xpath>
+					<value>
+						<MoveSpeed>-0.1</MoveSpeed>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="VAE_Apparel_PlateHelmet"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
+					<value>
+						<ShootingAccuracyPawn>-2</ShootingAccuracyPawn>
+					</value>
+				</li>
+
+				<!-- industrial -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="VAE_Headgear_GhillieHood"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
+					<value>
+						<ShootingAccuracyPawn>4</ShootingAccuracyPawn>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="VAE_Apparel_GhillieSuit"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
+					<value>
+						<ShootingAccuracyPawn>6</ShootingAccuracyPawn>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="VAE_Apparel_RiotArmor"]/equippedStatOffsets/MoveSpeed</xpath>
+					<value>
+						<MoveSpeed>-0.1</MoveSpeed>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[thingClass="VEF.Apparels.Apparel_Shield"]/equippedStatOffsets/MeleeDodgeChance</xpath>
+					<value>
+						<MeleeDodgeChance>-4</MeleeDodgeChance>
+					</value>
+				</li>
+
 			</operations>
 		</match>
 	</Operation>
