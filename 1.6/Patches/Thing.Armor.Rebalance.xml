@@ -13,6 +13,21 @@
 			<MoveSpeed>-0.2</MoveSpeed>
 		</value>
 	</Operation>
+	<Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Biotech">
+		<xpath>Defs/ThingDef[@Name="Apparel_Bandolier"]/equippedStatOffsets/RangedCooldownFactor</xpath>
+	</Operation>
+	<Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Biotech">
+		<xpath>Defs/ThingDef[@Name="Apparel_Bandolier"]</xpath>
+		<value>
+			<modExtensions>
+				<li Class="VEF.Apparels.ApparelExtension">
+					<equippedStatFactors>
+						<RangedCooldownFactor>0.8</RangedCooldownFactor>
+					</equippedStatFactors>
+				</li>
+			</modExtensions>
+		</value>
+	</Operation>
 	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
 		<xpath>Defs/ThingDef[defName="Apparel_Vacsuit" or defName="Apparel_VacsuitChildren"]/equippedStatOffsets/MoveSpeed</xpath>
 		<value>
@@ -229,7 +244,7 @@
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/ThingDef[defName="VAE_Apparel_GhillieSuit"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
 					<value>
-						<ShootingAccuracyPawn>6</ShootingAccuracyPawn>
+						<ShootingAccuracyPawn>4</ShootingAccuracyPawn>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
@@ -242,6 +257,43 @@
 					<xpath>Defs/ThingDef[thingClass="VEF.Apparels.Apparel_Shield"]/equippedStatOffsets/MeleeDodgeChance</xpath>
 					<value>
 						<MeleeDodgeChance>-4</MeleeDodgeChance>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Factions Expanded - Empire</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="VFEE_Apparel_ArmorDeserter"]/equippedStatOffsets/PsychicSensitivity</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="VFEE_Apparel_ArmorDeserter"]/equippedStatOffsets</xpath>
+					<value>
+						<PsychicSensitivityOffset>0.2</PsychicSensitivityOffset>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="VFEE_Apparel_ArmorAbsolver"]/apparel/layers/li[text()="OnSkin"]</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="VFEE_Apparel_ArmorAbsolver"]/apparel/layers</xpath>
+					<value>
+						<li>Shell</li>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="VFEE_Apparel_ArmorAbsolver"]/modExtensions/li[@Class="VEF.Apparels.ApparelExtension"]/equippedStatFactors/MoveSpeed</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="VFEE_Apparel_ArmorAbsolver"]/equippedStatOffsets</xpath>
+					<value>
+						<MoveSpeed>0.6</MoveSpeed>
 					</value>
 				</li>
 			</operations>
