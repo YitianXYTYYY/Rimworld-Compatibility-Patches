@@ -42,15 +42,27 @@
 	</Operation>
 
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/HediffDef[defName="PsychicBond"]/stages/li[overrideLabel="psychic bond"]/statOffsets/PsychicSensitivity</xpath>
+		<xpath>Defs/HediffDef[defName="PsychicBond"]/stages/li[minSeverity="0"]/statOffsets/PsychicSensitivity</xpath>
 		<value>
 			<PsychicSensitivity>0.2</PsychicSensitivity>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/HediffDef[defName="PsychicBond"]/stages/li[overrideLabel="psychic bond distance"]/statOffsets/PsychicSensitivity</xpath>
+		<xpath>Defs/HediffDef[defName="PsychicBond"]/stages/li[minSeverity="0"]/capMods/li[capacity="Consciousness"]/offset</xpath>
+		<value>
+			<offset>0.1</offset>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/HediffDef[defName="PsychicBond"]/stages/li[minSeverity="1"]/statOffsets/PsychicSensitivity</xpath>
 		<value>
 			<PsychicSensitivity>0.1</PsychicSensitivity>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/HediffDef[defName="PsychicBond"]/stages/li[minSeverity="1"]/capMods/li[capacity="Consciousness"]/offset</xpath>
+		<value>
+			<offset>-0.2</offset>
 		</value>
 	</Operation>
 
@@ -77,27 +89,23 @@
 		</value>
 	</Operation>
 
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/GeneDef[defName="Hands_Pig"]/capMods</xpath>
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/GeneDef[defName="Hands_Pig"]/capMods/li[capacity="Manipulation"]/postFactor</xpath>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/GeneDef[defName="Hands_Pig"]/capMods/li[capacity="Manipulation"]</xpath>
 		<value>
-			<capMods>
-				<li>
-					<capacity>Manipulation</capacity>
-					<offset>-0.15</offset>
-				</li>
-			</capMods>
+			<offset>-0.15</offset>
 		</value>
 	</Operation>
 
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/GeneDef[defName="ElongatedFingers"]/capMods</xpath>
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/GeneDef[defName="ElongatedFingers"]/capMods/li[capacity="Manipulation"]/postFactor</xpath>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/GeneDef[defName="ElongatedFingers"]/capMods/li[capacity="Manipulation"]</xpath>
 		<value>
-			<capMods>
-				<li>
-					<capacity>Manipulation</capacity>
-					<offset>0.1</offset>
-				</li>
-			</capMods>
+			<offset>0.1</offset>
 		</value>
 	</Operation>
 
