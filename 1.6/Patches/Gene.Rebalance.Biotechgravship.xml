@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>	
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Biotech for Gravship</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAttributeRemove">
+					<xpath>Defs/GeneDef[defName="BfG_Sleep_Space"]</xpath>
+					<attribute>ParentName</attribute>
+				</li>
+				<li Class="PatchOperationAttributeRemove">
+					<xpath>Defs/GeneDef[defName="BfG_PsychicAbility_Space"]</xpath>
+					<attribute>ParentName</attribute>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/GeneDef[defName="BfG_PsychicAbility_Space"]/biostatArc</xpath>
+				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>[FSF] FrozenSnowFox Tweaks</li>
+					</mods>
+					<match Class="XmlExtensions.OptionalPatch">
+						<modId>FrozenSnowFox.FrozenSnowFoxTweaks</modId>
+						<key>FSFPsychicSensBonuses</key>
+						<defaultValue>false</defaultValue>
+						<caseTrue>
+							<Operation Class="PatchOperationSequence">
+								<operations>
+									<li Class="PatchOperationRemove">
+										<xpath>Defs/GeneDef[defName="BfG_PsychicAbility_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]/statOffsets/MeditationFocusGain</xpath>
+									</li>
+									<li Class="PatchOperationRemove">
+										<xpath>Defs/GeneDef[defName="BfG_PsychicAbility_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]/statOffsets/PsychicEntropyRecoveryRate</xpath>
+									</li>
+									<li Class="PatchOperationRemove">
+										<xpath>Defs/GeneDef[defName="BfG_PsychicAbility_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]/statOffsets/MeditationFocusGain</xpath>
+									</li>
+									<li Class="PatchOperationRemove">
+										<xpath>Defs/GeneDef[defName="BfG_PsychicAbility_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]/statOffsets/PsychicEntropyRecoveryRate</xpath>
+									</li>
+								</operations>
+							</Operation>
+						</caseTrue>
+					</match>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>

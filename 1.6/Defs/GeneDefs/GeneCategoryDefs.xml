@@ -7,6 +7,12 @@
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
+		<defName>Astro</defName>
+		<label>astrogen</label>
+		<displayPriorityInXenotype>700</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
 		<defName>Health_Age</defName>
 		<label>aging</label>
 		<displayPriorityInXenotype>502</displayPriorityInXenotype>

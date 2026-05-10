@@ -192,6 +192,10 @@
 	</Operation>
 
 	<!-- Specific Genes -->
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/GeneDef[defName="Nose_Pig"]/displayCategory</xpath>
+	</Operation>
+
 	<Operation Class="PatchOperationFindMod">
 		<mods>
 			<li>Vanilla Races Expanded - Fungoid</li>
@@ -288,11 +292,18 @@
 		<mods>
 			<li>Vanilla Races Expanded - Lycanthrope</li>
 		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[defName="VRE_CanineEars" or defName="VRE_CanineNose"]/biostatCpx</xpath>
-			<value>
-				<biostatCpx>0</biostatCpx>
-			</value>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_CanineEars" or defName="VRE_CanineNose"]/biostatCpx</xpath>
+					<value>
+						<biostatCpx>0</biostatCpx>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/GeneDef[defName="VRE_CanineNose"]/displayCategory</xpath>
+				</li>
+			</operations>
 		</match>
 	</Operation>
 
@@ -300,22 +311,24 @@
 		<mods>
 			<li>Vanilla Races Expanded - Phytokin</li>
 		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[defName="VRE_SapBlood"]/displayCategory</xpath>
-			<value>
-    			<displayCategory>Health_Blood</displayCategory>
-			</value>
-		</match>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Vanilla Races Expanded - Phytokin</li>
-		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneDef[defName="VRE_FoliageHair"]/biostatCpx</xpath>
-			<value>
-    			<biostatCpx>0</biostatCpx>
-			</value>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_SapBlood"]/displayCategory</xpath>
+					<value>
+						<displayCategory>Health_Blood</displayCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/GeneDef[defName="VRE_FoliageHair"]/displayCategory</xpath>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="VRE_FoliageHair"]/biostatCpx</xpath>
+					<value>
+						<biostatCpx>0</biostatCpx>
+					</value>
+				</li>
+			</operations>
 		</match>
 	</Operation>
 
@@ -356,6 +369,15 @@
 					</value>
 				</li>
 			</operations>
+		</match>
+	</Operation>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Races Expanded - Sanguophage</li>
+		</mods>
+		<match Class="PatchOperationRemove">
+			<xpath>Defs/GeneDef[defName="VRE_SanguineHair" ordefName="VRE_BatNose"]/displayCategory</xpath>
 		</match>
 	</Operation>
 

@@ -346,6 +346,17 @@
 			</li>
 			<li Class="PatchOperationFindMod">
 				<mods>
+					<li>Biotech for Gravship</li>
+				</mods>
+				<match Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="BfG_MoveSpeed_SpaceArchite"]/displayOrderInCategory</xpath>
+					<value>
+						<displayOrderInCategory>-270</displayOrderInCategory>
+					</value>
+				</match>
+			</li>
+			<li Class="PatchOperationFindMod">
+				<mods>
 					<li>Vanilla Races Expanded - Hussar</li>
 				</mods>
 				<match Class="PatchOperationReplace">
@@ -435,6 +446,71 @@
 					<xpath>Defs/GeneDef[defName="VQEA_MasterfulIntellectual"]</xpath>
 					<value>
 						<displayOrderInCategory>12</displayOrderInCategory>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+	<!-- 700 astrogen -->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Biotech for Gravship</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="BfG_Sleep_Space" or 
+						defName="BfG_Robust_Space" or 
+						defName="BfG_Learning_Space" or 
+						defName="BfG_MinTemp_Space" or 
+						defName="BfG_WoundHealing_Space" or 
+						defName="BfG_Hemogen_Space"or 
+						defName="BfG_PsychicAbility_Space"]/displayCategory</xpath>
+					<value>
+						<displayCategory>Astro</displayCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="BfG_Hemogen_Space"]/displayOrderInCategory</xpath>
+					<value>
+						<displayOrderInCategory>-510</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="BfG_WoundHealing_Space"]/displayOrderInCategory</xpath>
+					<value>
+						<displayOrderInCategory>-500</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="BfG_PsychicAbility_Space"]/displayOrderInCategory</xpath>
+					<value>
+						<displayOrderInCategory>-490</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="BfG_MinTemp_Space"]/displayOrderInCategory</xpath>
+					<value>
+						<displayOrderInCategory>-450</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="BfG_Sleep_Space"]/displayOrderInCategory</xpath>
+					<value>
+						<displayOrderInCategory>-420</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="BfG_Robust_Space"]/displayOrderInCategory</xpath>
+					<value>
+						<displayOrderInCategory>-410</displayOrderInCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="BfG_Learning_Space"]/displayOrderInCategory</xpath>
+					<value>
+						<displayOrderInCategory>-200</displayOrderInCategory>
 					</value>
 				</li>
 			</operations>
