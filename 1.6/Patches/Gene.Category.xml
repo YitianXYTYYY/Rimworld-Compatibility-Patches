@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Patch>	<!-- Genepack Priority -->
+<Patch>
+	<!-- Genepack Priority -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/GeneCategoryDef[defName="Ability"]/displayPriorityInXenotype</xpath>
+		<value>
+			<displayPriorityInXenotype>600</displayPriorityInXenotype>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/GeneCategoryDef[defName="Hemogen"]/displayPriorityInXenotype</xpath>
+		<value>
+			<displayPriorityInXenotype>599</displayPriorityInXenotype>
+		</value>
+	</Operation>
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/GeneCategoryDef[defName="Mood"]/displayPriorityInXenotype</xpath>
 		<value>
@@ -60,7 +73,7 @@
 		<match Class="PatchOperationReplace">
 			<xpath>Defs/GeneCategoryDef[defName="VREW_Mutations"]/displayPriorityInXenotype</xpath>
 			<value>
-				<displayPriorityInXenotype>800</displayPriorityInXenotype>
+				<displayPriorityInXenotype>550</displayPriorityInXenotype>
 			</value>
 		</match>
 	</Operation>
@@ -71,7 +84,7 @@
 		<match Class="PatchOperationReplace">
 			<xpath>Defs/GeneCategoryDef[defName="RS_DarkArchite"]/displayPriorityInXenotype</xpath>
 			<value>
-				<displayPriorityInXenotype>521</displayPriorityInXenotype>
+				<displayPriorityInXenotype>610</displayPriorityInXenotype>
 			</value>
 		</match>
 	</Operation>

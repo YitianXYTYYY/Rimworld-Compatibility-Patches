@@ -20,7 +20,7 @@
 							<li>
 								<minSeverity>0.4</minSeverity>
 								<statFactors>
-									<IncomingDamageFactor>0.75</IncomingDamageFactor>
+									<IncomingDamageFactor>0.8</IncomingDamageFactor>
 								</statFactors>
 							</li>
 							<li>

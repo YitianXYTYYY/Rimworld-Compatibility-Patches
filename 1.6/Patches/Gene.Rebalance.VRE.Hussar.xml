@@ -52,7 +52,7 @@
 								<value>
 									<displayCategory>Violence_Ranged</displayCategory>
 									<statOffsets>
-										<ShootingAccuracyPawn>8</ShootingAccuracyPawn>
+										<ShootingAccuracyPawn>12</ShootingAccuracyPawn>
 									</statOffsets>
 								</value>
 							</li>
@@ -70,7 +70,7 @@
 								<value>
 									<displayCategory>Violence_Melee</displayCategory>
 									<statOffsets>
-										<MeleeHitChance>8</MeleeHitChance>
+										<MeleeHitChance>12</MeleeHitChance>
 									</statOffsets>
 								</value>
 							</li>

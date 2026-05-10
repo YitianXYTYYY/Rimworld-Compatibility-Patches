@@ -1427,6 +1427,36 @@
 		<operations>
 			<li Class="PatchOperationFindMod">
 				<mods>
+					<li>Intimacy - A Lovin' Expansion</li>
+				</mods>
+				<match Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/GeneDef[@Name="SEX_IntimacyGeneBase"]/displayCategory</xpath>
+							<value>
+								<displayCategory>Social</displayCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationRemove">
+							<xpath>Defs/GeneDef[@Name="SEX_IntimacyGeneBase"]/displayOrderInCategory</xpath>
+						</li>
+						<li Class="PatchOperationAdd">
+							<xpath>Defs/GeneDef[defName="SEX_Affectionate"]</xpath>
+							<value>
+								<displayOrderInCategory>-101</displayOrderInCategory>
+							</value>
+						</li>
+						<li Class="PatchOperationAdd">
+							<xpath>Defs/GeneDef[defName="SEX_Solitary"]</xpath>
+							<value>
+								<displayOrderInCategory>-100</displayOrderInCategory>
+							</value>
+						</li>
+					</operations>
+				</match>
+			</li>
+			<li Class="PatchOperationFindMod">
+				<mods>
 					<li>Vanilla Races Expanded - Hussar</li>
 				</mods>
 				<match Class="PatchOperationSequence">
@@ -1511,7 +1541,7 @@
 						<li Class="PatchOperationReplace">
 							<xpath>Defs/GeneDef[defName="Turn_Gene_Speechless"]/displayOrderInCategory</xpath>
 							<value>
-								<displayOrderInCategory>-100</displayOrderInCategory>
+								<displayOrderInCategory>-10</displayOrderInCategory>
 							</value>
 						</li>
 						<li Class="PatchOperationAdd">

@@ -89,6 +89,13 @@
 		</value>
 	</Operation>
 
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/GeneDef[defName="Robust"]/statFactors/IncomingDamageFactor</xpath>
+		<value>
+			<IncomingDamageFactor>0.8</IncomingDamageFactor>
+		</value>
+	</Operation>
+
 	<Operation Class="PatchOperationRemove">
 		<xpath>Defs/GeneDef[defName="Hands_Pig"]/capMods/li[capacity="Manipulation"]/postFactor</xpath>
 	</Operation>
