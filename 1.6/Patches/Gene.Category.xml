@@ -97,4 +97,20 @@
 		</match>
 	</Operation>
 
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/GeneCategoryDef[defName="Cosmetic" or defName="Cosmetic_Skin"]/displayPriorityInGenepack</xpath>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/GeneCategoryDef[defName="Cosmetic"]/displayPriorityInXenotype</xpath>
+		<value>
+			<displayPriorityInXenotype>-100</displayPriorityInXenotype>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/GeneCategoryDef[defName="Cosmetic_Skin"]/displayPriorityInXenotype</xpath>
+		<value>
+			<displayPriorityInXenotype>-110</displayPriorityInXenotype>
+		</value>
+	</Operation>
+
 </Patch>

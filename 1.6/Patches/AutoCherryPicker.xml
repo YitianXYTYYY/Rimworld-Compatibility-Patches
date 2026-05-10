@@ -56,6 +56,23 @@
 	</Operation>
 	<Operation Class="PatchOperationFindMod">
 		<mods>
+			<li>ReSplice: Core</li>
+		</mods>
+		<match Class="PatchOperationFindMod">
+			<mods>
+				<li>Genepack Reprocessor</li>
+			</mods>
+			<match Class="PatchOperationAdd">
+				<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
+				<value>
+					<li>ThingDef/RS_GeneCentrifuge</li>
+					<li>ThingDef/RS_XenoGermDuplicator</li>
+				</value>
+			</match>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
 			<li>Vanilla Armour Expanded</li>
 		</mods>
 		<match Class="PatchOperationAdd">
