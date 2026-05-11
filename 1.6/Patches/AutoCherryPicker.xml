@@ -84,17 +84,6 @@
 	</Operation>
 	<Operation Class="PatchOperationFindMod">
 		<mods>
-			<li>Vanilla Factions Expanded - Tribals</li>
-		</mods>
-		<match Class="PatchOperationAdd">
-			<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
-			<value>
-				<li>ThingDef/VFET_Throwspikes</li>
-			</value>
-		</match>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
 			<li>Vanilla Weapons Expanded</li>
 		</mods>
 		<match Class="PatchOperationAdd">
@@ -102,6 +91,7 @@
 			<value>
 				<li>ThingDef/VWE_Throwing_Rocks</li>
 				<li>ThingDef/VWE_Throwing_Knives</li>
+				<li>RecipeDef/VWE_MakeThrowingRocks</li>
 			</value>
 		</match>
 	</Operation>
