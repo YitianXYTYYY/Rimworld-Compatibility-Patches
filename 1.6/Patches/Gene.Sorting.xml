@@ -459,9 +459,14 @@
 		</mods>
 		<match Class="PatchOperationSequence">
 			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="BfG_Sleep_Space"]</xpath>
+					<value>
+						<displayCategory>Astro</displayCategory>
+					</value>
+				</li>
 				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="BfG_Sleep_Space" or 
-						defName="BfG_Robust_Space" or 
+					<xpath>Defs/GeneDef[defName="BfG_Robust_Space" or 
 						defName="BfG_Learning_Space" or 
 						defName="BfG_MinTemp_Space" or 
 						defName="BfG_WoundHealing_Space" or 
@@ -1443,13 +1448,13 @@
 						<li Class="PatchOperationAdd">
 							<xpath>Defs/GeneDef[defName="SEX_Affectionate"]</xpath>
 							<value>
-								<displayOrderInCategory>-101</displayOrderInCategory>
+								<displayOrderInCategory>-11</displayOrderInCategory>
 							</value>
 						</li>
 						<li Class="PatchOperationAdd">
 							<xpath>Defs/GeneDef[defName="SEX_Solitary"]</xpath>
 							<value>
-								<displayOrderInCategory>-100</displayOrderInCategory>
+								<displayOrderInCategory>-10</displayOrderInCategory>
 							</value>
 						</li>
 					</operations>
@@ -1541,7 +1546,7 @@
 						<li Class="PatchOperationReplace">
 							<xpath>Defs/GeneDef[defName="Turn_Gene_Speechless"]/displayOrderInCategory</xpath>
 							<value>
-								<displayOrderInCategory>-10</displayOrderInCategory>
+								<displayOrderInCategory>-100</displayOrderInCategory>
 							</value>
 						</li>
 						<li Class="PatchOperationAdd">
@@ -1933,6 +1938,18 @@
 					<xpath>Defs/GeneDef[defName="VREH_Dutiful"]/displayOrderInCategory</xpath>
 					<value>
 						<displayOrderInCategory>-90</displayOrderInCategory>
+					</value>
+				</match>
+			</li>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Races Expanded - Highmate</li>
+				</mods>
+				<match Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VRE_PerfectBody"]</xpath>
+					<value>
+						<iconColor>(0.75, 0.75, 0.75)</iconColor>
+						<displayCategory>Miscellaneous</displayCategory>
 					</value>
 				</match>
 			</li>

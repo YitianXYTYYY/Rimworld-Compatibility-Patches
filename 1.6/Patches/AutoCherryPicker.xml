@@ -105,4 +105,15 @@
 			</value>
 		</match>
 	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Yayo's Combat 3 (Continued)</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
+			<value>
+				<li>ThingDef/Gun_AntiArmor_Rocket</li>
+			</value>
+		</match>
+	</Operation>
 </Patch>

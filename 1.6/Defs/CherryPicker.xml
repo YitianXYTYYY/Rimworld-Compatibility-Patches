@@ -4,9 +4,7 @@
 	<CherryPicker.DefList MayRequire="Owlchemist.CherryPicker">
 		<defName>CherryPicker_XYTYYY</defName>
 		<label>uncheck this to enable basic removals</label>
-		<defs>
-			<li>ThingDef/Gun_AntiArmor_Rocket</li>
-		</defs>
+		<defs/>
 	</CherryPicker.DefList>
 
 </Defs>

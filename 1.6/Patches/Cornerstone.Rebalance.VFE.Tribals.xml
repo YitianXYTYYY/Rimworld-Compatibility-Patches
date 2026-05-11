@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Factions Expanded - Tribals</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_PathOfSwiftWinds"]/statOffsets/MoveSpeed</xpath>
+					<value>
+						<MoveSpeed>0.2</MoveSpeed>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_WhisperersOfMind"]/statFactors/PsychicSensitivity</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_WhisperersOfMind"]</xpath>
+					<value>
+						<statOffsets>
+							<PsychicSensitivity>0.2</PsychicSensitivity>
+						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_LorekeepersTradition"]/statFactors/GlobalLearningFactor</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_LorekeepersTradition"]</xpath>
+					<value>
+						<statOffsets>
+							<GlobalLearningFactor>0.2</GlobalLearningFactor>
+						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_EmbraceOfTheNight"]/statFactors/RestRateMultiplier</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_EmbraceOfTheNight"]</xpath>
+					<value>
+						<statOffsets>
+							<RestRateMultiplier>0.1</RestRateMultiplier>
+						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_RitualOfQuickFeast"]/statFactors/EatingSpeed</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_RitualOfQuickFeast"]</xpath>
+					<value>
+						<statOffsets>
+							<EatingSpeed>0.2</EatingSpeed>
+						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_FollowersOfTheHealingWaters"]/statFactors/ImmunityGainSpeed</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_FollowersOfTheHealingWaters"]</xpath>
+					<value>
+						<statOffsets>
+							<ImmunityGainSpeed>0.1</ImmunityGainSpeed>
+						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_OrderoftheMendingHands"]/statFactors/InjuryHealingFactor</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_OrderoftheMendingHands"]</xpath>
+					<value>
+						<statOffsets>
+							<InjuryHealingFactor>0.2</InjuryHealingFactor>
+						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_DisciplesOfCleanliness"]/statFactors/FilthRate</xpath>
+					<value>
+						<FilthRate>0.8</FilthRate>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_GuildOfDiligence"]/statFactors/WorkSpeedGlobal</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_GuildOfDiligence"]</xpath>
+					<value>
+						<statOffsets>
+							<WorkSpeedGlobal>0.1</WorkSpeedGlobal>
+						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_DevotedMiners"]/statFactors/MiningSpeed</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_DevotedMiners"]</xpath>
+					<value>
+						<statOffsets>
+							<MiningSpeed>0.2</MiningSpeed>
+						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_SeekersOfHiddenDepths"]/statFactors/DeepDrillingSpeed</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_SeekersOfHiddenDepths"]</xpath>
+					<value>
+						<statOffsets>
+							<DeepDrillingSpeed>0.2</DeepDrillingSpeed>
+						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_SowersOfAbundance"]/statFactors/PlantWorkSpeed</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_SowersOfAbundance"]</xpath>
+					<value>
+						<statOffsets>
+							<PlantWorkSpeed>0.2</PlantWorkSpeed>
+						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_ShadowsOfTheHunt"]/statFactors/HuntingStealth</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_ShadowsOfTheHunt"]</xpath>
+					<value>
+						<statOffsets>
+							<HuntingStealth>0.2</HuntingStealth>
+						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_MasonsOfTheFuture"]/statFactors/ConstructionSpeed</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_MasonsOfTheFuture"]</xpath>
+					<value>
+						<statOffsets>
+							<ConstructionSpeed>0.1</ConstructionSpeed>
+						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_CustodiansOfPurity"]/statFactors/CleaningSpeed</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_CustodiansOfPurity"]</xpath>
+					<value>
+						<statOffsets>
+							<CleaningSpeed>0.2</CleaningSpeed>
+						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_HealersOfSwiftHand"]/statFactors/MedicalTendSpeed</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_HealersOfSwiftHand"]</xpath>
+					<value>
+						<statOffsets>
+							<MedicalTendSpeed>0.2</MedicalTendSpeed>
+						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_SurgeonsOfExcellence"]/statFactors/MedicalOperationSpeed</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_SurgeonsOfExcellence"]</xpath>
+					<value>
+						<statOffsets>
+							<MedicalOperationSpeed>0.2</MedicalOperationSpeed>
+						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_WarriorsOfPrecision"]/statFactors/MeleeHitChance</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_WarriorsOfPrecision"]</xpath>
+					<value>
+						<statOffsets>
+							<MeleeHitChance>4</MeleeHitChance>
+						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_DancersOfTheBattlefield"]/statFactors/MeleeDodgeChance</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_DancersOfTheBattlefield"]</xpath>
+					<value>
+						<statOffsets>
+							<MeleeDodgeChance>4</MeleeDodgeChance>
+						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_Marksmen"]/statFactors/ShootingAccuracyPawn</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_Marksmen"]</xpath>
+					<value>
+						<statOffsets>
+							<ShootingAccuracyPawn>4</ShootingAccuracyPawn>
+						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_MortarVisionaries"]/statFactors/MortarMissRadiusFactor</xpath>
+					<value>
+						<MortarMissRadiusFactor>0.8</MortarMissRadiusFactor>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_DiligentDoers"]/statFactors/GeneralLaborSpeed</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_DiligentDoers"]</xpath>
+					<value>
+						<statOffsets>
+							<GeneralLaborSpeed>0.1</GeneralLaborSpeed>
+						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_ChemistsOfEfficacy"]/statFactors/DrugSynthesisSpeed</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_ChemistsOfEfficacy"]</xpath>
+					<value>
+						<statOffsets>
+							<DrugSynthesisSpeed>0.2</DrugSynthesisSpeed>
+						</statOffsets>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>

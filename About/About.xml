@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<packageId>comp.xytyyy</packageId>
+	<packageId>xytyyy.patches</packageId>
 	<name>Compatibility Patches by xytyyy</name>
 	<author>xytyyy</author>
 	<modVersion>1.0.0</modVersion>
@@ -15,34 +15,24 @@
 		3.Rebalance stats like psychic sensitivity, shooting accuracy, etc.
 	</description>
 	<modDependencies>
-	<li>
-		<packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
-		<displayName>Vanilla Expanded Framework</displayName>
-		<steamWorkshopUrl>steam://url/CommunityFilePage/2023507013</steamWorkshopUrl>
-	</li>
-	<li>
-		<packageId>VanillaExpanded.VWEHW</packageId>
-		<displayName>Vanilla Weapons Expanded - Heavy Weapons</displayName>
-		<steamWorkshopUrl>steam://url/CommunityFilePage/2329126791</steamWorkshopUrl>
-	</li>
-	<li>
-		<packageId>zal.heavyweaponsreloading</packageId>
-		<displayName>Vanilla Weapons Expanded - Heavy - Reloading Patch (Continued)</displayName>
-		<steamWorkshopUrl>steam://url/CommunityFilePage/3283751362</steamWorkshopUrl>
-	</li>
-	<li>
-		<packageId>Mlie.YayosCombat3</packageId>
-		<displayName>Yayo's Combat 3 (Continued)</displayName>
-		<steamWorkshopUrl>steam://url/CommunityFilePage/2854006492</steamWorkshopUrl>
-	</li>
+		<li>
+			<packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
+			<displayName>Vanilla Expanded Framework</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/2023507013</steamWorkshopUrl>
+		</li>
+		<li>
+			<packageId>zal.heavyweaponsreloading</packageId>
+			<displayName>Vanilla Weapons Expanded - Heavy - Reloading Patch (Continued)</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/3283751362</steamWorkshopUrl>
+		</li>
 	</modDependencies>
 	<loadAfter>
-		<li>zal.heavyweaponsreloading</li>
-		<li>Mlie.YayosCombat3</li>
+		<li>als.biotechgravship</li>
 		<li>JintuziLamian.Gene.XenoCosmetic</li>
+		<li>Mlie.YayosCombat3</li>
 		<li>Oppey.EyeGenes2</li>
 		<li>ReSplice.XOTR.Core</li>
-		<li>Biotech for Gravship</li>
+		<li>seohyeon.OptimizationMeats</li>
 		<li>Turnovus.Biotech.IntegratedGenes</li>
 		<li>vanillaquestsexpanded.ancients</li>
 		<li>vanillaracesexpanded.archon</li>
@@ -59,5 +49,6 @@
 		<li>vanillaracesexpanded.waster</li>
 		<li>vanillaracesexpanded.insector</li>
 		<li>Wara.toomanymods</li>
+		<li>zal.heavyweaponsreloading</li>
 	</loadAfter>
 </ModMetaData>

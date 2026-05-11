@@ -262,20 +262,6 @@
 		</match>
 	</Operation>
 
-	
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Vanilla Races Expanded - Highmate</li>
-		</mods>
-		<match Class="PatchOperationAdd">
-			<xpath>Defs/GeneDef[defName="VRE_PerfectBody"]</xpath>
-			<value>
-				<iconColor>(0.75, 0.75, 0.75)</iconColor>
-				<displayCategory>Cosmetic</displayCategory>
-			</value>
-		</match>
-	</Operation>
-
 	<Operation Class="PatchOperationFindMod">
 		<mods>
 			<li>Vanilla Races Expanded - Hussar</li>
@@ -377,7 +363,7 @@
 			<li>Vanilla Races Expanded - Sanguophage</li>
 		</mods>
 		<match Class="PatchOperationRemove">
-			<xpath>Defs/GeneDef[defName="VRE_SanguineHair" ordefName="VRE_BatNose"]/displayCategory</xpath>
+			<xpath>Defs/GeneDef[defName="VRE_SanguineHair" or defName="VRE_BatNose"]/displayCategory</xpath>
 		</match>
 	</Operation>
 

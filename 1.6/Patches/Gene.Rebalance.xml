@@ -66,6 +66,29 @@
 		</value>
 	</Operation>
 
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/GeneDef[defName="VerySleepy"]/statFactors/RestFallRateFactor</xpath>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/GeneDef[defName="VerySleepy"]</xpath>
+		<value>
+			<statOffsets>
+				<RestFallRateFactor>0.8</RestFallRateFactor>
+			</statOffsets>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/GeneDef[defName="Sleepy"]/statFactors/RestFallRateFactor</xpath>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/GeneDef[defName="Sleepy"]</xpath>
+		<value>
+			<statOffsets>
+				<RestFallRateFactor>0.4</RestFallRateFactor>
+			</statOffsets>
+		</value>
+	</Operation>
+
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/GeneDef[defName="Nearsighted"]/statFactors/ShootingAccuracyFactor_Long</xpath>
 		<value>

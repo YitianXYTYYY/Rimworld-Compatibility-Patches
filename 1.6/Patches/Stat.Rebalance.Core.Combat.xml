@@ -68,6 +68,9 @@
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/StatDef[defName="VEF_VerbRangeFactor"]/toStringStyleUnfinalized</xpath>
+	</Operation>
+	<Operation Class="PatchOperationRemove">
 		<xpath>Defs/StatDef[defName="VEF_RangedDodgeChance"]/toStringStyleUnfinalized</xpath>
 	</Operation>
 	<Operation Class="PatchOperationAdd">
