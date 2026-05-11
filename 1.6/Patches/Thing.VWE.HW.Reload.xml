@@ -40,31 +40,31 @@
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/label</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/label</xpath>
 		<value>
 			<label>autocannon</label>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/MaxShots</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/MaxShots</xpath>
 		<value>
 			<MaxShots>75</MaxShots>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/ItemsPerShot</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/ItemsPerShot</xpath>
 		<value>
 			<ItemsPerShot>1</ItemsPerShot>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/ReloadTimePerShot</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/ReloadTimePerShot</xpath>
 		<value>
 			<ReloadTimePerShot>0.1</ReloadTimePerShot>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/GenerateAmmo</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/GenerateAmmo</xpath>
 		<value>
 			<GenerateAmmo>
 				<Steel>75~150</Steel>
@@ -100,31 +100,31 @@
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/label</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/label</xpath>
 		<value>
 			<label>heavy flamer</label>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/MaxShots</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/MaxShots</xpath>
 		<value>
 			<MaxShots>15</MaxShots>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/ItemsPerShot</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/ItemsPerShot</xpath>
 		<value>
 			<ItemsPerShot>5</ItemsPerShot>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/ReloadTimePerShot</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/ReloadTimePerShot</xpath>
 		<value>
 			<ReloadTimePerShot>0.5</ReloadTimePerShot>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/GenerateAmmo</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/GenerateAmmo</xpath>
 		<value>
 			<GenerateAmmo>
 				<Chemfuel>75~150</Chemfuel>
@@ -162,13 +162,13 @@
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="VWE_Gun_HandheldMortar"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/label</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_HandheldMortar"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/label</xpath>
 		<value>
 			<label>handheld mortar</label>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="VWE_Gun_HandheldMortar"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/ReloadTimePerShot</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_HandheldMortar"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/ReloadTimePerShot</xpath>
 		<value>
 			<ReloadTimePerShot>2</ReloadTimePerShot>
 		</value>
@@ -216,7 +216,7 @@
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/label</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/label</xpath>
 		<value>
 			<label>swarm missile launcher</label>
 		</value>
@@ -282,31 +282,31 @@
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/label</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/label</xpath>
 		<value>
 			<label>uranium slug rifle</label>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/MaxShots</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/MaxShots</xpath>
 		<value>
 			<MaxShots>15</MaxShots>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/ItemsPerShot</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/ItemsPerShot</xpath>
 		<value>
 			<ItemsPerShot>1</ItemsPerShot>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/ReloadTimePerShot</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/ReloadTimePerShot</xpath>
 		<value>
 			<ReloadTimePerShot>0.25</ReloadTimePerShot>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/GenerateAmmo</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/GenerateAmmo</xpath>
 		<value>
 			<GenerateAmmo>
 				<Uranium>15~30</Uranium>
@@ -321,6 +321,7 @@
 		</mods>
 		<match Class="PatchOperationSequence">
 			<operations>
+				<!-- autocannon -->
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]</xpath>
 				</li>
@@ -332,7 +333,7 @@
 						</weaponTags>
 					</value>
 				</li>
-
+				
 				<!-- heavy flamer -->
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]</xpath>
@@ -364,7 +365,7 @@
 					<xpath>Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]</xpath>
 					<value>
 						<weaponTags>
-							<li>ammoDef_VWEHR_SwarmMissileAmmo/25/1</li>
+							<li>ammoDef_VWEHR_SwarmMissileAmmo/10/1</li>
 						</weaponTags>
 					</value>
 				</li>
