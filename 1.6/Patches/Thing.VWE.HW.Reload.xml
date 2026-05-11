@@ -322,7 +322,6 @@
 		<match Class="PatchOperationSequence">
 			<operations>
 				<li Class="PatchOperationRemove">
-				<!-- autocannon -->
 					<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]</xpath>
 				</li>
 				<li Class="PatchOperationAdd">
