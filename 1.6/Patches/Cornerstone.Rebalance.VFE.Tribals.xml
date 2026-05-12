@@ -13,6 +13,12 @@
 						<MoveSpeed>0.2</MoveSpeed>
 					</value>
 				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_PathOfSwiftWinds"]/description</xpath>
+					<value>
+						<description>Movement speed is increased by +0.2.</description>
+					</value>
+				</li>
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_WhisperersOfMind"]/statFactors/PsychicSensitivity</xpath>
 				</li>
@@ -22,6 +28,12 @@
 						<statOffsets>
 							<PsychicSensitivity>0.2</PsychicSensitivity>
 						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_WhisperersOfMind"]/description</xpath>
+					<value>
+						<description>Psychic sensitivity is increased by +20%.</description>
 					</value>
 				</li>
 				<li Class="PatchOperationRemove">
@@ -35,6 +47,12 @@
 						</statOffsets>
 					</value>
 				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_LorekeepersTradition"]/description</xpath>
+					<value>
+						<description>Learning rate of all skills is increased by +20%.</description>
+					</value>
+				</li>
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_EmbraceOfTheNight"]/statFactors/RestRateMultiplier</xpath>
 				</li>
@@ -46,6 +64,12 @@
 						</statOffsets>
 					</value>
 				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_EmbraceOfTheNight"]/description</xpath>
+					<value>
+						<description>Rest gaining while sleeping is increased by +10%.</description>
+					</value>
+				</li>
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_RitualOfQuickFeast"]/statFactors/EatingSpeed</xpath>
 				</li>
@@ -53,8 +77,14 @@
 					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_RitualOfQuickFeast"]</xpath>
 					<value>
 						<statOffsets>
-							<EatingSpeed>0.2</EatingSpeed>
+							<EatingSpeed>0.3</EatingSpeed>
 						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_RitualOfQuickFeast"]/description</xpath>
+					<value>
+						<description>Eating speed is increased by +30%.</description>
 					</value>
 				</li>
 				<li Class="PatchOperationRemove">
@@ -66,6 +96,12 @@
 						<statOffsets>
 							<ImmunityGainSpeed>0.1</ImmunityGainSpeed>
 						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_FollowersOfTheHealingWaters"]/description</xpath>
+					<value>
+						<description>Immunity gain speed is increased by +10%.</description>
 					</value>
 				</li>
 				<li Class="PatchOperationRemove">
@@ -80,9 +116,21 @@
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_OrderoftheMendingHands"]/description</xpath>
+					<value>
+						<description>Injury healing factor is increased by +20%.</description>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
 					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_DisciplesOfCleanliness"]/statFactors/FilthRate</xpath>
 					<value>
 						<FilthRate>0.8</FilthRate>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_DisciplesOfCleanliness"]/description</xpath>
+					<value>
+						<description>Filth produced by people is reduced by 20%.</description>
 					</value>
 				</li>
 				<li Class="PatchOperationRemove">
@@ -96,6 +144,12 @@
 						</statOffsets>
 					</value>
 				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_GuildOfDiligence"]/description</xpath>
+					<value>
+						<description>Global work speed is increased by +10%.</description>
+					</value>
+				</li>
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_DevotedMiners"]/statFactors/MiningSpeed</xpath>
 				</li>
@@ -105,6 +159,12 @@
 						<statOffsets>
 							<MiningSpeed>0.2</MiningSpeed>
 						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_DevotedMiners"]/description</xpath>
+					<value>
+						<description>Mining speed is increased by +20%.</description>
 					</value>
 				</li>
 				<li Class="PatchOperationRemove">
@@ -118,6 +178,12 @@
 						</statOffsets>
 					</value>
 				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_SeekersOfHiddenDepths"]/description</xpath>
+					<value>
+						<description>Deep drilling speed is increased by +20%.</description>
+					</value>
+				</li>
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_SowersOfAbundance"]/statFactors/PlantWorkSpeed</xpath>
 				</li>
@@ -127,6 +193,12 @@
 						<statOffsets>
 							<PlantWorkSpeed>0.2</PlantWorkSpeed>
 						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_SowersOfAbundance"]/description</xpath>
+					<value>
+						<description>Plant work speed is increased by +20%.</description>
 					</value>
 				</li>
 				<li Class="PatchOperationRemove">
@@ -140,6 +212,12 @@
 						</statOffsets>
 					</value>
 				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_ShadowsOfTheHunt"]/description</xpath>
+					<value>
+						<description>Hunting stealth is increased by +20%.</description>
+					</value>
+				</li>
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_MasonsOfTheFuture"]/statFactors/ConstructionSpeed</xpath>
 				</li>
@@ -149,6 +227,12 @@
 						<statOffsets>
 							<ConstructionSpeed>0.1</ConstructionSpeed>
 						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_MasonsOfTheFuture"]/description</xpath>
+					<value>
+						<description>Construction speed is increased by +10%.</description>
 					</value>
 				</li>
 				<li Class="PatchOperationRemove">
@@ -162,6 +246,12 @@
 						</statOffsets>
 					</value>
 				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_CustodiansOfPurity"]/description</xpath>
+					<value>
+						<description>Cleaning speed is increased by +20%.</description>
+					</value>
+				</li>
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_HealersOfSwiftHand"]/statFactors/MedicalTendSpeed</xpath>
 				</li>
@@ -171,6 +261,12 @@
 						<statOffsets>
 							<MedicalTendSpeed>0.2</MedicalTendSpeed>
 						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_HealersOfSwiftHand"]/description</xpath>
+					<value>
+						<description>Medical tend speed is increased by +20%.</description>
 					</value>
 				</li>
 				<li Class="PatchOperationRemove">
@@ -184,6 +280,12 @@
 						</statOffsets>
 					</value>
 				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_SurgeonsOfExcellence"]/description</xpath>
+					<value>
+						<description>Medical operation speed is increased by +20%.</description>
+					</value>
+				</li>
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_WarriorsOfPrecision"]/statFactors/MeleeHitChance</xpath>
 				</li>
@@ -195,6 +297,12 @@
 						</statOffsets>
 					</value>
 				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_WarriorsOfPrecision"]/description</xpath>
+					<value>
+						<description>Melee hit chance is increased by +4.</description>
+					</value>
+				</li>
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_DancersOfTheBattlefield"]/statFactors/MeleeDodgeChance</xpath>
 				</li>
@@ -204,6 +312,12 @@
 						<statOffsets>
 							<MeleeDodgeChance>4</MeleeDodgeChance>
 						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_DancersOfTheBattlefield"]/description</xpath>
+					<value>
+						<description>Melee dodge chance is increased by +4.</description>
 					</value>
 				</li>
 				<li Class="PatchOperationRemove">
@@ -218,9 +332,21 @@
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_Marksmen"]/description</xpath>
+					<value>
+						<description>Shooting accuracy is increased by +4.</description>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
 					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_MortarVisionaries"]/statFactors/MortarMissRadiusFactor</xpath>
 					<value>
 						<MortarMissRadiusFactor>0.8</MortarMissRadiusFactor>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_MortarVisionaries"]/description</xpath>
+					<value>
+						<description>Mortars fired by the colonists are 20% more accurate.</description>
 					</value>
 				</li>
 				<li Class="PatchOperationRemove">
@@ -234,6 +360,12 @@
 						</statOffsets>
 					</value>
 				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_DiligentDoers"]/description</xpath>
+					<value>
+						<description>General labor speed is increased by +10%.</description>
+					</value>
+				</li>
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_ChemistsOfEfficacy"]/statFactors/DrugSynthesisSpeed</xpath>
 				</li>
@@ -243,6 +375,12 @@
 						<statOffsets>
 							<DrugSynthesisSpeed>0.2</DrugSynthesisSpeed>
 						</statOffsets>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_ChemistsOfEfficacy"]/description</xpath>
+					<value>
+						<description>Drug synthesis speed is increased by +20%.</description>
 					</value>
 				</li>
 			</operations>

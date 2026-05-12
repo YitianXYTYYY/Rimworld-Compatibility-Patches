@@ -84,6 +84,18 @@
 	</Operation>
 	<Operation Class="PatchOperationFindMod">
 		<mods>
+			<li>Vanilla Factions Expanded - Tribals</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
+			<value>
+				<li>ThingDef/VFET_Chunk</li>
+				<li>RecipeDef/Make_VFET_Chunk</li>
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
 			<li>Vanilla Weapons Expanded</li>
 		</mods>
 		<match Class="PatchOperationAdd">

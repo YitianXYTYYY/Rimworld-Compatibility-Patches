@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon" or 
+			defName="VWE_Gun_HeavyFlamer" or 
+			defName="VWE_Gun_HandheldMortar" or 
+			defName="VWE_Gun_SwarmMissileLauncher" or 
+			defName="VWE_Gun_UraniumSlugRifle"]</xpath>
+		<value>
+			<weaponClasses>
+				<li>RangedHeavy</li>
+			</weaponClasses>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/weaponClasses</xpath>
+		<value>
+			<li>LongShots</li>
+		</value>
+	</Operation>
+
 	<!-- Autocannon -->
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]/statBases</xpath>
@@ -33,43 +52,52 @@
 			<burstShotCount>3</burstShotCount>
 		</value>
 	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]/verbs/li/label</xpath>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Yayo's Combat 3 (Continued)</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li[compClass="MVCF.Comps.Comp_VerbProps"]</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]/weaponTags</xpath>
+					<value>
+						<li>ammoDef_Steel/30/2</li>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+	<!-- Handheld Mortar -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VWE_Gun_HandheldMortar"]/costList</xpath>
 		<value>
-			<label>autocannon</label>
+			<ReinforcedBarrel>1</ReinforcedBarrel>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/label</xpath>
+		<xpath>Defs/ThingDef[defName="VWE_Gun_HandheldMortar"]/statBases</xpath>
 		<value>
-			<label>autocannon</label>
+			<statBases>
+				<RangedWeapon_Cooldown>6</RangedWeapon_Cooldown>
+				<Mass>30</Mass>
+				<WorkToMake>10000</WorkToMake>
+			</statBases>
 		</value>
 	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/MaxShots</xpath>
-		<value>
-			<MaxShots>75</MaxShots>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/ItemsPerShot</xpath>
-		<value>
-			<ItemsPerShot>1</ItemsPerShot>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/ReloadTimePerShot</xpath>
-		<value>
-			<ReloadTimePerShot>0.1</ReloadTimePerShot>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/GenerateAmmo</xpath>
-		<value>
-			<GenerateAmmo>
-				<Steel>75~150</Steel>
-			</GenerateAmmo>
-		</value>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Yayo's Combat 3 (Continued)</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="VWE_Gun_HandheldMortar"]/weaponTags</xpath>
+			<value>
+				<li>ammo_none</li>
+			</value>
+		</match>
 	</Operation>
 
 	<!-- Heavy Flamer -->
@@ -93,85 +121,16 @@
 			<warmupTime>2.5</warmupTime>
 		</value>
 	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]/verbs/li/label</xpath>
-		<value>
-			<label>heavy flamer</label>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/label</xpath>
-		<value>
-			<label>heavy flamer</label>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/MaxShots</xpath>
-		<value>
-			<MaxShots>15</MaxShots>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/ItemsPerShot</xpath>
-		<value>
-			<ItemsPerShot>5</ItemsPerShot>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/ReloadTimePerShot</xpath>
-		<value>
-			<ReloadTimePerShot>0.5</ReloadTimePerShot>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/GenerateAmmo</xpath>
-		<value>
-			<GenerateAmmo>
-				<Chemfuel>75~150</Chemfuel>
-			</GenerateAmmo>
-		</value>
-	</Operation>
-
-	<!-- Handheld Mortar -->
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_HandheldMortar"]/costList</xpath>
-		<value>
-			<ReinforcedBarrel>1</ReinforcedBarrel>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_HandheldMortar"]/statBases</xpath>
-		<value>
-			<statBases>
-				<RangedWeapon_Cooldown>6</RangedWeapon_Cooldown>
-				<Mass>30</Mass>
-				<WorkToMake>10000</WorkToMake>
-			</statBases>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_HandheldMortar"]/verbs/li/warmupTime</xpath>
-		<value>
-			<warmupTime>4</warmupTime>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_HandheldMortar"]/verbs/li/label</xpath>
-		<value>
-			<label>handheld mortar</label>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_HandheldMortar"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/label</xpath>
-		<value>
-			<label>handheld mortar</label>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_HandheldMortar"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/ReloadTimePerShot</xpath>
-		<value>
-			<ReloadTimePerShot>2</ReloadTimePerShot>
-		</value>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Yayo's Combat 3 (Continued)</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]/weaponTags</xpath>
+			<value>
+				<li>ammo_none</li>
+			</value>
+		</match>
 	</Operation>
 
 	<!-- Swarm Missile Launcher -->
@@ -209,37 +168,77 @@
 			<burstShotCount>5</burstShotCount>
 		</value>
 	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]/verbs/li/label</xpath>
-		<value>
-			<label>swarm missile launcher</label>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/label</xpath>
-		<value>
-			<label>swarm missile launcher</label>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/MaxShots</xpath>
-		<value>
-			<MaxShots>25</MaxShots>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/ReloadTimePerShot</xpath>
-		<value>
-			<ReloadTimePerShot>0.6</ReloadTimePerShot>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/GenerateAmmo</xpath>
-		<value>
-			<GenerateAmmo>
-				<VWEHR_SwarmMissileAmmo>25~50</VWEHR_SwarmMissileAmmo>
-			</GenerateAmmo>
-		</value>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Yayo's Combat 3 (Continued)</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingCategoryDef[defName="RocketAmmo"]/parent</xpath>
+					<value>
+						<parent>yy_ammo_category</parent>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
+					<value>
+						<li>ThingDef/VWEHR_SwarmMissileAmmo</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs</xpath>
+					<value>
+						<ThingDef ParentName="MakeableShellBase">
+							<defName>VWEHRSwarmMissileAmmo</defName>
+							<label>swarm missile</label>
+							<description>A small guided explosive missile meant for firing in a swarm.</description>
+							<graphicData>
+								<texPath>VWEHR_SwarmMissileAmmo</texPath>
+								<graphicClass>Graphic_StackCount</graphicClass>
+							</graphicData>
+							<stackLimit>25</stackLimit>
+							<costList>
+								<Steel>10</Steel>
+								<Chemfuel>5</Chemfuel>
+							</costList>
+							<recipeMaker>
+								<researchPrerequisite>MultibarrelWeapons</researchPrerequisite>
+							</recipeMaker>
+							<thingCategories Inherit="False">
+								<li>RocketAmmo</li>
+							</thingCategories>
+							<tradeTags Inherit="False" />
+							<comps>
+								<li Class="CompProperties_Explosive">
+									<explosiveRadius>2.9</explosiveRadius>
+									<explosiveDamageType>Bomb</explosiveDamageType>
+									<requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
+								</li>
+							</comps>
+						</ThingDef>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]/comps/li[compClass="MVCF.Comps.Comp_VerbProps"]</xpath>
+				</li>
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]/weaponTags</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]</xpath>
+						<value>
+							<weaponTags/>
+						</value>
+					</nomatch>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]/weaponTags</xpath>
+					<value>
+						<li>ammoDef_VWEHRSwarmMissileAmmo/25/1</li>
+					</value>
+				</li>
+			</operations>
+		</match>
 	</Operation>
 
 	<!-- Uranium Slug Rifle -->
@@ -287,84 +286,14 @@
 			<label>uranium slug rifle</label>
 		</value>
 	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/MaxShots</xpath>
-		<value>
-			<MaxShots>15</MaxShots>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/ItemsPerShot</xpath>
-		<value>
-			<ItemsPerShot>1</ItemsPerShot>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/ReloadTimePerShot</xpath>
-		<value>
-			<ReloadTimePerShot>0.25</ReloadTimePerShot>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps/li/comps/li[@Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable"]/GenerateAmmo</xpath>
-		<value>
-			<GenerateAmmo>
-				<Uranium>15~30</Uranium>
-			</GenerateAmmo>
-		</value>
-	</Operation>
-
-	<!-- yayo combat compatibility -->
 	<Operation Class="PatchOperationFindMod">
 		<mods>
 			<li>Yayo's Combat 3 (Continued)</li>
 		</mods>
 		<match Class="PatchOperationSequence">
 			<operations>
-				<!-- autocannon -->
 				<li Class="PatchOperationRemove">
-					<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]</xpath>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]/weaponTags</xpath>
-					<value>
-						<li>ammoDef_Steel/30/2</li>
-					</value>
-				</li>
-
-				<!-- heavy flamer -->
-				<li Class="PatchOperationRemove">
-					<xpath>Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]</xpath>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]/weaponTags</xpath>
-					<value>
-						<li>ammoDef_Chemfuel/30/5</li>
-					</value>
-				</li>
-
-				<!-- hand-held mortar -->
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/ThingDef[defName="VWE_Gun_HandheldMortar"]/weaponTags</xpath>
-					<value>
-						<li>ammo_none</li>
-					</value>
-				</li>
-
-				<!-- swarm missile launcher -->
-				<li Class="PatchOperationRemove">
-					<xpath>Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]</xpath>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]/weaponTags</xpath>
-					<value>
-						<li>ammoDef_VWEHR_SwarmMissileAmmo/10/1</li>
-					</value>
-				</li>
-
-				<!-- uranium slug rifle -->
-				<li Class="PatchOperationRemove">
-					<xpath>Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]</xpath>
+					<xpath>Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/comps/li[compClass="MVCF.Comps.Comp_VerbProps"]</xpath>
 				</li>
 				<li Class="PatchOperationAdd">
 					<xpath>Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/weaponTags</xpath>

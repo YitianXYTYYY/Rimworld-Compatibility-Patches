@@ -71,55 +71,55 @@
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/ThingDef[defName="yy_ammo_primitive"]/label</xpath>
 					<value>
-						<label>primitive ammunition</label>
+						<label>primitive ammo</label>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/ThingDef[defName="yy_ammo_primitive_fire"]/label</xpath>
 					<value>
-						<label>primitive ammunition - explosive</label>
+						<label>primitive ammo - explosive</label>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/ThingDef[defName="yy_ammo_primitive_emp"]/label</xpath>
 					<value>
-						<label>primitive ammunition - special</label>
+						<label>primitive ammo - special</label>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/ThingDef[defName="yy_ammo_industrial"]/label</xpath>
 					<value>
-						<label>industrial ammunition</label>
+						<label>industrial ammo</label>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/ThingDef[defName="yy_ammo_industrial_fire"]/label</xpath>
 					<value>
-						<label>industrial ammunition - explosive</label>
+						<label>industrial ammo - explosive</label>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/ThingDef[defName="yy_ammo_industrial_emp"]/label</xpath>
 					<value>
-						<label>industrial ammunition - special</label>
+						<label>industrial ammo - special</label>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/ThingDef[defName="yy_ammo_spacer"]/label</xpath>
 					<value>
-						<label>spacer ammunition</label>
+						<label>spacer ammo</label>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/ThingDef[defName="yy_ammo_spacer_fire"]/label</xpath>
 					<value>
-						<label>spacer ammunition - explosive</label>
+						<label>spacer ammo - explosive</label>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/ThingDef[defName="yy_ammo_spacer_emp"]/label</xpath>
 					<value>
-						<label>spacer ammunition - special</label>
+						<label>spacer ammo - special</label>
 					</value>
 				</li>
 
@@ -128,7 +128,7 @@
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/RecipeDef[defName="Make_yy_ammo_primitive"]/label</xpath>
 					<value>
-    					<label>make primitive ammunition x20</label>
+    					<label>make primitive ammo x20</label>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
@@ -146,7 +146,7 @@
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/RecipeDef[defName="Make_yy_ammo_primitive10"]/label</xpath>
 					<value>
-    					<label>make primitive ammunition x200</label>
+    					<label>make primitive ammo x200</label>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
@@ -164,7 +164,7 @@
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/RecipeDef[defName="Make_yy_ammo_primitive_fire"]/label</xpath>
 					<value>
-    					<label>make primitive ammunition - explosive x20</label>
+    					<label>make primitive ammo - explosive x20</label>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
@@ -182,7 +182,7 @@
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/RecipeDef[defName="Make_yy_ammo_primitive_fire10"]/label</xpath>
 					<value>
-    					<label>make primitive ammunition - explosive x200</label>
+    					<label>make primitive ammo - explosive x200</label>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
@@ -200,13 +200,13 @@
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/RecipeDef[defName="Make_yy_ammo_primitive_emp"]/label</xpath>
 					<value>
-    					<label>make primitive ammunition - special x20</label>
+    					<label>make primitive ammo - special x20</label>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/RecipeDef[defName="Make_yy_ammo_primitive_emp10"]/label</xpath>
 					<value>
-    					<label>make primitive ammunition - special x200</label>
+    					<label>make primitive ammo - special x200</label>
 					</value>
 				</li>
 
@@ -214,31 +214,31 @@
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/RecipeDef[defName="Make_yy_ammo_industrial"]/label</xpath>
 					<value>
-    					<label>make industrial ammunition x20</label>
+    					<label>make industrial ammo x20</label>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/RecipeDef[defName="Make_yy_ammo_industrial10"]/label</xpath>
 					<value>
-    					<label>make industrial ammunition x200</label>
+    					<label>make industrial ammo x200</label>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/RecipeDef[defName="Make_yy_ammo_industrial_fire"]/label</xpath>
 					<value>
-    					<label>make industrial ammunition - explosive x20</label>
+    					<label>make industrial ammo - explosive x20</label>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/RecipeDef[defName="Make_yy_ammo_industrial_fire10"]/label</xpath>
 					<value>
-    					<label>make industrial ammunition - explosive x200</label>
+    					<label>make industrial ammo - explosive x200</label>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/RecipeDef[defName="Make_yy_ammo_industrial_emp"]/label</xpath>
 					<value>
-    					<label>make industrial ammunition - special x20</label>
+    					<label>make industrial ammo - special x20</label>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
@@ -250,7 +250,7 @@
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/RecipeDef[defName="Make_yy_ammo_industrial_emp10"]/label</xpath>
 					<value>
-    					<label>make industrial ammunition - special x200</label>
+    					<label>make industrial ammo - special x200</label>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
@@ -264,7 +264,7 @@
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/RecipeDef[defName="Make_yy_ammo_spacer"]/label</xpath>
 					<value>
-    					<label>make spacer ammunition x20</label>
+    					<label>make spacer ammo x20</label>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
@@ -276,7 +276,7 @@
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/RecipeDef[defName="Make_yy_ammo_spacer10"]/label</xpath>
 					<value>
-    					<label>make spacer ammunition x200</label>
+    					<label>make spacer ammo x200</label>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
@@ -288,19 +288,19 @@
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/RecipeDef[defName="Make_yy_ammo_spacer_fire"]/label</xpath>
 					<value>
-    					<label>make spacer ammunition - explosive x20</label>
+    					<label>make spacer ammo - explosive x20</label>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/RecipeDef[defName="Make_yy_ammo_spacer_fire10"]/label</xpath>
 					<value>
-    					<label>make spacer ammunition - explosive x200</label>
+    					<label>make spacer ammo - explosive x200</label>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/RecipeDef[defName="Make_yy_ammo_spacer_emp"]/label</xpath>
 					<value>
-    					<label>make spacer ammunition - special x20</label>
+    					<label>make spacer ammo - special x20</label>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
@@ -312,7 +312,7 @@
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/RecipeDef[defName="Make_yy_ammo_spacer_emp10"]/label</xpath>
 					<value>
-    					<label>make spacer ammunition - special x200</label>
+    					<label>make spacer ammo - special x200</label>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
