@@ -109,13 +109,23 @@
 	</Operation>
 	<Operation Class="PatchOperationFindMod">
 		<mods>
+			<li>Vanilla Weapons Expanded - Heavy Weapons</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
+			<value>
+				<li>ThingDef/VWE_Gun_HeavyFlamer</li>
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
 			<li>VWE Research Cleanup</li>
 		</mods>
 		<match Class="PatchOperationAdd">
 			<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
 			<value>
 				<li>ThingDef/VWE_Gun_Flamethrower</li>
-				<li>ThingDef/VWE_Gun_HeavyFlamer</li>
 			</value>
 		</match>
 	</Operation>

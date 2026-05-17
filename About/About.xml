@@ -25,11 +25,6 @@
 			<displayName>Cherry Picker</displayName>
 			<steamWorkshopUrl>steam://url/CommunityFilePage/3521312241</steamWorkshopUrl>
 		</li>
-		<li>
-			<packageId>zal.heavyweaponsreloading</packageId>
-			<displayName>Vanilla Weapons Expanded - Heavy - Reloading Patch (Continued)</displayName>
-			<steamWorkshopUrl>steam://url/CommunityFilePage/3283751362</steamWorkshopUrl>
-		</li>
 	</modDependencies>
 	<loadAfter>
 		<li>als.biotechgravship</li>
