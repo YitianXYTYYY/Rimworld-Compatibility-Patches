@@ -34,7 +34,6 @@
 	<loadAfter>
 		<li>als.biotechgravship</li>
 		<li>JintuziLamian.Gene.XenoCosmetic</li>
-		<li>Mlie.YayosCombat3</li>
 		<li>Oppey.EyeGenes2</li>
 		<li>Owlchemist.CherryPicker</li>
 		<li>ReSplice.XOTR.Core</li>
@@ -56,5 +55,6 @@
 		<li>vanillaracesexpanded.insector</li>
 		<li>Wara.toomanymods</li>
 		<li>zal.heavyweaponsreloading</li>
+		<li>zal.reload</li>
 	</loadAfter>
 </ModMetaData>
