@@ -25,6 +25,12 @@
 						<reloadTicks>18</reloadTicks>
 					</value>
 				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Reload.Defs.ReloadPresetDef[ammoDef="R_Ammo_Primitive_Explosive"]/reloadTicks</xpath>
+					<value>
+						<reloadTicks>48</reloadTicks>
+					</value>
+				</li>
 			</operations>
 		</match>
 	</Operation>

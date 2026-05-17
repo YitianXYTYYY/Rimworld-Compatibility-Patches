@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <Reload.Defs.ReloadPresetDef>
+        <defName>Bow_Great_Unique</defName>
+        <ammoDef>R_Ammo_Primitive</ammoDef>
+        <magazineCapacity>1</magazineCapacity>
+        <reloadTicks>110</reloadTicks>
+    </Reload.Defs.ReloadPresetDef>
+
+    <Reload.Defs.ReloadPresetDef>
+        <defName>VWE_Bow_Crossbow_Unique</defName>
+        <ammoDef>R_Ammo_Primitive</ammoDef>
+        <magazineCapacity>1</magazineCapacity>
+        <reloadTicks>90</reloadTicks>
+        <moveSpeedPenalty>10</moveSpeedPenalty>
+    </Reload.Defs.ReloadPresetDef>
+
+    <Reload.Defs.ReloadPresetDef>
+        <defName>VWE_Bow_Long_Unique</defName>
+        <ammoDef>R_Ammo_Primitive</ammoDef>
+        <magazineCapacity>1</magazineCapacity>
+        <reloadTicks>125</reloadTicks>
+    </Reload.Defs.ReloadPresetDef>
+
+	<Reload.Defs.ReloadPresetDef>
+		<defName>Gun_HellcatRifle_Unique</defName>
+		<ammoDef>R_Ammo_Industrial</ammoDef>
+		<magazineCapacity>30</magazineCapacity>
+		<reloadTicks>216</reloadTicks>
+		<moveSpeedPenalty>40</moveSpeedPenalty>
+		<beginSound>AssaultRifle_Begin</beginSound>
+		<endSound>AssaultRifle_End</endSound>
+	</Reload.Defs.ReloadPresetDef>
+
+    <Reload.Defs.ReloadPresetDef>
+        <defName>VWE_Bow_Compound_Unique</defName>
+        <ammoDef>R_Ammo_Primitive</ammoDef>
+        <magazineCapacity>1</magazineCapacity>
+        <reloadTicks>90</reloadTicks>
+        <moveSpeedPenalty>0</moveSpeedPenalty>
+    </Reload.Defs.ReloadPresetDef>
+
+    <Reload.Defs.ReloadPresetDef>
+        <defName>VWE_Gun_HandCannon_Unique</defName>
+        <ammoDef>R_Ammo_Industrial</ammoDef>
+        <magazineCapacity>6</magazineCapacity>
+        <reloadTicks>30</reloadTicks>
+        <loadsAmountPerReload>1</loadsAmountPerReload>
+        <moveSpeedPenalty>30</moveSpeedPenalty>
+        <beginSound>Revolver_Begin</beginSound>
+        <reloadSound>Revolver_ShellInject</reloadSound>
+        <endSound>Revolver_End</endSound>
+    </Reload.Defs.ReloadPresetDef>
+
+    <Reload.Defs.ReloadPresetDef>
+        <defName>VWE_Gun_CombatHandgun_Unique</defName>
+        <ammoDef>R_Ammo_Industrial</ammoDef>
+        <magazineCapacity>8</magazineCapacity>
+        <reloadTicks>126</reloadTicks>
+        <moveSpeedPenalty>10</moveSpeedPenalty>
+        <beginSound>AutoPistol_Begin</beginSound>
+        <endSound>AutoPistol_End</endSound>
+    </Reload.Defs.ReloadPresetDef>
+
+    <Reload.Defs.ReloadPresetDef>
+        <defName>VWE_SawedOffShotgun_Unique</defName>
+        <ammoDef>R_Ammo_Industrial</ammoDef>
+        <magazineCapacity>2</magazineCapacity>
+        <reloadTicks>50</reloadTicks>
+        <loadsAmountPerReload>1</loadsAmountPerReload>
+        <moveSpeedPenalty>50</moveSpeedPenalty>
+        <beginSound>PumpShotgun_Begin</beginSound>
+        <reloadSound>PumpShotgun_ShellInject</reloadSound>
+        <endSound>PumpShotgun_End</endSound>
+    </Reload.Defs.ReloadPresetDef>
+
+    <Reload.Defs.ReloadPresetDef>
+        <defName>VWE_Gun_SemiAutomaticRifle_Unique</defName>
+        <ammoDef>R_Ammo_Industrial</ammoDef>
+        <magazineCapacity>10</magazineCapacity>
+        <reloadTicks>240</reloadTicks>
+        <moveSpeedPenalty>40</moveSpeedPenalty>
+        <beginSound>BoltActionRifle_Begin</beginSound>
+        <endSound>BoltActionRifle_End</endSound>
+    </Reload.Defs.ReloadPresetDef>
+
+    <Reload.Defs.ReloadPresetDef>
+        <defName>VWE_Gun_LeverActionRifle_Unique</defName>
+        <ammoDef>R_Ammo_Industrial</ammoDef>
+        <magazineCapacity>8</magazineCapacity>
+        <reloadTicks>36</reloadTicks>
+        <loadsAmountPerReload>1</loadsAmountPerReload>
+        <moveSpeedPenalty>40</moveSpeedPenalty>
+        <beginSound>BoltActionRifle_Begin</beginSound>
+        <reloadSound>Revolver_ShellInject</reloadSound>
+        <endSound>BoltActionRifle_End</endSound>
+    </Reload.Defs.ReloadPresetDef>
+
+	<Reload.Defs.ReloadPresetDef>
+		<defName>VWE_Gun_TrenchGun_Unique</defName>
+		<ammoDef>R_Ammo_Industrial</ammoDef>
+		<magazineCapacity>6</magazineCapacity>
+		<reloadTicks>38</reloadTicks>
+		<loadsAmountPerReload>1</loadsAmountPerReload>
+		<moveSpeedPenalty>50</moveSpeedPenalty>
+		<beginSound>PumpShotgun_Begin</beginSound>
+		<reloadSound>PumpShotgun_ShellInject</reloadSound>
+		<endSound>PumpShotgun_End</endSound>
+	</Reload.Defs.ReloadPresetDef>
+
+    <Reload.Defs.ReloadPresetDef>
+        <defName>VWE_Gun_LightSMG_Unique</defName>
+        <ammoDef>R_Ammo_Industrial</ammoDef>
+        <magazineCapacity>30</magazineCapacity>
+        <reloadTicks>216</reloadTicks>
+        <moveSpeedPenalty>30</moveSpeedPenalty>
+        <beginSound>HeavySMG_Begin</beginSound>
+        <endSound>HeavySMG_End</endSound>
+    </Reload.Defs.ReloadPresetDef>
+
+    <Reload.Defs.ReloadPresetDef>
+        <defName>VWE_Gun_SMG_Unique</defName>
+        <ammoDef>R_Ammo_Industrial</ammoDef>
+        <magazineCapacity>30</magazineCapacity>
+        <reloadTicks>216</reloadTicks>
+        <moveSpeedPenalty>30</moveSpeedPenalty>
+        <beginSound>HeavySMG_Begin</beginSound>
+        <endSound>HeavySMG_End</endSound>
+    </Reload.Defs.ReloadPresetDef>
+
+    <Reload.Defs.ReloadPresetDef>
+        <defName>VWE_Gun_HMG_Unique</defName>
+        <ammoDef>R_Ammo_Industrial</ammoDef>
+        <magazineCapacity>50</magazineCapacity>
+        <reloadTicks>330</reloadTicks>
+        <moveSpeedPenalty>85</moveSpeedPenalty>
+        <beginSound>LMG_Begin</beginSound>
+        <endSound>LMG_End</endSound>
+    </Reload.Defs.ReloadPresetDef>
+
+    <Reload.Defs.ReloadPresetDef>
+        <defName>VWE_Gun_ServiceRifle_Unique</defName>
+        <ammoDef>R_Ammo_Industrial</ammoDef>
+        <magazineCapacity>32</magazineCapacity>
+        <reloadTicks>235</reloadTicks>
+        <moveSpeedPenalty>40</moveSpeedPenalty>
+        <beginSound>AssaultRifle_Begin</beginSound>
+        <endSound>AssaultRifle_End</endSound>
+    </Reload.Defs.ReloadPresetDef>
+
+    <Reload.Defs.ReloadPresetDef>
+        <defName>VWE_Gun_BattleRifle_Unique</defName>
+        <ammoDef>R_Ammo_Industrial</ammoDef>
+        <magazineCapacity>20</magazineCapacity>
+        <reloadTicks>192</reloadTicks>
+        <moveSpeedPenalty>40</moveSpeedPenalty>
+        <beginSound>AssaultRifle_Begin</beginSound>
+        <endSound>AssaultRifle_End</endSound>
+    </Reload.Defs.ReloadPresetDef>
+
+    <Reload.Defs.ReloadPresetDef>
+        <defName>VWE_Gun_Carbine_Unique</defName>
+        <ammoDef>R_Ammo_Industrial</ammoDef>
+        <magazineCapacity>30</magazineCapacity>
+        <reloadTicks>225</reloadTicks>
+        <moveSpeedPenalty>40</moveSpeedPenalty>
+        <beginSound>AssaultRifle_Begin</beginSound>
+        <endSound>AssaultRifle_End</endSound>
+    </Reload.Defs.ReloadPresetDef>
+
+    <Reload.Defs.ReloadPresetDef>
+        <defName>VWE_Gun_MarksmanRifle_Unique</defName>
+        <ammoDef>R_Ammo_Industrial</ammoDef>
+        <magazineCapacity>10</magazineCapacity>
+        <reloadTicks>204</reloadTicks>
+        <moveSpeedPenalty>40</moveSpeedPenalty>
+        <beginSound>AssaultRifle_Begin</beginSound>
+        <endSound>AssaultRifle_End</endSound>
+    </Reload.Defs.ReloadPresetDef>
+
+    <Reload.Defs.ReloadPresetDef>
+        <defName>VWE_Gun_AntiMaterialRifle_Unique</defName>
+        <ammoDef>R_Ammo_Industrial</ammoDef>
+        <magazineCapacity>5</magazineCapacity>
+        <reloadTicks>276</reloadTicks>
+        <moveSpeedPenalty>60</moveSpeedPenalty>
+        <beginSound>SniperRifle_Begin</beginSound>
+        <endSound>SniperRifle_End</endSound>
+    </Reload.Defs.ReloadPresetDef>
+
+	<Reload.Defs.ReloadPresetDef>
+		<defName>VWE_Gun_Autocannon_Unique</defName>
+		<ammoDef>R_Ammo_Industrial</ammoDef>
+		<magazineCapacity>60</magazineCapacity>
+		<reloadTicks>235</reloadTicks>
+		<moveSpeedPenalty>40</moveSpeedPenalty>
+		<beginSound>AssaultRifle_Begin</beginSound>
+		<endSound>AssaultRifle_End</endSound>
+	</Reload.Defs.ReloadPresetDef>
+
+	<Reload.Defs.ReloadPresetDef>
+		<defName>VWE_Gun_HandheldMortar_Unique</defName>
+		<ignore>true</ignore>
+	</Reload.Defs.ReloadPresetDef>
+
+	<Reload.Defs.ReloadPresetDef>
+		<defName>VWE_Gun_SwarmMissileLauncher_Unique</defName>
+		<ammoDef>R_Ammo_Industrial_SwarmMissile</ammoDef>
+		<magazineCapacity>10</magazineCapacity>
+		<reloadTicks>200</reloadTicks>
+		<loadsAmountPerReload>5</loadsAmountPerReload>
+		<moveSpeedPenalty>65</moveSpeedPenalty>
+		<beginSound>Launcher_Begin</beginSound>
+		<reloadSound>Launcher_Reload</reloadSound>
+		<endSound>Launcher_End</endSound>
+	</Reload.Defs.ReloadPresetDef>
+
+	<Reload.Defs.ReloadPresetDef>
+		<defName>VWE_Gun_UraniumSlugRifle_Unique</defName>
+		<ammoDef>R_Ammo_Industrial</ammoDef>
+		<magazineCapacity>20</magazineCapacity>
+		<reloadTicks>276</reloadTicks>
+		<moveSpeedPenalty>60</moveSpeedPenalty>
+		<beginSound>SniperRifle_Begin</beginSound>
+		<endSound>SniperRifle_End</endSound>
+	</Reload.Defs.ReloadPresetDef>
+
+	<Reload.Defs.ReloadPresetDef>
+		<defName>Gun_BeamGraser_Unique</defName>
+		<ammoDef>R_Ammo_Spacer_Special</ammoDef>
+		<magazineCapacity>20</magazineCapacity>
+		<reloadTicks>180</reloadTicks>
+		<moveSpeedPenalty>40</moveSpeedPenalty>
+		<beginSound>AssaultRifle_Begin</beginSound>
+		<endSound>AssaultRifle_End</endSound>
+	</Reload.Defs.ReloadPresetDef>
+
+	<Reload.Defs.ReloadPresetDef>
+		<defName>Gun_BeamRepeater_Unique</defName>
+		<ammoDef>R_Ammo_Spacer_Special</ammoDef>
+		<magazineCapacity>90</magazineCapacity>
+		<reloadTicks>180</reloadTicks>
+		<moveSpeedPenalty>80</moveSpeedPenalty>
+		<beginSound>Minigun_Begin</beginSound>
+		<endSound>Minigun_End</endSound>
+	</Reload.Defs.ReloadPresetDef>
+
+    <Reload.Defs.ReloadPresetDef>
+        <defName>VWE_Gun_ChargePistol_Unique</defName>
+        <ammoDef>R_Ammo_Spacer</ammoDef>
+        <magazineCapacity>8</magazineCapacity>
+        <reloadTicks>100</reloadTicks>
+        <moveSpeedPenalty>10</moveSpeedPenalty>
+        <beginSound>AutoPistol_Begin</beginSound>
+        <endSound>AutoPistol_End</endSound>
+    </Reload.Defs.ReloadPresetDef>
+
+    <Reload.Defs.ReloadPresetDef>
+        <defName>VWE_Gun_ChargeShotgun_Unique</defName>
+        <ammoDef>R_Ammo_Spacer</ammoDef>
+        <magazineCapacity>6</magazineCapacity>
+        <reloadTicks>29</reloadTicks>
+        <loadsAmountPerReload>1</loadsAmountPerReload>
+        <moveSpeedPenalty>50</moveSpeedPenalty>
+        <beginSound>PumpShotgun_Begin</beginSound>
+        <reloadSound>PumpShotgun_ShellInject</reloadSound>
+        <endSound>PumpShotgun_End</endSound>
+    </Reload.Defs.ReloadPresetDef>
+
+    <Reload.Defs.ReloadPresetDef>
+        <defName>VWE_Gun_ChargeSMG_Unique</defName>
+        <ammoDef>R_Ammo_Spacer</ammoDef>
+        <magazineCapacity>30</magazineCapacity>
+        <reloadTicks>200</reloadTicks>
+        <moveSpeedPenalty>30</moveSpeedPenalty>
+        <beginSound>HeavySMG_Begin</beginSound>
+        <endSound>HeavySMG_End</endSound>
+    </Reload.Defs.ReloadPresetDef>
+
+    <Reload.Defs.ReloadPresetDef>
+        <defName>VWE_Gun_ChargeLMG_Unique</defName>
+        <ammoDef>R_Ammo_Spacer</ammoDef>
+        <magazineCapacity>48</magazineCapacity>
+        <reloadTicks>300</reloadTicks>
+        <moveSpeedPenalty>75</moveSpeedPenalty>
+        <beginSound>LMG_Begin</beginSound>
+        <endSound>LMG_End</endSound>
+    </Reload.Defs.ReloadPresetDef>
+
+    <Reload.Defs.ReloadPresetDef>
+        <defName>VWE_Gun_ChargeMinigun_Unique</defName>
+        <ammoDef>R_Ammo_Spacer</ammoDef>
+        <magazineCapacity>200</magazineCapacity>
+        <reloadTicks>410</reloadTicks>
+        <moveSpeedPenalty>100</moveSpeedPenalty>
+        <beginSound>Minigun_Begin</beginSound>
+        <endSound>Minigun_End</endSound>
+    </Reload.Defs.ReloadPresetDef>
+
+    <Reload.Defs.ReloadPresetDef>
+        <defName>VWE_Gun_ChargeSniperRifle_Unique</defName>
+        <ammoDef>R_Ammo_Spacer</ammoDef>
+        <magazineCapacity>5</magazineCapacity>
+        <reloadTicks>230</reloadTicks>
+        <moveSpeedPenalty>40</moveSpeedPenalty>
+        <beginSound>SniperRifle_Begin</beginSound>
+        <endSound>SniperRifle_End</endSound>
+    </Reload.Defs.ReloadPresetDef>
+
+</Defs>
