@@ -2,7 +2,6 @@
 <Patch>
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon" or 
-			defName="VWE_Gun_HeavyFlamer" or 
 			defName="VWE_Gun_HandheldMortar" or 
 			defName="VWE_Gun_SwarmMissileLauncher" or 
 			defName="VWE_Gun_UraniumSlugRifle"]</xpath>
@@ -54,18 +53,12 @@
 	</Operation>
 	<Operation Class="PatchOperationFindMod">
 		<mods>
-			<li>Yayo's Combat 3 (Continued)</li>
+			<li>Reload (Continued)</li>
 		</mods>
 		<match Class="PatchOperationSequence">
 			<operations>
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]/comps/li[compClass="MVCF.Comps.Comp_VerbProps"]</xpath>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]/weaponTags</xpath>
-					<value>
-						<li>ammoDef_Steel/30/2</li>
-					</value>
 				</li>
 			</operations>
 		</match>
@@ -87,50 +80,6 @@
 				<WorkToMake>10000</WorkToMake>
 			</statBases>
 		</value>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Yayo's Combat 3 (Continued)</li>
-		</mods>
-		<match Class="PatchOperationAdd">
-			<xpath>Defs/ThingDef[defName="VWE_Gun_HandheldMortar"]/weaponTags</xpath>
-			<value>
-				<li>ammo_none</li>
-			</value>
-		</match>
-	</Operation>
-
-	<!-- Heavy Flamer -->
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]/statBases</xpath>
-		<value>
-			<statBases>
-				<AccuracyTouch>0.25</AccuracyTouch>
-				<AccuracyShort>0.65</AccuracyShort>
-				<AccuracyMedium>0.60</AccuracyMedium>
-				<AccuracyLong>0.45</AccuracyLong>
-				<RangedWeapon_Cooldown>4.5</RangedWeapon_Cooldown>
-				<Mass>20</Mass>
-				<WorkToMake>20000</WorkToMake>
-			</statBases>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]/verbs/li/warmupTime</xpath>
-		<value>
-			<warmupTime>2.5</warmupTime>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Yayo's Combat 3 (Continued)</li>
-		</mods>
-		<match Class="PatchOperationAdd">
-			<xpath>Defs/ThingDef[defName="VWE_Gun_HeavyFlamer"]/weaponTags</xpath>
-			<value>
-				<li>ammo_none</li>
-			</value>
-		</match>
 	</Operation>
 
 	<!-- Swarm Missile Launcher -->
@@ -167,78 +116,6 @@
 		<value>
 			<burstShotCount>5</burstShotCount>
 		</value>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Yayo's Combat 3 (Continued)</li>
-		</mods>
-		<match Class="PatchOperationSequence">
-			<operations>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/ThingCategoryDef[defName="RocketAmmo"]/parent</xpath>
-					<value>
-						<parent>yy_ammo_category</parent>
-					</value>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
-					<value>
-						<li>ThingDef/VWEHR_SwarmMissileAmmo</li>
-					</value>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs</xpath>
-					<value>
-						<ThingDef ParentName="MakeableShellBase">
-							<defName>VWEHRSwarmMissileAmmo</defName>
-							<label>swarm missile</label>
-							<description>A small guided explosive missile meant for firing in a swarm.</description>
-							<graphicData>
-								<texPath>VWEHR_SwarmMissileAmmo</texPath>
-								<graphicClass>Graphic_StackCount</graphicClass>
-							</graphicData>
-							<stackLimit>25</stackLimit>
-							<costList>
-								<Steel>10</Steel>
-								<Chemfuel>5</Chemfuel>
-							</costList>
-							<recipeMaker>
-								<researchPrerequisite>MultibarrelWeapons</researchPrerequisite>
-							</recipeMaker>
-							<thingCategories Inherit="False">
-								<li>RocketAmmo</li>
-							</thingCategories>
-							<tradeTags Inherit="False" />
-							<comps>
-								<li Class="CompProperties_Explosive">
-									<explosiveRadius>2.9</explosiveRadius>
-									<explosiveDamageType>Bomb</explosiveDamageType>
-									<requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
-								</li>
-							</comps>
-						</ThingDef>
-					</value>
-				</li>
-				<li Class="PatchOperationRemove">
-					<xpath>Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]/comps/li[compClass="MVCF.Comps.Comp_VerbProps"]</xpath>
-				</li>
-				<li Class="PatchOperationConditional">
-					<xpath>/Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]/weaponTags</xpath>
-					<nomatch Class="PatchOperationAdd">
-						<xpath>/Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]</xpath>
-						<value>
-							<weaponTags/>
-						</value>
-					</nomatch>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]/weaponTags</xpath>
-					<value>
-						<li>ammoDef_VWEHRSwarmMissileAmmo/25/1</li>
-					</value>
-				</li>
-			</operations>
-		</match>
 	</Operation>
 
 	<!-- Uranium Slug Rifle -->
@@ -286,19 +163,57 @@
 			<label>uranium slug rifle</label>
 		</value>
 	</Operation>
+
+	<!-- Reload (Continued) -->
 	<Operation Class="PatchOperationFindMod">
 		<mods>
-			<li>Yayo's Combat 3 (Continued)</li>
+			<li>Reload (Continued)</li>
 		</mods>
 		<match Class="PatchOperationSequence">
 			<operations>
 				<li Class="PatchOperationRemove">
-					<xpath>Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/comps/li[compClass="MVCF.Comps.Comp_VerbProps"]</xpath>
+					<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon" or 
+						defName="VWE_Gun_SwarmMissileLauncher" or 
+						defName="VWE_Gun_UraniumSlugRifle"]/comps/li[compClass="MVCF.Comps.Comp_VerbProps"]</xpath>
 				</li>
 				<li Class="PatchOperationAdd">
-					<xpath>Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/weaponTags</xpath>
+					<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
 					<value>
-						<li>ammoDef_Uranium/10/2</li>
+						<li>ThingDef/VWEHR_SwarmMissileAmmo</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs</xpath>
+					<value>
+						<Reload.Defs.AmmoDef ParentName="R_Ammo_Industrial">
+							<defName>R_Ammo_Industrial_SwarmMissile</defName>
+							<label>swarm missile</label>
+							<description>A small guided explosive missile meant for firing in a swarm.</description>
+							<graphicData>
+								<texPath>VWEHR_SwarmMissileAmmo</texPath>
+								<graphicClass>Graphic_StackCount</graphicClass>
+							</graphicData>
+							<stackLimit>25</stackLimit>
+							<statBases>
+								<MarketValue>55</MarketValue>
+							</statBases>
+							<ammoType>Explosive</ammoType>
+							<tickerType>Normal</tickerType>
+							<costList>
+								<Steel>10</Steel>
+								<Chemfuel>5</Chemfuel>
+							</costList>
+							<recipeMaker>
+								<researchPrerequisite>MultibarrelWeapons</researchPrerequisite>
+							</recipeMaker>
+							<comps>
+								<li Class="CompProperties_Explosive">
+									<explosiveRadius>2.9</explosiveRadius>
+									<explosiveDamageType>Bomb</explosiveDamageType>
+									<requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
+								</li>
+							</comps>
+						</Reload.Defs.AmmoDef>
 					</value>
 				</li>
 			</operations>

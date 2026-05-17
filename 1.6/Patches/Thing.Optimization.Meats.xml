@@ -5,10 +5,11 @@
 		<mods>
 			<li>Optimization: Meats - C# Edition</li>
 		</mods>
-		<match Class="PatchOperationSequence">
-			<operations>
-				
-			</operations>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/AlienMeatTest.MeatListDef[defName="WhiteList"]/meats</xpath>
+			<value>
+				<li MayRequire="VanillaExpanded.VGeneticsE">GR_TastyMeat</li>
+			</value>
 		</match>
 	</Operation>
 

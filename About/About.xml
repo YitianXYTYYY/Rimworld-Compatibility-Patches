@@ -21,6 +21,11 @@
 			<steamWorkshopUrl>steam://url/CommunityFilePage/2023507013</steamWorkshopUrl>
 		</li>
 		<li>
+			<packageId>Owlchemist.CherryPicker</packageId>
+			<displayName>Cherry Picker</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/3521312241</steamWorkshopUrl>
+		</li>
+		<li>
 			<packageId>zal.heavyweaponsreloading</packageId>
 			<displayName>Vanilla Weapons Expanded - Heavy - Reloading Patch (Continued)</displayName>
 			<steamWorkshopUrl>steam://url/CommunityFilePage/3283751362</steamWorkshopUrl>
@@ -31,6 +36,7 @@
 		<li>JintuziLamian.Gene.XenoCosmetic</li>
 		<li>Mlie.YayosCombat3</li>
 		<li>Oppey.EyeGenes2</li>
+		<li>Owlchemist.CherryPicker</li>
 		<li>ReSplice.XOTR.Core</li>
 		<li>seohyeon.OptimizationMeats</li>
 		<li>Turnovus.Biotech.IntegratedGenes</li>

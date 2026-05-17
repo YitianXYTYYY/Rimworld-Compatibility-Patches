@@ -3,7 +3,7 @@
 
 	<CherryPicker.DefList MayRequire="Owlchemist.CherryPicker">
 		<defName>CherryPicker_XYTYYY</defName>
-		<label>uncheck this to enable basic removals</label>
+		<label>uncheck to enable xytyyy removals</label>
 		<defs/>
 	</CherryPicker.DefList>
 
