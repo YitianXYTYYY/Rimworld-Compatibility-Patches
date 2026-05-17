@@ -22,13 +22,13 @@
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/Reload.Defs.ReloadPresetDef[ammoDef="R_Ammo_Primitive"]/reloadTicks</xpath>
 					<value>
-						<reloadTicks>18</reloadTicks>
+						<reloadTicks>24</reloadTicks>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/Reload.Defs.ReloadPresetDef[ammoDef="R_Ammo_Primitive_Explosive"]/reloadTicks</xpath>
 					<value>
-						<reloadTicks>48</reloadTicks>
+						<reloadTicks>54</reloadTicks>
 					</value>
 				</li>
 			</operations>

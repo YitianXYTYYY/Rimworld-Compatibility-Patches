@@ -33,7 +33,7 @@
 							<AccuracyTouch>0.28</AccuracyTouch>
 							<AccuracyShort>0.72</AccuracyShort>
 							<AccuracyMedium>0.66</AccuracyMedium>
-							<AccuracyLong>0.50</AccuracyLong>
+							<AccuracyLong>0.5</AccuracyLong>
 							<RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
 							<Mass>20</Mass>
 							<WorkToMake>30000</WorkToMake>
@@ -136,11 +136,11 @@
 					<xpath>Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/statBases</xpath>
 					<value>
 						<statBases>
-							<AccuracyTouch>0.25</AccuracyTouch>
-							<AccuracyShort>0.50</AccuracyShort>
-							<AccuracyMedium>0.75</AccuracyMedium>
+							<AccuracyTouch>0.22</AccuracyTouch>
+							<AccuracyShort>0.33</AccuracyShort>
+							<AccuracyMedium>0.44</AccuracyMedium>
 							<AccuracyLong>0.95</AccuracyLong>
-							<RangedWeapon_Cooldown>2.0</RangedWeapon_Cooldown>
+							<RangedWeapon_Cooldown>1.6</RangedWeapon_Cooldown>
 							<Mass>20</Mass>
 							<WorkToMake>30000</WorkToMake>
 						</statBases>
@@ -149,7 +149,7 @@
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]/verbs/li[verbClass="VEF.Weapons.Verb_Shoot"]/warmupTime</xpath>
 					<value>
-						<warmupTime>2</warmupTime>
+						<warmupTime>1.6</warmupTime>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
@@ -281,6 +281,5 @@
 			</operations>
 		</match>
 	</Operation>
-
 
 </Patch>

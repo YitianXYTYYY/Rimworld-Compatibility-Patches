@@ -46,7 +46,7 @@
 	<Reload.Defs.ReloadPresetDef>
 		<defName>VWE_TrenchGun</defName>
 		<ammoDef>R_Ammo_Industrial</ammoDef>
-		<magazineCapacity>6</magazineCapacity>
+		<magazineCapacity>5</magazineCapacity>
 		<reloadTicks>38</reloadTicks>
 		<loadsAmountPerReload>1</loadsAmountPerReload>
 		<moveSpeedPenalty>50</moveSpeedPenalty>
@@ -107,6 +107,7 @@
 		<ammoDef>R_Ammo_Spacer_Special</ammoDef>
 		<magazineCapacity>90</magazineCapacity>
 		<reloadTicks>180</reloadTicks>
+		<loadsAmountPerReload>30</loadsAmountPerReload>
 		<moveSpeedPenalty>80</moveSpeedPenalty>
 		<beginSound>Minigun_Begin</beginSound>
 		<endSound>Minigun_End</endSound>
