@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>	
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/</xpath>
+		<value>
+			  <BodyPartGroupDef>
+				<defName>Ears</defName>
+				<label>ears</label>
+				<listOrder>197.9</listOrder>
+			</BodyPartGroupDef>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef//li[def="Ear"]/groups</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef//li[def="Ear"]/groups</xpath>
+			<value>
+				<li>Ears</li>
+			</value>
+		</match>
+	</Operation>
+
+</Patch>

@@ -13,6 +13,88 @@
 			<MoveSpeed>-0.2</MoveSpeed>
 		</value>
 	</Operation>
+
+	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
+		<xpath>Defs/ThingDef[defName="Apparel_Gunlink"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
+		<value>
+			<ShootingAccuracyPawn>4</ShootingAccuracyPawn>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+		<xpath>Defs/ThingDef[defName="Apparel_Gunlink"]/apparel/bodyPartGroups/li[text()="UpperHead"]</xpath>
+	</Operation>
+	<Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Royalty">
+		<xpath>Defs/ThingDef[defName="Apparel_Gunlink"]/apparel/bodyPartGroups</xpath>
+		<value>
+			<li>Ears</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Biotech">
+		<xpath>Defs/ThingDef[defName="Apparel_AirwireHeadset"]/apparel/bodyPartGroups/li[text()="UpperHead"]</xpath>
+	</Operation>
+	<Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Biotech">
+		<xpath>Defs/ThingDef[defName="Apparel_AirwireHeadset"]/apparel/bodyPartGroups</xpath>
+		<value>
+			<li>Ears</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Biotech">
+		<xpath>Defs/ThingDef[defName="Apparel_ArrayHeadset"]/apparel/bodyPartGroups/li[text()="UpperHead"]</xpath>
+	</Operation>
+	<Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Biotech">
+		<xpath>Defs/ThingDef[defName="Apparel_ArrayHeadset"]/apparel/bodyPartGroups</xpath>
+		<value>
+			<li>Eyes</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAttributeSet" MayRequire="Ludeon.RimWorld.Biotech">
+		<xpath>Defs/ThingDef[defName="Apparel_IntegratorHeadset"]</xpath>
+		<attribute>ParentName</attribute>
+		<value>MechanitorHeadsetBase</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Biotech">
+		<xpath>Defs/ThingDef[defName="Apparel_IntegratorHeadset"]/apparel</xpath>
+		<value>
+			<mechanitorApparel>true</mechanitorApparel>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Biotech">
+		<xpath>Defs/ThingDef[defName="Apparel_IntegratorHeadset"]/equippedStatOffsets/VacuumResistance</xpath>
+	</Operation>
+	<Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Biotech">
+		<xpath>Defs/ThingDef[defName="Apparel_IntegratorHeadset"]/apparel/bodyPartGroups/li[text()="UpperHead"]</xpath>
+	</Operation>
+	<Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Biotech">
+		<xpath>Defs/ThingDef[defName="Apparel_IntegratorHeadset"]/apparel/bodyPartGroups</xpath>
+		<value>
+			<li>Ears</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
+		<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetMechlordHelmet"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
+		<value>
+			<ShootingAccuracyPawn>-4</ShootingAccuracyPawn>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
+		<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetMechlordHelmet"]/equippedStatOffsets/MeleeHitChance</xpath>
+		<value>
+			<MeleeHitChance>-1</MeleeHitChance>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
+		<xpath>Defs/ThingDef[defName="Apparel_MechlordSuit"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
+		<value>
+			<ShootingAccuracyPawn>-4</ShootingAccuracyPawn>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
+		<xpath>Defs/ThingDef[defName="Apparel_MechlordSuit"]/equippedStatOffsets/MeleeHitChance</xpath>
+		<value>
+			<MeleeHitChance>-1</MeleeHitChance>
+		</value>
+	</Operation>
 	<Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Biotech">
 		<xpath>Defs/ThingDef[@Name="Apparel_Bandolier"]/equippedStatOffsets/RangedCooldownFactor</xpath>
 	</Operation>
@@ -28,6 +110,7 @@
 			</modExtensions>
 		</value>
 	</Operation>
+
 	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
 		<xpath>Defs/ThingDef[defName="Apparel_Vacsuit" or defName="Apparel_VacsuitChildren"]/equippedStatOffsets/MoveSpeed</xpath>
 		<value>
@@ -168,6 +251,15 @@
 						<ShootingAccuracyPawn>4</ShootingAccuracyPawn>
 					</value>
 				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="VAE_Headgear_HAZMATMask"]/apparel/bodyPartGroups/li[text()="Eyes"]</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="VAE_Headgear_HAZMATMask"]/apparel/bodyPartGroups</xpath>
+					<value>
+						<li>FullHead</li>
+					</value>
+				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/ThingDef[defName="VAE_Apparel_GhillieSuit"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
 					<value>
@@ -196,6 +288,18 @@
 		</mods>
 		<match Class="PatchOperationSequence">
 			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[@Name="VFEE_Apparel_AbsolverHelmet"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
+					<value>
+						<ShootingAccuracyPawn>8</ShootingAccuracyPawn>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[@Name="VFEE_Apparel_DeserterHelmet"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
+					<value>
+						<ShootingAccuracyPawn>4</ShootingAccuracyPawn>
+					</value>
+				</li>
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/ThingDef[defName="VFEE_Apparel_ArmorDeserter"]/equippedStatOffsets/PsychicSensitivity</xpath>
 				</li>
@@ -236,6 +340,28 @@
 			<value>
 				<MoveSpeed>-0.4</MoveSpeed>
 			</value>
+		</match>
+	</Operation>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Weapons Expanded - Heavy Weapons</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="VWE_Apparel_Exoframe"]/equippedStatOffsets/WorkSpeedGlobal</xpath>
+					<value>
+						<WorkSpeedGlobal>0.1</WorkSpeedGlobal>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="VWE_Apparel_Exoframe"]/equippedStatOffsets/VEF_MassCarryCapacity</xpath>
+					<value>
+						<VEF_MassCarryCapacity>20</VEF_MassCarryCapacity>
+					</value>
+				</li>
+			</operations>
 		</match>
 	</Operation>
 

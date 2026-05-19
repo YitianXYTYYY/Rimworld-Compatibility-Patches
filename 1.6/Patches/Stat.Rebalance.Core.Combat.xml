@@ -93,10 +93,10 @@
 			<ShootingAccuracyPawn>-4</ShootingAccuracyPawn>
 		</value>
 	</Operation>
-	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-		<xpath>Defs/ThingDef[defName="Apparel_Gunlink"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/TraitDef[defName="Nimble"]/degreeDatas/li[label="nimble"]/statOffsets/MeleeDodgeChance</xpath>
 		<value>
-			<ShootingAccuracyPawn>4</ShootingAccuracyPawn>
+			<MeleeDodgeChance>16</MeleeDodgeChance>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Ideology">
@@ -124,30 +124,6 @@
 				<ShootingAccuracyPawn>4</ShootingAccuracyPawn>
 				<MeleeHitChance>4</MeleeHitChance>
 			</statOffsets>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
-		<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetMechlordHelmet"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
-		<value>
-			<ShootingAccuracyPawn>-4</ShootingAccuracyPawn>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
-		<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetMechlordHelmet"]/equippedStatOffsets/MeleeHitChance</xpath>
-		<value>
-			<MeleeHitChance>-1</MeleeHitChance>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
-		<xpath>Defs/ThingDef[defName="Apparel_MechlordSuit"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
-		<value>
-			<ShootingAccuracyPawn>-4</ShootingAccuracyPawn>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
-		<xpath>Defs/ThingDef[defName="Apparel_MechlordSuit"]/equippedStatOffsets/MeleeHitChance</xpath>
-		<value>
-			<MeleeHitChance>-1</MeleeHitChance>
 		</value>
 	</Operation>
 

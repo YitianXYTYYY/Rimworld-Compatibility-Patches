@@ -23,6 +23,8 @@
 				<li>GeneDef/BS_FA_Keep_LidBrow</li>
 				<li>GeneDef/BS_FA_Keep_Eyes</li>
 				<li>GeneDef/BS_FacialAnimDisabled</li>
+				<li>RecipeDef/BS_ShredRobot</li>
+				<li>RecipeDef/BS_SmashRobot</li>
 			</value>
 		</match>
 	</Operation>

@@ -59,8 +59,8 @@
 		<defName>VWE_Gun_Autocannon</defName>
 		<ammoDef>R_Ammo_Industrial</ammoDef>
 		<magazineCapacity>60</magazineCapacity>
-		<reloadTicks>235</reloadTicks>
-		<moveSpeedPenalty>40</moveSpeedPenalty>
+		<reloadTicks>240</reloadTicks>
+		<moveSpeedPenalty>65</moveSpeedPenalty>
 		<beginSound>AssaultRifle_Begin</beginSound>
 		<endSound>AssaultRifle_End</endSound>
 	</Reload.Defs.ReloadPresetDef>
@@ -86,8 +86,8 @@
 		<defName>VWE_Gun_UraniumSlugRifle</defName>
 		<ammoDef>R_Ammo_Industrial</ammoDef>
 		<magazineCapacity>20</magazineCapacity>
-		<reloadTicks>276</reloadTicks>
-		<moveSpeedPenalty>60</moveSpeedPenalty>
+		<reloadTicks>300</reloadTicks>
+		<moveSpeedPenalty>65</moveSpeedPenalty>
 		<beginSound>SniperRifle_Begin</beginSound>
 		<endSound>SniperRifle_End</endSound>
 	</Reload.Defs.ReloadPresetDef>
