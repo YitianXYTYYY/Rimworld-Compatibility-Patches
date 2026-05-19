@@ -231,9 +231,7 @@
 					<match Class="PatchOperationSequence">
 						<operations>
 							<li Class="PatchOperationRemove">
-								<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon" or 
-									defName="VWE_Gun_SwarmMissileLauncher" or 
-									defName="VWE_Gun_UraniumSlugRifle"]/comps/li[compClass="MVCF.Comps.Comp_VerbProps"]</xpath>
+								<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon" or defName="VWE_Gun_SwarmMissileLauncher" or defName="VWE_Gun_UraniumSlugRifle"]/comps/li[compClass="MVCF.Comps.Comp_VerbProps"]</xpath>
 							</li>
 							<li Class="PatchOperationAdd">
 								<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>

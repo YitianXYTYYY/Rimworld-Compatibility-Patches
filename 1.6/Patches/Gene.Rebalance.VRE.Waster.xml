@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Patch>	
+<Patch>
+
+	<Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Biotech">
+		<xpath>Defs/HediffDef[defName="PollutionStimulus"]/stages/li[label="minor" or label="moderate" or label="maximum"]/statFactors/MoveSpeed</xpath>
+	</Operation>
+	<Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Biotech">
+		<xpath>Defs/HediffDef[defName="PollutionStimulus"]/stages/li[label="moderate"]/capMods</xpath>
+		<value>
+			<li>
+				<capacity>Moving</capacity>
+				<offset>0.1</offset>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Biotech">
+		<xpath>Defs/HediffDef[defName="PollutionStimulus"]/stages/li[label="maximum"]/capMods</xpath>
+		<value>
+			<li>
+				<capacity>Moving</capacity>
+				<offset>0.2</offset>
+			</li>
+		</value>
+	</Operation>
 
 	<Operation Class="PatchOperationFindMod">
 		<mods>

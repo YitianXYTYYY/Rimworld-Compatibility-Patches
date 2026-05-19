@@ -55,6 +55,14 @@
 		</value>
 	</Operation>
 
+	<!-- biotech hediff -->
+	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
+		<xpath>Defs/HediffDef[defName="PsychofluidRush"]/stages/li/statOffsets/PsychicSensitivity</xpath>
+		<value>
+			<PsychicSensitivity>0.2</PsychicSensitivity>
+		</value>
+	</Operation>
+
 	<!-- bioferrite -->
 	<Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Anomaly">
 		<xpath>Defs/ThingDef[defName="Bioferrite"]/stuffProps/statFactorsQuality/li[stat="PsychicSensitivityFactor"]</xpath>
