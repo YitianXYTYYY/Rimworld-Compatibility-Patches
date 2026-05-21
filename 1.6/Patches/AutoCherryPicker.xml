@@ -13,6 +13,26 @@
 	</Operation>
 	<Operation Class="PatchOperationFindMod">
 		<mods>
+			<li>Better Gene Inheritance</li>
+		</mods>
+		<match Class="PatchOperationFindMod">
+			<mods>
+				<li>Vanilla Races Expanded - Highmate</li>
+			</mods>
+			<match Class="PatchOperationAdd">
+				<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
+				<value>
+					<li>GeneDef/BGI_DominantGenes</li>
+					<li>GeneDef/BGI_RecessiveGenes</li>
+					<li>GeneDef/BGI_BinaryInheritance</li>
+					<li>GeneDef/BGI_PrimaryGenes</li>
+					<li>GeneDef/BGI_SecondaryGenes</li>
+				</value>
+			</match>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
 			<li>Big and Small - Framework</li>
 		</mods>
 		<match Class="PatchOperationAdd">

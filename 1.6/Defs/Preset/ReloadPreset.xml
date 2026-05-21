@@ -60,7 +60,7 @@
 		<ammoDef>R_Ammo_Industrial</ammoDef>
 		<magazineCapacity>60</magazineCapacity>
 		<reloadTicks>240</reloadTicks>
-		<moveSpeedPenalty>65</moveSpeedPenalty>
+		<moveSpeedPenalty>85</moveSpeedPenalty>
 		<beginSound>AssaultRifle_Begin</beginSound>
 		<endSound>AssaultRifle_End</endSound>
 	</Reload.Defs.ReloadPresetDef>
@@ -76,7 +76,7 @@
 		<magazineCapacity>10</magazineCapacity>
 		<reloadTicks>200</reloadTicks>
 		<loadsAmountPerReload>5</loadsAmountPerReload>
-		<moveSpeedPenalty>65</moveSpeedPenalty>
+		<moveSpeedPenalty>100</moveSpeedPenalty>
 		<beginSound>Launcher_Begin</beginSound>
 		<reloadSound>Launcher_Reload</reloadSound>
 		<endSound>Launcher_End</endSound>
@@ -87,7 +87,7 @@
 		<ammoDef>R_Ammo_Industrial</ammoDef>
 		<magazineCapacity>20</magazineCapacity>
 		<reloadTicks>300</reloadTicks>
-		<moveSpeedPenalty>65</moveSpeedPenalty>
+		<moveSpeedPenalty>85</moveSpeedPenalty>
 		<beginSound>SniperRifle_Begin</beginSound>
 		<endSound>SniperRifle_End</endSound>
 	</Reload.Defs.ReloadPresetDef>

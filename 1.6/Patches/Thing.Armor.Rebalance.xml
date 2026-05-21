@@ -31,16 +31,13 @@
 	</Operation>
 
 	<Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Biotech">
-		<xpath>Defs/ThingDef[defName="Apparel_AirwireHeadset"]/apparel/bodyPartGroups/li[text()="UpperHead"]</xpath>
+		<xpath>Defs/ThingDef[defName="Apparel_AirwireHeadset" or defName="Apparel_ArrayHeadset" or defName="Apparel_IntegratorHeadset"]/apparel/bodyPartGroups/li[text()="UpperHead"]</xpath>
 	</Operation>
 	<Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Biotech">
-		<xpath>Defs/ThingDef[defName="Apparel_AirwireHeadset"]/apparel/bodyPartGroups</xpath>
+		<xpath>Defs/ThingDef[defName="Apparel_AirwireHeadset" or defName="Apparel_IntegratorHeadset"]/apparel/bodyPartGroups</xpath>
 		<value>
 			<li>Ears</li>
 		</value>
-	</Operation>
-	<Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Biotech">
-		<xpath>Defs/ThingDef[defName="Apparel_ArrayHeadset"]/apparel/bodyPartGroups/li[text()="UpperHead"]</xpath>
 	</Operation>
 	<Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Biotech">
 		<xpath>Defs/ThingDef[defName="Apparel_ArrayHeadset"]/apparel/bodyPartGroups</xpath>
@@ -62,15 +59,7 @@
 	<Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Biotech">
 		<xpath>Defs/ThingDef[defName="Apparel_IntegratorHeadset"]/equippedStatOffsets/VacuumResistance</xpath>
 	</Operation>
-	<Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Biotech">
-		<xpath>Defs/ThingDef[defName="Apparel_IntegratorHeadset"]/apparel/bodyPartGroups/li[text()="UpperHead"]</xpath>
-	</Operation>
-	<Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Biotech">
-		<xpath>Defs/ThingDef[defName="Apparel_IntegratorHeadset"]/apparel/bodyPartGroups</xpath>
-		<value>
-			<li>Ears</li>
-		</value>
-	</Operation>
+	
 	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
 		<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetMechlordHelmet"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
 		<value>
@@ -259,6 +248,21 @@
 					<value>
 						<li>FullHead</li>
 					</value>
+				</li>		
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="VAE_Headgear_HAZMATMask" or defName="VAE_Apparel_HAZMATSuit"]/equippedStatOffsets/PsychicSensitivity</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="VAE_Headgear_HAZMATMask"]/equippedStatOffsets</xpath>
+					<value>
+						<PsychicSensitivityOffset>-0.5</PsychicSensitivityOffset>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="VAE_Apparel_HAZMATSuit"]/equippedStatOffsets</xpath>
+					<value>
+						<PsychicSensitivityOffset>-0.5</PsychicSensitivityOffset>
+					</value>
 				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/ThingDef[defName="VAE_Apparel_GhillieSuit"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
@@ -276,6 +280,17 @@
 					<xpath>Defs/ThingDef[thingClass="VEF.Apparels.Apparel_Shield"]/equippedStatOffsets/MeleeDodgeChance</xpath>
 					<value>
 						<MeleeDodgeChance>-4</MeleeDodgeChance>
+					</value>
+				</li>
+
+				<!-- spacer -->
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="VAE_Headgear_RoyalTrooperHelmet" or defName="VAE_Apparel_RoyalTrooperArmor" or defName="VAE_Headgear_RoyalSiegeHelmet" or defName="VAE_Apparel_RoyalSiegeArmor"]/equippedStatOffsets/PsychicSensitivity</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="VAE_Headgear_RoyalTrooperHelmet" or defName="VAE_Apparel_RoyalTrooperArmor" or defName="VAE_Headgear_RoyalSiegeHelmet" or defName="VAE_Apparel_RoyalSiegeArmor"]/equippedStatOffsets</xpath>
+					<value>
+						<PsychicSensitivityOffset>0.1</PsychicSensitivityOffset>
 					</value>
 				</li>
 			</operations>
@@ -325,6 +340,44 @@
 					<xpath>Defs/ThingDef[defName="VFEE_Apparel_ArmorAbsolver"]/equippedStatOffsets</xpath>
 					<value>
 						<MoveSpeed>0.6</MoveSpeed>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Prestige Specialist Armours Reworked</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="Apparel_ArmorPhoenixPrestige" or defName="Apparel_ArmorLocustPrestige" or defName="Apparel_ArmorGrenadierPrestige"]/equippedStatOffsets/PsychicSensitivity</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Apparel_ArmorPhoenixPrestige" or defName="Apparel_ArmorLocustPrestige" or defName="Apparel_ArmorGrenadierPrestige"]/equippedStatOffsets</xpath>
+					<value>
+						<PsychicSensitivityOffset>0.1</PsychicSensitivityOffset>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Races Expanded - Archon</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="VREA_Apparel_Archoplate"]/equippedStatOffsets/PsychicSensitivity</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="VREA_Apparel_Archoplate"]/equippedStatOffsets</xpath>
+					<value>
+						<PsychicSensitivityOffset>0.6</PsychicSensitivityOffset>
 					</value>
 				</li>
 			</operations>
