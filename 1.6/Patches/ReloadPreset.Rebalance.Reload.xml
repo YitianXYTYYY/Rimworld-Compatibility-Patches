@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Reload (Continued)</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<!-- presets -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Reload.Defs.ReloadPresetDef[defName="Flamebow" or 
+						defName="UncompromisingTribalFaction_GreatFlamebow" or 
+						defName="VWE_Bow_Compound"]/ammoDef</xpath>
+					<value>
+						<ammoDef>R_Ammo_Primitive</ammoDef>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Reload.Defs.ReloadPresetDef[ammoDef="R_Ammo_Primitive"]/reloadTicks</xpath>
+					<value>
+						<reloadTicks>30</reloadTicks>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Reload.Defs.ReloadPresetDef[defName="Weapon_GrenadeMolotov"]/ammoDef</xpath>
+					<value>
+						<ammoDef>R_Ammo_Primitive_Explosive</ammoDef>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Reload.Defs.ReloadPresetDef[defName="Gun_SmokeLauncher" or 
+						defName="Weapon_GrenadeTox" or 
+						defName="VWE_SmokeGrenade"]/ammoDef</xpath>
+					<value>
+						<ammoDef>R_Ammo_Industrial_Special</ammoDef>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Reload.Defs.ReloadPresetDef[defName="Gun_Minigun"]/magazineCapacity</xpath>
+					<value>
+						<magazineCapacity>150</magazineCapacity>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Reload.Defs.ReloadPresetDef[defName="VWE_Gun_ChargeMinigun"]/magazineCapacity</xpath>
+					<value>
+						<magazineCapacity>120</magazineCapacity>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>

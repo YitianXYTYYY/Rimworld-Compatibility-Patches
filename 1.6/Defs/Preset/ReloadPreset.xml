@@ -3,7 +3,7 @@
 
 	<Reload.Defs.ReloadPresetDef>
 		<defName>UncompromisingTribalFaction_GreatFlamebow</defName>
-		<ammoDef>R_Ammo_Primitive_Explosive</ammoDef>
+		<ammoDef>R_Ammo_Primitive</ammoDef>
 		<magazineCapacity>1</magazineCapacity>
 		<reloadTicks>110</reloadTicks>
 	</Reload.Defs.ReloadPresetDef>
