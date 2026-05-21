@@ -153,6 +153,17 @@
 	</Operation>
 	<Operation Class="PatchOperationFindMod">
 		<mods>
+			<li>Meditate As WorkType (Continued)</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
+			<value>
+				<li>WorkTypeDef/MeditateForAnima</li>
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
 			<li>Yayo's Combat 3 (Continued)</li>
 		</mods>
 		<match Class="PatchOperationAdd">

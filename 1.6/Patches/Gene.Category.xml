@@ -122,7 +122,7 @@
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/GeneCategoryDef[defName="Cosmetic_Skin"]/displayPriorityInXenotype</xpath>
 		<value>
-			<displayPriorityInXenotype>-110</displayPriorityInXenotype>
+			<displayPriorityInXenotype>-1002</displayPriorityInXenotype>
 		</value>
 	</Operation>
 

@@ -108,6 +108,19 @@
 						<workAmount>200</workAmount>
 					</value>
 				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Vanilla Factions Expanded - Tribals</li>
+					</mods>
+					<match Class="PatchOperationAdd">
+						<xpath>Defs/RecipeDef[defName="R_Make_Primitive_Ammo" or
+							defName="R_Make_Primitive_Ammo_Explosive" or
+							defName="R_Make_Primitive_Ammo_Special"]</xpath>
+						<value>
+							<researchPrerequisite>VFET_Bow</researchPrerequisite>
+						</value>
+					</match>
+				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/RecipeDef[defName="R_Make_Primitive_Ammo"]/ingredients</xpath>
 					<value>
@@ -129,6 +142,14 @@
 						defName="R_Make_Industrial_Ammo_Special"]/workAmount</xpath>
 					<value>
 						<workAmount>360</workAmount>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/RecipeDef[defName="R_Make_Industrial_Ammo" or
+						defName="R_Make_Industrial_Ammo_Explosive" or
+						defName="R_Make_Industrial_Ammo_Special"]/workAmount</xpath>
+					<value>
+						<researchPrerequisite>Gunsmithing</researchPrerequisite>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
@@ -224,6 +245,14 @@
 						defName="R_Make_Spacer_Ammo_Special"]/workAmount</xpath>
 					<value>
 						<workAmount>1200</workAmount>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/RecipeDef[defName="R_Make_Spacer_Ammo" or
+						defName="R_Make_Spacer_Ammo_Explosive" or 
+						defName="R_Make_Spacer_Ammo_Special"]/workAmount</xpath>
+					<value>
+						<researchPrerequisite>ChargedShot</researchPrerequisite>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
