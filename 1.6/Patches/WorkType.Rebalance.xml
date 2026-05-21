@@ -23,4 +23,42 @@
 		</match>
 	</Operation>
 
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Genetics Expanded</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/WorkGiverDef[defName="CreateXenogerm"]/workType</xpath>
+					<value>
+						<workType>GR_Genetics</workType>
+					</value>
+				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Gene Fabrication</li>
+					</mods>
+					<match Class="PatchOperationReplace">
+						<xpath>Defs/WorkGiverDef[defName="GeneFab_DoBillsGeneBench"]/workType</xpath>
+						<value>
+							<workType>GR_Genetics</workType>
+						</value>
+					</match>
+				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Genepack Reprocessor</li>
+					</mods>
+					<match Class="PatchOperationReplace">
+						<xpath>Defs/WorkGiverDef[defName="SeparateGenepack"]/workType</xpath>
+						<value>
+							<workType>GR_Genetics</workType>
+						</value>
+					</match>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
 </Patch>
