@@ -1,25 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-	<Operation Class="PatchOperationFindMod">
+
+	<!-- AFU Cosmetic Gene Expanded -->
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>AFU Cosmetic Gene Expanded</li>
+			<li>JintuziLamian.Gene.XenoCosmetic</li>
 		</mods>
-		<match Class="PatchOperationAdd">
-			<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
-			<value>
-				<li>GeneDef/AFU_BA_NineTailedFox</li>
-			</value>
-		</match>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="PatchOperationAdd">
+				<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
+				<value>
+					<li>GeneDef/AFU_BA_NineTailedFox</li>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
-	<Operation Class="PatchOperationFindMod">
+	<!-- Better Gene Inheritance -->
+	<!-- Vanilla Races Expanded - Highmate -->
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Better Gene Inheritance</li>
+			<li>RedMattis.BetterGeneInheritance</li>
+			<li>vanillaracesexpanded.highmate</li>
 		</mods>
-		<match Class="PatchOperationFindMod">
-			<mods>
-				<li>Vanilla Races Expanded - Highmate</li>
-			</mods>
-			<match Class="PatchOperationAdd">
+		<packageId>true</packageId>
+		<logic>and</logic>
+		<caseTrue>
+			<Operation Class="PatchOperationAdd">
 				<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
 				<value>
 					<li>GeneDef/BGI_DominantGenes</li>
@@ -28,149 +35,193 @@
 					<li>GeneDef/BGI_PrimaryGenes</li>
 					<li>GeneDef/BGI_SecondaryGenes</li>
 				</value>
-			</match>
-		</match>
+			</Operation>
+		</caseTrue>
 	</Operation>
-	<Operation Class="PatchOperationFindMod">
+	<!-- Big and Small - Framework -->
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Big and Small - Framework</li>
+			<li>RedMattis.BetterPrerequisites</li>
 		</mods>
-		<match Class="PatchOperationAdd">
-			<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
-			<value>
-				<li>GeneDef/BS_FA_Keep_Brows</li>
-				<li>GeneDef/BS_FA_Keep_Lid</li>
-				<li>GeneDef/BS_FA_Keep_LidBrow</li>
-				<li>GeneDef/BS_FA_Keep_Eyes</li>
-				<li>GeneDef/BS_FacialAnimDisabled</li>
-				<li>RecipeDef/BS_ShredRobot</li>
-				<li>RecipeDef/BS_SmashRobot</li>
-			</value>
-		</match>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="PatchOperationAdd">
+				<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
+				<value>
+					<li>GeneDef/BS_FA_Keep_Brows</li>
+					<li>GeneDef/BS_FA_Keep_Lid</li>
+					<li>GeneDef/BS_FA_Keep_LidBrow</li>
+					<li>GeneDef/BS_FA_Keep_Eyes</li>
+					<li>GeneDef/BS_FacialAnimDisabled</li>
+					<li>RecipeDef/BS_ShredRobot</li>
+					<li>RecipeDef/BS_SmashRobot</li>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
-	<Operation Class="PatchOperationFindMod">
+	<!-- Integrated Genes -->
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Integrated Genes</li>
+			<li>Turnovus.Biotech.IntegratedGenes</li>
 		</mods>
-		<match Class="PatchOperationAdd">
-			<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
-			<value>
-				<li>GeneDef/Turn_Gene_ArchotechAttunement</li>
-				<li>GeneDef/Turn_Gene_NaturalLeader</li>
-				<li>GeneDef/Turn_Gene_LatentPsychic</li>
-				<li>GeneDef/Turn_Gene_VariablePhenotype</li>
-			</value>
-		</match>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="PatchOperationAdd">
+				<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
+				<value>
+					<li>GeneDef/Turn_Gene_ArchotechAttunement</li>
+					<li>GeneDef/Turn_Gene_NaturalLeader</li>
+					<li>GeneDef/Turn_Gene_LatentPsychic</li>
+					<li>GeneDef/Turn_Gene_VariablePhenotype</li>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
-	<Operation Class="PatchOperationFindMod">
+	<!-- Medical System Expansion 2 -->
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Melee Animation</li>
+			<li>MSE2.Core</li>
 		</mods>
-		<match Class="PatchOperationAdd">
-			<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
-			<value>
-				<li>ThingDef/AM_Weebstick</li>
-				<li>ThingDef/AM_LassoCloth</li>
-				<li>ThingDef/AM_LassoDevilstrand</li>
-				<li>ThingDef/AM_LassoHyperwave</li>
-			</value>
-		</match>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="PatchOperationAdd">
+				<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
+				<value>
+					<li>HediffDef/RangedPlatformModule</li>
+					<li>ThingDef/RangedPlatformModule</li>
+					<li>RecipeDef/InstallRangedPlatformModule</li>
+					<li>HediffDef/MeleePlatformModule</li>
+					<li>ThingDef/MeleePlatformModule</li>
+					<li>RecipeDef/InstallMeleePlatformModule</li>
+					<li>HediffDef/ModuleEfficiency_Effector</li>
+					<li>HediffDef/ModuleEfficiency</li>
+					<li>ThingDef/ModuleEfficiency</li>
+					<li>RecipeDef/InstallModuleEfficiency</li>
+					<li>HediffDef/CraftingToolsModule</li>
+					<li>ThingDef/CraftingToolsModule</li>
+					<li>RecipeDef/InstallCraftingToolsModule</li>
+					<li>HediffDef/ModuleArmorEBF_Effector</li>
+					<li>HediffDef/ModuleArmorEBF</li>
+					<li>ThingDef/ModuleArmorEBF</li>
+					<li>RecipeDef/InstallModuleArmorEBF</li>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
-	<Operation Class="PatchOperationFindMod">
+	<!-- Melee Animation -->
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>ReSplice: Core</li>
+			<li>co.uk.epicguru.meleeanimation</li>
 		</mods>
-		<match Class="PatchOperationFindMod">
-			<mods>
-				<li>Genepack Reprocessor</li>
-			</mods>
-			<match Class="PatchOperationAdd">
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="PatchOperationAdd">
+				<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
+				<value>
+					<li>ThingDef/AM_Weebstick</li>
+					<li>ThingDef/AM_LassoCloth</li>
+					<li>ThingDef/AM_LassoDevilstrand</li>
+					<li>ThingDef/AM_LassoHyperwave</li>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+	<!-- ReSplice: Core -->
+	<!-- Genepack Reprocessor -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>resplice.xotr.core</li>
+			<li>Anonemous2.GenepackReprocessor</li>
+		</mods>
+		<packageId>true</packageId>
+		<logic>and</logic>
+		<caseTrue>
+			<Operation Class="PatchOperationAdd">
 				<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
 				<value>
 					<li>ThingDef/RS_GeneCentrifuge</li>
 					<li>ThingDef/RS_XenoGermDuplicator</li>
 				</value>
-			</match>
-		</match>
+			</Operation>
+		</caseTrue>
 	</Operation>
-	<Operation Class="PatchOperationFindMod">
+	<!-- Vanilla Armour Expanded -->
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Vanilla Armour Expanded</li>
+			<li>vanillaexpanded.varme</li>
 		</mods>
-		<match Class="PatchOperationAdd">
-			<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
-			<value>
-				<li>ThingDef/VAE_Apparel_Shield_Riot</li>
-			</value>
-		</match>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="PatchOperationAdd">
+				<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
+				<value>
+					<li>ThingDef/VAE_Apparel_Shield_Riot</li>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
-	<Operation Class="PatchOperationFindMod">
+	<!-- Vanilla Factions Expanded - Tribals -->
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Vanilla Factions Expanded - Tribals</li>
+			<li>oskarpotocki.vfe.tribals</li>
 		</mods>
-		<match Class="PatchOperationAdd">
-			<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
-			<value>
-				<li>ThingDef/VFET_Chunk</li>
-				<li>RecipeDef/Make_VFET_Chunk</li>
-			</value>
-		</match>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="PatchOperationAdd">
+				<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
+				<value>
+					<li>ThingDef/VFET_Chunk</li>
+					<li>RecipeDef/Make_VFET_Chunk</li>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
-	<Operation Class="PatchOperationFindMod">
+	<!-- Vanilla Weapons Expanded -->
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Vanilla Weapons Expanded</li>
+			<li>vanillaexpanded.vwe</li>
 		</mods>
-		<match Class="PatchOperationAdd">
-			<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
-			<value>
-				<li>ThingDef/VWE_Throwing_Rocks</li>
-				<li>ThingDef/VWE_Throwing_Knives</li>
-				<li>RecipeDef/VWE_MakeThrowingRocks</li>
-			</value>
-		</match>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="PatchOperationAdd">
+				<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
+				<value>
+					<li>ThingDef/VWE_Throwing_Rocks</li>
+					<li>ThingDef/VWE_Throwing_Knives</li>
+					<li>RecipeDef/VWE_MakeThrowingRocks</li>
+					<li>ThingDef/VWE_Gun_Flamethrower</li>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
-	<Operation Class="PatchOperationFindMod">
+	<!-- Vanilla Weapons Expanded - Heavy Weapons -->
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Vanilla Weapons Expanded - Heavy Weapons</li>
+			<li>vanillaexpanded.vwehw</li>
 		</mods>
-		<match Class="PatchOperationAdd">
-			<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
-			<value>
-				<li>ThingDef/VWE_Gun_HeavyFlamer</li>
-			</value>
-		</match>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="PatchOperationAdd">
+				<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
+				<value>
+					<li>ThingDef/VWE_Gun_HeavyFlamer</li>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
-	<Operation Class="PatchOperationFindMod">
+	<!-- Meditate As WorkType (Continued) -->
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>VWE Research Cleanup</li>
+			<li>og.maarx.meditateasworktype.continued</li>
 		</mods>
-		<match Class="PatchOperationAdd">
-			<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
-			<value>
-				<li>ThingDef/VWE_Gun_Flamethrower</li>
-			</value>
-		</match>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Meditate As WorkType (Continued)</li>
-		</mods>
-		<match Class="PatchOperationAdd">
-			<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
-			<value>
-				<li>WorkTypeDef/MeditateForAnima</li>
-			</value>
-		</match>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Yayo's Combat 3 (Continued)</li>
-		</mods>
-		<match Class="PatchOperationAdd">
-			<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
-			<value>
-				<li>ThingDef/Gun_AntiArmor_Rocket</li>
-			</value>
-		</match>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="PatchOperationAdd">
+				<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
+				<value>
+					<li>WorkTypeDef/MeditateForAnima</li>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
 </Patch>

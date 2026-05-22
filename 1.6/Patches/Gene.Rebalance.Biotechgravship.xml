@@ -1,161 +1,163 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>	
 
-	<Operation Class="PatchOperationFindMod">
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Biotech for Gravship</li>
+			<li>als.biotechgravship</li>
 		</mods>
-		<match Class="PatchOperationSequence">
-			<operations>
-				<li Class="PatchOperationAttributeRemove">
-					<xpath>Defs/GeneDef[defName="BfG_Sleep_Space"]</xpath>
-					<attribute>ParentName</attribute>
-				</li>
-				<li Class="PatchOperationRemove">
-					<xpath>Defs/GeneDef[defName="BfG_Sleep_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]/statFactors/RestFallRateFactor</xpath>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/GeneDef[defName="BfG_Sleep_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]</xpath>
-					<value>
-						<statOffsets>
-							<RestFallRateFactor>0.4</RestFallRateFactor>
-						</statOffsets>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="BfG_Sleep_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]/statFactors/RestFallRateFactor</xpath>
-					<value>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.PatchOperationAttributeRemove">
+				<xpath>Defs/GeneDef[defName="BfG_Sleep_Space"]</xpath>
+				<attribute>ParentName</attribute>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/GeneDef[defName="BfG_Sleep_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]/statFactors/RestFallRateFactor</xpath>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+				<xpath>Defs/GeneDef[defName="BfG_Sleep_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]</xpath>
+				<value>
+					<statOffsets>
 						<RestFallRateFactor>0.4</RestFallRateFactor>
-					</value>
-				</li>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+				<xpath>Defs/GeneDef[defName="BfG_Sleep_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]</xpath>
+				<value>
+					<statFactors>
+						<RestFallRateFactor>0.4</RestFallRateFactor>
+					</statFactors>
+				</value>
+			</Operation>
 
-				<li Class="PatchOperationRemove">
-					<xpath>Defs/GeneDef[defName="BfG_Robust_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]/statFactors/IncomingDamageFactor</xpath>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/GeneDef[defName="BfG_Robust_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]</xpath>
-					<value>
-						<statOffsets>
-							<IncomingDamageFactor>0.2</IncomingDamageFactor>
-						</statOffsets>
-					</value>
-				</li>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/GeneDef[defName="BfG_Robust_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]/statFactors/IncomingDamageFactor</xpath>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+				<xpath>Defs/GeneDef[defName="BfG_Robust_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]</xpath>
+				<value>
+					<statOffsets>
+						<IncomingDamageFactor>0.2</IncomingDamageFactor>
+					</statOffsets>
+				</value>
+			</Operation>
 
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="BfG_Learning_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]/statFactors/GlobalLearningFactor</xpath>
-					<value>
+			<Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+				<xpath>Defs/GeneDef[defName="BfG_Learning_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]</xpath>
+				<value>
+					<statFactors>
 						<GlobalLearningFactor>0.5</GlobalLearningFactor>
-					</value>
-				</li>
-				<li Class="PatchOperationRemove">
-					<xpath>Defs/GeneDef[defName="BfG_Learning_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]/statFactors/GlobalLearningFactor</xpath>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/GeneDef[defName="BfG_Learning_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]/statOffsets</xpath>
-					<value>
+					</statFactors>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/GeneDef[defName="BfG_Learning_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]/statFactors/GlobalLearningFactor</xpath>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+				<xpath>Defs/GeneDef[defName="BfG_Learning_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]</xpath>
+				<value>
+					<statOffsets>
 						<GlobalLearningFactor>0.5</GlobalLearningFactor>
-					</value>
-				</li>
+					</statOffsets>
+				</value>
+			</Operation>
 
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="BfG_WoundHealing_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]/statFactors/InjuryHealingFactor</xpath>
-					<value>
+			<Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+				<xpath>Defs/GeneDef[defName="BfG_WoundHealing_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]</xpath>
+				<value>
+					<statFactors>
 						<InjuryHealingFactor>0.5</InjuryHealingFactor>
-					</value>
-				</li>
-				<li Class="PatchOperationRemove">
-					<xpath>Defs/GeneDef[defName="BfG_WoundHealing_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]/statFactors/ImmunityGainSpeed</xpath>
-				</li>
-				<li Class="PatchOperationRemove">
-					<xpath>Defs/GeneDef[defName="BfG_WoundHealing_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]/statFactors/InjuryHealingFactor</xpath>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/GeneDef[defName="BfG_WoundHealing_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]</xpath>
-					<value>
-						<statOffsets>
-							<InjuryHealingFactor>1</InjuryHealingFactor>
-							<ImmunityGainSpeed>0.1</ImmunityGainSpeed>
-						</statOffsets>
-					</value>
-				</li>
+					</statFactors>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="BfG_WoundHealing_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]/statFactors</xpath>
+				<value>
+					<InjuryHealingFactor Operation="SafeRemove"/>
+					<ImmunityGainSpeed Operation="SafeRemove"/>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+				<xpath>Defs/GeneDef[defName="BfG_WoundHealing_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]</xpath>
+				<value>
+					<statOffsets>
+						<InjuryHealingFactor>1</InjuryHealingFactor>
+						<ImmunityGainSpeed>0.1</ImmunityGainSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
 
-				<li Class="PatchOperationRemove">
-					<xpath>Defs/GeneDef[defName="BfG_Hemogen_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]/statFactors/HemogenGainFactor</xpath>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/GeneDef[defName="BfG_Hemogen_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]</xpath>
-					<value>
-						<statOffsets>
-							<HemogenGainFactor>0.2</HemogenGainFactor>
-						</statOffsets>
-					</value>
-				</li>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/GeneDef[defName="BfG_Hemogen_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]/statFactors/HemogenGainFactor</xpath>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+				<xpath>Defs/GeneDef[defName="BfG_Hemogen_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]</xpath>
+				<value>
+					<statOffsets>
+						<HemogenGainFactor>0.2</HemogenGainFactor>
+					</statOffsets>
+				</value>
+			</Operation>
 
-				<li Class="PatchOperationRemove">
-					<xpath>Defs/GeneDef[defName="BfG_MoveSpeed_SpaceArchite"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]/statOffsets/ComfyTemperatureMax</xpath>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="BfG_MoveSpeed_SpaceArchite"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]/statOffsets/WorkSpeedGlobal</xpath>
-					<value>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/GeneDef[defName="BfG_MoveSpeed_SpaceArchite"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]/statOffsets/ComfyTemperatureMax</xpath>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+				<xpath>Defs/GeneDef[defName="BfG_MoveSpeed_SpaceArchite"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]</xpath>
+				<value>
+					<statOffsets>
 						<WorkSpeedGlobal>0.2</WorkSpeedGlobal>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="BfG_MoveSpeed_SpaceArchite"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]/statOffsets/MentalBreakThreshold</xpath>
-					<value>
 						<MentalBreakThreshold>0.1</MentalBreakThreshold>
-					</value>
-				</li>
+					</statOffsets>
+				</value>
+			</Operation>
 
-				<li Class="PatchOperationAttributeRemove">
-					<xpath>Defs/GeneDef[defName="BfG_PsychicAbility_Space"]</xpath>
-					<attribute>ParentName</attribute>
-				</li>
-				<li Class="PatchOperationRemove">
-					<xpath>Defs/GeneDef[defName="BfG_PsychicAbility_Space"]/biostatArc</xpath>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="BfG_PsychicAbility_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]/statOffsets/PsychicSensitivity</xpath>
-					<value>
+			<Operation Class="XmlExtensions.PatchOperationAttributeRemove">
+				<xpath>Defs/GeneDef[defName="BfG_PsychicAbility_Space"]</xpath>
+				<attribute>ParentName</attribute>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/GeneDef[defName="BfG_PsychicAbility_Space"]/biostatArc</xpath>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+				<xpath>Defs/GeneDef[defName="BfG_PsychicAbility_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]</xpath>
+				<value>
+					<statOffsets>
 						<PsychicSensitivity>-0.2</PsychicSensitivity>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="BfG_PsychicAbility_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]/statOffsets/PsychicSensitivity</xpath>
-					<value>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+				<xpath>Defs/GeneDef[defName="BfG_PsychicAbility_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]</xpath>
+				<value>
+					<statOffsets>
 						<PsychicSensitivity>0.6</PsychicSensitivity>
-					</value>
-				</li>
-				<li Class="PatchOperationFindMod">
-					<mods>
-						<li>[FSF] FrozenSnowFox Tweaks</li>
-					</mods>
-					<match Class="XmlExtensions.OptionalPatch">
-						<modId>FrozenSnowFox.FrozenSnowFoxTweaks</modId>
-						<key>FSFPsychicSensBonuses</key>
-						<defaultValue>false</defaultValue>
-						<caseTrue>
-							<Operation Class="PatchOperationSequence">
-								<operations>
-									<li Class="PatchOperationRemove">
-										<xpath>Defs/GeneDef[defName="BfG_PsychicAbility_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]/statOffsets/MeditationFocusGain</xpath>
-									</li>
-									<li Class="PatchOperationRemove">
-										<xpath>Defs/GeneDef[defName="BfG_PsychicAbility_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]/statOffsets/PsychicEntropyRecoveryRate</xpath>
-									</li>
-									<li Class="PatchOperationRemove">
-										<xpath>Defs/GeneDef[defName="BfG_PsychicAbility_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]/statOffsets/MeditationFocusGain</xpath>
-									</li>
-									<li Class="PatchOperationRemove">
-										<xpath>Defs/GeneDef[defName="BfG_PsychicAbility_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]/statOffsets/PsychicEntropyRecoveryRate</xpath>
-									</li>
-								</operations>
-							</Operation>
-						</caseTrue>
-					</match>
-				</li>
-			</operations>
-		</match>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.OptionalPatch">
+				<modId>FrozenSnowFox.FrozenSnowFoxTweaks</modId>
+				<key>FSFPsychicSensBonuses</key>
+				<defaultValue>false</defaultValue>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="BfG_PsychicAbility_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]/statOffsets</xpath>
+						<value>
+							<MeditationFocusGain Operation="SafeRemove"/>
+							<PsychicEntropyRecoveryRate Operation="SafeRemove"/>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="BfG_PsychicAbility_Space"]/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]/statOffsets</xpath>
+						<value>
+							<MeditationFocusGain Operation="SafeRemove"/>
+							<PsychicEntropyRecoveryRate Operation="SafeRemove"/>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
 	</Operation>
 
 </Patch>

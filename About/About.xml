@@ -16,6 +16,11 @@
 	</description>
 	<modDependencies>
 		<li>
+    		<packageId>imranfish.xmlextensions</packageId>
+			<displayName>XML Extensions</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/2574315206</steamWorkshopUrl>
+		</li>
+		<li>
 			<packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
 			<displayName>Vanilla Expanded Framework</displayName>
 			<steamWorkshopUrl>steam://url/CommunityFilePage/2023507013</steamWorkshopUrl>
@@ -28,6 +33,7 @@
 	</modDependencies>
 	<loadAfter>
 		<li>als.biotechgravship</li>
+		<li>imranfish.xmlextensions</li>
 		<li>JintuziLamian.Gene.XenoCosmetic</li>
 		<li>Og.maarx.meditateasworktype.continued</li>
 		<li>Oppey.EyeGenes2</li>

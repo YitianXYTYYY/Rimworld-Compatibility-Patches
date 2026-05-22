@@ -1,126 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 	<!-- Genepack Priority -->
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/GeneCategoryDef[defName="Ability"]/displayPriorityInXenotype</xpath>
+	<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+		<xpath>Defs/GeneCategoryDef[defName="Ability"]</xpath>
 		<value>
 			<displayPriorityInXenotype>600</displayPriorityInXenotype>
 		</value>
 	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/GeneCategoryDef[defName="Hemogen"]/displayPriorityInXenotype</xpath>
+	<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+		<xpath>Defs/GeneCategoryDef[defName="Hemogen"]</xpath>
 		<value>
 			<displayPriorityInXenotype>599</displayPriorityInXenotype>
 		</value>
 	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/GeneCategoryDef[defName="Mood"]/displayPriorityInXenotype</xpath>
+	<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+		<xpath>Defs/GeneCategoryDef[defName="Mood"]</xpath>
 		<value>
 			<displayPriorityInXenotype>390</displayPriorityInXenotype>
 		</value>
 	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/GeneCategoryDef[defName="Violence"]/displayPriorityInXenotype</xpath>
+	<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+		<xpath>Defs/GeneCategoryDef[defName="Violence"]</xpath>
 		<value>
 			<displayPriorityInXenotype>418</displayPriorityInXenotype>
 		</value>
 	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/GeneCategoryDef[defName="Beauty"]/displayPriorityInXenotype</xpath>
+	<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+		<xpath>Defs/GeneCategoryDef[defName="Beauty"]</xpath>
 		<value>
 			<displayPriorityInXenotype>401</displayPriorityInXenotype>
 		</value>
 	</Operation>
 
-	<!-- Modded Categories -->
-	<Operation Class="PatchOperationFindMod">
+	<!-- Vanilla Quests Expanded - Ancients -->
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Vanilla Quests Expanded - Ancients</li>
+			<li>vanillaquestsexpanded.ancients</li>
 		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneCategoryDef[defName="VQEA_ArchiteAptitudes"]/displayPriorityInXenotype</xpath>
-			<value>
-				<displayPriorityInXenotype>999</displayPriorityInXenotype>
-			</value>
-		</match>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+				<xpath>Defs/GeneCategoryDef[defName="VQEA_ArchiteAptitudes"]</xpath>
+				<value>
+					<displayPriorityInXenotype>999</displayPriorityInXenotype>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
-	<Operation Class="PatchOperationFindMod">
+	<!-- Vanilla Races Expanded - Hussar -->
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Vanilla Races Expanded - Hussar</li>
+			<li>vanillaracesexpanded.hussar</li>
 		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneCategoryDef[defName="VREH_WeaponAptitudes"]/displayPriorityInXenotype</xpath>
-			<value>
-				<displayPriorityInXenotype>998</displayPriorityInXenotype>
-			</value>
-		</match>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+				<xpath>Defs/GeneCategoryDef[defName="VREH_WeaponAptitudes"]</xpath>
+				<value>
+					<displayPriorityInXenotype>998</displayPriorityInXenotype>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
-	<Operation Class="PatchOperationFindMod">
+	<!-- Vanilla Races Expanded - Lycanthrope -->
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Vanilla Races Expanded - Lycanthrope</li>
+			<li>vanillaracesexpanded.lycanthrope</li>
 		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneCategoryDef[defName="VRE_Morphs"]/displayPriorityInXenotype</xpath>
-			<value>
-				<displayPriorityInXenotype>900</displayPriorityInXenotype>
-			</value>
-		</match>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+				<xpath>Defs/GeneCategoryDef[defName="VRE_Morphs"]</xpath>
+				<value>
+					<displayPriorityInXenotype>900</displayPriorityInXenotype>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
-	<Operation Class="PatchOperationFindMod">
+	<!-- ReSplice: Core -->
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Vanilla Races Expanded - Waster</li>
+			<li>resplice.xotr.core</li>
 		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneCategoryDef[defName="VREW_Mutations"]/displayPriorityInXenotype</xpath>
-			<value>
-				<displayPriorityInXenotype>550</displayPriorityInXenotype>
-			</value>
-		</match>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+				<xpath>Defs/GeneCategoryDef[defName="RS_DarkArchite"]</xpath>
+				<value>
+					<displayPriorityInXenotype>610</displayPriorityInXenotype>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
-	<Operation Class="PatchOperationFindMod">
+	<!-- Vanilla Races Expanded - Waster -->
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>ReSplice: Core</li>
+			<li>vanillaracesexpanded.waster</li>
 		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/GeneCategoryDef[defName="RS_DarkArchite"]/displayPriorityInXenotype</xpath>
-			<value>
-				<displayPriorityInXenotype>610</displayPriorityInXenotype>
-			</value>
-		</match>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+				<xpath>Defs/GeneCategoryDef[defName="VREW_Mutations"]</xpath>
+				<value>
+					<displayPriorityInXenotype>550</displayPriorityInXenotype>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
-	<Operation Class="PatchOperationFindMod">
+	<!-- Integrated Genes -->
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Integrated Genes</li>
+			<li>Turnovus.Biotech.IntegratedGenes</li>
 		</mods>
-		<match Class="PatchOperationSequence">
-			<operations>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneCategoryDef[defName="Turn_GeneCategory_Fleshbeast"]/displayPriorityInXenotype</xpath>
-					<value>
-						<displayPriorityInXenotype>499</displayPriorityInXenotype>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneCategoryDef[defName="Turn_GeneCategory_Slavery"]/displayPriorityInXenotype</xpath>
-					<value>
-						<displayPriorityInXenotype>409</displayPriorityInXenotype>
-					</value>
-				</li>
-			</operations>
-		</match>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+				<xpath>Defs/GeneCategoryDef[defName="Turn_GeneCategory_Fleshbeast"]</xpath>
+				<value>
+					<displayPriorityInXenotype>499</displayPriorityInXenotype>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+				<xpath>Defs/GeneCategoryDef[defName="Turn_GeneCategory_Slavery"]</xpath>
+				<value>
+					<displayPriorityInXenotype>409</displayPriorityInXenotype>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
 
-	<Operation Class="PatchOperationRemove">
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 		<xpath>Defs/GeneCategoryDef[defName="Cosmetic" or defName="Cosmetic_Skin"]/displayPriorityInGenepack</xpath>
 	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/GeneCategoryDef[defName="Cosmetic"]/displayPriorityInXenotype</xpath>
+	<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+		<xpath>Defs/GeneCategoryDef[defName="Cosmetic"]</xpath>
 		<value>
 			<displayPriorityInXenotype>-100</displayPriorityInXenotype>
 		</value>
 	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/GeneCategoryDef[defName="Cosmetic_Skin"]/displayPriorityInXenotype</xpath>
+	<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+		<xpath>Defs/GeneCategoryDef[defName="Cosmetic_Skin"]</xpath>
 		<value>
 			<displayPriorityInXenotype>-1002</displayPriorityInXenotype>
 		</value>

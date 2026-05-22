@@ -393,11 +393,18 @@
 		<mods>
 			<li>Vanilla Races Expanded - Starjack</li>
 		</mods>
-		<match Class="PatchOperationAdd">
-			<xpath>Defs/GeneDef[defName="VREStarjack_SpacejumpLegs"]</xpath>
-			<value>
-				<iconColor>(0.75, 0.75, 0.75)</iconColor>
-			</value>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/GeneDef[defName="VREStarjack_SpacejumpLegs"]</xpath>
+					<value>
+						<iconColor>(0.75, 0.75, 0.75)</iconColor>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/GeneDef[defName="VREStarjack_SpacejumpLegs"]/displayCategory</xpath>
+				</li>
+			</operations>
 		</match>
 	</Operation>
 
