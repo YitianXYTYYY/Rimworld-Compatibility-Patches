@@ -1,29 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Patch>	
+<Patch>
 
-	<Operation Class="PatchOperationFindMod">
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Vanilla Races Expanded - Sanguophage</li>
+			<li>vanillaracesexpanded.sanguophage</li>
 		</mods>
-		<match Class="PatchOperationSequence">
-			<operations>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="VRE_ExtremeHemogenDrain"]/biostatMet</xpath>
-					<value>
-						<biostatMet>9</biostatMet>
-					</value>
-				</li>
-				<li Class="PatchOperationRemove">
-					<xpath>Defs/GeneDef[defName="VRE_Talons"]/capMods/li[capacity="Manipulation"]/postFactor</xpath>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/GeneDef[defName="VRE_Talons"]/capMods/li[capacity="Manipulation"]</xpath>
-					<value>
-						<offset>-0.1</offset>
-					</value>
-				</li>
-			</operations>
-		</match>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.PatchOperationSafeReplace">
+				<xpath>Defs/GeneDef[defName="VRE_ExtremeHemogenDrain"]/biostatMet</xpath>
+				<value>
+					<biostatMet>9</biostatMet>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_Talons"]/capMods/li[capacity="Manipulation"]</xpath>
+				<value>
+					<postFactor Operation="SafeRemove"/>
+					<offset Operation="AddOrReplace">-0.1</offset>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
 
 </Patch>
