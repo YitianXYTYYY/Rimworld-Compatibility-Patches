@@ -1,57 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>	
 
-	<Operation Class="PatchOperationFindMod">
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Vanilla Races Expanded - Pigskin</li>
+			<li>vanillaracesexpanded.pigskin</li>
 		</mods>
-		<match Class="PatchOperationSequence">
-			<operations>
-				<li Class="PatchOperationRemove">
-					<xpath>Defs/GeneDef[defName="VRE_RapidAging" or defName="VRE_FastAging"]/statFactors/VEF_GrowthPointMultiplier</xpath>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/GeneDef[defName="VRE_RapidAging"]</xpath>
-					<value>
-						<statOffsets>
-							<VEF_GrowthPointMultiplier>3</VEF_GrowthPointMultiplier>
-						</statOffsets>
-					</value>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/GeneDef[defName="VRE_FastAging"]</xpath>
-					<value>
-						<statOffsets>
-							<VEF_GrowthPointMultiplier>1</VEF_GrowthPointMultiplier>
-						</statOffsets>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="VRE_ExtraMeat" or defName="VRE_LowMeat"]/biostatCpx</xpath>
-					<value>
-						<biostatCpx>1</biostatCpx>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="VRE_ExtraMeat"]/statFactors/MeatAmount</xpath>
-					<value>
-						<MeatAmount>1.5</MeatAmount>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="VRE_LowMeat"]/statFactors/MeatAmount</xpath>
-					<value>
-						<MeatAmount>0.5</MeatAmount>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="VRE_PorkFlesh"]/biostatCpx</xpath>
-					<value>
-						<biostatCpx>1</biostatCpx>
-					</value>
-				</li>
-			</operations>
-		</match>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_ExtraMeat"]</xpath>
+				<value>
+					<biostatCpx Operation="SafeReplace">1</biostatCpx>
+					<statFactors Operation="Safe">
+						<MeatAmount Operation="SafeReplace">1.5</MeatAmount>
+					</statFactors>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_LowMeat"]</xpath>
+				<value>
+					<biostatCpx Operation="SafeReplace">1</biostatCpx>
+					<statFactors Operation="Safe">
+						<MeatAmount Operation="SafeReplace">0.5</MeatAmount>
+					</statFactors>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_PorkFlesh"]</xpath>
+				<value>
+					<biostatCpx Operation="SafeReplace">1</biostatCpx>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
 
 </Patch>

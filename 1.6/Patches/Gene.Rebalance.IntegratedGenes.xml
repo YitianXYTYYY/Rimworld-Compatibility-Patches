@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Patch>	
+<Patch>
 
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
@@ -16,32 +16,48 @@
 					</statFactors>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="Turn_Gene_FastNeuralHeat"]</xpath>
-				<value>
-					<biostatMet Operation="SafeReplace">-2</biostatMet>
-					<statFactors Operation="SafeRemove"/>
-					<statOffsets Operation="Safe">
-						<PsychicEntropyRecoveryRate Operation="AddOrReplace">0.12</PsychicEntropyRecoveryRate>
-					</statOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/PsychicEntropyRecoveryRate</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<biostatCpx Operation="AddOrReplace">2</biostatCpx>
+							<biostatMet Operation="SafeReplace">-2</biostatMet>
+							<statOffsets Operation="Safe">
+								<PsychicEntropyRecoveryRate Operation="AddOrReplace">0.12</PsychicEntropyRecoveryRate>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="Turn_Gene_VeryFastNeuralHeat"]</xpath>
-				<value>
-					<biostatMet Operation="SafeReplace">-5</biostatMet>
-					<statFactors Operation="SafeRemove"/>
-					<statOffsets Operation="Safe">
-						<PsychicEntropyRecoveryRate Operation="AddOrReplace">0.3</PsychicEntropyRecoveryRate>
-					</statOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/PsychicEntropyRecoveryRate</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<biostatCpx Operation="AddOrReplace">3</biostatCpx>
+							<biostatMet Operation="SafeReplace">-5</biostatMet>
+							<statOffsets Operation="Safe">
+								<PsychicEntropyRecoveryRate Operation="AddOrReplace">0.3</PsychicEntropyRecoveryRate>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
 			<!-- 486 ideology -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="Turn_Gene_BiosculptAccelerated"]</xpath>
 				<value>
 					<statOffsets Operation="Safe">
-						<BiosculpterOccupantSpeed Operation="AddOrReplace">0.4</BiosculpterOccupantSpeed>
+						<BiosculpterOccupantSpeed Operation="SafeReplace">0.4</BiosculpterOccupantSpeed>
 					</statOffsets>
 				</value>
 			</Operation>
@@ -49,7 +65,7 @@
 				<xpath>Defs/GeneDef[defName="Turn_Gene_BiosculptNeed"]</xpath>
 				<value>
 					<statOffsets Operation="Safe">
-						<BiosculpterOccupantSpeed Operation="AddOrReplace">0.2</BiosculpterOccupantSpeed>
+						<BiosculpterOccupantSpeed Operation="SafeReplace">0.2</BiosculpterOccupantSpeed>
 					</statOffsets>
 				</value>
 			</Operation>
@@ -63,33 +79,56 @@
 					<prisonBreakMTBFactor Operation="SafeReplace">0.8</prisonBreakMTBFactor>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="Turn_Gene_Duelist"]</xpath>
-				<value>
-					<statFactors Operation="SafeRemove"/>
-					<statOffsets Operation="Safe">
-						<MeleeHitChance Operation="AddOrReplace">4</MeleeHitChance>
-						<MeleeDodgeChance Operation="AddOrReplace">8</MeleeDodgeChance>
-					</statOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/MeleeHitChance</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/MeleeDodgeChance</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<MeleeHitChance Operation="AddOrReplace">4</MeleeHitChance>
+								<MeleeDodgeChance Operation="AddOrReplace">8</MeleeDodgeChance>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
 			<!-- 270 miscellaneous -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="Turn_Gene_MotivationLow"]</xpath>
-				<value>
-					<statFactors Operation="Safe">
-						<WorkSpeedGlobal Operation="AddOrReplace">0.8</WorkSpeedGlobal>
-					</statFactors>
-				</value>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="Turn_Gene_MotivationLow"]/statFactors</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>statFactors/GeneralLaborSpeed</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>statFactors</xpath>
+						<value>
+							<WorkSpeedGlobal Operation="AddOrReplace">0.8</WorkSpeedGlobal>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="Turn_Gene_MotivationHigh"]</xpath>
-				<value>
-					<statFactors Operation="SafeRemove"/>
-					<statOffsets Operation="Safe">
-						<WorkSpeedGlobal Operation="AddOrReplace">0.2</WorkSpeedGlobal>
-					</statOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/GeneralLaborSpeed</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<WorkSpeedGlobal Operation="AddOrReplace">0.2</WorkSpeedGlobal>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
 		</caseTrue>
 	</Operation>

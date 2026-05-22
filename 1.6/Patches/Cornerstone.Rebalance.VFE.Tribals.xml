@@ -16,65 +16,107 @@
 					</statOffsets>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_WhisperersOfMind"]</xpath>
-				<value>
-					<description Operation="SafeReplace">Psychic sensitivity +20%.</description>
-					<statFactors Operation="SafeRemove"/>
-					<statOffsets Operation="Safe">
-						<PsychicSensitivity Operation="SafeAdd">0.2</PsychicSensitivity>
-					</statOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/PsychicSensitivity</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description Operation="SafeReplace">Psychic sensitivity +20%.</description>
+							<statOffsets Operation="Safe">
+								<PsychicSensitivity Operation="SafeAdd">0.2</PsychicSensitivity>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_LorekeepersTradition"]</xpath>
-				<value>
-					<description Operation="SafeReplace">Global learning factor +20%.</description>
-					<statFactors Operation="SafeRemove"/>
-					<statOffsets Operation="Safe">
-						<GlobalLearningFactor Operation="SafeAdd">0.2</GlobalLearningFactor>
-					</statOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/GlobalLearningFactor</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description Operation="SafeReplace">Global learning factor +20%.</description>
+							<statOffsets Operation="Safe">
+								<GlobalLearningFactor Operation="SafeAdd">0.2</GlobalLearningFactor>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_EmbraceOfTheNight"]</xpath>
-				<value>
-					<description Operation="SafeReplace">Rest rate multiplier +10%.</description>
-					<statFactors Operation="SafeRemove"/>
-					<statOffsets Operation="Safe">
-						<RestRateMultiplier Operation="SafeAdd">0.1</RestRateMultiplier>
-					</statOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/RestRateMultiplier</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description Operation="SafeReplace">Rest rate multiplier +10%.</description>
+							<statOffsets Operation="Safe">
+								<RestRateMultiplier Operation="SafeAdd">0.1</RestRateMultiplier>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_RitualOfQuickFeast"]</xpath>
-				<value>
-					<description Operation="SafeReplace">Eating speed +30%.</description>
-					<statFactors Operation="SafeRemove"/>
-					<statOffsets Operation="Safe">
-						<EatingSpeed Operation="SafeAdd">0.3</EatingSpeed>
-					</statOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/EatingSpeed</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description Operation="SafeReplace">Eating speed +30%.</description>
+							<statOffsets Operation="Safe">
+								<EatingSpeed Operation="SafeAdd">0.3</EatingSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_FollowersOfTheHealingWaters"]</xpath>
-				<value>
-					<description Operation="SafeReplace">Immunity gain speed +10%.</description>
-					<statFactors Operation="SafeRemove"/>
-					<statOffsets Operation="Safe">
-						<ImmunityGainSpeed Operation="SafeAdd">0.1</ImmunityGainSpeed>
-					</statOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/ImmunityGainSpeed</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description Operation="SafeReplace">Immunity gain speed +10%.</description>
+							<statOffsets Operation="Safe">
+								<ImmunityGainSpeed Operation="SafeAdd">0.1</ImmunityGainSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_OrderoftheMendingHands"]</xpath>
-				<value>
-					<description Operation="SafeReplace">Injury healing factor +20%.</description>
-					<statFactors Operation="SafeRemove"/>
-					<statOffsets Operation="Safe">
-						<InjuryHealingFactor Operation="SafeAdd">0.2</InjuryHealingFactor>
-					</statOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/InjuryHealingFactor</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description Operation="SafeReplace">Injury healing factor +20%.</description>
+							<statOffsets Operation="Safe">
+								<InjuryHealingFactor Operation="SafeAdd">0.2</InjuryHealingFactor>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_DisciplesOfCleanliness"]</xpath>
@@ -85,154 +127,440 @@
 					</statFactors>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_DiplomatsOfSilverTongue"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/NegotiationAbility</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description>Negotiation ability +10%.</description>
+							<statOffsets Operation="Safe">
+								<NegotiationAbility Operation="SafeAdd">0.1</NegotiationAbility>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_MerchantsOfProsperity"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/TradePriceImprovement</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description>Trade price improvement +5%.</description>
+							<statOffsets Operation="Safe">
+								<TradePriceImprovement Operation="SafeAdd">0.05</TradePriceImprovement>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_CharismaticEnclave"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/SocialImpact</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description>Social impact +10%.</description>
+							<statOffsets Operation="Safe">
+								<SocialImpact Operation="SafeAdd">0.1</SocialImpact>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_WhisperersToTheWild"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/TameAnimalChance</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description>Tame animal chance +10%.</description>
+							<statOffsets Operation="Safe">
+								<TameAnimalChance Operation="SafeAdd">0.1</TameAnimalChance>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_GuildOfDiligence"]</xpath>
-				<value>
-					<description Operation="SafeReplace">Global work speed +10%.</description>
-					<statFactors Operation="SafeRemove"/>
-					<statOffsets Operation="Safe">
-						<WorkSpeedGlobal Operation="SafeAdd">0.1</WorkSpeedGlobal>
-					</statOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/WorkSpeedGlobal</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description Operation="SafeReplace">Global work speed +5%.</description>
+							<statOffsets Operation="Safe">
+								<WorkSpeedGlobal Operation="SafeAdd">0.05</WorkSpeedGlobal>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_DevotedMiners"]</xpath>
-				<value>
-					<description Operation="SafeReplace">Mining speed +20%.</description>
-					<statFactors Operation="SafeRemove"/>
-					<statOffsets Operation="Safe">
-						<MiningSpeed Operation="SafeAdd">0.2</MiningSpeed>
-					</statOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/MiningSpeed</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description Operation="SafeReplace">Mining speed +20%.</description>
+							<statOffsets Operation="Safe">
+								<MiningSpeed Operation="SafeAdd">0.2</MiningSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_SeekersOfHiddenDepths"]</xpath>
-				<value>
-					<description Operation="SafeReplace">Deep drilling speed +20%.</description>
-					<statFactors Operation="SafeRemove"/>
-					<statOffsets Operation="Safe">
-						<DeepDrillingSpeed Operation="SafeAdd">0.2</DeepDrillingSpeed>
-					</statOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/DeepDrillingSpeed</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description Operation="SafeReplace">Deep drilling speed +20%.</description>
+							<statOffsets Operation="Safe">
+								<DeepDrillingSpeed Operation="SafeAdd">0.2</DeepDrillingSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_StewardsOftheVein"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/MiningYield</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description Operation="SafeReplace">Mining yield +10%.</description>
+							<statOffsets Operation="Safe">
+								<MiningYield Operation="SafeAdd">0.1</MiningYield>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_ScholarsOfProgress"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/ResearchSpeed</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description Operation="SafeReplace">Research speed +10%.</description>
+							<statOffsets Operation="Safe">
+								<ResearchSpeed Operation="SafeAdd">0.1</ResearchSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_KeepersOfThePasture"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/AnimalGatherYield</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description Operation="SafeReplace">Animal gather yield +20%.</description>
+							<statOffsets Operation="Safe">
+								<AnimalGatherYield Operation="SafeAdd">0.2</AnimalGatherYield>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_SowersOfAbundance"]</xpath>
-				<value>
-					<description Operation="SafeReplace">Plant work speed +20%.</description>
-					<statFactors Operation="SafeRemove"/>
-					<statOffsets Operation="Safe">
-						<PlantWorkSpeed Operation="SafeAdd">0.2</PlantWorkSpeed>
-					</statOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/PlantWorkSpeed</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description Operation="SafeReplace">Plant work speed +20%.</description>
+							<statOffsets Operation="Safe">
+								<PlantWorkSpeed Operation="SafeAdd">0.2</PlantWorkSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_HarvestersOfBounty"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/PlantHarvestYield</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description Operation="SafeReplace">Plant harvest yield +10%.</description>
+							<statOffsets Operation="Safe">
+								<PlantHarvestYield Operation="SafeAdd">0.1</PlantHarvestYield>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_ShadowsOfTheHunt"]</xpath>
-				<value>
-					<description Operation="SafeReplace">Hunting stealth +30%.</description>
-					<statFactors Operation="SafeRemove"/>
-					<statOffsets Operation="Safe">
-						<HuntingStealth Operation="SafeAdd">0.3</HuntingStealth>
-					</statOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/HuntingStealth</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description Operation="SafeReplace">Hunting stealth +30%.</description>
+							<statOffsets Operation="Safe">
+								<HuntingStealth Operation="SafeAdd">0.3</HuntingStealth>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_MasonsOfTheFuture"]</xpath>
-				<value>
-					<description Operation="SafeReplace">Construction speed +10%.</description>
-					<statFactors Operation="SafeRemove"/>
-					<statOffsets Operation="Safe">
-						<ConstructionSpeed Operation="SafeAdd">0.1</ConstructionSpeed>
-					</statOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/ConstructionSpeed</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description Operation="SafeReplace">Construction speed +10%.</description>
+							<statOffsets Operation="Safe">
+								<ConstructionSpeed Operation="SafeAdd">0.1</ConstructionSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_CustodiansOfPurity"]</xpath>
-				<value>
-					<description Operation="SafeReplace">Cleaning speed +20%.</description>
-					<statFactors Operation="SafeRemove"/>
-					<statOffsets Operation="Safe">
-						<CleaningSpeed Operation="SafeAdd">0.2</CleaningSpeed>
-					</statOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/CleaningSpeed</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description Operation="SafeReplace">Cleaning speed +20%.</description>
+							<statOffsets Operation="Safe">
+								<CleaningSpeed Operation="SafeAdd">0.2</CleaningSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_HealersOfSwiftHand"]</xpath>
-				<value>
-					<description Operation="SafeReplace">Medical tend speed +20%.</description>
-					<statFactors Operation="SafeRemove"/>
-					<statOffsets Operation="Safe">
-						<MedicalTendSpeed Operation="SafeAdd">0.2</MedicalTendSpeed>
-					</statOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/MedicalTendSpeed</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description Operation="SafeReplace">Medical tend speed +20%.</description>
+							<statOffsets Operation="Safe">
+								<MedicalTendSpeed Operation="SafeAdd">0.2</MedicalTendSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_PhysiciansOfPrecision"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/MedicalTendQuality</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description Operation="SafeReplace">Medical tend quality +10%.</description>
+							<statOffsets Operation="Safe">
+								<MedicalTendQuality Operation="SafeAdd">0.1</MedicalTendQuality>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_SurgeonsOfExcellence"]</xpath>
-				<value>
-					<description Operation="SafeReplace">Medical operation speed +20%.</description>
-					<statFactors Operation="SafeRemove"/>
-					<statOffsets Operation="Safe">
-						<MedicalOperationSpeed Operation="SafeAdd">0.2</MedicalOperationSpeed>
-					</statOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/MedicalOperationSpeed</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description Operation="SafeReplace">Medical operation speed +20%.</description>
+							<statOffsets Operation="Safe">
+								<MedicalOperationSpeed Operation="SafeAdd">0.2</MedicalOperationSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_WarriorsOfPrecision"]</xpath>
-				<value>
-					<description Operation="SafeReplace">Melee hit chance +4.</description>
-					<statFactors Operation="SafeRemove"/>
-					<statOffsets Operation="Safe">
-						<MeleeHitChance Operation="SafeAdd">4</MeleeHitChance>
-					</statOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/MeleeHitChance</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description Operation="SafeReplace">Melee hit chance +4.</description>
+							<statOffsets Operation="Safe">
+								<MeleeHitChance Operation="SafeAdd">4</MeleeHitChance>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_DancersOfTheBattlefield"]</xpath>
-				<value>
-					<description Operation="SafeReplace">Melee dodge chance +4.</description>
-					<statFactors Operation="SafeRemove"/>
-					<statOffsets Operation="Safe">
-						<MeleeDodgeChance Operation="SafeAdd">4</MeleeDodgeChance>
-					</statOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/MeleeDodgeChance</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description Operation="SafeReplace">Melee dodge chance +8.</description>
+							<statOffsets Operation="Safe">
+								<MeleeDodgeChance Operation="SafeAdd">8</MeleeDodgeChance>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_Marksmen"]</xpath>
-				<value>
-					<description Operation="SafeReplace">Shooting accuracy +4.</description>
-					<statFactors Operation="SafeRemove"/>
-					<statOffsets Operation="Safe">
-						<ShootingAccuracyPawn Operation="SafeAdd">4</ShootingAccuracyPawn>
-					</statOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/ShootingAccuracyPawn</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description Operation="SafeReplace">Shooting accuracy +4.</description>
+							<statOffsets Operation="Safe">
+								<ShootingAccuracyPawn Operation="SafeAdd">4</ShootingAccuracyPawn>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_MortarVisionaries"]</xpath>
 				<value>
-					<description Operation="SafeReplace">Mortars fired by the colonists are 20% more accurate.</description>
+					<description Operation="SafeReplace">Mortars miss radius multiplier x80%.</description>
 					<statFactors Operation="Safe">
 						<MortarMissRadiusFactor Operation="SafeReplace">0.8</MortarMissRadiusFactor>
 					</statFactors>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_DiligentDoers"]</xpath>
-				<value>
-					<description Operation="SafeReplace">General labor speed +10%.</description>
-					<statFactors Operation="SafeRemove"/>
-					<statOffsets Operation="Safe">
-						<GeneralLaborSpeed Operation="SafeAdd">0.1</GeneralLaborSpeed>
-					</statOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/GeneralLaborSpeed</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description Operation="SafeReplace">General labor speed +10%.</description>
+							<statOffsets Operation="Safe">
+								<GeneralLaborSpeed Operation="SafeAdd">0.1</GeneralLaborSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_ChemistsOfEfficacy"]</xpath>
-				<value>
-					<description Operation="SafeReplace">Drug synthesis speed +20%.</description>
-					<statFactors Operation="SafeRemove"/>
-					<statOffsets Operation="Safe">
-						<DrugSynthesisSpeed Operation="SafeAdd">0.2</DrugSynthesisSpeed>
-					</statOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/DrugSynthesisSpeed</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description Operation="SafeReplace">Drug synthesis and cooking speed +20%.</description>
+							<statOffsets Operation="Safe">
+								<DrugSynthesisSpeed Operation="SafeAdd">0.2</DrugSynthesisSpeed>
+								<DrugCookingSpeed Operation="SafeAdd">0.2</DrugCookingSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_TechScavengers"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/ButcheryMechanoidEfficiency</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description Operation="SafeReplace">Mechanoid shredding efficiency +20%.</description>
+							<statOffsets Operation="Safe">
+								<ButcheryMechanoidEfficiency Operation="SafeAdd">0.2</ButcheryMechanoidEfficiency>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_MasterButchers"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>VFETribals.CornerstoneDef/statFactors/ButcheryFleshEfficiency</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VFETribals.CornerstoneDef</xpath>
+						<value>
+							<description Operation="SafeReplace">Butchery efficiency +10%.</description>
+							<statOffsets Operation="Safe">
+								<ButcheryFleshEfficiency Operation="SafeAdd">0.1</ButcheryFleshEfficiency>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
 		</caseTrue>
 	</Operation>

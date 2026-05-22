@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+
 	<GeneCategoryDef>
 		<defName>Archite_Ancient</defName>
 		<label>archite - ancient</label>
@@ -149,4 +150,5 @@
 		<label>cosmetic - eye color</label>
 		<displayPriorityInXenotype>-1001</displayPriorityInXenotype>
 	</GeneCategoryDef>
+
 </Defs>

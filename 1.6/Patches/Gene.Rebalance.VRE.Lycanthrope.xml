@@ -1,75 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Patch>	
+<Patch>
 
-	<Operation Class="PatchOperationFindMod">
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Vanilla Races Expanded - Lycanthrope</li>
+			<li>vanillaracesexpanded.lycanthrope</li>
 		</mods>
-		<match Class="PatchOperationSequence">
-			<operations>
-				<li Class="PatchOperationRemove">
-					<xpath>Defs/GeneDef[defName="VRE_SuperiorDarkVision"]/conditionalStatAffecters/li[@Class="VEF.Genes.ConditionalStatAffecter_Darkness"]/statFactors</xpath>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/GeneDef[defName="VRE_SuperiorDarkVision"]/conditionalStatAffecters/li[@Class="VEF.Genes.ConditionalStatAffecter_Darkness"]</xpath>
-					<value>
-						<statOffsets>
-							<WorkSpeedGlobal>0.1</WorkSpeedGlobal>
-							<ShootingAccuracyPawn>4</ShootingAccuracyPawn>
-							<MeleeHitChance>4</MeleeHitChance>
-							<MeleeDodgeChance>8</MeleeDodgeChance>
-						</statOffsets>
-					</value>
-				</li>
-				<li Class="PatchOperationFindMod">
-					<mods>
-						<li>Integrated Genes</li>
-					</mods>
-					<match Class="PatchOperationAdd">
-						<xpath>Defs/GeneDef[defName="Turn_Gene_Blindness"]/exclusionTags</xpath>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="VRE_SuperiorDarkVision"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef/conditionalStatAffecters/li[@Class="VEF.Genes.ConditionalStatAffecter_Darkness"]/statFactors</xpath>
 						<value>
-							<li>VRE_SuperiorDarkVision</li>
+							<WorkSpeedGlobal Operation="SafeRemove"/>
+							<MoveSpeed Operation="SafeRemove"/>
+							<ShootingAccuracyPawn Operation="SafeRemove"/>
+							<MeleeHitChance Operation="SafeRemove"/>
+							<MeleeDodgeChance Operation="SafeRemove"/>
 						</value>
-					</match>
-				</li>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef/conditionalStatAffecters/li[@Class="VEF.Genes.ConditionalStatAffecter_Darkness"]</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<WorkSpeedGlobal Operation="AddOrReplace">0.1</WorkSpeedGlobal>
+								<ShootingAccuracyPawn Operation="AddOrReplace">4</ShootingAccuracyPawn>
+								<MeleeHitChance Operation="AddOrReplace">4</MeleeHitChance>
+								<MeleeDodgeChance Operation="AddOrReplace">8</MeleeDodgeChance>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>Turnovus.Biotech.IntegratedGenes</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="Turn_Gene_Blindness"]</xpath>
+						<value>
+							<exclusionTags Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">VRE_SuperiorDarkVision</li>
+							</exclusionTags>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
 
-				<li Class="PatchOperationRemove">
-					<xpath>Defs/GeneDef[defName="VRE_ImprovedDodge" or defName="VRE_SuperiorDodge"]/statFactors/MeleeDodgeChance</xpath>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/GeneDef[defName="VRE_ImprovedDodge"]</xpath>
-					<value>
-						<statOffsets>
-							<MeleeDodgeChance>8</MeleeDodgeChance>
-						</statOffsets>
-					</value>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/GeneDef[defName="VRE_SuperiorDodge"]</xpath>
-					<value>
-						<statOffsets>
-							<MeleeDodgeChance>16</MeleeDodgeChance>
-						</statOffsets>
-					</value>
-				</li>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="VRE_ImprovedDodge"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/MeleeDodgeChance</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<MeleeDodgeChance Operation="AddOrReplace">8</MeleeDodgeChance>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="VRE_SuperiorDodge"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/MeleeDodgeChance</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<MeleeDodgeChance Operation="AddOrReplace">16</MeleeDodgeChance>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
 
-				<li Class="PatchOperationRemove">
-					<xpath>Defs/GeneDef[defName="VRE_CanineTail"]/statOffsets/MoveSpeed</xpath>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/GeneDef[defName="VRE_CanineTail"]</xpath>
-					<value>
-						<biostatMet>-1</biostatMet>
-						<capMods>
-							<li>
-								<capacity>Moving</capacity>
-								<offset>0.05</offset>
-							</li>
-						</capMods>
-					</value>
-				</li>
-			</operations>
-		</match>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="VRE_CanineTail"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statOffsets/MoveSpeed</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeAdd">
+						<xpath>GeneDef</xpath>
+						<value>
+							<biostatMet>-1</biostatMet>
+							<capMods>
+								<li>
+									<capacity>Moving</capacity>
+									<offset>0.05</offset>
+								</li>
+							</capMods>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
 	</Operation>
 
 </Patch>

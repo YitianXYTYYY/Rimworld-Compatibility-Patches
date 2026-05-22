@@ -1,29 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Patch>	
+<Patch>
 
-	<Operation Class="PatchOperationFindMod">
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Vanilla Races Expanded - Insector</li>
+			<li>vanillaracesexpanded.insector</li>
 		</mods>
-		<match Class="PatchOperationSequence">
-			<operations>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="VRE_InsectFlesh"]/biostatCpx</xpath>
-					<value>
-						<biostatCpx>1</biostatCpx>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="VRE_InsectSkin"]/statOffsets</xpath>
-					<value>
-						<statOffsets>
-							<ArmorRating_Sharp>0.30</ArmorRating_Sharp>
-							<ArmorRating_Blunt>0.10</ArmorRating_Blunt>
-						</statOffsets>
-					</value>
-				</li>
-			</operations>
-		</match>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_InsectFlesh"]</xpath>
+				<value>
+					<biostatCpx Operation="SafeReplace">1</biostatCpx>
+					<statOffsets Operation="Safe">
+						<ArmorRating_Sharp Operation="SafeReplace">0.30</ArmorRating_Sharp>
+						<ArmorRating_Blunt Operation="SafeReplace">0.10</ArmorRating_Blunt>
+					</statOffsets>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
 
 </Patch>

@@ -1,64 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Patch>	
+<Patch>
 
-	<Operation Class="PatchOperationFindMod">
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Vanilla Races Expanded - Fungoid</li>
+			<li>vanillaracesexpanded.fungoid</li>
 		</mods>
-		<match Class="PatchOperationSequence">
-			<operations>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/HediffDef[defName="VRE_FungalArmor"]/stages</xpath>
-					<value>
-						<stages>
-							<li>
-								<minSeverity>0.1</minSeverity>
-								<statFactors>
-									<IncomingDamageFactor>0.5</IncomingDamageFactor>
-								</statFactors>
-							</li>
-							<li>
-								<minSeverity>0.4</minSeverity>
-								<statFactors>
-									<IncomingDamageFactor>0.8</IncomingDamageFactor>
-								</statFactors>
-							</li>
-							<li>
-								<minSeverity>0.9</minSeverity>
-								<statFactors>
-									<IncomingDamageFactor>0.9</IncomingDamageFactor>
-								</statFactors>
-							</li>
-						</stages>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/HediffDef[defName="VRE_FungalRegeneration"]/stages</xpath>
-					<value>
-						<stages>
-							<li>
-								<minSeverity>0.1</minSeverity>
-								<statOffsets>
-									<InjuryHealingFactor>5</InjuryHealingFactor>
-								</statOffsets>
-							</li>
-							<li>
-								<minSeverity>0.4</minSeverity>
-								<statOffsets>
-									<InjuryHealingFactor>3</InjuryHealingFactor>
-								</statOffsets>
-							</li>
-							<li>
-								<minSeverity>0.9</minSeverity>
-								<statOffsets>
-									<InjuryHealingFactor>1</InjuryHealingFactor>
-								</statOffsets>
-							</li>
-						</stages>
-					</value>
-				</li>
-			</operations>
-		</match>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="VRE_FungalArmor"]/stages</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeReplace">
+						<xpath>stages/li[minSeverity="0.1"]/statFactors/IncomingDamageFactor</xpath>
+						<value>
+							<IncomingDamageFactor>0.5</IncomingDamageFactor>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeReplace">
+						<xpath>stages/li[minSeverity="0.4"]/statFactors/IncomingDamageFactor</xpath>
+						<value>
+							<IncomingDamageFactor>0.8</IncomingDamageFactor>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeReplace">
+						<xpath>stages/li[minSeverity="0.9"]/statFactors/IncomingDamageFactor</xpath>
+						<value>
+							<IncomingDamageFactor>0.9</IncomingDamageFactor>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="VRE_FungalRegeneration"]/stages</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>stages/li/statFactors/InjuryHealingFactor</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+						<xpath>stages/li[minSeverity="0.1"]</xpath>
+						<value>
+							<statOffsets>
+								<InjuryHealingFactor>5</InjuryHealingFactor>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+						<xpath>stages/li[minSeverity="0.4"]</xpath>
+						<value>
+							<statOffsets>
+								<InjuryHealingFactor>3</InjuryHealingFactor>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+						<xpath>stages/li[minSeverity="0.9"]</xpath>
+						<value>
+							<statOffsets>
+								<InjuryHealingFactor>1</InjuryHealingFactor>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
 	</Operation>
 
 </Patch>

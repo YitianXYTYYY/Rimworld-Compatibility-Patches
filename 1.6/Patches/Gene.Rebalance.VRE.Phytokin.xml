@@ -1,26 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>	
 
-	<Operation Class="PatchOperationFindMod">
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Vanilla Races Expanded - Phytokin</li>
+			<li>vanillaracesexpanded.phytokin</li>
 		</mods>
-		<match Class="PatchOperationSequence">
-			<operations>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="VRE_BarkSkin"]/biostatMet</xpath>
-					<value>
-						<biostatMet>-2</biostatMet>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/GeneDef[defName="VRE_BarkSkin"]/statOffsets/ArmorRating_Blunt</xpath>
-					<value>
-						<ArmorRating_Blunt>0.4</ArmorRating_Blunt>
-					</value>
-				</li>		
-			</operations>
-		</match>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_BarkSkin"]</xpath>
+				<value>
+					<biostatMet Operation="SafeReplace">-2</biostatMet>
+					<statOffsets Operation="Safe">
+						<ArmorRating_Blunt Operation="SafeReplace">0.40</ArmorRating_Blunt>
+					</statOffsets>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
 
 </Patch>
