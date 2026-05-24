@@ -1,142 +1,196 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-	<Operation Class="PatchOperationRemove">
-		<xpath>Defs/GeneDef[defName="Immunity_Strong" or defName="Immunity_SuperStrong"]/statFactors/ImmunityGainSpeed</xpath>
-	</Operation>
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/GeneDef[defName="Immunity_Strong"]</xpath>
-		<value>
-			<statOffsets>
-				<ImmunityGainSpeed>0.1</ImmunityGainSpeed>
-			</statOffsets>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/GeneDef[defName="Immunity_SuperStrong"]</xpath>
-		<value>
-			<statOffsets>
-				<ImmunityGainSpeed>0.5</ImmunityGainSpeed>
-			</statOffsets>
-		</value>
-	</Operation>
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>Ludeon.RimWorld.Biotech</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="Immunity_Strong"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/ImmunityGainSpeed</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<ImmunityGainSpeed Operation="SafeAdd">0.10</ImmunityGainSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="Immunity_SuperStrong"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/ImmunityGainSpeed</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<ImmunityGainSpeed Operation="SafeAdd">0.50</ImmunityGainSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
 
-	<Operation Class="PatchOperationRemove">
-		<xpath>Defs/GeneDef[defName="WoundHealing_Fast" or defName="WoundHealing_SuperFast"]/statFactors/InjuryHealingFactor</xpath>
-	</Operation>
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/GeneDef[defName="WoundHealing_Fast"]</xpath>
-		<value>
-			<statOffsets>
-				<InjuryHealingFactor>1</InjuryHealingFactor>
-			</statOffsets>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/GeneDef[defName="WoundHealing_SuperFast"]</xpath>
-		<value>
-			<statOffsets>
-				<InjuryHealingFactor>3</InjuryHealingFactor>
-			</statOffsets>
-		</value>
-	</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="WoundHealing_Fast"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/InjuryHealingFactor</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<InjuryHealingFactor Operation="SafeAdd">1</InjuryHealingFactor>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="WoundHealing_SuperFast"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/InjuryHealingFactor</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<InjuryHealingFactor Operation="SafeAdd">3</InjuryHealingFactor>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
 
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/HediffDef[defName="PsychicBond"]/stages/li[minSeverity="0"]/statOffsets/PsychicSensitivity</xpath>
-		<value>
-			<PsychicSensitivity>0.2</PsychicSensitivity>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/HediffDef[defName="PsychicBond"]/stages/li[minSeverity="0"]/capMods/li[capacity="Consciousness"]/offset</xpath>
-		<value>
-			<offset>0.1</offset>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/HediffDef[defName="PsychicBond"]/stages/li[minSeverity="1"]/statOffsets/PsychicSensitivity</xpath>
-		<value>
-			<PsychicSensitivity>0.1</PsychicSensitivity>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/HediffDef[defName="PsychicBond"]/stages/li[minSeverity="1"]/capMods/li[capacity="Consciousness"]/offset</xpath>
-		<value>
-			<offset>-0.2</offset>
-		</value>
-	</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="PsychicBond"]</xpath>
+				<apply>	<Operation Class="PatchOperationReplace">
+					<xpath>HediffDef/stages/li[minSeverity="0"]/statOffsets/PsychicSensitivity</xpath>
+					<value>
+						<PsychicSensitivity>0.2</PsychicSensitivity>
+					</value>
+				</Operation>
+				<Operation Class="XmlExtensions.PatchOperationSafeReplace">
+					<xpath>HediffDef/stages/li[minSeverity="0"]/capMods/li[capacity="Consciousness"]/offset</xpath>
+					<value>
+						<offset>0.1</offset>
+					</value>
+				</Operation>
+				<Operation Class="XmlExtensions.PatchOperationSafeReplace">
+					<xpath>HediffDef/stages/li[minSeverity="1"]/statOffsets/PsychicSensitivity</xpath>
+					<value>
+						<PsychicSensitivity>0.1</PsychicSensitivity>
+					</value>
+				</Operation>
+				<Operation Class="XmlExtensions.PatchOperationSafeReplace">
+					<xpath>HediffDef/stages/li[minSeverity="1"]/capMods/li[capacity="Consciousness"]/offset</xpath>
+					<value>
+						<offset>-0.2</offset>
+					</value>
+				</Operation>
+				</apply>
+			</Operation>
 
-	<Operation Class="PatchOperationRemove">
-		<xpath>Defs/GeneDef[defName="VerySleepy"]/statFactors/RestFallRateFactor</xpath>
-	</Operation>
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/GeneDef[defName="VerySleepy"]</xpath>
-		<value>
-			<statOffsets>
-				<RestFallRateFactor>0.8</RestFallRateFactor>
-			</statOffsets>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationRemove">
-		<xpath>Defs/GeneDef[defName="Sleepy"]/statFactors/RestFallRateFactor</xpath>
-	</Operation>
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/GeneDef[defName="Sleepy"]</xpath>
-		<value>
-			<statOffsets>
-				<RestFallRateFactor>0.4</RestFallRateFactor>
-			</statOffsets>
-		</value>
-	</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="VerySleepy"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/RestFallRateFactor</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<RestFallRateFactor Operation="SafeAdd">0.8</RestFallRateFactor>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="Sleepy"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/RestFallRateFactor</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<RestFallRateFactor Operation="SafeAdd">0.4</RestFallRateFactor>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
 
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/GeneDef[defName="Nearsighted"]/statFactors/ShootingAccuracyFactor_Long</xpath>
-		<value>
-			<ShootingAccuracyFactor_Long>0.2</ShootingAccuracyFactor_Long>
-		</value>
-	</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="Nearsighted"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<ShootingAccuracyFactor_Long Operation="SafeReplace">0.3</ShootingAccuracyFactor_Long>
+						<ShootingAccuracyFactor_Medium Operation="SafeReplace">0.6</ShootingAccuracyFactor_Medium>
+					</statFactors>
+				</value>
+			</Operation>
 
-	<Operation Class="PatchOperationRemove">
-		<xpath>Defs/GeneDef[defName="ViolenceDisabled"]/exclusionTags/li[text()="ShootingAccuracy"]</xpath>
-	</Operation>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/GeneDef[defName="ViolenceDisabled"]/exclusionTags/li[text()="ShootingAccuracy"]</xpath>
+			</Operation>
 
-	<Operation Class="PatchOperationRemove">
-		<xpath>Defs/GeneDef[defName="MeleeDamage_Strong"]/statFactors/MeleeDamageFactor</xpath>
-	</Operation>
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/GeneDef[defName="MeleeDamage_Strong"]</xpath>
-		<value>
-			<statOffsets>
-				<MeleeDamageFactor>0.5</MeleeDamageFactor>
-			</statOffsets>
-		</value>
-	</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="MeleeDamage_Strong"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/MeleeDamageFactor</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<MeleeDamageFactor Operation="SafeAdd">0.5</MeleeDamageFactor>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
 
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/GeneDef[defName="Robust"]/statFactors/IncomingDamageFactor</xpath>
-		<value>
-			<IncomingDamageFactor>0.8</IncomingDamageFactor>
-		</value>
-	</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="Robust"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<IncomingDamageFactor Operation="SafeReplace">0.8</IncomingDamageFactor>
+					</statFactors>
+				</value>
+			</Operation>
 
-	<Operation Class="PatchOperationRemove">
-		<xpath>Defs/GeneDef[defName="Hands_Pig"]/capMods/li[capacity="Manipulation"]/postFactor</xpath>
-	</Operation>
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/GeneDef[defName="Hands_Pig"]/capMods/li[capacity="Manipulation"]</xpath>
-		<value>
-			<offset>-0.15</offset>
-		</value>
-	</Operation>
-
-	<Operation Class="PatchOperationRemove">
-		<xpath>Defs/GeneDef[defName="ElongatedFingers"]/capMods/li[capacity="Manipulation"]/postFactor</xpath>
-	</Operation>
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/GeneDef[defName="ElongatedFingers"]/capMods/li[capacity="Manipulation"]</xpath>
-		<value>
-			<offset>0.1</offset>
-		</value>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="Hands_Pig"]/capMods/li[capacity="Manipulation"]</xpath>
+				<value>
+					<postFactor Operation="SafeRemove"/>
+					<offset Operation="SafeAdd">-0.15</offset>
+				</value>
+			</Operation>
+	
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="ElongatedFingers"]/capMods/li[capacity="Manipulation"]</xpath>
+				<value>
+					<postFactor Operation="SafeRemove"/>
+					<offset Operation="SafeAdd">0.1</offset>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
 
 </Patch>

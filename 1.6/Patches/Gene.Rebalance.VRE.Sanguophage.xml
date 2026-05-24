@@ -1,18 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
+	<!-- 690 hemogen -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
 			<li>vanillaracesexpanded.sanguophage</li>
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<Operation Class="XmlExtensions.PatchOperationSafeReplace">
-				<xpath>Defs/GeneDef[defName="VRE_ExtremeHemogenDrain"]/biostatMet</xpath>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="Hemogenic"]</xpath>
 				<value>
-					<biostatMet>9</biostatMet>
+					<displayOrderInCategory Operation="AddOrReplace">-1000</displayOrderInCategory>
 				</value>
 			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_LowHemogenDrain"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">-101</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="HemogenDrain"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">-100</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_ExtremeHemogenDrain"]</xpath>
+				<value>
+					<biostatMet Operation="SafeReplace">9</biostatMet>
+					<displayOrderInCategory Operation="AddOrReplace">-99</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="Deathrest"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">-50</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="Bloodfeeder"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">0</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_AnimalFeeder"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">1</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_CorpseFeeder"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">2</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_SanguoFeeder"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">3</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_FilterInfection"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Hemogen</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">10</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="Coagulate"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">100</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_Ecstasy"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Hemogen</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">101</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="PiercingSpine"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">102</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_ToxicCloud"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Hemogen</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">103</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_ViscuousGoo"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Hemogen</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">104</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_Hemosmosis"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Hemogen</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">200</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="LongjumpLegs"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">201</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_HeartCrush"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Hemogen</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">400</displayOrderInCategory>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.sanguophage</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_Talons"]/capMods/li[capacity="Manipulation"]</xpath>
 				<value>

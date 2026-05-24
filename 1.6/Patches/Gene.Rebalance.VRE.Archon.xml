@@ -11,7 +11,7 @@
 				<xpath>Defs/GeneDef[defName="VRE_PsychicAbility_MoreExtreme"]</xpath>
 				<value>
 					<statOffsets Operation="Safe">
-						<PsychicSensitivity Operation="SafeReplace">1</PsychicSensitivity>
+						<PsychicSensitivity Operation="SafeReplace">0.8</PsychicSensitivity>
 					</statOffsets>
 				</value>
 			</Operation>
@@ -26,13 +26,12 @@
 						<xpath>GeneDef</xpath>
 						<value>
 							<statOffsets Operation="Safe">
-								<PsychicEntropyMax Operation="AddOrReplace">5</PsychicEntropyMax>
+								<PsychicEntropyMax Operation="SafeAdd">5</PsychicEntropyMax>
 							</statOffsets>
 						</value>
 					</Operation>
 				</apply>
 			</Operation>
-
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="VRE_ExtremeEntropyCapacity"]</xpath>
 				<apply>
@@ -43,13 +42,41 @@
 						<xpath>GeneDef</xpath>
 						<value>
 							<statOffsets Operation="Safe">
-								<PsychicEntropyMax Operation="AddOrReplace">10</PsychicEntropyMax>
+								<PsychicEntropyMax Operation="SafeAdd">10</PsychicEntropyMax>
 							</statOffsets>
 						</value>
 					</Operation>
 				</apply>
 			</Operation>
 
+			<!-- 390 ranged -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="VRE_SlowShooter"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/RangedCooldownFactor</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<displayCategory Operation="AddOrReplace">Violence_Ranged</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">10</displayOrderInCategory>
+							<statOffsets Operation="Safe">
+								<RangedCooldownFactor Operation="SafeAdd">0.2</RangedCooldownFactor>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_FastShooter"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Violence_Ranged</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">20</displayOrderInCategory>
+				</value>
+			</Operation>
+
+			<!-- 380 melee -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="VRE_SlowMeleeHitter"]</xpath>
 				<apply>
@@ -60,23 +87,7 @@
 						<xpath>GeneDef</xpath>
 						<value>
 							<statOffsets Operation="Safe">
-								<MeleeCooldownFactor Operation="AddOrReplace">0.2</MeleeCooldownFactor>
-							</statOffsets>
-						</value>
-					</Operation>
-				</apply>
-			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/GeneDef[defName="VRE_SlowShooter"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/RangedCooldownFactor</xpath>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<statOffsets Operation="Safe">
-								<RangedCooldownFactor Operation="AddOrReplace">0.2</RangedCooldownFactor>
+								<MeleeCooldownFactor Operation="SafeAdd">0.2</MeleeCooldownFactor>
 							</statOffsets>
 						</value>
 					</Operation>

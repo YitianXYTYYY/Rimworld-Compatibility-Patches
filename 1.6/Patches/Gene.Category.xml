@@ -1,147 +1,229 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-	<!-- Genepack Priority -->
-	<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-		<xpath>Defs/GeneCategoryDef[defName="Ability"]</xpath>
-		<value>
-			<displayPriorityInXenotype>600</displayPriorityInXenotype>
-		</value>
-	</Operation>
-	<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-		<xpath>Defs/GeneCategoryDef[defName="Hemogen"]</xpath>
-		<value>
-			<displayPriorityInXenotype>599</displayPriorityInXenotype>
-		</value>
-	</Operation>
-	<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-		<xpath>Defs/GeneCategoryDef[defName="Mood"]</xpath>
-		<value>
-			<displayPriorityInXenotype>390</displayPriorityInXenotype>
-		</value>
-	</Operation>
-	<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-		<xpath>Defs/GeneCategoryDef[defName="Violence"]</xpath>
-		<value>
-			<displayPriorityInXenotype>418</displayPriorityInXenotype>
-		</value>
-	</Operation>
-	<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-		<xpath>Defs/GeneCategoryDef[defName="Beauty"]</xpath>
-		<value>
-			<displayPriorityInXenotype>401</displayPriorityInXenotype>
-		</value>
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>Ludeon.RimWorld.Biotech</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- Vanilla Quests Expanded - Ancients -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaquestsexpanded.ancients</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneCategoryDef[defName="VQEA_ArchiteAptitudes"]</xpath>
+						<value>
+							<displayPriorityInXenotype Operation="AddOrReplace">990</displayPriorityInXenotype>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Vanilla Races Expanded - Lycanthrope -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.lycanthrope</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneCategoryDef[defName="VRE_Morphs"]</xpath>
+						<value>
+							<displayPriorityInXenotype Operation="AddOrReplace">720</displayPriorityInXenotype>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- ReSplice: Core -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>resplice.xotr.core</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneCategoryDef[defName="RS_DarkArchite"]</xpath>
+						<value>
+							<displayPriorityInXenotype Operation="AddOrReplace">710</displayPriorityInXenotype>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneCategoryDef[defName="Ability"]</xpath>
+				<value>
+					<displayPriorityInXenotype Operation="AddOrReplace">700</displayPriorityInXenotype>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneCategoryDef[defName="Hemogen"]</xpath>
+				<value>
+					<displayPriorityInXenotype Operation="AddOrReplace">690</displayPriorityInXenotype>
+				</value>
+			</Operation>
+			<!-- Vanilla Races Expanded - Waster -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.waster</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneCategoryDef[defName="VREW_Mutations"]</xpath>
+						<value>
+							<displayPriorityInXenotype Operation="AddOrReplace">680</displayPriorityInXenotype>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneCategoryDef[defName="Psychic"]</xpath>
+				<value>
+					<displayPriorityInXenotype Operation="AddOrReplace">600</displayPriorityInXenotype>
+				</value>
+			</Operation>
+			<!-- Integrated Genes -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>Turnovus.Biotech.IntegratedGenes</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneCategoryDef[defName="Turn_GeneCategory_Fleshbeast"]</xpath>
+						<value>
+							<displayPriorityInXenotype Operation="AddOrReplace">519</displayPriorityInXenotype>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneCategoryDef[defName="Turn_GeneCategory_Ideology"]</xpath>
+						<value>
+							<displayPriorityInXenotype Operation="AddOrReplace">320</displayPriorityInXenotype>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneCategoryDef[defName="Turn_GeneCategory_Slavery"]</xpath>
+						<value>
+							<displayPriorityInXenotype Operation="AddOrReplace">290</displayPriorityInXenotype>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneCategoryDef[defName="ResistanceAndWeakness"]</xpath>
+				<value>
+					<displayPriorityInXenotype Operation="AddOrReplace">490</displayPriorityInXenotype>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneCategoryDef[defName="Violence"]</xpath>
+				<value>
+					<displayPriorityInXenotype Operation="AddOrReplace">400</displayPriorityInXenotype>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneCategoryDef[defName="Pain"]</xpath>
+				<value>
+					<displayPriorityInXenotype Operation="AddOrReplace">370</displayPriorityInXenotype>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneCategoryDef[defName="Mood"]</xpath>
+				<value>
+					<displayPriorityInXenotype Operation="AddOrReplace">300</displayPriorityInXenotype>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneCategoryDef[defName="Beauty"]</xpath>
+				<value>
+					<displayPriorityInXenotype Operation="AddOrReplace">270</displayPriorityInXenotype>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>RedMattis.BetterPrerequisites</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneCategoryDef[defName="ForcedSex"]</xpath>
+						<value>
+							<displayPriorityInXenotype Operation="AddOrReplace">260</displayPriorityInXenotype>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneCategoryDef[defName="Reproduction"]</xpath>
+				<value>
+					<displayPriorityInXenotype Operation="AddOrReplace">250</displayPriorityInXenotype>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneCategoryDef[defName="Drugs"]</xpath>
+				<value>
+					<displayPriorityInXenotype Operation="AddOrReplace">200</displayPriorityInXenotype>
+				</value>
+			</Operation>
+			<!-- Vanilla Races Expanded - Fungoid -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.fungoid</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneCategoryDef[defName="VRE_SkillLoss"]</xpath>
+						<value>
+							<displayPriorityInXenotype Operation="AddOrReplace">110</displayPriorityInXenotype>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneCategoryDef[defName="Aptitudes"]</xpath>
+				<value>
+					<displayPriorityInXenotype Operation="AddOrReplace">100</displayPriorityInXenotype>
+				</value>
+			</Operation>
+			<!-- Vanilla Races Expanded - Genie -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.genie</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneCategoryDef[defName="VRE_Curiosity"]</xpath>
+						<value>
+							<displayPriorityInXenotype Operation="AddOrReplace">90</displayPriorityInXenotype>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneCategoryDef[defName="Miscellaneous"]</xpath>
+				<value>
+					<displayPriorityInXenotype Operation="AddOrReplace">0</displayPriorityInXenotype>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
 
-	<!-- Vanilla Quests Expanded - Ancients -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>vanillaquestsexpanded.ancients</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-				<xpath>Defs/GeneCategoryDef[defName="VQEA_ArchiteAptitudes"]</xpath>
-				<value>
-					<displayPriorityInXenotype>999</displayPriorityInXenotype>
-				</value>
-			</Operation>
-		</caseTrue>
-	</Operation>
-	<!-- Vanilla Races Expanded - Hussar -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>vanillaracesexpanded.hussar</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-				<xpath>Defs/GeneCategoryDef[defName="VREH_WeaponAptitudes"]</xpath>
-				<value>
-					<displayPriorityInXenotype>998</displayPriorityInXenotype>
-				</value>
-			</Operation>
-		</caseTrue>
-	</Operation>
-	<!-- Vanilla Races Expanded - Lycanthrope -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>vanillaracesexpanded.lycanthrope</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-				<xpath>Defs/GeneCategoryDef[defName="VRE_Morphs"]</xpath>
-				<value>
-					<displayPriorityInXenotype>900</displayPriorityInXenotype>
-				</value>
-			</Operation>
-		</caseTrue>
-	</Operation>
-	<!-- ReSplice: Core -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>resplice.xotr.core</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-				<xpath>Defs/GeneCategoryDef[defName="RS_DarkArchite"]</xpath>
-				<value>
-					<displayPriorityInXenotype>610</displayPriorityInXenotype>
-				</value>
-			</Operation>
-		</caseTrue>
-	</Operation>
-	<!-- Vanilla Races Expanded - Waster -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>vanillaracesexpanded.waster</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-				<xpath>Defs/GeneCategoryDef[defName="VREW_Mutations"]</xpath>
-				<value>
-					<displayPriorityInXenotype>550</displayPriorityInXenotype>
-				</value>
-			</Operation>
-		</caseTrue>
-	</Operation>
-	<!-- Integrated Genes -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>Turnovus.Biotech.IntegratedGenes</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-				<xpath>Defs/GeneCategoryDef[defName="Turn_GeneCategory_Fleshbeast"]</xpath>
-				<value>
-					<displayPriorityInXenotype>499</displayPriorityInXenotype>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-				<xpath>Defs/GeneCategoryDef[defName="Turn_GeneCategory_Slavery"]</xpath>
-				<value>
-					<displayPriorityInXenotype>409</displayPriorityInXenotype>
-				</value>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-		<xpath>Defs/GeneCategoryDef[defName="Cosmetic" or defName="Cosmetic_Skin"]/displayPriorityInGenepack</xpath>
-	</Operation>
-	<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/GeneCategoryDef[defName="Cosmetic"]</xpath>
 		<value>
-			<displayPriorityInXenotype>-100</displayPriorityInXenotype>
+			<displayPriorityInXenotype Operation="AddOrReplace">-100</displayPriorityInXenotype>
+			<displayPriorityInGenepack Operation="SafeRemove"/>
 		</value>
 	</Operation>
-	<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/GeneCategoryDef[defName="Cosmetic_Skin"]</xpath>
 		<value>
-			<displayPriorityInXenotype>-1002</displayPriorityInXenotype>
+			<displayPriorityInXenotype Operation="AddOrReplace">-1020</displayPriorityInXenotype>
+			<displayPriorityInGenepack Operation="SafeRemove"/>
 		</value>
 	</Operation>
 

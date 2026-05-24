@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.highmate</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>RedMattis.BetterGeneInheritance</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="BGI_RecessiveGenes"]</xpath>
+						<value>
+							<iconPath Operation="SafeReplace">UI/Icons/Genes/Gene_GenomeRecessive</iconPath>
+							<biostatMet Operation="SafeReplace">1</biostatMet>
+							<displayOrderInCategory Operation="AddOrReplace">2000</displayOrderInCategory>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="BGI_DominantGenes"]</xpath>
+						<value>
+							<iconPath Operation="SafeReplace">UI/Icons/Genes/Gene_GenomeDominant</iconPath>
+							<biostatMet Operation="SafeReplace">-2</biostatMet>
+							<displayOrderInCategory Operation="AddOrReplace">2001</displayOrderInCategory>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>

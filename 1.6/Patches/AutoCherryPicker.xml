@@ -20,11 +20,9 @@
 				</caseTrue>
 			</Operation>
 			<!-- Better Gene Inheritance -->
-			<!-- Vanilla Races Expanded - Highmate -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
 					<li>RedMattis.BetterGeneInheritance</li>
-					<li>vanillaracesexpanded.highmate</li>
 				</mods>
 				<packageId>true</packageId>
 				<logic>and</logic>
@@ -32,8 +30,6 @@
 					<Operation Class="PatchOperationAdd">
 						<xpath>defs</xpath>
 						<value>
-							<li>GeneDef/BGI_DominantGenes</li>
-							<li>GeneDef/BGI_RecessiveGenes</li>
 							<li>GeneDef/BGI_BinaryInheritance</li>
 							<li>GeneDef/BGI_PrimaryGenes</li>
 							<li>GeneDef/BGI_SecondaryGenes</li>
@@ -175,6 +171,21 @@
 						<value>
 							<li>ThingDef/VFET_Chunk</li>
 							<li>RecipeDef/Make_VFET_Chunk</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Vanilla Races Expanded - Waster -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.waster</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>GeneDef/PollutionRush</li>
 						</value>
 					</Operation>
 				</caseTrue>

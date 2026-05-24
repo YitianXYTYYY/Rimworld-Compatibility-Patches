@@ -59,7 +59,7 @@
 							<Operation Class="XmlExtensions.HybridPatch">
 								<xpath>GeneDef</xpath>
 								<value>
-									<displayCategory Operation="AddOrReplace">Violence_Ranged</displayCategory>
+									<displayCategory Operation="AddOrReplace">Violence_Melee</displayCategory>
 									<displayOrderInCategory Operation="AddOrReplace">-100</displayOrderInCategory>
 									<exclusionTags Operation="Safe">
 										<li Operation="SafeAdd" Compare="InnerText">SEX_WeaponAptitude</li>
