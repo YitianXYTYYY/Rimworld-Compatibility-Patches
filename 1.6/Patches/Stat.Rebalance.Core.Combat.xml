@@ -2,192 +2,217 @@
 <Patch>
 
 	<!-- stats -->
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/StatDef[defName="MeleeHitChance"]/postProcessCurve/points</xpath>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/StatDef[defName="MeleeHitChance"]</xpath>
 		<value>
-			<points>
-				<li>(-24, 0.061)</li>
-				<li>(-14, 0.122)</li>
-				<li>(-6, 0.244)</li>
-				<li>(0, 0.488)</li>
-				<li>(4, 0.744)</li>
-				<li>(10, 0.872)</li>
-				<li>(18, 0.936)</li>
-				<li>(28, 0.968)</li>
-				<li>(40, 0.984)</li>
-				<li>(52, 0.992)</li>
-				<li>(64, 0.996)</li>
-				<li>(76, 0.998)</li>
-				<li>(88, 0.999)</li>
-				<li>(100, 1.00)</li>
-			</points>
+			<postProcessCurve Operation="Safe">
+				<points Operation="SafeReplace">
+					<li>(-24, 0.061)</li>
+					<li>(-14, 0.122)</li>
+					<li>(-6, 0.244)</li>
+					<li>(0, 0.488)</li>
+					<li>(4, 0.744)</li>
+					<li>(10, 0.872)</li>
+					<li>(18, 0.936)</li>
+					<li>(28, 0.968)</li>
+					<li>(40, 0.984)</li>
+					<li>(52, 0.992)</li>
+					<li>(64, 0.996)</li>
+					<li>(76, 0.998)</li>
+					<li>(88, 0.999)</li>
+					<li>(100, 1.00)</li>
+				</points>
+			</postProcessCurve>
 		</value>
 	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/StatDef[defName="MeleeDodgeChance"]/postProcessCurve/points</xpath>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/StatDef[defName="MeleeDodgeChance"]</xpath>
 		<value>
-			<points>
-				<li>(0, 0)</li>
-				<li>(8, 0.10)</li>
-				<li>(18, 0.20)</li>
-				<li>(30, 0.30)</li>
-				<li>(44, 0.40)</li>
-				<li>(60, 0.50)</li>
-			</points>
+			<postProcessCurve Operation="Safe">
+				<points Operation="SafeReplace">
+					<li>(0, 0)</li>
+					<li>(8, 0.10)</li>
+					<li>(18, 0.20)</li>
+					<li>(30, 0.30)</li>
+					<li>(44, 0.40)</li>
+					<li>(60, 0.50)</li>
+				</points>
+			</postProcessCurve>
 		</value>
 	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/StatDef[defName="ShootingAccuracyPawn"]/postProcessCurve/points</xpath>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/StatDef[defName="ShootingAccuracyPawn"]</xpath>
 		<value>
-			<points>
-				<li>(-20, 0.34464)</li>
-				<li>(-10, 0.67232)</li>
-				<li>(-2, 0.83616)</li>
-				<li>(4, 0.91808)</li>
-				<li>(8, 0.95904)</li>
-				<li>(12, 0.97952)</li>
-				<li>(18, 0.98976)</li>
-				<li>(26, 0.99488)</li>
-				<li>(36, 0.99744)</li>
-				<li>(48, 0.99872)</li>
-				<li>(60, 0.99936)</li>
-				<li>(72, 0.99968)</li>
-				<li>(84, 0.99984)</li>
-				<li>(96, 0.99992)</li>
-				<li>(108, 0.99996)</li>
-				<li>(120, 0.99998)</li>
-				<li>(132, 0.99999)</li>
-				<li>(150, 1.0)</li>
-			</points>
+			<postProcessCurve Operation="Safe">
+				<points Operation="SafeReplace">
+					<li>(-20, 0.34464)</li>
+					<li>(-10, 0.67232)</li>
+					<li>(-2, 0.83616)</li>
+					<li>(4, 0.91808)</li>
+					<li>(8, 0.95904)</li>
+					<li>(12, 0.97952)</li>
+					<li>(18, 0.98976)</li>
+					<li>(26, 0.99488)</li>
+					<li>(36, 0.99744)</li>
+					<li>(48, 0.99872)</li>
+					<li>(60, 0.99936)</li>
+					<li>(72, 0.99968)</li>
+					<li>(84, 0.99984)</li>
+					<li>(96, 0.99992)</li>
+					<li>(108, 0.99996)</li>
+					<li>(120, 0.99998)</li>
+					<li>(132, 0.99999)</li>
+					<li>(150, 1.0)</li>
+				</points>
+			</postProcessCurve>
 		</value>
 	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/StatDef[defName="VEF_VerbRangeFactor"]/toStringStyle</xpath>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/StatDef[defName="VEF_VerbRangeFactor"]</xpath>
 		<value>
-			<toStringStyle>PercentZero</toStringStyle>
+			<toStringStyle Operation="SafeReplace">PercentZero</toStringStyle>
+			<toStringStyleUnfinalized Operation="SafeRemove"/>
 		</value>
 	</Operation>
-	<Operation Class="PatchOperationRemove">
-		<xpath>Defs/StatDef[defName="VEF_VerbRangeFactor"]/toStringStyleUnfinalized</xpath>
-	</Operation>
-	<Operation Class="PatchOperationRemove">
-		<xpath>Defs/StatDef[defName="VEF_RangedDodgeChance"]/toStringStyleUnfinalized</xpath>
-	</Operation>
-	<Operation Class="PatchOperationAdd">
+	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/StatDef[defName="VEF_RangedDodgeChance"]</xpath>
 		<value>
-			<hideAtValue>0</hideAtValue>
+			<toStringStyleUnfinalized Operation="SafeRemove"/>
+			<hideAtValue Operation="SafeAdd">0</hideAtValue>
 		</value>
 	</Operation>
 
-	<!-- accuracy -->
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/TraitDef[defName="ShootingAccuracy"]/degreeDatas/li[degree="1"]/statOffsets/ShootingAccuracyPawn</xpath>
-		<value>
-			<ShootingAccuracyPawn>4</ShootingAccuracyPawn>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/TraitDef[defName="ShootingAccuracy"]/degreeDatas/li[degree="-1"]/statOffsets/ShootingAccuracyPawn</xpath>
-		<value>
-			<ShootingAccuracyPawn>-4</ShootingAccuracyPawn>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/TraitDef[defName="Nimble"]/degreeDatas/li[label="nimble"]/statOffsets/MeleeDodgeChance</xpath>
-		<value>
-			<MeleeDodgeChance>16</MeleeDodgeChance>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Ideology">
-		<xpath>Defs/PreceptDef[defName="IdeoRole_ShootingSpecialist"]/roleEffects/li[@Class="RoleEffect_PawnStatOffset" and statDef="ShootingAccuracyPawn"]/modifier</xpath>
-		<value>
-			<modifier>8</modifier>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Ideology">
-		<xpath>Defs/PreceptDef[defName="IdeoRole_MeleeSpecialist"]/roleEffects/li[@Class="RoleEffect_PawnStatOffset" and statDef="MeleeHitChance"]/modifier</xpath>
-		<value>
-			<modifier>8</modifier>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Ideology">
-		<xpath>Defs/PreceptDef[defName="IdeoRole_MeleeSpecialist"]/roleEffects/li[@Class="RoleEffect_PawnStatOffset" and statDef="MeleeDodgeChance"]/modifier</xpath>
-		<value>
-			<modifier>8</modifier>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Ideology">
-		<xpath>Defs/HediffDef[defName="CombatCommandBuff"]/stages/li/statOffsets</xpath>
-		<value>
-			<statOffsets>
-				<ShootingAccuracyPawn>4</ShootingAccuracyPawn>
-				<MeleeHitChance>4</MeleeHitChance>
-			</statOffsets>
-		</value>
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ludeon.rimworld.ideology</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- precept -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/PreceptDef[defName="IdeoRole_ShootingSpecialist"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>PreceptDef/roleEffects/li[@Class="RoleEffect_PawnStatOffset" and statDef="ShootingAccuracyPawn"]</xpath>
+						<value>
+							<modifier Operation="SafeReplace">8</modifier>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>PreceptDef/roleEffects/li[@Class="RoleEffect_PawnStatOffset" and statDef="AimingDelayFactor"]</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationAdd">
+						<xpath>PreceptDef/roleEffects</xpath>
+						<value>
+							<li Class="RoleEffect_PawnStatFactor">
+								<statDef>AimingDelayFactor</statDef>
+								<modifier>0.5</modifier>
+							</li>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/PreceptDef[defName="IdeoRole_MeleeSpecialist"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>PreceptDef/roleEffects/li[@Class="RoleEffect_PawnStatOffset" and statDef="MeleeHitChance"]</xpath>
+						<value>
+							<modifier Operation="SafeReplace">8</modifier>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>PreceptDef/roleEffects/li[@Class="RoleEffect_PawnStatOffset" and statDef="MeleeDodgeChance"]</xpath>
+						<value>
+							<modifier Operation="SafeReplace">8</modifier>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+
+			<!-- hediff -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="CombatCommandBuff"]/stages/li/statOffsets</xpath>
+				<value>
+					<ShootingAccuracyPawn Operation="SafeReplace">4</ShootingAccuracyPawn>
+					<MeleeHitChance Operation="SafeReplace">4</MeleeHitChance>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="MarksmanCommandBuff"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>HediffDef/stages/li/statOffsets/AimingDelayFactor</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li</xpath>
+						<value>
+							<statFactors Operation="Safe">
+								<AimingDelayFactor Operation="SafeAdd">0.5</AimingDelayFactor>
+							</statFactors>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
 	</Operation>
 
-	<!-- aimingdelay -->
-	<Operation Class="PatchOperationRemove">
-		<xpath>Defs/TraitDef[defName="ShootingAccuracy"]/degreeDatas/li[degree="1" or degree="-1"]/statOffsets/AimingDelayFactor</xpath>
-	</Operation>
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/TraitDef[defName="ShootingAccuracy"]/degreeDatas/li[degree="1"]</xpath>
-		<value>
-			<statFactors>
-				<AimingDelayFactor>1.2</AimingDelayFactor>
-			</statFactors>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/TraitDef[defName="ShootingAccuracy"]/degreeDatas/li[degree="-1"]</xpath>
-		<value>
-			<statFactors>
-				<AimingDelayFactor>0.5</AimingDelayFactor>
-			</statFactors>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Ideology">
-		<xpath>Defs/PreceptDef[defName="IdeoRole_ShootingSpecialist"]/roleEffects/li[@Class="RoleEffect_PawnStatOffset" and statDef="AimingDelayFactor"]</xpath>
-	</Operation>
-	<Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Ideology">
-		<xpath>Defs/PreceptDef[defName="IdeoRole_ShootingSpecialist"]/roleEffects</xpath>
-		<value>
-			<li Class="RoleEffect_PawnStatFactor">
-				<statDef>AimingDelayFactor</statDef>
-				<modifier>0.5</modifier>
-			</li>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Ideology">
-		<xpath>Defs/HediffDef[defName="MarksmanCommandBuff"]/stages/li/statOffsets/AimingDelayFactor</xpath>
-	</Operation>
-	<Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Ideology">
-		<xpath>Defs/HediffDef[defName="MarksmanCommandBuff"]/stages/li</xpath>
-		<value>
-			<statFactors>
-				<AimingDelayFactor>0.6</AimingDelayFactor>
-			</statFactors>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
-		<xpath>Defs/WeaponTraitDef[defName="PrecisionScope" or defName="ShortenedBarrel" or defName="Lightweight"]/statOffsets/RangedWeapon_WarmupMultiplier</xpath>
-	</Operation>
-	<Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Odyssey">
-		<xpath>Defs/WeaponTraitDef[defName="PrecisionScope"]</xpath>
-		<value>
-			<statFactors>
-				<RangedWeapon_WarmupMultiplier>0.8</RangedWeapon_WarmupMultiplier>
-			</statFactors>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Odyssey">
-		<xpath>Defs/WeaponTraitDef[defName="ShortenedBarrel" or defName="Lightweight"]</xpath>
-		<value>
-			<statFactors>
-				<RangedWeapon_WarmupMultiplier>0.8</RangedWeapon_WarmupMultiplier>
-			</statFactors>
-		</value>
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ludeon.rimworld.odyssey</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- weapon trait -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/WeaponTraitDef[defName="Lightweight"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>WeaponTraitDef/statOffsets/RangedWeapon_WarmupMultiplier</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>WeaponTraitDef</xpath>
+						<value>
+							<statFactors Operation="Safe">
+								<RangedWeapon_WarmupMultiplier Operation="SafeAdd">0.8</RangedWeapon_WarmupMultiplier>
+							</statFactors>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/WeaponTraitDef[defName="PrecisionScope"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>WeaponTraitDef/statOffsets/RangedWeapon_WarmupMultiplier</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>WeaponTraitDef</xpath>
+						<value>
+							<statFactors Operation="Safe">
+								<RangedWeapon_WarmupMultiplier Operation="SafeAdd">0.8</RangedWeapon_WarmupMultiplier>
+							</statFactors>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/WeaponTraitDef[defName="ShortenedBarrel"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>WeaponTraitDef/statOffsets/RangedWeapon_WarmupMultiplier</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>WeaponTraitDef</xpath>
+						<value>
+							<statFactors Operation="Safe">
+								<RangedWeapon_WarmupMultiplier Operation="SafeAdd">0.8</RangedWeapon_WarmupMultiplier>
+							</statFactors>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
 	</Operation>
 
 </Patch>

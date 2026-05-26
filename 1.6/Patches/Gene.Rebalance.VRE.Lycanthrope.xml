@@ -24,30 +24,14 @@
 						<xpath>GeneDef/conditionalStatAffecters/li[@Class="VEF.Genes.ConditionalStatAffecter_Darkness"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
-								<WorkSpeedGlobal Operation="AddOrReplace">0.1</WorkSpeedGlobal>
-								<ShootingAccuracyPawn Operation="AddOrReplace">4</ShootingAccuracyPawn>
-								<MeleeHitChance Operation="AddOrReplace">4</MeleeHitChance>
-								<MeleeDodgeChance Operation="AddOrReplace">8</MeleeDodgeChance>
+								<WorkSpeedGlobal Operation="SafeAdd">0.1</WorkSpeedGlobal>
+								<ShootingAccuracyPawn Operation="SafeAdd">4</ShootingAccuracyPawn>
+								<MeleeHitChance Operation="SafeAdd">4</MeleeHitChance>
+								<MeleeDodgeChance Operation="SafeAdd">8</MeleeDodgeChance>
 							</statOffsets>
 						</value>
 					</Operation>
 				</apply>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>Turnovus.Biotech.IntegratedGenes</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="Turn_Gene_Blindness"]</xpath>
-						<value>
-							<exclusionTags Operation="Safe">
-								<li Operation="SafeAdd" Compare="InnerText">VRE_SuperiorDarkVision</li>
-							</exclusionTags>
-						</value>
-					</Operation>
-				</caseTrue>
 			</Operation>
 
 			<Operation Class="XmlExtensions.SetScope">
@@ -60,7 +44,7 @@
 						<xpath>GeneDef</xpath>
 						<value>
 							<statOffsets Operation="Safe">
-								<MeleeDodgeChance Operation="AddOrReplace">8</MeleeDodgeChance>
+								<MeleeDodgeChance Operation="SafeAdd">8</MeleeDodgeChance>
 							</statOffsets>
 						</value>
 					</Operation>
@@ -76,7 +60,7 @@
 						<xpath>GeneDef</xpath>
 						<value>
 							<statOffsets Operation="Safe">
-								<MeleeDodgeChance Operation="AddOrReplace">16</MeleeDodgeChance>
+								<MeleeDodgeChance Operation="SafeAdd">16</MeleeDodgeChance>
 							</statOffsets>
 						</value>
 					</Operation>
@@ -89,12 +73,12 @@
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 						<xpath>GeneDef/statOffsets/MoveSpeed</xpath>
 					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeAdd">
+					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef</xpath>
 						<value>
-							<biostatMet>-1</biostatMet>
-							<capMods>
-								<li>
+							<biostatMet Operation="SafeAdd">-1</biostatMet>
+							<capMods Operation="Safe">
+								<li Operation="Add">
 									<capacity>Moving</capacity>
 									<offset>0.05</offset>
 								</li>
@@ -102,6 +86,31 @@
 						</value>
 					</Operation>
 				</apply>
+			</Operation>
+
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>Turnovus.Biotech.IntegratedGenes</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="Turn_Gene_Blindness"]</xpath>
+						<value>
+							<exclusionTags Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">VRE_SuperiorDarkVision</li>
+							</exclusionTags>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThoughtDef[defName="MissingTongue"]</xpath>
+						<value>
+							<nullifyingGenes Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">VRE_SpeechInability</li>
+							</nullifyingGenes>
+						</value>
+					</Operation>
+				</caseTrue>
 			</Operation>
 		</caseTrue>
 	</Operation>

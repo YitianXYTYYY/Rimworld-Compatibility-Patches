@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- accuracy -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/TraitDef[defName="ShootingAccuracy"]/degreeDatas/li[degree="1"]/statOffsets/ShootingAccuracyPawn</xpath>
+		<value>
+			<ShootingAccuracyPawn>4</ShootingAccuracyPawn>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/TraitDef[defName="ShootingAccuracy"]/degreeDatas/li[degree="-1"]/statOffsets/ShootingAccuracyPawn</xpath>
+		<value>
+			<ShootingAccuracyPawn>-4</ShootingAccuracyPawn>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/TraitDef[defName="Nimble"]/degreeDatas/li[label="nimble"]/statOffsets/MeleeDodgeChance</xpath>
+		<value>
+			<MeleeDodgeChance>16</MeleeDodgeChance>
+		</value>
+	</Operation>
+
+	<!-- aimingdelay -->
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/TraitDef[defName="ShootingAccuracy"]/degreeDatas/li[degree="1" or degree="-1"]/statOffsets/AimingDelayFactor</xpath>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="ShootingAccuracy"]/degreeDatas/li[degree="1"]</xpath>
+		<value>
+			<statFactors>
+				<AimingDelayFactor>1.2</AimingDelayFactor>
+			</statFactors>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="ShootingAccuracy"]/degreeDatas/li[degree="-1"]</xpath>
+		<value>
+			<statFactors>
+				<AimingDelayFactor>0.5</AimingDelayFactor>
+			</statFactors>
+		</value>
+	</Operation>
+
+</Patch>

@@ -136,7 +136,7 @@
 				<xpath>Defs/GeneDef[defName="VRE_Talons"]/capMods/li[capacity="Manipulation"]</xpath>
 				<value>
 					<postFactor Operation="SafeRemove"/>
-					<offset Operation="AddOrReplace">-0.1</offset>
+					<offset Operation="SafeAdd">-0.1</offset>
 				</value>
 			</Operation>
 		</caseTrue>

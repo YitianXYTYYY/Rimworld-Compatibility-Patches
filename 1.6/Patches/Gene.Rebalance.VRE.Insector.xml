@@ -8,7 +8,7 @@
 		<packageId>true</packageId>
 		<caseTrue>
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="VRE_InsectFlesh"]</xpath>
+				<xpath>Defs/GeneDef[defName="VRE_InsectSkin"]</xpath>
 				<value>
 					<biostatCpx Operation="SafeReplace">1</biostatCpx>
 					<statOffsets Operation="Safe">

@@ -7,25 +7,38 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_NoStudy"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">0</displayOrderInCategory>
+				</value>
+			</Operation>
+			
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/HediffDef[defName="VRE_FungalArmor"]/stages</xpath>
 				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeReplace">
-						<xpath>stages/li[minSeverity="0.1"]/statFactors/IncomingDamageFactor</xpath>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>stages/li[minSeverity="0.1"]</xpath>
 						<value>
-							<IncomingDamageFactor>0.5</IncomingDamageFactor>
+							<statOffsets Operation="Safe">
+								<IncomingDamageFactor Operation="SafeReplace">0.5</IncomingDamageFactor>
+							</statOffsets>
 						</value>
 					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeReplace">
-						<xpath>stages/li[minSeverity="0.4"]/statFactors/IncomingDamageFactor</xpath>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>stages/li[minSeverity="0.4"]</xpath>
 						<value>
-							<IncomingDamageFactor>0.8</IncomingDamageFactor>
+							<statOffsets Operation="Safe">
+								<IncomingDamageFactor Operation="SafeReplace">0.8</IncomingDamageFactor>
+							</statOffsets>
 						</value>
 					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeReplace">
+					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>stages/li[minSeverity="0.9"]/statFactors/IncomingDamageFactor</xpath>
 						<value>
-							<IncomingDamageFactor>0.9</IncomingDamageFactor>
+							<statOffsets Operation="Safe">
+								<IncomingDamageFactor Operation="SafeReplace">0.9</IncomingDamageFactor>
+							</statOffsets>
 						</value>
 					</Operation>
 				</apply>
@@ -37,27 +50,27 @@
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 						<xpath>stages/li/statFactors/InjuryHealingFactor</xpath>
 					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>stages/li[minSeverity="0.1"]</xpath>
 						<value>
-							<statOffsets>
-								<InjuryHealingFactor>5</InjuryHealingFactor>
+							<statOffsets Operation="Safe">
+								<InjuryHealingFactor Operation="SafeAdd">5</InjuryHealingFactor>
 							</statOffsets>
 						</value>
 					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>stages/li[minSeverity="0.4"]</xpath>
 						<value>
-							<statOffsets>
-								<InjuryHealingFactor>3</InjuryHealingFactor>
+							<statOffsets Operation="Safe">
+								<InjuryHealingFactor Operation="SafeAdd">3</InjuryHealingFactor>
 							</statOffsets>
 						</value>
 					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>stages/li[minSeverity="0.9"]</xpath>
 						<value>
-							<statOffsets>
-								<InjuryHealingFactor>1</InjuryHealingFactor>
+							<statOffsets Operation="Safe">
+								<InjuryHealingFactor Operation="SafeAdd">1</InjuryHealingFactor>
 							</statOffsets>
 						</value>
 					</Operation>

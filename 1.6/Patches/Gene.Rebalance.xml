@@ -82,19 +82,19 @@
 					</value>
 				</Operation>
 				<Operation Class="XmlExtensions.PatchOperationSafeReplace">
-					<xpath>HediffDef/stages/li[minSeverity="0"]/capMods/li[capacity="Consciousness"]/offset</xpath>
+					<xpath>HediffDef/stages/li[minSeverity="0"]/capMods/li[capacity="Consciousness"]</xpath>
 					<value>
 						<offset>0.1</offset>
 					</value>
 				</Operation>
 				<Operation Class="XmlExtensions.PatchOperationSafeReplace">
-					<xpath>HediffDef/stages/li[minSeverity="1"]/statOffsets/PsychicSensitivity</xpath>
+					<xpath>HediffDef/stages/li[minSeverity="1"]/statOffsets</xpath>
 					<value>
 						<PsychicSensitivity>0.1</PsychicSensitivity>
 					</value>
 				</Operation>
 				<Operation Class="XmlExtensions.PatchOperationSafeReplace">
-					<xpath>HediffDef/stages/li[minSeverity="1"]/capMods/li[capacity="Consciousness"]/offset</xpath>
+					<xpath>HediffDef/stages/li[minSeverity="1"]/capMods/li[capacity="Consciousness"]</xpath>
 					<value>
 						<offset>-0.2</offset>
 					</value>

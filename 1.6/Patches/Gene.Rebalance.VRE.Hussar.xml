@@ -17,7 +17,7 @@
 						<xpath>GeneDef</xpath>
 						<value>
 							<statOffsets Operation="Safe">
-								<VEF_BodySize_Multiplier Operation="AddOrReplace">0.1</VEF_BodySize_Multiplier>
+								<VEF_BodySize_Multiplier Operation="SafeAdd">0.1</VEF_BodySize_Multiplier>
 							</statOffsets>
 						</value>
 					</Operation>
@@ -44,7 +44,7 @@
 										<li Operation="SafeAdd" Compare="InnerText">SEX_WeaponAptitude</li>
 									</exclusionTags>
 									<statOffsets Operation="Safe">
-										<ShootingAccuracyPawn Operation="AddOrReplace">12</ShootingAccuracyPawn>
+										<ShootingAccuracyPawn Operation="SafeAdd">12</ShootingAccuracyPawn>
 									</statOffsets>
 								</value>
 							</Operation>
@@ -65,7 +65,7 @@
 										<li Operation="SafeAdd" Compare="InnerText">SEX_WeaponAptitude</li>
 									</exclusionTags>
 									<statOffsets Operation="Safe">
-										<MeleeHitChance Operation="AddOrReplace">12</MeleeHitChance>
+										<MeleeHitChance Operation="SafeAdd">12</MeleeHitChance>
 									</statOffsets>
 								</value>
 							</Operation>

@@ -62,7 +62,7 @@
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
-		<defName>Mental</defName>
+		<defName>Mood_Mental</defName>
 		<label>mentality</label>
 		<displayPriorityInXenotype>310</displayPriorityInXenotype>
 	</GeneCategoryDef>

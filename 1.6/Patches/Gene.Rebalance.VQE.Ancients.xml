@@ -94,21 +94,16 @@
 						<value>
 							<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">-470</displayOrderInCategory>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/MoveSpeed</xpath>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeAdd">
-						<xpath>GeneDef</xpath>
-						<value>
-							<capMods>
-								<li>
+							<capMods Operation="Safe">
+								<li Operation="Add">
 									<capacity>Moving</capacity>
 									<offset>0.2</offset>
 								</li>
 							</capMods>
 						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/MoveSpeed</xpath>
 					</Operation>
 				</apply>
 			</Operation>
@@ -195,10 +190,10 @@
 					<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
 					<displayOrderInCategory Operation="AddOrReplace">-390</displayOrderInCategory>
 					<statOffsets Operation="Safe">
-						<ShootingAccuracyPawn Operation="SafeReplace">20</ShootingAccuracyPawn>
+						<ShootingAccuracyPawn Operation="SafeReplace">12</ShootingAccuracyPawn>
 					</statOffsets>
 					<statFactors Operation="Safe">
-						<AimingDelayFactor Operation="SafeAdd">0.8</AimingDelayFactor>
+						<AimingDelayFactor Operation="SafeAdd">0.5</AimingDelayFactor>
 						<RangedCooldownFactor Operation="SafeReplace">0.8</RangedCooldownFactor>
 					</statFactors>
 				</value>

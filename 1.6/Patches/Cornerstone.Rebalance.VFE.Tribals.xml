@@ -136,7 +136,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>VFETribals.CornerstoneDef</xpath>
 						<value>
-							<description>Negotiation ability +10%.</description>
+							<description Operation="SafeReplace">Negotiation ability +10%.</description>
 							<statOffsets Operation="Safe">
 								<NegotiationAbility Operation="SafeAdd">0.1</NegotiationAbility>
 							</statOffsets>
@@ -153,7 +153,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>VFETribals.CornerstoneDef</xpath>
 						<value>
-							<description>Trade price improvement +5%.</description>
+							<description Operation="SafeReplace">Trade price improvement +5%.</description>
 							<statOffsets Operation="Safe">
 								<TradePriceImprovement Operation="SafeAdd">0.05</TradePriceImprovement>
 							</statOffsets>
@@ -170,7 +170,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>VFETribals.CornerstoneDef</xpath>
 						<value>
-							<description>Social impact +10%.</description>
+							<description Operation="SafeReplace">Social impact +10%.</description>
 							<statOffsets Operation="Safe">
 								<SocialImpact Operation="SafeAdd">0.1</SocialImpact>
 							</statOffsets>
@@ -187,7 +187,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>VFETribals.CornerstoneDef</xpath>
 						<value>
-							<description>Tame animal chance +10%.</description>
+							<description Operation="SafeReplace">Tame animal chance +10%.</description>
 							<statOffsets Operation="Safe">
 								<TameAnimalChance Operation="SafeAdd">0.1</TameAnimalChance>
 							</statOffsets>

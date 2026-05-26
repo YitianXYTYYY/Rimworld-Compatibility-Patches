@@ -29,11 +29,11 @@
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 						<xpath>GeneDef/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]/statFactors/HemogenGainFactor</xpath>
 					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]</xpath>
 						<value>
-							<statOffsets>
-								<HemogenGainFactor>0.2</HemogenGainFactor>
+							<statOffsets Operation="Safe">
+								<HemogenGainFactor Operation="SafeAdd">0.2</HemogenGainFactor>
 							</statOffsets>
 						</value>
 					</Operation>
@@ -56,15 +56,19 @@
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]/statOffsets</xpath>
+						<xpath>GeneDef/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]</xpath>
 						<value>
-							<PsychicSensitivity Operation="SafeReplace">-0.2</PsychicSensitivity>
+							<statOffsets Operation="Safe">
+								<PsychicSensitivity Operation="SafeReplace">-0.2</PsychicSensitivity>
+							</statOffsets>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]/statOffsets</xpath>
+						<xpath>GeneDef/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]</xpath>
 						<value>
-							<PsychicSensitivity Operation="SafeReplace">0.4</PsychicSensitivity>
+							<statOffsets Operation="Safe">
+								<PsychicSensitivity Operation="SafeReplace">0.4</PsychicSensitivity>
+							</statOffsets>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.OptionalPatch">
@@ -123,7 +127,7 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="BfG_MinTemp_Space"]</xpath>
 				<value>
-					<prerequisite Operation="AddOrReplace">MoveSpeed_Space</prerequisite>
+					<prerequisite Operation="SafeAdd">MoveSpeed_Space</prerequisite>
 					<displayCategory Operation="AddOrReplace">Astrogen</displayCategory>
 					<displayOrderInCategory Operation="AddOrReplace">-450</displayOrderInCategory>
 				</value>

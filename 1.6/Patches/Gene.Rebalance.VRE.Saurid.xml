@@ -20,7 +20,7 @@
 				<xpath>Defs/GeneDef[defName="VRESaurids_SauridClaws"]/capMods/li[capacity="Manipulation"]</xpath>
 				<value>
 					<postFactor Operation="SafeRemove"/>
-					<offset Operation="AddOrReplace">-0.05</offset>
+					<offset Operation="SafeAdd">-0.05</offset>
 				</value>
 			</Operation>
 		</caseTrue>

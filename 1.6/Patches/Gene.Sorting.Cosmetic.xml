@@ -25,7 +25,7 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="Hair_Grayless"]</xpath>
 				<value>
-					<biostatCpx Operation="AddOrReplace">0</biostatCpx>
+					<biostatCpx Operation="SafeAdd">0</biostatCpx>
 					<displayCategory Operation="AddOrReplace">Cosmetic_Head_Hair</displayCategory>
 				</value>
 			</Operation>
@@ -38,7 +38,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_FoliageHair"]</xpath>
 						<value>
-							<biostatCpx Operation="AddOrReplace">0</biostatCpx>
+							<biostatCpx Operation="SafeReplace">0</biostatCpx>
 							<displayCategory Operation="SafeRemove"/>
 						</value>
 					</Operation>
@@ -69,7 +69,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_FacialSpots"]</xpath>
 						<value>
-							<biostatCpx  Operation="AddOrReplace">0</biostatCpx>
+							<biostatCpx Operation="SafeReplace">0</biostatCpx>
 							<displayCategory Operation="AddOrReplace">Cosmetic</displayCategory>
 							<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
 						</value>
@@ -93,7 +93,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_ElongatedHead"]</xpath>
 						<value>
-							<biostatCpx Operation="AddOrReplace">0</biostatCpx>
+							<biostatCpx Operation="SafeReplace">0</biostatCpx>
 							<displayCategory Operation="SafeRemove"/>
 						</value>
 					</Operation>
@@ -108,10 +108,9 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_MouthTusks"]</xpath>
 						<value>
-							<biostatCpx Operation="AddOrReplace">0</biostatCpx>
 							<displayCategory Operation="AddOrReplace">Cosmetic_Head_Jaw</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">1000</displayOrderInCategory>
-							<iconColor Operation="AddOrReplace">(0.75, 0.75, 0.75)</iconColor>
+							<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -155,9 +154,9 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_InsectAntennae"]</xpath>
 						<value>
-							<biostatCpx Operation="AddOrReplace">0</biostatCpx>
+							<biostatCpx Operation="SafeReplace">0</biostatCpx>
 							<displayCategory Operation="AddOrReplace">Cosmetic_Head_Headbone</displayCategory>
-							<iconColor Operation="AddOrReplace">(0.75, 0.75, 0.75)</iconColor>
+							<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
 							<exclusionTags Operation="Safe">
 								<li Operation="SafeAdd" Compare="InnerText">Headbone</li>
 							</exclusionTags>
@@ -196,7 +195,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_CanineEars"]</xpath>
 						<value>
-							<biostatCpx Operation="AddOrReplace">0</biostatCpx>
+							<biostatCpx Operation="SafeReplace">0</biostatCpx>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -221,7 +220,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_CanineNose"]</xpath>
 						<value>
-							<biostatCpx Operation="AddOrReplace">0</biostatCpx>
+							<biostatCpx Operation="SafeReplace">0</biostatCpx>
 							<displayCategory Operation="SafeRemove"/>
 						</value>
 					</Operation>
@@ -260,10 +259,26 @@
 						<xpath>Defs/GeneDef[defName="VRE_GauntBody"]</xpath>
 						<value>
 							<displayCategory Operation="AddOrReplace">Cosmetic_BodyType</displayCategory>
-							<iconColor Operation="AddOrReplace">(0.75, 0.75, 0.75)</iconColor>
+							<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
 							<exclusionTags Operation="Safe">
 								<li Operation="SafeAdd" Compare="InnerText">BodyType</li>
 							</exclusionTags>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.highmate</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VRE_PerfectBody"]</xpath>
+						<value>
+							<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
+							<displayCategory Operation="AddOrReplace">Cosmetic_BodyType</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">5000</displayOrderInCategory>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -358,7 +373,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_CurledTail"]</xpath>
 						<value>
-							<iconColor Operation="AddOrReplace">(0.75, 0.75, 0.75)</iconColor>
+							<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -372,7 +387,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRESaurids_GeckoTail"]</xpath>
 						<value>
-							<biostatCpx Operation="AddOrReplace">0</biostatCpx>
+							<biostatCpx Operation="SafeAdd">0</biostatCpx>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -387,7 +402,7 @@
 						<xpath>Defs/GeneDef[defName="VREStarjack_SpacejumpLegs"]</xpath>
 						<value>
 							<displayCategory Operation="SafeRemove"/>
-							<iconColor Operation="AddOrReplace">(0.75, 0.75, 0.75)</iconColor>
+							<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
 						</value>
 					</Operation>
 				</caseTrue>

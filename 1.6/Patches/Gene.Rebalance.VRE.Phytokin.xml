@@ -38,7 +38,7 @@
 						<xpath>Defs/XenotypeDef[defName="VRE_Poluxkin" or defName="VRE_Gauranlenkin" or defName="VRE_Animakin"]/genes</xpath>
 						<value>
 							<li Operation="SafeRemove" Compare="InnerText">VRE_Female</li>
-							<li Operation="AddOrReplace" Compare="InnerText">Body_FemaleOnly</li>
+							<li Operation="SafeAdd" Compare="InnerText">Body_FemaleOnly</li>
 						</value>
 					</Operation>
 				</caseTrue>

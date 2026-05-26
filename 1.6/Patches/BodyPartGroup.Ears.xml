@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-	<Operation Class="XmlExtensions.PatchOperationSafeAdd">
+	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/BodyDef//li[def="Ear"]</xpath>
 		<value>
-			<groups>
-				<li>Ears</li>
+			<groups Operation="SafeAdd">
+				<li Operation="AddOrReplace" Compare="InnerText">Ears</li>
 			</groups>
 		</value>
 	</Operation>

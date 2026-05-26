@@ -98,13 +98,13 @@
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneCategoryDef[defName="Turn_GeneCategory_Ideology"]</xpath>
+						<xpath>Defs/GeneCategoryDef[defName="Turn_GeneCategory_Slavery"]</xpath>
 						<value>
 							<displayPriorityInXenotype Operation="AddOrReplace">320</displayPriorityInXenotype>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneCategoryDef[defName="Turn_GeneCategory_Slavery"]</xpath>
+						<xpath>Defs/GeneCategoryDef[defName="Turn_GeneCategory_Ideology"]</xpath>
 						<value>
 							<displayPriorityInXenotype Operation="AddOrReplace">290</displayPriorityInXenotype>
 						</value>

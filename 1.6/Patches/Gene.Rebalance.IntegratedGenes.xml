@@ -25,7 +25,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef</xpath>
 						<value>
-							<biostatCpx Operation="AddOrReplace">2</biostatCpx>
+							<biostatCpx Operation="SafeAdd">2</biostatCpx>
 							<biostatMet Operation="SafeReplace">-2</biostatMet>
 							<statOffsets Operation="Safe">
 								<PsychicEntropyRecoveryRate Operation="SafeAdd">0.12</PsychicEntropyRecoveryRate>
@@ -43,7 +43,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef</xpath>
 						<value>
-							<biostatCpx Operation="AddOrReplace">3</biostatCpx>
+							<biostatCpx Operation="SafeAdd">3</biostatCpx>
 							<biostatMet Operation="SafeReplace">-5</biostatMet>
 							<statOffsets Operation="Safe">
 								<PsychicEntropyRecoveryRate Operation="SafeAdd">0.3</PsychicEntropyRecoveryRate>
@@ -100,10 +100,11 @@
 				</apply>
 			</Operation>
 
-			<!-- 290 melee -->		
+			<!-- 320 slavery -->		
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="Turn_Gene_FreeSpirit"]</xpath>
 				<value>
+					<displayCategory Operation="AddOrReplace">Turn_GeneCategory_Slavery</displayCategory>
 					<statFactors Operation="Safe">
 						<RoyalFavorValue MayRequire="Ludeon.RimWorld.Royalty" Operation="SafeReplace">0.2</RoyalFavorValue>
 					</statFactors>
