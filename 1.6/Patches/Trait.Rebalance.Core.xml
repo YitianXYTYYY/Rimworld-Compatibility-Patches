@@ -1,45 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-	<!-- accuracy -->
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/TraitDef[defName="ShootingAccuracy"]/degreeDatas/li[degree="1"]/statOffsets/ShootingAccuracyPawn</xpath>
+	<!-- nimble -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/TraitDef[defName="Nimble"]/degreeDatas/li[label="nimble"]</xpath>
 		<value>
-			<ShootingAccuracyPawn>4</ShootingAccuracyPawn>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/TraitDef[defName="ShootingAccuracy"]/degreeDatas/li[degree="-1"]/statOffsets/ShootingAccuracyPawn</xpath>
-		<value>
-			<ShootingAccuracyPawn>-4</ShootingAccuracyPawn>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/TraitDef[defName="Nimble"]/degreeDatas/li[label="nimble"]/statOffsets/MeleeDodgeChance</xpath>
-		<value>
-			<MeleeDodgeChance>16</MeleeDodgeChance>
+			<statOffsets Operation="Safe">
+				<MeleeDodgeChance Operation="SafeReplace">16</MeleeDodgeChance>
+			</statOffsets>
 		</value>
 	</Operation>
 
-	<!-- aimingdelay -->
-	<Operation Class="PatchOperationRemove">
-		<xpath>Defs/TraitDef[defName="ShootingAccuracy"]/degreeDatas/li[degree="1" or degree="-1"]/statOffsets/AimingDelayFactor</xpath>
-	</Operation>
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/TraitDef[defName="ShootingAccuracy"]/degreeDatas/li[degree="1"]</xpath>
+	<!-- too smart -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/TraitDef[defName="TooSmart"]/degreeDatas/li[label="too smart"]</xpath>
 		<value>
-			<statFactors>
-				<AimingDelayFactor>1.2</AimingDelayFactor>
-			</statFactors>
+			<statOffsets Operation="Safe">
+				<GlobalLearningFactor Operation="SafeReplace">0.8</GlobalLearningFactor>
+				<MentalBreakThreshold Operation="SafeReplace">0.15</MentalBreakThreshold>
+			</statOffsets>
 		</value>
 	</Operation>
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/TraitDef[defName="ShootingAccuracy"]/degreeDatas/li[degree="-1"]</xpath>
+
+	<!-- fast learner -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/TraitDef[defName="FastLearner"]/degreeDatas/li[label="fast learner"]</xpath>
 		<value>
-			<statFactors>
-				<AimingDelayFactor>0.5</AimingDelayFactor>
-			</statFactors>
+			<statOffsets Operation="Safe">
+				<GlobalLearningFactor Operation="SafeReplace">0.8</GlobalLearningFactor>
+			</statOffsets>
 		</value>
+	</Operation>
+
+	<!-- slow learner -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/TraitDef[defName="SlowLearner"]/degreeDatas/li[label="slow learner"]</xpath>
+		<value>
+			<statOffsets Operation="Safe">
+				<GlobalLearningFactor Operation="SafeReplace">-0.8</GlobalLearningFactor>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<!-- gourmand -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/TraitDef[defName="Gourmand"]/degreeDatas/li[label="gourmand"]</xpath>
+		<value>
+        	<hungerRateFactor Operation="SafeRemove"/>
+			<hungerRateFactorOffset Operation="SafeAdd">0.5</hungerRateFactorOffset>
+		</value>
+	</Operation>
+
+	<!-- spectrum -->
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/TraitDef[defName="Nerves"]</xpath>
+		<apply>
+			<!-- iron-willed -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>TraitDef/degreeDatas/li[degree="2"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<MentalBreakThreshold Operation="SafeReplace">-0.2</MentalBreakThreshold>
+					</statOffsets>
+					<statFactors Operation="Safe">
+          				<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology" Operation="SafeReplace">0.2</CertaintyLossFactor>
+					</statFactors>
+				</value>
+			</Operation>
+			<!-- steadfast -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>TraitDef/degreeDatas/li[degree="1"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<MentalBreakThreshold Operation="SafeReplace">-0.1</MentalBreakThreshold>
+					</statOffsets>
+				</value>
+			</Operation>
+			<!-- nervous -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>TraitDef/degreeDatas/li[degree="-1"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<MentalBreakThreshold Operation="SafeReplace">0.1</MentalBreakThreshold>
+					</statOffsets>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/TraitDef[defName="Neurotic"]</xpath>
+		<apply>
+			<!-- neurotic -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>TraitDef/degreeDatas/li[degree="1"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<MentalBreakThreshold Operation="SafeReplace">0.1</MentalBreakThreshold>
+					</statOffsets>
+				</value>
+			</Operation>
+			<!-- very neurotic -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>TraitDef/degreeDatas/li[degree="2"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<MentalBreakThreshold Operation="SafeReplace">0.15</MentalBreakThreshold>
+					</statOffsets>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/TraitDef[defName="Industriousness"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>TraitDef/degreeDatas/li[degree="-1" or degree="-2"]/statOffsets/WorkSpeedGlobal</xpath>
+			</Operation>
+			<!-- lazy -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>TraitDef/degreeDatas/li[degree="-1"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<WorkSpeedGlobal Operation="SafeAdd">0.8</WorkSpeedGlobal>
+					</statFactors>
+				</value>
+			</Operation>
+			<!-- slothful -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>TraitDef/degreeDatas/li[degree="-2"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<WorkSpeedGlobal Operation="SafeAdd">0.5</WorkSpeedGlobal>
+					</statFactors>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/TraitDef[defName="ShootingAccuracy"]</xpath>
+		<apply>
+			<!-- careful shooter -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>TraitDef/degreeDatas/li[degree="1"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<ShootingAccuracyPawn Operation="SafeReplace">4</ShootingAccuracyPawn>
+						<AimingDelayFactor Operation="SafeReplace">0.2</AimingDelayFactor>
+					</statOffsets>
+				</value>
+			</Operation>
+			<!-- trigger-happy -->
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/TraitDef[defName="ShootingAccuracy"]/degreeDatas/li[degree="-1"]/statOffsets/AimingDelayFactor</xpath>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>TraitDef/degreeDatas/li[degree="-1"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<ShootingAccuracyPawn Operation="SafeReplace">-4</ShootingAccuracyPawn>
+					</statOffsets>
+					<statFactors Operation="Safe">
+						<AimingDelayFactor Operation="SafeAdd">0.5</AimingDelayFactor>
+					</statFactors>
+				</value>
+			</Operation>
+		</apply>
 	</Operation>
 
 </Patch>

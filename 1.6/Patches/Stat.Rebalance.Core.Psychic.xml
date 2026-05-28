@@ -2,172 +2,149 @@
 <Patch>
 
 	<!-- stats -->
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/StatDef[defName="PsychicSensitivity"]/category</xpath>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/StatDef[defName="PsychicSensitivity"]</xpath>
 		<value>
-			<category>PawnPsyfocus</category>
+			<category Operation="SafeReplace">PawnPsyfocus</category>
 		</value>
 	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/StatDef[defName="PsychicEntropyRecoveryRate"]/defaultBaseValue</xpath>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/StatDef[defName="PsychicEntropyRecoveryRate"]</xpath>
 		<value>
-			<defaultBaseValue>0.6</defaultBaseValue>
+			<defaultBaseValue Operation="SafeReplace">0.6</defaultBaseValue>
 		</value>
 	</Operation>
-	<Operation Class="PatchOperationConditional">
-		<xpath>Defs/StatDef[defName = "PsychicSensitivityOffset"]/parts</xpath>
-		<nomatch Class="PatchOperationAdd">
-			<xpath>Defs/StatDef[defName="PsychicSensitivityOffset"]</xpath>
-			<value>
-				<parts/>
-			</value>
-		</nomatch>
-	</Operation>
-	<Operation Class="PatchOperationConditional">
-		<xpath>Defs/StatDef[defName="PsychicSensitivityOffset"]/parts/li[@Class="StatPart_Quality"]</xpath>
-		<nomatch Class="PatchOperationAdd">
-			<xpath>Defs/StatDef[defName="PsychicSensitivityOffset"]/parts</xpath>
-			<value>
-				<li Class="StatPart_Quality"/>
-			</value>
-		</nomatch>
-	</Operation>
-	<Operation Class="PatchOperationReplace">
+	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/StatDef[defName="PsychicSensitivityOffset"]/parts/li[@Class="StatPart_Quality"]</xpath>
 		<value>
-			<li Class="StatPart_Quality">
-				<factorAwful>0.0</factorAwful>
-				<factorPoor>0.5</factorPoor>
-				<factorNormal>1</factorNormal>
-				<factorGood>1</factorGood>
-				<factorExcellent>1.5</factorExcellent>
-				<factorMasterwork>1.5</factorMasterwork>
-				<factorLegendary>2</factorLegendary>
-			</li>
+			<factorAwful Operation="SafeReplace">0.0</factorAwful>
+			<factorPoor Operation="SafeReplace">0.5</factorPoor>
+			<factorNormal Operation="SafeReplace">1</factorNormal>
+			<factorGood Operation="SafeReplace">1</factorGood>
+			<factorExcellent Operation="SafeReplace">1.5</factorExcellent>
+			<factorMasterwork Operation="SafeReplace">1.5</factorMasterwork>
+			<factorLegendary Operation="SafeReplace">2</factorLegendary>
 		</value>
 	</Operation>
 
-	<!-- royalty hediff -->
-	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-		<xpath>Defs/HediffDef[defName="PsychicSensitizer"]/stages/li/statOffsets/PsychicSensitivity</xpath>
-		<value>
-			<PsychicSensitivity>0.4</PsychicSensitivity>
-		</value>
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ludeon.rimworld.royalty</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="PsychicSensitizer"]/stages/li/statOffsets</xpath>
+				<value>
+					<PsychicSensitivity Operation="SafeReplace">0.4</PsychicSensitivity>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
 
-	<!-- biotech hediff -->
-	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
-		<xpath>Defs/HediffDef[defName="PsychofluidRush"]/stages/li/statOffsets/PsychicSensitivity</xpath>
-		<value>
-			<PsychicSensitivity>0.2</PsychicSensitivity>
-		</value>
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ludeon.rimworld.biotech</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="PsychofluidRush"]/stages/li/statOffsets</xpath>
+				<value>
+					<PsychicSensitivity Operation="SafeReplace">0.2</PsychicSensitivity>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
 
-	<!-- bioferrite -->
-	<Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Anomaly">
-		<xpath>Defs/ThingDef[defName="Bioferrite"]/stuffProps/statFactorsQuality/li[stat="PsychicSensitivityFactor"]</xpath>
-	</Operation>
-	<Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Anomaly">
-		<xpath>Defs/ThingDef[defName="Bioferrite"]/stuffProps/statOffsetsQuality/li[stat="PsychicEntropyMaxOffset" or stat="PsychicEntropyRecoveryRateOffset"]</xpath>
-	</Operation>
-	<Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Anomaly">
-		<xpath>Defs/ThingDef[defName="Bioferrite"]/stuffProps/statOffsetsQuality</xpath>
-		<value>
-			<li MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">
-			<stat>PsychicSensitivityOffset</stat>
-			<awful>0.2</awful>
-			<poor>0.2</poor>
-			<normal>0.2</normal>
-			<good>0.2</good>
-			<excellent>0.2</excellent>
-			<masterwork>0.2</masterwork>
-			<legendary>0.2</legendary>
-			</li>
-		</value>
-	</Operation>
-
-	<!-- anomaly hediff -->
-	<Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Anomaly">
-		<xpath>Defs/HediffDef[defName="Voidsight" or defName="VoidTouched"]/stages/li/statFactors/StudyEfficiency</xpath>
-	</Operation>
-	<Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Anomaly">
-		<xpath>Defs/HediffDef[defName="Voidsight" or defName="VoidTouched"]/stages/li/statFactors/PsychicSensitivity</xpath>
-	</Operation>
-	<Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Anomaly">
-		<xpath>Defs/HediffDef[defName="Voidsight"]/stages/li</xpath>
-		<value>
-			<statOffsets>
-				<StudyEfficiency>0.2</StudyEfficiency>
-				<PsychicSensitivity>0.4</PsychicSensitivity>
-			</statOffsets>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Anomaly">
-		<xpath>Defs/HediffDef[defName="VoidTouched"]/stages/li</xpath>
-		<value>
-			<statOffsets>
-				<StudyEfficiency>1</StudyEfficiency>
-				<PsychicSensitivity>2</PsychicSensitivity>
-			</statOffsets>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Anomaly">
-		<xpath>Defs/HediffDef[defName="Psychophage"]/stages/li/statOffsets/PsychicSensitivity</xpath>
-		<value>
-			<PsychicSensitivity>0.6</PsychicSensitivity>
-		</value>
-	</Operation>
-
-	<!-- apparel -->
-	<Operation Class="PatchOperationRemove">
-		<xpath>Defs/ThingDef[defName="Apparel_PsychicFoilHelmet"]/equippedStatOffsets/PsychicSensitivity</xpath>
-	</Operation>
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="Apparel_PsychicFoilHelmet"]/equippedStatOffsets</xpath>
-		<value>
-			<PsychicSensitivityOffset>-0.9</PsychicSensitivityOffset>
-		</value>
-	</Operation>
-
-	<!-- eltex -->
-	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-		<xpath>Defs/ThingDef[defName="Apparel_PsyfocusHelmet" or defName="Apparel_PsyfocusShirt" or defName="Apparel_PsyfocusVest"]/equippedStatOffsets/PsychicSensitivityOffset</xpath>
-		<value>
-			<PsychicSensitivityOffset>0.2</PsychicSensitivityOffset>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-		<xpath>Defs/ThingDef[defName="Apparel_PsyfocusRobe"]/equippedStatOffsets/PsychicSensitivityOffset</xpath>
-		<value>
-			<PsychicSensitivityOffset>0.4</PsychicSensitivityOffset>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-		<xpath>Defs/ThingDef[defName="MeleeWeapon_PsyfocusStaff"]/equippedStatOffsets/PsychicSensitivityOffset</xpath>
-		<value>
-			<PsychicSensitivityOffset>0.6</PsychicSensitivityOffset>
-		</value>
-	</Operation>
-
-	<!-- prestige armor -->	
-	<Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
-		<xpath>Defs/ThingDef[defName="Apparel_ArmorReconPrestige" or
-			defName="Apparel_ArmorHelmetReconPrestige" or 
-			defName="Apparel_ArmorMarinePrestige" or 
-			defName="Apparel_ArmorMarineHelmetPrestige" or 
-			defName="Apparel_ArmorCataphractPrestige" or 
-			defName="Apparel_ArmorHelmetCataphractPrestige"]/equippedStatOffsets/PsychicSensitivity</xpath>
-	</Operation>
-	<Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Royalty">
-		<xpath>Defs/ThingDef[defName="Apparel_ArmorReconPrestige" or
-			defName="Apparel_ArmorHelmetReconPrestige" or 
-			defName="Apparel_ArmorMarinePrestige" or 
-			defName="Apparel_ArmorMarineHelmetPrestige" or 
-			defName="Apparel_ArmorCataphractPrestige" or 
-			defName="Apparel_ArmorHelmetCataphractPrestige"]/equippedStatOffsets</xpath>
-		<value>
-			<PsychicSensitivityOffset>0.1</PsychicSensitivityOffset>
-		</value>
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ludeon.rimworld.anomaly</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- bioferrite -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="Bioferrite"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>ThingDef/stuffProps/statFactorsQuality/li[stat="PsychicSensitivityFactor"]</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>ThingDef/stuffProps/statFactorsQuality/li[stat="PsychicEntropyMaxOffset"]</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>ThingDef/stuffProps/statFactorsQuality/li[stat="PsychicEntropyRecoveryRateOffset"]</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef/stuffProps</xpath>
+						<value>
+							<statOffsetsQuality Operation="Add">
+								<li MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">
+									<stat>PsychicSensitivityOffset</stat>
+									<awful>0.2</awful>
+									<poor>0.2</poor>
+									<normal>0.2</normal>
+									<good>0.2</good>
+									<excellent>0.2</excellent>
+									<masterwork>0.2</masterwork>
+									<legendary>0.2</legendary>
+								</li>
+							</statOffsetsQuality>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<!-- hediff -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="Voidsight"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>HediffDef/stages/li/statFactors/StudyEfficiency</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>HediffDef/stages/li/statFactors/PsychicSensitivity</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<StudyEfficiency Operation="SafeAdd">0.2</StudyEfficiency>
+								<PsychicSensitivity Operation="SafeAdd">0.4</PsychicSensitivity>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="VoidTouched"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>HediffDef/stages/li/statFactors/StudyEfficiency</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>HediffDef/stages/li/statFactors/PsychicSensitivity</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<StudyEfficiency Operation="SafeAdd">1</StudyEfficiency>
+								<PsychicSensitivity Operation="SafeAdd">2</PsychicSensitivity>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="Psychophage"]/stages/li</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<PsychicSensitivity Operation="SafeReplace">0.6</PsychicSensitivity>
+					</statOffsets>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
 
 </Patch>

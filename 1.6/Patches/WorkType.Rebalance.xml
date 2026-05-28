@@ -1,64 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>	
 
-	<Operation Class="PatchOperationFindMod">
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Meditate As WorkType (Continued)</li>
+			<li>og.maarx.meditateasworktype.continued</li>
 		</mods>
-		<match Class="PatchOperationSequence">
-			<operations>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/WorkTypeDef[defName="MeditateForPsyfocus"]/labelShort</xpath>
-					<value>
-						<labelShort>Meditate</labelShort>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/WorkGiverDef[defName="MeditateAnima"]/workType</xpath>
-					<value>
-						<workType>MeditateForPsyfocus</workType>
-					</value>
-				</li>
-			</operations>
-		</match>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/WorkTypeDef[defName="MeditateForPsyfocus"]</xpath>
+				<value>
+					<labelShort Operation="SafeReplace">Meditate</labelShort>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/WorkGiverDef[defName="MeditateAnima"]</xpath>
+				<value>
+					<workType Operation="SafeReplace">MeditateForPsyfocus</workType>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
 
-	<Operation Class="PatchOperationFindMod">
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Vanilla Genetics Expanded</li>
+			<li>vanillaexpanded.vgeneticse</li>
 		</mods>
-		<match Class="PatchOperationSequence">
-			<operations>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/WorkGiverDef[defName="CreateXenogerm"]/workType</xpath>
-					<value>
-						<workType>GR_Genetics</workType>
-					</value>
-				</li>
-				<li Class="PatchOperationFindMod">
-					<mods>
-						<li>Gene Fabrication</li>
-					</mods>
-					<match Class="PatchOperationReplace">
-						<xpath>Defs/WorkGiverDef[defName="GeneFab_DoBillsGeneBench"]/workType</xpath>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/WorkGiverDef[defName="CreateXenogerm"]</xpath>
+				<value>
+					<workType Operation="SafeReplace">GR_Genetics</workType>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>amch.eragon.hcgenefabrication</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/WorkGiverDef[defName="GeneFab_DoBillsGeneBench"]</xpath>
 						<value>
-							<workType>GR_Genetics</workType>
+							<workType Operation="SafeReplace">GR_Genetics</workType>
 						</value>
-					</match>
-				</li>
-				<li Class="PatchOperationFindMod">
-					<mods>
-						<li>Genepack Reprocessor</li>
-					</mods>
-					<match Class="PatchOperationReplace">
-						<xpath>Defs/WorkGiverDef[defName="SeparateGenepack"]/workType</xpath>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>anonemous2.genepackreprocessor</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/WorkGiverDef[defName="SeparateGenepack"]</xpath>
 						<value>
-							<workType>GR_Genetics</workType>
+							<workType Operation="SafeReplace">GR_Genetics</workType>
 						</value>
-					</match>
-				</li>
-			</operations>
-		</match>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
 	</Operation>
 
 </Patch>

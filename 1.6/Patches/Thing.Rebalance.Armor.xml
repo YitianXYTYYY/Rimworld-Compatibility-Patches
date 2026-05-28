@@ -1,421 +1,651 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="Apparel_FlakVest" or defName="Apparel_FlakPants" or defName="Apparel_FlakJacket"]/equippedStatOffsets/MoveSpeed</xpath>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Apparel_FlakVest" or defName="Apparel_FlakPants" or defName="Apparel_FlakJacket"]</xpath>
 		<value>
-			<MoveSpeed>-0.1</MoveSpeed>
+			<equippedStatOffsets Operation="Safe">
+				<MoveSpeed Operation="SafeReplace">-0.1</MoveSpeed>
+			</equippedStatOffsets>
 		</value>
 	</Operation>
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[@Name="ApparelArmorPowerBase"]/equippedStatOffsets/MoveSpeed</xpath>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[@Name="ApparelArmorPowerBase"]</xpath>
 		<value>
-			<MoveSpeed>-0.2</MoveSpeed>
-		</value>
-	</Operation>
-
-	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-		<xpath>Defs/ThingDef[defName="Apparel_Gunlink"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
-		<value>
-			<ShootingAccuracyPawn>4</ShootingAccuracyPawn>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
-		<xpath>Defs/ThingDef[defName="Apparel_Gunlink"]/apparel/bodyPartGroups/li[text()="UpperHead"]</xpath>
-	</Operation>
-	<Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Royalty">
-		<xpath>Defs/ThingDef[defName="Apparel_Gunlink"]/apparel/bodyPartGroups</xpath>
-		<value>
-			<li>Ears</li>
+			<equippedStatOffsets Operation="Safe">
+				<MoveSpeed Operation="SafeReplace">-0.2</MoveSpeed>
+			</equippedStatOffsets>
 		</value>
 	</Operation>
 
-	<Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Biotech">
-		<xpath>Defs/ThingDef[defName="Apparel_AirwireHeadset" or defName="Apparel_ArrayHeadset" or defName="Apparel_IntegratorHeadset"]/apparel/bodyPartGroups/li[text()="UpperHead"]</xpath>
-	</Operation>
-	<Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Biotech">
-		<xpath>Defs/ThingDef[defName="Apparel_AirwireHeadset" or defName="Apparel_IntegratorHeadset"]/apparel/bodyPartGroups</xpath>
-		<value>
-			<li>Ears</li>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Biotech">
-		<xpath>Defs/ThingDef[defName="Apparel_ArrayHeadset"]/apparel/bodyPartGroups</xpath>
-		<value>
-			<li>Eyes</li>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationAttributeSet" MayRequire="Ludeon.RimWorld.Biotech">
-		<xpath>Defs/ThingDef[defName="Apparel_IntegratorHeadset"]</xpath>
-		<attribute>ParentName</attribute>
-		<value>MechanitorHeadsetBase</value>
-	</Operation>
-	<Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Biotech">
-		<xpath>Defs/ThingDef[defName="Apparel_IntegratorHeadset"]/apparel</xpath>
-		<value>
-			<mechanitorApparel>true</mechanitorApparel>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Biotech">
-		<xpath>Defs/ThingDef[defName="Apparel_IntegratorHeadset"]/equippedStatOffsets/VacuumResistance</xpath>
-	</Operation>
-	
-	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
-		<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetMechlordHelmet"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
-		<value>
-			<ShootingAccuracyPawn>-4</ShootingAccuracyPawn>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
-		<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetMechlordHelmet"]/equippedStatOffsets/MeleeHitChance</xpath>
-		<value>
-			<MeleeHitChance>-1</MeleeHitChance>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
-		<xpath>Defs/ThingDef[defName="Apparel_MechlordSuit"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
-		<value>
-			<ShootingAccuracyPawn>-4</ShootingAccuracyPawn>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
-		<xpath>Defs/ThingDef[defName="Apparel_MechlordSuit"]/equippedStatOffsets/MeleeHitChance</xpath>
-		<value>
-			<MeleeHitChance>-1</MeleeHitChance>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Biotech">
-		<xpath>Defs/ThingDef[@Name="Apparel_Bandolier"]/equippedStatOffsets/RangedCooldownFactor</xpath>
-	</Operation>
-	<Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Biotech">
-		<xpath>Defs/ThingDef[@Name="Apparel_Bandolier"]</xpath>
-		<value>
-			<modExtensions>
-				<li Class="VEF.Apparels.ApparelExtension">
-					<equippedStatFactors>
-						<RangedCooldownFactor>0.8</RangedCooldownFactor>
-					</equippedStatFactors>
-				</li>
-			</modExtensions>
-		</value>
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/ThingDef[defName="Apparel_PsychicFoilHelmet"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>ThingDef/equippedStatOffsets/PsychicSensitivity</xpath>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>ThingDef</xpath>
+				<value>
+					<equippedStatOffsets Operation="Safe">
+						<PsychicSensitivityOffset Operation="SafeAdd">-0.9</PsychicSensitivityOffset>
+					</equippedStatOffsets>
+				</value>
+			</Operation>
+		</apply>
 	</Operation>
 
-	<Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
-		<xpath>Defs/ThingDef[defName="Apparel_Vacsuit" or defName="Apparel_VacsuitChildren"]/equippedStatOffsets/MoveSpeed</xpath>
-		<value>
-			<MoveSpeed>-1.2</MoveSpeed>
-		</value>
-	</Operation>
-
-	<Operation Class="PatchOperationFindMod">
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Vanilla Armour Expanded</li>
+			<li>Ludeon.RimWorld.Royalty</li>
 		</mods>
-		<match Class="PatchOperationSequence">
-			<operations>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/ThingCategoryDef[defName="VAE_BootsAndGloves"]/parent</xpath>
-					<value>
-        				<parent>ApparelArmor</parent>
-					</value>
-				</li>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- eltex -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Apparel_PsyfocusHelmet" or defName="Apparel_PsyfocusShirt" or defName="Apparel_PsyfocusVest"]</xpath>
+				<value>
+					<equippedStatOffsets Operation="Safe">
+						<PsychicSensitivityOffset Operation="SafeReplace">0.2</PsychicSensitivityOffset>
+					</equippedStatOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Apparel_PsyfocusRobe"]</xpath>
+				<value>
+					<equippedStatOffsets Operation="Safe">
+						<PsychicSensitivityOffset Operation="SafeReplace">0.4</PsychicSensitivityOffset>
+					</equippedStatOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="MeleeWeapon_PsyfocusStaff"]</xpath>
+				<value>
+					<equippedStatOffsets Operation="Safe">
+						<PsychicSensitivityOffset Operation="SafeReplace">0.6</PsychicSensitivityOffset>
+					</equippedStatOffsets>
+				</value>
+			</Operation>
 
-				<!-- label -->
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/ThingDef[defName="VAE_Apparel_LightPlateArmor"]/label</xpath>
-					<value>
-						<label>plate light armor</label>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/ThingDef[defName="VAE_Apparel_Chestplate"]/label</xpath>
-					<value>
-						<label>plate chest</label>
-					</value>
-				</li>
+			<!-- prestige armor -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorReconPrestige" or
+					defName="Apparel_ArmorHelmetReconPrestige" or 
+					defName="Apparel_ArmorMarinePrestige" or 
+					defName="Apparel_ArmorMarineHelmetPrestige" or 
+					defName="Apparel_ArmorCataphractPrestige" or 
+					defName="Apparel_ArmorHelmetCataphractPrestige"]/equippedStatOffsets</xpath>
+				<value>
+					<PsychicSensitivity Operation="SafeRemove"/>
+					<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+				</value>
+			</Operation>
 
-				<!-- Medieval plate -->
-				<li Class="PatchOperationAttributeSet">
-					<xpath>Defs/ThingDef[defName="VAE_Apparel_LightPlateArmor" or 
-						defName="VAE_Apparel_PlateShoulderpads" or 
-						defName="VAE_Apparel_Chestplate" or 
-						defName="VAE_Apparel_Chainmail"]</xpath>
-					<attribute>ParentName</attribute>
-					<value>ArmorSmithableBase</value>
-				</li>
-				<li Class="PatchOperationAttributeSet">
-					<xpath>Defs/ThingDef[defName="VAE_Apparel_PlateHelmet"]</xpath>
-					<attribute>ParentName</attribute>
-					<value>ArmorHelmetMakeableBase</value>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/ThingDef[defName="VAE_Apparel_LightPlateArmor" or 
-						defName="VAE_Apparel_PlateShoulderpads" or 
-						defName="VAE_Apparel_Chestplate" or 
-						defName="VAE_Apparel_Chainmail" or 
-						defName="VAE_Apparel_PlateHelmet"]</xpath>
-					<value>
-						<thingSetMakerTags>
-							<li>RewardStandardQualitySuper</li>
-						</thingSetMakerTags>
-					</value>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/ThingDef[defName="VAE_Apparel_LightPlateArmor" or 
-						defName="VAE_Apparel_PlateShoulderpads" or 
-						defName="VAE_Apparel_Chestplate" or 
-						defName="VAE_Apparel_Chainmail" or 
-						defName="VAE_Apparel_PlateHelmet"]/tradeTags</xpath>
-					<value>
-						<li>Clothing</li>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/ThingDef[defName="VAE_Apparel_LightPlateArmor" or 
-						defName="VAE_Apparel_PlateShoulderpads" or 
-						defName="VAE_Apparel_Chestplate" or 
-						defName="VAE_Apparel_Chainmail" or 
-						defName="VAE_Apparel_PlateHelmet"]/colorGenerator</xpath>
-					<value>
-						<colorGenerator Class="ColorGenerator_Options">
-							<options>
-								<li>
-								<weight>10</weight>
-								<only>(0.33,0.33,0.33)</only>
+			<!-- gunlink -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="Apparel_Gunlink"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef/apparel/bodyPartGroups</xpath>
+						<value>
+							<li Operation="SafeRemove" Compare="InnerText">UpperHead</li>
+							<li Operation="SafeAdd" Compare="InnerText">Ears</li>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
+						<xpath>ThingDef/equippedStatOffsets</xpath>
+						<attribute>Inherit</attribute>
+						<value>False</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef/equippedStatOffsets</xpath>
+						<value>
+							<ShootingAccuracyPawn Operation="SafeReplace">4</ShootingAccuracyPawn>
+							<VacuumResistance Operation="SafeRemove"/>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>Ludeon.RimWorld.Biotech</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- headsets -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Apparel_AirwireHeadset"]/apparel/bodyPartGroups</xpath>
+				<value>
+					<li Operation="SafeRemove" Compare="InnerText">UpperHead</li>
+					<li Operation="SafeAdd" Compare="InnerText">Ears</li>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Apparel_ArrayHeadset"]/apparel/bodyPartGroups</xpath>
+				<value>
+					<li Operation="SafeRemove" Compare="InnerText">UpperHead</li>
+					<li Operation="SafeAdd" Compare="InnerText">Eyes</li>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="Apparel_IntegratorHeadset"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef</xpath>
+						<attribute>ParentName</attribute>
+						<value>MechanitorHeadsetBase</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef/apparel</xpath>
+						<value>
+							<mechanitorApparel Operation="SafeAdd">true</mechanitorApparel>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef/apparel/bodyPartGroups</xpath>
+						<value>
+							<li Operation="SafeRemove" Compare="InnerText">UpperHead</li>
+							<li Operation="SafeAdd" Compare="InnerText">Ears</li>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef/equippedStatOffsets</xpath>
+						<value>
+							<ShootingAccuracyPawn Operation="SafeReplace">4</ShootingAccuracyPawn>
+							<VacuumResistance Operation="SafeRemove"/>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+
+			<!-- mechlord -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetMechlordHelmet" or defName="Apparel_MechlordSuit"]</xpath>
+				<value>
+					<equippedStatOffsets Operation="Safe">
+						<ShootingAccuracyPawn Operation="SafeReplace">-4</ShootingAccuracyPawn>
+						<MeleeHitChance Operation="SafeReplace">-1</MeleeHitChance>
+					</equippedStatOffsets>
+				</value>
+			</Operation>
+
+			<!-- bandolier -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="Apparel_Bandolier"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>ThingDef/equippedStatOffsets/RangedCooldownFactor</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<modExtensions Operation="Safe">
+								<li Class="VEF.Apparels.ApparelExtension" Operation="Add">
+									<equippedStatFactors>
+										<RangedCooldownFactor>0.8</RangedCooldownFactor>
+									</equippedStatFactors>
 								</li>
-								<li>
-								<weight>10</weight>
-								<only>(0.65,0.65,0.65)</only>
-								</li>
-								<li>
-								<weight>6</weight>
-								<min>(0.3,0.3,0.3)</min>
-								<max>(0.5,0.5,0.5)</max>
-								</li>
-							</options>
-						</colorGenerator>
-					</value>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/ThingDef[defName="VAE_Apparel_LightPlateArmor" or 
-						defName="VAE_Apparel_PlateShoulderpads" or 
-						defName="VAE_Apparel_Chestplate" or 
-						defName="VAE_Apparel_Chainmail" or 
-						defName="VAE_Apparel_PlateHelmet"]/recipeMaker</xpath>
-					<value>
-						<unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/ThingDef[defName="VAE_Apparel_LightPlateArmor" or 
-						defName="VAE_Apparel_PlateShoulderpads" or 
-						defName="VAE_Apparel_Chestplate" or 
-						defName="VAE_Apparel_Chainmail" or 
-						defName="VAE_Apparel_PlateHelmet"]/recipeMaker/skillRequirements</xpath>
-					<value>
-						<skillRequirements>
-        					<Crafting>7</Crafting>
-						</skillRequirements>
-					</value>
-				</li>
-
-				<!-- medieval -->
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/ThingDef[defName="VAE_Apparel_PlateShoulderpads"]/equippedStatOffsets/MoveSpeed</xpath>
-					<value>
-						<MoveSpeed>-0.1</MoveSpeed>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/ThingDef[defName="VAE_Apparel_PlateHelmet"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
-					<value>
-						<ShootingAccuracyPawn>-2</ShootingAccuracyPawn>
-					</value>
-				</li>
-
-				<!-- industrial -->
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/ThingDef[defName="VAE_Headgear_GhillieHood"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
-					<value>
-						<ShootingAccuracyPawn>4</ShootingAccuracyPawn>
-					</value>
-				</li>
-				<li Class="PatchOperationRemove">
-					<xpath>Defs/ThingDef[defName="VAE_Headgear_HAZMATMask"]/apparel/bodyPartGroups/li[text()="Eyes"]</xpath>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/ThingDef[defName="VAE_Headgear_HAZMATMask"]/apparel/bodyPartGroups</xpath>
-					<value>
-						<li>FullHead</li>
-					</value>
-				</li>		
-				<li Class="PatchOperationRemove">
-					<xpath>Defs/ThingDef[defName="VAE_Headgear_HAZMATMask" or defName="VAE_Apparel_HAZMATSuit"]/equippedStatOffsets/PsychicSensitivity</xpath>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/ThingDef[defName="VAE_Headgear_HAZMATMask"]/equippedStatOffsets</xpath>
-					<value>
-						<PsychicSensitivityOffset>-0.5</PsychicSensitivityOffset>
-					</value>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/ThingDef[defName="VAE_Apparel_HAZMATSuit"]/equippedStatOffsets</xpath>
-					<value>
-						<PsychicSensitivityOffset>-0.5</PsychicSensitivityOffset>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/ThingDef[defName="VAE_Apparel_GhillieSuit"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
-					<value>
-						<ShootingAccuracyPawn>4</ShootingAccuracyPawn>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/ThingDef[defName="VAE_Apparel_RiotArmor"]/equippedStatOffsets/MoveSpeed</xpath>
-					<value>
-						<MoveSpeed>-0.1</MoveSpeed>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/ThingDef[thingClass="VEF.Apparels.Apparel_Shield"]/equippedStatOffsets/MeleeDodgeChance</xpath>
-					<value>
-						<MeleeDodgeChance>-4</MeleeDodgeChance>
-					</value>
-				</li>
-
-				<!-- spacer -->
-				<li Class="PatchOperationRemove">
-					<xpath>Defs/ThingDef[defName="VAE_Headgear_RoyalTrooperHelmet" or defName="VAE_Apparel_RoyalTrooperArmor" or defName="VAE_Headgear_RoyalSiegeHelmet" or defName="VAE_Apparel_RoyalSiegeArmor"]/equippedStatOffsets/PsychicSensitivity</xpath>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/ThingDef[defName="VAE_Headgear_RoyalTrooperHelmet" or defName="VAE_Apparel_RoyalTrooperArmor" or defName="VAE_Headgear_RoyalSiegeHelmet" or defName="VAE_Apparel_RoyalSiegeArmor"]/equippedStatOffsets</xpath>
-					<value>
-						<PsychicSensitivityOffset>0.1</PsychicSensitivityOffset>
-					</value>
-				</li>
-			</operations>
-		</match>
+							</modExtensions>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
 	</Operation>
 
-	<Operation Class="PatchOperationFindMod">
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Vanilla Factions Expanded - Empire</li>
+			<li>ludeon.rimworld.odyssey</li>
 		</mods>
-		<match Class="PatchOperationSequence">
-			<operations>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/ThingDef[@Name="VFEE_Apparel_AbsolverHelmet"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
-					<value>
-						<ShootingAccuracyPawn>8</ShootingAccuracyPawn>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/ThingDef[@Name="VFEE_Apparel_DeserterHelmet"]/equippedStatOffsets/ShootingAccuracyPawn</xpath>
-					<value>
-						<ShootingAccuracyPawn>4</ShootingAccuracyPawn>
-					</value>
-				</li>
-				<li Class="PatchOperationRemove">
-					<xpath>Defs/ThingDef[defName="VFEE_Apparel_ArmorDeserter"]/equippedStatOffsets/PsychicSensitivity</xpath>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/ThingDef[defName="VFEE_Apparel_ArmorDeserter"]/equippedStatOffsets</xpath>
-					<value>
-						<PsychicSensitivityOffset>0.2</PsychicSensitivityOffset>
-					</value>
-				</li>
-				<li Class="PatchOperationRemove">
-					<xpath>Defs/ThingDef[defName="VFEE_Apparel_ArmorAbsolver"]/apparel/layers/li[text()="OnSkin"]</xpath>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/ThingDef[defName="VFEE_Apparel_ArmorAbsolver"]/apparel/layers</xpath>
-					<value>
-						<li>Shell</li>
-					</value>
-				</li>
-				<li Class="PatchOperationRemove">
-					<xpath>Defs/ThingDef[defName="VFEE_Apparel_ArmorAbsolver"]/modExtensions/li[@Class="VEF.Apparels.ApparelExtension"]/equippedStatFactors/MoveSpeed</xpath>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/ThingDef[defName="VFEE_Apparel_ArmorAbsolver"]/equippedStatOffsets</xpath>
-					<value>
-						<MoveSpeed>0.6</MoveSpeed>
-					</value>
-				</li>
-			</operations>
-		</match>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Apparel_Vacsuit" or defName="Apparel_VacsuitChildren"]</xpath>
+				<value>
+					<equippedStatOffsets Operation="Safe">
+						<MoveSpeed Operation="SafeReplace">-1.2</MoveSpeed>
+					</equippedStatOffsets>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
 
-	<Operation Class="PatchOperationFindMod">
+	<!-- Vanilla Armour Expanded -->
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Vanilla Prestige Specialist Armours Reworked</li>
+			<li>vanillaexpanded.varme</li>
 		</mods>
-		<match Class="PatchOperationSequence">
-			<operations>
-				<li Class="PatchOperationRemove">
-					<xpath>Defs/ThingDef[defName="Apparel_ArmorPhoenixPrestige" or defName="Apparel_ArmorLocustPrestige" or defName="Apparel_ArmorGrenadierPrestige"]/equippedStatOffsets/PsychicSensitivity</xpath>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/ThingDef[defName="Apparel_ArmorPhoenixPrestige" or defName="Apparel_ArmorLocustPrestige" or defName="Apparel_ArmorGrenadierPrestige"]/equippedStatOffsets</xpath>
-					<value>
-						<PsychicSensitivityOffset>0.1</PsychicSensitivityOffset>
-					</value>
-				</li>
-			</operations>
-		</match>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- medieval -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="VAE_Apparel_PlateHelmet"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef</xpath>
+						<attribute>ParentName</attribute>
+						<value>ArmorHelmetMakeableBase</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<equippedStatOffsets Operation="Safe">
+								<ShootingAccuracyPawn Operation="SafeReplace">-2</ShootingAccuracyPawn>
+							</equippedStatOffsets>
+							<recipeMaker Operation="Safe">
+								<skillRequirements Operation="Safe">
+									<Crafting Operation="SafeReplace">7</Crafting>
+								</skillRequirements>
+								<unfinishedThingDef Operation="SafeAdd">UnfinishedMetallicTechArmor</unfinishedThingDef>
+							</recipeMaker>
+							<thingSetMakerTags Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">RewardStandardQualitySuper</li>
+							</thingSetMakerTags>
+							<tradeTags Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">Clothing</li>
+							</tradeTags>
+							<colorGenerator Class="ColorGenerator_Options" Operation="Safe">
+								<options Operation="SafeReplace">
+									<li>
+									<weight>10</weight>
+									<only>(0.33,0.33,0.33)</only>
+									</li>
+									<li>
+									<weight>10</weight>
+									<only>(0.65,0.65,0.65)</only>
+									</li>
+									<li>
+									<weight>6</weight>
+									<min>(0.3,0.3,0.3)</min>
+									<max>(0.5,0.5,0.5)</max>
+									</li>
+								</options>
+							</colorGenerator>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="VAE_Apparel_LightPlateArmor"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef</xpath>
+						<attribute>ParentName</attribute>
+						<value>ArmorSmithableBase</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<label Operation="SafeReplace">plate light armor</label>
+							<recipeMaker Operation="Safe">
+								<skillRequirements Operation="Safe">
+									<Crafting Operation="SafeReplace">7</Crafting>
+								</skillRequirements>
+								<unfinishedThingDef Operation="SafeAdd">UnfinishedMetallicTechArmor</unfinishedThingDef>
+							</recipeMaker>
+							<thingSetMakerTags Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">RewardStandardQualitySuper</li>
+							</thingSetMakerTags>
+							<tradeTags Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">Clothing</li>
+							</tradeTags>
+							<colorGenerator Class="ColorGenerator_Options" Operation="Safe">
+								<options Operation="SafeReplace">
+									<li>
+									<weight>10</weight>
+									<only>(0.33,0.33,0.33)</only>
+									</li>
+									<li>
+									<weight>10</weight>
+									<only>(0.65,0.65,0.65)</only>
+									</li>
+									<li>
+									<weight>6</weight>
+									<min>(0.3,0.3,0.3)</min>
+									<max>(0.5,0.5,0.5)</max>
+									</li>
+								</options>
+							</colorGenerator>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="VAE_Apparel_PlateShoulderpads"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef</xpath>
+						<attribute>ParentName</attribute>
+						<value>ArmorSmithableBase</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<equippedStatOffsets Operation="Safe">
+								<MoveSpeed Operation="SafeReplace">-0.1</MoveSpeed>
+							</equippedStatOffsets>
+							<recipeMaker Operation="Safe">
+								<skillRequirements Operation="Safe">
+									<Crafting Operation="SafeReplace">7</Crafting>
+								</skillRequirements>
+								<unfinishedThingDef Operation="SafeAdd">UnfinishedMetallicTechArmor</unfinishedThingDef>
+							</recipeMaker>
+							<thingSetMakerTags Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">RewardStandardQualitySuper</li>
+							</thingSetMakerTags>
+							<tradeTags Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">Clothing</li>
+							</tradeTags>
+							<colorGenerator Class="ColorGenerator_Options" Operation="Safe">
+								<options Operation="SafeReplace">
+									<li>
+									<weight>10</weight>
+									<only>(0.33,0.33,0.33)</only>
+									</li>
+									<li>
+									<weight>10</weight>
+									<only>(0.65,0.65,0.65)</only>
+									</li>
+									<li>
+									<weight>6</weight>
+									<min>(0.3,0.3,0.3)</min>
+									<max>(0.5,0.5,0.5)</max>
+									</li>
+								</options>
+							</colorGenerator>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="VAE_Apparel_Chestplate"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef</xpath>
+						<attribute>ParentName</attribute>
+						<value>ArmorSmithableBase</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<label Operation="SafeReplace">plate chest</label>
+							<recipeMaker Operation="Safe">
+								<skillRequirements Operation="Safe">
+									<Crafting Operation="SafeReplace">7</Crafting>
+								</skillRequirements>
+								<unfinishedThingDef Operation="SafeAdd">UnfinishedMetallicTechArmor</unfinishedThingDef>
+							</recipeMaker>
+							<thingSetMakerTags Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">RewardStandardQualitySuper</li>
+							</thingSetMakerTags>
+							<tradeTags Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">Clothing</li>
+							</tradeTags>
+							<colorGenerator Class="ColorGenerator_Options" Operation="Safe">
+								<options Operation="SafeReplace">
+									<li>
+									<weight>10</weight>
+									<only>(0.33,0.33,0.33)</only>
+									</li>
+									<li>
+									<weight>10</weight>
+									<only>(0.65,0.65,0.65)</only>
+									</li>
+									<li>
+									<weight>6</weight>
+									<min>(0.3,0.3,0.3)</min>
+									<max>(0.5,0.5,0.5)</max>
+									</li>
+								</options>
+							</colorGenerator>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="VAE_Apparel_Chainmail"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef</xpath>
+						<attribute>ParentName</attribute>
+						<value>ArmorSmithableBase</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<recipeMaker Operation="Safe">
+								<skillRequirements Operation="Safe">
+									<Crafting Operation="SafeReplace">7</Crafting>
+								</skillRequirements>
+								<unfinishedThingDef Operation="SafeAdd">UnfinishedMetallicTechArmor</unfinishedThingDef>
+							</recipeMaker>
+							<thingSetMakerTags Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">RewardStandardQualitySuper</li>
+							</thingSetMakerTags>
+							<tradeTags Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">Clothing</li>
+							</tradeTags>
+							<colorGenerator Class="ColorGenerator_Options" Operation="Safe">
+								<options Operation="SafeReplace">
+									<li>
+									<weight>10</weight>
+									<only>(0.33,0.33,0.33)</only>
+									</li>
+									<li>
+									<weight>10</weight>
+									<only>(0.65,0.65,0.65)</only>
+									</li>
+									<li>
+									<weight>6</weight>
+									<min>(0.3,0.3,0.3)</min>
+									<max>(0.5,0.5,0.5)</max>
+									</li>
+								</options>
+							</colorGenerator>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+
+			<!-- industrial -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VAE_Headgear_GhillieHood" or defName="VAE_Apparel_GhillieSuit"]</xpath>
+				<value>
+					<equippedStatOffsets Operation="Safe">
+						<ShootingAccuracyPawn Operation="SafeReplace">4</ShootingAccuracyPawn>
+					</equippedStatOffsets>
+				</value>
+			</Operation>
+
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="VAE_Headgear_HAZMATMask"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef/apparel/bodyPartGroups</xpath>
+						<value>
+							<li Operation="SafeRemove" Compare="InnerText">Eyes</li>
+							<li Operation="SafeAdd" Compare="InnerText">FullHead</li>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef/equippedStatOffsets</xpath>
+						<value>
+							<PsychicSensitivity Operation="SafeRemove"/>
+							<PsychicSensitivityOffset Operation="SafeAdd">-0.5</PsychicSensitivityOffset>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VAE_Apparel_HAZMATSuit"]/equippedStatOffsets</xpath>
+				<value>
+					<PsychicSensitivity Operation="SafeRemove"/>
+					<PsychicSensitivityOffset Operation="SafeAdd">-0.5</PsychicSensitivityOffset>
+				</value>
+			</Operation>
+
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VAE_Apparel_RiotArmor"]</xpath>
+				<value>
+					<equippedStatOffsets Operation="Safe">
+						<MoveSpeed Operation="SafeReplace">-0.1</MoveSpeed>
+					</equippedStatOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[thingClass="VEF.Apparels.Apparel_Shield"]</xpath>
+				<value>
+					<equippedStatOffsets Operation="Safe">
+						<MeleeDodgeChance Operation="SafeReplace">-8</MeleeDodgeChance>
+					</equippedStatOffsets>
+				</value>
+			</Operation>
+
+			<!-- spacer -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VAE_Headgear_RoyalTrooperHelmet" or 
+					defName="VAE_Apparel_RoyalTrooperArmor" or 
+					defName="VAE_Headgear_RoyalSiegeHelmet" or 
+					defName="VAE_Apparel_RoyalSiegeArmor"]/equippedStatOffsets</xpath>
+				<value>
+					<PsychicSensitivity Operation="SafeRemove"/>
+					<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
 
-	<Operation Class="PatchOperationFindMod">
+	<!-- Vanilla Factions Expanded - Empire -->
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Vanilla Races Expanded - Archon</li>
+			<li>oskarpotocki.vfe.empire</li>
 		</mods>
-		<match Class="PatchOperationSequence">
-			<operations>
-				<li Class="PatchOperationRemove">
-					<xpath>Defs/ThingDef[defName="VREA_Apparel_Archoplate"]/equippedStatOffsets/PsychicSensitivity</xpath>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/ThingDef[defName="VREA_Apparel_Archoplate"]/equippedStatOffsets</xpath>
-					<value>
-						<PsychicSensitivityOffset>0.6</PsychicSensitivityOffset>
-					</value>
-				</li>
-			</operations>
-		</match>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VFEE_Apparel_AbsolverHelmet"]</xpath>
+				<value>
+					<equippedStatOffsets Operation="Safe">
+						<ShootingAccuracyPawn Operation="SafeReplace">8</ShootingAccuracyPawn>
+					</equippedStatOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="VFEE_Apparel_ArmorAbsolver"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef/apparel/layers</xpath>
+						<value>
+							<li Operation="SafeRemove" Compare="InnerText">OnSkin</li>
+							<li Operation="SafeAdd" Compare="InnerText">Shell</li>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>Defs/ThingDef[defName="VFEE_Apparel_ArmorAbsolver"]/modExtensions/li[@Class="VEF.Apparels.ApparelExtension"]/equippedStatFactors/MoveSpeed</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<equippedStatOffsets Operation="Safe">
+								<MoveSpeed Operation="SafeAdd">0.6</MoveSpeed>
+							</equippedStatOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VFEE_Apparel_DeserterHelmet"]</xpath>
+				<value>
+					<equippedStatOffsets Operation="Safe">
+						<ShootingAccuracyPawn Operation="SafeReplace">4</ShootingAccuracyPawn>
+					</equippedStatOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VFEE_Apparel_ArmorDeserter"]/equippedStatOffsets</xpath>
+				<value>
+					<PsychicSensitivity Operation="SafeRemove"/>
+					<PsychicSensitivityOffset Operation="SafeAdd">0.2</PsychicSensitivityOffset>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
 
-	<Operation Class="PatchOperationFindMod">
+	<!-- Vanilla Prestige Specialist Armours Reworked -->
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Vanilla Races Expanded - Fungoid</li>
+			<li>prestigespecialistarmours.final</li>
 		</mods>
-		<match Class="PatchOperationReplace">
-			<xpath>Defs/ThingDef[@Name="VREF_ApparelArmorAstrosuitBase"]/equippedStatOffsets/MoveSpeed</xpath>
-			<value>
-				<MoveSpeed>-0.4</MoveSpeed>
-			</value>
-		</match>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorPhoenixPrestige" or
+					defName="Apparel_ArmorLocustPrestige" or
+					defName="Apparel_ArmorGrenadierPrestige"]/equippedStatOffsets</xpath>
+				<value>
+					<PsychicSensitivity Operation="SafeRemove"/>
+					<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
 
-	<Operation Class="PatchOperationFindMod">
+	<!-- Vanilla Races Expanded - Archon -->
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Vanilla Weapons Expanded - Heavy Weapons</li>
+			<li>vanillaracesexpanded.archon</li>
 		</mods>
-		<match Class="PatchOperationSequence">
-			<operations>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/ThingDef[defName="VWE_Apparel_Exoframe"]/equippedStatOffsets/WorkSpeedGlobal</xpath>
-					<value>
-						<WorkSpeedGlobal>0.1</WorkSpeedGlobal>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/ThingDef[defName="VWE_Apparel_Exoframe"]/equippedStatOffsets/VEF_MassCarryCapacity</xpath>
-					<value>
-						<VEF_MassCarryCapacity>20</VEF_MassCarryCapacity>
-					</value>
-				</li>
-			</operations>
-		</match>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VREA_Apparel_Archoplate"]/equippedStatOffsets</xpath>
+				<value>
+					<PsychicSensitivity Operation="SafeRemove"/>
+					<PsychicSensitivityOffset Operation="SafeAdd">0.6</PsychicSensitivityOffset>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Vanilla Races Expanded - Fungoid -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.fungoid</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[@Name="VREF_ApparelArmorAstrosuitBase"]</xpath>
+				<value>
+					<equippedStatOffsets Operation="Safe">
+						<MoveSpeed Operation="SafeReplace">-0.4</MoveSpeed>
+					</equippedStatOffsets>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Vanilla Weapons Expanded - Heavy Weapons -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaexpanded.vwehw</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VWE_Apparel_Exoframe"]</xpath>
+				<value>
+					<equippedStatOffsets Operation="Safe">
+						<WorkSpeedGlobal Operation="SafeReplace">0.1</WorkSpeedGlobal>
+						<VEF_MassCarryCapacity Operation="SafeReplace">10</VEF_MassCarryCapacity>
+						<CarryingCapacity Operation="SafeAdd">20</CarryingCapacity>
+					</equippedStatOffsets>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
 
 </Patch>

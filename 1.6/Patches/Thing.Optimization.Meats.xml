@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-	<Operation Class="PatchOperationFindMod">
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Optimization: Meats - C# Edition</li>
+			<li>seohyeon.optimizationmeats</li>
 		</mods>
-		<match Class="PatchOperationAdd">
-			<xpath>/Defs/AlienMeatTest.MeatListDef[defName="WhiteList"]/meats</xpath>
-			<value>
-				<li MayRequire="VanillaExpanded.VGeneticsE">GR_TastyMeat</li>
-			</value>
-		</match>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaexpanded.vgeneticse</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>/Defs/AlienMeatTest.MeatListDef[defName="WhiteList"]/meats</xpath>
+						<value>
+							<li>GR_TastyMeat</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
 	</Operation>
 
 </Patch>
