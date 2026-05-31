@@ -9,14 +9,15 @@
 		<caseTrue>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
-					<li>vanillaexpanded.vgeneticse</li>
+					<li>com.abobashark.zoologymod</li>
+					<li>VanillaExpanded.VAEWaste</li>
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
 					<Operation Class="PatchOperationAdd">
 						<xpath>/Defs/AlienMeatTest.MeatListDef[defName="WhiteList"]/meats</xpath>
 						<value>
-							<li>GR_TastyMeat</li>
+							<li>ToxicMeat</li>
 						</value>
 					</Operation>
 				</caseTrue>

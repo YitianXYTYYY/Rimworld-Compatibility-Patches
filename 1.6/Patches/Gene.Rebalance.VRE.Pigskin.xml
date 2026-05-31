@@ -7,23 +7,39 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="VRE_ExtraMeat"]</xpath>
-				<value>
-					<biostatCpx Operation="SafeReplace">1</biostatCpx>
-					<statFactors Operation="Safe">
-						<MeatAmount Operation="SafeReplace">1.5</MeatAmount>
-					</statFactors>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/MeatAmount</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<biostatCpx Operation="SafeReplace">1</biostatCpx>
+							<statOffsets Operation="Safe">
+								<MeatAmount Operation="SafeAdd">70</MeatAmount>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="VRE_LowMeat"]</xpath>
-				<value>
-					<biostatCpx Operation="SafeReplace">1</biostatCpx>
-					<statFactors Operation="Safe">
-						<MeatAmount Operation="SafeReplace">0.5</MeatAmount>
-					</statFactors>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/MeatAmount</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<biostatCpx Operation="SafeReplace">1</biostatCpx>
+							<statOffsets Operation="Safe">
+								<MeatAmount Operation="SafeAdd">-70</MeatAmount>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_PorkFlesh"]</xpath>

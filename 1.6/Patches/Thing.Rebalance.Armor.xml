@@ -636,13 +636,11 @@
 		<packageId>true</packageId>
 		<caseTrue>
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="VWE_Apparel_Exoframe"]</xpath>
+				<xpath>Defs/ThingDef[defName="VWE_Apparel_Exoframe"]/equippedStatOffsets</xpath>
 				<value>
-					<equippedStatOffsets Operation="Safe">
-						<WorkSpeedGlobal Operation="SafeReplace">0.1</WorkSpeedGlobal>
-						<VEF_MassCarryCapacity Operation="SafeReplace">10</VEF_MassCarryCapacity>
-						<CarryingCapacity Operation="SafeAdd">20</CarryingCapacity>
-					</equippedStatOffsets>
+					<WorkSpeedGlobal Operation="SafeReplace">0.1</WorkSpeedGlobal>
+					<CarryingCapacity Operation="SafeAdd">30</CarryingCapacity>
+					<VEF_MassCarryCapacity Operation="SafeRemove"/>
 				</value>
 			</Operation>
 		</caseTrue>

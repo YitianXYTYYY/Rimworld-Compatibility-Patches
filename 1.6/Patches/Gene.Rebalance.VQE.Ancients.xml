@@ -218,7 +218,6 @@
 							<statOffsets Operation="Safe">
 								<MeleeDamageFactor Operation="SafeAdd">2</MeleeDamageFactor>
 								<CarryingCapacity Operation="SafeAdd">150</CarryingCapacity>
-								<VEF_MassCarryCapacity Operation="SafeAdd">70</VEF_MassCarryCapacity>
 							</statOffsets>
 						</value>
 					</Operation>
