@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaexpanded.vwe</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_PitchSoakedTips"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<RangedWeapon_ArmorPenetrationMultiplier Operation="SafeReplace">0.2</RangedWeapon_ArmorPenetrationMultiplier>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_HighTensionLimbs"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<RangedWeapon_WarmupMultiplier Operation="SafeReplace">0.2</RangedWeapon_WarmupMultiplier>
+						<RangedWeapon_DamageMultiplier Operation="SafeReplace">0.2</RangedWeapon_DamageMultiplier>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_WhisperFletching"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>WeaponTraitDef/statFactors</xpath>
+						<value>
+							<AccuracyMedium Operation="SafeRemove"/>
+							<AccuracyLong Operation="SafeRemove"/>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>WeaponTraitDef</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<AccuracyMedium Operation="SafeAdd">0.1</AccuracyMedium>
+								<AccuracyLong Operation="SafeAdd">0.1</AccuracyLong>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_BarbedHeads"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<RangedWeapon_DamageMultiplier Operation="SafeReplace">0.2</RangedWeapon_DamageMultiplier>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_QuickDrawString"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>WeaponTraitDef/statOffsets</xpath>
+						<value>
+							<RangedWeapon_WarmupMultiplier Operation="SafeRemove"/>
+							<RangedWeapon_RangeMultiplier Operation="SafeRemove"/>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>WeaponTraitDef</xpath>
+						<value>
+							<statFactors Operation="Safe">
+								<RangedWeapon_WarmupMultiplier Operation="SafeAdd">0.8</RangedWeapon_WarmupMultiplier>
+								<RangedWeapon_RangeMultiplier Operation="SafeAdd">0.8</RangedWeapon_RangeMultiplier>
+							</statFactors>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_SiegeAssembly"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<RangedWeapon_DamageMultiplier Operation="SafeReplace">0.5</RangedWeapon_DamageMultiplier>
+						<RangedWeapon_WarmupMultiplier Operation="SafeReplace">1</RangedWeapon_WarmupMultiplier>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_SlipString"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>WeaponTraitDef/statOffsets</xpath>
+						<value>
+							<RangedWeapon_RangeMultiplier Operation="SafeRemove"/>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>WeaponTraitDef</xpath>
+						<value>
+							<statFactors Operation="Safe">
+								<RangedWeapon_RangeMultiplier Operation="SafeAdd">0.8</RangedWeapon_RangeMultiplier>
+							</statFactors>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_HyperCapacitor"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>WeaponTraitDef/statFactors</xpath>
+						<value>
+							<RangedWeapon_WarmupMultiplier Operation="SafeRemove"/>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>WeaponTraitDef</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<RangedWeapon_WarmupMultiplier Operation="SafeAdd">2</RangedWeapon_WarmupMultiplier>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_Ultracoils"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<RangedWeapon_Cooldown Operation="SafeReplace">1.5</RangedWeapon_Cooldown>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<RangedWeapon_RangeMultiplier Operation="SafeReplace">0.5</RangedWeapon_RangeMultiplier>
+						<RangedWeapon_ArmorPenetrationMultiplier Operation="SafeReplace">0.5</RangedWeapon_ArmorPenetrationMultiplier>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_CryptoCoatedRails"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<RangedWeapon_Cooldown Operation="SafeReplace">0.5</RangedWeapon_Cooldown>
+					</statFactors>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_WaterCooled"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<RangedWeapon_Cooldown Operation="SafeReplace">0.5</RangedWeapon_Cooldown>
+						<Mass Operation="SafeReplace">2</Mass>
+					</statFactors>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_HyperCapacitor"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>WeaponTraitDef/statFactors</xpath>
+						<value>
+							<AccuracyMedium Operation="SafeRemove"/>
+							<AccuracyLong Operation="SafeRemove"/>
+							<RangedWeapon_WarmupMultiplier Operation="SafeRemove"/>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>WeaponTraitDef</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<AccuracyMedium Operation="SafeAdd">0.5</AccuracyMedium>
+								<AccuracyLong Operation="SafeAdd">0.5</AccuracyLong>
+								<RangedWeapon_WarmupMultiplier Operation="SafeAdd">0.5</RangedWeapon_WarmupMultiplier>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_SaturationFeed"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<AccuracyShort Operation="SafeReplace">0.8</AccuracyShort>
+						<AccuracyMedium Operation="SafeReplace">0.8</AccuracyMedium>
+						<AccuracyLong Operation="SafeReplace">0.5</AccuracyLong>
+					</statFactors>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_WornRifling"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<AccuracyTouch Operation="SafeReplace">0.8</AccuracyTouch>
+						<AccuracyShort Operation="SafeReplace">0.8</AccuracyShort>
+						<AccuracyMedium Operation="SafeReplace">0.8</AccuracyMedium>
+						<AccuracyLong Operation="SafeReplace">0.8</AccuracyLong>
+					</statFactors>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_GritClogged"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<RangedWeapon_Cooldown Operation="SafeReplace">1.2</RangedWeapon_Cooldown>
+					</statFactors>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_HeavyScrap"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<RangedWeapon_WarmupMultiplier Operation="SafeReplace">0.2</RangedWeapon_WarmupMultiplier>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_RecoilOpMechanism"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<RangedWeapon_RangeMultiplier Operation="SafeReplace">0.8</RangedWeapon_RangeMultiplier>
+						<AccuracyLong Operation="SafeReplace">0.2</AccuracyLong>
+					</statFactors>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_BuntlineBarrel"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>WeaponTraitDef/statFactors</xpath>
+						<value>
+							<AccuracyLong Operation="SafeRemove"/>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>WeaponTraitDef</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<RangedWeapon_WarmupMultiplier Operation="SafeReplace">0.5</RangedWeapon_WarmupMultiplier>
+								<AccuracyLong Operation="SafeAdd">0.5</AccuracyLong>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_SnakeShotLoads"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>WeaponTraitDef/statFactors</xpath>
+						<value>
+							<AccuracyTouch Operation="SafeRemove"/>
+							<AccuracyShort Operation="SafeRemove"/>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>WeaponTraitDef</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<AccuracyTouch Operation="SafeAdd">0.5</AccuracyTouch>
+								<AccuracyShort Operation="SafeAdd">0.2</AccuracyShort>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_TopBreakAction"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<RangedWeapon_Cooldown Operation="SafeReplace">0.8</RangedWeapon_Cooldown>
+					</statFactors>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_UraniumSlug"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<RangedWeapon_Cooldown Operation="SafeReplace">1.5</RangedWeapon_Cooldown>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<RangedWeapon_DamageMultiplier Operation="SafeReplace">0.2</RangedWeapon_DamageMultiplier>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_StraightPullAction"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<RangedWeapon_Cooldown Operation="SafeReplace">0.8</RangedWeapon_Cooldown>
+						<AccuracyLong Operation="SafeReplace">0.8</AccuracyLong>
+					</statFactors>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_AccelerationRail"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<RangedWeapon_Cooldown Operation="SafeReplace">0.8</RangedWeapon_Cooldown>
+						<AccuracyLong Operation="SafeReplace">0.8</AccuracyLong>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<RangedWeapon_DamageMultiplier Operation="SafeReplace">0.2</RangedWeapon_DamageMultiplier>
+						<RangedWeapon_ArmorPenetrationMultiplier Operation="SafeReplace">0.5</RangedWeapon_ArmorPenetrationMultiplier>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_CantedIronSights"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>WeaponTraitDef/statFactors</xpath>
+						<value>
+							<AccuracyTouch Operation="SafeRemove"/>
+							<AccuracyShort Operation="SafeRemove"/>
+							<AccuracyLong Operation="SafeReplace">0.8</AccuracyLong>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>WeaponTraitDef</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<AccuracyTouch Operation="SafeAdd">1</AccuracyTouch>
+								<AccuracyShort Operation="SafeAdd">0.5</AccuracyShort>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_SkeletonizedFrame"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<MaxHitPoints Operation="SafeReplace">0.8</MaxHitPoints>
+						<Mass Operation="SafeReplace">0.8</Mass>
+						<AccuracyLong Operation="SafeReplace">0.5</AccuracyLong>
+					</statFactors>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_WeightedStock"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>WeaponTraitDef/statFactors</xpath>
+						<value>
+							<MeleeWeapon_DamageMultiplier Operation="SafeRemove"/>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>WeaponTraitDef</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<RangedWeapon_WarmupMultiplier Operation="SafeReplace">0.2</RangedWeapon_WarmupMultiplier>
+								<MeleeWeapon_DamageMultiplier Operation="SafeAdd">1</MeleeWeapon_DamageMultiplier>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_WeightedStock"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>WeaponTraitDef/statFactors</xpath>
+						<value>
+							<RangedWeapon_Cooldown Operation="SafeReplace">0.8</RangedWeapon_Cooldown>
+							<RangedWeapon_RangeMultiplier Operation="SafeAdd">0.8</RangedWeapon_RangeMultiplier>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>WeaponTraitDef/statOffsets</xpath>
+						<value>
+							<RangedWeapon_RangeMultiplier Operation="SafeRemove"/>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_IlluminatedSights"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>WeaponTraitDef/statFactors</xpath>
+						<value>
+							<AccuracyTouch Operation="SafeRemove"/>
+							<AccuracyShort Operation="SafeRemove"/>
+							<AccuracyMedium Operation="SafeRemove"/>
+							<AccuracyLong Operation="SafeRemove"/>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>WeaponTraitDef/statOffsets</xpath>
+						<value>
+							<AccuracyTouch Operation="SafeAdd">0.2</AccuracyTouch>
+							<AccuracyShort Operation="SafeAdd">0.2</AccuracyShort>
+							<AccuracyMedium Operation="SafeAdd">0.2</AccuracyMedium>
+							<AccuracyLong Operation="SafeAdd">0.2</AccuracyLong>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_MatchTrigger"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>WeaponTraitDef/statFactors</xpath>
+						<value>
+							<AccuracyMedium Operation="SafeRemove"/>
+							<AccuracyLong Operation="SafeRemove"/>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>WeaponTraitDef/statOffsets</xpath>
+						<value>
+							<RangedWeapon_WarmupMultiplier Operation="SafeReplace">0.2</RangedWeapon_WarmupMultiplier>
+							<AccuracyMedium Operation="SafeAdd">0.2</AccuracyMedium>
+							<AccuracyLong Operation="SafeAdd">0.2</AccuracyLong>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_FireSelector"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>WeaponTraitDef/statFactors</xpath>
+						<value>
+							<AccuracyMedium Operation="SafeRemove"/>
+							<AccuracyLong Operation="SafeRemove"/>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>WeaponTraitDef/statOffsets</xpath>
+						<value>
+							<AccuracyMedium Operation="SafeAdd">0.5</AccuracyMedium>
+							<AccuracyLong Operation="SafeAdd">0.5</AccuracyLong>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/WeaponTraitDef[defName="VWE_Akimbo"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<AccuracyTouch Operation="SafeReplace">0.8</AccuracyTouch>
+						<AccuracyShort Operation="SafeReplace">0.8</AccuracyShort>
+						<AccuracyLong Operation="SafeReplace">0.5</AccuracyLong>
+					</statFactors>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>

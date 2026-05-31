@@ -1126,7 +1126,7 @@
 				<packageId>true</packageId>
 				<caseTrue>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_PackMentality"]</xpath>
+						<xpath>Defs/GeneDef[defName="VRE_Territorial"]</xpath>
 						<value>
 							<displayCategory Operation="AddOrReplace">Mood_Mental</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">200</displayOrderInCategory>
