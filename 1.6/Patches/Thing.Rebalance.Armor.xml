@@ -89,7 +89,7 @@
 						<xpath>ThingDef/apparel/bodyPartGroups</xpath>
 						<value>
 							<li Operation="SafeRemove" Compare="InnerText">UpperHead</li>
-							<li Operation="SafeAdd" Compare="InnerText">Ears</li>
+							<li Operation="SafeAdd" Compare="InnerText">Eyes</li>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
@@ -120,7 +120,7 @@
 				<xpath>Defs/ThingDef[defName="Apparel_AirwireHeadset"]/apparel/bodyPartGroups</xpath>
 				<value>
 					<li Operation="SafeRemove" Compare="InnerText">UpperHead</li>
-					<li Operation="SafeAdd" Compare="InnerText">Ears</li>
+					<li Operation="SafeAdd" Compare="InnerText">Eyes</li>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
@@ -142,13 +142,16 @@
 						<xpath>ThingDef/apparel</xpath>
 						<value>
 							<mechanitorApparel Operation="SafeAdd">true</mechanitorApparel>
+							<layer Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">Overhead</li>
+							</layer>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef/apparel/bodyPartGroups</xpath>
 						<value>
 							<li Operation="SafeRemove" Compare="InnerText">UpperHead</li>
-							<li Operation="SafeAdd" Compare="InnerText">Ears</li>
+							<li Operation="SafeAdd" Compare="InnerText">Eyes</li>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">

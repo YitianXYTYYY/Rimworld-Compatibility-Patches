@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/ReplaceLib.ReplacerDef[defName="ReplaceLib_XYTYYY"]/replacers</xpath>
+		<apply>
+			<!-- Vanilla Factions Expanded - Insectoids 2 -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>oskarpotocki.vfe.insectoid2</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>com.abobashark.zoologymod</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>
+										<replace>Leather_Chitin</replace>
+										<with>VFEI2_Chitin</with>
+									</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
+	</Operation>
+
+</Patch>
