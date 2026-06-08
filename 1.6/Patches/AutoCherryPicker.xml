@@ -76,6 +76,22 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
+			<!-- Keyz' Allow Utilities -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>keyz182.keyzallowutilities</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>DesignationDef/KAU_HaulUrgentlyDesignation</li>
+							<li>WorkTypeDef/KAU_UrgentHaul</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
 			<!-- Medical System Expansion 2 -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
@@ -258,6 +274,68 @@
 						<value>
 							<li>ThingDef/VWE_Gun_HeavyFlamer</li>
 						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Yayo's Combat 3 (Continued) -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>mlie.yayoscombat3</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>RecipeDef/Make_yy_ammo_primitive</li>
+							<li>RecipeDef/Make_yy_ammo_primitive10</li>
+							<li>RecipeDef/Make_yy_ammo_primitive_fire</li>
+							<li>RecipeDef/Make_yy_ammo_primitive_fire10</li>
+							<li>RecipeDef/Make_yy_ammo_primitive_emp</li>
+							<li>RecipeDef/Make_yy_ammo_primitive_emp10</li>
+							<li>RecipeDef/Make_yy_ammo_industrial</li>
+							<li>RecipeDef/Make_yy_ammo_industrial10</li>
+							<li>RecipeDef/Make_yy_ammo_industrial_fire</li>
+							<li>RecipeDef/Make_yy_ammo_industrial_fire10</li>
+							<li>RecipeDef/Make_yy_ammo_industrial_emp</li>
+							<li>RecipeDef/Make_yy_ammo_industrial_emp10</li>
+							<li>RecipeDef/Make_yy_ammo_spacer</li>
+							<li>RecipeDef/Make_yy_ammo_spacer10</li>
+							<li>RecipeDef/Make_yy_ammo_spacer_fire</li>
+							<li>RecipeDef/Make_yy_ammo_spacer_fire10</li>
+							<li>RecipeDef/Make_yy_ammo_spacer_emp</li>
+							<li>RecipeDef/Make_yy_ammo_spacer_emp10</li>
+							<li>ThingDef/Gun_AntiArmor_Rocket</li>
+							<li>ThingDef/yy_ammo_primitive</li>
+							<li>ThingDef/yy_ammo_primitive_fire</li>
+							<li>ThingDef/yy_ammo_primitive_emp</li>
+							<li>ThingDef/yy_ammo_industrial</li>
+							<li>ThingDef/yy_ammo_industrial_fire</li>
+							<li>ThingDef/yy_ammo_industrial_emp</li>
+							<li>ThingDef/yy_ammo_spacer</li>
+							<li>ThingDef/yy_ammo_spacer_fire</li>
+							<li>ThingDef/yy_ammo_spacer_emp</li>
+						</value>
+					</Operation>
+					<!-- Yayo's Combat 3 - Addon -->
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>syrus.yayoscombataddon</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>ThingDef/yy_ammo_primitive_heavy</li>
+									<li>ThingDef/yy_ammo_primitive_light</li>
+									<li>ThingDef/yy_ammo_industrial_heavy</li>
+									<li>ThingDef/yy_ammo_industrial_light</li>
+									<li>ThingDef/yy_ammo_spacer_heavy</li>
+									<li>ThingDef/yy_ammo_spacer_light</li>
+								</value>
+							</Operation>
+						</caseTrue>
 					</Operation>
 				</caseTrue>
 			</Operation>

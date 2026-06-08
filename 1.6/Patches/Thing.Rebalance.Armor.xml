@@ -642,8 +642,8 @@
 				<xpath>Defs/ThingDef[defName="VWE_Apparel_Exoframe"]/equippedStatOffsets</xpath>
 				<value>
 					<WorkSpeedGlobal Operation="SafeReplace">0.1</WorkSpeedGlobal>
-					<CarryingCapacity Operation="SafeAdd">30</CarryingCapacity>
-					<VEF_MassCarryCapacity Operation="SafeRemove"/>
+					<VEF_MassCarryCapacity Operation="SafeReplace">10</VEF_MassCarryCapacity>
+					<CarryingCapacity Operation="SafeAdd">20</CarryingCapacity>
 				</value>
 			</Operation>
 		</caseTrue>

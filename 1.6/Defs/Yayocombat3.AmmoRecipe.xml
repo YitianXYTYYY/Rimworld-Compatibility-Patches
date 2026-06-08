@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- Primitive -->
+	<RecipeDef MayRequire="mlie.yayoscombat3">
+		<defName>Make_AmmoPrimitive</defName>
+		<label>make arrow</label>
+		<description>Ammunition used in bow weapons.</description>
+		<jobString>Making arrow.</jobString>
+		<workAmount>240</workAmount>
+		<workSkill>Crafting</workSkill>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Smith</effectWorking>
+		<soundWorking>Recipe_MakeBow</soundWorking>
+		<researchPrerequisite MayRequire="oskarpotocki.vfe.tribals">VFET_Bow</researchPrerequisite>
+		<recipeUsers>
+			<li>CraftingSpot</li>
+		</recipeUsers>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<skillRequirements>
+			<Crafting>1</Crafting>
+		</skillRequirements>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WoodLog</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<products>
+			<AmmoPrimitive>15</AmmoPrimitive>
+		</products>
+		<unfinishedThingDef>Ammo_Primitive_unfinish</unfinishedThingDef>
+	</RecipeDef>
+	<!-- Industrial -->
+	<RecipeDef MayRequire="mlie.yayoscombat3">
+		<defName>Make_AmmoIndustrial</defName>
+		<label>make ammo</label>
+		<description>Ammunition used for most industrial era ranged weapons.</description>
+		<jobString>Making ammo.</jobString>
+		<workAmount>600</workAmount>
+		<workSkill>Crafting</workSkill>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Smith</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<researchPrerequisite>Gunsmithing</researchPrerequisite>
+		<recipeUsers>
+			<li>TableMachining</li>
+		</recipeUsers>
+		<skillRequirements>
+			<Crafting>6</Crafting>
+		</skillRequirements>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Uranium</li>
+					</thingDefs>
+				</filter>
+				<count>4</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+		</ingredients>
+		<products>
+			<AmmoIndustrial>25</AmmoIndustrial>
+		</products>
+		<unfinishedThingDef>Ammo_Industrial_unfinish</unfinishedThingDef>
+	</RecipeDef>
+	<!-- Industrial fire -->
+	<RecipeDef MayRequire="mlie.yayoscombat3">
+		<defName>Make_AmmoIndustrialFire</defName>
+		<label>make ammo - explosive</label>
+		<description>Industrial ammunition used for explosion, flame, and smoke damage type weapons.</description>
+		<jobString>Making ammo - explosive.</jobString>
+		<workAmount>900</workAmount>
+		<workSkill>Crafting</workSkill>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Smith</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<researchPrerequisite>Gunsmithing</researchPrerequisite>
+		<recipeUsers>
+			<li>TableMachining</li>
+		</recipeUsers>
+		<skillRequirements>
+			<Crafting>6</Crafting>
+		</skillRequirements>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+		</ingredients>
+		<products>
+			<AmmoIndustrialFire>25</AmmoIndustrialFire>
+		</products>
+		<unfinishedThingDef>Ammo_Industrial_unfinish</unfinishedThingDef>
+	</RecipeDef>
+	<!-- Industrial emp -->
+	<RecipeDef MayRequire="mlie.yayoscombat3">
+		<defName>Make_AmmoIndustrialEMP</defName>
+		<label>make ammo - special</label>
+		<description>Industrial ammunition used for special weapons.</description>
+		<jobString>Making ammo - special.</jobString>
+		<workAmount>900</workAmount>
+		<workSkill>Crafting</workSkill>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Smith</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<researchPrerequisite>Gunsmithing</researchPrerequisite>
+		<recipeUsers>
+			<li>TableMachining</li>
+		</recipeUsers>
+		<skillRequirements>
+			<Crafting>6</Crafting>
+		</skillRequirements>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+		</ingredients>
+		<products>
+			<AmmoIndustrialEMP>25</AmmoIndustrialEMP>
+		</products>
+		<unfinishedThingDef>Ammo_Industrial_unfinish</unfinishedThingDef>
+	</RecipeDef>
+	<!-- Spacer -->
+	<RecipeDef MayRequire="mlie.yayoscombat3">
+		<defName>Make_AmmoSpacer</defName>
+		<label>make charge battery</label>
+		<description>Ammunition used for charge weapons.</description>
+		<jobString>Making charge battery.</jobString>
+		<workAmount>1500</workAmount>
+		<workSkill>Crafting</workSkill>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Smith</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<researchPrerequisite>ChargedShot</researchPrerequisite>
+		<recipeUsers>
+			<li>FabricationBench</li>
+		</recipeUsers>
+		<skillRequirements>
+			<Crafting>9</Crafting>
+		</skillRequirements>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ComponentSpacer</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Uranium</li>
+					</thingDefs>
+				</filter>
+				<count>15</count>
+			</li>
+		</ingredients>
+		<products>
+			<AmmoSpacer>50</AmmoSpacer>
+		</products>
+		<unfinishedThingDef>Ammo_Spacer_unfinish</unfinishedThingDef>
+	</RecipeDef>
+	<!-- Spacer emp -->
+	<RecipeDef MayRequire="mlie.yayoscombat3">
+		<defName>Make_AmmoSpacerEMP</defName>
+		<label>make spacer ammo - special</label>
+		<description>Spacer ammunition used for special weapons.</description>
+		<jobString>Making spacer ammo - special.</jobString>
+		<workAmount>1800</workAmount>
+		<workSkill>Crafting</workSkill>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Smith</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<researchPrerequisite>ChargedShot</researchPrerequisite>
+		<recipeUsers>
+			<li>FabricationBench</li>
+		</recipeUsers>
+		<skillRequirements>
+			<Crafting>9</Crafting>
+		</skillRequirements>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ComponentSpacer</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>15</count>
+			</li>
+		</ingredients>
+		<products>
+			<AmmoSpacerEMP>50</AmmoSpacerEMP>
+		</products>
+		<unfinishedThingDef>Ammo_Spacer_unfinish</unfinishedThingDef>
+	</RecipeDef>
+
+</Defs>

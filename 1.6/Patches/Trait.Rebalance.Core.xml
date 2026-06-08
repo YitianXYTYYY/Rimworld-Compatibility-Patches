@@ -151,7 +151,7 @@
 			</Operation>
 			<!-- trigger-happy -->
 			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-				<xpath>Defs/TraitDef[defName="ShootingAccuracy"]/degreeDatas/li[degree="-1"]/statOffsets/AimingDelayFactor</xpath>
+				<xpath>TraitDef/degreeDatas/li[degree="-1"]/statOffsets/AimingDelayFactor</xpath>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>TraitDef/degreeDatas/li[degree="-1"]</xpath>

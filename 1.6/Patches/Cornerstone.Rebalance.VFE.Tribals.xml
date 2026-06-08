@@ -485,6 +485,15 @@
 				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_QuickdrawMasters"]</xpath>
+				<value>
+					<description Operation="SafeReplace">Aiming time x80%.</description>
+					<statFactors Operation="Safe">
+						<AimingDelayFactor Operation="SafeReplace">0.8</AimingDelayFactor>
+					</statFactors>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_MortarVisionaries"]</xpath>
 				<value>
 					<description Operation="SafeReplace">Mortars miss radius multiplier x80%.</description>

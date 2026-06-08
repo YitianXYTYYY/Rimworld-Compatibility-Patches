@@ -9,10 +9,10 @@
 	</supportedVersions>
 	<url>https://github.com/YitianXYTYYY/Rimworld-Compatibility-Patches</url>
 	<description>
-		Personal Made compatibility patches for mods.
-		1.Heavy Weapon Reloading Patch with Yayo's Combat 3.
-		2.Categorize cosmetic genes for VRE mods, EyeGenes2 and AFU Cosmetic Gene Expanded.
-		3.Rebalance stats like psychic sensitivity, shooting accuracy, etc.
+Personal Made compatibility patches for mods.
+1.Heavy Weapon Reloading Patch with Yayo's Combat 3.
+2.Categorize cosmetic genes for VRE mods, EyeGenes2 and AFU Cosmetic Gene Expanded.
+3.Rebalance stats like psychic sensitivity, shooting accuracy, etc.
 	</description>
 	<modDependencies>
 		<li>

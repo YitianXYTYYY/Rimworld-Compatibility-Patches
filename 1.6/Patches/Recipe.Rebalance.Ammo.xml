@@ -18,57 +18,53 @@
 									<li>Uranium</li>
 								</thingDefs>
 							</filter>
-							<count>2</count>
+							<count>4</count>
 						</li>
 						<li>
 							<filter>
 								<thingDefs>
 									<li>Steel</li>
-								</thingDefs>
-							</filter>
-							<count>15</count>
-						</li>
-					</ingredients>
-					<products Operation="Safe">
-						<ReelTurretAmmo Operation="SafeReplace">20</ReelTurretAmmo>
-					</products>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/RecipeDef[defName="Make_TurretAmmoBulk"]</xpath>
-				<value>
-					<workAmount Operation="SafeReplace">3600</workAmount>
-					<ingredients Operation="SafeReplace">
-						<li>
-							<filter>
-								<thingDefs>
-									<li>Uranium</li>
 								</thingDefs>
 							</filter>
 							<count>20</count>
 						</li>
-						<li>
-							<filter>
-								<thingDefs>
-									<li>Steel</li>
-								</thingDefs>
-							</filter>
-							<count>150</count>
-						</li>
 					</ingredients>
 					<products Operation="Safe">
-						<ReelTurretAmmo Operation="SafeReplace">200</ReelTurretAmmo>
+						<ReelTurretAmmo Operation="SafeReplace">25</ReelTurretAmmo>
 					</products>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/RecipeDef[defName="Make_TurretAmmoBulk"]</xpath>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="ReelTurretAmmo"]</xpath>
-				<value>
-					<stackLimit Operation="SafeReplace">150</stackLimit>
-					<statBases Operation="Safe">
-						<MarketValue Operation="SafeReplace">2.5</MarketValue>
-					</statBases>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<stackLimit Operation="SafeReplace">150</stackLimit>
+							<statBases Operation="Safe">
+								<MarketValue Operation="SafeReplace">2.5</MarketValue>
+							</statBases>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>mlie.yayoscombat3</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef/thingCategories</xpath>
+								<value>
+									<li Operation="SafeAdd" Compare="InnerText">yy_ammo_category</li>
+									<li Operation="SafeRemove" Compare="InnerText">Manufactured</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
 			</Operation>
 		</caseTrue>
 	</Operation>
