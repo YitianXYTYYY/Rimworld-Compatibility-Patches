@@ -17,6 +17,12 @@
 					</statOffsets>
 				</value>
 			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_InsectFlesh"]</xpath>
+				<value>
+					<biostatCpx Operation="SafeReplace">1</biostatCpx>
+				</value>
+			</Operation>
 		</caseTrue>
 	</Operation>
 

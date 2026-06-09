@@ -132,12 +132,23 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="VRE_Talons"]/capMods/li[capacity="Manipulation"]</xpath>
-				<value>
-					<postFactor Operation="SafeRemove"/>
-					<offset Operation="SafeAdd">-0.1</offset>
-				</value>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="VRE_Talons"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<biostatMet Operation="SafeReplace">0</biostatMet>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef/capMods/li[capacity="Manipulation"]</xpath>
+						<value>
+							<postFactor Operation="SafeRemove"/>
+							<offset Operation="SafeAdd">-0.05</offset>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
 		</caseTrue>
 	</Operation>

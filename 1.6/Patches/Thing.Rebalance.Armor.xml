@@ -133,20 +133,6 @@
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="Apparel_IntegratorHeadset"]</xpath>
 				<apply>
-					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
-						<xpath>ThingDef</xpath>
-						<attribute>ParentName</attribute>
-						<value>MechanitorHeadsetBase</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ThingDef/apparel</xpath>
-						<value>
-							<mechanitorApparel Operation="SafeAdd">true</mechanitorApparel>
-							<layer Operation="Safe">
-								<li Operation="SafeAdd" Compare="InnerText">Overhead</li>
-							</layer>
-						</value>
-					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef/apparel/bodyPartGroups</xpath>
 						<value>
@@ -155,10 +141,11 @@
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ThingDef/equippedStatOffsets</xpath>
+						<xpath>ThingDef</xpath>
 						<value>
-							<ShootingAccuracyPawn Operation="SafeReplace">4</ShootingAccuracyPawn>
-							<VacuumResistance Operation="SafeRemove"/>
+							<equippedStatOffsets Inherit="False" Operation="SafeReplace">
+								<MechBandwidth>9</MechBandwidth>
+							</equippedStatOffsets>
 						</value>
 					</Operation>
 				</apply>
@@ -642,8 +629,8 @@
 				<xpath>Defs/ThingDef[defName="VWE_Apparel_Exoframe"]/equippedStatOffsets</xpath>
 				<value>
 					<WorkSpeedGlobal Operation="SafeReplace">0.1</WorkSpeedGlobal>
-					<VEF_MassCarryCapacity Operation="SafeReplace">10</VEF_MassCarryCapacity>
-					<CarryingCapacity Operation="SafeAdd">20</CarryingCapacity>
+					<VEF_MassCarryCapacity Operation="SafeReplace">15</VEF_MassCarryCapacity>
+					<CarryingCapacity Operation="SafeAdd">30</CarryingCapacity>
 				</value>
 			</Operation>
 		</caseTrue>

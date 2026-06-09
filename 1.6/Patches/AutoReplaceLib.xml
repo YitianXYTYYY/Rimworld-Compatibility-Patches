@@ -2,7 +2,7 @@
 <Patch>
 
 	<Operation Class="XmlExtensions.SetScope">
-		<xpath>Defs/ReplaceLib.ReplacerDef[defName="ReplaceLib_XYTYYY"]/replacers</xpath>
+		<xpath>Defs/ReplaceLib.ReplacerDef[defName="ReplaceLib_XYTYYY"]</xpath>
 		<apply>
 			<!-- Vanilla Factions Expanded - Insectoids 2 -->
 			<Operation Class="XmlExtensions.FindMod">
@@ -18,7 +18,7 @@
 						<packageId>true</packageId>
 						<caseTrue>
 							<Operation Class="PatchOperationAdd">
-								<xpath>defs</xpath>
+								<xpath>ReplaceLib.ReplacerDef/replacers</xpath>
 								<value>
 									<li>
 										<replace>Leather_Chitin</replace>
@@ -38,7 +38,7 @@
 				<packageId>true</packageId>
 				<caseTrue>
 					<Operation Class="PatchOperationAdd">
-						<xpath>defs</xpath>
+						<xpath>ReplaceLib.ReplacerDef/replacers</xpath>
 						<value>
 							<li>
 								<replace>yy_ammo_primitive</replace>
@@ -46,7 +46,7 @@
 							</li>
 							<li>
 								<replace>yy_ammo_primitive_fire</replace>
-								<with>AmmoPrimitiveFire</with>
+								<with>AmmoPrimitive</with>
 							</li>
 							<li>
 								<replace>yy_ammo_primitive_emp</replace>
@@ -58,7 +58,7 @@
 							</li>
 							<li>
 								<replace>yy_ammo_industrial_fire</replace>
-								<with>AmmoIndustrialEMP</with>
+								<with>AmmoIndustrialFire</with>
 							</li>
 							<li>
 								<replace>yy_ammo_industrial_emp</replace>
@@ -70,7 +70,7 @@
 							</li>
 							<li>
 								<replace>yy_ammo_spacer_fire</replace>
-								<with>AmmoSpacerEMP</with>
+								<with>AmmoSpacer</with>
 							</li>
 							<li>
 								<replace>yy_ammo_spacer_emp</replace>
@@ -85,15 +85,15 @@
 						<packageId>true</packageId>
 						<caseTrue>
 							<Operation Class="PatchOperationAdd">
-								<xpath>defs</xpath>
+								<xpath>ReplaceLib.ReplacerDef/replacers</xpath>
 								<value>
 									<li>
 										<replace>yy_ammo_primitive_light</replace>
 										<with>AmmoPrimitive</with>
 									</li>
 									<li>
-										<replace>yy_ammo_primitive_light</replace>
-										<with>yy_ammo_primitive_heavy</with>
+										<replace>yy_ammo_primitive_heavy</replace>
+										<with>AmmoPrimitive</with>
 									</li>
 									<li>
 										<replace>yy_ammo_industrial_light</replace>

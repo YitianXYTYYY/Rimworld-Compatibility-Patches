@@ -68,6 +68,13 @@
 		</value>
 	</Operation>
 	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/StatDef[@Name="AccuracyBase"]</xpath>
+		<value>
+			<maxValue Operation="SafeReplace">2</maxValue>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/StatDef[defName="VEF_VerbRangeFactor"]</xpath>
 		<value>
 			<toStringStyle Operation="SafeReplace">PercentZero</toStringStyle>
@@ -149,64 +156,6 @@
 						<value>
 							<statFactors Operation="Safe">
 								<AimingDelayFactor Operation="SafeAdd">0.5</AimingDelayFactor>
-							</statFactors>
-						</value>
-					</Operation>
-				</apply>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>ludeon.rimworld.odyssey</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<!-- weapon trait -->
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/WeaponTraitDef[defName="Lightweight"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>WeaponTraitDef/statOffsets/RangedWeapon_WarmupMultiplier</xpath>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>WeaponTraitDef</xpath>
-						<value>
-							<statFactors Operation="Safe">
-								<RangedWeapon_WarmupMultiplier Operation="SafeAdd">0.8</RangedWeapon_WarmupMultiplier>
-							</statFactors>
-						</value>
-					</Operation>
-				</apply>
-			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/WeaponTraitDef[defName="PrecisionScope"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>WeaponTraitDef/statOffsets/RangedWeapon_WarmupMultiplier</xpath>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>WeaponTraitDef</xpath>
-						<value>
-							<statFactors Operation="Safe">
-								<RangedWeapon_WarmupMultiplier Operation="SafeAdd">0.8</RangedWeapon_WarmupMultiplier>
-							</statFactors>
-						</value>
-					</Operation>
-				</apply>
-			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/WeaponTraitDef[defName="ShortenedBarrel"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>WeaponTraitDef/statOffsets/RangedWeapon_WarmupMultiplier</xpath>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>WeaponTraitDef</xpath>
-						<value>
-							<statFactors Operation="Safe">
-								<RangedWeapon_WarmupMultiplier Operation="SafeAdd">0.8</RangedWeapon_WarmupMultiplier>
 							</statFactors>
 						</value>
 					</Operation>

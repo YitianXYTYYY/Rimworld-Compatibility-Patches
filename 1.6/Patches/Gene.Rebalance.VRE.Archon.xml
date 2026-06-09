@@ -17,6 +17,42 @@
 			</Operation>
 
 			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="VRE_SwiftMeditation"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/MeditationFocusGain</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<biostatCpx Operation="SafeReplace">1</biostatCpx>
+							<biostatMet Operation="SafeReplace">-1</biostatMet>
+							<statOffsets Operation="Safe">
+								<MeditationFocusGain Operation="SafeAdd">0.05</MeditationFocusGain>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="VRE_ExtremeMeditation"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/MeditationFocusGain</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<biostatCpx Operation="SafeReplace">2</biostatCpx>
+							<biostatMet Operation="SafeReplace">-2</biostatMet>
+							<statOffsets Operation="Safe">
+								<MeditationFocusGain Operation="SafeAdd">0.1</MeditationFocusGain>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="VRE_HighEntropyCapacity"]</xpath>
 				<apply>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
@@ -25,6 +61,8 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef</xpath>
 						<value>
+							<biostatCpx Operation="SafeReplace">1</biostatCpx>
+							<biostatMet Operation="SafeReplace">-1</biostatMet>
 							<statOffsets Operation="Safe">
 								<PsychicEntropyMax Operation="SafeAdd">5</PsychicEntropyMax>
 							</statOffsets>
@@ -41,6 +79,8 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef</xpath>
 						<value>
+							<biostatCpx Operation="SafeReplace">2</biostatCpx>
+							<biostatMet Operation="SafeReplace">-3</biostatMet>
 							<statOffsets Operation="Safe">
 								<PsychicEntropyMax Operation="SafeAdd">10</PsychicEntropyMax>
 							</statOffsets>

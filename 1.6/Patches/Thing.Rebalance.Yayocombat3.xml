@@ -10,8 +10,8 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingCategoryDef[defName="yy_ammo_category"]</xpath>
 				<value>
-					<label Operation="SafeReplace" Compare="InnerText">Ammunition</label>
-					<parent Operation="SafeReplace" Compare="InnerText">Manufactured</parent>
+					<label Operation="SafeReplace">ammunition</label>
+					<parent Operation="SafeReplace">Manufactured</parent>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
@@ -168,7 +168,7 @@
 				<xpath>Defs/ThingDef[defName="Weapon_GrenadeFrag" or defName="Gun_SmokeLauncher"]</xpath>
 				<value>
 					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_AmmoIndustrialFire/5/5</li>
+						<li Operation="Add">ammoDef_AmmoIndustrialFire/5/4</li>
 					</weaponTags>
 				</value>
 			</Operation>
@@ -176,7 +176,7 @@
 				<xpath>Defs/ThingDef[defName="Weapon_GrenadeEMP" or defName="Gun_EmpLauncher"]</xpath>
 				<value>
 					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_Make_AmmoIndustrialEMP/5/5</li>
+						<li Operation="Add">ammoDef_AmmoIndustrialEMP/5/4</li>
 					</weaponTags>
 				</value>
 			</Operation>
@@ -184,7 +184,7 @@
 				<xpath>Defs/ThingDef[defName="Gun_ChargeRifle"]</xpath>
 				<value>
 					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_AmmoSpacer/45/1</li>
+						<li Operation="Add">ammoDef_AmmoSpacer/60/1</li>
 					</weaponTags>
 				</value>
 			</Operation>
@@ -208,7 +208,7 @@
 				<xpath>Defs/ThingDef[defName="Gun_InfernoCannon"]</xpath>
 				<value>
 					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_Chemfuel/20/5</li>
+						<li Operation="Add">ammoDef_Chemfuel/30/5</li>
 					</weaponTags>
 				</value>
 			</Operation>
@@ -221,7 +221,7 @@
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Bullet_ThumpCannon"]</xpath>
+				<xpath>Defs/ThingDef[defName="Gun_ThumpCannon"]</xpath>
 				<value>
 					<weaponTags Operation="Safe">
 						<li Operation="Add">ammoDef_AmmoSpacerEMP/20/1</li>
@@ -247,7 +247,7 @@
 						<xpath>Defs/ThingDef[defName="Weapon_GrenadeTox" or defName="Gun_ToxbombLauncher"]</xpath>
 						<value>
 							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_AmmoIndustrialFire/5/5</li>
+								<li Operation="Add">ammoDef_AmmoIndustrialFire/5/4</li>
 							</weaponTags>
 						</value>
 					</Operation>
@@ -454,7 +454,7 @@
 						<xpath>Defs/ThingDef[defName="VWE_Gun_GrenadeLauncher" or defName="VWE_SmokeGrenade"]</xpath>
 						<value>
 							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_AmmoIndustrialFire/5/5</li>
+								<li Operation="Add">ammoDef_AmmoIndustrialFire/5/4</li>
 							</weaponTags>
 						</value>
 					</Operation>
@@ -462,7 +462,7 @@
 						<xpath>Defs/ThingDef[defName="VWE_FlashGrenade"]</xpath>
 						<value>
 							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_AmmoIndustrialEMP/5/5</li>
+								<li Operation="Add">ammoDef_AmmoIndustrialEMP/5/4</li>
 							</weaponTags>
 						</value>
 					</Operation>

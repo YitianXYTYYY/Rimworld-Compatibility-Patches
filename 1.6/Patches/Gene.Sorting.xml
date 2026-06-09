@@ -1212,13 +1212,6 @@
 						<packageId>true</packageId>
 						<caseTrue>
 							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>Defs/GeneDef[defName="Turn_Gene_TraitGrandeur"]</xpath>
-								<value>
-									<displayCategory Operation="AddOrReplace">Social</displayCategory>
-									<displayOrderInCategory Operation="AddOrReplace">400</displayOrderInCategory>
-								</value>
-							</Operation>
-							<Operation Class="XmlExtensions.HybridPatch">
 								<xpath>Defs/GeneDef[defName="Turn_Gene_Speechless"]</xpath>
 								<value>
 									<displayCategory Operation="AddOrReplace">Social</displayCategory>
@@ -1290,6 +1283,21 @@
 							<exclusionTags Operation="Safe">
 								<li Operation="SafeAdd" Compare="InnerText">XYTYYY_RequireSpeechAbility</li>
 							</exclusionTags>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>Turnovus.Biotech.IntegratedGenes</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="Turn_Gene_TraitGrandeur"]</xpath>
+						<value>
+							<displayCategory Operation="AddOrReplace">Social</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">400</displayOrderInCategory>
 						</value>
 					</Operation>
 				</caseTrue>
