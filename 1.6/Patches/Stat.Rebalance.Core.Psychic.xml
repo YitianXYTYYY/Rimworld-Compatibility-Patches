@@ -27,6 +27,64 @@
 		</value>
 	</Operation>
 
+	<!-- psylink -->
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/HediffDef[defName="PsychicAmplifier"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>HediffDef/stages/li/statFactors/PsychicEntropyMax</xpath>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>HediffDef/stages/li/statFactors/PsychicEntropyRecoveryRate</xpath>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[minSeverity="2"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<PsychicEntropyMax Operation="SafeAdd">10</PsychicEntropyMax>
+						<PsychicEntropyRecoveryRate Operation="SafeAdd">0.06</PsychicEntropyRecoveryRate>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[minSeverity="3"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<PsychicEntropyMax Operation="SafeAdd">20</PsychicEntropyMax>
+						<PsychicEntropyRecoveryRate Operation="SafeAdd">0.12</PsychicEntropyRecoveryRate>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[minSeverity="4"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<PsychicEntropyMax Operation="SafeAdd">30</PsychicEntropyMax>
+						<PsychicEntropyRecoveryRate Operation="SafeAdd">0.18</PsychicEntropyRecoveryRate>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[minSeverity="5"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<PsychicEntropyMax Operation="SafeAdd">40</PsychicEntropyMax>
+						<PsychicEntropyRecoveryRate Operation="SafeAdd">0.24</PsychicEntropyRecoveryRate>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[minSeverity="6"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<PsychicEntropyMax Operation="SafeAdd">50</PsychicEntropyMax>
+						<PsychicEntropyRecoveryRate Operation="SafeAdd">0.30</PsychicEntropyRecoveryRate>
+					</statOffsets>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
+
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
 			<li>ludeon.rimworld.royalty</li>

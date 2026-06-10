@@ -59,62 +59,6 @@
 		</tradeTags>
 		<techLevel>Industrial</techLevel>
 	</ThingDef>
-	<ThingDef ParentName="ResourceBase" MayRequire="mlie.yayoscombat3">
-		<defName>AmmoIndustrialFire</defName>
-		<label>ammo - explosive</label>
-		<description>Industrial ammunition used for explosion, flame, and smoke damage type weapons.</description>
-		<graphicData>
-			<texPath>yy_ammo_industrial_fire</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-		</graphicData>
-		<soundInteract>Metal_Drop</soundInteract>
-		<soundDrop>Standard_Drop</soundDrop>
-		<stackLimit>150</stackLimit>
-		<healthAffectsPrice>false</healthAffectsPrice>
-		<statBases>
-			<MarketValue>3.5</MarketValue>
-			<MaxHitPoints>20</MaxHitPoints>
-			<Mass>0.04</Mass>
-			<Flammability>1</Flammability>
-			<DeteriorationRate>1.0</DeteriorationRate>
-		</statBases>
-		<intricate>true</intricate>
-		<thingCategories>
-			<li>yy_ammo_category</li>
-		</thingCategories>
-		<tradeTags>
-			<li>Ammo</li>
-		</tradeTags>
-		<techLevel>Industrial</techLevel>
-	</ThingDef>
-	<ThingDef ParentName="ResourceBase" MayRequire="mlie.yayoscombat3">
-		<defName>AmmoIndustrialEMP</defName>
-		<label>ammo - special</label>
-		<description>Industrial ammunition used for special weapons.</description>
-		<graphicData>
-			<texPath>yy_ammo_industrial_emp</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-		</graphicData>
-		<soundInteract>Metal_Drop</soundInteract>
-		<soundDrop>Standard_Drop</soundDrop>
-		<stackLimit>150</stackLimit>
-		<healthAffectsPrice>false</healthAffectsPrice>
-		<statBases>
-			<MarketValue>3</MarketValue>
-			<MaxHitPoints>20</MaxHitPoints>
-			<Mass>0.03</Mass>
-			<Flammability>1</Flammability>
-			<DeteriorationRate>1.0</DeteriorationRate>
-		</statBases>
-		<intricate>true</intricate>
-		<thingCategories>
-			<li>yy_ammo_category</li>
-		</thingCategories>
-		<tradeTags>
-			<li>Ammo</li>
-		</tradeTags>
-		<techLevel>Industrial</techLevel>
-	</ThingDef>
 
 	<!-- Spacer -->
 	<ThingDef ParentName="ResourceBase" MayRequire="mlie.yayoscombat3">
@@ -147,7 +91,7 @@
 	</ThingDef>
 	<ThingDef ParentName="ResourceBase" MayRequire="mlie.yayoscombat3">
 		<defName>AmmoSpacerEMP</defName>
-		<label>spacer ammo - special</label>
+		<label>spacer ammo</label>
 		<description>Spacer ammunition used for special weapons.</description>
 		<graphicData>
 			<texPath>yy_ammo_spacer_emp</texPath>

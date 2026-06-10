@@ -58,11 +58,11 @@
 							</li>
 							<li>
 								<replace>yy_ammo_industrial_fire</replace>
-								<with>AmmoIndustrialFire</with>
+								<with>AmmoIndustrial</with>
 							</li>
 							<li>
 								<replace>yy_ammo_industrial_emp</replace>
-								<with>AmmoIndustrialEMP</with>
+								<with>AmmoIndustrial</with>
 							</li>
 							<li>
 								<replace>yy_ammo_spacer</replace>
@@ -70,7 +70,7 @@
 							</li>
 							<li>
 								<replace>yy_ammo_spacer_fire</replace>
-								<with>AmmoSpacer</with>
+								<with>AmmoSpacerEMP</with>
 							</li>
 							<li>
 								<replace>yy_ammo_spacer_emp</replace>

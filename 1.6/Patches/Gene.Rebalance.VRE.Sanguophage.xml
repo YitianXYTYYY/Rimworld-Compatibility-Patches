@@ -139,6 +139,9 @@
 						<xpath>GeneDef</xpath>
 						<value>
 							<biostatMet Operation="SafeReplace">0</biostatMet>
+							<customEffectDescriptions Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">Causes cuts when using unarmed attacks.</li>
+							</customEffectDescriptions>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">

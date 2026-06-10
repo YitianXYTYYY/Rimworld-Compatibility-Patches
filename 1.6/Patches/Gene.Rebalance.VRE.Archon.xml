@@ -62,9 +62,9 @@
 						<xpath>GeneDef</xpath>
 						<value>
 							<biostatCpx Operation="SafeReplace">1</biostatCpx>
-							<biostatMet Operation="SafeReplace">-1</biostatMet>
+							<biostatMet Operation="SafeReplace">-2</biostatMet>
 							<statOffsets Operation="Safe">
-								<PsychicEntropyMax Operation="SafeAdd">5</PsychicEntropyMax>
+								<PsychicEntropyMax Operation="SafeAdd">10</PsychicEntropyMax>
 							</statOffsets>
 						</value>
 					</Operation>
@@ -80,9 +80,9 @@
 						<xpath>GeneDef</xpath>
 						<value>
 							<biostatCpx Operation="SafeReplace">2</biostatCpx>
-							<biostatMet Operation="SafeReplace">-3</biostatMet>
+							<biostatMet Operation="SafeReplace">-5</biostatMet>
 							<statOffsets Operation="Safe">
-								<PsychicEntropyMax Operation="SafeAdd">10</PsychicEntropyMax>
+								<PsychicEntropyMax Operation="SafeAdd">20</PsychicEntropyMax>
 							</statOffsets>
 						</value>
 					</Operation>

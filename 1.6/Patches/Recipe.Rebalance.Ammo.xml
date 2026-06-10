@@ -7,36 +7,6 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/RecipeDef[defName="Make_TurretAmmo"]</xpath>
-				<value>
-					<workAmount Operation="SafeReplace">360</workAmount>
-					<ingredients Operation="SafeReplace">
-						<li>
-							<filter>
-								<thingDefs>
-									<li>Uranium</li>
-								</thingDefs>
-							</filter>
-							<count>4</count>
-						</li>
-						<li>
-							<filter>
-								<thingDefs>
-									<li>Steel</li>
-								</thingDefs>
-							</filter>
-							<count>20</count>
-						</li>
-					</ingredients>
-					<products Operation="Safe">
-						<ReelTurretAmmo Operation="SafeReplace">25</ReelTurretAmmo>
-					</products>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-				<xpath>Defs/RecipeDef[defName="Make_TurretAmmoBulk"]</xpath>
-			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="ReelTurretAmmo"]</xpath>
 				<apply>
@@ -45,7 +15,8 @@
 						<value>
 							<stackLimit Operation="SafeReplace">150</stackLimit>
 							<statBases Operation="Safe">
-								<MarketValue Operation="SafeReplace">2.5</MarketValue>
+								<MarketValue Operation="SafeReplace">3</MarketValue>
+								<Mass Operation="SafeReplace">0.15</Mass>
 							</statBases>
 						</value>
 					</Operation>
@@ -65,6 +36,36 @@
 						</caseTrue>
 					</Operation>
 				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/RecipeDef[defName="Make_TurretAmmo"]</xpath>
+				<value>
+					<workAmount Operation="SafeReplace">900</workAmount>
+					<ingredients Operation="SafeReplace">
+						<li>
+							<filter>
+								<thingDefs>
+									<li>Uranium</li>
+								</thingDefs>
+							</filter>
+							<count>15</count>
+						</li>
+						<li>
+							<filter>
+								<thingDefs>
+									<li>Steel</li>
+								</thingDefs>
+							</filter>
+							<count>30</count>
+						</li>
+					</ingredients>
+					<products Operation="Safe">
+						<ReelTurretAmmo Operation="SafeReplace">50</ReelTurretAmmo>
+					</products>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/RecipeDef[defName="Make_TurretAmmoBulk"]</xpath>
 			</Operation>
 		</caseTrue>
 	</Operation>

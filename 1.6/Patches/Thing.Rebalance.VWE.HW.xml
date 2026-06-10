@@ -24,7 +24,7 @@
 								<AccuracyLong Operation="SafeReplace">0.5</AccuracyLong>
 								<RangedWeapon_Cooldown Operation="SafeReplace">2</RangedWeapon_Cooldown>
 								<Mass Operation="SafeReplace">20</Mass>
-								<WorkToMake Operation="SafeReplace">30000</WorkToMake>
+								<WorkToMake Operation="SafeReplace">21600</WorkToMake>
 							</statBases>
 							<weaponClasses Operation="Safe">
 								<li Operation="SafeAdd" Compare="InnerText">RangedHeavy</li>
@@ -58,7 +58,7 @@
 							<statBases Operation="Safe">
 								<RangedWeapon_Cooldown Operation="SafeReplace">6</RangedWeapon_Cooldown>
 								<Mass Operation="SafeReplace">30</Mass>
-								<WorkToMake Operation="SafeReplace">12000</WorkToMake>
+								<WorkToMake Operation="SafeReplace">14400</WorkToMake>
 							</statBases>
 							<weaponClasses Operation="Safe">
 								<li Operation="SafeAdd" Compare="InnerText">RangedHeavy</li>
@@ -89,9 +89,9 @@
 								<MoveSpeed Operation="SafeReplace">-0.5</MoveSpeed>
 							</equippedStatOffsets>
 							<statBases Operation="Safe">
-								<RangedWeapon_Cooldown Operation="SafeReplace">3.5</RangedWeapon_Cooldown>
+								<RangedWeapon_Cooldown Operation="SafeReplace">2</RangedWeapon_Cooldown>
 								<Mass Operation="SafeReplace">30</Mass>
-								<WorkToMake Operation="SafeReplace">24000</WorkToMake>
+								<WorkToMake Operation="SafeReplace">28800</WorkToMake>
 							</statBases>
 							<weaponClasses Operation="Safe">
 								<li Operation="SafeAdd" Compare="InnerText">RangedHeavy</li>
@@ -101,7 +101,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef/verbs/li[verbClass="VEF.Weapons.Verb_Shoot"]</xpath>
 						<value>
-							<warmupTime Operation="SafeReplace">2</warmupTime>
+							<warmupTime Operation="SafeReplace">3.5</warmupTime>
 							<ai_AvoidFriendlyFireRadius Operation="SafeReplace">3</ai_AvoidFriendlyFireRadius>
 							<minRange Operation="SafeReplace">3</minRange>
 							<ticksBetweenBurstShots Operation="SafeReplace">12</ticksBetweenBurstShots>
@@ -129,9 +129,9 @@
 								<AccuracyShort Operation="SafeReplace">0.33</AccuracyShort>
 								<AccuracyMedium Operation="SafeReplace">0.44</AccuracyMedium>
 								<AccuracyLong Operation="SafeReplace">0.95</AccuracyLong>
-								<RangedWeapon_Cooldown Operation="SafeReplace">1.6</RangedWeapon_Cooldown>
+								<RangedWeapon_Cooldown Operation="SafeReplace">1.2</RangedWeapon_Cooldown>
 								<Mass Operation="SafeReplace">20</Mass>
-								<WorkToMake Operation="SafeReplace">30000</WorkToMake>
+								<WorkToMake Operation="SafeReplace">21600</WorkToMake>
 							</statBases>
 							<weaponClasses Operation="Safe">
 								<li Operation="SafeAdd" Compare="InnerText">RangedHeavy</li>
@@ -142,7 +142,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef/verbs/li[verbClass="VEF.Weapons.Verb_Shoot"]</xpath>
 						<value>
-							<warmupTime Operation="SafeReplace">1.6</warmupTime>
+							<warmupTime Operation="SafeReplace">2</warmupTime>
 							<minRange Operation="SafeReplace">0</minRange>
 							<range Operation="SafeReplace">45.9</range>
 						</value>
@@ -161,6 +161,13 @@
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]</xpath>
 				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<description Operation="SafeReplace">A self-loading large-bore cannon. Its large-caliber shells do heavy damage over significant ranges, but it's slow to aim.\n\nBeing an extremely heavy weapon, this gun requires a power armor to be effectively used.</description>
+							<descriptionHyperlinks Operation="SafeRemove"/>
+						</value>
+					</Operation>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 						<xpath>ThingDef/comps/li[compClass="MVCF.Comps.Comp_VerbProps"]</xpath>
 					</Operation>
@@ -193,6 +200,12 @@
 				<xpath>Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]</xpath>
 				<apply>
 					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<description Operation="SafeReplace">A rocket launcher that fires ten small-bore explosive missiles that track different targets.\n\nBeing an extremely heavy weapon, this gun requires a power armor to be effectively used.\n\nCan only hold a limited number of missiles, and must be reloaded with swarm missiles.</description>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef/verbs/li[verbClass="VEF.Weapons.Verb_Shoot"]</xpath>
 						<value>
 							<label Operation="SafeReplace">swarm missile launcher</label>
@@ -209,6 +222,13 @@
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="VWE_Gun_UraniumSlugRifle"]</xpath>
 				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<description Operation="SafeReplace">A self-loading uranium slug cannon. Its ultra-dense uranium shells can punch through heavy armor. It's more accurate at longer ranges.\n\nBeing an extremely heavy weapon, this gun requires a power armor to be effectively used.</description>
+							<descriptionHyperlinks Operation="SafeRemove"/>
+						</value>
+					</Operation>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 						<xpath>ThingDef/comps/li[compClass="MVCF.Comps.Comp_VerbProps"]</xpath>
 					</Operation>
@@ -331,7 +351,7 @@
 										<xpath>ThingDef</xpath>
 										<value>
 											<weaponTags Operation="Safe">
-												<li Operation="Add">ammoDef_ReelTurretAmmo/30/2</li>
+												<li Operation="Add">ammoDef_ReelTurretAmmo/60/2</li>
 											</weaponTags>
 										</value>
 									</Operation>
@@ -382,7 +402,7 @@
 										<xpath>ThingDef</xpath>
 										<value>
 											<weaponTags Operation="Safe">
-												<li Operation="Add">ammoDef_Uranium/10/2</li>
+												<li Operation="Add">ammoDef_Uranium/15/2</li>
 											</weaponTags>
 										</value>
 									</Operation>
@@ -392,7 +412,7 @@
 										<xpath>ThingDef</xpath>
 										<value>
 											<weaponTags Operation="Safe">
-												<li Operation="Add">ammoDef_ReelTurretAmmo/10/2</li>
+												<li Operation="Add">ammoDef_ReelTurretAmmo/20/2</li>
 											</weaponTags>
 										</value>
 									</Operation>
