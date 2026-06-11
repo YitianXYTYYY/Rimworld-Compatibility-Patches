@@ -108,14 +108,12 @@
 							<li>HediffDef/MeleePlatformModule</li>
 							<li>ThingDef/MeleePlatformModule</li>
 							<li>RecipeDef/InstallMeleePlatformModule</li>
-							<li>HediffDef/ModuleEfficiency_Effector</li>
 							<li>HediffDef/ModuleEfficiency</li>
 							<li>ThingDef/ModuleEfficiency</li>
 							<li>RecipeDef/InstallModuleEfficiency</li>
 							<li>HediffDef/CraftingToolsModule</li>
 							<li>ThingDef/CraftingToolsModule</li>
 							<li>RecipeDef/InstallCraftingToolsModule</li>
-							<li>HediffDef/ModuleArmorEBF_Effector</li>
 							<li>HediffDef/ModuleArmorEBF</li>
 							<li>ThingDef/ModuleArmorEBF</li>
 							<li>RecipeDef/InstallModuleArmorEBF</li>
@@ -284,6 +282,31 @@
 							<li>RecipeDef/Make_yy_ammo_spacer_emp10</li>
 							<li>ThingDef/Gun_AntiArmor_Rocket</li>
 						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>syrus.yayoscombataddon</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>RecipeDef/Make_yy_ammo_primitive_light</li>
+									<li>RecipeDef/Make_yy_ammo_primitive_light10</li>
+									<li>RecipeDef/Make_yy_ammo_primitive_heavy</li>
+									<li>RecipeDef/Make_yy_ammo_primitive_heavy10</li>
+									<li>RecipeDef/Make_yy_ammo_industrial_light</li>
+									<li>RecipeDef/Make_yy_ammo_industrial_light10</li>
+									<li>RecipeDef/Make_yy_ammo_industrial_heavy</li>
+									<li>RecipeDef/Make_yy_ammo_industrial_heavy10</li>
+									<li>RecipeDef/Make_yy_ammo_spacer_light</li>
+									<li>RecipeDef/Make_yy_ammo_spacer_light10</li>
+									<li>RecipeDef/Make_yy_ammo_spacer_heavy</li>
+									<li>RecipeDef/Make_yy_ammo_spacer_heavy10</li>
+								</value>
+							</Operation>
+						</caseTrue>
 					</Operation>
 				</caseTrue>
 			</Operation>

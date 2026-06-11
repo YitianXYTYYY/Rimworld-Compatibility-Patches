@@ -14,33 +14,7 @@
 					<parent Operation="SafeReplace">Manufactured</parent>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-				<xpath>Defs/ThingDef[defName="yy_ammo_primitive" or 
-					defName="yy_ammo_primitive_fire" or 
-					defName="yy_ammo_primitive_emp" or 
-					defName="yy_ammo_industrial" or 
-					defName="yy_ammo_industrial_fire" or 
-					defName="yy_ammo_industrial_emp" or 
-					defName="yy_ammo_spacer" or 
-					defName="yy_ammo_spacer_fire" or 
-					defName="yy_ammo_spacer_emp"]/thingCategories/li[text()="yy_ammo_category"]</xpath>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>syrus.yayoscombataddon</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>Defs/ThingDef[defName="yy_ammo_primitive_light" or 
-							defName="yy_ammo_primitive_heavy" or 
-							defName="yy_ammo_industrial_light" or 
-							defName="yy_ammo_industrial_heavy" or 
-							defName="yy_ammo_spacer_light" or 
-							defName="yy_ammo_spacer_heavy"]/thingCategories/li[text()="yy_ammo_category"]</xpath>
-					</Operation>
-				</caseTrue>
-			</Operation>
+			
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="Pilum_Thrown"]</xpath>
 				<value>
@@ -442,6 +416,16 @@
 					<li>vanillaexpanded.vwe</li>
 				</mods>
 				<packageId>true</packageId>
+				<caseFalse>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="Gun_SmokeLauncher"]</xpath>
+						<value>
+							<weaponTags Operation="Safe">
+								<li Operation="Add">ammoDef_Chemfuel/5/5</li>
+							</weaponTags>
+						</value>
+					</Operation>
+				</caseFalse>
 				<caseTrue>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/ThingDef[defName="VWE_Throwing_Rocks" or 

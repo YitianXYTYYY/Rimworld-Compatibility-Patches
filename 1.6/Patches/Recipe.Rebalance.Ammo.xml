@@ -15,8 +15,9 @@
 						<value>
 							<stackLimit Operation="SafeReplace">150</stackLimit>
 							<statBases Operation="Safe">
+								<Flammability Operation="SafeReplace">0.6</Flammability>
 								<MarketValue Operation="SafeReplace">3</MarketValue>
-								<Mass Operation="SafeReplace">0.15</Mass>
+								<Mass Operation="SafeReplace">0.1</Mass>
 							</statBases>
 						</value>
 					</Operation>

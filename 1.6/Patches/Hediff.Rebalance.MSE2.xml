@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>mse2.core</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/HediffDef/comps/li[@Class="MSE2.HediffCompProperties_ModuleHolder" and maxModules="1"]</xpath>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationSafeReplace">
+				<xpath>Defs/HediffDef/comps/li[@Class="MSE2.HediffCompProperties_ModuleHolder" and maxModules="2"]</xpath>
+				<value>
+					<maxModules>1</maxModules>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>

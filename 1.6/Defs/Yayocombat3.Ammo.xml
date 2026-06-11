@@ -16,18 +16,16 @@
 		<statBases>
 			<MarketValue>1</MarketValue>
 			<MaxHitPoints>20</MaxHitPoints>
-			<Mass>0.03</Mass>
+			<Mass>0.04</Mass>
 			<Flammability>1</Flammability>
 			<DeteriorationRate>1.0</DeteriorationRate>
 		</statBases>
-		<intricate>true</intricate>
 		<thingCategories>
 			<li>yy_ammo_category</li>
 		</thingCategories>
 		<tradeTags>
 			<li>Ammo</li>
 		</tradeTags>
-		<techLevel>Neolithic</techLevel>
 	</ThingDef>
 
 	<!-- Industrial -->
@@ -46,24 +44,22 @@
 		<statBases>
 			<MarketValue>2.5</MarketValue>
 			<MaxHitPoints>20</MaxHitPoints>
-			<Mass>0.01</Mass>
-			<Flammability>1</Flammability>
+			<Mass>0.02</Mass>
+			<Flammability>0.6</Flammability>
 			<DeteriorationRate>1.0</DeteriorationRate>
 		</statBases>
-		<intricate>true</intricate>
 		<thingCategories>
 			<li>yy_ammo_category</li>
 		</thingCategories>
 		<tradeTags>
 			<li>Ammo</li>
 		</tradeTags>
-		<techLevel>Industrial</techLevel>
 	</ThingDef>
 
 	<!-- Spacer -->
 	<ThingDef ParentName="ResourceBase" MayRequire="mlie.yayoscombat3">
 		<defName>AmmoSpacer</defName>
-		<label>charge battery</label>
+		<label>charged battery</label>
 		<description>Ammunition used for charge weapons.</description>
 		<graphicData>
 			<texPath>yy_ammo_spacer</texPath>
@@ -77,21 +73,19 @@
 			<MarketValue>6</MarketValue>
 			<MaxHitPoints>20</MaxHitPoints>
 			<Mass>0.01</Mass>
-			<Flammability>1</Flammability>
+			<Flammability>0.6</Flammability>
 			<DeteriorationRate>1.0</DeteriorationRate>
 		</statBases>
-		<intricate>true</intricate>
 		<thingCategories>
 			<li>yy_ammo_category</li>
 		</thingCategories>
 		<tradeTags>
 			<li>Ammo</li>
 		</tradeTags>
-		<techLevel>Spacer</techLevel>
 	</ThingDef>
 	<ThingDef ParentName="ResourceBase" MayRequire="mlie.yayoscombat3">
 		<defName>AmmoSpacerEMP</defName>
-		<label>spacer ammo</label>
+		<label>energy ammo</label>
 		<description>Spacer ammunition used for special weapons.</description>
 		<graphicData>
 			<texPath>yy_ammo_spacer_emp</texPath>
@@ -103,18 +97,16 @@
 		<healthAffectsPrice>false</healthAffectsPrice>
 		<statBases>
 			<MarketValue>7</MarketValue>
-			<Mass>0.02</Mass>
-			<Flammability>1</Flammability>
+			<Mass>0.01</Mass>
+			<Flammability>0.6</Flammability>
 			<DeteriorationRate>1.0</DeteriorationRate>
 		</statBases>
-		<intricate>true</intricate>
 		<thingCategories>
 			<li>yy_ammo_category</li>
 		</thingCategories>
 		<tradeTags>
 			<li>Ammo</li>
 		</tradeTags>
-		<techLevel>Spacer</techLevel>
 	</ThingDef>
 
 	<ThingDef ParentName="UnfinishedBase" MayRequire="mlie.yayoscombat3">
