@@ -132,6 +132,7 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- -30 hands -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="VRE_Talons"]</xpath>
 				<apply>
@@ -153,7 +154,7 @@
 					</Operation>
 				</apply>
 			</Operation>
-			
+
 			<!-- -90 hairstyle -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_SanguineHair"]</xpath>

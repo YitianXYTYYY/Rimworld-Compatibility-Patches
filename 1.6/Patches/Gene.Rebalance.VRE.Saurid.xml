@@ -7,6 +7,7 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- -10 skin -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRESaurids_ScaleSkin"]</xpath>
 				<value>
@@ -16,6 +17,8 @@
 					</statOffsets>
 				</value>
 			</Operation>
+
+			<!-- -30 hands -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRESaurids_SauridClaws"]/capMods/li[capacity="Manipulation"]</xpath>
 				<value>
@@ -23,6 +26,8 @@
 					<offset Operation="SafeAdd">-0.05</offset>
 				</value>
 			</Operation>
+
+			<!-- -220 tail -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRESaurids_GeckoTail"]</xpath>
 				<value>

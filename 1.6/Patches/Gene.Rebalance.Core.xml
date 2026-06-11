@@ -203,7 +203,7 @@
 				</value>
 			</Operation>
 
-			<!-- -30 hand -->
+			<!-- -30 hands -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="Hands_Pig"]/capMods/li[capacity="Manipulation"]</xpath>
 				<value>

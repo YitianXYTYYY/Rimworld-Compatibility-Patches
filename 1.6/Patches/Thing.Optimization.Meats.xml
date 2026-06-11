@@ -15,7 +15,7 @@
 				<packageId>true</packageId>
 				<caseTrue>
 					<Operation Class="PatchOperationAdd">
-						<xpath>/Defs/AlienMeatTest.MeatListDef[defName="WhiteList"]/meats</xpath>
+						<xpath>Defs/AlienMeatTest.MeatListDef[defName="WhiteList"]/meats</xpath>
 						<value>
 							<li>ToxicMeat</li>
 						</value>

@@ -20,20 +20,20 @@
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
-		<defName>MeatLeather</defName>
-		<label>meat and leather</label>
+		<defName>Health_Age</defName>
+		<label>aging</label>
 		<displayPriorityInXenotype>550</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
-		<defName>Health_Blood</defName>
-		<label>blood and flesh</label>
+		<defName>MeatLeather</defName>
+		<label>flesh and leather</label>
 		<displayPriorityInXenotype>540</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
-		<defName>Health_Age</defName>
-		<label>aging</label>
+		<defName>Health_Blood</defName>
+		<label>blood</label>
 		<displayPriorityInXenotype>530</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
@@ -46,7 +46,7 @@
 	<GeneCategoryDef>
 		<defName>Health_Digestion</defName>
 		<label>digestion</label>
-		<displayPriorityInXenotype>510</displayPriorityInXenotype>
+		<displayPriorityInXenotype>430</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- genetics -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ferny.progressiongenetics</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- Genepack Reprocessor -->
+			<!-- ReSplice: Core -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>Anonemous2.GenepackReprocessor</li>
+					<li>resplice.xotr.core</li>
+				</mods>
+				<packageId>true</packageId>
+				<logic>and</logic>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ResearchProjectDef[defName="Ferny_GenepackCentrifuge"]</xpath>
+						<value>
+							<prerequisites Operation="SafeReplace">
+								<li>GeneProcessor</li>
+							</prerequisites>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>

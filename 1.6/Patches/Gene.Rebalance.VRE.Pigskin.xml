@@ -7,7 +7,7 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<!-- 540 flesh -->
+			<!-- 540 meat -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="VRE_ExtraMeat"]</xpath>
 				<apply>

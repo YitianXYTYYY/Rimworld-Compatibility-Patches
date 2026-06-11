@@ -7,17 +7,19 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<!-- 540 blood -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="VRE_BugBlood"]</xpath>
-				<value>
-					<biostatCpx Operation="SafeReplace">0</biostatCpx>
-				</value>
-			</Operation>
+			<!-- 540 meat -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_InsectFlesh"]</xpath>
 				<value>
 					<biostatCpx Operation="SafeReplace">1</biostatCpx>
+				</value>
+			</Operation>
+
+			<!-- 530 blood -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_BugBlood"]</xpath>
+				<value>
+					<biostatCpx Operation="SafeReplace">0</biostatCpx>
 				</value>
 			</Operation>
 

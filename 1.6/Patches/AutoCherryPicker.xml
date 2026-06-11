@@ -182,25 +182,6 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
-			<!-- ReSplice: Core -->
-			<!-- Genepack Reprocessor -->
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>resplice.xotr.core</li>
-					<li>Anonemous2.GenepackReprocessor</li>
-				</mods>
-				<packageId>true</packageId>
-				<logic>and</logic>
-				<caseTrue>
-					<Operation Class="PatchOperationAdd">
-						<xpath>defs</xpath>
-						<value>
-							<li>ThingDef/RS_GeneCentrifuge</li>
-							<li>ThingDef/RS_XenoGermDuplicator</li>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
 			<!-- Vanilla Armour Expanded -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
@@ -211,6 +192,7 @@
 					<Operation Class="PatchOperationAdd">
 						<xpath>defs</xpath>
 						<value>
+							<li>RecipeDef/Make_VAE_Apparel_Shield_Riot</li>
 							<li>ThingDef/VAE_Apparel_Shield_Riot</li>
 						</value>
 					</Operation>
@@ -226,6 +208,8 @@
 					<Operation Class="PatchOperationAdd">
 						<xpath>defs</xpath>
 						<value>
+							<li>RecipeDef/Make_VFET_Chunk</li>
+							<li>RecipeDef/Make_VFET_Throwspikes</li>
 							<li>ThingDef/VFET_Chunk</li>
 							<li>ThingDef/VFET_Throwspikes</li>
 						</value>
@@ -257,10 +241,12 @@
 					<Operation Class="PatchOperationAdd">
 						<xpath>defs</xpath>
 						<value>
+							<li>RecipeDef/Make_VWE_Gun_Flamethrower</li>
+							<li>RecipeDef/Make_VWE_Throwing_Knives</li>
 							<li>RecipeDef/VWE_MakeThrowingRocks</li>
-							<li>ThingDef/VWE_Throwing_Rocks</li>
-							<li>ThingDef/VWE_Throwing_Knives</li>
 							<li>ThingDef/VWE_Gun_Flamethrower</li>
+							<li>ThingDef/VWE_Throwing_Knives</li>
+							<li>ThingDef/VWE_Throwing_Rocks</li>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -275,6 +261,7 @@
 					<Operation Class="PatchOperationAdd">
 						<xpath>defs</xpath>
 						<value>
+							<li>RecipeDef/Make_VWE_Gun_HeavyFlamer</li>
 							<li>ThingDef/VWE_Gun_HeavyFlamer</li>
 						</value>
 					</Operation>
