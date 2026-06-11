@@ -7,19 +7,10 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- 410 sight -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="VRE_SuperiorDarkVision"]</xpath>
 				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef/conditionalStatAffecters/li[@Class="VEF.Genes.ConditionalStatAffecter_Darkness"]/statFactors</xpath>
-						<value>
-							<WorkSpeedGlobal Operation="SafeRemove"/>
-							<MoveSpeed Operation="SafeRemove"/>
-							<ShootingAccuracyPawn Operation="SafeRemove"/>
-							<MeleeHitChance Operation="SafeRemove"/>
-							<MeleeDodgeChance Operation="SafeRemove"/>
-						</value>
-					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef/conditionalStatAffecters/li[@Class="VEF.Genes.ConditionalStatAffecter_Darkness"]</xpath>
 						<value>
@@ -31,15 +22,23 @@
 							</statOffsets>
 						</value>
 					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef/conditionalStatAffecters/li[@Class="VEF.Genes.ConditionalStatAffecter_Darkness"]/statFactors</xpath>
+						<value>
+							<WorkSpeedGlobal Operation="SafeRemove"/>
+							<MoveSpeed Operation="SafeRemove"/>
+							<ShootingAccuracyPawn Operation="SafeRemove"/>
+							<MeleeHitChance Operation="SafeRemove"/>
+							<MeleeDodgeChance Operation="SafeRemove"/>
+						</value>
+					</Operation>
 				</apply>
 			</Operation>
 
+			<!-- 380 melee -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="VRE_ImprovedDodge"]</xpath>
 				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/MeleeDodgeChance</xpath>
-					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef</xpath>
 						<value>
@@ -48,14 +47,14 @@
 							</statOffsets>
 						</value>
 					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/MeleeDodgeChance</xpath>
+					</Operation>
 				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="VRE_SuperiorDodge"]</xpath>
 				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/MeleeDodgeChance</xpath>
-					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef</xpath>
 						<value>
@@ -64,9 +63,72 @@
 							</statOffsets>
 						</value>
 					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/MeleeDodgeChance</xpath>
+					</Operation>
 				</apply>
 			</Operation>
 
+			<!-- 280 social -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="VRE_SpeechInability"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef/exclusionTags</xpath>
+						<value>
+							<li Operation="SafeRemove" Compare="InnerText">VRE_ExtremelyAggressiveAndSpeechInability</li>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>Turnovus.Biotech.IntegratedGenes</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>GeneDef</xpath>
+								<value>
+									<iconPath Operation="SafeReplace">UI/Icons/Genes/Gene_Speechless</iconPath>
+									<exclusionTags Operation="Safe">
+										<li Operation="SafeAdd" Compare="InnerText">Voice</li>
+										<li Operation="SafeAdd" Compare="InnerText">Turn_Exclusion_Speechless</li>
+										<li Operation="SafeAdd" Compare="InnerText">Turn_Exclusion_VREH_Speechless</li>
+										<li Operation="SafeAdd" Compare="InnerText">Turn_Exclusion_Speechless_NaturalLeader</li>
+									</exclusionTags>
+									<symbolPack Operation="Safe">
+										<prefixSymbols Operation="Safe">
+											<li><symbol>hush</symbol></li>
+											<li><symbol>quiet</symbol></li>
+										</prefixSymbols>
+										<suffixSymbols Operation="Safe">
+											<li><symbol>mute</symbol></li>
+										</suffixSymbols>
+									</symbolPack>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+
+			<!-- -140 ear -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_CanineEars"]</xpath>
+				<value>
+					<biostatCpx Operation="SafeReplace">0</biostatCpx>
+				</value>
+			</Operation>
+
+			<!-- -150 nose -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_CanineNose"]</xpath>
+				<value>
+					<biostatCpx Operation="SafeReplace">0</biostatCpx>
+					<displayCategory Operation="SafeRemove"/>
+				</value>
+			</Operation>
+
+			<!-- -220 tail -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="VRE_CanineTail"]</xpath>
 				<apply>

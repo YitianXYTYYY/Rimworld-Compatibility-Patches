@@ -215,15 +215,15 @@
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/GeneCategoryDef[defName="Cosmetic"]</xpath>
 		<value>
-			<displayPriorityInXenotype Operation="AddOrReplace">-100</displayPriorityInXenotype>
 			<displayPriorityInGenepack Operation="SafeRemove"/>
+			<displayPriorityInXenotype Operation="AddOrReplace">-100</displayPriorityInXenotype>
 		</value>
 	</Operation>
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/GeneCategoryDef[defName="Cosmetic_Skin"]</xpath>
 		<value>
-			<displayPriorityInXenotype Operation="AddOrReplace">-1020</displayPriorityInXenotype>
 			<displayPriorityInGenepack Operation="SafeRemove"/>
+			<displayPriorityInXenotype Operation="AddOrReplace">-1020</displayPriorityInXenotype>
 		</value>
 	</Operation>
 

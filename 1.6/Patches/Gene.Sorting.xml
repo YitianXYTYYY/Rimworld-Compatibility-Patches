@@ -12,6 +12,7 @@
 670 astrogen
 600 psychics
 590 psychic - meditation
+550 meat
 540 blood
 530 aging
 520 cell
@@ -357,6 +358,74 @@
 		</caseTrue>
 	</Operation>
 
+	<!-- 550 meat -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.pigskin</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_LowMeat"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Health_Blood</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">10</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_ExtraMeat"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Health_Blood</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">20</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.fungoid</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VRE_FungalFlesh"]</xpath>
+						<value>
+							<displayCategory Operation="AddOrReplace">Health_Blood</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">90</displayOrderInCategory>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_PorkFlesh"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Health_Blood</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">100</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.insector</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VRE_InsectFlesh"]</xpath>
+						<value>
+							<displayCategory Operation="AddOrReplace">Health_Blood</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">110</displayOrderInCategory>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_PigSkin"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Health_Blood</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">1000</displayOrderInCategory>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 	<!-- 540 blood -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
@@ -364,7 +433,6 @@
 			<li>vanillaracesexpanded.genie</li>
 			<li>vanillaracesexpanded.insector</li>
 			<li>vanillaracesexpanded.phytokin</li>
-			<li>vanillaracesexpanded.pigskin</li>
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
@@ -385,11 +453,11 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_Hemophiliac"]</xpath>
 						<value>
-							<displayCategory Operation="AddOrReplace">Health_Blood</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">10</displayOrderInCategory>
 							<customEffectDescriptions Operation="SafeAdd">
 								<li>Wounds bleed very quickly.</li>
 							</customEffectDescriptions>
+							<displayCategory Operation="AddOrReplace">Health_Blood</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">10</displayOrderInCategory>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
@@ -410,16 +478,8 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_BugBlood"]</xpath>
 						<value>
-							<biostatCpx Operation="SafeReplace">0</biostatCpx>
 							<displayCategory Operation="AddOrReplace">Health_Blood</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">-99</displayOrderInCategory>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_InsectFlesh"]</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Health_Blood</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">1000</displayOrderInCategory>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -450,49 +510,6 @@
 						<value>
 							<displayCategory Operation="AddOrReplace">Health_Blood</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">-97</displayOrderInCategory>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_FungalFlesh"]</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Health_Blood</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">999</displayOrderInCategory>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.pigskin</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_ExtraMeat"]</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Health_Blood</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">200</displayOrderInCategory>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_LowMeat"]</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Health_Blood</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">201</displayOrderInCategory>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_PorkFlesh"]</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Health_Blood</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">1001</displayOrderInCategory>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_PigSkin"]</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Health_Blood</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">2001</displayOrderInCategory>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -907,10 +924,6 @@
 				<xpath>Defs/GeneDef[defName="ViolenceDisabled"]</xpath>
 				<value>
 					<displayOrderInCategory Operation="AddOrReplace">-100</displayOrderInCategory>
-					<exclusionTags Operation="Safe">
-						<li Operation="SafeAdd" Compare="InnerText">MeleeAttackSpeed</li>
-						<li Operation="SafeAdd" Compare="InnerText">RangedAttackSpeed</li>
-					</exclusionTags>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
@@ -1150,12 +1163,6 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
-					<Operation Class="PatchOperationAdd">
-						<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
-						<value>
-							<li>GeneDef/Turn_Gene_Speechless</li>
-						</value>
-					</Operation>
 					<Operation Class="XmlExtensions.SetScope">
 						<xpath>Defs/GeneDef[defName="VRE_SpeechInability"]</xpath>
 						<apply>
@@ -1168,38 +1175,6 @@
 										<li Operation="SafeAdd" Compare="InnerText">XYTYYY_RequireSpeechAbility</li>
 									</exclusionTags>
 								</value>
-							</Operation>
-							<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-								<xpath>GeneDef/exclusionTags/li[text()="VRE_ExtremelyAggressiveAndSpeechInability"]</xpath>
-							</Operation>
-							<Operation Class="XmlExtensions.FindMod">
-								<mods>
-									<li>Turnovus.Biotech.IntegratedGenes</li>
-								</mods>
-								<packageId>true</packageId>
-								<caseTrue>
-									<Operation Class="XmlExtensions.HybridPatch">
-										<xpath>GeneDef</xpath>
-										<value>
-											<iconPath Operation="SafeReplace">UI/Icons/Genes/Gene_Speechless</iconPath>
-											<exclusionTags Operation="Safe">
-												<li Operation="SafeAdd" Compare="InnerText">Voice</li>
-												<li Operation="SafeAdd" Compare="InnerText">Turn_Exclusion_Speechless</li>
-												<li Operation="SafeAdd" Compare="InnerText">Turn_Exclusion_VREH_Speechless</li>
-												<li Operation="SafeAdd" Compare="InnerText">Turn_Exclusion_Speechless_NaturalLeader</li>
-											</exclusionTags>
-											<symbolPack Operation="Safe">
-												<prefixSymbols Operation="Safe">
-													<li><symbol>hush</symbol></li>
-													<li><symbol>quiet</symbol></li>
-												</prefixSymbols>
-												<suffixSymbols Operation="Safe">
-													<li><symbol>mute</symbol></li>
-												</suffixSymbols>
-											</symbolPack>
-										</value>
-									</Operation>
-								</caseTrue>
 							</Operation>
 						</apply>
 					</Operation>
@@ -1346,18 +1321,6 @@
 							<displayOrderInCategory Operation="AddOrReplace">11</displayOrderInCategory>
 						</value>
 					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_RecessiveGenome"]</xpath>
-						<value>
-							<displayOrderInCategory Operation="AddOrReplace">2000</displayOrderInCategory>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_DominantGenome"]</xpath>
-						<value>
-							<displayOrderInCategory Operation="AddOrReplace">2001</displayOrderInCategory>
-						</value>
-					</Operation>
 				</caseTrue>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
@@ -1429,7 +1392,7 @@
 		</caseTrue>
 	</Operation>
 
-	<!-- -70 skin -->
+	<!-- -10 skin -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
 			<li>Ludeon.RimWorld.Biotech</li>
@@ -1445,7 +1408,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_BarkSkin"]</xpath>
 						<value>
-							<displayCategory Operation="AddOrReplace">Health_Skin</displayCategory>
+							<displayCategory Operation="AddOrReplace">Skin</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">0</displayOrderInCategory>
 						</value>
 					</Operation>
@@ -1460,7 +1423,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_ChestFur"]</xpath>
 						<value>
-							<displayCategory Operation="AddOrReplace">Health_Skin</displayCategory>
+							<displayCategory Operation="AddOrReplace">Skin</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">10</displayOrderInCategory>
 						</value>
 					</Operation>
@@ -1469,7 +1432,7 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="Furskin"]</xpath>
 				<value>
-					<displayCategory Operation="AddOrReplace">Health_Skin</displayCategory>
+					<displayCategory Operation="AddOrReplace">Skin</displayCategory>
 					<displayOrderInCategory Operation="AddOrReplace">20</displayOrderInCategory>
 				</value>
 			</Operation>
@@ -1482,7 +1445,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_InsectSkin"]</xpath>
 						<value>
-							<displayCategory Operation="AddOrReplace">Health_Skin</displayCategory>
+							<displayCategory Operation="AddOrReplace">Skin</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">30</displayOrderInCategory>
 						</value>
 					</Operation>
@@ -1497,7 +1460,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 					<xpath>Defs/GeneDef[defName="VRE_Leatherskin"]</xpath>
 						<value>
-							<displayCategory Operation="AddOrReplace">Health_Skin</displayCategory>
+							<displayCategory Operation="AddOrReplace">Skin</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">40</displayOrderInCategory>
 						</value>
 					</Operation>
@@ -1512,13 +1475,37 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 					<xpath>Defs/GeneDef[defName="VRESaurids_ScaleSkin"]</xpath>
 						<value>
-							<displayCategory Operation="AddOrReplace">Health_Skin</displayCategory>
+							<displayCategory Operation="AddOrReplace">Skin</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">50</displayOrderInCategory>
 						</value>
 					</Operation>
 				</caseTrue>
 			</Operation>
 		</caseTrue>
+	</Operation>
+
+	<!-- -20 arms -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>resplice.xotr.core</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[@Name="RS_GeneTentacleBase"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Arms</displayCategory>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- -30 hands -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneDef[@Name="GeneHandsBase"]</xpath>
+		<value>
+			<displayCategory Operation="AddOrReplace">Hands</displayCategory>
+		</value>
 	</Operation>
 
 </Patch>

@@ -7,6 +7,16 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- -200 bodytype -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_PerfectBody"]</xpath>
+				<value>
+					<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
+					<displayCategory Operation="AddOrReplace">Cosmetic_BodyType</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">5000</displayOrderInCategory>
+				</value>
+			</Operation>
+
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
 					<li>RedMattis.BetterGeneInheritance</li>
@@ -16,17 +26,17 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="BGI_RecessiveGenes"]</xpath>
 						<value>
-							<iconPath Operation="SafeReplace">UI/Icons/Genes/Gene_GenomeRecessive</iconPath>
 							<biostatMet Operation="SafeReplace">1</biostatMet>
 							<displayOrderInCategory Operation="AddOrReplace">2000</displayOrderInCategory>
+							<iconPath Operation="SafeReplace">UI/Icons/Genes/Gene_GenomeRecessive</iconPath>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="BGI_DominantGenes"]</xpath>
 						<value>
-							<iconPath Operation="SafeReplace">UI/Icons/Genes/Gene_GenomeDominant</iconPath>
 							<biostatMet Operation="SafeReplace">-2</biostatMet>
 							<displayOrderInCategory Operation="AddOrReplace">2001</displayOrderInCategory>
+							<iconPath Operation="SafeReplace">UI/Icons/Genes/Gene_GenomeDominant</iconPath>
 						</value>
 					</Operation>
 				</caseTrue>

@@ -16,48 +16,10 @@
 				</value>
 			</Operation>
 
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/GeneDef[defName="VRE_SwiftMeditation"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/MeditationFocusGain</xpath>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<biostatCpx Operation="SafeReplace">1</biostatCpx>
-							<biostatMet Operation="SafeReplace">-1</biostatMet>
-							<statOffsets Operation="Safe">
-								<MeditationFocusGain Operation="SafeAdd">0.05</MeditationFocusGain>
-							</statOffsets>
-						</value>
-					</Operation>
-				</apply>
-			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/GeneDef[defName="VRE_ExtremeMeditation"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/MeditationFocusGain</xpath>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<biostatCpx Operation="SafeReplace">2</biostatCpx>
-							<biostatMet Operation="SafeReplace">-2</biostatMet>
-							<statOffsets Operation="Safe">
-								<MeditationFocusGain Operation="SafeAdd">0.1</MeditationFocusGain>
-							</statOffsets>
-						</value>
-					</Operation>
-				</apply>
-			</Operation>
+			<!-- 600 psychic -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="VRE_HighEntropyCapacity"]</xpath>
 				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/PsychicEntropyMax</xpath>
-					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef</xpath>
 						<value>
@@ -68,14 +30,14 @@
 							</statOffsets>
 						</value>
 					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/PsychicEntropyMax</xpath>
+					</Operation>
 				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="VRE_ExtremeEntropyCapacity"]</xpath>
 				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/PsychicEntropyMax</xpath>
-					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef</xpath>
 						<value>
@@ -86,6 +48,47 @@
 							</statOffsets>
 						</value>
 					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/PsychicEntropyMax</xpath>
+					</Operation>
+				</apply>
+			</Operation>
+
+			<!-- 590 meditation -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="VRE_SwiftMeditation"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<biostatCpx Operation="SafeReplace">1</biostatCpx>
+							<biostatMet Operation="SafeReplace">-1</biostatMet>
+							<statOffsets Operation="Safe">
+								<MeditationFocusGain Operation="SafeAdd">0.05</MeditationFocusGain>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/MeditationFocusGain</xpath>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="VRE_ExtremeMeditation"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<biostatCpx Operation="SafeReplace">2</biostatCpx>
+							<biostatMet Operation="SafeReplace">-2</biostatMet>
+							<statOffsets Operation="Safe">
+								<MeditationFocusGain Operation="SafeAdd">0.1</MeditationFocusGain>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/MeditationFocusGain</xpath>
+					</Operation>
 				</apply>
 			</Operation>
 
@@ -93,9 +96,6 @@
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="VRE_SlowShooter"]</xpath>
 				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/RangedCooldownFactor</xpath>
-					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef</xpath>
 						<value>
@@ -105,6 +105,9 @@
 								<RangedCooldownFactor Operation="SafeAdd">0.2</RangedCooldownFactor>
 							</statOffsets>
 						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/RangedCooldownFactor</xpath>
 					</Operation>
 				</apply>
 			</Operation>
@@ -120,9 +123,6 @@
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="VRE_SlowMeleeHitter"]</xpath>
 				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/MeleeCooldownFactor</xpath>
-					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef</xpath>
 						<value>
@@ -131,15 +131,19 @@
 							</statOffsets>
 						</value>
 					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/MeleeCooldownFactor</xpath>
+					</Operation>
 				</apply>
 			</Operation>
 
+			<!-- -10 skin -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_Leatherskin"]</xpath>
 				<value>
 					<statOffsets Operation="Safe">
-						<ArmorRating_Sharp Operation="SafeReplace">0.20</ArmorRating_Sharp>
-						<ArmorRating_Blunt Operation="SafeReplace">0.20</ArmorRating_Blunt>
+						<ArmorRating_Sharp Operation="SafeReplace">0.30</ArmorRating_Sharp>
+						<ArmorRating_Blunt Operation="SafeReplace">0.10</ArmorRating_Blunt>
 					</statOffsets>
 				</value>
 			</Operation>

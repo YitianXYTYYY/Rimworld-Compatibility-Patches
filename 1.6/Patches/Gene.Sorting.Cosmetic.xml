@@ -7,7 +7,7 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<!-- -98 voice -->
+			<!-- -80 voice -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[@Name="GeneVoiceBase"]</xpath>
 				<value>
@@ -15,120 +15,43 @@
 				</value>
 			</Operation>
 
-			<!-- -99 hairstyle -->
+			<!-- -90 hairstyle -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[@Name="GeneHairStyleBase"]</xpath>
 				<value>
-					<displayCategory Operation="AddOrReplace">Cosmetic_Head_Hair</displayCategory>
+					<displayCategory Operation="AddOrReplace">Cosmetic_HairStyle</displayCategory>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="Hair_Grayless"]</xpath>
 				<value>
 					<biostatCpx Operation="SafeAdd">0</biostatCpx>
-					<displayCategory Operation="AddOrReplace">Cosmetic_Head_Hair</displayCategory>
+					<displayCategory Operation="AddOrReplace">Cosmetic_HairStyle</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">1000</displayOrderInCategory>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.phytokin</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_FoliageHair"]</xpath>
-						<value>
-							<biostatCpx Operation="SafeReplace">0</biostatCpx>
-							<displayCategory Operation="SafeRemove"/>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.sanguophage</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_SanguineHair"]</xpath>
-						<value>
-							<displayCategory Operation="SafeRemove"/>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
 
-			<!-- -100 cosmetic -->
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.fungoid</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_FacialSpots"]</xpath>
-						<value>
-							<biostatCpx Operation="SafeReplace">0</biostatCpx>
-							<displayCategory Operation="AddOrReplace">Cosmetic</displayCategory>
-							<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-
-			<!-- -101 jaw -->
+			<!-- -110 jaw -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[@Name="GeneJawBase"]</xpath>
 				<value>
-					<displayCategory Operation="AddOrReplace">Cosmetic_Head_Jaw</displayCategory>
+					<displayCategory Operation="AddOrReplace">Cosmetic_Jaw</displayCategory>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.genie</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_ElongatedHead"]</xpath>
-						<value>
-							<biostatCpx Operation="SafeReplace">0</biostatCpx>
-							<displayCategory Operation="SafeRemove"/>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.pigskin</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_MouthTusks"]</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Cosmetic_Head_Jaw</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">1000</displayOrderInCategory>
-							<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
 
-			<!-- -102 beard -->
+			<!-- -120 beard -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[@Name="GeneBeardStyleBase"]</xpath>
 				<value>
-					<displayCategory Operation="AddOrReplace">Cosmetic_Head_Beard</displayCategory>
+					<displayCategory Operation="AddOrReplace">Cosmetic_Beard</displayCategory>
 				</value>
 			</Operation>
 
-			<!-- -103 headbone -->
+			<!-- -130 headbone -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[@Name="GeneHeadboneBase"]</xpath>
 				<value>
-					<displayCategory Operation="AddOrReplace">Cosmetic_Head_Headbone</displayCategory>
+					<displayCategory Operation="AddOrReplace">Cosmetic_Headbone</displayCategory>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
@@ -140,36 +63,17 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[@Name="AFU_HeadboneGeneBase"]</xpath>
 						<value>
-							<displayCategory Operation="AddOrReplace">Cosmetic_Head_Headbone</displayCategory>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.insector</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_InsectAntennae"]</xpath>
-						<value>
-							<biostatCpx Operation="SafeReplace">0</biostatCpx>
-							<displayCategory Operation="AddOrReplace">Cosmetic_Head_Headbone</displayCategory>
-							<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
-							<exclusionTags Operation="Safe">
-								<li Operation="SafeAdd" Compare="InnerText">Headbone</li>
-							</exclusionTags>
+							<displayCategory Operation="AddOrReplace">Cosmetic_Headbone</displayCategory>
 						</value>
 					</Operation>
 				</caseTrue>
 			</Operation>
 
-			<!-- -104 ear -->
+			<!-- -140 ear -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[@Name="GeneEarsBase"]</xpath>
 				<value>
-					<displayCategory Operation="AddOrReplace">Cosmetic_Head_Ear</displayCategory>
+					<displayCategory Operation="AddOrReplace">Cosmetic_Ear</displayCategory>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
@@ -181,152 +85,36 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[@Name="AFU_HeadAttachmentGeneBase"]</xpath>
 						<value>
-							<displayCategory Operation="AddOrReplace">Cosmetic_Head_Ear</displayCategory>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.lycanthrope</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_CanineEars"]</xpath>
-						<value>
-							<biostatCpx Operation="SafeReplace">0</biostatCpx>
+							<displayCategory Operation="AddOrReplace">Cosmetic_Ear</displayCategory>
 						</value>
 					</Operation>
 				</caseTrue>
 			</Operation>
 
-			<!-- -105 nose -->
+			<!-- -150 nose -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[@Name="GeneNoseBase"]</xpath>
 				<value>
-					<displayCategory Operation="AddOrReplace">Cosmetic_Head_Nose</displayCategory>
+					<displayCategory Operation="AddOrReplace">Cosmetic_Nose</displayCategory>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 				<xpath>Defs/GeneDef[defName="Nose_Pig"]/displayCategory</xpath>
 			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.lycanthrope</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_CanineNose"]</xpath>
-						<value>
-							<biostatCpx Operation="SafeReplace">0</biostatCpx>
-							<displayCategory Operation="SafeRemove"/>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.sanguophage</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_BatNose"]</xpath>
-						<value>
-							<displayCategory Operation="SafeRemove"/>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
 
-
-			<!-- -110 bodytype -->
+			<!-- -200 bodytype -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[@Name="GeneBodyBase"]</xpath>
 				<value>
 					<displayCategory Operation="AddOrReplace">Cosmetic_BodyType</displayCategory>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.waster</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_GauntBody"]</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Cosmetic_BodyType</displayCategory>
-							<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
-							<exclusionTags Operation="Safe">
-								<li Operation="SafeAdd" Compare="InnerText">BodyType</li>
-							</exclusionTags>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.highmate</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_PerfectBody"]</xpath>
-						<value>
-							<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
-							<displayCategory Operation="AddOrReplace">Cosmetic_BodyType</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">5000</displayOrderInCategory>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
 
-			<!-- -111 hand -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[@Name="GeneHandsBase"]</xpath>
-				<value>
-					<displayCategory Operation="AddOrReplace">Cosmetic_Body_ArmHand</displayCategory>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>resplice.xotr.core</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[@Name="RS_GeneTentacleBase"]</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Cosmetic_Body_ArmHand</displayCategory>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-
-			<!-- -112 wing -->
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.hussar</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VREH_Glidewings"]</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Cosmetic_Body_Wing</displayCategory>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-
-			<!-- -113 tail -->
+			<!-- -220 tail -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[@Name="GeneTailBase"]</xpath>
 				<value>
-					<displayCategory Operation="AddOrReplace">Cosmetic_Body_Tail</displayCategory>
+					<displayCategory Operation="AddOrReplace">Cosmetic_Tail</displayCategory>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
@@ -341,7 +129,7 @@
 							<Operation Class="XmlExtensions.HybridPatch">
 								<xpath>GeneDef</xpath>
 								<value>
-									<displayCategory Operation="AddOrReplace">Cosmetic_Body_Tail</displayCategory>
+									<displayCategory Operation="AddOrReplace">Cosmetic_Tail</displayCategory>
 								</value>
 							</Operation>
 							<Operation Class="XmlExtensions.FindMod">
@@ -364,55 +152,12 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.pigskin</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_CurledTail"]</xpath>
-						<value>
-							<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.saurid</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRESaurids_GeckoTail"]</xpath>
-						<value>
-							<biostatCpx Operation="SafeAdd">0</biostatCpx>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.starjack</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VREStarjack_SpacejumpLegs"]</xpath>
-						<value>
-							<displayCategory Operation="SafeRemove"/>
-							<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
 
 			<!-- -1000 haircolor -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[@Name="GeneHairColorBase"]</xpath>
 				<value>
-					<displayCategory Operation="AddOrReplace">Cosmetic_Head_HairColor</displayCategory>
+					<displayCategory Operation="AddOrReplace">Cosmetic_HairColor</displayCategory>
 				</value>
 			</Operation>
 
@@ -420,7 +165,7 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[@Name="GeneEyeColor"]</xpath>
 				<value>
-					<displayCategory Operation="AddOrReplace">Cosmetic_Head_EyeColor</displayCategory>
+					<displayCategory Operation="AddOrReplace">Cosmetic_EyeColor</displayCategory>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
@@ -432,7 +177,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[@Name="EyeGenes2Cosmetical"]</xpath>
 						<value>
-							<displayCategory Operation="AddOrReplace">Cosmetic_Head_EyeColor</displayCategory>
+							<displayCategory Operation="AddOrReplace">Cosmetic_EyeColor</displayCategory>
 						</value>
 					</Operation>
 				</caseTrue>

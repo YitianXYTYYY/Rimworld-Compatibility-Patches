@@ -23,6 +23,12 @@
 					<offset Operation="SafeAdd">-0.05</offset>
 				</value>
 			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRESaurids_GeckoTail"]</xpath>
+				<value>
+					<biostatCpx Operation="SafeAdd">0</biostatCpx>
+				</value>
+			</Operation>
 		</caseTrue>
 	</Operation>
 

@@ -56,6 +56,20 @@
 							<li>RecipeDef/BS_SmashRobot</li>
 						</value>
 					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaracesexpanded.phytokin</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>GeneDef/VRE_Female</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
 				</caseTrue>
 			</Operation>
 			<!-- Integrated Genes -->
@@ -69,10 +83,24 @@
 						<xpath>defs</xpath>
 						<value>
 							<li>GeneDef/Turn_Gene_ArchotechAttunement</li>
-							<li>GeneDef/Turn_Gene_NaturalLeader</li>
 							<li>GeneDef/Turn_Gene_LatentPsychic</li>
+							<li>GeneDef/Turn_Gene_NaturalLeader</li>
 							<li>GeneDef/Turn_Gene_VariablePhenotype</li>
 						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaracesexpanded.lycanthrope</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>GeneDef/Turn_Gene_Speechless</li>
+								</value>
+							</Operation>
+						</caseTrue>
 					</Operation>
 				</caseTrue>
 			</Operation>
@@ -146,10 +174,10 @@
 					<Operation Class="PatchOperationAdd">
 						<xpath>defs</xpath>
 						<value>
-							<li>ThingDef/AM_Weebstick</li>
 							<li>ThingDef/AM_LassoCloth</li>
 							<li>ThingDef/AM_LassoDevilstrand</li>
 							<li>ThingDef/AM_LassoHyperwave</li>
+							<li>ThingDef/AM_Weebstick</li>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -199,7 +227,7 @@
 						<xpath>defs</xpath>
 						<value>
 							<li>ThingDef/VFET_Chunk</li>
-							<li>RecipeDef/Make_VFET_Chunk</li>
+							<li>ThingDef/VFET_Throwspikes</li>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -229,9 +257,9 @@
 					<Operation Class="PatchOperationAdd">
 						<xpath>defs</xpath>
 						<value>
+							<li>RecipeDef/VWE_MakeThrowingRocks</li>
 							<li>ThingDef/VWE_Throwing_Rocks</li>
 							<li>ThingDef/VWE_Throwing_Knives</li>
-							<li>RecipeDef/VWE_MakeThrowingRocks</li>
 							<li>ThingDef/VWE_Gun_Flamethrower</li>
 						</value>
 					</Operation>

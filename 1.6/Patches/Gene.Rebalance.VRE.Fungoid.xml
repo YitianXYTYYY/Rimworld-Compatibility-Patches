@@ -13,45 +13,55 @@
 					<displayOrderInCategory Operation="AddOrReplace">0</displayOrderInCategory>
 				</value>
 			</Operation>
+
+			<!-- -100 cosmetic -->			
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_FacialSpots"]</xpath>
+				<value>
+					<biostatCpx Operation="SafeReplace">0</biostatCpx>
+					<displayCategory Operation="AddOrReplace">Cosmetic</displayCategory>
+					<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
+				</value>
+			</Operation>
 			
 			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/HediffDef[defName="VRE_FungalArmor"]/stages</xpath>
+				<xpath>Defs/HediffDef[defName="VRE_FungalArmor"]</xpath>
 				<apply>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[minSeverity="0.1"]</xpath>
+						<xpath>HediffDef/stages/li[minSeverity="0.1"]</xpath>
 						<value>
-							<statOffsets Operation="Safe">
+							<statFactors Operation="Safe">
 								<IncomingDamageFactor Operation="SafeReplace">0.5</IncomingDamageFactor>
-							</statOffsets>
+							</statFactors>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[minSeverity="0.4"]</xpath>
+						<xpath>HediffDef/stages/li[minSeverity="0.4"]</xpath>
 						<value>
-							<statOffsets Operation="Safe">
+							<statFactors Operation="Safe">
 								<IncomingDamageFactor Operation="SafeReplace">0.8</IncomingDamageFactor>
-							</statOffsets>
+							</statFactors>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[minSeverity="0.9"]/statFactors/IncomingDamageFactor</xpath>
+						<xpath>HediffDef/stages/li[minSeverity="0.9"]</xpath>
 						<value>
-							<statOffsets Operation="Safe">
+							<statFactors Operation="Safe">
 								<IncomingDamageFactor Operation="SafeReplace">0.9</IncomingDamageFactor>
-							</statOffsets>
+							</statFactors>
 						</value>
 					</Operation>
 				</apply>
 			</Operation>
 
 			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/HediffDef[defName="VRE_FungalRegeneration"]/stages</xpath>
+				<xpath>Defs/HediffDef[defName="VRE_FungalRegeneration"]</xpath>
 				<apply>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>stages/li/statFactors/InjuryHealingFactor</xpath>
+						<xpath>HediffDef/stages/li/statFactors/InjuryHealingFactor</xpath>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[minSeverity="0.1"]</xpath>
+						<xpath>HediffDef/stages/li[minSeverity="0.1"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
 								<InjuryHealingFactor Operation="SafeAdd">5</InjuryHealingFactor>
@@ -59,7 +69,7 @@
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[minSeverity="0.4"]</xpath>
+						<xpath>HediffDef/stages/li[minSeverity="0.4"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
 								<InjuryHealingFactor Operation="SafeAdd">3</InjuryHealingFactor>
@@ -67,7 +77,7 @@
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[minSeverity="0.9"]</xpath>
+						<xpath>HediffDef/stages/li[minSeverity="0.9"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
 								<InjuryHealingFactor Operation="SafeAdd">1</InjuryHealingFactor>

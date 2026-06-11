@@ -153,6 +153,22 @@
 					</Operation>
 				</apply>
 			</Operation>
+			
+			<!-- -90 hairstyle -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_SanguineHair"]</xpath>
+				<value>
+					<displayCategory Operation="SafeRemove"/>
+				</value>
+			</Operation>
+
+			<!-- -150 nose -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_BatNose"]</xpath>
+				<value>
+					<displayCategory Operation="SafeRemove"/>
+				</value>
+			</Operation>
 		</caseTrue>
 	</Operation>
 

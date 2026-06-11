@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.starjack</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VREStarjack_SpacejumpLegs"]</xpath>
+				<value>
+					<displayCategory Operation="SafeRemove"/>
+					<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>

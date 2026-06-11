@@ -7,12 +7,10 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- 540 flesh -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="VRE_ExtraMeat"]</xpath>
 				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/MeatAmount</xpath>
-					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef</xpath>
 						<value>
@@ -22,14 +20,14 @@
 							</statOffsets>
 						</value>
 					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/MeatAmount</xpath>
+					</Operation>
 				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="VRE_LowMeat"]</xpath>
 				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/MeatAmount</xpath>
-					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef</xpath>
 						<value>
@@ -39,12 +37,33 @@
 							</statOffsets>
 						</value>
 					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/MeatAmount</xpath>
+					</Operation>
 				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_PorkFlesh"]</xpath>
 				<value>
 					<biostatCpx Operation="SafeReplace">1</biostatCpx>
+				</value>
+			</Operation>
+
+			<!-- -110 jaw -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_MouthTusks"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Cosmetic_Head_Jaw</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">1000</displayOrderInCategory>
+					<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
+				</value>
+			</Operation>
+
+			<!-- -220 tail -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_CurledTail"]</xpath>
+				<value>
+					<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
 				</value>
 			</Operation>
 		</caseTrue>

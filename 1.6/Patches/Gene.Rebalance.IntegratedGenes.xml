@@ -19,9 +19,6 @@
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="Turn_Gene_FastNeuralHeat"]</xpath>
 				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/PsychicEntropyRecoveryRate</xpath>
-					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef</xpath>
 						<value>
@@ -32,14 +29,14 @@
 							</statOffsets>
 						</value>
 					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/PsychicEntropyRecoveryRate</xpath>
+					</Operation>
 				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="Turn_Gene_VeryFastNeuralHeat"]</xpath>
 				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/PsychicEntropyRecoveryRate</xpath>
-					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef</xpath>
 						<value>
@@ -49,6 +46,9 @@
 								<PsychicEntropyRecoveryRate Operation="SafeAdd">0.3</PsychicEntropyRecoveryRate>
 							</statOffsets>
 						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/PsychicEntropyRecoveryRate</xpath>
 					</Operation>
 				</apply>
 			</Operation>
@@ -85,16 +85,16 @@
 							<displayCategory Operation="AddOrReplace">Violence_Melee</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">300</displayOrderInCategory>
 							<statOffsets Operation="Safe">
-								<MeleeHitChance Operation="SafeAdd">4</MeleeHitChance>
 								<MeleeDodgeChance Operation="SafeAdd">8</MeleeDodgeChance>
+								<MeleeHitChance Operation="SafeAdd">4</MeleeHitChance>
 							</statOffsets>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef/statFactors</xpath>
 						<value>
-							<MeleeHitChance Operation="SafeRemove"/>
 							<MeleeDodgeChance Operation="SafeRemove"/>
+							<MeleeHitChance Operation="SafeRemove"/>
 						</value>
 					</Operation>
 				</apply>
@@ -105,10 +105,10 @@
 				<xpath>Defs/GeneDef[defName="Turn_Gene_FreeSpirit"]</xpath>
 				<value>
 					<displayCategory Operation="AddOrReplace">Turn_GeneCategory_Slavery</displayCategory>
+					<prisonBreakMTBFactor Operation="SafeReplace">0.8</prisonBreakMTBFactor>
 					<statFactors Operation="Safe">
 						<RoyalFavorValue MayRequire="Ludeon.RimWorld.Royalty" Operation="SafeReplace">0.2</RoyalFavorValue>
 					</statFactors>
-					<prisonBreakMTBFactor Operation="SafeReplace">0.8</prisonBreakMTBFactor>
 				</value>
 			</Operation>
 

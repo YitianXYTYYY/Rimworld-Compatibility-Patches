@@ -7,12 +7,38 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- 600 psychic -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="PsychicBond"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeReplace">
+						<xpath>HediffDef/stages/li[minSeverity="0"]/statOffsets</xpath>
+						<value>
+							<PsychicSensitivity>0.2</PsychicSensitivity>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeReplace">
+						<xpath>HediffDef/stages/li[minSeverity="0"]/capMods/li[capacity="Consciousness"]</xpath>
+						<value>
+							<offset>0.1</offset>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>HediffDef/stages/li[minSeverity="1"]/statOffsets/PsychicSensitivity</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeReplace">
+						<xpath>HediffDef/stages/li[minSeverity="1"]/capMods/li[capacity="Consciousness"]</xpath>
+						<value>
+							<offset>-0.2</offset>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+
+			<!-- 500 health -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="Immunity_Strong"]</xpath>
 				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/ImmunityGainSpeed</xpath>
-					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef</xpath>
 						<value>
@@ -20,6 +46,9 @@
 								<ImmunityGainSpeed Operation="SafeAdd">0.10</ImmunityGainSpeed>
 							</statOffsets>
 						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/ImmunityGainSpeed</xpath>
 					</Operation>
 				</apply>
 			</Operation>
@@ -73,35 +102,7 @@
 				</apply>
 			</Operation>
 
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/HediffDef[defName="PsychicBond"]</xpath>
-				<apply>	<Operation Class="PatchOperationReplace">
-					<xpath>HediffDef/stages/li[minSeverity="0"]/statOffsets/PsychicSensitivity</xpath>
-					<value>
-						<PsychicSensitivity>0.2</PsychicSensitivity>
-					</value>
-				</Operation>
-				<Operation Class="XmlExtensions.PatchOperationSafeReplace">
-					<xpath>HediffDef/stages/li[minSeverity="0"]/capMods/li[capacity="Consciousness"]</xpath>
-					<value>
-						<offset>0.1</offset>
-					</value>
-				</Operation>
-				<Operation Class="XmlExtensions.PatchOperationSafeReplace">
-					<xpath>HediffDef/stages/li[minSeverity="1"]/statOffsets</xpath>
-					<value>
-						<PsychicSensitivity>0.1</PsychicSensitivity>
-					</value>
-				</Operation>
-				<Operation Class="XmlExtensions.PatchOperationSafeReplace">
-					<xpath>HediffDef/stages/li[minSeverity="1"]/capMods/li[capacity="Consciousness"]</xpath>
-					<value>
-						<offset>-0.2</offset>
-					</value>
-				</Operation>
-				</apply>
-			</Operation>
-
+			<!-- 420 sleep -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="VerySleepy"]</xpath>
 				<apply>
@@ -135,6 +136,7 @@
 				</apply>
 			</Operation>
 
+			<!-- 410 sight -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="Nearsighted"]</xpath>
 				<value>
@@ -145,10 +147,35 @@
 				</value>
 			</Operation>
 
-			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-				<xpath>Defs/GeneDef[defName="ViolenceDisabled"]/exclusionTags/li[text()="ShootingAccuracy"]</xpath>
+			<!-- 400 violence -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="ViolenceDisabled"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef/exclusionTags</xpath>
+						<value>
+							<li Operation="SafeRemove" Compare="InnerText">ShootingAccuracy</li>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaracesexpanded.archon</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>GeneDef/exclusionTags</xpath>
+								<value>
+									<li Operation="SafeAdd" Compare="InnerText">MeleeAttackSpeed</li>
+									<li Operation="SafeAdd" Compare="InnerText">RangedAttackSpeed</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
 			</Operation>
 
+			<!-- 380 melee -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="MeleeDamage_Strong"]</xpath>
 				<apply>
@@ -166,6 +193,7 @@
 				</apply>
 			</Operation>
 
+			<!-- 370 pain -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="Robust"]</xpath>
 				<value>
@@ -175,6 +203,7 @@
 				</value>
 			</Operation>
 
+			<!-- -30 hand -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="Hands_Pig"]/capMods/li[capacity="Manipulation"]</xpath>
 				<value>
@@ -182,7 +211,6 @@
 					<offset Operation="SafeAdd">-0.15</offset>
 				</value>
 			</Operation>
-	
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="ElongatedFingers"]/capMods/li[capacity="Manipulation"]</xpath>
 				<value>

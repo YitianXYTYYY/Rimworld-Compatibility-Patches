@@ -32,7 +32,7 @@
 		<products>
 			<AmmoPrimitive>15</AmmoPrimitive>
 		</products>
-		<unfinishedThingDef>Ammo_Primitive_unfinish</unfinishedThingDef>
+		<unfinishedThingDef>AmmoPrimitive_Unfinish</unfinishedThingDef>
 	</RecipeDef>
 	<!-- Industrial -->
 	<RecipeDef MayRequire="mlie.yayoscombat3">
@@ -73,7 +73,7 @@
 		<products>
 			<AmmoIndustrial>25</AmmoIndustrial>
 		</products>
-		<unfinishedThingDef>Ammo_Industrial_unfinish</unfinishedThingDef>
+		<unfinishedThingDef>AmmoIndustrial_Unfinish</unfinishedThingDef>
 	</RecipeDef>
 	<!-- Spacer -->
 	<RecipeDef MayRequire="mlie.yayoscombat3">
@@ -114,7 +114,7 @@
 		<products>
 			<AmmoSpacer>50</AmmoSpacer>
 		</products>
-		<unfinishedThingDef>Ammo_Spacer_unfinish</unfinishedThingDef>
+		<unfinishedThingDef>AmmoSpacer_Unfinish</unfinishedThingDef>
 	</RecipeDef>
 	<!-- Spacer emp -->
 	<RecipeDef MayRequire="mlie.yayoscombat3">
@@ -155,7 +155,7 @@
 		<products>
 			<AmmoSpacerEMP>50</AmmoSpacerEMP>
 		</products>
-		<unfinishedThingDef>Ammo_Spacer_unfinish</unfinishedThingDef>
+		<unfinishedThingDef>AmmoSpacer_Unfinish</unfinishedThingDef>
 	</RecipeDef>
 
 </Defs>

@@ -20,6 +20,12 @@
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
+		<defName>MeatLeather</defName>
+		<label>meat and leather</label>
+		<displayPriorityInXenotype>550</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
 		<defName>Health_Blood</defName>
 		<label>blood and flesh</label>
 		<displayPriorityInXenotype>540</displayPriorityInXenotype>
@@ -74,9 +80,21 @@
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
-		<defName>Health_Skin</defName>
+		<defName>Skin</defName>
 		<label>skin</label>
-		<displayPriorityInXenotype>-70</displayPriorityInXenotype>
+		<displayPriorityInXenotype>-10</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Arms</defName>
+		<label>arms</label>
+		<displayPriorityInXenotype>-20</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Hands</defName>
+		<label>hands</label>
+		<displayPriorityInXenotype>-30</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
@@ -87,40 +105,40 @@
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
-		<defName>Cosmetic_Head_Hair</defName>
+		<defName>Cosmetic_HairStyle</defName>
 		<label>cosmetic - hair</label>
 		<!-- Cosmetic -100 -->
 		<displayPriorityInXenotype>-90</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
-		<defName>Cosmetic_Head_Jaw</defName>
+		<defName>Cosmetic_Jaw</defName>
 		<label>cosmetic - jaw</label>
 		<!-- Cosmetic -100 -->
 		<displayPriorityInXenotype>-110</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
-		<defName>Cosmetic_Head_Beard</defName>
-		<label>cosmetic - jaw</label>
+		<defName>Cosmetic_Beard</defName>
+		<label>cosmetic - beard</label>
 		<!-- Cosmetic -100 -->
 		<displayPriorityInXenotype>-120</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
-		<defName>Cosmetic_Head_Headbone</defName>
+		<defName>Cosmetic_Headbone</defName>
 		<label>cosmetic - headbone</label>
 		<displayPriorityInXenotype>-130</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
-		<defName>Cosmetic_Head_Ear</defName>
+		<defName>Cosmetic_Ear</defName>
 		<label>cosmetic - ear</label>
 		<displayPriorityInXenotype>-140</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
-		<defName>Cosmetic_Head_Nose</defName>
+		<defName>Cosmetic_Nose</defName>
 		<label>cosmetic - nose</label>
 		<displayPriorityInXenotype>-150</displayPriorityInXenotype>
 	</GeneCategoryDef>
@@ -132,31 +150,25 @@
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
-		<defName>Cosmetic_Body_ArmHand</defName>
-		<label>arms and hands</label>
+		<defName>Cosmetic_Wings</defName>
+		<label>cosmetic - wings</label>
 		<displayPriorityInXenotype>-210</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
-		<defName>Cosmetic_Body_Wing</defName>
-		<label>wings</label>
+		<defName>Cosmetic_Tail</defName>
+		<label>cosmetic - tail</label>
 		<displayPriorityInXenotype>-220</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
-		<defName>Cosmetic_Body_Tail</defName>
-		<label>tail</label>
-		<displayPriorityInXenotype>-230</displayPriorityInXenotype>
-	</GeneCategoryDef>
-
-	<GeneCategoryDef>
-		<defName>Cosmetic_Head_HairColor</defName>
+		<defName>Cosmetic_HairColor</defName>
 		<label>cosmetic - hair color</label>
 		<displayPriorityInXenotype>-1000</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
-		<defName>Cosmetic_Head_EyeColor</defName>
+		<defName>Cosmetic_EyeColor</defName>
 		<label>cosmetic - eye color</label>
 		<displayPriorityInXenotype>-1010</displayPriorityInXenotype>
 	</GeneCategoryDef>

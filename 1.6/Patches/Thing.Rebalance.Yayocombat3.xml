@@ -40,7 +40,7 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="Bullet_BoltActionRifle"]</xpath>
 				<value>
-					<projectile Operation="Safe">
+					<projectile Operation="SafeReplace">
 						<damageDef>Bullet</damageDef>
 						<damageAmountBase>18</damageAmountBase>
 						<stoppingPower>1.5</stoppingPower>

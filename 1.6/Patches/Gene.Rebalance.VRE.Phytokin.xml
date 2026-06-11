@@ -7,6 +7,7 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- 70 skin -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_BarkSkin"]</xpath>
 				<value>
@@ -16,29 +17,34 @@
 					</statOffsets>
 				</value>
 			</Operation>
+
+			<!-- 0 misc -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_Female"]</xpath>
 				<value>
 					<displayCategory Operation="AddOrReplace">Miscellaneous</displayCategory>
 				</value>
 			</Operation>
+
+			<!-- -99 hairstyle -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_FoliageHair"]</xpath>
+				<value>
+					<biostatCpx Operation="SafeReplace">0</biostatCpx>
+					<displayCategory Operation="SafeRemove"/>
+				</value>
+			</Operation>
+
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
 					<li>RedMattis.BetterPrerequisites</li>
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
-					<Operation Class="PatchOperationAdd">
-						<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
+					<Operation Class="PatchOperationReplace">
+						<xpath>Defs/XenotypeDef/genes/li[text()="VRE_Female"]</xpath>
 						<value>
-							<li>GeneDef/VRE_Female</li>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/XenotypeDef[defName="VRE_Poluxkin" or defName="VRE_Gauranlenkin" or defName="VRE_Animakin"]/genes</xpath>
-						<value>
-							<li Operation="SafeRemove" Compare="InnerText">VRE_Female</li>
-							<li Operation="SafeAdd" Compare="InnerText">Body_FemaleOnly</li>
+							<li>Body_FemaleOnly</li>
 						</value>
 					</Operation>
 				</caseTrue>

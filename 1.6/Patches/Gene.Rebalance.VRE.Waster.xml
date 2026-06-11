@@ -7,7 +7,7 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<!-- 510 cell -->
+			<!-- 520 cell -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_Instability_Nominal"]</xpath>
 				<value>
@@ -44,6 +44,18 @@
 				</value>
 			</Operation>
 
+			<!-- -200 bodytype -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_GauntBody"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Cosmetic_BodyType</displayCategory>
+					<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
+					<exclusionTags Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">BodyType</li>
+					</exclusionTags>
+				</value>
+			</Operation>
+
 			<!-- 680 pollution -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_ToxAbsorption"]</xpath>
@@ -55,37 +67,39 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VREW_PollutionRegeneration"]</xpath>
 				<value>
-					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
-					<displayOrderInCategory Operation="SafeReplace">-500</displayOrderInCategory>
 					<customEffectDescriptions Operation="SafeAdd">
 						<li>Gain stat bonuses when exposed to pollution.</li>
 					</customEffectDescriptions>
+					<displayOrderInCategory Operation="SafeReplace">-500</displayOrderInCategory>
+					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VREW_PollutionSustenance"]</xpath>
 				<value>
-					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
-					<displayOrderInCategory Operation="SafeReplace">-498</displayOrderInCategory>
 					<customEffectDescriptions Operation="SafeAdd">
 						<li>Gain stat bonuses when exposed to pollution.</li>
 					</customEffectDescriptions>
+					<displayOrderInCategory Operation="SafeReplace">-498</displayOrderInCategory>
+					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VREW_PollutionPsySensitivity"]</xpath>
 				<value>
-					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
-					<displayOrderInCategory Operation="SafeReplace">-490</displayOrderInCategory>
 					<customEffectDescriptions Operation="SafeAdd">
 						<li>Gain stat bonuses when exposed to pollution.</li>
 					</customEffectDescriptions>
+					<displayOrderInCategory Operation="SafeReplace">-490</displayOrderInCategory>
+					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VREW_PollutionRush"]</xpath>
 				<value>
-					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
+					<customEffectDescriptions Operation="SafeAdd">
+						<li>Gain stat bonuses when exposed to pollution.</li>
+					</customEffectDescriptions>
 					<displayOrderInCategory Operation="SafeReplace">-470</displayOrderInCategory>
 					<geneClass Operation="SafeRemove"/>
 					<modExtensions Operation="Safe">
@@ -93,76 +107,77 @@
 							<hediffToWholeBody Operation="SafeAdd">PollutionStimulus</hediffToWholeBody>
 						</li>
 					</modExtensions>
+					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VREW_PollutionAccuracy"]</xpath>
 				<value>
-					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
-					<displayOrderInCategory Operation="SafeReplace">-417</displayOrderInCategory>
 					<customEffectDescriptions Operation="SafeAdd">
 						<li>Gain stat bonuses when exposed to pollution.</li>
 					</customEffectDescriptions>
+					<displayOrderInCategory Operation="SafeReplace">-417</displayOrderInCategory>
+					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VREW_PollutionRage"]</xpath>
 				<value>
-					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
-					<displayOrderInCategory Operation="SafeReplace">-416</displayOrderInCategory>
 					<customEffectDescriptions Operation="SafeAdd">
 						<li>Gain stat bonuses when exposed to pollution.</li>
 					</customEffectDescriptions>
+					<displayOrderInCategory Operation="SafeReplace">-416</displayOrderInCategory>
+					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VREW_PollutionNumbness"]</xpath>
 				<value>
-					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
-					<displayOrderInCategory Operation="SafeReplace">-410</displayOrderInCategory>
 					<customEffectDescriptions Operation="SafeAdd">
 						<li>Gain stat bonuses when exposed to pollution.</li>
 					</customEffectDescriptions>
+					<displayOrderInCategory Operation="SafeReplace">-410</displayOrderInCategory>
+					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VREW_PollutionFertility"]</xpath>
 				<value>
-					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
-					<displayOrderInCategory Operation="SafeReplace">-400</displayOrderInCategory>
 					<customEffectDescriptions Operation="SafeAdd">
 						<li>Gain stat bonuses when exposed to pollution.</li>
 					</customEffectDescriptions>
+					<displayOrderInCategory Operation="SafeReplace">-400</displayOrderInCategory>
+					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VREW_PollutionHappiness"]</xpath>
 				<value>
-					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
-					<displayOrderInCategory Operation="SafeReplace">-390</displayOrderInCategory>
 					<customEffectDescriptions Operation="SafeAdd">
 						<li>Gain stat bonuses when exposed to pollution.</li>
 					</customEffectDescriptions>
+					<displayOrderInCategory Operation="SafeReplace">-390</displayOrderInCategory>
+					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VREW_PollutionCognition"]</xpath>
 				<value>
-					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
-					<displayOrderInCategory Operation="SafeReplace">-200</displayOrderInCategory>
 					<customEffectDescriptions Operation="SafeAdd">
 						<li>Gain stat bonuses when exposed to pollution.</li>
 					</customEffectDescriptions>
+					<displayOrderInCategory Operation="SafeReplace">-200</displayOrderInCategory>
+					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VREW_PollutionProductivity"]</xpath>
 				<value>
-					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
-					<displayOrderInCategory Operation="SafeReplace">0</displayOrderInCategory>
 					<customEffectDescriptions Operation="SafeAdd">
 						<li>Gain stat bonuses when exposed to pollution.</li>
 					</customEffectDescriptions>
+					<displayOrderInCategory Operation="SafeReplace">0</displayOrderInCategory>
+					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
 				</value>
 			</Operation>
 
@@ -187,9 +202,6 @@
 							</li>
 						</value>
 					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>HediffDef/stages/li/statFactors/MoveSpeed</xpath>
-					</Operation>
 					<Operation Class="XmlExtensions.PatchOperationAdd">
 						<xpath>HediffDef/stages</xpath>
 						<Order>Prepend</Order>
@@ -199,6 +211,9 @@
 								<minSeverity>0.01</minSeverity>
 							</li>
 						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>HediffDef/stages/li/statFactors/MoveSpeed</xpath>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="minor"]</xpath>
@@ -232,10 +247,10 @@
 				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/HediffDef[defName="VRE_PollutionRegeneration"]/stages</xpath>
+				<xpath>Defs/HediffDef[defName="VRE_PollutionRegeneration"]</xpath>
 				<apply>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>stages/li/statFactors/InjuryHealingFactor</xpath>
+						<xpath>HediffDef/stages/li/statFactors/InjuryHealingFactor</xpath>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>stages/li[label="minor"]</xpath>
@@ -246,7 +261,7 @@
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[label="moderate"]</xpath>
+						<xpath>HediffDef/stages/li[label="moderate"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
 								<InjuryHealingFactor Operation="SafeAdd">1</InjuryHealingFactor>
@@ -254,7 +269,7 @@
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[label="extreme"]</xpath>
+						<xpath>HediffDef/stages/li[label="extreme"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
 								<InjuryHealingFactor Operation="SafeAdd">3</InjuryHealingFactor>
@@ -264,13 +279,13 @@
 				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/HediffDef[defName="VRE_PollutionRage"]/stages</xpath>
+				<xpath>Defs/HediffDef[defName="VRE_PollutionRage"]</xpath>
 				<apply>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>stages/li/statFactors/MeleeDamageFactor</xpath>
+						<xpath>HediffDef/stages/li/statFactors/MeleeDamageFactor</xpath>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[label="minor"]</xpath>
+						<xpath>HediffDef/stages/li[label="minor"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
 								<MeleeDamageFactor Operation="SafeAdd">0.1</MeleeDamageFactor>
@@ -278,7 +293,7 @@
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[label="moderate"]</xpath>
+						<xpath>HediffDef/stages/li[label="moderate"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
 								<MeleeDamageFactor Operation="SafeAdd">0.2</MeleeDamageFactor>
@@ -286,7 +301,7 @@
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[label="extreme"]</xpath>
+						<xpath>HediffDef/stages/li[label="extreme"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
 								<MeleeDamageFactor Operation="SafeAdd">0.5</MeleeDamageFactor>
@@ -296,39 +311,39 @@
 				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/HediffDef[defName="VRE_PollutionSustenance"]/stages</xpath>
+				<xpath>Defs/HediffDef[defName="VRE_PollutionSustenance"]</xpath>
 				<apply>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[label="minor"]</xpath>
+						<xpath>HediffDef/stages/li[label="minor"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeRemove"/>
 							<hungerRateFactor Operation="SafeAdd">0.9</hungerRateFactor>
+							<hungerRateFactorOffset Operation="SafeRemove"/>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[label="moderate"]</xpath>
+						<xpath>HediffDef/stages/li[label="moderate"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeRemove"/>
 							<hungerRateFactor Operation="SafeAdd">0.8</hungerRateFactor>
+							<hungerRateFactorOffset Operation="SafeRemove"/>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[label="extreme"]</xpath>
+						<xpath>HediffDef/stages/li[label="extreme"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeRemove"/>
 							<hungerRateFactor Operation="SafeAdd">0.5</hungerRateFactor>
+							<hungerRateFactorOffset Operation="SafeRemove"/>
 						</value>
 					</Operation>
 				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/HediffDef[defName="VRE_PollutionCognition"]/stages</xpath>
+				<xpath>Defs/HediffDef[defName="VRE_PollutionCognition"]</xpath>
 				<apply>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>stages/li/statFactors/GlobalLearningFactor</xpath>
+						<xpath>HediffDef/stages/li/statFactors/GlobalLearningFactor</xpath>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[label="minor"]</xpath>
+						<xpath>HediffDef/stages/li[label="minor"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
 								<GlobalLearningFactor Operation="SafeAdd">0.1</GlobalLearningFactor>
@@ -336,7 +351,7 @@
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[label="moderate"]</xpath>
+						<xpath>HediffDef/stages/li[label="moderate"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
 								<GlobalLearningFactor Operation="SafeAdd">0.2</GlobalLearningFactor>
@@ -344,7 +359,7 @@
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[label="extreme"]</xpath>
+						<xpath>HediffDef/stages/li[label="extreme"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
 								<GlobalLearningFactor Operation="SafeAdd">0.5</GlobalLearningFactor>
@@ -354,22 +369,22 @@
 				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/HediffDef[defName="VRE_PollutionNumbness"]/stages</xpath>
+				<xpath>Defs/HediffDef[defName="VRE_PollutionNumbness"]</xpath>
 				<apply>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[label="minor"]</xpath>
+						<xpath>HediffDef/stages/li[label="minor"]</xpath>
 						<value>
 							<painFactor Operation="SafeReplace">0.9</painFactor>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[label="moderate"]</xpath>
+						<xpath>HediffDef/stages/li[label="moderate"]</xpath>
 						<value>
 							<painFactor Operation="SafeReplace">0.8</painFactor>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[label="extreme"]</xpath>
+						<xpath>HediffDef/stages/li[label="extreme"]</xpath>
 						<value>
 							<painFactor Operation="SafeReplace">0.5</painFactor>
 						</value>
@@ -377,13 +392,13 @@
 				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/HediffDef[defName="VRE_PollutionProductivity"]/stages</xpath>
+				<xpath>Defs/HediffDef[defName="VRE_PollutionProductivity"]</xpath>
 				<apply>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>stages/li/statFactors/WorkSpeedGlobal</xpath>
+						<xpath>HediffDef/stages/li/statFactors/WorkSpeedGlobal</xpath>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[label="minor"]</xpath>
+						<xpath>HediffDef/stages/li[label="minor"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
 								<WorkSpeedGlobal Operation="SafeAdd">0.05</WorkSpeedGlobal>
@@ -391,7 +406,7 @@
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[label="moderate"]</xpath>
+						<xpath>HediffDef/stages/li[label="moderate"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
 								<WorkSpeedGlobal Operation="SafeAdd">0.1</WorkSpeedGlobal>
@@ -399,7 +414,7 @@
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[label="extreme"]</xpath>
+						<xpath>HediffDef/stages/li[label="extreme"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
 								<WorkSpeedGlobal Operation="SafeAdd">0.2</WorkSpeedGlobal>
@@ -409,13 +424,13 @@
 				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/HediffDef[defName="VRE_PollutionPsySensitivity"]/stages</xpath>
+				<xpath>Defs/HediffDef[defName="VRE_PollutionPsySensitivity"]</xpath>
 				<apply>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>stages/li/statFactors/PsychicSensitivity</xpath>
+						<xpath>HediffDef/stages/li/statFactors/PsychicSensitivity</xpath>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[label="minor"]</xpath>
+						<xpath>HediffDef/stages/li[label="minor"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
 								<PsychicSensitivity Operation="SafeAdd">0.1</PsychicSensitivity>
@@ -423,7 +438,7 @@
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[label="moderate"]</xpath>
+						<xpath>HediffDef/stages/li[label="moderate"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
 								<PsychicSensitivity Operation="SafeAdd">0.2</PsychicSensitivity>
@@ -431,7 +446,7 @@
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[label="extreme"]</xpath>
+						<xpath>HediffDef/stages/li[label="extreme"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
 								<PsychicSensitivity Operation="SafeAdd">0.4</PsychicSensitivity>
@@ -441,16 +456,16 @@
 				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/HediffDef[defName="VRE_PollutionAccuracy"]/stages</xpath>
+				<xpath>Defs/HediffDef[defName="VRE_PollutionAccuracy"]</xpath>
 				<apply>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>stages/li/statFactors/AccuracyLong</xpath>
+						<xpath>HediffDef/stages/li/statFactors/AccuracyLong</xpath>
 					</Operation>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>stages/li/statFactors/AccuracyMedium</xpath>
+						<xpath>HediffDef/stages/li/statFactors/AccuracyMedium</xpath>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[label="minor"]</xpath>
+						<xpath>HediffDef/stages/li[label="minor"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
 								<ShootingAccuracyPawn Operation="SafeAdd">2</ShootingAccuracyPawn>
@@ -458,7 +473,7 @@
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[label="moderate"]</xpath>
+						<xpath>HediffDef/stages/li[label="moderate"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
 								<ShootingAccuracyPawn Operation="SafeAdd">4</ShootingAccuracyPawn>
@@ -466,7 +481,7 @@
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[label="extreme"]</xpath>
+						<xpath>HediffDef/stages/li[label="extreme"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
 								<ShootingAccuracyPawn Operation="SafeAdd">8</ShootingAccuracyPawn>

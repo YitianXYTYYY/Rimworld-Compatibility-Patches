@@ -7,20 +7,42 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- 540 blood -->
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="VRE_InsectSkin"]</xpath>
+				<xpath>Defs/GeneDef[defName="VRE_BugBlood"]</xpath>
 				<value>
-					<biostatCpx Operation="SafeReplace">1</biostatCpx>
-					<statOffsets Operation="Safe">
-						<ArmorRating_Sharp Operation="SafeReplace">0.30</ArmorRating_Sharp>
-						<ArmorRating_Blunt Operation="SafeReplace">0.10</ArmorRating_Blunt>
-					</statOffsets>
+					<biostatCpx Operation="SafeReplace">0</biostatCpx>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_InsectFlesh"]</xpath>
 				<value>
 					<biostatCpx Operation="SafeReplace">1</biostatCpx>
+				</value>
+			</Operation>
+
+			<!-- -70 skin -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_InsectSkin"]</xpath>
+				<value>
+					<biostatCpx Operation="SafeReplace">1</biostatCpx>
+					<statOffsets Operation="Safe">
+						<ArmorRating_Sharp Operation="SafeReplace">0.20</ArmorRating_Sharp>
+						<ArmorRating_Blunt Operation="SafeReplace">0.20</ArmorRating_Blunt>
+					</statOffsets>
+				</value>
+			</Operation>
+
+			<!-- -130 headbone -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_InsectAntennae"]</xpath>
+				<value>
+					<biostatCpx Operation="SafeReplace">0</biostatCpx>
+					<displayCategory Operation="AddOrReplace">Cosmetic_Headbone</displayCategory>
+					<exclusionTags Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">Headbone</li>
+					</exclusionTags>
+					<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
 				</value>
 			</Operation>
 		</caseTrue>

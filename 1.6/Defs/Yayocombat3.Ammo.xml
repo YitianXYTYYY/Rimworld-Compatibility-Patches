@@ -110,7 +110,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="UnfinishedBase" MayRequire="mlie.yayoscombat3">
-		<defName>Ammo_Primitive_unfinish</defName>
+		<defName>AmmoPrimitive_Unfinish</defName>
 		<label>unfinished arrow</label>
 		<description>An unfinished arrow.</description>
 		<statBases>
@@ -124,11 +124,11 @@
 		<stuffCategories Inherit="false"/>
 	</ThingDef>
 	<ThingDef ParentName="UnfinishedBase" MayRequire="mlie.yayoscombat3">
-		<defName>Ammo_Industrial_unfinish</defName>
+		<defName>AmmoIndustrial_Unfinish</defName>
 		<label>unfinished ammo</label>
 		<description>An unfinished ammo.</description>
 		<statBases>
-			<Flammability>0.5</Flammability>
+			<Flammability>0.6</Flammability>
 		</statBases>
 		<graphicData>
 			<texPath>Things/Item/Unfinished/UnfinishedBelt</texPath>
@@ -137,11 +137,11 @@
 		<stuffCategories Inherit="false"/>
 	</ThingDef>
 	<ThingDef ParentName="UnfinishedBase" MayRequire="mlie.yayoscombat3">
-		<defName>Ammo_Spacer_unfinish</defName>
+		<defName>AmmoSpacer_Unfinish</defName>
 		<label>unfinished ammo</label>
 		<description>An unfinished ammo.</description>
 		<statBases>
-			<Flammability>0.1</Flammability>
+			<Flammability>0.6</Flammability>
 		</statBases>
 		<graphicData>
 			<texPath>Things/Item/Unfinished/unfinishedcomponent</texPath>
