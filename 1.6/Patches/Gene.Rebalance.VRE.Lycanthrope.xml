@@ -36,12 +36,21 @@
 			</Operation>
 
 			<!-- 380 melee -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_DodgeDisabled"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Violence_Melee</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">200</displayOrderInCategory>
+				</value>
+			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="VRE_ImprovedDodge"]</xpath>
 				<apply>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef</xpath>
 						<value>
+							<displayCategory Operation="AddOrReplace">Violence_Melee</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">210</displayOrderInCategory>
 							<statOffsets Operation="Safe">
 								<MeleeDodgeChance Operation="SafeAdd">8</MeleeDodgeChance>
 							</statOffsets>
@@ -58,6 +67,8 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef</xpath>
 						<value>
+							<displayCategory Operation="AddOrReplace">Violence_Melee</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">220</displayOrderInCategory>
 							<statOffsets Operation="Safe">
 								<MeleeDodgeChance Operation="SafeAdd">16</MeleeDodgeChance>
 							</statOffsets>

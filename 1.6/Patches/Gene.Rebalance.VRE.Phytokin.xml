@@ -7,6 +7,15 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- 530 blood -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_SapBlood"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Health_Blood</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">-80</displayOrderInCategory>
+				</value>
+			</Operation>
+
 			<!-- 0 misc -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_Female"]</xpath>

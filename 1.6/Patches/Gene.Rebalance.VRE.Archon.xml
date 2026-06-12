@@ -7,9 +7,12 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- 1000 archite -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_PsychicAbility_MoreExtreme"]</xpath>
 				<value>
+					<displayCategory Operation="AddOrReplace">Archite</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">-600</displayOrderInCategory>
 					<statOffsets Operation="Safe">
 						<PsychicSensitivity Operation="SafeReplace">0.8</PsychicSensitivity>
 					</statOffsets>
@@ -126,6 +129,8 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef</xpath>
 						<value>
+							<displayCategory Operation="AddOrReplace">Violence_Melee</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">100</displayOrderInCategory>
 							<statOffsets Operation="Safe">
 								<MeleeCooldownFactor Operation="SafeAdd">0.2</MeleeCooldownFactor>
 							</statOffsets>
@@ -135,6 +140,13 @@
 						<xpath>GeneDef/statFactors/MeleeCooldownFactor</xpath>
 					</Operation>
 				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_FastMeleeHitter"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Violence_Melee</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">110</displayOrderInCategory>
+				</value>
 			</Operation>
 
 			<!-- -10 skin -->

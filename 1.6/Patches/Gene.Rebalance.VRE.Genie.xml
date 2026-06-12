@@ -7,6 +7,33 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- 530 blood -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_BlueBlood"]</xpath>
+				<value>
+					<biostatCpx Operation="SafeReplace">0</biostatCpx>
+					<displayCategory Operation="AddOrReplace">Health_Blood</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">-100</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_Hemophiliac"]</xpath>
+				<value>
+					<customEffectDescriptions Operation="SafeAdd">
+						<li>Wounds bleed very quickly.</li>
+					</customEffectDescriptions>
+					<displayCategory Operation="AddOrReplace">Health_Blood</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">100</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="Superclotting"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Health_Blood</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">110</displayOrderInCategory>
+				</value>
+			</Operation>
+
 			<!-- -110 jaw -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_ElongatedHead"]</xpath>

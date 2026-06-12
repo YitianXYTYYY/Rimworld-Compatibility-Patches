@@ -7,6 +7,14 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- 400 violence -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_Harmless"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">-90</displayOrderInCategory>
+				</value>
+			</Operation>
+
 			<!-- -200 bodytype -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_PerfectBody"]</xpath>

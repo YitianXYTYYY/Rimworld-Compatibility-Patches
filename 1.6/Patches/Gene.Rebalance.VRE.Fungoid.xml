@@ -7,6 +7,24 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- 530 blood -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_RotBlood"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Health_Blood</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">-70</displayOrderInCategory>
+				</value>
+			</Operation>
+
+			<!-- 500 health -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_FungalRegeneration"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">100</displayOrderInCategory>
+				</value>
+			</Operation>
+
+			<!-- 110 skills -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_NoStudy"]</xpath>
 				<value>
@@ -23,7 +41,8 @@
 					<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
 				</value>
 			</Operation>
-			
+
+			<!-- hediff -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/HediffDef[defName="VRE_FungalArmor"]</xpath>
 				<apply>

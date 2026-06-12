@@ -86,6 +86,32 @@
 					<PsychicSensitivity Operation="SafeReplace">0.2</PsychicSensitivity>
 				</value>
 			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="PsychicBond"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeReplace">
+						<xpath>HediffDef/stages/li[minSeverity="0"]/statOffsets</xpath>
+						<value>
+							<PsychicSensitivity>0.2</PsychicSensitivity>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeReplace">
+						<xpath>HediffDef/stages/li[minSeverity="0"]/capMods/li[capacity="Consciousness"]</xpath>
+						<value>
+							<offset>0.1</offset>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>HediffDef/stages/li[minSeverity="1"]/statOffsets/PsychicSensitivity</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeReplace">
+						<xpath>HediffDef/stages/li[minSeverity="1"]/capMods/li[capacity="Consciousness"]</xpath>
+						<value>
+							<offset>-0.2</offset>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
 		</caseTrue>
 	</Operation>
 

@@ -7,55 +7,13 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<Operation Class="XmlExtensions.SetScope">
-
-			<!-- 0 misc -->
-				<xpath>Defs/GeneDef[defName="VREH_Giant"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<statOffsets Operation="Safe">
-								<VEF_BodySize_Multiplier Operation="SafeAdd">0.1</VEF_BodySize_Multiplier>
-							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/VEF_BodySize_Multiplier</xpath>
-					</Operation>
-				</apply>
-			</Operation>
-
-			<!-- -220 wing -->
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.hussar</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VREH_Glidewings"]</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Cosmetic_Body_Wing</displayCategory>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-
+			<!-- weapon aptitude -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
 					<li>hussars.blablabla.cantbearsedtocomeupwithafunnyid</li>
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="ViolenceDisabled"]</xpath>
-						<value>
-							<exclusionTags Operation="Safe">
-								<li Operation="SafeAdd" Compare="InnerText">SEX_WeaponAptitude</li>
-							</exclusionTags>
-						</value>
-					</Operation>
 					<Operation Class="XmlExtensions.SetScope">
 						<xpath>Defs/GeneDef[defName="SEX_RangedWeaponAptitude"]</xpath>
 						<apply>
@@ -100,6 +58,41 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
+
+			<!-- 0 misc -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="VREH_Giant"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<VEF_BodySize_Multiplier Operation="SafeAdd">0.1</VEF_BodySize_Multiplier>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/statFactors/VEF_BodySize_Multiplier</xpath>
+					</Operation>
+				</apply>
+			</Operation>
+
+			<!-- -220 wing -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.hussar</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VREH_Glidewings"]</xpath>
+						<value>
+							<displayCategory Operation="AddOrReplace">Cosmetic_Body_Wing</displayCategory>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+
 		</caseTrue>
 	</Operation>
 

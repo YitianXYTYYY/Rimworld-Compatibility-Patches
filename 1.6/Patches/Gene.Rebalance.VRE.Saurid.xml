@@ -7,6 +7,15 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- 480 temperature -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRESaurids_ColdBlooded"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Temperature</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">100</displayOrderInCategory>
+				</value>
+			</Operation>
+
 			<!-- -10 skin -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRESaurids_ScaleSkin"]</xpath>
