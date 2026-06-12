@@ -7,43 +7,6 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<!-- 530 blood -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="VRE_SapBlood"]</xpath>
-				<value>
-					<displayCategory Operation="AddOrReplace">Health_Blood</displayCategory>
-					<displayOrderInCategory Operation="AddOrReplace">-80</displayOrderInCategory>
-				</value>
-			</Operation>
-
-			<!-- 0 misc -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="VRE_Female"]</xpath>
-				<value>
-					<displayCategory Operation="AddOrReplace">Miscellaneous</displayCategory>
-				</value>
-			</Operation>
-
-			<!-- -70 skin -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="VRE_BarkSkin"]</xpath>
-				<value>
-					<biostatMet Operation="SafeReplace">-2</biostatMet>
-					<statOffsets Operation="Safe">
-						<ArmorRating_Blunt Operation="SafeReplace">0.40</ArmorRating_Blunt>
-					</statOffsets>
-				</value>
-			</Operation>
-
-			<!-- -90 hairstyle -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="VRE_FoliageHair"]</xpath>
-				<value>
-					<biostatCpx Operation="SafeReplace">0</biostatCpx>
-					<displayCategory Operation="SafeRemove"/>
-				</value>
-			</Operation>
-
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
 					<li>RedMattis.BetterPrerequisites</li>
@@ -57,6 +20,14 @@
 						</value>
 					</Operation>
 				</caseTrue>
+				<caseFalse>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VRE_Female"]</xpath>
+						<value>
+							<displayCategory Operation="AddOrReplace">Miscellaneous</displayCategory>
+						</value>
+					</Operation>
+				</caseFalse>
 			</Operation>
 		</caseTrue>
 	</Operation>

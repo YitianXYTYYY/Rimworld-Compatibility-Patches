@@ -61,48 +61,27 @@
 				<packageId>true</packageId>
 				<caseTrue>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_SlowMeditation"]</xpath>
+						<xpath>Defs/GeneDef[defName="Turn_Gene_MeditationNeed"]</xpath>
 						<value>
 							<displayCategory Operation="AddOrReplace">Psychic_Meditation</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">0</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">100</displayOrderInCategory>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_SwiftMeditation"]</xpath>
+						<xpath>Defs/GeneDef[defName="Turn_Gene_PruningAccelerated"]</xpath>
 						<value>
 							<displayCategory Operation="AddOrReplace">Psychic_Meditation</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">10</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">1000</displayOrderInCategory>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_ExtremeMeditation"]</xpath>
+						<xpath>Defs/GeneDef[defName="Turn_Gene_GauranlenNeed"]</xpath>
 						<value>
 							<displayCategory Operation="AddOrReplace">Psychic_Meditation</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">20</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">1010</displayOrderInCategory>
 						</value>
 					</Operation>
 				</caseTrue>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="Turn_Gene_MeditationNeed"]</xpath>
-				<value>
-					<displayCategory Operation="AddOrReplace">Psychic_Meditation</displayCategory>
-					<displayOrderInCategory Operation="AddOrReplace">100</displayOrderInCategory>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="Turn_Gene_PruningAccelerated"]</xpath>
-				<value>
-					<displayCategory Operation="AddOrReplace">Psychic_Meditation</displayCategory>
-					<displayOrderInCategory Operation="AddOrReplace">1000</displayOrderInCategory>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="Turn_Gene_GauranlenNeed"]</xpath>
-				<value>
-					<displayCategory Operation="AddOrReplace">Psychic_Meditation</displayCategory>
-					<displayOrderInCategory Operation="AddOrReplace">1010</displayOrderInCategory>
-				</value>
 			</Operation>
 
 			<!-- 500 health -->
@@ -138,7 +117,37 @@
 					</statFactors>
 				</value>
 			</Operation>
-			
+
+			<!-- 410 sight -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="Turn_Gene_Blindness"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<displayCategory Operation="AddOrReplace">Health_Eye</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">0</displayOrderInCategory>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaracesexpanded.lycanthrope</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>GeneDef</xpath>
+								<value>
+									<exclusionTags Operation="Safe">
+										<li Operation="SafeAdd" Compare="InnerText">VRE_SuperiorDarkVision</li>
+									</exclusionTags>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+
 			<!-- 380 melee -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="Turn_Gene_Duelist"]</xpath>

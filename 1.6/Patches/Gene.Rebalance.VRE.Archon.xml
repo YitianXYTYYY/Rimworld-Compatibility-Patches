@@ -7,18 +7,6 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<!-- 1000 archite -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="VRE_PsychicAbility_MoreExtreme"]</xpath>
-				<value>
-					<displayCategory Operation="AddOrReplace">Archite</displayCategory>
-					<displayOrderInCategory Operation="AddOrReplace">-600</displayOrderInCategory>
-					<statOffsets Operation="Safe">
-						<PsychicSensitivity Operation="SafeReplace">0.8</PsychicSensitivity>
-					</statOffsets>
-				</value>
-			</Operation>
-
 			<!-- 600 psychic -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="VRE_HighEntropyCapacity"]</xpath>
@@ -58,6 +46,13 @@
 			</Operation>
 
 			<!-- 590 meditation -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_SlowMeditation"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Psychic_Meditation</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">0</displayOrderInCategory>
+				</value>
+			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="VRE_SwiftMeditation"]</xpath>
 				<apply>
@@ -66,6 +61,8 @@
 						<value>
 							<biostatCpx Operation="SafeReplace">1</biostatCpx>
 							<biostatMet Operation="SafeReplace">-1</biostatMet>
+							<displayCategory Operation="AddOrReplace">Psychic_Meditation</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">10</displayOrderInCategory>
 							<statOffsets Operation="Safe">
 								<MeditationFocusGain Operation="SafeAdd">0.05</MeditationFocusGain>
 							</statOffsets>
@@ -84,6 +81,8 @@
 						<value>
 							<biostatCpx Operation="SafeReplace">2</biostatCpx>
 							<biostatMet Operation="SafeReplace">-2</biostatMet>
+							<displayCategory Operation="AddOrReplace">Psychic_Meditation</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">20</displayOrderInCategory>
 							<statOffsets Operation="Safe">
 								<MeditationFocusGain Operation="SafeAdd">0.1</MeditationFocusGain>
 							</statOffsets>
@@ -146,17 +145,6 @@
 				<value>
 					<displayCategory Operation="AddOrReplace">Violence_Melee</displayCategory>
 					<displayOrderInCategory Operation="AddOrReplace">110</displayOrderInCategory>
-				</value>
-			</Operation>
-
-			<!-- -10 skin -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="VRE_Leatherskin"]</xpath>
-				<value>
-					<statOffsets Operation="Safe">
-						<ArmorRating_Sharp Operation="SafeReplace">0.30</ArmorRating_Sharp>
-						<ArmorRating_Blunt Operation="SafeReplace">0.10</ArmorRating_Blunt>
-					</statOffsets>
 				</value>
 			</Operation>
 		</caseTrue>

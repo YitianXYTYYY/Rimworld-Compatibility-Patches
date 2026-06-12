@@ -12,6 +12,13 @@
 				<xpath>Defs/GeneDef[defName="VRE_SuperiorDarkVision"]</xpath>
 				<apply>
 					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<displayCategory Operation="AddOrReplace">Health_Eye</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">110</displayOrderInCategory>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef/conditionalStatAffecters/li[@Class="VEF.Genes.ConditionalStatAffecter_Darkness"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
@@ -78,112 +85,6 @@
 						<xpath>GeneDef/statFactors/MeleeDodgeChance</xpath>
 					</Operation>
 				</apply>
-			</Operation>
-
-			<!-- 280 social -->
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/GeneDef[defName="VRE_SpeechInability"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef/exclusionTags</xpath>
-						<value>
-							<li Operation="SafeRemove" Compare="InnerText">VRE_ExtremelyAggressiveAndSpeechInability</li>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>Turnovus.Biotech.IntegratedGenes</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>GeneDef</xpath>
-								<value>
-									<iconPath Operation="SafeReplace">UI/Icons/Genes/Gene_Speechless</iconPath>
-									<exclusionTags Operation="Safe">
-										<li Operation="SafeAdd" Compare="InnerText">Voice</li>
-										<li Operation="SafeAdd" Compare="InnerText">Turn_Exclusion_Speechless</li>
-										<li Operation="SafeAdd" Compare="InnerText">Turn_Exclusion_VREH_Speechless</li>
-										<li Operation="SafeAdd" Compare="InnerText">Turn_Exclusion_Speechless_NaturalLeader</li>
-									</exclusionTags>
-									<symbolPack Operation="Safe">
-										<prefixSymbols Operation="Safe">
-											<li><symbol>hush</symbol></li>
-											<li><symbol>quiet</symbol></li>
-										</prefixSymbols>
-										<suffixSymbols Operation="Safe">
-											<li><symbol>mute</symbol></li>
-										</suffixSymbols>
-									</symbolPack>
-								</value>
-							</Operation>
-						</caseTrue>
-					</Operation>
-				</apply>
-			</Operation>
-
-			<!-- -140 ear -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="VRE_CanineEars"]</xpath>
-				<value>
-					<biostatCpx Operation="SafeReplace">0</biostatCpx>
-				</value>
-			</Operation>
-
-			<!-- -150 nose -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="VRE_CanineNose"]</xpath>
-				<value>
-					<biostatCpx Operation="SafeReplace">0</biostatCpx>
-					<displayCategory Operation="SafeRemove"/>
-				</value>
-			</Operation>
-
-			<!-- -220 tail -->
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/GeneDef[defName="VRE_CanineTail"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statOffsets/MoveSpeed</xpath>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<biostatMet Operation="SafeAdd">-1</biostatMet>
-							<capMods Operation="Safe">
-								<li Operation="Add">
-									<capacity>Moving</capacity>
-									<offset>0.05</offset>
-								</li>
-							</capMods>
-						</value>
-					</Operation>
-				</apply>
-			</Operation>
-
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>Turnovus.Biotech.IntegratedGenes</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="Turn_Gene_Blindness"]</xpath>
-						<value>
-							<exclusionTags Operation="Safe">
-								<li Operation="SafeAdd" Compare="InnerText">VRE_SuperiorDarkVision</li>
-							</exclusionTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThoughtDef[defName="MissingTongue"]</xpath>
-						<value>
-							<nullifyingGenes Operation="Safe">
-								<li Operation="SafeAdd" Compare="InnerText">VRE_SpeechInability</li>
-							</nullifyingGenes>
-						</value>
-					</Operation>
-				</caseTrue>
 			</Operation>
 		</caseTrue>
 	</Operation>

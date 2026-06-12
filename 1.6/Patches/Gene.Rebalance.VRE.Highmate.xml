@@ -7,24 +7,6 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<!-- 400 violence -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="VRE_Harmless"]</xpath>
-				<value>
-					<displayOrderInCategory Operation="AddOrReplace">-90</displayOrderInCategory>
-				</value>
-			</Operation>
-
-			<!-- -200 bodytype -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="VRE_PerfectBody"]</xpath>
-				<value>
-					<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
-					<displayCategory Operation="AddOrReplace">Cosmetic_BodyType</displayCategory>
-					<displayOrderInCategory Operation="AddOrReplace">5000</displayOrderInCategory>
-				</value>
-			</Operation>
-
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
 					<li>RedMattis.BetterGeneInheritance</li>

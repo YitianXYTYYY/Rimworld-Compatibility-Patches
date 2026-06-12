@@ -132,8 +132,8 @@
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
-		<defName>Cosmetic_Ear</defName>
-		<label>cosmetic - ear</label>
+		<defName>Cosmetic_Ears</defName>
+		<label>cosmetic - ears</label>
 		<displayPriorityInXenotype>-140</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
