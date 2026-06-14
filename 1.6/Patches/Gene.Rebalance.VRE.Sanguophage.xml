@@ -1,53 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>vanillaracesexpanded.sanguophage</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<!-- -30 hands -->
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/GeneDef[defName="VRE_Talons"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<biostatMet Operation="SafeReplace">0</biostatMet>
-							<customEffectDescriptions Operation="Safe">
-								<li Operation="SafeAdd" Compare="InnerText">Causes cuts when using unarmed attacks.</li>
-							</customEffectDescriptions>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef/capMods/li[capacity="Manipulation"]</xpath>
-						<value>
-							<postFactor Operation="SafeRemove"/>
-							<offset Operation="SafeAdd">-0.05</offset>
-						</value>
-					</Operation>
-				</apply>
-			</Operation>
-
-			<!-- -90 hairstyle -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="VRE_SanguineHair"]</xpath>
-				<value>
-					<displayCategory Operation="SafeRemove"/>
-				</value>
-			</Operation>
-
-			<!-- -150 nose -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="VRE_BatNose"]</xpath>
-				<value>
-					<displayCategory Operation="SafeRemove"/>
-				</value>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
 	<!-- 690 hemogen -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
@@ -108,6 +61,16 @@
 				<xpath>Defs/GeneDef[defName="VRE_SanguoFeeder"]</xpath>
 				<value>
 					<displayOrderInCategory Operation="AddOrReplace">3</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThoughtDef[defName="MissingTongue"]</xpath>
+				<value>
+					<requiredGenes Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">VRE_AnimalFeeder</li>
+						<li Operation="SafeAdd" Compare="InnerText">VRE_CorpseFeeder</li>
+						<li Operation="SafeAdd" Compare="InnerText">VRE_SanguoFeeder</li>
+					</requiredGenes>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">

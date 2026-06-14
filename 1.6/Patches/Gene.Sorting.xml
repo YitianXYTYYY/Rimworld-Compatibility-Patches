@@ -65,6 +65,9 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_Transcendent"]</xpath>
 						<value>
+							<customEffectDescriptions Operation="SafeAdd">
+								<li>Allowed using archon equipments.</li>
+							</customEffectDescriptions>
 							<displayOrderInCategory Operation="AddOrReplace">-999</displayOrderInCategory>
 						</value>
 					</Operation>
@@ -142,7 +145,7 @@
 							<displayCategory Operation="AddOrReplace">Archite</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">-600</displayOrderInCategory>
 							<statOffsets Operation="Safe">
-								<PsychicSensitivity Operation="SafeReplace">0.8</PsychicSensitivity>
+								<PsychicSensitivity Operation="SafeReplace">1</PsychicSensitivity>
 							</statOffsets>
 						</value>
 					</Operation>
@@ -212,6 +215,20 @@
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
+					<li>vanillaracesexpanded.lycanthrope</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VRE_MoveSpeed_ExtremelyQuick"]</xpath>
+						<value>
+							<displayOrderInCategory Operation="AddOrReplace">-470</displayOrderInCategory>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
 					<li>vanillaracesexpanded.phytokin</li>
 				</mods>
 				<packageId>true</packageId>
@@ -219,6 +236,9 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_Photosynthesis"]</xpath>
 						<value>
+							<customEffectDescriptions Operation="SafeAdd">
+								<li>Hunger rate x0% (in sunlight)</li>
+							</customEffectDescriptions>
 							<displayOrderInCategory Operation="AddOrReplace">-430</displayOrderInCategory>
 						</value>
 					</Operation>
@@ -333,6 +353,114 @@
 		</caseTrue>
 	</Operation>
 
+	<!-- 540 meat -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.fungoid</li>
+			<li>vanillaracesexpanded.insector</li>
+			<li>vanillaracesexpanded.pigskin</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.pigskin</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VRE_LowMeat"]</xpath>
+						<value>
+							<biostatCpx Operation="SafeRemove"/>
+							<displayCategory Operation="AddOrReplace">MeatLeather</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">-100</displayOrderInCategory>
+							<statFactors Operation="Safe">
+								<MeatAmount Operation="SafeRemove">0</MeatAmount>
+							</statFactors>
+							<statOffsets Operation="Safe">
+								<MeatAmount Operation="SafeAdd">-70</MeatAmount>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VRE_ExtraMeat"]</xpath>
+						<value>
+							<biostatCpx Operation="SafeRemove"/>
+							<displayCategory Operation="AddOrReplace">MeatLeather</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">-90</displayOrderInCategory>
+							<statFactors Operation="Safe">
+								<MeatAmount Operation="SafeRemove">0</MeatAmount>
+							</statFactors>
+							<statOffsets Operation="Safe">
+								<MeatAmount Operation="SafeAdd">70</MeatAmount>
+							</statOffsets>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.fungoid</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VRE_FungalFlesh"]</xpath>
+						<value>
+							<displayCategory Operation="AddOrReplace">MeatLeather</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">100</displayOrderInCategory>
+							<exclusionTags Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">Flesh</li>
+								<li Operation="SafeAdd" Compare="InnerText">Meat</li>
+								<li Operation="SafeAdd" Compare="InnerText">AG_Meat</li>
+							</exclusionTags>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.insector</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VRE_InsectFlesh"]</xpath>
+						<value>
+							<biostatCpx Operation="SafeRemove"/>
+							<displayCategory Operation="AddOrReplace">MeatLeather</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">110</displayOrderInCategory>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.pigskin</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VRE_PorkFlesh"]</xpath>
+						<value>
+							<biostatCpx Operation="SafeRemove"/>
+							<displayCategory Operation="AddOrReplace">MeatLeather</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">120</displayOrderInCategory>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VRE_PigSkin"]</xpath>
+						<value>
+							<biostatCpx Operation="SafeRemove"/>
+							<displayCategory Operation="AddOrReplace">MeatLeather</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">1000</displayOrderInCategory>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 	<!-- 530 blood -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
@@ -384,6 +512,10 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_SapBlood"]</xpath>
 						<value>
+							<customEffectDescriptions Operation="SafeAdd">
+								<li>Bleed rate x50%</li>
+							</customEffectDescriptions>
+							<description Operation="SafeReplace">Carriers of this gene have thick, sticky, orange blood that greatly slows down their bleed out time.</description>
 							<displayCategory Operation="AddOrReplace">Health_Blood</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">-80</displayOrderInCategory>
 						</value>
@@ -415,7 +547,7 @@
 						<xpath>Defs/GeneDef[defName="VRE_Hemophiliac"]</xpath>
 						<value>
 							<customEffectDescriptions Operation="SafeAdd">
-								<li>Wounds bleed very quickly.</li>
+								<li>Bleed rate x200%</li>
 							</customEffectDescriptions>
 							<displayCategory Operation="AddOrReplace">Health_Blood</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">100</displayOrderInCategory>
@@ -440,69 +572,65 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.genie</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VRE_Slow_Diseases"]</xpath>
+						<value>
+							<customEffectDescriptions Operation="SafeAdd">
+								<li>Disease progression speed x50%</li>
+							</customEffectDescriptions>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="Immunity_Strong"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<statOffsets Operation="Safe">
-								<ImmunityGainSpeed Operation="SafeAdd">0.10</ImmunityGainSpeed>
-							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/ImmunityGainSpeed</xpath>
-					</Operation>
-				</apply>
+				<value>
+					<statFactors Operation="Safe">
+						<ImmunityGainSpeed Operation="SafeRemove">0</ImmunityGainSpeed>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<ImmunityGainSpeed Operation="SafeAdd">0.10</ImmunityGainSpeed>
+					</statOffsets>
+				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="Immunity_SuperStrong"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<statOffsets Operation="Safe">
-								<ImmunityGainSpeed Operation="SafeAdd">0.50</ImmunityGainSpeed>
-							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/ImmunityGainSpeed</xpath>
-					</Operation>
-				</apply>
+				<value>
+					<statFactors Operation="Safe">
+						<ImmunityGainSpeed Operation="SafeRemove">0</ImmunityGainSpeed>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<ImmunityGainSpeed Operation="SafeAdd">0.50</ImmunityGainSpeed>
+					</statOffsets>
+				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="WoundHealing_Fast"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<statOffsets Operation="Safe">
-								<InjuryHealingFactor Operation="SafeAdd">1</InjuryHealingFactor>
-							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/InjuryHealingFactor</xpath>
-					</Operation>
-				</apply>
+				<value>
+					<statFactors Operation="Safe">
+						<InjuryHealingFactor Operation="SafeRemove">0</InjuryHealingFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<InjuryHealingFactor Operation="SafeAdd">1</InjuryHealingFactor>
+					</statOffsets>
+				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="WoundHealing_SuperFast"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<statOffsets Operation="Safe">
-								<InjuryHealingFactor Operation="SafeAdd">3</InjuryHealingFactor>
-							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/InjuryHealingFactor</xpath>
-					</Operation>
-				</apply>
+				<value>
+					<statFactors Operation="Safe">
+						<InjuryHealingFactor Operation="SafeRemove">0</InjuryHealingFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<InjuryHealingFactor Operation="SafeAdd">3</InjuryHealingFactor>
+					</statOffsets>
+				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
@@ -557,32 +685,33 @@
 				<packageId>true</packageId>
 				<caseTrue>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VREStarjack_OxygenSensitivity_Mild"]</xpath>
+						<xpath>Defs/GeneDef[defName="VacuumResistance_Partial"]</xpath>
 						<value>
 							<displayOrderInCategory Operation="AddOrReplace">33</displayOrderInCategory>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VREStarjack_OxygenSensitivity_Intense"]</xpath>
+						<xpath>Defs/GeneDef[defName="VREStarjack_VacuumResistance_Total"]</xpath>
 						<value>
 							<displayOrderInCategory Operation="AddOrReplace">34</displayOrderInCategory>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VREStarjack_OxygenSensitivity_Extreme"]</xpath>
+						<xpath>Defs/GeneDef[defName="VREStarjack_OxygenSensitivity_Mild"]</xpath>
 						<value>
 							<displayOrderInCategory Operation="AddOrReplace">35</displayOrderInCategory>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VacuumResistance_Partial"]</xpath>
+						<xpath>Defs/GeneDef[defName="VREStarjack_OxygenSensitivity_Intense"]</xpath>
 						<value>
 							<displayOrderInCategory Operation="AddOrReplace">36</displayOrderInCategory>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VREStarjack_VacuumResistance_Total"]</xpath>
+						<xpath>Defs/GeneDef[defName="VREStarjack_OxygenSensitivity_Extreme"]</xpath>
 						<value>
+							<biostatCpx Operation="SafeReplace">3</biostatCpx>
 							<displayOrderInCategory Operation="AddOrReplace">37</displayOrderInCategory>
 						</value>
 					</Operation>
@@ -617,12 +746,16 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_IntenseLightSensitivity"]</xpath>
 						<value>
+							<biostatCpx Operation="SafeReplace">2</biostatCpx>
 							<displayOrderInCategory Operation="AddOrReplace">56</displayOrderInCategory>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_Photophobia"]</xpath>
 						<value>
+							<customEffectDescriptions Operation="SafeAdd">
+								<li>May have a mental break when near light sources.</li>
+							</customEffectDescriptions>
 							<displayOrderInCategory Operation="AddOrReplace">57</displayOrderInCategory>
 						</value>
 					</Operation>
@@ -678,11 +811,28 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.hussar</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VREH_Unconstrained"]</xpath>
+						<value>
+							<customEffectDescriptions Operation="SafeAdd">
+								<li>Unaffected by move speed penalty from apparel.</li>
+							</customEffectDescriptions>
+							<displayOrderInCategory Operation="AddOrReplace">510</displayOrderInCategory>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="Unstoppable"]</xpath>
 				<value>
 					<displayCategory Operation="AddOrReplace">Movement</displayCategory>
-					<displayOrderInCategory Operation="AddOrReplace">400</displayOrderInCategory>
+					<displayOrderInCategory Operation="AddOrReplace">520</displayOrderInCategory>
 				</value>
 			</Operation>
 		</caseTrue>
@@ -695,37 +845,27 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VerySleepy"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<statOffsets Operation="Safe">
-								<RestFallRateFactor Operation="SafeAdd">0.8</RestFallRateFactor>
-							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/RestFallRateFactor</xpath>
-					</Operation>
-				</apply>
+				<value>
+					<statFactors Operation="Safe">
+						<RestFallRateFactor Operation="SafeRemove">0</RestFallRateFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<RestFallRateFactor Operation="SafeAdd">0.8</RestFallRateFactor>
+					</statOffsets>
+				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="Sleepy"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<statOffsets Operation="Safe">
-								<RestFallRateFactor Operation="SafeAdd">0.4</RestFallRateFactor>
-							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/RestFallRateFactor</xpath>
-					</Operation>
-				</apply>
+				<value>
+					<statFactors Operation="Safe">
+						<RestFallRateFactor Operation="SafeRemove">0</RestFallRateFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<RestFallRateFactor Operation="SafeAdd">0.4</RestFallRateFactor>
+					</statOffsets>
+				</value>
 			</Operation>
 		</caseTrue>
 	</Operation>
@@ -737,23 +877,36 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/GeneDef[defName="RobustDigestion"]</xpath>
-				<apply>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>Turnovus.Biotech.IntegratedGenes</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
+						<xpath>Defs/GeneDef[defName="Turn_Gene_FrailDigestion"]</xpath>
 						<value>
 							<displayCategory Operation="AddOrReplace">Health_Digestion</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">10</displayOrderInCategory>
-							<statOffsets Operation="Safe">
-								<RawNutritionFactor Operation="SafeAdd">0.8</RawNutritionFactor>
-							</statOffsets>
+							<displayOrderInCategory Operation="AddOrReplace">0</displayOrderInCategory>
+							<statFactors Operation="Safe">
+								<RawNutritionFactor Operation="SafeReplace">0.5</RawNutritionFactor>
+							</statFactors>
 						</value>
 					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/RawNutritionFactor</xpath>
-					</Operation>
-				</apply>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="RobustDigestion"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Health_Digestion</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">10</displayOrderInCategory>
+					<statFactors Operation="Safe">
+						<RawNutritionFactor Operation="SafeAdd">0.8</RawNutritionFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<RawNutritionFactor Operation="SafeAdd">0.8</RawNutritionFactor>
+					</statOffsets>
+				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="StrongStomach"]</xpath>
@@ -918,21 +1071,16 @@
 					<displayCategory Operation="AddOrReplace">Violence_Melee</displayCategory>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="MeleeDamage_Strong"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<statOffsets Operation="Safe">
-								<MeleeDamageFactor Operation="SafeAdd">0.5</MeleeDamageFactor>
-							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/MeleeDamageFactor</xpath>
-					</Operation>
-				</apply>
+				<value>
+					<statFactors Operation="Safe">
+						<MeleeDamageFactor Operation="SafeRemove">0</MeleeDamageFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<MeleeDamageFactor Operation="SafeAdd">0.5</MeleeDamageFactor>
+					</statOffsets>
+				</value>
 			</Operation>
 		</caseTrue>
 	</Operation>
@@ -1006,23 +1154,28 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>vanillaracesexpanded.lycanthrope</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseFalse>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>Defs/GeneDef[defName="Turn_Gene_Speechless"]</xpath>
-								<value>
-									<displayCategory Operation="AddOrReplace">Social</displayCategory>
-									<displayOrderInCategory Operation="AddOrReplace">-100</displayOrderInCategory>
-									<exclusionTags Operation="Safe">
-										<li Operation="SafeAdd" Compare="InnerText">XYTYYY_RequireSpeechAbility</li>
-									</exclusionTags>
-								</value>
+					<Operation Class="XmlExtensions.SetScope">
+						<xpath>Defs/GeneDef[defName="Turn_Gene_Speechless"]</xpath>
+						<apply>
+							<Operation Class="XmlExtensions.FindMod">
+								<mods>
+									<li>vanillaracesexpanded.lycanthrope</li>
+								</mods>
+								<packageId>true</packageId>
+								<caseFalse>
+									<Operation Class="XmlExtensions.HybridPatch">
+										<xpath>GeneDef</xpath>
+										<value>
+											<displayCategory Operation="AddOrReplace">Social</displayCategory>
+											<displayOrderInCategory Operation="AddOrReplace">-100</displayOrderInCategory>
+											<exclusionTags Operation="Safe">
+												<li Operation="SafeAdd" Compare="InnerText">XYTYYY_RequireSpeechAbility</li>
+											</exclusionTags>
+										</value>
+									</Operation>
+								</caseFalse>
 							</Operation>
-						</caseFalse>
+						</apply>
 					</Operation>
 				</caseTrue>
 			</Operation>
@@ -1040,13 +1193,10 @@
 								<value>
 									<displayCategory Operation="AddOrReplace">Social</displayCategory>
 									<displayOrderInCategory Operation="AddOrReplace">-100</displayOrderInCategory>
-								</value>
-							</Operation>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>GeneDef/exclusionTags</xpath>
-								<value>
-									<li Operation="SafeRemove" Compare="InnerText">VRE_ExtremelyAggressiveAndSpeechInability</li>
-									<li Operation="SafeAdd" Compare="InnerText">XYTYYY_RequireSpeechAbility</li>
+									<exclusionTags Operation="Safe">
+										<li Operation="SafeRemove" Compare="InnerText">VRE_ExtremelyAggressiveAndSpeechInability</li>
+										<li Operation="SafeAdd" Compare="InnerText">XYTYYY_RequireSpeechAbility</li>
+									</exclusionTags>
 								</value>
 							</Operation>
 							<Operation Class="XmlExtensions.FindMod">
@@ -1121,6 +1271,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VREH_Arrogant"]</xpath>
 						<value>
+							<description Operation="SafeReplace">Carriers of this gene do not have a filter and always say what's on their mind, even if it rubs the others the wrong way.</description>
 							<displayCategory Operation="AddOrReplace">Social</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">100</displayOrderInCategory>
 						</value>
@@ -1183,6 +1334,9 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_Telepathy"]</xpath>
 						<value>
+							<customEffectDescriptions Operation="SafeAdd">
+								<li>Social interactions between carriers of this gene ignore distance requirement.</li>
+							</customEffectDescriptions>
 							<displayCategory Operation="AddOrReplace">Social</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">1000</displayOrderInCategory>
 						</value>
@@ -1269,20 +1423,6 @@
 		<caseTrue>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
-					<li>vanillaracesexpanded.starjack</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VREStarjack_VacuumEfficiency"]</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Miscellaneous</displayCategory>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
 					<li>vanillaracesexpanded.insector</li>
 				</mods>
 				<packageId>true</packageId>
@@ -1291,264 +1431,6 @@
 						<xpath>Defs/GeneDef[defName="VRE_InsectPheromones"]</xpath>
 						<value>
 							<displayCategory Operation="AddOrReplace">Miscellaneous</displayCategory>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
-	<!-- -10 skin -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>Ludeon.RimWorld.Biotech</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.phytokin</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_BarkSkin"]</xpath>
-						<value>
-							<biostatMet Operation="SafeReplace">-2</biostatMet>
-							<displayCategory Operation="AddOrReplace">Skin</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">0</displayOrderInCategory>
-							<statOffsets Operation="Safe">
-								<ArmorRating_Blunt Operation="SafeReplace">0.40</ArmorRating_Blunt>
-							</statOffsets>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.lycanthrope</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_ChestFur"]</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Skin</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">10</displayOrderInCategory>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="Furskin"]</xpath>
-				<value>
-					<displayCategory Operation="AddOrReplace">Skin</displayCategory>
-					<displayOrderInCategory Operation="AddOrReplace">20</displayOrderInCategory>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.insector</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_InsectSkin"]</xpath>
-						<value>
-							<biostatCpx Operation="SafeReplace">1</biostatCpx>
-							<displayCategory Operation="AddOrReplace">Skin</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">30</displayOrderInCategory>
-							<statOffsets Operation="Safe">
-								<ArmorRating_Sharp Operation="SafeReplace">0.20</ArmorRating_Sharp>
-								<ArmorRating_Blunt Operation="SafeReplace">0.20</ArmorRating_Blunt>
-							</statOffsets>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.archon</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_Leatherskin"]</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Skin</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">40</displayOrderInCategory>
-							<statOffsets Operation="Safe">
-								<ArmorRating_Sharp Operation="SafeReplace">0.30</ArmorRating_Sharp>
-								<ArmorRating_Blunt Operation="SafeReplace">0.10</ArmorRating_Blunt>
-							</statOffsets>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.saurid</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRESaurids_ScaleSkin"]</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Skin</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">50</displayOrderInCategory>
-							<biostatMet Operation="SafeReplace">-2</biostatMet>
-							<statOffsets Operation="Safe">
-								<ArmorRating_Sharp Operation="SafeReplace">0.4</ArmorRating_Sharp>
-							</statOffsets>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
-	<!-- -20 arms -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>resplice.xotr.core</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[@Name="RS_GeneTentacleBase"]</xpath>
-				<value>
-					<displayCategory Operation="AddOrReplace">Arms</displayCategory>
-				</value>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
-	<!-- -30 hands -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>Ludeon.RimWorld.Biotech</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[@Name="GeneHandsBase"]</xpath>
-				<value>
-					<displayCategory Operation="AddOrReplace">Hands</displayCategory>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="Hands_Pig"]/capMods/li[capacity="Manipulation"]</xpath>
-				<value>
-					<postFactor Operation="SafeRemove"/>
-					<offset Operation="SafeAdd">-0.15</offset>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="ElongatedFingers"]/capMods/li[capacity="Manipulation"]</xpath>
-				<value>
-					<postFactor Operation="SafeRemove"/>
-					<offset Operation="SafeAdd">0.1</offset>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.saurid</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRESaurids_SauridClaws"]/capMods/li[capacity="Manipulation"]</xpath>
-						<value>
-							<postFactor Operation="SafeRemove"/>
-							<offset Operation="SafeAdd">-0.05</offset>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="WebbedPhalanges"]</xpath>
-				<value>
-					<displayCategory Operation="AddOrReplace">Hands</displayCategory>
-					<displayOrderInCategory Operation="AddOrReplace">1000</displayOrderInCategory>
-				</value>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
-	<!-- -220 tail(functional) -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>Ludeon.RimWorld.Biotech</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.lycanthrope</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.SetScope">
-						<xpath>Defs/GeneDef[defName="VRE_CanineTail"]</xpath>
-						<apply>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>GeneDef</xpath>
-								<value>
-									<biostatMet Operation="SafeAdd">-1</biostatMet>
-									<capMods Operation="Safe">
-										<li Operation="Add">
-											<capacity>Moving</capacity>
-											<offset>0.05</offset>
-										</li>
-									</capMods>
-								</value>
-							</Operation>
-							<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-								<xpath>GeneDef/statOffsets/MoveSpeed</xpath>
-							</Operation>
-						</apply>
-					</Operation>
-				</caseTrue>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.pigskin</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_CurledTail"]</xpath>
-						<value>
-							<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.saurid</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRESaurids_GeckoTail"]</xpath>
-						<value>
-							<biostatCpx Operation="SafeAdd">0</biostatCpx>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.starjack</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VREStarjack_SpacejumpLegs"]</xpath>
-						<value>
-							<displayCategory Operation="SafeRemove"/>
-							<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
 						</value>
 					</Operation>
 				</caseTrue>

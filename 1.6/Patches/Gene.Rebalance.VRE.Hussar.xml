@@ -14,70 +14,55 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
-					<Operation Class="XmlExtensions.SetScope">
+					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="SEX_RangedWeaponAptitude"]</xpath>
-						<apply>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>GeneDef</xpath>
-								<value>
-									<displayCategory Operation="AddOrReplace">Violence_Ranged</displayCategory>
-									<displayOrderInCategory Operation="AddOrReplace">-100</displayOrderInCategory>
-									<exclusionTags Operation="Safe">
-										<li Operation="SafeAdd" Compare="InnerText">SEX_WeaponAptitude</li>
-									</exclusionTags>
-									<statOffsets Operation="Safe">
-										<ShootingAccuracyPawn Operation="SafeAdd">12</ShootingAccuracyPawn>
-									</statOffsets>
-								</value>
-							</Operation>
-							<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-								<xpath>GeneDef/statFactors/ShootingAccuracyPawn</xpath>
-							</Operation>
-						</apply>
+						<value>
+							<displayCategory Operation="AddOrReplace">Violence_Ranged</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">-100</displayOrderInCategory>
+							<exclusionTags Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">SEX_WeaponAptitude</li>
+							</exclusionTags>
+							<statFactors Operation="Safe">
+								<ShootingAccuracyPawn Operation="SafeRemove">0</ShootingAccuracyPawn>
+							</statFactors>
+							<statOffsets Operation="Safe">
+								<ShootingAccuracyPawn Operation="SafeAdd">12</ShootingAccuracyPawn>
+							</statOffsets>
+						</value>
 					</Operation>
-					<Operation Class="XmlExtensions.SetScope">
+					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="SEX_MeleeWeaponAptitude"]</xpath>
-						<apply>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>GeneDef</xpath>
-								<value>
-									<displayCategory Operation="AddOrReplace">Violence_Melee</displayCategory>
-									<displayOrderInCategory Operation="AddOrReplace">-100</displayOrderInCategory>
-									<exclusionTags Operation="Safe">
-										<li Operation="SafeAdd" Compare="InnerText">SEX_WeaponAptitude</li>
-									</exclusionTags>
-									<statOffsets Operation="Safe">
-										<MeleeHitChance Operation="SafeAdd">12</MeleeHitChance>
-									</statOffsets>
-								</value>
-							</Operation>
-							<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-								<xpath>GeneDef/statFactors/MeleeHitChance</xpath>
-							</Operation>
-						</apply>
+						<value>
+							<displayCategory Operation="AddOrReplace">Violence_Melee</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">-100</displayOrderInCategory>
+							<exclusionTags Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">SEX_WeaponAptitude</li>
+							</exclusionTags>
+							<statFactors Operation="Safe">
+								<MeleeHitChance Operation="SafeRemove">0</MeleeHitChance>
+							</statFactors>
+							<statOffsets Operation="Safe">
+								<MeleeHitChance Operation="SafeAdd">12</MeleeHitChance>
+							</statOffsets>
+						</value>
 					</Operation>
 				</caseTrue>
 			</Operation>
 
 			<!-- 0 misc -->
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VREH_Giant"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<statOffsets Operation="Safe">
-								<VEF_BodySize_Multiplier Operation="SafeAdd">0.1</VEF_BodySize_Multiplier>
-							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/VEF_BodySize_Multiplier</xpath>
-					</Operation>
-				</apply>
+				<value>
+					<statFactors Operation="Safe">
+						<VEF_BodySize_Multiplier Operation="SafeRemove">0</VEF_BodySize_Multiplier>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<VEF_BodySize_Multiplier Operation="SafeAdd">0.2</VEF_BodySize_Multiplier>
+					</statOffsets>
+				</value>
 			</Operation>
 
-			<!-- -220 wing -->
+			<!-- -40 wing -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
 					<li>vanillaracesexpanded.hussar</li>
@@ -87,7 +72,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VREH_Glidewings"]</xpath>
 						<value>
-							<displayCategory Operation="AddOrReplace">Cosmetic_Body_Wing</displayCategory>
+							<displayCategory Operation="AddOrReplace">Wings</displayCategory>
 						</value>
 					</Operation>
 				</caseTrue>

@@ -18,21 +18,14 @@
 		</value>
 	</Operation>
 
-	<Operation Class="XmlExtensions.SetScope">
+	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ThingDef[defName="Apparel_PsychicFoilHelmet"]</xpath>
-		<apply>
-			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-				<xpath>ThingDef/equippedStatOffsets/PsychicSensitivity</xpath>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>ThingDef</xpath>
-				<value>
-					<equippedStatOffsets Operation="Safe">
-						<PsychicSensitivityOffset Operation="SafeAdd">-0.9</PsychicSensitivityOffset>
-					</equippedStatOffsets>
-				</value>
-			</Operation>
-		</apply>
+		<value>
+			<equippedStatOffsets Operation="Safe">
+				<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+				<PsychicSensitivityOffset Operation="SafeAdd">-0.9</PsychicSensitivityOffset>
+			</equippedStatOffsets>
+		</value>
 	</Operation>
 
 	<Operation Class="XmlExtensions.FindMod">
@@ -86,23 +79,24 @@
 				<xpath>Defs/ThingDef[defName="Apparel_Gunlink"]</xpath>
 				<apply>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ThingDef/apparel/bodyPartGroups</xpath>
+						<xpath>ThingDef</xpath>
 						<value>
-							<li Operation="SafeRemove" Compare="InnerText">UpperHead</li>
-							<li Operation="SafeAdd" Compare="InnerText">Eyes</li>
+							<apparel Operation="Safe">
+								<bodyPartGroups Operation="Safe">
+									<li Operation="SafeRemove" Compare="InnerText">UpperHead</li>
+									<li Operation="SafeAdd" Compare="InnerText">Eyes</li>
+								</bodyPartGroups>
+							</apparel>
+							<equippedStatOffsets Operation="Safe">
+								<ShootingAccuracyPawn Operation="SafeReplace">4</ShootingAccuracyPawn>
+								<VacuumResistance Operation="SafeRemove">0</VacuumResistance>
+							</equippedStatOffsets>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
 						<xpath>ThingDef/equippedStatOffsets</xpath>
 						<attribute>Inherit</attribute>
 						<value>False</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ThingDef/equippedStatOffsets</xpath>
-						<value>
-							<ShootingAccuracyPawn Operation="SafeReplace">4</ShootingAccuracyPawn>
-							<VacuumResistance Operation="SafeRemove"/>
-						</value>
 					</Operation>
 				</apply>
 			</Operation>
@@ -134,22 +128,23 @@
 				<xpath>Defs/ThingDef[defName="Apparel_IntegratorHeadset"]</xpath>
 				<apply>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ThingDef/apparel/bodyPartGroups</xpath>
+						<xpath>ThingDef</xpath>
 						<value>
-							<li Operation="SafeRemove" Compare="InnerText">UpperHead</li>
-							<li Operation="SafeAdd" Compare="InnerText">Eyes</li>
+							<apparel Operation="Safe">
+								<bodyPartGroups Operation="Safe">
+									<li Operation="SafeRemove" Compare="InnerText">UpperHead</li>
+									<li Operation="SafeAdd" Compare="InnerText">Eyes</li>
+								</bodyPartGroups>
+							</apparel>
+							<equippedStatOffsets Operation="Safe">
+								<VacuumResistance Operation="SafeRemove">0</VacuumResistance>
+							</equippedStatOffsets>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
 						<xpath>ThingDef/equippedStatOffsets</xpath>
 						<attribute>Inherit</attribute>
 						<value>False</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ThingDef/equippedStatOffsets</xpath>
-						<value>
-							<VacuumResistance Operation="SafeRemove"/>
-						</value>
 					</Operation>
 				</apply>
 			</Operation>
@@ -166,25 +161,20 @@
 			</Operation>
 
 			<!-- bandolier -->
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="Apparel_Bandolier"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>ThingDef/equippedStatOffsets/RangedCooldownFactor</xpath>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ThingDef</xpath>
-						<value>
-							<modExtensions Operation="Safe">
-								<li Class="VEF.Apparels.ApparelExtension" Operation="Add">
-									<equippedStatFactors>
-										<RangedCooldownFactor>0.8</RangedCooldownFactor>
-									</equippedStatFactors>
-								</li>
-							</modExtensions>
-						</value>
-					</Operation>
-				</apply>
+				<value>
+					<equippedStatOffsets Operation="Safe">
+						<RangedCooldownFactor Operation="SafeRemove">0</RangedCooldownFactor>
+					</equippedStatOffsets>
+					<modExtensions Operation="Safe">
+						<li Class="VEF.Apparels.ApparelExtension" Operation="Safe" CheckAttributes="True">
+							<equippedStatFactors Operation="Safe">
+								<RangedCooldownFactor Operation="SafeAdd">0.8</RangedCooldownFactor>
+							</equippedStatFactors>
+						</li>
+					</modExtensions>
+				</value>
 			</Operation>
 		</caseTrue>
 	</Operation>
@@ -243,17 +233,17 @@
 							<colorGenerator Class="ColorGenerator_Options" Operation="Safe">
 								<options Operation="SafeReplace">
 									<li>
-									<weight>10</weight>
-									<only>(0.33,0.33,0.33)</only>
+										<weight>10</weight>
+										<only>(0.33,0.33,0.33)</only>
 									</li>
 									<li>
-									<weight>10</weight>
-									<only>(0.65,0.65,0.65)</only>
+										<weight>10</weight>
+										<only>(0.65,0.65,0.65)</only>
 									</li>
 									<li>
-									<weight>6</weight>
-									<min>(0.3,0.3,0.3)</min>
-									<max>(0.5,0.5,0.5)</max>
+										<weight>6</weight>
+										<min>(0.3,0.3,0.3)</min>
+										<max>(0.5,0.5,0.5)</max>
 									</li>
 								</options>
 							</colorGenerator>
@@ -288,17 +278,17 @@
 							<colorGenerator Class="ColorGenerator_Options" Operation="Safe">
 								<options Operation="SafeReplace">
 									<li>
-									<weight>10</weight>
-									<only>(0.33,0.33,0.33)</only>
+										<weight>10</weight>
+										<only>(0.33,0.33,0.33)</only>
 									</li>
 									<li>
-									<weight>10</weight>
-									<only>(0.65,0.65,0.65)</only>
+										<weight>10</weight>
+										<only>(0.65,0.65,0.65)</only>
 									</li>
 									<li>
-									<weight>6</weight>
-									<min>(0.3,0.3,0.3)</min>
-									<max>(0.5,0.5,0.5)</max>
+										<weight>6</weight>
+										<min>(0.3,0.3,0.3)</min>
+										<max>(0.5,0.5,0.5)</max>
 									</li>
 								</options>
 							</colorGenerator>
@@ -453,24 +443,20 @@
 				</value>
 			</Operation>
 
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="VAE_Headgear_HAZMATMask"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ThingDef/apparel/bodyPartGroups</xpath>
-						<value>
+				<value>
+					<apparel Operation="Safe">
+						<bodyPartGroups Operation="Safe">
 							<li Operation="SafeRemove" Compare="InnerText">Eyes</li>
 							<li Operation="SafeAdd" Compare="InnerText">FullHead</li>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ThingDef/equippedStatOffsets</xpath>
-						<value>
-							<PsychicSensitivity Operation="SafeRemove"/>
-							<!--PsychicSensitivityOffset Operation="SafeAdd">-0.5</PsychicSensitivityOffset-->
-						</value>
-					</Operation>
-				</apply>
+						</bodyPartGroups>
+					</apparel>
+					<equippedStatOffsets Operation="Safe">
+						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+						<!--PsychicSensitivityOffset Operation="SafeAdd">-0.5</PsychicSensitivityOffset-->
+					</equippedStatOffsets>
+				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="VAE_Apparel_HAZMATSuit"]/equippedStatOffsets</xpath>
@@ -526,28 +512,26 @@
 					</equippedStatOffsets>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="VFEE_Apparel_ArmorAbsolver"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>ThingDef/modExtensions/li[@Class="VEF.Apparels.ApparelExtension"]/equippedStatFactors/MoveSpeed</xpath>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ThingDef</xpath>
-						<value>
-							<equippedStatOffsets Operation="Safe">
-								<MoveSpeed Operation="SafeAdd">0.6</MoveSpeed>
-							</equippedStatOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ThingDef/apparel/layers</xpath>
-						<value>
+				<value>
+					<apparel Operation="Safe">
+						<layers Operation="Safe">
 							<li Operation="SafeRemove" Compare="InnerText">OnSkin</li>
 							<li Operation="SafeAdd" Compare="InnerText">Shell</li>
-						</value>
-					</Operation>
-				</apply>
+						</layers>
+					</apparel>
+					<equippedStatOffsets Operation="Safe">
+						<MoveSpeed Operation="SafeAdd">0.6</MoveSpeed>
+					</equippedStatOffsets>
+					<modExtensions Operation="Safe">
+						<li Class="VEF.Apparels.ApparelExtension" Operation="Safe" CheckAttributes="True">
+							<equippedStatFactors Operation="Safe">
+								<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+							</equippedStatFactors>
+						</li>
+					</modExtensions>
+				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="VFEE_Apparel_DeserterHelmet"]</xpath>

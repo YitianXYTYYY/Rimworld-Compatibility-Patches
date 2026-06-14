@@ -102,16 +102,22 @@
 
 	<!-- VEF stats -->
 	<Operation Class="XmlExtensions.HybridPatch">
-		<xpath>Defs/StatDef[defName="VEF_VerbRangeFactor"]</xpath>
+		<xpath>Defs/StatDef[defName="VEF_FoodCapacityMultiplier"]</xpath>
 		<value>
 			<toStringStyle Operation="SafeReplace">PercentZero</toStringStyle>
-			<toStringStyleUnfinalized Operation="SafeRemove"/>
 		</value>
 	</Operation>
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/StatDef[defName="VEF_RangedDodgeChance"]</xpath>
 		<value>
 			<hideAtValue Operation="SafeAdd">0</hideAtValue>
+			<toStringStyleUnfinalized Operation="SafeRemove"/>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/StatDef[defName="VEF_VerbRangeFactor"]</xpath>
+		<value>
+			<toStringStyle Operation="SafeReplace">PercentZero</toStringStyle>
 			<toStringStyleUnfinalized Operation="SafeRemove"/>
 		</value>
 	</Operation>

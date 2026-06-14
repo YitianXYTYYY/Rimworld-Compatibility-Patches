@@ -83,6 +83,7 @@
 						<xpath>defs</xpath>
 						<value>
 							<li>GeneDef/Turn_Gene_ArchotechAttunement</li>
+							<li>GeneDef/Turn_Gene_Bliss</li>
 							<li>GeneDef/Turn_Gene_LatentPsychic</li>
 							<li>GeneDef/Turn_Gene_NaturalLeader</li>
 							<li>GeneDef/Turn_Gene_VariablePhenotype</li>
@@ -212,6 +213,21 @@
 							<li>RecipeDef/Make_VFET_Throwspikes</li>
 							<li>ThingDef/VFET_Chunk</li>
 							<li>ThingDef/VFET_Throwspikes</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Vanilla Races Expanded - Starjack -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.starjack</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>GeneDef/VREStarjack_VacuumEfficiency</li>
 						</value>
 					</Operation>
 				</caseTrue>

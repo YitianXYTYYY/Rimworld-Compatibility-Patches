@@ -11,33 +11,39 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="MoveSpeed_Space"]</xpath>
 				<value>
+					<biostatCpx Operation="SafeRemove"/>
+					<conditionalStatAffecters Operation="Safe">
+						<li Class="ConditionalStatAffecter_NotInSpace" Operation="Safe" CheckAttributes="True">
+							<statFactors Operation="Safe">
+								<WorkSpeedGlobal Operation="SafeAdd">0.8</WorkSpeedGlobal>
+							</statFactors>
+							<statOffsets Operation="Safe">
+								<WorkSpeedGlobal Operation="SafeRemove">0</WorkSpeedGlobal>
+							</statOffsets>
+						</li>
+					</conditionalStatAffecters>
 					<displayCategory Operation="AddOrReplace">Astrogen</displayCategory>
 					<displayOrderInCategory Operation="AddOrReplace">-1000</displayOrderInCategory>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="BfG_Hemogen_Space"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Astrogen</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">-690</displayOrderInCategory>
-							<prerequisite Operation="SafeAdd">MoveSpeed_Space</prerequisite>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]</xpath>
-						<value>
+				<value>
+					<biostatCpx Operation="SafeRemove"/>
+					<conditionalStatAffecters Operation="Safe">
+						<li Class="ConditionalStatAffecter_InSpace" Operation="Safe" CheckAttributes="True">
+							<statFactors Operation="Safe">
+								<HemogenGainFactor Operation="SafeRemove">0</HemogenGainFactor>
+							</statFactors>
 							<statOffsets Operation="Safe">
 								<HemogenGainFactor Operation="SafeAdd">0.2</HemogenGainFactor>
 							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]/statFactors/HemogenGainFactor</xpath>
-					</Operation>
-				</apply>
+						</li>
+					</conditionalStatAffecters>
+					<displayCategory Operation="AddOrReplace">Astrogen</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">-690</displayOrderInCategory>
+					<prerequisite Operation="SafeAdd">MoveSpeed_Space</prerequisite>
+				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="BfG_PsychicAbility_Space"]</xpath>
@@ -50,25 +56,22 @@
 						<xpath>GeneDef</xpath>
 						<value>
 							<biostatArc Operation="SafeRemove"/>
+							<biostatCpx Operation="SafeRemove"/>
+							<conditionalStatAffecters Operation="Safe">
+								<li Class="ConditionalStatAffecter_InSpace" Operation="Safe" CheckAttributes="True">
+									<statOffsets Operation="Safe">
+										<PsychicSensitivity Operation="SafeReplace">0.4</PsychicSensitivity>
+									</statOffsets>
+								</li>
+								<li Class="ConditionalStatAffecter_NotInSpace" Operation="Safe" CheckAttributes="True">
+									<statOffsets Operation="Safe">
+										<PsychicSensitivity Operation="SafeReplace">-0.2</PsychicSensitivity>
+									</statOffsets>
+								</li>
+							</conditionalStatAffecters>
 							<prerequisite Operation="SafeAdd">MoveSpeed_Space</prerequisite>
 							<displayCategory Operation="AddOrReplace">Astrogen</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">-600</displayOrderInCategory>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]</xpath>
-						<value>
-							<statOffsets Operation="Safe">
-								<PsychicSensitivity Operation="SafeReplace">0.4</PsychicSensitivity>
-							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]</xpath>
-						<value>
-							<statOffsets Operation="Safe">
-								<PsychicSensitivity Operation="SafeReplace">-0.2</PsychicSensitivity>
-							</statOffsets>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.OptionalPatch">
@@ -87,46 +90,35 @@
 					</Operation>
 				</apply>
 			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="BfG_WoundHealing_Space"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Astrogen</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">-500</displayOrderInCategory>
-							<prerequisite Operation="SafeAdd">MoveSpeed_Space</prerequisite>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]</xpath>
-						<value>
+				<value>
+					<biostatCpx Operation="SafeRemove"/>
+					<conditionalStatAffecters Operation="Safe">
+						<li Class="ConditionalStatAffecter_InSpace" Operation="Safe" CheckAttributes="True">
+							<statFactors Operation="Safe">
+								<ImmunityGainSpeed Operation="SafeRemove">0</ImmunityGainSpeed>
+								<InjuryHealingFactor Operation="SafeRemove">0</InjuryHealingFactor>
+							</statFactors>
 							<statOffsets Operation="Safe">
-								<ImmunityGainSpeed Operation="SafeAdd">0.1</ImmunityGainSpeed>
 								<InjuryHealingFactor Operation="SafeAdd">1</InjuryHealingFactor>
 							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]/statFactors</xpath>
-						<value>
-							<ImmunityGainSpeed Operation="SafeRemove"/>
-							<InjuryHealingFactor Operation="SafeRemove"/>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]</xpath>
-						<value>
+						</li>
+						<li Class="ConditionalStatAffecter_NotInSpace" Operation="Safe" CheckAttributes="True">
 							<statFactors Operation="Safe">
 								<InjuryHealingFactor Operation="SafeReplace">0.5</InjuryHealingFactor>
 							</statFactors>
-						</value>
-					</Operation>
-				</apply>
+						</li>
+					</conditionalStatAffecters>
+					<displayCategory Operation="AddOrReplace">Astrogen</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">-500</displayOrderInCategory>
+					<prerequisite Operation="SafeAdd">MoveSpeed_Space</prerequisite>
+				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="BfG_MinTemp_Space"]</xpath>
 				<value>
+					<biostatCpx Operation="SafeRemove"/>
 					<displayCategory Operation="AddOrReplace">Astrogen</displayCategory>
 					<displayOrderInCategory Operation="AddOrReplace">-450</displayOrderInCategory>
 					<prerequisite Operation="SafeAdd">MoveSpeed_Space</prerequisite>
@@ -142,87 +134,72 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef</xpath>
 						<value>
+							<biostatCpx Operation="SafeRemove"/>
+							<conditionalStatAffecters Operation="Safe">
+								<li Class="ConditionalStatAffecter_InSpace" Operation="Safe" CheckAttributes="True">
+									<statFactors Operation="Safe">
+										<RestFallRateFactor Operation="SafeReplace">0.4</RestFallRateFactor>
+									</statFactors>
+								</li>
+								<li Class="ConditionalStatAffecter_NotInSpace" Operation="Safe" CheckAttributes="True">
+									<statFactors Operation="Safe">
+										<RestFallRateFactor Operation="SafeRemove">0</RestFallRateFactor>
+									</statFactors>
+									<statOffsets Operation="Safe">
+										<RestFallRateFactor Operation="SafeAdd">0.4</RestFallRateFactor>
+									</statOffsets>
+								</li>
+							</conditionalStatAffecters>
 							<displayCategory Operation="AddOrReplace">Astrogen</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">-420</displayOrderInCategory>
 							<prerequisite Operation="SafeAdd">MoveSpeed_Space</prerequisite>
 						</value>
 					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]</xpath>
-						<value>
-							<statFactors Operation="Safe">
-								<RestFallRateFactor Operation="SafeReplace">0.4</RestFallRateFactor>
-							</statFactors>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]</xpath>
-						<value>
-							<statOffsets Operation="Safe">
-								<RestFallRateFactor Operation="SafeAdd">0.4</RestFallRateFactor>
-							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]/statFactors/RestFallRateFactor</xpath>
-					</Operation>
 				</apply>
 			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="BfG_Robust_Space"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Astrogen</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">-370</displayOrderInCategory>
-							<prerequisite Operation="SafeAdd">MoveSpeed_Space</prerequisite>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]</xpath>
-						<value>
+				<value>
+					<biostatCpx Operation="SafeRemove"/>
+					<conditionalStatAffecters Operation="Safe">
+						<li Class="ConditionalStatAffecter_NotInSpace" Operation="Safe" CheckAttributes="True">
+							<statFactors Operation="Safe">
+								<IncomingDamageFactor Operation="SafeRemove">0</IncomingDamageFactor>
+							</statFactors>
 							<statOffsets Operation="Safe">
 								<IncomingDamageFactor Operation="SafeAdd">0.2</IncomingDamageFactor>
 							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]/statFactors/IncomingDamageFactor</xpath>
-					</Operation>
-				</apply>
+						</li>
+					</conditionalStatAffecters>
+					<displayCategory Operation="AddOrReplace">Astrogen</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">-370</displayOrderInCategory>
+					<prerequisite Operation="SafeAdd">MoveSpeed_Space</prerequisite>
+				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="BfG_Learning_Space"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Astrogen</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">-110</displayOrderInCategory>
-							<prerequisite Operation="SafeAdd">MoveSpeed_Space</prerequisite>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]</xpath>
-						<value>
+				<value>
+					<biostatCpx Operation="SafeRemove"/>
+					<conditionalStatAffecters Operation="Safe">
+						<li Class="ConditionalStatAffecter_InSpace" Operation="Safe" CheckAttributes="True">
+							<statFactors Operation="Safe">
+								<GlobalLearningFactor Operation="SafeRemove">0</GlobalLearningFactor>
+							</statFactors>
 							<statOffsets Operation="Safe">
 								<GlobalLearningFactor Operation="SafeAdd">0.5</GlobalLearningFactor>
+								<MentalBreakThreshold Operation="SafeRemove">0</MentalBreakThreshold>
 							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]/statFactors/GlobalLearningFactor</xpath>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]</xpath>
-						<value>
+						</li>
+						<li Class="ConditionalStatAffecter_NotInSpace" Operation="Safe" CheckAttributes="True">
 							<statFactors Operation="Safe">
 								<GlobalLearningFactor Operation="SafeReplace">0.5</GlobalLearningFactor>
 							</statFactors>
-						</value>
-					</Operation>
-				</apply>
+						</li>
+					</conditionalStatAffecters>
+					<displayCategory Operation="AddOrReplace">Astrogen</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">-110</displayOrderInCategory>
+					<prerequisite Operation="SafeAdd">MoveSpeed_Space</prerequisite>
+				</value>
 			</Operation>
 		</caseTrue>
 	</Operation>
@@ -240,26 +217,38 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef</xpath>
 						<value>
+							<conditionalStatAffecters Operation="Safe">
+								<li Class="ConditionalStatAffecter_InSpace" Operation="Safe" CheckAttributes="True">
+									<statOffsets Operation="Safe">
+										<MoveSpeed Operation="SafeReplace">1</MoveSpeed>
+										<WorkSpeedGlobal Operation="SafeReplace">0.1</WorkSpeedGlobal>
+										<ImmunityGainSpeed Operation="SafeReplace">0.1</ImmunityGainSpeed>
+										<MentalBreakThreshold Operation="SafeReplace">-0.1</MentalBreakThreshold>
+									</statOffsets>
+								</li>
+								<li Class="ConditionalStatAffecter_NotInSpace" Operation="Safe" CheckAttributes="True">
+									<statOffsets Operation="Safe">
+										<ComfyTemperatureMax Operation="SafeRemove">0</ComfyTemperatureMax>
+										<MentalBreakThreshold Operation="SafeRemove">0</MentalBreakThreshold>
+									</statOffsets>
+								</li>
+							</conditionalStatAffecters>
 							<displayOrderInCategory Operation="AddOrReplace">-670</displayOrderInCategory>
 						</value>
 					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_InSpace"]</xpath>
-						<value>
-							<statOffsets Operation="Safe">
-								<MoveSpeed Operation="SafeReplace">1</MoveSpeed>
-								<WorkSpeedGlobal Operation="SafeReplace">0.1</WorkSpeedGlobal>
-								<ImmunityGainSpeed Operation="SafeReplace">0.1</ImmunityGainSpeed>
-								<MentalBreakThreshold Operation="SafeReplace">-0.1</MentalBreakThreshold>
-							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef/conditionalStatAffecters/li[@Class="ConditionalStatAffecter_NotInSpace"]/statOffsets</xpath>
-						<value>
-							<ComfyTemperatureMax Operation="SafeRemove"/>
-							<MentalBreakThreshold Operation="SafeRemove"/>
-						</value>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaracesexpanded.starjack</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>GeneDef</xpath>
+								<value>
+									<iconPath Operation="AddOrReplace">UI/Icons/Genes/Gene_VacuumEfficiency</iconPath>
+								</value>
+							</Operation>
+						</caseTrue>
 					</Operation>
 				</apply>
 			</Operation>

@@ -16,8 +16,8 @@
 		<xpath>Defs/TraitDef[defName="TooSmart"]/degreeDatas/li[label="too smart"]</xpath>
 		<value>
 			<statOffsets Operation="Safe">
-				<GlobalLearningFactor Operation="SafeReplace">0.8</GlobalLearningFactor>
-				<MentalBreakThreshold Operation="SafeReplace">0.15</MentalBreakThreshold>
+				<GlobalLearningFactor Operation="SafeReplace">0.5</GlobalLearningFactor>
+				<MentalBreakThreshold Operation="SafeReplace">0.1</MentalBreakThreshold>
 			</statOffsets>
 		</value>
 	</Operation>
@@ -27,7 +27,7 @@
 		<xpath>Defs/TraitDef[defName="FastLearner"]/degreeDatas/li[label="fast learner"]</xpath>
 		<value>
 			<statOffsets Operation="Safe">
-				<GlobalLearningFactor Operation="SafeReplace">0.8</GlobalLearningFactor>
+				<GlobalLearningFactor Operation="SafeReplace">0.5</GlobalLearningFactor>
 			</statOffsets>
 		</value>
 	</Operation>
@@ -36,8 +36,11 @@
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/TraitDef[defName="SlowLearner"]/degreeDatas/li[label="slow learner"]</xpath>
 		<value>
+			<statFactors Operation="Safe">
+				<GlobalLearningFactor Operation="SafeAdd">0.5</GlobalLearningFactor>
+			</statFactors>
 			<statOffsets Operation="Safe">
-				<GlobalLearningFactor Operation="SafeReplace">-0.8</GlobalLearningFactor>
+				<GlobalLearningFactor Operation="SafeRemove">0</GlobalLearningFactor>
 			</statOffsets>
 		</value>
 	</Operation>
@@ -144,19 +147,17 @@
 				<xpath>TraitDef/degreeDatas/li[degree="1"]</xpath>
 				<value>
 					<statOffsets Operation="Safe">
-						<ShootingAccuracyPawn Operation="SafeReplace">4</ShootingAccuracyPawn>
+						<ShootingAccuracyPawn Operation="SafeReplace">8</ShootingAccuracyPawn>
 						<AimingDelayFactor Operation="SafeReplace">0.2</AimingDelayFactor>
 					</statOffsets>
 				</value>
 			</Operation>
 			<!-- trigger-happy -->
-			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-				<xpath>TraitDef/degreeDatas/li[degree="-1"]/statOffsets/AimingDelayFactor</xpath>
-			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>TraitDef/degreeDatas/li[degree="-1"]</xpath>
 				<value>
 					<statOffsets Operation="Safe">
+						<AimingDelayFactor Operation="SafeRemove">0</AimingDelayFactor>
 						<ShootingAccuracyPawn Operation="SafeReplace">-4</ShootingAccuracyPawn>
 					</statOffsets>
 					<statFactors Operation="Safe">

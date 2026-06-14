@@ -6,6 +6,21 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- ReSplice: Core -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>resplice.xotr.core</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneCategoryDef[defName="RS_DarkArchite"]</xpath>
+						<value>
+							<displayPriorityInXenotype Operation="AddOrReplace">1100</displayPriorityInXenotype>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
 			<!-- Vanilla Quests Expanded - Ancients -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
@@ -32,21 +47,6 @@
 						<xpath>Defs/GeneCategoryDef[defName="VRE_Morphs"]</xpath>
 						<value>
 							<displayPriorityInXenotype Operation="AddOrReplace">720</displayPriorityInXenotype>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-			<!-- ReSplice: Core -->
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>resplice.xotr.core</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneCategoryDef[defName="RS_DarkArchite"]</xpath>
-						<value>
-							<displayPriorityInXenotype Operation="AddOrReplace">710</displayPriorityInXenotype>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -216,7 +216,7 @@
 		<xpath>Defs/GeneCategoryDef[defName="Cosmetic"]</xpath>
 		<value>
 			<displayPriorityInGenepack Operation="SafeRemove"/>
-			<displayPriorityInXenotype Operation="AddOrReplace">-100</displayPriorityInXenotype>
+			<displayPriorityInXenotype Operation="AddOrReplace">-200</displayPriorityInXenotype>
 		</value>
 	</Operation>
 	<Operation Class="XmlExtensions.HybridPatch">

@@ -9,7 +9,7 @@
 
 	<GeneCategoryDef>
 		<defName>Astrogen</defName>
-		<label>astrogen</label>
+		<label>astro genes</label>
 		<displayPriorityInXenotype>670</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
@@ -98,67 +98,73 @@
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
+		<defName>Wings</defName>
+		<label>wings</label>
+		<displayPriorityInXenotype>-40</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Tail</defName>
+		<label>tail</label>
+		<displayPriorityInXenotype>-50</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
 		<defName>Cosmetic_Voice</defName>
 		<label>cosmetic - voice</label>
 		<!-- Cosmetic -100 -->
-		<displayPriorityInXenotype>-80</displayPriorityInXenotype>
+		<displayPriorityInXenotype>-160</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
 		<defName>Cosmetic_HairStyle</defName>
 		<label>cosmetic - hair</label>
 		<!-- Cosmetic -100 -->
-		<displayPriorityInXenotype>-90</displayPriorityInXenotype>
+		<displayPriorityInXenotype>-170</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Cosmetic_Headbone</defName>
+		<label>cosmetic - headbone</label>
+		<displayPriorityInXenotype>-180</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Cosmetic_Ears</defName>
+		<label>cosmetic - ears</label>
+		<displayPriorityInXenotype>-190</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Cosmetic_Nose</defName>
+		<label>cosmetic - nose</label>
+		<displayPriorityInXenotype>-210</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
 		<defName>Cosmetic_Jaw</defName>
 		<label>cosmetic - jaw</label>
 		<!-- Cosmetic -100 -->
-		<displayPriorityInXenotype>-110</displayPriorityInXenotype>
+		<displayPriorityInXenotype>-220</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
 		<defName>Cosmetic_Beard</defName>
 		<label>cosmetic - beard</label>
 		<!-- Cosmetic -100 -->
-		<displayPriorityInXenotype>-120</displayPriorityInXenotype>
-	</GeneCategoryDef>
-
-	<GeneCategoryDef>
-		<defName>Cosmetic_Headbone</defName>
-		<label>cosmetic - headbone</label>
-		<displayPriorityInXenotype>-130</displayPriorityInXenotype>
-	</GeneCategoryDef>
-
-	<GeneCategoryDef>
-		<defName>Cosmetic_Ears</defName>
-		<label>cosmetic - ears</label>
-		<displayPriorityInXenotype>-140</displayPriorityInXenotype>
-	</GeneCategoryDef>
-
-	<GeneCategoryDef>
-		<defName>Cosmetic_Nose</defName>
-		<label>cosmetic - nose</label>
-		<displayPriorityInXenotype>-150</displayPriorityInXenotype>
+		<displayPriorityInXenotype>-230</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
 		<defName>Cosmetic_BodyType</defName>
 		<label>cosmetic - body type</label>
-		<displayPriorityInXenotype>-200</displayPriorityInXenotype>
-	</GeneCategoryDef>
-
-	<GeneCategoryDef>
-		<defName>Cosmetic_Wings</defName>
-		<label>cosmetic - wings</label>
-		<displayPriorityInXenotype>-210</displayPriorityInXenotype>
+		<displayPriorityInXenotype>-300</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
 		<defName>Cosmetic_Tail</defName>
 		<label>cosmetic - tail</label>
-		<displayPriorityInXenotype>-220</displayPriorityInXenotype>
+		<displayPriorityInXenotype>-400</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>

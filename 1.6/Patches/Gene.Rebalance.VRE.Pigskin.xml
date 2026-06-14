@@ -77,121 +77,6 @@
 		</caseTrue>
 	</Operation>
 
-	<!-- 540 meat -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>vanillaracesexpanded.pigskin</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/GeneDef[defName="VRE_LowMeat"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<biostatCpx Operation="SafeReplace">1</biostatCpx>
-							<displayCategory Operation="AddOrReplace">MeatLeather</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">-100</displayOrderInCategory>
-							<statOffsets Operation="Safe">
-								<MeatAmount Operation="SafeAdd">-70</MeatAmount>
-							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/MeatAmount</xpath>
-					</Operation>
-				</apply>
-			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/GeneDef[defName="VRE_ExtraMeat"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<biostatCpx Operation="SafeReplace">1</biostatCpx>
-							<displayCategory Operation="AddOrReplace">MeatLeather</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">-90</displayOrderInCategory>
-							<statOffsets Operation="Safe">
-								<MeatAmount Operation="SafeAdd">70</MeatAmount>
-							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/MeatAmount</xpath>
-					</Operation>
-				</apply>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.fungoid</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_FungalFlesh"]</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">MeatLeather</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">90</displayOrderInCategory>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.fungoid</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_FungalFlesh"]</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">MeatLeather</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">100</displayOrderInCategory>
-							<exclusionTags Operation="Safe">
-								<li Operation="SafeAdd" Compare="InnerText">Flesh</li>
-								<li Operation="SafeAdd" Compare="InnerText">Meat</li>
-								<li Operation="SafeAdd" Compare="InnerText">AG_Meat</li>
-							</exclusionTags>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.insector</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_InsectFlesh"]</xpath>
-						<value>
-							<biostatCpx Operation="SafeReplace">1</biostatCpx>
-							<displayCategory Operation="AddOrReplace">MeatLeather</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">110</displayOrderInCategory>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="VRE_PorkFlesh"]</xpath>
-				<value>
-					<biostatCpx Operation="SafeReplace">1</biostatCpx>
-					<displayCategory Operation="AddOrReplace">MeatLeather</displayCategory>
-					<displayOrderInCategory Operation="AddOrReplace">120</displayOrderInCategory>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="VRE_PigSkin"]</xpath>
-				<value>
-					<biostatCpx Operation="SafeReplace">1</biostatCpx>
-					<displayCategory Operation="AddOrReplace">MeatLeather</displayCategory>
-					<displayOrderInCategory Operation="AddOrReplace">1000</displayOrderInCategory>
-				</value>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
 	<!-- 310 mental -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
@@ -222,6 +107,9 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VREH_Dutiful"]</xpath>
 						<value>
+							<customEffectDescriptions Operation="SafeAdd">
+								<li>Will never mental break while drafted.</li>
+							</customEffectDescriptions>
 							<displayCategory Operation="AddOrReplace">Mood_Mental</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">100</displayOrderInCategory>
 						</value>

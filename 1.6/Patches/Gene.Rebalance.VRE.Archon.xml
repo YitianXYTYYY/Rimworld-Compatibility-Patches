@@ -8,41 +8,31 @@
 		<packageId>true</packageId>
 		<caseTrue>
 			<!-- 600 psychic -->
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_HighEntropyCapacity"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<biostatCpx Operation="SafeReplace">1</biostatCpx>
-							<biostatMet Operation="SafeReplace">-2</biostatMet>
-							<statOffsets Operation="Safe">
-								<PsychicEntropyMax Operation="SafeAdd">10</PsychicEntropyMax>
-							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/PsychicEntropyMax</xpath>
-					</Operation>
-				</apply>
+				<value>
+					<biostatCpx Operation="SafeReplace">1</biostatCpx>
+					<biostatMet Operation="SafeReplace">-2</biostatMet>
+					<statFactors Operation="Safe">
+						<PsychicEntropyMax Operation="SafeRemove">0</PsychicEntropyMax>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<PsychicEntropyMax Operation="SafeAdd">10</PsychicEntropyMax>
+					</statOffsets>
+				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_ExtremeEntropyCapacity"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<biostatCpx Operation="SafeReplace">2</biostatCpx>
-							<biostatMet Operation="SafeReplace">-5</biostatMet>
-							<statOffsets Operation="Safe">
-								<PsychicEntropyMax Operation="SafeAdd">20</PsychicEntropyMax>
-							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/PsychicEntropyMax</xpath>
-					</Operation>
-				</apply>
+				<value>
+					<biostatCpx Operation="SafeReplace">2</biostatCpx>
+					<biostatMet Operation="SafeReplace">-5</biostatMet>
+					<statFactors Operation="Safe">
+						<PsychicEntropyMax Operation="SafeRemove">0</PsychicEntropyMax>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<PsychicEntropyMax Operation="SafeAdd">20</PsychicEntropyMax>
+					</statOffsets>
+				</value>
 			</Operation>
 
 			<!-- 590 meditation -->
@@ -53,65 +43,50 @@
 					<displayOrderInCategory Operation="AddOrReplace">0</displayOrderInCategory>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_SwiftMeditation"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<biostatCpx Operation="SafeReplace">1</biostatCpx>
-							<biostatMet Operation="SafeReplace">-1</biostatMet>
-							<displayCategory Operation="AddOrReplace">Psychic_Meditation</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">10</displayOrderInCategory>
-							<statOffsets Operation="Safe">
-								<MeditationFocusGain Operation="SafeAdd">0.05</MeditationFocusGain>
-							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/MeditationFocusGain</xpath>
-					</Operation>
-				</apply>
+				<value>
+					<biostatCpx Operation="SafeRemove"/>
+					<biostatMet Operation="SafeReplace">-2</biostatMet>
+					<displayCategory Operation="AddOrReplace">Psychic_Meditation</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">10</displayOrderInCategory>
+					<statFactors Operation="Safe">
+						<MeditationFocusGain Operation="SafeRemove">0</MeditationFocusGain>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<MeditationFocusGain Operation="SafeAdd">0.1</MeditationFocusGain>
+					</statOffsets>
+				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_ExtremeMeditation"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<biostatCpx Operation="SafeReplace">2</biostatCpx>
-							<biostatMet Operation="SafeReplace">-2</biostatMet>
-							<displayCategory Operation="AddOrReplace">Psychic_Meditation</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">20</displayOrderInCategory>
-							<statOffsets Operation="Safe">
-								<MeditationFocusGain Operation="SafeAdd">0.1</MeditationFocusGain>
-							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/MeditationFocusGain</xpath>
-					</Operation>
-				</apply>
+				<value>
+					<biostatCpx Operation="SafeReplace">2</biostatCpx>
+					<biostatMet Operation="SafeReplace">-5</biostatMet>
+					<displayCategory Operation="AddOrReplace">Psychic_Meditation</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">20</displayOrderInCategory>
+					<statFactors Operation="Safe">
+						<MeditationFocusGain Operation="SafeRemove">0</MeditationFocusGain>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<MeditationFocusGain Operation="SafeAdd">0.2</MeditationFocusGain>
+					</statOffsets>
+				</value>
 			</Operation>
 
 			<!-- 390 ranged -->
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_SlowShooter"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Violence_Ranged</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">10</displayOrderInCategory>
-							<statOffsets Operation="Safe">
-								<RangedCooldownFactor Operation="SafeAdd">0.2</RangedCooldownFactor>
-							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/RangedCooldownFactor</xpath>
-					</Operation>
-				</apply>
+				<value>
+					<displayCategory Operation="AddOrReplace">Violence_Ranged</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">10</displayOrderInCategory>
+					<statFactors Operation="Safe">
+						<RangedCooldownFactor Operation="SafeRemove">0</RangedCooldownFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<RangedCooldownFactor Operation="SafeAdd">0.2</RangedCooldownFactor>
+					</statOffsets>
+				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_FastShooter"]</xpath>
@@ -122,23 +97,18 @@
 			</Operation>
 
 			<!-- 380 melee -->
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_SlowMeleeHitter"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Violence_Melee</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">100</displayOrderInCategory>
-							<statOffsets Operation="Safe">
-								<MeleeCooldownFactor Operation="SafeAdd">0.2</MeleeCooldownFactor>
-							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/MeleeCooldownFactor</xpath>
-					</Operation>
-				</apply>
+				<value>
+					<displayCategory Operation="AddOrReplace">Violence_Melee</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">100</displayOrderInCategory>
+					<statFactors Operation="Safe">
+						<MeleeCooldownFactor Operation="SafeRemove">0</MeleeCooldownFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<MeleeCooldownFactor Operation="SafeAdd">0.2</MeleeCooldownFactor>
+					</statOffsets>
+				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_FastMeleeHitter"]</xpath>

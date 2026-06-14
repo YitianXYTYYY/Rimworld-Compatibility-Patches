@@ -16,41 +16,30 @@
 					</statFactors>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="Turn_Gene_FastNeuralHeat"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<biostatCpx Operation="SafeAdd">2</biostatCpx>
-							<biostatMet Operation="SafeReplace">-2</biostatMet>
-							<statOffsets Operation="Safe">
-								<PsychicEntropyRecoveryRate Operation="SafeAdd">0.12</PsychicEntropyRecoveryRate>
-							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/PsychicEntropyRecoveryRate</xpath>
-					</Operation>
-				</apply>
+				<value>
+					<biostatMet Operation="SafeReplace">-2</biostatMet>
+					<statFactors Operation="Safe">
+						<PsychicEntropyRecoveryRate Operation="SafeRemove">0</PsychicEntropyRecoveryRate>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<PsychicEntropyRecoveryRate Operation="SafeAdd">0.15</PsychicEntropyRecoveryRate>
+					</statOffsets>
+				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="Turn_Gene_VeryFastNeuralHeat"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<biostatCpx Operation="SafeAdd">3</biostatCpx>
-							<biostatMet Operation="SafeReplace">-5</biostatMet>
-							<statOffsets Operation="Safe">
-								<PsychicEntropyRecoveryRate Operation="SafeAdd">0.3</PsychicEntropyRecoveryRate>
-							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/PsychicEntropyRecoveryRate</xpath>
-					</Operation>
-				</apply>
+				<value>
+					<biostatCpx Operation="SafeAdd">2</biostatCpx>
+					<biostatMet Operation="SafeReplace">-5</biostatMet>
+					<statFactors Operation="Safe">
+						<PsychicEntropyRecoveryRate Operation="SafeRemove">0</PsychicEntropyRecoveryRate>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<PsychicEntropyRecoveryRate Operation="SafeAdd">0.3</PsychicEntropyRecoveryRate>
+					</statOffsets>
+				</value>
 			</Operation>
 
 			<!-- 590 meditation -->			
@@ -106,18 +95,6 @@
 				</value>
 			</Operation>
 
-			<!-- 430 digestion -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="Turn_Gene_FrailDigestion"]</xpath>
-				<value>
-					<displayCategory Operation="AddOrReplace">Health_Digestion</displayCategory>
-					<displayOrderInCategory Operation="AddOrReplace">0</displayOrderInCategory>
-					<statFactors Operation="Safe">
-						<RawNutritionFactor Operation="SafeReplace">0.5</RawNutritionFactor>
-					</statFactors>
-				</value>
-			</Operation>
-
 			<!-- 410 sight -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="Turn_Gene_Blindness"]</xpath>
@@ -149,28 +126,20 @@
 			</Operation>
 
 			<!-- 380 melee -->
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="Turn_Gene_Duelist"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Violence_Melee</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">300</displayOrderInCategory>
-							<statOffsets Operation="Safe">
-								<MeleeDodgeChance Operation="SafeAdd">8</MeleeDodgeChance>
-								<MeleeHitChance Operation="SafeAdd">4</MeleeHitChance>
-							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef/statFactors</xpath>
-						<value>
-							<MeleeDodgeChance Operation="SafeRemove"/>
-							<MeleeHitChance Operation="SafeRemove"/>
-						</value>
-					</Operation>
-				</apply>
+				<value>
+					<displayCategory Operation="AddOrReplace">Violence_Melee</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">300</displayOrderInCategory>
+					<statFactors Operation="Safe">
+						<MeleeDodgeChance Operation="SafeRemove">0</MeleeDodgeChance>
+						<MeleeHitChance Operation="SafeRemove">0</MeleeHitChance>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<MeleeDodgeChance Operation="SafeAdd">8</MeleeDodgeChance>
+						<MeleeHitChance Operation="SafeAdd">4</MeleeHitChance>
+					</statOffsets>
+				</value>
 			</Operation>
 
 			<!-- 370 pain -->
@@ -191,53 +160,92 @@
 				</apply>
 			</Operation>
 
-			<!-- 320 slavery -->		
+			<!-- 320 slavery -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="Turn_Gene_FreeSpirit"]</xpath>
 				<value>
 					<displayCategory Operation="AddOrReplace">Turn_GeneCategory_Slavery</displayCategory>
+        			<displayOrderInCategory Operation="AddOrReplace">10</displayOrderInCategory>
+					<exclusionTags Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">Turn_Exclusion_FreeSpirit</li>
+						<li Operation="SafeRemove" Compare="InnerText">Turn_Exclusion_FreeSpirit_DeadCalm</li>
+						<li Operation="SafeAdd" Compare="InnerText">Turn_Gene_AgressionSubmissive</li>
+					</exclusionTags>
 					<prisonBreakMTBFactor Operation="SafeReplace">0.8</prisonBreakMTBFactor>
+					<socialFightChanceFactor Operation="SafeRemove"/>
 					<statFactors Operation="Safe">
-						<RoyalFavorValue MayRequire="Ludeon.RimWorld.Royalty" Operation="SafeReplace">0.2</RoyalFavorValue>
+						<SlaveSuppressionFallRate Operation="SafeRemove">0</SlaveSuppressionFallRate>
+						<RoyalFavorValue Operation="SafeRemove">0</RoyalFavorValue>
 					</statFactors>
+					<statOffsets Operation="Safe">
+            			<SlaveSuppressionFallRate MayRequire="Ludeon.RimWorld.Ideology" Operation="SafeAdd">3.0</SlaveSuppressionFallRate>
+						<RoyalFavorValue MayRequire="Ludeon.RimWorld.Royalty" Operation="SafeAdd">-2</RoyalFavorValue>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThoughtDef[defName="Turn_Thought_FreeSpiritImprisoned"]</xpath>
+				<value>
+					<stages Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="label">
+							<label Operation="Safe">imprisoned</label>
+							<baseMoodEffect Operation="SafeReplace">15</baseMoodEffect>
+						</li>
+					</stages>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="Turn_Gene_AgressionSubmissive"]</xpath>
+				<value>
+					<customEffectDescriptions Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">Mood bonus while enslaved.</li>
+						<li Operation="SafeRemove" Compare="InnerText">Mood penalty while free.</li>
+					</customEffectDescriptions>
+        			<displayOrderInCategory Operation="AddOrReplace">20</displayOrderInCategory>
+					<exclusionTags Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">Turn_Exclusion_FreeSpirit</li>
+						<li Operation="SafeAdd" Compare="InnerText">Turn_Gene_AgressionSubmissive</li>
+					</exclusionTags>
+					<aggroMentalBreakSelectionChanceFactor Operation="SafeReplace">0.2</aggroMentalBreakSelectionChanceFactor>
+					<prisonBreakMTBFactor Operation="SafeReplace">0.2</prisonBreakMTBFactor>
+					<socialFightChanceFactor Operation="SafeReplace">0.2</socialFightChanceFactor>
+					<statOffsets Operation="Safe">
+						<RoyalFavorValue MayRequire="Ludeon.RimWorld.Royalty" Operation="SafeReplace">2</RoyalFavorValue>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="Turn_Gene_Terrified"]</xpath>
+				<value>
+        			<displayOrderInCategory Operation="AddOrReplace">100</displayOrderInCategory>
+					<statOffsets Operation="Safe">
+            			<RoyalFavorValue MayRequire="Ludeon.RimWorld.Royalty" Operation="SafeReplace">1</RoyalFavorValue>
+					</statOffsets>
 				</value>
 			</Operation>
 
 			<!-- 0 miscellaneous -->
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="Turn_Gene_MotivationLow"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<displayOrderInCategory Operation="AddOrReplace">-1000</displayOrderInCategory>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef/statFactors</xpath>
-						<value>
-							<GeneralLaborSpeed Operation="SafeRemove"/>
-							<WorkSpeedGlobal Operation="SafeReplace">0.8</WorkSpeedGlobal>
-						</value>
-					</Operation>
-				</apply>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">-1000</displayOrderInCategory>
+					<statFactors Operation="Safe">								
+						<GeneralLaborSpeed Operation="SafeRemove">0</GeneralLaborSpeed>
+						<WorkSpeedGlobal Operation="SafeAdd">0.8</WorkSpeedGlobal>
+					</statFactors>
+				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="Turn_Gene_MotivationHigh"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<displayOrderInCategory Operation="AddOrReplace">-990</displayOrderInCategory>
-							<statOffsets Operation="Safe">
-								<WorkSpeedGlobal Operation="SafeAdd">0.2</WorkSpeedGlobal>
-							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/GeneralLaborSpeed</xpath>
-					</Operation>
-				</apply>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">-990</displayOrderInCategory>
+					<statFactors Operation="Safe">								
+						<GeneralLaborSpeed Operation="SafeRemove">0</GeneralLaborSpeed>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<WorkSpeedGlobal Operation="SafeAdd">0.1</WorkSpeedGlobal>
+					</statOffsets>
+				</value>
 			</Operation>
 		</caseTrue>
 	</Operation>

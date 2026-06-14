@@ -8,38 +8,29 @@
 		<packageId>true</packageId>
 		<caseTrue>
 			<!-- 410 sight -->
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_SuperiorDarkVision"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Health_Eye</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">110</displayOrderInCategory>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef/conditionalStatAffecters/li[@Class="VEF.Genes.ConditionalStatAffecter_Darkness"]</xpath>
-						<value>
+				<value>
+					<conditionalStatAffecters Operation="Safe">
+						<li Class="VEF.Genes.ConditionalStatAffecter_Darkness" Operation="Safe" CheckAttributes="True">
+							<statFactors Operation="Safe">
+								<WorkSpeedGlobal Operation="SafeRemove">0</WorkSpeedGlobal>
+								<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+								<ShootingAccuracyPawn Operation="SafeRemove">0</ShootingAccuracyPawn>
+								<MeleeHitChance Operation="SafeRemove">0</MeleeHitChance>
+								<MeleeDodgeChance Operation="SafeRemove">0</MeleeDodgeChance>
+							</statFactors>
 							<statOffsets Operation="Safe">
 								<WorkSpeedGlobal Operation="SafeAdd">0.1</WorkSpeedGlobal>
 								<ShootingAccuracyPawn Operation="SafeAdd">4</ShootingAccuracyPawn>
 								<MeleeHitChance Operation="SafeAdd">4</MeleeHitChance>
 								<MeleeDodgeChance Operation="SafeAdd">8</MeleeDodgeChance>
 							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef/conditionalStatAffecters/li[@Class="VEF.Genes.ConditionalStatAffecter_Darkness"]/statFactors</xpath>
-						<value>
-							<WorkSpeedGlobal Operation="SafeRemove"/>
-							<MoveSpeed Operation="SafeRemove"/>
-							<ShootingAccuracyPawn Operation="SafeRemove"/>
-							<MeleeHitChance Operation="SafeRemove"/>
-							<MeleeDodgeChance Operation="SafeRemove"/>
-						</value>
-					</Operation>
-				</apply>
+						</li>
+					</conditionalStatAffecters>
+					<displayCategory Operation="AddOrReplace">Health_Eye</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">110</displayOrderInCategory>
+				</value>
 			</Operation>
 
 			<!-- 380 melee -->
@@ -50,41 +41,42 @@
 					<displayOrderInCategory Operation="AddOrReplace">200</displayOrderInCategory>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_ImprovedDodge"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Violence_Melee</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">210</displayOrderInCategory>
-							<statOffsets Operation="Safe">
-								<MeleeDodgeChance Operation="SafeAdd">8</MeleeDodgeChance>
-							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/MeleeDodgeChance</xpath>
-					</Operation>
-				</apply>
+				<value>
+					<displayCategory Operation="AddOrReplace">Violence_Melee</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">210</displayOrderInCategory>
+					<statFactors Operation="Safe">
+						<MeleeDodgeChance Operation="SafeRemove">0</MeleeDodgeChance>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<MeleeDodgeChance Operation="SafeAdd">8</MeleeDodgeChance>
+					</statOffsets>
+				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_SuperiorDodge"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Violence_Melee</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">220</displayOrderInCategory>
-							<statOffsets Operation="Safe">
-								<MeleeDodgeChance Operation="SafeAdd">16</MeleeDodgeChance>
-							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>GeneDef/statFactors/MeleeDodgeChance</xpath>
-					</Operation>
-				</apply>
+				<value>
+					<displayCategory Operation="AddOrReplace">Violence_Melee</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">220</displayOrderInCategory>
+					<statFactors Operation="Safe">
+						<MeleeDodgeChance Operation="SafeRemove">0</MeleeDodgeChance>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<MeleeDodgeChance Operation="SafeAdd">16</MeleeDodgeChance>
+					</statOffsets>
+				</value>
+			</Operation>
+
+			<!-- 380 melee -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_PackMentality"]</xpath>
+				<value>
+					<customEffectDescriptions Operation="SafeAdd">
+						<li>Carriers of this gene consider each other pack members.</li>
+					</customEffectDescriptions>
+					<displayCategory Operation="AddOrReplace">Mood</displayCategory>
+				</value>
 			</Operation>
 		</caseTrue>
 	</Operation>

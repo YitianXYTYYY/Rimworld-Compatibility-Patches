@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- Big and Small - Framework -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>RedMattis.BetterPrerequisites</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.phytokin</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationReplace">
+						<xpath>Defs/XenotypeDef/genes/li[text()="VRE_Female"]</xpath>
+						<value>
+							<li>Body_FemaleOnly</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Vanilla Races Expanded - Saurid -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.saurid</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- AFU Cosmetic Gene Expanded -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>jintuzilamian.gene.xenocosmetic</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationReplace">
+						<xpath>Defs/XenotypeDef/genes/li[text()="VRESaurids_GeckoTail"]</xpath>
+						<value>
+							<li>AFU_BA_SmoothLizardTail</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Vanilla Races Expanded - Starjack -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.starjack</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="PatchOperationReplace">
+				<xpath>Defs/XenotypeDef/genes/li[text()="VREStarjack_VacuumEfficiency"]</xpath>
+				<value>
+					<li>MoveSpeed_Space</li>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>

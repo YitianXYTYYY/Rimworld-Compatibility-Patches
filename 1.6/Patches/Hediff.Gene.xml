@@ -108,6 +108,26 @@
 		</caseTrue>
 	</Operation>
 
+	<!-- VRE.Phytokin -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.phytokin</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/HediffDef[defName="VRE_SapBlood"]/stages/li[minSeverity="1"]/statOffsets/WorkSpeedGlobal</xpath>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="VRE_Photosynthetic"]/stages/li[minSeverity="0.1"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeAdd">0</hungerRateFactor>
+					<hungerRateFactorOffset Operation="SafeRemove"/>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 	<!-- VRE.Waster -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
@@ -121,46 +141,49 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef</xpath>
 						<value>
+							<comps Operation="Safe">
+								<li Class="HediffCompProperties_Pollution" Operation="SafeRemove"/>
+								<li Class="VanillaRacesExpandedWaster.HediffCompProperties_GeneDependentPollution" Operation="Safe" CheckAttributes="True">
+									<pollutedSeverity Operation="SafeAdd">0.0333</pollutedSeverity>
+									<unpollutedSeverity Operation="SafeAdd">-0.003</unpollutedSeverity>
+									<interval Operation="SafeAdd">60</interval>
+								</li>
+							</comps>
 							<minSeverity Operation="SafeReplace">0.001</minSeverity>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>HediffDef/comps</xpath>
-						<value>
-							<li Class="HediffCompProperties_Pollution" Operation="SafeRemove"/>
-							<li Class="VanillaRacesExpandedWaster.HediffCompProperties_GeneDependentPollution" Operation="SafeAdd">
-								<pollutedSeverity>0.0333</pollutedSeverity>
-								<unpollutedSeverity>-0.003</unpollutedSeverity>
-								<interval>60</interval>
-							</li>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationAdd">
-						<xpath>HediffDef/stages</xpath>
-						<Order>Prepend</Order>
-						<value>
-							<li>
-								<label>inactive</label>
-								<minSeverity>0.01</minSeverity>
-							</li>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 						<xpath>HediffDef/stages/li/statFactors/MoveSpeed</xpath>
 					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationAdd">
+						<xpath>HediffDef/stages</xpath>
+						<Order>Prepend</Order>
+						<value>
+							<li Operation="Safe" Compare="InnerText" XPathLocal="label">
+								<label Operation="Safe">inactive</label>
+								<minSeverity Operation="SafeAdd">0.01</minSeverity>
+							</li>
+						</value>
+					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="minor"]</xpath>
 						<value>
 							<minSeverity Operation="SafeAdd">0.02</minSeverity>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Moving</capacity>
+									<offset Operation="SafeAdd">0.05</offset>
+								</li>
+							</capMods>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="moderate"]</xpath>
 						<value>
 							<capMods Operation="Safe">
-								<li Operation="Add">
-									<capacity>Moving</capacity>
-									<offset>0.05</offset>
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Moving</capacity>
+									<offset Operation="SafeAdd">0.05</offset>
 								</li>
 							</capMods>
 						</value>
@@ -170,9 +193,9 @@
 						<value>
 							<label Operation="SafeReplace">extreme</label>
 							<capMods Operation="Safe">
-								<li Operation="Add">
-									<capacity>Moving</capacity>
-									<offset>0.1</offset>
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Moving</capacity>
+									<offset Operation="SafeAdd">0.1</offset>
 								</li>
 							</capMods>
 						</value>
@@ -189,7 +212,7 @@
 						<xpath>stages/li[label="minor"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
-								<InjuryHealingFactor Operation="SafeAdd">0.5</InjuryHealingFactor>
+								<InjuryHealingFactor Operation="SafeAdd">1</InjuryHealingFactor>
 							</statOffsets>
 						</value>
 					</Operation>
@@ -342,7 +365,7 @@
 						<xpath>HediffDef/stages/li[label="moderate"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
-								<WorkSpeedGlobal Operation="SafeAdd">0.1</WorkSpeedGlobal>
+								<WorkSpeedGlobal Operation="SafeAdd">0.05</WorkSpeedGlobal>
 							</statOffsets>
 						</value>
 					</Operation>
@@ -350,7 +373,7 @@
 						<xpath>HediffDef/stages/li[label="extreme"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
-								<WorkSpeedGlobal Operation="SafeAdd">0.2</WorkSpeedGlobal>
+								<WorkSpeedGlobal Operation="SafeAdd">0.1</WorkSpeedGlobal>
 							</statOffsets>
 						</value>
 					</Operation>
@@ -366,7 +389,7 @@
 						<xpath>HediffDef/stages/li[label="minor"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
-								<PsychicSensitivity Operation="SafeAdd">0.1</PsychicSensitivity>
+								<PsychicSensitivity Operation="SafeAdd">0.2</PsychicSensitivity>
 							</statOffsets>
 						</value>
 					</Operation>
@@ -401,7 +424,7 @@
 						<xpath>HediffDef/stages/li[label="minor"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
-								<ShootingAccuracyPawn Operation="SafeAdd">2</ShootingAccuracyPawn>
+								<ShootingAccuracyPawn Operation="SafeAdd">4</ShootingAccuracyPawn>
 							</statOffsets>
 						</value>
 					</Operation>
