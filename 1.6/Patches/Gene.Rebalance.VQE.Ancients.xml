@@ -84,9 +84,9 @@
 				<xpath>Defs/GeneDef[defName="VQEA_BlurRunner"]</xpath>
 				<value>
 					<capMods Operation="Safe">
-						<li Operation="Add">
-							<capacity>Moving</capacity>
-							<offset>0.2</offset>
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Moving</capacity>
+							<offset Operation="SafeAdd">0.2</offset>
 						</li>
 					</capMods>
 					<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
@@ -267,9 +267,9 @@
 						<Flammability Operation="SafeAdd">0</Flammability>
 					</statFactors>
 					<statOffsets Operation="Safe">
-						<ArmorRating_Sharp Operation="SafeAdd">0.60</ArmorRating_Sharp>
-						<ArmorRating_Blunt Operation="SafeAdd">0.40</ArmorRating_Blunt>
-						<ArmorRating_Heat Operation="SafeAdd">1.60</ArmorRating_Heat>
+						<ArmorRating_Sharp Operation="SafeAdd">0.6</ArmorRating_Sharp>
+						<ArmorRating_Blunt Operation="SafeAdd">0.4</ArmorRating_Blunt>
+						<ArmorRating_Heat Operation="SafeAdd">1.5</ArmorRating_Heat>
 					</statOffsets>
 				</value>
 			</Operation>

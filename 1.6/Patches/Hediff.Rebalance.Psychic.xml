@@ -5,11 +5,12 @@
 	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/HediffDef[defName="PsychicAmplifier"]</xpath>
 		<apply>
-			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-				<xpath>HediffDef/stages/li/statFactors/PsychicEntropyMax</xpath>
-			</Operation>
-			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-				<xpath>HediffDef/stages/li/statFactors/PsychicEntropyRecoveryRate</xpath>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li/statFactors</xpath>
+				<value>
+					<PsychicEntropyMax Operation="SafeRemove"/>
+					<PsychicEntropyRecoveryRate Operation="SafeRemove"/>
+				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>HediffDef/stages/li[minSeverity="2"]</xpath>
@@ -66,9 +67,11 @@
 		<packageId>true</packageId>
 		<caseTrue>
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/HediffDef[defName="PsychicSensitizer"]/stages/li/statOffsets</xpath>
+				<xpath>Defs/HediffDef[defName="PsychicSensitizer"]/stages/li</xpath>
 				<value>
-					<PsychicSensitivity Operation="SafeReplace">0.4</PsychicSensitivity>
+					<statOffsets  Operation="Safe">
+						<PsychicSensitivity Operation="SafeReplace">0.4</PsychicSensitivity>
+					</statOffsets>
 				</value>
 			</Operation>
 		</caseTrue>
@@ -81,9 +84,11 @@
 		<packageId>true</packageId>
 		<caseTrue>
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/HediffDef[defName="PsychofluidRush"]/stages/li/statOffsets</xpath>
+				<xpath>Defs/HediffDef[defName="PsychofluidRush"]/stages/li</xpath>
 				<value>
-					<PsychicSensitivity Operation="SafeReplace">0.2</PsychicSensitivity>
+					<statOffsets Operation="Safe">
+						<PsychicSensitivity Operation="SafeReplace">0.2</PsychicSensitivity>
+					</statOffsets>
 				</value>
 			</Operation>
 		</caseTrue>

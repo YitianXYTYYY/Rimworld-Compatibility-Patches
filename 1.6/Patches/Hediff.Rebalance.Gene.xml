@@ -11,25 +11,32 @@
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/HediffDef[defName="PsychicBond"]</xpath>
 				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeReplace">
-						<xpath>HediffDef/stages/li[minSeverity="0"]/statOffsets</xpath>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0"]</xpath>
 						<value>
-							<PsychicSensitivity>0.2</PsychicSensitivity>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Consciousness</capacity>
+									<offset Operation="SafeReplace">0.1</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<PsychicSensitivity Operation="SafeReplace">0.2</PsychicSensitivity>
+							</statOffsets>
 						</value>
 					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeReplace">
-						<xpath>HediffDef/stages/li[minSeverity="0"]/capMods/li[capacity="Consciousness"]</xpath>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="1"]</xpath>
 						<value>
-							<offset>0.1</offset>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>HediffDef/stages/li[minSeverity="1"]/statOffsets/PsychicSensitivity</xpath>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeReplace">
-						<xpath>HediffDef/stages/li[minSeverity="1"]/capMods/li[capacity="Consciousness"]</xpath>
-						<value>
-							<offset>-0.2</offset>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Consciousness</capacity>
+									<offset Operation="SafeReplace">-0.2</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+							</statOffsets>
 						</value>
 					</Operation>
 				</apply>
@@ -142,7 +149,7 @@
 						<xpath>HediffDef</xpath>
 						<value>
 							<comps Operation="Safe">
-								<li Class="HediffCompProperties_Pollution" Operation="SafeRemove"/>
+								<li Class="HediffCompProperties_Pollution" Operation="SafeRemove" CheckAttributes="True"/>
 								<li Class="VanillaRacesExpandedWaster.HediffCompProperties_GeneDependentPollution" Operation="Safe" CheckAttributes="True">
 									<pollutedSeverity Operation="SafeAdd">0.0333</pollutedSeverity>
 									<unpollutedSeverity Operation="SafeAdd">-0.003</unpollutedSeverity>
@@ -155,9 +162,8 @@
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 						<xpath>HediffDef/stages/li/statFactors/MoveSpeed</xpath>
 					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationAdd">
+					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages</xpath>
-						<Order>Prepend</Order>
 						<value>
 							<li Operation="Safe" Compare="InnerText" XPathLocal="label">
 								<label Operation="Safe">inactive</label>
