@@ -9,10 +9,10 @@
 			<texPath>yy_ammo_primitive</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
+		<healthAffectsPrice>false</healthAffectsPrice>
 		<soundInteract>Wood_Drop</soundInteract>
 		<soundDrop>Wood_Drop</soundDrop>
 		<stackLimit>75</stackLimit>
-		<healthAffectsPrice>false</healthAffectsPrice>
 		<statBases>
 			<MarketValue>1</MarketValue>
 			<MaxHitPoints>20</MaxHitPoints>
@@ -20,6 +20,7 @@
 			<Flammability>1</Flammability>
 			<DeteriorationRate>1.0</DeteriorationRate>
 		</statBases>
+    	<techLevel>Neolithic</techLevel>
 		<thingCategories>
 			<li>yy_ammo_category</li>
 		</thingCategories>
@@ -37,10 +38,10 @@
 			<texPath>yy_ammo_industrial</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
+		<healthAffectsPrice>false</healthAffectsPrice>
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Standard_Drop</soundDrop>
 		<stackLimit>150</stackLimit>
-		<healthAffectsPrice>false</healthAffectsPrice>
 		<statBases>
 			<MarketValue>2.5</MarketValue>
 			<MaxHitPoints>20</MaxHitPoints>
@@ -48,6 +49,7 @@
 			<Flammability>0.6</Flammability>
 			<DeteriorationRate>1.0</DeteriorationRate>
 		</statBases>
+    	<techLevel>Industrial</techLevel>
 		<thingCategories>
 			<li>yy_ammo_category</li>
 		</thingCategories>
@@ -65,10 +67,10 @@
 			<texPath>yy_ammo_spacer</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
+		<healthAffectsPrice>false</healthAffectsPrice>
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Standard_Drop</soundDrop>
 		<stackLimit>150</stackLimit>
-		<healthAffectsPrice>false</healthAffectsPrice>
 		<statBases>
 			<MarketValue>6</MarketValue>
 			<MaxHitPoints>20</MaxHitPoints>
@@ -76,6 +78,7 @@
 			<Flammability>0.6</Flammability>
 			<DeteriorationRate>1.0</DeteriorationRate>
 		</statBases>
+    	<techLevel>Spacer</techLevel>
 		<thingCategories>
 			<li>yy_ammo_category</li>
 		</thingCategories>
@@ -91,16 +94,17 @@
 			<texPath>yy_ammo_spacer_emp</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
+		<healthAffectsPrice>false</healthAffectsPrice>
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Standard_Drop</soundDrop>
 		<stackLimit>150</stackLimit>
-		<healthAffectsPrice>false</healthAffectsPrice>
 		<statBases>
 			<MarketValue>7</MarketValue>
 			<Mass>0.01</Mass>
 			<Flammability>0.6</Flammability>
 			<DeteriorationRate>1.0</DeteriorationRate>
 		</statBases>
+    	<techLevel>Spacer</techLevel>
 		<thingCategories>
 			<li>yy_ammo_category</li>
 		</thingCategories>

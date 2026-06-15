@@ -669,7 +669,7 @@
 								</mods>
 								<packageId>true</packageId>
 								<caseTrue>
-									<Operation Class="XmlExtensions.PatchOperationAddModExtension">
+									<Operation Class="XmlExtensions.HybridPatch">
 										<xpath>GeneDef</xpath>
 										<value>
 											<modExtensions Operation="Safe">

@@ -148,6 +148,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef</xpath>
 						<value>
+							<allowMothballIfLowPriorityWorldPawn Operation="SafeAdd">true</allowMothballIfLowPriorityWorldPawn>
 							<comps Operation="Safe">
 								<li Class="HediffCompProperties_Pollution" Operation="SafeRemove" CheckAttributes="True"/>
 								<li Class="VanillaRacesExpandedWaster.HediffCompProperties_GeneDependentPollution" Operation="Safe" CheckAttributes="True">
@@ -157,17 +158,19 @@
 								</li>
 							</comps>
 							<minSeverity Operation="SafeReplace">0.001</minSeverity>
+    						<initialSeverity Operation="SafeReplace">0.002</initialSeverity>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 						<xpath>HediffDef/stages/li/statFactors/MoveSpeed</xpath>
 					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
+					<Operation Class="XmlExtensions.PatchOperationSafeAdd">
 						<xpath>HediffDef/stages</xpath>
+						<Order>Prepend</Order>
 						<value>
-							<li Operation="Safe" Compare="InnerText" XPathLocal="label">
-								<label Operation="Safe">inactive</label>
-								<minSeverity Operation="SafeAdd">0.01</minSeverity>
+							<li>
+								<label>inactive</label>
+								<minSeverity>0.01</minSeverity>
 							</li>
 						</value>
 					</Operation>
@@ -215,7 +218,7 @@
 						<xpath>HediffDef/stages/li/statFactors/InjuryHealingFactor</xpath>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>stages/li[label="minor"]</xpath>
+						<xpath>HediffDef/stages/li[label="minor"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
 								<InjuryHealingFactor Operation="SafeAdd">1</InjuryHealingFactor>

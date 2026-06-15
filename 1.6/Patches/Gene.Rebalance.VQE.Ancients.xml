@@ -150,7 +150,7 @@
 				<packageId>true</packageId>
 				<caseFalse>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>/Defs/GeneDef[defName="DarkVision"]</xpath>
+						<xpath>Defs/GeneDef[defName="DarkVision"]</xpath>
 						<value>
 							<exclusionTags Operation="Safe">
 								<li Operation="SafeAdd" Compare="InnerText">VRE_SuperiorDarkVision</li>
@@ -257,7 +257,7 @@
 				<value>
 					<customEffectDescriptions Operation="SafeRemove"/>
 					<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
-					<displayOrderInCategory Operation="AddOrReplace">70</displayOrderInCategory>
+					<displayOrderInCategory Operation="AddOrReplace">10</displayOrderInCategory>
 					<modExtensions Operation="Safe">
 						<li Class="VEF.Genes.GeneExtension" Operation="Safe" CheckAttributes="True">
 							<hediffToWholeBody Operation="SafeRemove" Compare="Both">VQEA_PlasteelSkin</hediffToWholeBody>

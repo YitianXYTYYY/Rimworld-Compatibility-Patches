@@ -73,341 +73,160 @@
 
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>zal.reload</li>
+			<li>mlie.yayoscombat3</li>
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/RecipeDef[defName="R_Make_Primitive_Ammo"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>oskarpotocki.vfe.tribals</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>RecipeDef</xpath>
-								<value>
-									<researchPrerequisite Operation="SafeAdd">VFET_Bow</researchPrerequisite>
-								</value>
-							</Operation>
-						</caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingCategoryDef[defName="yy_ammo_category"]</xpath>
+				<value>
+					<label Operation="SafeReplace">ammunition</label>
+					<parent Operation="SafeReplace">Manufactured</parent>
+				</value>
+			</Operation>
+			<!-- Ammo -->
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/ThingDef[defName="yy_ammo_primitive" or 
+					defName="yy_ammo_primitive_fire" or 
+					defName="yy_ammo_primitive_emp" or 
+					defName="yy_ammo_industrial" or 
+					defName="yy_ammo_industrial_fire" or 
+					defName="yy_ammo_industrial_emp" or 
+					defName="yy_ammo_spacer" or 
+					defName="yy_ammo_spacer_fire" or 
+					defName="yy_ammo_spacer_emp"]</xpath>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>syrus.yayoscombataddon</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>Defs/ThingDef[defName="yy_ammo_primitive_light" or 
+							defName="yy_ammo_primitive_heavy" or 
+							defName="yy_ammo_industrial_light" or 
+							defName="yy_ammo_industrial_heavy" or 
+							defName="yy_ammo_spacer_light" or 
+							defName="yy_ammo_spacer_heavy"]</xpath>
 					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Ammo Trade -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/TraderKindDef[defName="Base_Neolithic_Standard" or 
+					defName="Caravan_Neolithic_WarMerchant" or 
+					defName="Visitor_Neolithic_Standard"]/stockGenerators</xpath>
+				<value>
+					<li Class="StockGenerator_SingleDef" Operation="Add">
+						<thingDef>AmmoPrimitive</thingDef>
+						<countRange>45~225</countRange>
+					</li>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/TraderKindDef[defName="Base_Outlander_Standard" or 
+					defName="Caravan_Outlander_CombatSupplier" or 
+					defName="Orbital_CombatSupplier" or 
+					defName="Orbital_PirateMerchant" or 
+					defName="Visitor_Outlander_Standard"]/stockGenerators</xpath>
+				<value>
+					<li Class="StockGenerator_SingleDef" Operation="Add">
+						<thingDef>AmmoIndustrial</thingDef>
+						<countRange>45~450</countRange>
+					</li>
+					<li Class="StockGenerator_Category" Operation="Add">
+						<categoryDef>yy_ammo_category</categoryDef>
+						<thingDefCountRange>1~2</thingDefCountRange>
+						<totalPriceRange>15~150</totalPriceRange>
+						<excludedThingDefs>
+							<li>AmmoPrimitive</li>
+							<li>AmmoIndustrial</li>
+						</excludedThingDefs>
+					</li>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>ludeon.rimworld.biotech</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>RecipeDef</xpath>
+						<xpath>Defs/TraderKindDef[defName="Base_Empire_Standard" or 
+							defName="Empire_Caravan_TraderGeneral" or 
+							defName="Orbital_Empire"]/stockGenerators</xpath>
 						<value>
-							<workAmount Operation="SafeReplace">200</workAmount>
-							<ingredients Operation="SafeReplace">
-								<li>
-									<filter>
-										<thingDefs>
-											<li>WoodLog</li>
-										</thingDefs>
-									</filter>
-									<count>10</count>
-								</li>
-							</ingredients>
+							<li Class="StockGenerator_SingleDef" Operation="Add">
+								<thingDef>AmmoIndustrial</thingDef>
+								<countRange>30~300</countRange>
+							</li>
+							<li Class="StockGenerator_SingleDef" Operation="Add">
+								<thingDef>AmmoSpacer</thingDef>
+								<countRange>30~300</countRange>
+							</li>
+							<li Class="StockGenerator_Category" Operation="Add">
+								<categoryDef>yy_ammo_category</categoryDef>
+								<thingDefCountRange>1~2</thingDefCountRange>
+								<totalPriceRange>15~150</totalPriceRange>
+								<excludedThingDefs>
+									<li>AmmoPrimitive</li>
+									<li>AmmoIndustrial</li>
+									<li>AmmoSpacer</li>
+								</excludedThingDefs>
+							</li>
 						</value>
 					</Operation>
-				</apply>
+				</caseTrue>
 			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/RecipeDef[defName="R_Make_Primitive_Ammo_Explosive"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>oskarpotocki.vfe.tribals</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>RecipeDef</xpath>
-								<value>
-									<researchPrerequisite Operation="SafeAdd">VFET_Bow</researchPrerequisite>
-								</value>
-							</Operation>
-						</caseTrue>
-					</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>Teiwaz.GTGOT</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>RecipeDef</xpath>
+						<xpath>Defs/TraderKindDef[defName="Orbital_GTGMilitary"]/stockGenerators</xpath>
 						<value>
-							<workAmount Operation="SafeReplace">240</workAmount>
+							<li Class="StockGenerator_SingleDef" Operation="Add">
+								<thingDef>AmmoIndustrial</thingDef>
+								<countRange>150~600</countRange>
+							</li>
+							<li Class="StockGenerator_SingleDef" Operation="Add">
+								<thingDef>AmmoSpacer</thingDef>
+								<countRange>75~450</countRange>
+							</li>
+							<li Class="StockGenerator_Category" Operation="Add">
+								<categoryDef>yy_ammo_category</categoryDef>
+								<thingDefCountRange>1~3</thingDefCountRange>
+								<totalPriceRange>30~300</totalPriceRange>
+								<excludedThingDefs>
+									<li>AmmoPrimitive</li>
+									<li>AmmoIndustrial</li>
+									<li>AmmoSpacer</li>
+								</excludedThingDefs>
+							</li>
 						</value>
 					</Operation>
-				</apply>
-			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/RecipeDef[defName="R_Make_Primitive_Ammo_Special"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>oskarpotocki.vfe.tribals</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>RecipeDef</xpath>
-								<value>
-									<researchPrerequisite Operation="SafeAdd">VFET_Bow</researchPrerequisite>
-								</value>
-							</Operation>
-						</caseTrue>
-					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>RecipeDef</xpath>
+						<xpath>Defs/TraderKindDef[defName="Orbital_GTGBlackMarket"]/stockGenerators</xpath>
 						<value>
-							<workAmount Operation="SafeReplace">240</workAmount>
+							<li Class="StockGenerator_SingleDef" Operation="Add">
+								<thingDef>AmmoIndustrial</thingDef>
+								<countRange>30~300</countRange>
+							</li>
+							<li Class="StockGenerator_Category" Operation="Add">
+								<categoryDef>yy_ammo_category</categoryDef>
+								<thingDefCountRange>1~3</thingDefCountRange>
+								<totalPriceRange>15~150</totalPriceRange>
+								<excludedThingDefs>
+									<li>AmmoPrimitive</li>
+									<li>AmmoIndustrial</li>
+								</excludedThingDefs>
+							</li>
 						</value>
 					</Operation>
-				</apply>
-			</Operation>
-
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/RecipeDef[defName="R_Make_Industrial_Ammo"]</xpath>
-				<value>
-					<researchPrerequisite Operation="SafeAdd">Gunsmithing</researchPrerequisite>
-					<workAmount Operation="SafeReplace">360</workAmount>
-					<ingredients Operation="SafeReplace">
-						<li>
-							<filter>
-								<thingDefs>
-									<li>Uranium</li>
-								</thingDefs>
-							</filter>
-							<count>2</count>
-						</li>
-						<li>
-							<filter>
-								<thingDefs>
-									<li>Steel</li>
-								</thingDefs>
-							</filter>
-							<count>15</count>
-						</li>
-					</ingredients>
-					<products Operation="Safe">
-						<R_Ammo_Industrial Operation="SafeReplace">20</R_Ammo_Industrial>
-					</products>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/RecipeDef[defName="R_Make_Industrial_Ammo_Explosive"]</xpath>
-				<value>
-					<researchPrerequisite Operation="SafeAdd">Gunsmithing</researchPrerequisite>
-					<workAmount Operation="SafeReplace">450</workAmount>
-					<ingredients Operation="SafeReplace">
-						<li>
-							<filter>
-								<thingDefs>
-									<li>Chemfuel</li>
-								</thingDefs>
-							</filter>
-							<count>10</count>
-						</li>
-						<li>
-							<filter>
-								<thingDefs>
-									<li>Steel</li>
-								</thingDefs>
-							</filter>
-							<count>15</count>
-						</li>
-					</ingredients>
-					<products Operation="Safe">
-						<R_Ammo_Industrial_Explosive Operation="SafeReplace">20</R_Ammo_Industrial_Explosive>
-					</products>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/RecipeDef[defName="R_Make_Industrial_Ammo_Special"]</xpath>
-				<value>
-					<researchPrerequisite Operation="SafeAdd">Gunsmithing</researchPrerequisite>
-					<workAmount Operation="SafeReplace">450</workAmount>
-					<ingredients Operation="SafeReplace">
-						<li>
-							<filter>
-								<thingDefs>
-									<li>ComponentIndustrial</li>
-								</thingDefs>
-							</filter>
-							<count>1</count>
-						</li>
-						<li>
-							<filter>
-								<thingDefs>
-									<li>Steel</li>
-								</thingDefs>
-							</filter>
-							<count>15</count>
-						</li>
-					</ingredients>
-					<products Operation="Safe">
-						<R_Ammo_Industrial_Special Operation="SafeReplace">20</R_Ammo_Industrial_Special>
-					</products>
-				</value>
-			</Operation>
-
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/RecipeDef[defName="R_Make_Spacer_Ammo"]</xpath>
-				<value>
-					<researchPrerequisite Operation="SafeAdd">ChargedShot</researchPrerequisite>
-					<workAmount Operation="SafeReplace">1200</workAmount>
-					<ingredients Operation="SafeReplace">
-						<li>
-							<filter>
-								<thingDefs>
-									<li>ComponentSpacer</li>
-								</thingDefs>
-							</filter>
-							<count>1</count>
-						</li>
-					</ingredients>
-					<products Operation="Safe">
-						<R_Ammo_Spacer Operation="SafeReplace">40</R_Ammo_Spacer>
-					</products>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/RecipeDef[defName="R_Make_Spacer_Ammo_Explosive"]</xpath>
-				<value>
-					<researchPrerequisite Operation="SafeAdd">ChargedShot</researchPrerequisite>
-					<workAmount Operation="SafeReplace">1600</workAmount>
-					<ingredients Operation="SafeReplace">
-						<li>
-							<filter>
-								<thingDefs>
-									<li>Chemfuel</li>
-								</thingDefs>
-							</filter>
-							<count>20</count>
-						</li>
-						<li>
-							<filter>
-								<thingDefs>
-									<li>ComponentSpacer</li>
-								</thingDefs>
-							</filter>
-							<count>1</count>
-						</li>
-					</ingredients>
-					<products Operation="Safe">
-						<R_Ammo_Spacer_Explosive Operation="SafeReplace">40</R_Ammo_Spacer_Explosive>
-					</products>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/RecipeDef[defName="R_Make_Spacer_Ammo_Special"]</xpath>
-				<value>
-					<researchPrerequisite Operation="SafeAdd">ChargedShot</researchPrerequisite>
-					<workAmount Operation="SafeReplace">1600</workAmount>
-					<ingredients Operation="SafeReplace">
-						<li>
-							<filter>
-								<thingDefs>
-									<li>Uranium</li>
-								</thingDefs>
-							</filter>
-							<count>10</count>
-						</li>
-						<li>
-							<filter>
-								<thingDefs>
-									<li>ComponentSpacer</li>
-								</thingDefs>
-							</filter>
-							<count>1</count>
-						</li>
-					</ingredients>
-					<products Operation="Safe">
-						<R_Ammo_Spacer_Special Operation="SafeReplace">40</R_Ammo_Spacer_Special>
-					</products>
-				</value>
-			</Operation>
-
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/Reload.Defs.AmmoDef[@Name="BaseAmmo"]</xpath>
-				<value>
-					<stackLimit Operation="SafeReplace">150</stackLimit>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/Reload.Defs.AmmoDef[@Name="R_Ammo_Primitive"]</xpath>
-				<value>
-					<stackLimit Operation="SafeReplace">75</stackLimit>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/Reload.Defs.AmmoDef[defName="R_Ammo_Primitive"]</xpath>
-				<value>
-					<statBases Operation="Safe">
-						<MarketValue Operation="SafeReplace">1</MarketValue>
-					</statBases>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/Reload.Defs.AmmoDef[defName="R_Ammo_Primitive_Explosive"]</xpath>
-				<value>
-					<statBases Operation="Safe">
-						<MarketValue Operation="SafeReplace">1.5</MarketValue>
-					</statBases>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/Reload.Defs.AmmoDef[defName="R_Ammo_Primitive_Special"]</xpath>
-				<value>
-					<statBases Operation="Safe">
-						<MarketValue Operation="SafeReplace">2</MarketValue>
-					</statBases>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/Reload.Defs.AmmoDef[defName="R_Ammo_Industrial"]</xpath>
-				<value>
-					<statBases Operation="Safe">
-						<MarketValue Operation="SafeReplace">2.5</MarketValue>
-					</statBases>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/Reload.Defs.AmmoDef[defName="R_Ammo_Industrial_Explosive"]</xpath>
-				<value>
-					<statBases Operation="Safe">
-						<MarketValue Operation="SafeReplace">3</MarketValue>
-					</statBases>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/Reload.Defs.AmmoDef[defName="R_Ammo_Industrial_Special"]</xpath>
-				<value>
-					<statBases Operation="Safe">
-						<MarketValue Operation="SafeReplace">3.5</MarketValue>
-					</statBases>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/Reload.Defs.AmmoDef[defName="R_Ammo_Spacer"]</xpath>
-				<value>
-					<statBases Operation="Safe">
-						<MarketValue Operation="SafeReplace">5.5</MarketValue>
-					</statBases>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/Reload.Defs.AmmoDef[defName="R_Ammo_Spacer_Explosive"]</xpath>
-				<value>
-					<statBases Operation="Safe">
-						<MarketValue Operation="SafeReplace">6.5</MarketValue>
-					</statBases>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/Reload.Defs.AmmoDef[defName="R_Ammo_Spacer_Special"]</xpath>
-				<value>
-					<statBases Operation="Safe">
-						<MarketValue Operation="SafeReplace">7.5</MarketValue>
-					</statBases>
-				</value>
+				</caseTrue>
 			</Operation>
 		</caseTrue>
 	</Operation>

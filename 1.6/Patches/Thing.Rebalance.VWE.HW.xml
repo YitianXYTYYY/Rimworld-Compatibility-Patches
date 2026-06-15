@@ -260,6 +260,24 @@
 									<description Operation="SafeReplace">A rocket launcher that fires ten small-bore explosive missiles that track different targets.\n\nBeing an extremely heavy weapon, this gun requires a power armor to be effectively used.\n\nCan only hold a limited number of missiles, and must be reloaded with swarm missiles.</description>
 								</value>
 							</Operation>
+							<Operation Class="XmlExtensions.FindMod">
+								<mods>
+									<li>mlie.yayoscombat3</li>
+								</mods>
+								<packageId>true</packageId>
+								<caseTrue>
+									<Operation Class="XmlExtensions.HybridPatch">
+										<xpath>Defs/ThingDef[defName="VWEHR_SwarmMissileAmmo"]</xpath>
+										<value>
+											<defName Operation="SafeReplace">VWEHRSwarmMissileAmmo</defName>
+											<thingCategories Operation="Safe">
+												<li Operation="SafeRemove" Compare="InnerText">RocketAmmo</li>
+												<li Operation="SafeAdd" Compare="InnerText">yy_ammo_category</li>
+											</thingCategories>
+										</value>
+									</Operation>
+								</caseTrue>
+							</Operation>
 						</caseTrue>
 					</Operation>
 				</apply>
@@ -356,96 +374,6 @@
 						</caseTrue>
 					</Operation>
 				</apply>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>zal.heavyweaponsreloading</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>mlie.yayoscombat3</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="VWEHR_SwarmMissileAmmo"]</xpath>
-						<value>
-							<defName Operation="SafeReplace">VWEHRSwarmMissileAmmo</defName>
-							<thingCategories Operation="Safe">
-								<li Operation="SafeRemove" Compare="InnerText">RocketAmmo</li>
-								<li Operation="SafeAdd" Compare="InnerText">yy_ammo_category</li>
-							</thingCategories>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>zal.reload</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.SetScope">
-						<xpath>Defs/ThingDef[defName="VWE_Gun_SwarmMissileLauncher"]</xpath>
-						<apply>
-							<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-								<xpath>ThingDef/comps/li[compClass="MVCF.Comps.Comp_VerbProps"]</xpath>
-							</Operation>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>ThingDef/verbs/li[verbClass="VEF.Weapons.Verb_Shoot"]</xpath>
-								<value>
-									<label Operation="SafeRemove"/>
-								</value>
-							</Operation>
-						</apply>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationAdd">
-						<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
-						<value>
-							<li>ThingDef/VWEHR_SwarmMissileAmmo</li>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationAdd">
-						<xpath>Defs</xpath>
-						<value>
-							<Reload.Defs.AmmoDef ParentName="R_Ammo_Industrial">
-								<defName>R_Ammo_Industrial_SwarmMissile</defName>
-								<label>swarm missile</label>
-								<description>A small guided explosive missile meant for firing in a swarm.</description>
-								<graphicData>
-									<texPath>VWEHR_SwarmMissileAmmo</texPath>
-									<graphicClass>Graphic_StackCount</graphicClass>
-								</graphicData>
-								<stackLimit>25</stackLimit>
-								<statBases>
-									<MarketValue>55</MarketValue>
-								</statBases>
-								<ammoType>Explosive</ammoType>
-								<tickerType>Normal</tickerType>
-								<costList>
-									<Steel>10</Steel>
-									<Chemfuel>5</Chemfuel>
-								</costList>
-								<recipeMaker>
-									<researchPrerequisite>MultibarrelWeapons</researchPrerequisite>
-								</recipeMaker>
-								<comps>
-									<li Class="CompProperties_Explosive">
-										<explosiveRadius>2.9</explosiveRadius>
-										<explosiveDamageType>Bomb</explosiveDamageType>
-										<requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
-									</li>
-								</comps>
-							</Reload.Defs.AmmoDef>
-						</value>
-					</Operation>
-				</caseTrue>
 			</Operation>
 		</caseTrue>
 	</Operation>
