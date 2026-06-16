@@ -743,6 +743,20 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>lucius.eyegenes3</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[@Name="EyeGenes3Cosmetic"]</xpath>
+						<value>
+							<displayCategory Operation="AddOrReplace">Cosmetic_EyeColor</displayCategory>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
 		</caseTrue>
 	</Operation>
 

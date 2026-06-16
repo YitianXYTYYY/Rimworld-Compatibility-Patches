@@ -103,7 +103,7 @@
 					defName="Gun_ChainShotgun"]</xpath>
 				<value>
 					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_AmmoIndustrial/18/1</li>
+						<li Operation="Add">ammoDef_AmmoIndustrial/15/1</li>
 					</weaponTags>
 				</value>
 			</Operation>
