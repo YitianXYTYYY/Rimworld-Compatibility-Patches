@@ -26,12 +26,12 @@ Personal Made compatibility patches for mods.
 			<steamWorkshopUrl>steam://url/CommunityFilePage/2574315206</steamWorkshopUrl>
 		</li>
 		<li>
-			<packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
+			<packageId>oskarpotocki.vanillafactionsexpanded.core</packageId>
 			<displayName>Vanilla Expanded Framework</displayName>
 			<steamWorkshopUrl>steam://url/CommunityFilePage/2023507013</steamWorkshopUrl>
 		</li>
 		<li>
-			<packageId>Owlchemist.CherryPicker</packageId>
+			<packageId>owlchemist.cherrypicker</packageId>
 			<displayName>Cherry Picker</displayName>
 			<steamWorkshopUrl>steam://url/CommunityFilePage/3521312241</steamWorkshopUrl>
 		</li>
@@ -45,24 +45,24 @@ Personal Made compatibility patches for mods.
 		<li>fuu.uncompromisingtribalfaction</li>
 		<li>hussars.blablabla.cantbearsedtocomeupwithafunnyid</li>
 		<li>imranfish.xmlextensions</li>
-		<li>JintuziLamian.Gene.XenoCosmetic</li>
+		<li>jintuzilamian.gene.xenocosmetic</li>
 		<li>lucius.eyegenes3</li>
 		<li>mlie.yayoscombat3</li>
 		<li>mse2.core</li>
-		<li>Og.maarx.meditateasworktype.continued</li>
-		<li>Oppey.EyeGenes2</li>
-		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+		<li>og.maarx.meditateasworktype.continued</li>
+		<li>oppey.eyegenes2</li>
+		<li>oskarpotocki.vanillafactionsexpanded.core</li>
 		<li>oskarpotocki.vfe.empire</li>
 		<li>oskarpotocki.vfe.tribals</li>
-		<li>Owlchemist.CherryPicker</li>
+		<li>owlchemist.cherrypicker</li>
 		<li>prestigespecialistarmours.final</li>
-		<li>RedMattis.BetterPrerequisites</li>
+		<li>redmattis.betterprerequisites</li>
 		<li>reel.turretpipeline</li>
-		<li>ReSplice.XOTR.Core</li>
-		<li>seohyeon.OptimizationMeats</li>
+		<li>resplice.xotr.core</li>
+		<li>seohyeon.optimizationmeats</li>
 		<li>syrus.yayoscombataddon</li>
-		<li>Teiwaz.GTGOT</li>
-		<li>Turnovus.Biotech.IntegratedGenes</li>
+		<li>teiwaz.gtgot</li>
+		<li>turnovus.biotech.integratedgenes</li>
 		<li>vanillaexpanded.varme</li>
 		<li>vanillaexpanded.vgeneticse</li>
 		<li>vanillaexpanded.vwe</li>

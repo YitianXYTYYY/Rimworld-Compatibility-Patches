@@ -26,7 +26,7 @@
 								<Flammability Operation="SafeRemove">0</Flammability>
 								<Mass Operation="SafeReplace">20</Mass>
 								<RangedWeapon_Cooldown Operation="SafeReplace">2</RangedWeapon_Cooldown>
-								<WorkToMake Operation="SafeReplace">21600</WorkToMake>
+								<WorkToMake Operation="SafeReplace">18000</WorkToMake>
 							</statBases>
 							<verbs Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="verbClass">
@@ -116,7 +116,7 @@
 								<RangedWeapon_Cooldown Operation="SafeReplace">4</RangedWeapon_Cooldown>
 								<DeteriorationRate Operation="SafeRemove">0</DeteriorationRate>
 								<Flammability Operation="SafeRemove">0</Flammability>
-								<WorkToMake Operation="SafeReplace">14400</WorkToMake>
+								<WorkToMake Operation="SafeReplace">7200</WorkToMake>
 							</statBases>
 							<verbs Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="verbClass">
@@ -187,7 +187,7 @@
 								<RangedWeapon_Cooldown Operation="SafeReplace">2</RangedWeapon_Cooldown>
 								<DeteriorationRate Operation="SafeRemove">0</DeteriorationRate>
 								<Flammability Operation="SafeRemove">0</Flammability>
-								<WorkToMake Operation="SafeReplace">28800</WorkToMake>
+								<WorkToMake Operation="SafeReplace">21600</WorkToMake>
 							</statBases>
 							<verbs Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="verbClass">
@@ -257,7 +257,7 @@
 							<Operation Class="XmlExtensions.HybridPatch">
 								<xpath>ThingDef</xpath>
 								<value>
-									<description Operation="SafeReplace">A rocket launcher that fires ten small-bore explosive missiles that track different targets.\n\nBeing an extremely heavy weapon, this gun requires a power armor to be effectively used.\n\nCan only hold a limited number of missiles, and must be reloaded with swarm missiles.</description>
+									<description Operation="SafeReplace">A rocket launcher that fires small-bore explosive swarm missiles that track different targets.\n\nBeing an extremely heavy weapon, this gun requires a power armor to be effectively used.</description>
 								</value>
 							</Operation>
 							<Operation Class="XmlExtensions.FindMod">
@@ -302,7 +302,7 @@
 								<Flammability Operation="SafeRemove">0</Flammability>
 								<Mass Operation="SafeReplace">20</Mass>
 								<RangedWeapon_Cooldown Operation="SafeReplace">1.2</RangedWeapon_Cooldown>
-								<WorkToMake Operation="SafeReplace">21600</WorkToMake>
+								<WorkToMake Operation="SafeReplace">18000</WorkToMake>
 							</statBases>
 							<verbs Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="verbClass">
