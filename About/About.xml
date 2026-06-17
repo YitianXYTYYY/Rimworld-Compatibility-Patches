@@ -16,6 +16,11 @@ Personal Made compatibility patches for mods.
 	</description>
 	<modDependencies>
 		<li>
+			<packageId>ferny.replacelib</packageId>
+			<displayName>ReplaceLib</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/3417393194</steamWorkshopUrl>
+		</li>
+		<li>
     		<packageId>imranfish.xmlextensions</packageId>
 			<displayName>XML Extensions</displayName>
 			<steamWorkshopUrl>steam://url/CommunityFilePage/2574315206</steamWorkshopUrl>
@@ -33,20 +38,42 @@ Personal Made compatibility patches for mods.
 	</modDependencies>
 	<loadAfter>
 		<li>als.biotechgravship</li>
+		<li>amch.eragon.hcgenefabrication</li>
+		<li>anonemous2.genepackreprocessor</li>
+		<li>ferny.progressiongenetics</li>
+		<li>ferny.replacelib</li>
+		<li>fuu.uncompromisingtribalfaction</li>
+		<li>hussars.blablabla.cantbearsedtocomeupwithafunnyid</li>
 		<li>imranfish.xmlextensions</li>
 		<li>JintuziLamian.Gene.XenoCosmetic</li>
+		<li>lucius.eyegenes3</li>
+		<li>mlie.yayoscombat3</li>
+		<li>mse2.core</li>
 		<li>Og.maarx.meditateasworktype.continued</li>
 		<li>Oppey.EyeGenes2</li>
+		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+		<li>oskarpotocki.vfe.empire</li>
+		<li>oskarpotocki.vfe.tribals</li>
 		<li>Owlchemist.CherryPicker</li>
+		<li>prestigespecialistarmours.final</li>
+		<li>RedMattis.BetterPrerequisites</li>
+		<li>reel.turretpipeline</li>
 		<li>ReSplice.XOTR.Core</li>
 		<li>seohyeon.OptimizationMeats</li>
+		<li>syrus.yayoscombataddon</li>
+		<li>Teiwaz.GTGOT</li>
 		<li>Turnovus.Biotech.IntegratedGenes</li>
+		<li>vanillaexpanded.varme</li>
+		<li>vanillaexpanded.vgeneticse</li>
+		<li>vanillaexpanded.vwe</li>
+		<li>vanillaexpanded.vwehw</li>
 		<li>vanillaquestsexpanded.ancients</li>
 		<li>vanillaracesexpanded.archon</li>
 		<li>vanillaracesexpanded.fungoid</li>
 		<li>vanillaracesexpanded.genie</li>
 		<li>vanillaracesexpanded.highmate</li>
 		<li>vanillaracesexpanded.hussar</li>
+		<li>vanillaracesexpanded.insector</li>
 		<li>vanillaracesexpanded.lycanthrope</li>
 		<li>vanillaracesexpanded.phytokin</li>
 		<li>vanillaracesexpanded.pigskin</li>
@@ -54,9 +81,7 @@ Personal Made compatibility patches for mods.
 		<li>vanillaracesexpanded.saurid</li>
 		<li>vanillaracesexpanded.starjack</li>
 		<li>vanillaracesexpanded.waster</li>
-		<li>vanillaracesexpanded.insector</li>
 		<li>Wara.toomanymods</li>
 		<li>zal.heavyweaponsreloading</li>
-		<li>zal.reload</li>
 	</loadAfter>
 </ModMetaData>

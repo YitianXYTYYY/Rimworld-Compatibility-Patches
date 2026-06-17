@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-	<Operation Class="XmlExtensions.SetScope">
+	<Operation Class="XmlExtensions.SetScope" MayRequire="Owlchemist.CherryPicker">
 		<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
 		<apply>
 			<!-- AFU Cosmetic Gene Expanded -->

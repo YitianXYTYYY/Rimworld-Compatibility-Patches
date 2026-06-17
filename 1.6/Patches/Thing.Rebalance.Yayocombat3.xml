@@ -135,8 +135,11 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="Weapon_GrenadeMolotov"]</xpath>
 				<value>
+					<costList Operation="Safe">
+						<Chemfuel Operation="SafeReplace">20</Chemfuel>
+					</costList>
 					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_Chemfuel/2/5</li>
+						<li Operation="Add">ammoDef_Chemfuel/2/10</li>
 					</weaponTags>
 				</value>
 			</Operation>
@@ -144,7 +147,7 @@
 				<xpath>Defs/ThingDef[defName="Gun_IncendiaryLauncher"]</xpath>
 				<value>
 					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_Chemfuel/5/5</li>
+						<li Operation="Add">ammoDef_Chemfuel/5/10</li>
 					</weaponTags>
 				</value>
 			</Operation>
@@ -153,7 +156,7 @@
 				<value>
 					<costList Operation="SafeReplace">
 						<Steel>5</Steel>
-						<Chemfuel>5</Chemfuel>
+						<Chemfuel>10</Chemfuel>
 					</costList>
 					<defName Operation="SafeReplace">WeaponGrenadeFrag</defName>
 					<stackLimit Operation="SafeAdd">10</stackLimit>
@@ -220,7 +223,7 @@
 				<xpath>Defs/ThingDef[defName="Gun_InfernoCannon"]</xpath>
 				<value>
 					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_Chemfuel/30/5</li>
+						<li Operation="Add">ammoDef_Chemfuel/6/25</li>
 					</weaponTags>
 				</value>
 			</Operation>
@@ -295,7 +298,7 @@
 						<xpath>Defs/ThingDef[defName="Gun_MiniFlameblaster"]</xpath>
 						<value>
 							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_Chemfuel/50/3</li>
+								<li Operation="Add">ammoDef_Chemfuel/100/1</li>
 							</weaponTags>
 						</value>
 					</Operation>
@@ -353,7 +356,7 @@
 						<xpath>Defs/ThingDef[defName="Gun_Incinerator"]</xpath>
 						<value>
 							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_Chemfuel/10/5</li>
+								<li Operation="Add">ammoDef_Chemfuel/100/1</li>
 							</weaponTags>
 						</value>
 					</Operation>
@@ -412,7 +415,7 @@
 						<xpath>Defs/ThingDef[defName="Gun_SmokeLauncher"]</xpath>
 						<value>
 							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_Chemfuel/5/3</li>
+								<li Operation="Add">ammoDef_Chemfuel/5/10</li>
 							</weaponTags>
 						</value>
 					</Operation>
@@ -521,7 +524,8 @@
 						<xpath>Defs/ThingDef[defName="VWE_SmokeGrenade"]</xpath>
 						<value>
 							<costList Operation="SafeReplace">
-								<Steel>10</Steel>
+								<Steel>5</Steel>
+								<Chemfuel>5</Chemfuel>
 							</costList>
 							<defName Operation="SafeReplace">VWESmokeGrenade</defName>
 							<stackLimit Operation="SafeAdd">10</stackLimit>
