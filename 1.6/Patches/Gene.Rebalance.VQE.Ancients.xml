@@ -85,7 +85,7 @@
 				<value>
 					<capMods Operation="Safe">
 						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-							<capacity Operation="Safe">Moving</capacity>
+							<capacity Operation="SafeAdd">Moving</capacity>
 							<offset Operation="SafeAdd">0.2</offset>
 						</li>
 					</capMods>

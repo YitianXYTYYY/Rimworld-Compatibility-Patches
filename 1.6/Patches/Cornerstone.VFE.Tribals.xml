@@ -352,7 +352,7 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_QuickdrawMasters"]</xpath>
 				<value>
-					<description Operation="SafeReplace">Aiming time x80%.</description>
+					<description Operation="SafeReplace">Aiming time x80%</description>
 					<statFactors Operation="Safe">
 						<AimingDelayFactor Operation="SafeReplace">0.8</AimingDelayFactor>
 					</statFactors>
@@ -361,7 +361,7 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_MortarVisionaries"]</xpath>
 				<value>
-					<description Operation="SafeReplace">Mortars miss radius multiplier x80%.</description>
+					<description Operation="SafeReplace">Mortars miss radius multiplier x80%</description>
 					<statFactors Operation="Safe">
 						<MortarMissRadiusFactor Operation="SafeReplace">0.8</MortarMissRadiusFactor>
 					</statFactors>
@@ -382,7 +382,7 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_ChemistsOfEfficacy"]</xpath>
 				<value>
-					<description Operation="SafeReplace">Drug synthesis and cooking speed +20%.</description>
+					<description Operation="SafeReplace">Drug synthesis and cooking speed +20%</description>
 					<statFactors Operation="Safe">
 						<DrugSynthesisSpeed Operation="SafeRemove">0</DrugSynthesisSpeed>
 					</statFactors>
@@ -395,7 +395,7 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_TechScavengers"]</xpath>
 				<value>
-					<description Operation="SafeReplace">Mechanoid shredding efficiency +20%.</description>
+					<description Operation="SafeReplace">Mechanoid shredding efficiency +20%</description>
 					<statFactors Operation="Safe">
 						<ButcheryMechanoidEfficiency Operation="SafeRemove">0</ButcheryMechanoidEfficiency>
 					</statFactors>
@@ -407,7 +407,7 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_MasterButchers"]</xpath>
 				<value>
-					<description Operation="SafeReplace">Butchery efficiency +20%.</description>
+					<description Operation="SafeReplace">Butchery efficiency +20%</description>
 					<statFactors Operation="Safe">
 						<ButcheryFleshEfficiency Operation="SafeRemove">0</ButcheryFleshEfficiency>
 					</statFactors>

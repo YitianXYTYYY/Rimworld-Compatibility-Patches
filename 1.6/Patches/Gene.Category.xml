@@ -2,7 +2,7 @@
 <Patch>
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Ludeon.RimWorld.Biotech</li>
+			<li>ludeon.rimworld.biotech</li>
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
@@ -219,6 +219,22 @@
 			<displayPriorityInXenotype Operation="AddOrReplace">-200</displayPriorityInXenotype>
 		</value>
 	</Operation>
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>lucius.eyegenes3</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneCategoryDef[defName="EyeGenes3_Eyes"]</xpath>
+				<value>
+					<displayPriorityInGenepack Operation="SafeRemove"/>
+					<displayPriorityInXenotype Operation="AddOrReplace">-1010</displayPriorityInXenotype>
+					<label Operation="SafeReplace">cosmetic - eye color</label>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/GeneCategoryDef[defName="Cosmetic_Skin"]</xpath>
 		<value>
@@ -226,5 +242,4 @@
 			<displayPriorityInXenotype Operation="AddOrReplace">-1020</displayPriorityInXenotype>
 		</value>
 	</Operation>
-
 </Patch>

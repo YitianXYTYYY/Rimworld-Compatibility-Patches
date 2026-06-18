@@ -137,7 +137,7 @@
 	<!-- 520 cell -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>vanillaracesexpanded.waster</li>
+			<li>ludeon.rimworld.biotech</li>
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
@@ -147,6 +147,14 @@
 					<displayCategory Operation="AddOrReplace">Health_Cell</displayCategory>
 				</value>
 			</Operation>
+		</caseTrue>
+	</Operation>
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.waster</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_Instability_Nominal"]</xpath>
 				<value>

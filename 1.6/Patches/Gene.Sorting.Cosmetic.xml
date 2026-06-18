@@ -4,7 +4,7 @@
 	<!-- -10 skin -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Ludeon.RimWorld.Biotech</li>
+			<li>ludeon.rimworld.biotech</li>
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
@@ -198,7 +198,7 @@
 	<!-- -30 hands -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Ludeon.RimWorld.Biotech</li>
+			<li>ludeon.rimworld.biotech</li>
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
@@ -270,10 +270,11 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="Hands_Pig"]</xpath>
 				<value>
+					<biostatMet Operation="SafeReplace">2</biostatMet>
 					<capMods Operation="Safe">
 						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
 							<capacity Operation="Safe">Manipulation</capacity>
-							<offset Operation="SafeAdd">-0.15</offset>
+							<offset Operation="SafeAdd">-0.10</offset>
 							<postFactor Operation="SafeRemove">0</postFactor>
 						</li>
 					</capMods>
@@ -293,7 +294,7 @@
 	<!-- -50 tail(functional) -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Ludeon.RimWorld.Biotech</li>
+			<li>ludeon.rimworld.biotech</li>
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
@@ -375,7 +376,7 @@
 							<biostatMet Operation="SafeAdd">-1</biostatMet>
 							<capMods Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-									<capacity Operation="Safe">Moving</capacity>
+									<capacity Operation="SafeAdd">Moving</capacity>
 									<offset Operation="SafeAdd">0.05</offset>
 								</li>
 							</capMods>
@@ -393,7 +394,7 @@
 
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Ludeon.RimWorld.Biotech</li>
+			<li>ludeon.rimworld.biotech</li>
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
@@ -722,37 +723,25 @@
 				</value>
 			</Operation>
 
-			<!-- -1001 eyecolor -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[@Name="GeneEyeColor"]</xpath>
-				<value>
-					<displayCategory Operation="AddOrReplace">Cosmetic_EyeColor</displayCategory>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>oppey.eyegenes2</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[@Name="EyeGenes2Cosmetical"]</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Cosmetic_EyeColor</displayCategory>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
+			<!-- -1010 eyecolor -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
 					<li>lucius.eyegenes3</li>
 				</mods>
 				<packageId>true</packageId>
-				<caseTrue>
+				<caseFalse>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[@Name="EyeGenes3Cosmetic"]</xpath>
+						<xpath>Defs/GeneDef[@Name="GeneEyeColor"]</xpath>
 						<value>
 							<displayCategory Operation="AddOrReplace">Cosmetic_EyeColor</displayCategory>
+						</value>
+					</Operation>
+				</caseFalse>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[@Name="GeneEyeColor"]</xpath>
+						<value>
+							<displayCategory Operation="AddOrReplace">EyeGenes3_Eyes</displayCategory>
 						</value>
 					</Operation>
 				</caseTrue>
