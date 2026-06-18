@@ -85,7 +85,7 @@
 				</value>
 			</Operation>
 			<!-- Ammo -->
-			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="yy_ammo_primitive" or 
 					defName="yy_ammo_primitive_fire" or 
 					defName="yy_ammo_primitive_emp" or 
@@ -95,6 +95,13 @@
 					defName="yy_ammo_spacer" or 
 					defName="yy_ammo_spacer_fire" or 
 					defName="yy_ammo_spacer_emp"]</xpath>
+				<value>
+					<statBases Operation="Safe">
+						<Mass Operation="SafeReplace">0</Mass>
+					</statBases>
+					<thingCategories Operation="SafeRemove"/>
+					<tradeability Operation="SafeAdd">None</tradeability>
+				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
@@ -102,13 +109,20 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/ThingDef[defName="yy_ammo_primitive_light" or 
 							defName="yy_ammo_primitive_heavy" or 
 							defName="yy_ammo_industrial_light" or 
 							defName="yy_ammo_industrial_heavy" or 
 							defName="yy_ammo_spacer_light" or 
 							defName="yy_ammo_spacer_heavy"]</xpath>
+						<value>
+							<statBases Operation="Safe">
+								<Mass Operation="SafeReplace">0</Mass>
+							</statBases>
+							<thingCategories Operation="SafeRemove"/>
+							<tradeability Operation="SafeAdd">None</tradeability>
+						</value>
 					</Operation>
 				</caseTrue>
 			</Operation>

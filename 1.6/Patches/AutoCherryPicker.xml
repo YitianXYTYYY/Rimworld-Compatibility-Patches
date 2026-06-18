@@ -312,6 +312,15 @@
 							<li>RecipeDef/Make_yy_ammo_spacer_emp</li>
 							<li>RecipeDef/Make_yy_ammo_spacer_emp10</li>
 							<li>ThingDef/Gun_AntiArmor_Rocket</li>
+							<li>ThingDef/yy_ammo_primitive</li>
+							<li>ThingDef/yy_ammo_primitive_fire</li>
+							<li>ThingDef/yy_ammo_primitive_emp</li>
+							<li>ThingDef/yy_ammo_industrial</li>
+							<li>ThingDef/yy_ammo_industrial_fire</li>
+							<li>ThingDef/yy_ammo_industrial_emp</li>
+							<li>ThingDef/yy_ammo_spacer</li>
+							<li>ThingDef/yy_ammo_spacer_fire</li>
+							<li>ThingDef/yy_ammo_spacer_emp</li>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.FindMod">
@@ -335,6 +344,12 @@
 									<li>RecipeDef/Make_yy_ammo_spacer_light10</li>
 									<li>RecipeDef/Make_yy_ammo_spacer_heavy</li>
 									<li>RecipeDef/Make_yy_ammo_spacer_heavy10</li>
+									<li>ThingDef/yy_ammo_primitive_light</li>
+									<li>ThingDef/yy_ammo_primitive_heavy</li>
+									<li>ThingDef/yy_ammo_industrial_light</li>
+									<li>ThingDef/yy_ammo_industrial_heavy</li>
+									<li>ThingDef/yy_ammo_spacer_light</li>
+									<li>ThingDef/yy_ammo_spacer_heavy</li>
 								</value>
 							</Operation>
 						</caseTrue>
