@@ -128,26 +128,50 @@
 			</Operation>
 			<!-- Ammo Trade -->
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/TraderKindDef[defName="Base_Neolithic_Standard" or 
-					defName="Caravan_Neolithic_WarMerchant" or 
-					defName="Visitor_Neolithic_Standard"]/stockGenerators</xpath>
+				<xpath>Defs/TraderKindDef[not(orbital="true")]/stockGenerators[li[tradeTag="WeaponRanged" and maxTechLevelGenerate="Neolithic"]]</xpath>
 				<value>
 					<li Class="StockGenerator_SingleDef" Operation="Add">
 						<thingDef>AmmoPrimitive</thingDef>
-						<countRange>45~225</countRange>
+						<countRange>30~300</countRange>
 					</li>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/TraderKindDef[defName="Base_Outlander_Standard" or 
-					defName="Caravan_Outlander_CombatSupplier" or 
-					defName="Orbital_CombatSupplier" or 
-					defName="Orbital_PirateMerchant" or 
-					defName="Visitor_Outlander_Standard"]/stockGenerators</xpath>
+				<xpath>Defs/TraderKindDef[not(orbital="true")]/stockGenerators[li[tradeTag="WeaponRanged" and not(maxTechLevelGenerate="Neolithic" or weaponTag="SpacerGun")]]</xpath>
 				<value>
 					<li Class="StockGenerator_SingleDef" Operation="Add">
 						<thingDef>AmmoIndustrial</thingDef>
 						<countRange>45~450</countRange>
+					</li>
+					<li Class="StockGenerator_Category" Operation="Add">
+						<categoryDef>yy_ammo_category</categoryDef>
+						<thingDefCountRange>1~4</thingDefCountRange>
+						<totalPriceRange>15~150</totalPriceRange>
+						<excludedThingDefs>
+							<li>AmmoPrimitive</li>
+							<li>AmmoIndustrial</li>
+						</excludedThingDefs>
+					</li>
+					<li Class="StockGenerator_Category" Operation="Add">
+						<categoryDef>Grenades</categoryDef>
+						<thingDefCountRange>1~5</thingDefCountRange>
+						<totalPriceRange>5~20</totalPriceRange>
+						<excludedThingDefs>
+							<li>Weapon_GrenadeMolotov</li>
+						</excludedThingDefs>
+					</li>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/TraderKindDef[not(orbital="true")]/stockGenerators[li[tradeTag="WeaponRanged" and weaponTag="SpacerGun"]]</xpath>
+				<value>
+					<li Class="StockGenerator_SingleDef" Operation="Add">
+						<thingDef>AmmoIndustrial</thingDef>
+						<countRange>30~300</countRange>
+					</li>
+					<li Class="StockGenerator_SingleDef" Operation="Add">
+						<thingDef>AmmoSpacer</thingDef>
+						<countRange>30~300</countRange>
 					</li>
 					<li Class="StockGenerator_Category" Operation="Add">
 						<categoryDef>yy_ammo_category</categoryDef>
@@ -156,42 +180,54 @@
 						<excludedThingDefs>
 							<li>AmmoPrimitive</li>
 							<li>AmmoIndustrial</li>
+							<li>AmmoSpacer</li>
+						</excludedThingDefs>
+					</li>
+					<li Class="StockGenerator_Category" Operation="Add">
+						<categoryDef>Grenades</categoryDef>
+						<thingDefCountRange>2~5</thingDefCountRange>
+						<totalPriceRange>5~20</totalPriceRange>
+						<excludedThingDefs>
+							<li>Weapon_GrenadeMolotov</li>
 						</excludedThingDefs>
 					</li>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>ludeon.rimworld.biotech</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/TraderKindDef[defName="Base_Empire_Standard" or 
-							defName="Empire_Caravan_TraderGeneral" or 
-							defName="Orbital_Empire"]/stockGenerators</xpath>
-						<value>
-							<li Class="StockGenerator_SingleDef" Operation="Add">
-								<thingDef>AmmoIndustrial</thingDef>
-								<countRange>30~300</countRange>
-							</li>
-							<li Class="StockGenerator_SingleDef" Operation="Add">
-								<thingDef>AmmoSpacer</thingDef>
-								<countRange>30~300</countRange>
-							</li>
-							<li Class="StockGenerator_Category" Operation="Add">
-								<categoryDef>yy_ammo_category</categoryDef>
-								<thingDefCountRange>2~3</thingDefCountRange>
-								<totalPriceRange>15~150</totalPriceRange>
-								<excludedThingDefs>
-									<li>AmmoPrimitive</li>
-									<li>AmmoIndustrial</li>
-									<li>AmmoSpacer</li>
-								</excludedThingDefs>
-							</li>
-						</value>
-					</Operation>
-				</caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/TraderKindDef[orbital="true"]/stockGenerators[li[tradeTag="WeaponRanged"]]</xpath>
+				<value>
+					<li Class="StockGenerator_SingleDef" Operation="Add">
+						<thingDef>AmmoIndustrial</thingDef>
+						<countRange>150~750</countRange>
+					</li>
+					<li Class="StockGenerator_SingleDef" Operation="Add">
+						<thingDef>AmmoSpacer</thingDef>
+						<countRange>150~450</countRange>
+					</li>
+					<li Class="StockGenerator_SingleDef" Operation="Add">
+						<thingDef>AmmoSpacerEMP</thingDef>
+						<countRange>150~300</countRange>
+					</li>
+					<li Class="StockGenerator_Category" Operation="Add">
+						<categoryDef>yy_ammo_category</categoryDef>
+						<thingDefCountRange>2~5</thingDefCountRange>
+						<totalPriceRange>25~150</totalPriceRange>
+						<excludedThingDefs>
+							<li>AmmoPrimitive</li>
+							<li>AmmoIndustrial</li>
+							<li>AmmoSpacer</li>
+							<li>AmmoSpacerEMP</li>
+						</excludedThingDefs>
+					</li>
+					<li Class="StockGenerator_Category" Operation="Add">
+						<categoryDef>Grenades</categoryDef>
+						<thingDefCountRange>3~5</thingDefCountRange>
+						<totalPriceRange>25~75</totalPriceRange>
+						<excludedThingDefs>
+							<li>Weapon_GrenadeMolotov</li>
+						</excludedThingDefs>
+					</li>
+				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
@@ -204,20 +240,33 @@
 						<value>
 							<li Class="StockGenerator_SingleDef" Operation="Add">
 								<thingDef>AmmoIndustrial</thingDef>
-								<countRange>150~600</countRange>
+								<countRange>150~750</countRange>
 							</li>
 							<li Class="StockGenerator_SingleDef" Operation="Add">
 								<thingDef>AmmoSpacer</thingDef>
-								<countRange>75~450</countRange>
+								<countRange>150~450</countRange>
+							</li>
+							<li Class="StockGenerator_SingleDef" Operation="Add">
+								<thingDef>AmmoSpacerEMP</thingDef>
+								<countRange>150~300</countRange>
 							</li>
 							<li Class="StockGenerator_Category" Operation="Add">
 								<categoryDef>yy_ammo_category</categoryDef>
-								<thingDefCountRange>2~4</thingDefCountRange>
-								<totalPriceRange>30~300</totalPriceRange>
+								<thingDefCountRange>2~5</thingDefCountRange>
+								<totalPriceRange>25~150</totalPriceRange>
 								<excludedThingDefs>
 									<li>AmmoPrimitive</li>
 									<li>AmmoIndustrial</li>
 									<li>AmmoSpacer</li>
+									<li>AmmoSpacerEMP</li>
+								</excludedThingDefs>
+							</li>
+							<li Class="StockGenerator_Category" Operation="Add">
+								<categoryDef>Grenades</categoryDef>
+								<thingDefCountRange>3~5</thingDefCountRange>
+								<totalPriceRange>25~75</totalPriceRange>
+								<excludedThingDefs>
+									<li>Weapon_GrenadeMolotov</li>
 								</excludedThingDefs>
 							</li>
 						</value>
@@ -227,7 +276,11 @@
 						<value>
 							<li Class="StockGenerator_SingleDef" Operation="Add">
 								<thingDef>AmmoIndustrial</thingDef>
-								<countRange>30~300</countRange>
+								<countRange>150~450</countRange>
+							</li>
+							<li Class="StockGenerator_SingleDef" Operation="Add">
+								<thingDef>AmmoSpacer</thingDef>
+								<countRange>75~300</countRange>
 							</li>
 							<li Class="StockGenerator_Category" Operation="Add">
 								<categoryDef>yy_ammo_category</categoryDef>
@@ -236,6 +289,15 @@
 								<excludedThingDefs>
 									<li>AmmoPrimitive</li>
 									<li>AmmoIndustrial</li>
+									<li>AmmoSpacer</li>
+								</excludedThingDefs>
+							</li>
+							<li Class="StockGenerator_Category" Operation="Add">
+								<categoryDef>Grenades</categoryDef>
+								<thingDefCountRange>2~5</thingDefCountRange>
+								<totalPriceRange>10~30</totalPriceRange>
+								<excludedThingDefs>
+									<li>Weapon_GrenadeMolotov</li>
 								</excludedThingDefs>
 							</li>
 						</value>

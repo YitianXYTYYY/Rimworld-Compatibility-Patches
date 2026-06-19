@@ -1,6 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
+	<!-- 1000 archite -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>als.biotechgravship</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="BfG_MoveSpeed_SpaceArchite"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<conditionalStatAffecters Operation="Safe">
+								<li Class="ConditionalStatAffecter_InSpace" Operation="Safe" CheckAttributes="True">
+									<statOffsets Operation="Safe">
+										<MoveSpeed Operation="SafeReplace">1</MoveSpeed>
+										<WorkSpeedGlobal Operation="SafeReplace">0.1</WorkSpeedGlobal>
+										<ImmunityGainSpeed Operation="SafeReplace">0.1</ImmunityGainSpeed>
+										<MentalBreakThreshold Operation="SafeReplace">-0.1</MentalBreakThreshold>
+									</statOffsets>
+								</li>
+								<li Class="ConditionalStatAffecter_NotInSpace" Operation="Safe" CheckAttributes="True">
+									<statOffsets Operation="Safe">
+										<ComfyTemperatureMax Operation="SafeRemove">0</ComfyTemperatureMax>
+										<MentalBreakThreshold Operation="SafeRemove">0</MentalBreakThreshold>
+									</statOffsets>
+								</li>
+							</conditionalStatAffecters>
+							<displayOrderInCategory Operation="AddOrReplace">-670</displayOrderInCategory>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaracesexpanded.starjack</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>GeneDef</xpath>
+								<value>
+									<iconPath Operation="AddOrReplace">UI/Icons/Genes/Gene_VacuumEfficiency</iconPath>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 	<!-- 670 astrogen -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
@@ -204,53 +255,27 @@
 		</caseTrue>
 	</Operation>
 
-	<!-- 1000 archite -->
+	<!-- randomizer -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
 			<li>als.biotechgravship</li>
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/GeneDef[defName="BfG_MoveSpeed_SpaceArchite"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<conditionalStatAffecters Operation="Safe">
-								<li Class="ConditionalStatAffecter_InSpace" Operation="Safe" CheckAttributes="True">
-									<statOffsets Operation="Safe">
-										<MoveSpeed Operation="SafeReplace">1</MoveSpeed>
-										<WorkSpeedGlobal Operation="SafeReplace">0.1</WorkSpeedGlobal>
-										<ImmunityGainSpeed Operation="SafeReplace">0.1</ImmunityGainSpeed>
-										<MentalBreakThreshold Operation="SafeReplace">-0.1</MentalBreakThreshold>
-									</statOffsets>
-								</li>
-								<li Class="ConditionalStatAffecter_NotInSpace" Operation="Safe" CheckAttributes="True">
-									<statOffsets Operation="Safe">
-										<ComfyTemperatureMax Operation="SafeRemove">0</ComfyTemperatureMax>
-										<MentalBreakThreshold Operation="SafeRemove">0</MentalBreakThreshold>
-									</statOffsets>
-								</li>
-							</conditionalStatAffecters>
-							<displayOrderInCategory Operation="AddOrReplace">-670</displayOrderInCategory>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>vanillaracesexpanded.starjack</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>GeneDef</xpath>
-								<value>
-									<iconPath Operation="AddOrReplace">UI/Icons/Genes/Gene_VacuumEfficiency</iconPath>
-								</value>
-							</Operation>
-						</caseTrue>
-					</Operation>
-				</apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="BfG_RandomGene_Space"]</xpath>
+				<value>
+					<biostatCpx Operation="SafeReplace">0</biostatCpx>
+					<modExtensions Operation="Safe">
+						<li Class="als.BfG.GeneExtension_ChanceAddGenes" Operation="Safe" CheckAttributes="True">
+							<chanceToAstroGene Operation="SafeReplace">0.9</chanceToAstroGene>
+							<chanceToRareGene Operation="SafeReplace">0.1</chanceToRareGene>
+							<astroGenesPool Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">BfG_PsychicAbility_Space</li>
+							</astroGenesPool>
+						</li>
+					</modExtensions>
+				</value>
 			</Operation>
 		</caseTrue>
 	</Operation>

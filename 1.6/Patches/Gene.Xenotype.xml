@@ -25,6 +25,19 @@
 		</caseTrue>
 	</Operation>
 
+	<!-- Biotech for Gravship -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>als.biotechgravship</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/XenotypeDef/genes/li[text()="BfG_RandomGene_Blood"]</xpath>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 	<!-- Vanilla Races Expanded - Saurid -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
@@ -57,11 +70,27 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<Operation Class="PatchOperationReplace">
-				<xpath>Defs/XenotypeDef/genes/li[text()="VREStarjack_VacuumEfficiency"]</xpath>
-				<value>
-					<li>MoveSpeed_Space</li>
-				</value>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/XenotypeDef[defName="Starjack"]</xpath>
+				<apply>
+					<Operation Class="PatchOperationReplace">
+						<xpath>XenotypeDef/genes/li[text()="VREStarjack_VacuumEfficiency"]</xpath>
+						<value>
+							<li>MoveSpeed_Space</li>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>als.biotechgravship</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+								<xpath>XenotypeDef/genes/li[text()="VREStarjack_Gene_Randomizer"]</xpath>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
 			</Operation>
 		</caseTrue>
 	</Operation>
