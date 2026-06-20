@@ -109,20 +109,13 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 						<xpath>Defs/ThingDef[defName="yy_ammo_primitive_light" or 
 							defName="yy_ammo_primitive_heavy" or 
 							defName="yy_ammo_industrial_light" or 
 							defName="yy_ammo_industrial_heavy" or 
 							defName="yy_ammo_spacer_light" or 
 							defName="yy_ammo_spacer_heavy"]</xpath>
-						<value>
-							<statBases Operation="Safe">
-								<Mass Operation="SafeReplace">0</Mass>
-							</statBases>
-							<thingCategories Operation="SafeRemove"/>
-							<tradeability Operation="SafeAdd">None</tradeability>
-						</value>
 					</Operation>
 				</caseTrue>
 			</Operation>

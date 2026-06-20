@@ -10,7 +10,6 @@
 			</statOffsets>
 		</value>
 	</Operation>
-
 	<!-- too smart -->
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/TraitDef[defName="TooSmart"]/degreeDatas/li[label="too smart"]</xpath>
@@ -21,7 +20,6 @@
 			</statOffsets>
 		</value>
 	</Operation>
-
 	<!-- fast learner -->
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/TraitDef[defName="FastLearner"]/degreeDatas/li[label="fast learner"]</xpath>
@@ -31,7 +29,6 @@
 			</statOffsets>
 		</value>
 	</Operation>
-
 	<!-- slow learner -->
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/TraitDef[defName="SlowLearner"]/degreeDatas/li[label="slow learner"]</xpath>
@@ -44,7 +41,6 @@
 			</statOffsets>
 		</value>
 	</Operation>
-
 	<!-- gourmand -->
 	<!--Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/TraitDef[defName="Gourmand"]/degreeDatas/li[label="gourmand"]</xpath>
@@ -166,6 +162,27 @@
 				</value>
 			</Operation>
 		</apply>
+	</Operation>
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ludeon.rimworld.biotech</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- delicate -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/TraitDef[defName="Delicate"]/degreeDatas/li[label="delicate"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<IncomingDamageFactor Operation="SafeRemove">0</IncomingDamageFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<IncomingDamageFactor Operation="SafeAdd">0.2</IncomingDamageFactor>
+					</statOffsets>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
 
 </Patch>

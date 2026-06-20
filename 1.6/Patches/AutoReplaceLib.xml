@@ -94,7 +94,7 @@
 							</li>
 						</value>
 					</Operation>
-					<Operation Class="XmlExtensions.FindMod">
+					<!--Operation Class="XmlExtensions.FindMod">
 						<mods>
 							<li>syrus.yayoscombataddon</li>
 						</mods>
@@ -103,34 +103,34 @@
 							<Operation Class="PatchOperationAdd">
 								<xpath>ReplaceLib.ReplacerDef/replacers</xpath>
 								<value>
-							<li>
-								<replace>yy_ammo_primitive_light</replace>
-								<with>yy_ammo_primitive</with>
-							</li>
-							<li>
-								<replace>yy_ammo_primitive_heavy</replace>
-								<with>yy_ammo_primitive</with>
-							</li>
-							<li>
-								<replace>yy_ammo_industrial_light</replace>
-								<with>yy_ammo_industrial</with>
-							</li>
-							<li>
-								<replace>yy_ammo_industrial_heavy</replace>
-								<with>yy_ammo_industrial</with>
-							</li>
-							<li>
-								<replace>yy_ammo_spacer_light</replace>
-								<with>yy_ammo_spacer</with>
-							</li>
-							<li>
-								<replace>yy_ammo_spacer_heavy</replace>
-								<with>yy_ammo_spacer</with>
-							</li>
+									<li>
+										<replace>yy_ammo_primitive_light</replace>
+										<with>yy_ammo_primitive</with>
+									</li>
+									<li>
+										<replace>yy_ammo_primitive_heavy</replace>
+										<with>yy_ammo_primitive</with>
+									</li>
+									<li>
+										<replace>yy_ammo_industrial_light</replace>
+										<with>yy_ammo_industrial</with>
+									</li>
+									<li>
+										<replace>yy_ammo_industrial_heavy</replace>
+										<with>yy_ammo_industrial</with>
+									</li>
+									<li>
+										<replace>yy_ammo_spacer_light</replace>
+										<with>yy_ammo_spacer</with>
+									</li>
+									<li>
+										<replace>yy_ammo_spacer_heavy</replace>
+										<with>yy_ammo_spacer</with>
+									</li>
 								</value>
 							</Operation>
 						</caseTrue>
-					</Operation>
+					</Operation-->
 				</caseTrue>
 			</Operation>
 		</apply>

@@ -64,7 +64,7 @@
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThoughtDef[defName="MissingTongue"]</xpath>
+				<xpath>Defs/ThoughtDef[defName="BloodTorch"]</xpath>
 				<value>
 					<requiredGenes Operation="Safe">
 						<li Operation="SafeAdd" Compare="InnerText">VRE_AnimalFeeder</li>
