@@ -98,6 +98,12 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[@Name="AddedBodyPart_Limb_Archotech"]</xpath>
+				<value>
+					<defaultLabelColor Operation="AddOrReplace">(139, 143, 104)</defaultLabelColor>
+				</value>
+			</Operation>
 			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 				<xpath>Defs/HediffDef/comps/li[@Class="MSE2.HediffCompProperties_ModuleHolder" and maxModules="1"]</xpath>
 			</Operation>

@@ -42,13 +42,42 @@
 		</value>
 	</Operation>
 	<!-- gourmand -->
-	<!--Operation Class="XmlExtensions.HybridPatch">
+	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/TraitDef[defName="Gourmand"]/degreeDatas/li[label="gourmand"]</xpath>
 		<value>
         	<hungerRateFactor Operation="SafeRemove"/>
 			<hungerRateFactorOffset Operation="SafeAdd">0.5</hungerRateFactorOffset>
 		</value>
-	</Operation-->
+	</Operation>
+	<!-- Moodoffset -->
+	<!-- sanguine -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThoughtDef[defName="MoodOffsetSanguine"]/stages/li[label="sanguine"]</xpath>
+		<value>
+			<baseMoodEffect Operation="SafeReplace">10</baseMoodEffect>
+		</value>
+	</Operation>
+	<!-- optimist -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThoughtDef[defName="MoodOffsetOptimist"]/stages/li[label="optimist"]</xpath>
+		<value>
+			<baseMoodEffect Operation="SafeReplace">5</baseMoodEffect>
+		</value>
+	</Operation>
+	<!-- pessimist -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThoughtDef[defName="MoodOffsetPessimist"]/stages/li[label="pessimist"]</xpath>
+		<value>
+			<baseMoodEffect Operation="SafeReplace">-5</baseMoodEffect>
+		</value>
+	</Operation>
+	<!-- depressive -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThoughtDef[defName="MoodOffsetDepressive"]/stages/li[label="depressive"]</xpath>
+		<value>
+			<baseMoodEffect Operation="SafeReplace">010</baseMoodEffect>
+		</value>
+	</Operation>
 
 	<!-- spectrum -->
 	<Operation Class="XmlExtensions.SetScope">

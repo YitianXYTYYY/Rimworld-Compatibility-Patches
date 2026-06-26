@@ -94,7 +94,7 @@
 							</li>
 						</value>
 					</Operation>
-					<!--Operation Class="XmlExtensions.FindMod">
+					<Operation Class="XmlExtensions.FindMod">
 						<mods>
 							<li>syrus.yayoscombataddon</li>
 						</mods>
@@ -130,7 +130,7 @@
 								</value>
 							</Operation>
 						</caseTrue>
-					</Operation-->
+					</Operation>
 				</caseTrue>
 			</Operation>
 		</apply>
