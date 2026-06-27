@@ -41,6 +41,16 @@
 							</weaponClasses>
 						</value>
 					</Operation>
+					<Operation Class="PatchOperationReplace">
+						<xpath>ThingDef/recipeMaker/researchPrerequisite</xpath>
+						<value>
+							<researchPrerequisite></researchPrerequisite>
+							<researchPrerequisites Inherit='False'>
+								<li>HeavyTurrets</li>
+								<li>VWE_HeavyWeapons</li>
+							</researchPrerequisites>
+						</value>
+					</Operation>
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
 							<li>mlie.yayoscombat3</li>
@@ -131,6 +141,16 @@
 							</weaponClasses>
 						</value>
 					</Operation>
+					<Operation Class="PatchOperationReplace">
+						<xpath>ThingDef/recipeMaker/researchPrerequisite</xpath>
+						<value>
+							<researchPrerequisite></researchPrerequisite>
+							<researchPrerequisites Inherit='False'>
+								<li>Mortars</li>
+								<li>VWE_HeavyWeapons</li>
+							</researchPrerequisites>
+						</value>
+					</Operation>
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
 							<li>mlie.yayoscombat3</li>
@@ -205,6 +225,16 @@
 							</weaponClasses>
 						</value>
 					</Operation>
+					<Operation Class="PatchOperationReplace">
+						<xpath>ThingDef/recipeMaker/researchPrerequisite</xpath>
+						<value>
+							<researchPrerequisite></researchPrerequisite>
+							<researchPrerequisites Inherit='False'>
+								<li>RocketswarmLauncher</li>
+								<li>MultibarrelWeapons</li>
+							</researchPrerequisites>
+						</value>
+					</Operation>
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
 							<li>mlie.yayoscombat3</li>
@@ -265,25 +295,40 @@
 					</Operation>
 				</apply>
 			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>mlie.yayoscombat3</li>
-					<li>zal.heavyweaponsreloading</li>
-				</mods>
-				<packageId>true</packageId>
-				<logic>and</logic>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="VWEHR_SwarmMissileAmmo"]</xpath>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="VWEHR_SwarmMissileAmmo"]</xpath>
+				<apply>
+					<Operation Class="PatchOperationReplace">
+						<xpath>ThingDef/recipeMaker/researchPrerequisite</xpath>
 						<value>
-							<defName Operation="SafeReplace">VWEHRSwarmMissileAmmo</defName>
-							<thingCategories Operation="Safe">
-								<li Operation="SafeRemove" Compare="InnerText">RocketAmmo</li>
-								<li Operation="SafeAdd" Compare="InnerText">yy_ammo_category</li>
-							</thingCategories>
+							<researchPrerequisite></researchPrerequisite>
+							<researchPrerequisites Inherit='False'>
+								<li>RocketswarmLauncher</li>
+								<li>MultibarrelWeapons</li>
+							</researchPrerequisites>
 						</value>
 					</Operation>
-				</caseTrue>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>mlie.yayoscombat3</li>
+							<li>zal.heavyweaponsreloading</li>
+						</mods>
+						<packageId>true</packageId>
+						<logic>and</logic>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<defName Operation="SafeReplace">VWEHRSwarmMissileAmmo</defName>
+									<thingCategories Operation="Safe">
+										<li Operation="SafeRemove" Compare="InnerText">RocketAmmo</li>
+										<li Operation="SafeAdd" Compare="InnerText">yy_ammo_category</li>
+									</thingCategories>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
 			</Operation>
 
 			<!-- Uranium Slug Rifle -->
@@ -319,6 +364,16 @@
 								<li Operation="SafeAdd" Compare="InnerText">RangedHeavy</li>
 								<li Operation="SafeAdd" Compare="InnerText">LongShots</li>
 							</weaponClasses>
+						</value>
+					</Operation>
+					<Operation Class="PatchOperationReplace">
+						<xpath>ThingDef/recipeMaker/researchPrerequisite</xpath>
+						<value>
+							<researchPrerequisite></researchPrerequisite>
+							<researchPrerequisites Inherit='False'>
+								<li>SniperTurret</li>
+								<li>VWE_HeavyWeapons</li>
+							</researchPrerequisites>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.FindMod">

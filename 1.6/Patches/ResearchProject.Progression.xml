@@ -31,4 +31,21 @@
 		</caseTrue>
 	</Operation>
 
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaexpanded.vwe</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ResearchProjectDef[defName="MultibarrelWeapons"]</xpath>
+				<value>
+					<prerequisites Operation="SafeReplace">
+						<li>VWE_HeavyWeapons</li>
+					</prerequisites>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 </Patch>

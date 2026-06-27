@@ -311,6 +311,7 @@
 							<li>RecipeDef/Make_yy_ammo_spacer_fire10</li>
 							<li>RecipeDef/Make_yy_ammo_spacer_emp</li>
 							<li>RecipeDef/Make_yy_ammo_spacer_emp10</li>
+							<li>RecipeDef/Make_Gun_AntiArmor_Rocket</li>
 							<li>ThingDef/Gun_AntiArmor_Rocket</li>
 							<li>ThingDef/yy_ammo_primitive</li>
 							<li>ThingDef/yy_ammo_primitive_fire</li>

@@ -112,7 +112,8 @@
 						<value>
 							<AccuracyTouch Operation="SafeRemove"/>
 							<AccuracyShort Operation="SafeRemove"/>
-							<AccuracyMedium Operation="SafeReplace">0.9</AccuracyMedium>
+							<AccuracyMedium Operation="SafeReplace">0.8</AccuracyMedium>
+							<AccuracyLong Operation="SafeReplace">0.8</AccuracyLong>
 							<RangedWeapon_ArmorPenetrationMultiplier Operation="SafeAdd">0.8</RangedWeapon_ArmorPenetrationMultiplier>
 						</value>
 					</Operation>
@@ -264,6 +265,7 @@
 						<xpath>WeaponTraitDef</xpath>
 						<value>
 							<statFactors Operation="Safe">
+								<Mass Operation="SafeReplace">0.8</Mass>
 								<RangedWeapon_WarmupMultiplier Operation="SafeAdd">0.8</RangedWeapon_WarmupMultiplier>
 							</statFactors>
 						</value>
@@ -626,7 +628,7 @@
 				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/WeaponTraitDef[defName="VWE_WeightedStock"]</xpath>
+				<xpath>Defs/WeaponTraitDef[defName="VWE_PortedBarrel"]</xpath>
 				<apply>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>WeaponTraitDef/statFactors</xpath>
