@@ -217,6 +217,21 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
+			<!-- Vanilla Nutrient Paste Expanded -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaexpanded.vnutriente</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>ThingDef/NutrientPasteDispenser</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
 			<!-- Vanilla Races Expanded - Starjack -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
