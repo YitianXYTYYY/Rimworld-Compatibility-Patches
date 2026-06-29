@@ -40,6 +40,7 @@ Personal Made compatibility patches for mods.
 		<li>als.biotechgravship</li>
 		<li>amch.eragon.hcgenefabrication</li>
 		<li>anonemous2.genepackreprocessor</li>
+		<li>davai.sortedcategories</li>
 		<li>ferny.progressiongenetics</li>
 		<li>ferny.replacelib</li>
 		<li>fuu.uncompromisingtribalfaction</li>
@@ -56,6 +57,7 @@ Personal Made compatibility patches for mods.
 		<li>oskarpotocki.vfe.tribals</li>
 		<li>owlchemist.cherrypicker</li>
 		<li>prestigespecialistarmours.final</li>
+		<li>rebuild.cotr.doorsandcorners</li>
 		<li>redmattis.betterprerequisites</li>
 		<li>reel.turretpipeline</li>
 		<li>resplice.xotr.core</li>
@@ -81,7 +83,7 @@ Personal Made compatibility patches for mods.
 		<li>vanillaracesexpanded.saurid</li>
 		<li>vanillaracesexpanded.starjack</li>
 		<li>vanillaracesexpanded.waster</li>
-		<li>Wara.toomanymods</li>
+		<li>wara.toomanymods</li>
 		<li>zal.heavyweaponsreloading</li>
 	</loadAfter>
 </ModMetaData>

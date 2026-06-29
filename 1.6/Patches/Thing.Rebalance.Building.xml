@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- Reel's Expanded Storage -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>reel.expanded.storage</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- Medical Cabinet -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="ReelStorageNewMedicineCabinet"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaracesexpanded.sanguophage</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<building Operation="Safe">
+										<fixedStorageSettings Operation="Safe">
+											<filter Operation="Safe">
+												<thingDefs Operation="Safe">
+													<li Operation="SafeAdd" Compare="InnerText">VRE_HemogenPack_Animal</li>
+													<li Operation="SafeAdd" Compare="InnerText">VRE_HemogenPack_Corpse</li>
+													<li Operation="SafeAdd" Compare="InnerText">VRE_HemogenPack_Sanguophage</li>
+												</thingDefs>
+											</filter>
+										</fixedStorageSettings>
+									</building>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>

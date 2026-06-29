@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingCategoryDef>
+		<defName>BiotechChips</defName>
+		<label>mechanoid chips</label>
+		<parent>Manufactured</parent>
+		<iconPath>Things/Item/Resource/SignalChip</iconPath>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>BiotechSubcores</defName>
+		<label>subcores</label>
+		<parent>Manufactured</parent>
+		<iconPath>Things/Item/Resource/SubcoreBasic</iconPath>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>VFEI2Pherocores</defName>
+		<label>pherocores</label>
+		<parent>Items</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>GRPelts</defName>
+		<label>pelts</label>
+		<parent>Items</parent>
+	</ThingCategoryDef>
+
+</Defs>
