@@ -40,6 +40,7 @@ Personal Made compatibility patches for mods.
 		<li>als.biotechgravship</li>
 		<li>amch.eragon.hcgenefabrication</li>
 		<li>anonemous2.genepackreprocessor</li>
+		<li>com.abobashark.zoologymod</li>
 		<li>davai.sortedcategories</li>
 		<li>ferny.progressiongenetics</li>
 		<li>ferny.replacelib</li>
@@ -54,11 +55,13 @@ Personal Made compatibility patches for mods.
 		<li>oppey.eyegenes2</li>
 		<li>oskarpotocki.vanillafactionsexpanded.core</li>
 		<li>oskarpotocki.vfe.empire</li>
+		<li>oskarpotocki.vfe.insectoid2</li>
 		<li>oskarpotocki.vfe.tribals</li>
 		<li>owlchemist.cherrypicker</li>
 		<li>prestigespecialistarmours.final</li>
 		<li>rebuild.cotr.doorsandcorners</li>
 		<li>redmattis.betterprerequisites</li>
+		<li>reel.expanded.storage</li>
 		<li>reel.turretpipeline</li>
 		<li>resplice.xotr.core</li>
 		<li>seohyeon.optimizationmeats</li>
@@ -67,6 +70,7 @@ Personal Made compatibility patches for mods.
 		<li>turnovus.biotech.integratedgenes</li>
 		<li>vanillaexpanded.varme</li>
 		<li>vanillaexpanded.vgeneticse</li>
+		<li>vanillaexpanded.vnutriente</li>
 		<li>vanillaexpanded.vwe</li>
 		<li>vanillaexpanded.vwehw</li>
 		<li>vanillaquestsexpanded.ancients</li>
@@ -86,4 +90,7 @@ Personal Made compatibility patches for mods.
 		<li>wara.toomanymods</li>
 		<li>zal.heavyweaponsreloading</li>
 	</loadAfter>
+	<loadBefore>
+		<li>teiwaz.vtoada</li>
+	</loadBefore>
 </ModMetaData>

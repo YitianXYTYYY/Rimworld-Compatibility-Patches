@@ -141,6 +141,24 @@
 	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/TraitDef[defName="Industriousness"]</xpath>
 		<apply>
+			<!-- industrious -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>TraitDef/degreeDatas/li[degree="2"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<WorkSpeedGlobal Operation="SafeReplace">0.4</WorkSpeedGlobal>
+					</statOffsets>
+				</value>
+			</Operation>
+			<!-- hard worker -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>TraitDef/degreeDatas/li[degree="1"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<WorkSpeedGlobal Operation="SafeReplace">0.2</WorkSpeedGlobal>
+					</statOffsets>
+				</value>
+			</Operation>
 			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 				<xpath>TraitDef/degreeDatas/li[degree="-1" or degree="-2"]/statOffsets/WorkSpeedGlobal</xpath>
 			</Operation>
