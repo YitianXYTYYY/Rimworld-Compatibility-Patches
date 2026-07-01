@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>Defs/ThingDef[@Name="BaseGun" or 
+			@Name="BaseMeleeWeapon_Sharp_Quality" or 
+			@Name="BaseMeleeWeapon_Blunt_Quality" or 
+			@Name="MeleeWeaponUltratech"]/comps/li[@Class="CompProperties_Art"]</xpath>
+	</Operation>
+
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
 			<li>mlie.yayoscombat3</li>
@@ -40,198 +47,401 @@
 					</projectile>
 				</value>
 			</Operation>
+		</caseTrue>
+	</Operation>
 
-			<!-- Ammo assign -->
-			<!-- Core -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Gun_ChargeBlasterHeavyTurret"]</xpath>
-				<value>
-					<weaponTags Operation="Safe">
-						<li Operation="Add">ammo_none</li>
-					</weaponTags>
-				</value>
+	<!-- Ammo assign -->
+	<!-- Core -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Gun_ChargeBlasterHeavyTurret"]</xpath>
+		<value>
+			<weaponTags Operation="Safe">
+				<li Operation="Add">ammo_none</li>
+			</weaponTags>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Bow_Short" or 
+			defName="Bow_Recurve" or 
+			defName="Bow_Great"]</xpath>
+		<value>
+			<weaponTags Operation="Safe">
+				<li Operation="Add">ammoDef_AmmoPrimitive/10/1</li>
+			</weaponTags>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/ThingDef[defName="Pila"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>mlie.yayoscombat3</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<costList Operation="SafeReplace">
+								<WoodLog>5</WoodLog>
+							</costList>
+							<description Operation="SafeReplace">Pilum is a spear for throwing. It takes a long time to throw, but one hit can do heavy damage.</description>
+							<label Operation="SafeReplace">pilum</label>
+							<stackLimit Operation="SafeAdd">10</stackLimit>
+							<statBases Operation="Safe">
+								<Mass Operation="SafeReplace">0.4</Mass>
+								<WorkToMake Operation="SafeReplace">600</WorkToMake>
+							</statBases>
+							<weaponTags Operation="Safe">
+								<li Operation="Add">ammoDef_Pila/1/1</li>
+							</weaponTags>
+						</value>
+					</Operation>
+				</caseTrue>
 			</Operation>
+		</apply>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Gun_Revolver"]</xpath>
+		<value>
+			<weaponTags Operation="Safe">
+				<li Operation="Add">ammoDef_AmmoIndustrial/6/1</li>
+			</weaponTags>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Gun_Autopistol" or 
+			defName="Gun_BoltActionRifle" or 
+			defName="Gun_SniperRifle"]</xpath>
+		<value>
+			<weaponTags Operation="Safe">
+				<li Operation="Add">ammoDef_AmmoIndustrial/10/1</li>
+			</weaponTags>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Gun_PumpShotgun"]</xpath>
+		<value>
+			<weaponTags Operation="Safe">
+				<li Operation="Add">ammoDef_AmmoIndustrial/10/2</li>
+			</weaponTags>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Gun_MachinePistol"]</xpath>
+		<value>
+			<weaponTags Operation="Safe">
+				<li Operation="Add">ammoDef_AmmoIndustrial/15/1</li>
+			</weaponTags>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Gun_ChainShotgun"]</xpath>
+		<value>
+			<weaponTags Operation="Safe">
+				<li Operation="Add">ammoDef_AmmoIndustrial/15/2</li>
+			</weaponTags>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Gun_HeavySMG" or 
+			defName="Gun_AssaultRifle"]</xpath>
+		<value>
+			<weaponTags Operation="Safe">
+				<li Operation="Add">ammoDef_AmmoIndustrial/30/1</li>
+			</weaponTags>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Gun_LMG"]</xpath>
+		<value>
+			<weaponTags Operation="Safe">
+				<li Operation="Add">ammoDef_AmmoIndustrial/60/1</li>
+			</weaponTags>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Gun_Minigun"]</xpath>
+		<value>
+			<equippedStatOffsets Operation="Safe">
+				<MoveSpeed Operation="SafeReplace">-0.2</MoveSpeed>
+			</equippedStatOffsets>
+			<weaponTags Operation="Safe">
+				<li Operation="Add">ammoDef_AmmoIndustrial/150/1</li>
+			</weaponTags>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/ThingDef[defName="Weapon_GrenadeMolotov"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>mlie.yayoscombat3</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<costList Operation="Safe">
+								<Chemfuel Operation="SafeReplace">20</Chemfuel>
+							</costList>
+							<weaponTags Operation="Safe">
+								<li Operation="Add">ammoDef_Chemfuel/2/10</li>
+							</weaponTags>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Gun_IncendiaryLauncher"]</xpath>
+		<value>
+			<weaponTags Operation="Safe">
+				<li Operation="Add">ammoDef_Chemfuel/5/10</li>
+			</weaponTags>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/ThingDef[defName="Weapon_GrenadeFrag"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>mlie.yayoscombat3</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<costList Operation="SafeReplace">
+								<Steel>5</Steel>
+								<Chemfuel>10</Chemfuel>
+							</costList>
+							<defName Operation="SafeReplace">WeaponGrenadeFrag</defName>
+							<stackLimit Operation="SafeAdd">10</stackLimit>
+							<statBases Operation="Safe">
+								<Mass Operation="SafeReplace">0.2</Mass>
+								<WorkToMake Operation="SafeReplace">1200</WorkToMake>
+							</statBases>
+							<weaponTags Operation="Safe">
+								<li Operation="Add">ammoDef_WeaponGrenadeFrag/1/1</li>
+							</weaponTags>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
+	</Operation>
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/ThingDef[defName="Weapon_GrenadeEMP"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>mlie.yayoscombat3</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<costList Operation="SafeReplace">
+								<Steel>5</Steel>
+								<ComponentIndustrial>1</ComponentIndustrial>
+							</costList>
+							<defName Operation="SafeReplace">WeaponGrenadeEMP</defName>
+							<stackLimit Operation="SafeAdd">10</stackLimit>
+							<statBases Operation="Safe">
+								<Mass Operation="SafeReplace">0.2</Mass>
+								<WorkToMake Operation="SafeReplace">1800</WorkToMake>
+							</statBases>
+							<weaponTags Operation="Safe">
+								<li Operation="Add">ammoDef_WeaponGrenadeEMP/1/1</li>
+							</weaponTags>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Gun_EmpLauncher"]</xpath>
+		<value>
+			<weaponTags Operation="Safe">
+				<li Operation="Add">ammoDef_WeaponGrenadeEMP/5/1</li>
+			</weaponTags>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/ThingDef[defName="Gun_SmokeLauncher"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>mlie.yayoscombat3</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaexpanded.vwe</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseFalse>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<weaponTags Operation="Safe">
+										<li Operation="Add">ammoDef_Chemfuel/5/5</li>
+									</weaponTags>
+								</value>
+							</Operation>
+						</caseFalse>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<weaponTags Operation="Safe">
+										<li Operation="Add">ammoDef_VWESmokeGrenade/5/1</li>
+									</weaponTags>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Gun_ChargeRifle"]</xpath>
+		<value>
+			<weaponTags Operation="Safe">
+				<li Operation="Add">ammoDef_AmmoSpacer/75/1</li>
+			</weaponTags>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Gun_ChargeLance"]</xpath>
+		<value>
+			<weaponTags Operation="Safe">
+				<li Operation="Add">ammoDef_AmmoSpacer/25/1</li>
+			</weaponTags>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Gun_ChargeBlasterHeavy"]</xpath>
+		<value>
+			<weaponTags Operation="Safe">
+				<li Operation="Add">ammoDef_AmmoSpacer/120/1</li>
+			</weaponTags>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Gun_InfernoCannon"]</xpath>
+		<value>
+			<weaponTags Operation="Safe">
+				<li Operation="Add">ammoDef_Chemfuel/10/15</li>
+			</weaponTags>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Gun_Needle"]</xpath>
+		<value>
+			<weaponTags Operation="Safe">
+				<li Operation="Add">ammoDef_Uranium/25/1</li>
+			</weaponTags>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Gun_ThumpCannon"]</xpath>
+		<value>
+			<weaponTags Operation="Safe">
+				<li Operation="Add">ammoDef_AmmoSpacerEMP/15/1</li>
+			</weaponTags>
+		</value>
+	</Operation>
+	<!-- Biotech -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ludeon.rimworld.biotech</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Bow_Short" or 
-					defName="Bow_Recurve" or 
-					defName="Bow_Great"]</xpath>
+				<xpath>Defs/ThingDef[defName="Flamebow"]</xpath>
 				<value>
 					<weaponTags Operation="Safe">
 						<li Operation="Add">ammoDef_AmmoPrimitive/10/1</li>
 					</weaponTags>
 				</value>
 			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="Weapon_GrenadeTox"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>mlie.yayoscombat3</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>Defs/ThingDef[defName="Weapon_GrenadeTox"]</xpath>
+								<value>
+									<costList Operation="SafeReplace">
+										<Steel>5</Steel>
+										<ComponentIndustrial>1</ComponentIndustrial>
+									</costList>
+									<defName Operation="SafeReplace">WeaponGrenadeTox</defName>
+									<stackLimit Operation="SafeAdd">10</stackLimit>
+									<statBases Operation="Safe">
+										<Mass Operation="SafeReplace">0.2</Mass>
+										<WorkToMake Operation="SafeReplace">1800</WorkToMake>
+									</statBases>
+									<weaponTags Operation="Safe">
+										<li Operation="Add">ammoDef_WeaponGrenadeTox/1/1</li>
+									</weaponTags>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Pila"]</xpath>
+				<xpath>Defs/ThingDef[defName="Gun_ToxbombLauncher"]</xpath>
 				<value>
-					<costList Operation="SafeReplace">
-						<WoodLog>5</WoodLog>
-					</costList>
-					<description Operation="SafeReplace">Pilum is a spear for throwing. It takes a long time to throw, but one hit can do heavy damage.</description>
-					<label Operation="SafeReplace">pilum</label>
-					<stackLimit Operation="SafeAdd">10</stackLimit>
-					<statBases Operation="Safe">
-						<Mass Operation="SafeReplace">0.4</Mass>
-						<WorkToMake Operation="SafeReplace">600</WorkToMake>
-					</statBases>
 					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_Pila/1/1</li>
+						<li Operation="Add">ammoDef_WeaponGrenadeTox/5/1</li>
 					</weaponTags>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Gun_Revolver" or 
-					defName="Gun_PumpShotgun"]</xpath>
+				<xpath>Defs/ThingDef[defName="Gun_Slugthrower" or 
+					defName="Gun_Spiner"]</xpath>
 				<value>
 					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_AmmoIndustrial/6/1</li>
+						<li Operation="Add">ammoDef_AmmoIndustrial/25/1</li>
 					</weaponTags>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Gun_Autopistol" or 
-					defName="Gun_BoltActionRifle" or 
-					defName="Gun_SniperRifle"]</xpath>
+				<xpath>Defs/ThingDef[defName="Gun_MiniShotgun"]</xpath>
 				<value>
 					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_AmmoIndustrial/10/1</li>
+						<li Operation="Add">ammoDef_AmmoIndustrial/25/2</li>
 					</weaponTags>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Gun_MachinePistol" or 
-					defName="Gun_ChainShotgun"]</xpath>
+				<xpath>Defs/ThingDef[defName="Gun_MiniFlameblaster"]</xpath>
 				<value>
 					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_AmmoIndustrial/15/1</li>
+						<li Operation="Add">ammoDef_Chemfuel/50/1</li>
 					</weaponTags>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Gun_HeavySMG" or 
-					defName="Gun_AssaultRifle"]</xpath>
-				<value>
-					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_AmmoIndustrial/30/1</li>
-					</weaponTags>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Gun_LMG"]</xpath>
-				<value>
-					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_AmmoIndustrial/60/1</li>
-					</weaponTags>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Gun_Minigun"]</xpath>
-				<value>
-					<equippedStatOffsets Operation="Safe">
-						<MoveSpeed Operation="SafeReplace">-0.2</MoveSpeed>
-					</equippedStatOffsets>
-					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_AmmoIndustrial/150/1</li>
-					</weaponTags>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Weapon_GrenadeMolotov"]</xpath>
-				<value>
-					<costList Operation="Safe">
-						<Chemfuel Operation="SafeReplace">20</Chemfuel>
-					</costList>
-					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_Chemfuel/2/10</li>
-					</weaponTags>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Gun_IncendiaryLauncher"]</xpath>
-				<value>
-					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_Chemfuel/5/10</li>
-					</weaponTags>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Weapon_GrenadeFrag"]</xpath>
-				<value>
-					<costList Operation="SafeReplace">
-						<Steel>5</Steel>
-						<Chemfuel>10</Chemfuel>
-					</costList>
-					<defName Operation="SafeReplace">WeaponGrenadeFrag</defName>
-					<stackLimit Operation="SafeAdd">10</stackLimit>
-					<statBases Operation="Safe">
-						<Mass Operation="SafeReplace">0.2</Mass>
-						<WorkToMake Operation="SafeReplace">1200</WorkToMake>
-					</statBases>
-					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_WeaponGrenadeFrag/1/1</li>
-					</weaponTags>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Weapon_GrenadeEMP"]</xpath>
-				<value>
-					<costList Operation="SafeReplace">
-						<Steel>5</Steel>
-						<ComponentIndustrial>1</ComponentIndustrial>
-					</costList>
-					<defName Operation="SafeReplace">WeaponGrenadeEMP</defName>
-					<stackLimit Operation="SafeAdd">10</stackLimit>
-					<statBases Operation="Safe">
-						<Mass Operation="SafeReplace">0.2</Mass>
-						<WorkToMake Operation="SafeReplace">1800</WorkToMake>
-					</statBases>
-					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_WeaponGrenadeEMP/1/1</li>
-					</weaponTags>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Gun_EmpLauncher"]</xpath>
-				<value>
-					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_WeaponGrenadeEMP/5/1</li>
-					</weaponTags>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Gun_ChargeRifle"]</xpath>
-				<value>
-					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_AmmoSpacer/75/1</li>
-					</weaponTags>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Gun_ChargeLance"]</xpath>
-				<value>
-					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_AmmoSpacer/25/1</li>
-					</weaponTags>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Gun_ChargeBlasterHeavy"]</xpath>
-				<value>
-					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_AmmoSpacer/120/1</li>
-					</weaponTags>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Gun_InfernoCannon"]</xpath>
-				<value>
-					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_Chemfuel/6/25</li>
-					</weaponTags>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Gun_Needle"]</xpath>
+				<xpath>Defs/ThingDef[defName="Gun_ToxicNeedle" or 
+					defName="Gun_NeedleLauncher"]</xpath>
 				<value>
 					<weaponTags Operation="Safe">
 						<li Operation="Add">ammoDef_Uranium/25/1</li>
@@ -239,453 +449,420 @@
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Gun_ThumpCannon"]</xpath>
+				<xpath>Defs/ThingDef[defName="Gun_BeamGraser"]</xpath>
 				<value>
 					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_AmmoSpacerEMP/15/1</li>
+						<li Operation="Add">ammoDef_AmmoSpacerEMP/75/1</li>
 					</weaponTags>
 				</value>
 			</Operation>
-			<!-- Biotech -->
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>ludeon.rimworld.biotech</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="Flamebow"]</xpath>
-						<value>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_AmmoPrimitive/10/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="Weapon_GrenadeTox"]</xpath>
-						<value>
-							<costList Operation="SafeReplace">
-								<Steel>5</Steel>
-								<ComponentIndustrial>1</ComponentIndustrial>
-							</costList>
-							<defName Operation="SafeReplace">WeaponGrenadeTox</defName>
-							<stackLimit Operation="SafeAdd">10</stackLimit>
-							<statBases Operation="Safe">
-								<Mass Operation="SafeReplace">0.2</Mass>
-								<WorkToMake Operation="SafeReplace">1800</WorkToMake>
-							</statBases>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_WeaponGrenadeTox/1/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="Gun_ToxbombLauncher"]</xpath>
-						<value>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_WeaponGrenadeTox/5/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="Gun_MiniShotgun" or 
-							defName="Gun_Slugthrower" or 
-							defName="Gun_Spiner"]</xpath>
-						<value>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_AmmoIndustrial/25/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="Gun_MiniFlameblaster"]</xpath>
-						<value>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_Chemfuel/100/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="Gun_ToxicNeedle" or 
-							defName="Gun_NeedleLauncher"]</xpath>
-						<value>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_Uranium/25/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="Gun_BeamGraser"]</xpath>
-						<value>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_AmmoSpacerEMP/75/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="Gun_HellsphereCannon"]</xpath>
-						<value>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_AmmoSpacerEMP/10/5</li>
-							</weaponTags>
-						</value>
-					</Operation>
-				</caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Gun_HellsphereCannon"]</xpath>
+				<value>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_AmmoSpacerEMP/10/5</li>
+					</weaponTags>
+				</value>
 			</Operation>
-			<!-- Anomaly -->
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>ludeon.rimworld.anomaly</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="NerveSpiker"]</xpath>
-						<value>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_AmmoPrimitive/10/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="Gun_HellcatRifle"]</xpath>
-						<value>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_AmmoIndustrial/30/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="Gun_Incinerator"]</xpath>
-						<value>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_Chemfuel/100/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-				</caseTrue>
+		</caseTrue>
+	</Operation>
+	<!-- Anomaly -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ludeon.rimworld.anomaly</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="NerveSpiker"]</xpath>
+				<value>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_AmmoPrimitive/10/1</li>
+					</weaponTags>
+				</value>
 			</Operation>
-			<!-- Odyssey -->
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>ludeon.rimworld.odyssey</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="Gun_BeamRepeater"]</xpath>
-						<value>
-							<equippedStatOffsets Operation="Safe">
-								<MoveSpeed Operation="SafeReplace">-0.2</MoveSpeed>
-							</equippedStatOffsets>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_AmmoSpacerEMP/150/1</li>
-							</weaponTags>
-						</value>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="Gun_HellcatRifle"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>ThingDef/comps/li[@Class="CompProperties_Art"]</xpath>
 					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="Gun_Scattergun"]</xpath>
-						<value>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_AmmoIndustrial/25/1</li>
-							</weaponTags>
-						</value>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>mlie.yayoscombat3</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<weaponTags Operation="Safe">
+										<li Operation="Add">ammoDef_AmmoIndustrial/30/1</li>
+									</weaponTags>
+								</value>
+							</Operation>
+						</caseTrue>
 					</Operation>
-				</caseTrue>
+				</apply>
 			</Operation>
-			<!-- Uncompromising Tribal Faction -->
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>fuu.uncompromisingtribalfaction</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="UncompromisingTribalFaction_GreatFlamebow"]</xpath>
-						<value>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_AmmoPrimitive/10/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-				</caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Gun_Incinerator"]</xpath>
+				<value>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_Chemfuel/100/1</li>
+					</weaponTags>
+				</value>
 			</Operation>
-			<!-- Vanilla Weapons Expanded -->
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaexpanded.vwe</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseFalse>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="Gun_SmokeLauncher"]</xpath>
-						<value>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_Chemfuel/5/10</li>
-							</weaponTags>
-						</value>
-					</Operation>
-				</caseFalse>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="VWE_Throwing_Rocks" or 
-							defName="VWE_Throwing_Knives" or 
-							defName="VWE_Tool_Whip" or 
-							defName="VWE_Gun_FireExtinguisher"]</xpath>
-						<value>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammo_none</li>
-							</weaponTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="VWE_Bow_Long" or 
-							defName="VWE_Bow_Crossbow" or 
-							defName="VWE_Bow_Compound"]</xpath>
-						<value>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_AmmoPrimitive/10/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="VWE_Gun_HandCannon"]</xpath>
-						<value>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_AmmoIndustrial/6/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="VWE_TrenchGun" or 
-							defName="VWE_Gun_SemiAutomaticRifle" or 
-							defName="VWE_Gun_LeverActionRifle" or 
-							defName="VWE_Gun_MarksmanRifle" or 
-							defName="VWE_SawedOffShotgun"]</xpath>
-						<value>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_AmmoIndustrial/10/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="VWE_CombatHandgun"]</xpath>
-						<value>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_AmmoIndustrial/12/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="VWE_Gun_AntiMaterialRifle"]</xpath>
-						<value>
-							<equippedStatOffsets Operation="Safe">
-								<MoveSpeed Operation="SafeReplace">-0.1</MoveSpeed>
-							</equippedStatOffsets>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_AmmoIndustrial/15/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="VWE_Gun_LightSMG"]</xpath>
-						<value>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_AmmoIndustrial/20/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="VWE_Gun_SMG"]</xpath>
-						<value>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_AmmoIndustrial/25/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="VWE_Gun_BattleRifle" or 
-							defName="VWE_Gun_Carbine"]</xpath>
-						<value>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_AmmoIndustrial/30/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="VWE_Gun_ServiceRifle"]</xpath>
-						<value>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_AmmoIndustrial/40/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="VWE_Gun_HMG"]</xpath>
-						<value>
-							<equippedStatOffsets Operation="Safe">
-								<MoveSpeed Operation="SafeReplace">-0.2</MoveSpeed>
-							</equippedStatOffsets>
-							<statBases Operation="Safe">
-								<Mass Operation="SafeReplace">10</Mass>
-							</statBases>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_AmmoIndustrial/80/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="VWE_Gun_GrenadeLauncher"]</xpath>
-						<value>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_WeaponGrenadeFrag/5/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="VWE_SmokeGrenade"]</xpath>
-						<value>
-							<costList Operation="SafeReplace">
-								<Steel>5</Steel>
-								<Chemfuel>5</Chemfuel>
-							</costList>
-							<defName Operation="SafeReplace">VWESmokeGrenade</defName>
-							<stackLimit Operation="SafeAdd">10</stackLimit>
-							<statBases Operation="Safe">
-								<Mass Operation="SafeReplace">0.2</Mass>
-								<WorkToMake Operation="SafeReplace">900</WorkToMake>
-							</statBases>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_VWESmokeGrenade/1/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="Gun_SmokeLauncher"]</xpath>
-						<value>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_VWESmokeGrenade/5/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="VWE_FlashGrenade"]</xpath>
-						<value>
-							<costList Operation="SafeReplace">
-								<Steel>5</Steel>
-								<ComponentIndustrial>1</ComponentIndustrial>
-							</costList>
-							<defName Operation="SafeReplace">VWEFlashGrenade</defName>
-							<stackLimit Operation="SafeAdd">10</stackLimit>
-							<statBases Operation="Safe">
-								<Mass Operation="SafeReplace">0.2</Mass>
-								<WorkToMake Operation="SafeReplace">1800</WorkToMake>
-							</statBases>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_VWEFlashGrenade/1/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="VWE_Gun_ChargeSniperRifle"]</xpath>
-						<value>
-							<equippedStatOffsets Operation="Safe">
-								<MoveSpeed Operation="SafeReplace">-0.1</MoveSpeed>
-							</equippedStatOffsets>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_AmmoSpacer/15/2</li>
-							</weaponTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="VWE_Gun_ChargePistol" or 
-							defName="VWE_Gun_ChargeShotgun"]</xpath>
-						<value>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_AmmoSpacer/20/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="VWE_Gun_ChargeSMG"]</xpath>
-						<value>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_AmmoSpacer/60/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="VWE_Gun_ChargeLMG" or
-							defName="VWE_Gun_ChargeMinigun"]</xpath>
-						<value>
-							<equippedStatOffsets Operation="Safe">
-								<MoveSpeed Operation="SafeReplace">-0.4</MoveSpeed>
-							</equippedStatOffsets>
-							<statBases Operation="Safe">
-								<Mass Operation="SafeReplace">20</Mass>
-							</statBases>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_AmmoSpacer/120/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="VWE_Gun_ChargeRocketLauncher"]</xpath>
-						<value>
-							<equippedStatOffsets Operation="Safe">
-								<MoveSpeed Operation="SafeReplace">-0.4</MoveSpeed>
-							</equippedStatOffsets>
-							<statBases Operation="Safe">
-								<Mass Operation="SafeReplace">20</Mass>
-							</statBases>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_AmmoSpacer/5/10</li>
-							</weaponTags>
-						</value>
-					</Operation>
-				</caseTrue>
+		</caseTrue>
+	</Operation>
+	<!-- Odyssey -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ludeon.rimworld.odyssey</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Gun_BeamRepeater"]</xpath>
+				<value>
+					<equippedStatOffsets Operation="Safe">
+						<MoveSpeed Operation="SafeReplace">-0.2</MoveSpeed>
+					</equippedStatOffsets>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_AmmoSpacerEMP/150/1</li>
+					</weaponTags>
+				</value>
 			</Operation>
-			<!-- Vanilla Factions Expanded - Empire -->
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>oskarpotocki.vfe.empire</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="VEE_Gun_Fletcher"]</xpath>
-						<value>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_AmmoSpacerEMP/5/10</li>
-							</weaponTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="VFEE_Gun_ChargeThumper"]</xpath>
-						<value>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_AmmoSpacer/15/5</li>
-							</weaponTags>
-						</value>
-					</Operation>
-				</caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Gun_Scattergun"]</xpath>
+				<value>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_AmmoIndustrial/25/1</li>
+					</weaponTags>
+				</value>
 			</Operation>
-			<!-- Vanilla Factions Expanded - Tribals -->
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>oskarpotocki.vfe.tribals</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="VFET_Throwspikes"]</xpath>
-						<value>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammo_none</li>
-							</weaponTags>
-						</value>
+		</caseTrue>
+	</Operation>
+	<!-- Uncompromising Tribal Faction -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>fuu.uncompromisingtribalfaction</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="UncompromisingTribalFaction_GreatFlamebow"]</xpath>
+				<value>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_AmmoPrimitive/10/1</li>
+					</weaponTags>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+	<!-- Vanilla Weapons Expanded -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaexpanded.vwe</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VWE_Throwing_Rocks" or 
+					defName="VWE_Throwing_Knives" or 
+					defName="VWE_Tool_Whip" or 
+					defName="VWE_Gun_FireExtinguisher"]</xpath>
+				<value>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammo_none</li>
+					</weaponTags>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VWE_Bow_Long" or 
+					defName="VWE_Bow_Crossbow" or 
+					defName="VWE_Bow_Compound"]</xpath>
+				<value>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_AmmoPrimitive/10/1</li>
+					</weaponTags>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VWE_Gun_HandCannon"]</xpath>
+				<value>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_AmmoIndustrial/6/1</li>
+					</weaponTags>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[VWE_SawedOffShotgun]</xpath>
+				<value>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_AmmoIndustrial/6/2</li>
+					</weaponTags>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VWE_Gun_SemiAutomaticRifle" or 
+					defName="VWE_Gun_LeverActionRifle" or 
+					defName="VWE_Gun_MarksmanRifle"]</xpath>
+				<value>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_AmmoIndustrial/10/1</li>
+					</weaponTags>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VWE_TrenchGun"]</xpath>
+				<value>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_AmmoIndustrial/10/2</li>
+					</weaponTags>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VWE_CombatHandgun"]</xpath>
+				<value>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_AmmoIndustrial/12/1</li>
+					</weaponTags>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VWE_Gun_AntiMaterialRifle"]</xpath>
+				<value>
+					<equippedStatOffsets Operation="Safe">
+						<MoveSpeed Operation="SafeReplace">-0.1</MoveSpeed>
+					</equippedStatOffsets>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_AmmoIndustrial/15/2</li>
+					</weaponTags>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VWE_Gun_LightSMG"]</xpath>
+				<value>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_AmmoIndustrial/20/1</li>
+					</weaponTags>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VWE_Gun_SMG"]</xpath>
+				<value>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_AmmoIndustrial/25/1</li>
+					</weaponTags>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VWE_Gun_BattleRifle" or 
+					defName="VWE_Gun_Carbine"]</xpath>
+				<value>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_AmmoIndustrial/30/1</li>
+					</weaponTags>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VWE_Gun_ServiceRifle"]</xpath>
+				<value>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_AmmoIndustrial/40/1</li>
+					</weaponTags>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VWE_Gun_HMG"]</xpath>
+				<value>
+					<equippedStatOffsets Operation="Safe">
+						<MoveSpeed Operation="SafeReplace">-0.2</MoveSpeed>
+					</equippedStatOffsets>
+					<statBases Operation="Safe">
+						<Mass Operation="SafeReplace">10</Mass>
+					</statBases>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_AmmoIndustrial/80/1</li>
+					</weaponTags>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VWE_Gun_GrenadeLauncher"]</xpath>
+				<value>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_WeaponGrenadeFrag/5/1</li>
+					</weaponTags>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="VWE_SmokeGrenade"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>mlie.yayoscombat3</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<costList Operation="SafeReplace">
+										<Steel>5</Steel>
+										<Chemfuel>5</Chemfuel>
+									</costList>
+									<defName Operation="SafeReplace">VWESmokeGrenade</defName>
+									<stackLimit Operation="SafeAdd">10</stackLimit>
+									<statBases Operation="Safe">
+										<Mass Operation="SafeReplace">0.2</Mass>
+										<WorkToMake Operation="SafeReplace">900</WorkToMake>
+									</statBases>
+									<weaponTags Operation="Safe">
+										<li Operation="Add">ammoDef_VWESmokeGrenade/1/1</li>
+									</weaponTags>
+								</value>
+							</Operation>
+						</caseTrue>
 					</Operation>
-				</caseTrue>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="VWE_FlashGrenade"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>mlie.yayoscombat3</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<costList Operation="SafeReplace">
+										<Steel>5</Steel>
+										<ComponentIndustrial>1</ComponentIndustrial>
+									</costList>
+									<defName Operation="SafeReplace">VWEFlashGrenade</defName>
+									<stackLimit Operation="SafeAdd">10</stackLimit>
+									<statBases Operation="Safe">
+										<Mass Operation="SafeReplace">0.2</Mass>
+										<WorkToMake Operation="SafeReplace">1800</WorkToMake>
+									</statBases>
+									<weaponTags Operation="Safe">
+										<li Operation="Add">ammoDef_VWEFlashGrenade/1/1</li>
+									</weaponTags>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VWE_Gun_ChargeSniperRifle"]</xpath>
+				<value>
+					<equippedStatOffsets Operation="Safe">
+						<MoveSpeed Operation="SafeReplace">-0.1</MoveSpeed>
+					</equippedStatOffsets>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_AmmoSpacer/15/2</li>
+					</weaponTags>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VWE_Gun_ChargeShotgun"]</xpath>
+				<value>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_AmmoSpacer/15/2</li>
+					</weaponTags>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VWE_Gun_ChargePistol"]</xpath>
+				<value>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_AmmoSpacer/20/1</li>
+					</weaponTags>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VWE_Gun_ChargeSMG"]</xpath>
+				<value>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_AmmoSpacer/60/1</li>
+					</weaponTags>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VWE_Gun_ChargeLMG" or
+					defName="VWE_Gun_ChargeMinigun"]</xpath>
+				<value>
+					<equippedStatOffsets Operation="Safe">
+						<MoveSpeed Operation="SafeReplace">-0.4</MoveSpeed>
+					</equippedStatOffsets>
+					<statBases Operation="Safe">
+						<Mass Operation="SafeReplace">20</Mass>
+					</statBases>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_AmmoSpacer/120/1</li>
+					</weaponTags>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VWE_Gun_ChargeRocketLauncher"]</xpath>
+				<value>
+					<equippedStatOffsets Operation="Safe">
+						<MoveSpeed Operation="SafeReplace">-0.4</MoveSpeed>
+					</equippedStatOffsets>
+					<statBases Operation="Safe">
+						<Mass Operation="SafeReplace">20</Mass>
+					</statBases>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_AmmoSpacer/5/10</li>
+					</weaponTags>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+	<!-- Vanilla Factions Expanded - Empire -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>oskarpotocki.vfe.empire</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VEE_Gun_Fletcher"]</xpath>
+				<value>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_AmmoSpacerEMP/5/10</li>
+					</weaponTags>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VFEE_Gun_ChargeThumper"]</xpath>
+				<value>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_AmmoSpacer/15/5</li>
+					</weaponTags>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+	<!-- Vanilla Factions Expanded - Tribals -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>oskarpotocki.vfe.tribals</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VFET_Throwspikes"]</xpath>
+				<value>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammo_none</li>
+					</weaponTags>
+				</value>
 			</Operation>
 		</caseTrue>
 	</Operation>
