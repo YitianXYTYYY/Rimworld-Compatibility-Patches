@@ -18,6 +18,9 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/HediffDef[defName="HealingEnhancer"]/stages/li</xpath>
 				<value>
+					<statFactors Operation="Safe">
+						<InjuryHealingFactor Operation="SafeRemove">0</InjuryHealingFactor>
+					</statFactors>
 					<statOffsets Operation="Safe">
 						<InjuryHealingFactor Operation="SafeAdd">1</InjuryHealingFactor>
 					</statOffsets>
@@ -87,6 +90,43 @@
 					<statOffsets Operation="Safe">
 						<RestFallRateFactor Operation="SafeRemove">0</RestFallRateFactor>
 					</statOffsets>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ludeon.rimworld.odyssey</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="BloodWarmer"]/stages/li</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<ComfyTemperatureMin Operation="SafeReplace">-25</ComfyTemperatureMin>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="PilotAssistant"]/stages/li</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<PilotingAbility Operation="SafeReplace">0.5</PilotingAbility>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="VacskinGland"]/stages/li</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Moving</capacity>
+							<offset Operation="SafeAdd">-0.1</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+					</capMods>
 				</value>
 			</Operation>
 		</caseTrue>

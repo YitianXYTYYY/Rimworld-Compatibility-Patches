@@ -217,6 +217,37 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
+			<!-- Vanilla Furniture Expanded -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaexpanded.vfecore</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>ThingDef/Bin_Small</li>
+							<li>ThingDef/Bin_Large</li>
+						</value>
+					</Operation>
+					<!-- Reel's Expanded Storage -->
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>reel.expanded.storage</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>ThingDef/Shelf_WeaponRack</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
 			<!-- Vanilla Nutrient Paste Expanded -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>

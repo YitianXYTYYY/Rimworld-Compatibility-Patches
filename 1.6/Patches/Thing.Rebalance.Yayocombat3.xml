@@ -127,6 +127,9 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="Gun_Minigun"]</xpath>
 				<value>
+					<equippedStatOffsets Operation="Safe">
+						<MoveSpeed Operation="SafeReplace">-0.2</MoveSpeed>
+					</equippedStatOffsets>
 					<weaponTags Operation="Safe">
 						<li Operation="Add">ammoDef_AmmoIndustrial/150/1</li>
 					</weaponTags>
@@ -372,6 +375,9 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/ThingDef[defName="Gun_BeamRepeater"]</xpath>
 						<value>
+							<equippedStatOffsets Operation="Safe">
+								<MoveSpeed Operation="SafeReplace">-0.2</MoveSpeed>
+							</equippedStatOffsets>
 							<weaponTags Operation="Safe">
 								<li Operation="Add">ammoDef_AmmoSpacerEMP/150/1</li>
 							</weaponTags>
@@ -455,7 +461,6 @@
 							defName="VWE_Gun_SemiAutomaticRifle" or 
 							defName="VWE_Gun_LeverActionRifle" or 
 							defName="VWE_Gun_MarksmanRifle" or 
-							defName="VWE_Gun_AntiMaterialRifle" or 
 							defName="VWE_SawedOffShotgun"]</xpath>
 						<value>
 							<weaponTags Operation="Safe">
@@ -466,6 +471,17 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/ThingDef[defName="VWE_CombatHandgun"]</xpath>
 						<value>
+							<weaponTags Operation="Safe">
+								<li Operation="Add">ammoDef_AmmoIndustrial/12/1</li>
+							</weaponTags>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="VWE_Gun_AntiMaterialRifle"]</xpath>
+						<value>
+							<equippedStatOffsets Operation="Safe">
+								<MoveSpeed Operation="SafeReplace">-0.1</MoveSpeed>
+							</equippedStatOffsets>
 							<weaponTags Operation="Safe">
 								<li Operation="Add">ammoDef_AmmoIndustrial/15/1</li>
 							</weaponTags>
@@ -507,6 +523,12 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/ThingDef[defName="VWE_Gun_HMG"]</xpath>
 						<value>
+							<equippedStatOffsets Operation="Safe">
+								<MoveSpeed Operation="SafeReplace">-0.2</MoveSpeed>
+							</equippedStatOffsets>
+							<statBases Operation="Safe">
+								<Mass Operation="SafeReplace">10</Mass>
+							</statBases>
 							<weaponTags Operation="Safe">
 								<li Operation="Add">ammoDef_AmmoIndustrial/80/1</li>
 							</weaponTags>
@@ -565,9 +587,19 @@
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="VWE_Gun_ChargeSniperRifle"]</xpath>
+						<value>
+							<equippedStatOffsets Operation="Safe">
+								<MoveSpeed Operation="SafeReplace">-0.1</MoveSpeed>
+							</equippedStatOffsets>
+							<weaponTags Operation="Safe">
+								<li Operation="Add">ammoDef_AmmoSpacer/15/2</li>
+							</weaponTags>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/ThingDef[defName="VWE_Gun_ChargePistol" or 
-							defName="VWE_Gun_ChargeShotgun" or 
-							defName="VWE_Gun_ChargeSniperRifle"]</xpath>
+							defName="VWE_Gun_ChargeShotgun"]</xpath>
 						<value>
 							<weaponTags Operation="Safe">
 								<li Operation="Add">ammoDef_AmmoSpacer/20/1</li>
@@ -586,6 +618,12 @@
 						<xpath>Defs/ThingDef[defName="VWE_Gun_ChargeLMG" or
 							defName="VWE_Gun_ChargeMinigun"]</xpath>
 						<value>
+							<equippedStatOffsets Operation="Safe">
+								<MoveSpeed Operation="SafeReplace">-0.4</MoveSpeed>
+							</equippedStatOffsets>
+							<statBases Operation="Safe">
+								<Mass Operation="SafeReplace">20</Mass>
+							</statBases>
 							<weaponTags Operation="Safe">
 								<li Operation="Add">ammoDef_AmmoSpacer/120/1</li>
 							</weaponTags>
@@ -594,6 +632,12 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/ThingDef[defName="VWE_Gun_ChargeRocketLauncher"]</xpath>
 						<value>
+							<equippedStatOffsets Operation="Safe">
+								<MoveSpeed Operation="SafeReplace">-0.4</MoveSpeed>
+							</equippedStatOffsets>
+							<statBases Operation="Safe">
+								<Mass Operation="SafeReplace">20</Mass>
+							</statBases>
 							<weaponTags Operation="Safe">
 								<li Operation="Add">ammoDef_AmmoSpacer/5/10</li>
 							</weaponTags>

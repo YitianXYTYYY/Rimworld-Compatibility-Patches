@@ -15,7 +15,7 @@
 						<xpath>ThingDef</xpath>
 						<value>
 							<equippedStatOffsets Operation="Safe">
-								<MoveSpeed Operation="SafeReplace">-0.4</MoveSpeed>
+								<MoveSpeed Operation="SafeReplace">-0.5</MoveSpeed>
 							</equippedStatOffsets>
 							<statBases Operation="Safe">
 								<AccuracyTouch Operation="SafeReplace">0.28</AccuracyTouch>
@@ -24,7 +24,7 @@
 								<AccuracyLong Operation="SafeReplace">0.5</AccuracyLong>
 								<DeteriorationRate Operation="SafeRemove">0</DeteriorationRate>
 								<Flammability Operation="SafeRemove">0</Flammability>
-								<Mass Operation="SafeReplace">20</Mass>
+								<Mass Operation="SafeReplace">25</Mass>
 								<RangedWeapon_Cooldown Operation="SafeReplace">2</RangedWeapon_Cooldown>
 								<WorkToMake Operation="SafeReplace">18000</WorkToMake>
 							</statBases>
@@ -120,12 +120,13 @@
 								<ReinforcedBarrel Operation="SafeAdd">1</ReinforcedBarrel>
 							</costList>
 							<equippedStatOffsets Operation="Safe">
-								<MoveSpeed Operation="SafeReplace">-0.6</MoveSpeed>
+								<MoveSpeed Operation="SafeReplace">-0.4</MoveSpeed>
 							</equippedStatOffsets>
 							<statBases Operation="Safe">
 								<RangedWeapon_Cooldown Operation="SafeReplace">4</RangedWeapon_Cooldown>
 								<DeteriorationRate Operation="SafeRemove">0</DeteriorationRate>
 								<Flammability Operation="SafeRemove">0</Flammability>
+								<Mass Operation="SafeReplace">20</Mass>
 								<WorkToMake Operation="SafeReplace">7200</WorkToMake>
 							</statBases>
 							<verbs Operation="Safe">
@@ -201,13 +202,13 @@
 								<ReinforcedBarrel Operation="SafeAdd">1</ReinforcedBarrel>
 							</costList>
 							<equippedStatOffsets Operation="Safe">
-								<MoveSpeed Operation="SafeReplace">-0.4</MoveSpeed>
+								<MoveSpeed Operation="SafeReplace">-0.6</MoveSpeed>
 							</equippedStatOffsets>
 							<statBases Operation="Safe">
 								<RangedWeapon_Cooldown Operation="SafeReplace">2</RangedWeapon_Cooldown>
 								<DeteriorationRate Operation="SafeRemove">0</DeteriorationRate>
 								<Flammability Operation="SafeRemove">0</Flammability>
-								<Mass Operation="SafeReplace">20</Mass>
+								<Mass Operation="SafeReplace">30</Mass>
 								<WorkToMake Operation="SafeReplace">21600</WorkToMake>
 							</statBases>
 							<verbs Operation="Safe">
@@ -339,7 +340,7 @@
 						<xpath>ThingDef</xpath>
 						<value>
 							<equippedStatOffsets Operation="Safe">
-								<MoveSpeed Operation="SafeReplace">-0.4</MoveSpeed>
+								<MoveSpeed Operation="SafeReplace">-0.5</MoveSpeed>
 							</equippedStatOffsets>
 							<statBases Operation="Safe">
 								<AccuracyTouch Operation="SafeReplace">0.22</AccuracyTouch>
@@ -348,7 +349,7 @@
 								<AccuracyLong Operation="SafeReplace">0.95</AccuracyLong>
 								<DeteriorationRate Operation="SafeRemove">0</DeteriorationRate>
 								<Flammability Operation="SafeRemove">0</Flammability>
-								<Mass Operation="SafeReplace">20</Mass>
+								<Mass Operation="SafeReplace">25</Mass>
 								<RangedWeapon_Cooldown Operation="SafeReplace">1.2</RangedWeapon_Cooldown>
 								<WorkToMake Operation="SafeReplace">18000</WorkToMake>
 							</statBases>

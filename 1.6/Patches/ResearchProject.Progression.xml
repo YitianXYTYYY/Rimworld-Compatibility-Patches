@@ -33,6 +33,18 @@
 
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
+			<li>vanillaexpanded.vfecore</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/ResearchProjectDef[defName="MF_WasteDisposal"]</xpath>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
 			<li>vanillaexpanded.vwe</li>
 		</mods>
 		<packageId>true</packageId>
