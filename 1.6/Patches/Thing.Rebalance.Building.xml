@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
+	<!-- Genepack Reprocessor -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>anonemous2.genepackreprocessor</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- genepack reprocessor -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="GeneSeparator"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>resplice.xotr.core</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<researchPrerequisites Operation="Safe">
+										<li>Ferny_GenepackCentrifuge</li>
+									</researchPrerequisites>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 	<!-- Reel's Expanded Storage -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
@@ -8,7 +40,7 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<!-- Medical Cabinet -->
+			<!-- medical cabinet -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="ReelStorageNewMedicineCabinet"]</xpath>
 				<apply>
@@ -35,6 +67,34 @@
 								</value>
 							</Operation>
 						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Vanilla Helixien Gas Expanded -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaexpanded.helixiengas</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- gas cooler -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="VHGE_GasCooler"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<blockLight Operation="SafeRemove"/>
+							<building Operation="Safe">
+								<canPlaceOverWall Operation="SafeRemove">true</canPlaceOverWall>
+							</building>
+							<canOverlapZones Operation="SafeRemove"/>
+							<coversFloor Operation="SafeRemove"/>
+							<terrainAffordanceNeeded Operation="SafeReplace">Light</terrainAffordanceNeeded>
+						</value>
 					</Operation>
 				</apply>
 			</Operation>

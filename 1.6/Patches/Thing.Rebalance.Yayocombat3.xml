@@ -385,7 +385,7 @@
 						<packageId>true</packageId>
 						<caseTrue>
 							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>Defs/ThingDef[defName="Weapon_GrenadeTox"]</xpath>
+								<xpath>ThingDef</xpath>
 								<value>
 									<costList Operation="SafeReplace">
 										<Steel>5</Steel>
@@ -597,7 +597,7 @@
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[VWE_SawedOffShotgun]</xpath>
+				<xpath>Defs/ThingDef[defName="VWE_SawedOffShotgun"]</xpath>
 				<value>
 					<weaponTags Operation="Safe">
 						<li Operation="Add">ammoDef_AmmoIndustrial/6/2</li>

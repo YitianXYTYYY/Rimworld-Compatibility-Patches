@@ -268,7 +268,7 @@
 					<biostatCpx Operation="SafeReplace">0</biostatCpx>
 					<modExtensions Operation="Safe">
 						<li Class="als.BfG.GeneExtension_ChanceAddGenes" Operation="Safe" CheckAttributes="True">
-							<chanceToAstroGene Operation="SafeReplace">0.9</chanceToAstroGene>
+							<chanceToAstroGene Operation="SafeReplace">1</chanceToAstroGene>
 							<chanceToRareGene Operation="SafeReplace">0.1</chanceToRareGene>
 							<astroGenesPool Operation="Safe">
 								<li Operation="SafeAdd" Compare="InnerText">BfG_PsychicAbility_Space</li>

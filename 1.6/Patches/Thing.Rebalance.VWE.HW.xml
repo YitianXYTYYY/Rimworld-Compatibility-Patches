@@ -26,7 +26,7 @@
 								<Flammability Operation="SafeRemove">0</Flammability>
 								<Mass Operation="SafeReplace">25</Mass>
 								<RangedWeapon_Cooldown Operation="SafeReplace">2</RangedWeapon_Cooldown>
-								<WorkToMake Operation="SafeReplace">18000</WorkToMake>
+								<WorkToMake Operation="SafeReplace">45000</WorkToMake>
 							</statBases>
 							<verbs Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="verbClass">
@@ -127,7 +127,7 @@
 								<DeteriorationRate Operation="SafeRemove">0</DeteriorationRate>
 								<Flammability Operation="SafeRemove">0</Flammability>
 								<Mass Operation="SafeReplace">20</Mass>
-								<WorkToMake Operation="SafeReplace">7200</WorkToMake>
+								<WorkToMake Operation="SafeReplace">30000</WorkToMake>
 							</statBases>
 							<verbs Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="verbClass">
@@ -209,7 +209,7 @@
 								<DeteriorationRate Operation="SafeRemove">0</DeteriorationRate>
 								<Flammability Operation="SafeRemove">0</Flammability>
 								<Mass Operation="SafeReplace">30</Mass>
-								<WorkToMake Operation="SafeReplace">21600</WorkToMake>
+								<WorkToMake Operation="SafeReplace">60000</WorkToMake>
 							</statBases>
 							<verbs Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="verbClass">
@@ -351,7 +351,7 @@
 								<Flammability Operation="SafeRemove">0</Flammability>
 								<Mass Operation="SafeReplace">25</Mass>
 								<RangedWeapon_Cooldown Operation="SafeReplace">1.2</RangedWeapon_Cooldown>
-								<WorkToMake Operation="SafeReplace">18000</WorkToMake>
+								<WorkToMake Operation="SafeReplace">60000</WorkToMake>
 							</statBases>
 							<verbs Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="verbClass">

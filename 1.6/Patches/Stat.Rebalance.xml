@@ -108,6 +108,22 @@
 		</value>
 	</Operation>
 	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/StatDef[defName="VEF_MassCarryCapacity"]</xpath>
+		<value>
+			<parts Operation="Safe">
+				<li Class="StatPart_Quality" Operation="SafeReplace" CheckAttributes="True">
+					<factorAwful>0.5</factorAwful>
+					<factorPoor >0.75</factorPoor>
+					<factorNormal>1</factorNormal>
+					<factorGood>1.25</factorGood>
+					<factorExcellent>1.5</factorExcellent>
+					<factorMasterwork>1.75</factorMasterwork>
+					<factorLegendary>2</factorLegendary>
+				</li>
+			</parts>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/StatDef[defName="VEF_RangedDodgeChance"]</xpath>
 		<value>
 			<hideAtValue Operation="SafeAdd">0</hideAtValue>

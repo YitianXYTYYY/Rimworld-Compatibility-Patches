@@ -93,5 +93,6 @@ Personal Made compatibility patches for mods.
 	</loadAfter>
 	<loadBefore>
 		<li>teiwaz.vtoada</li>
+		<li>vr.missilegirl</li>
 	</loadBefore>
 </ModMetaData>

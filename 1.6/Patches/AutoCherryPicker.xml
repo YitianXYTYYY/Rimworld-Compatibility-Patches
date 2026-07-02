@@ -229,6 +229,7 @@
 						<value>
 							<li>ThingDef/Bin_Small</li>
 							<li>ThingDef/Bin_Large</li>
+							<li>ThingDef/Joy_Piano</li>
 						</value>
 					</Operation>
 					<!-- Reel's Expanded Storage -->

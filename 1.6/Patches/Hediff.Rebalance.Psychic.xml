@@ -114,18 +114,36 @@
 					</statOffsets>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/HediffDef[defName="VoidTouched"]/stages/li</xpath>
-				<value>
-					<statFactors Operation="Safe">
-						<StudyEfficiency Operation="SafeRemove">0</StudyEfficiency>
-						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
-					</statFactors>
-					<statOffsets Operation="Safe">
-						<StudyEfficiency Operation="SafeAdd">1</StudyEfficiency>
-						<PsychicSensitivity Operation="SafeAdd">2</PsychicSensitivity>
-					</statOffsets>
-				</value>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="VoidTouched"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li</xpath>
+						<value>
+							<statFactors Operation="Safe">
+								<StudyEfficiency Operation="SafeRemove">0</StudyEfficiency>
+								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+							</statFactors>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>resplice.xotr.core</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseFalse>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>HediffDef/stages/li</xpath>
+								<value>
+									<statOffsets Operation="Safe">
+										<StudyEfficiency Operation="SafeAdd">1</StudyEfficiency>
+										<PsychicSensitivity Operation="SafeAdd">2</PsychicSensitivity>
+									</statOffsets>
+								</value>
+							</Operation>
+						</caseFalse>
+					</Operation>
+				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/HediffDef[defName="Psychophage"]/stages/li</xpath>
