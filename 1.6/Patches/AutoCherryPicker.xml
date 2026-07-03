@@ -183,6 +183,31 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
+			<!-- ReSplice: Core -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>resplice.xotr.core</li>
+				</mods>
+				<packageId>true</packageId>
+				<logic>and</logic>
+				<caseTrue>
+					<!-- Genepack Reprocessor -->
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>Anonemous2.GenepackReprocessor</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>ThingDef/RS_GeneCentrifuge</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
 			<!-- Vanilla Armour Expanded -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>

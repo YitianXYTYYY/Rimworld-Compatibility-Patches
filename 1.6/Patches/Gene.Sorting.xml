@@ -694,6 +694,9 @@
 						<xpath>Defs/GeneDef[defName="VREStarjack_VacuumResistance_Total"]</xpath>
 						<value>
 							<displayOrderInCategory Operation="AddOrReplace">34</displayOrderInCategory>
+							<statOffsets Operation="Safe">
+								<ComfyTemperatureMin Operation="SafeAdd">-10</ComfyTemperatureMin>
+							</statOffsets>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">

@@ -164,13 +164,16 @@
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 						<xpath>HediffDef/stages/li/statFactors/MoveSpeed</xpath>
 					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>HediffDef/stages/li/capMods/li[capacity="Consciousness"]</xpath>
+					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="minor"]</xpath>
 						<value>
 							<minSeverity Operation="SafeAdd">0.02</minSeverity>
 							<capMods Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-									<capacity Operation="Safe">Moving</capacity>
+									<capacity Operation="SafeAdd">Moving</capacity>
 									<offset Operation="SafeAdd">0.05</offset>
 								</li>
 							</capMods>
@@ -181,7 +184,7 @@
 						<value>
 							<capMods Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-									<capacity Operation="Safe">Moving</capacity>
+									<capacity Operation="SafeAdd">Moving</capacity>
 									<offset Operation="SafeAdd">0.05</offset>
 								</li>
 							</capMods>
@@ -193,7 +196,7 @@
 							<label Operation="SafeReplace">extreme</label>
 							<capMods Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-									<capacity Operation="Safe">Moving</capacity>
+									<capacity Operation="SafeAdd">Moving</capacity>
 									<offset Operation="SafeAdd">0.1</offset>
 								</li>
 							</capMods>

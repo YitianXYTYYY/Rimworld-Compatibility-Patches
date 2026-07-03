@@ -4,34 +4,6 @@
 	<Operation Class="XmlExtensions.SetScope" MayRequire="ferny.replacelib">
 		<xpath>Defs/ReplaceLib.ReplacerDef[defName="ReplaceLib_XYTYYY"]</xpath>
 		<apply>
-			<!-- ReSplice: Core -->
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>resplice.xotr.core</li>
-				</mods>
-				<packageId>true</packageId>
-				<logic>and</logic>
-				<caseTrue>
-					<!-- Genepack Reprocessor -->
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>Anonemous2.GenepackReprocessor</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="PatchOperationAdd">
-								<xpath>ReplaceLib.ReplacerDef/replacers</xpath>
-								<value>
-									<li>
-										<replace>RS_GeneCentrifuge</replace>
-										<with>GeneSeparator</with>
-									</li>
-								</value>
-							</Operation>
-						</caseTrue>
-					</Operation>
-				</caseTrue>
-			</Operation>
 			<!-- Vanilla Factions Expanded - Insectoids 2 -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>

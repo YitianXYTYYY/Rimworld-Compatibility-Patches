@@ -1,6 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
+	<!-- Biotech for Gravship -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>als.biotechgravship</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- Progression: Genetics -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>ferny.progressiongenetics</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="BfG_GeneBank"]</xpath>
+						<value>
+							<researchPrerequisites Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">GR_GeneticAlteration</li>
+							</researchPrerequisites>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="BfG_GeneExtractor"]</xpath>
+						<value>
+							<researchPrerequisites Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">Xenogermination</li>
+								<li Operation="SafeAdd" Compare="InnerText">GR_GeneticAlteration</li>
+							</researchPrerequisites>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Progression: Robotics -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>ferny.progressionrobotics2</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="BfG_BandNode"]</xpath>
+						<value>
+							<researchPrerequisites Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">BasicMechtech</li>
+								<li Operation="SafeAdd" Compare="InnerText">Ferny_BandNode</li>
+							</researchPrerequisites>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="BfG_MechBooster"]</xpath>
+						<value>
+							<researchPrerequisites Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">HighMechtech</li>
+								<li Operation="SafeAdd" Compare="InnerText">Ferny_MechBooster</li>
+							</researchPrerequisites>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 	<!-- Genepack Reprocessor -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
@@ -12,9 +75,10 @@
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="GeneSeparator"]</xpath>
 				<apply>
+					<!-- Progression: Genetics -->
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
-							<li>resplice.xotr.core</li>
+							<li>ferny.progressiongenetics</li>
 						</mods>
 						<packageId>true</packageId>
 						<caseTrue>
@@ -22,13 +86,39 @@
 								<xpath>ThingDef</xpath>
 								<value>
 									<researchPrerequisites Operation="Safe">
-										<li>Ferny_GenepackCentrifuge</li>
+										<li Operation="SafeRemove" Compare="InnerText">GeneProcessor</li>
+										<li Operation="SafeAdd" Compare="InnerText">Ferny_GenepackCentrifuge</li>
 									</researchPrerequisites>
 								</value>
 							</Operation>
 						</caseTrue>
 					</Operation>
 				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Vanilla Helixien Gas Expanded -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaexpanded.helixiengas</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- gravship hull -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="RB_SmoothGravshipHull"]</xpath>
+				<value>
+					<label Operation="SafeReplace">smooth gravship hull</label>
+					<terrainAffordanceNeeded Operation="SafeReplace">Substructure</terrainAffordanceNeeded>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="RB_GravshipWindowHull" or 
+					defName="RB_GravshipPanoramaHull"]</xpath>
+				<value>
+					<terrainAffordanceNeeded Operation="SafeReplace">Substructure</terrainAffordanceNeeded>
+				</value>
 			</Operation>
 		</caseTrue>
 	</Operation>

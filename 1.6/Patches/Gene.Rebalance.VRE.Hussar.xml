@@ -3,11 +3,17 @@
 
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>vanillaracesexpanded.fungoid</li>
+			<li>vanillaracesexpanded.hussar</li>
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
 			<!-- weapon aptitude -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VREHT_WeaponAptitude_Randomizer"]</xpath>
+				<value>
+					<biostatCpx Operation="SafeAdd">0</biostatCpx>
+				</value>
+			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
 					<li>hussars.blablabla.cantbearsedtocomeupwithafunnyid</li>
@@ -63,19 +69,11 @@
 			</Operation>
 
 			<!-- -40 wing -->
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.hussar</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VREH_Glidewings"]</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Wings</displayCategory>
-						</value>
-					</Operation>
-				</caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VREH_Glidewings"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Wings</displayCategory>
+				</value>
 			</Operation>
 		</caseTrue>
 	</Operation>
