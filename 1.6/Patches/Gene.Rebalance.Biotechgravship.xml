@@ -16,11 +16,16 @@
 						<value>
 							<conditionalStatAffecters Operation="Safe">
 								<li Class="ConditionalStatAffecter_InSpace" Operation="Safe" CheckAttributes="True">
+									<statFactors Operation="Safe">
+										<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+										<WorkSpeedGlobal Operation="SafeRemove">0</WorkSpeedGlobal>
+									</statFactors>
 									<statOffsets Operation="Safe">
-										<MoveSpeed Operation="SafeReplace">1</MoveSpeed>
-										<WorkSpeedGlobal Operation="SafeReplace">0.1</WorkSpeedGlobal>
+										<ComfyTemperatureMin Operation="SafeReplace">-30</ComfyTemperatureMin>
 										<ImmunityGainSpeed Operation="SafeReplace">0.1</ImmunityGainSpeed>
-										<MentalBreakThreshold Operation="SafeReplace">-0.1</MentalBreakThreshold>
+										<MentalBreakThreshold Operation="SafeReplace">-0.15</MentalBreakThreshold>
+										<MoveSpeed Operation="SafeReplace">1</MoveSpeed>
+										<WorkSpeedGlobal Operation="SafeAdd">0.1</WorkSpeedGlobal>
 									</statOffsets>
 								</li>
 								<li Class="ConditionalStatAffecter_NotInSpace" Operation="Safe" CheckAttributes="True">

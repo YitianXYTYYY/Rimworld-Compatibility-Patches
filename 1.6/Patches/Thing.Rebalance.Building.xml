@@ -182,8 +182,15 @@
 								<canPlaceOverWall Operation="SafeRemove">true</canPlaceOverWall>
 							</building>
 							<canOverlapZones Operation="SafeRemove"/>
+							<castEdgeShadows Operation="SafeRemove"/>
 							<coversFloor Operation="SafeRemove"/>
+							<minifiedDef Operation="SafeAdd">MinifiedThing</minifiedDef>
+							<pathCost Operation="SafeAdd">40</pathCost>
+							<staticSunShadowHeight Operation="SafeRemove"/>
 							<terrainAffordanceNeeded Operation="SafeReplace">Light</terrainAffordanceNeeded>
+							<thingCategories Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">BuildingsTemperature</li>
+							</thingCategories>
 						</value>
 					</Operation>
 				</apply>

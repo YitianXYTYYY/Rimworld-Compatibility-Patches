@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ludeon.rimworld.anomaly</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- metalblood serum -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="Metalblood"]/stages/li</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<IncomingDamageFactor Operation="SafeReplace">0.5</IncomingDamageFactor>
+					</statFactors>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 	<!-- Vanilla Factions Expanded - Empire -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>

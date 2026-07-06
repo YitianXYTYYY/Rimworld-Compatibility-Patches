@@ -904,7 +904,7 @@
 					<displayCategory Operation="AddOrReplace">Health_Digestion</displayCategory>
 					<displayOrderInCategory Operation="AddOrReplace">10</displayOrderInCategory>
 					<statFactors Operation="Safe">
-						<RawNutritionFactor Operation="SafeAdd">0.8</RawNutritionFactor>
+						<RawNutritionFactor Operation="SafeRemove">0</RawNutritionFactor>
 					</statFactors>
 					<statOffsets Operation="Safe">
 						<RawNutritionFactor Operation="SafeAdd">0.8</RawNutritionFactor>

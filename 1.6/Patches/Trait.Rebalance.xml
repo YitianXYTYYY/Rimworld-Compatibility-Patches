@@ -42,13 +42,13 @@
 		</value>
 	</Operation>
 	<!-- gourmand -->
-	<Operation Class="XmlExtensions.HybridPatch">
+	<!--Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/TraitDef[defName="Gourmand"]/degreeDatas/li[label="gourmand"]</xpath>
 		<value>
         	<hungerRateFactor Operation="SafeRemove"/>
 			<hungerRateFactorOffset Operation="SafeAdd">0.5</hungerRateFactorOffset>
 		</value>
-	</Operation>
+	</Operation-->
 	<!-- Moodoffset -->
 	<!-- sanguine -->
 	<Operation Class="XmlExtensions.HybridPatch">

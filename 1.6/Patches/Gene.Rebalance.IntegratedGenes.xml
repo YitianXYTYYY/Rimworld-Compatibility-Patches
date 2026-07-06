@@ -194,25 +194,34 @@
 					</stages>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="Turn_Gene_AgressionSubmissive"]</xpath>
-				<value>
-					<customEffectDescriptions Operation="Safe">
-						<li Operation="SafeRemove" Compare="InnerText">Mood bonus while enslaved.</li>
-						<li Operation="SafeRemove" Compare="InnerText">Mood penalty while free.</li>
-					</customEffectDescriptions>
-        			<displayOrderInCategory Operation="AddOrReplace">20</displayOrderInCategory>
-					<exclusionTags Operation="Safe">
-						<li Operation="SafeRemove" Compare="InnerText">Turn_Exclusion_FreeSpirit</li>
-						<li Operation="SafeAdd" Compare="InnerText">Turn_Gene_AgressionSubmissive</li>
-					</exclusionTags>
-					<aggroMentalBreakSelectionChanceFactor Operation="SafeReplace">0.2</aggroMentalBreakSelectionChanceFactor>
-					<prisonBreakMTBFactor Operation="SafeReplace">0.2</prisonBreakMTBFactor>
-					<socialFightChanceFactor Operation="SafeReplace">0.2</socialFightChanceFactor>
-					<statOffsets Operation="Safe">
-						<RoyalFavorValue MayRequire="Ludeon.RimWorld.Royalty" Operation="SafeReplace">2</RoyalFavorValue>
-					</statOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeRemove">
+						<xpath>GeneDef</xpath>
+						<attribute>ParentName</attribute>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<customEffectDescriptions Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">Mood bonus while enslaved.</li>
+								<li Operation="SafeRemove" Compare="InnerText">Mood penalty while free.</li>
+							</customEffectDescriptions>
+							<displayOrderInCategory Operation="AddOrReplace">20</displayOrderInCategory>
+							<exclusionTags Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">Turn_Exclusion_FreeSpirit</li>
+								<li Operation="SafeAdd" Compare="InnerText">Turn_Gene_AgressionSubmissive</li>
+							</exclusionTags>
+							<aggroMentalBreakSelectionChanceFactor Operation="SafeReplace">0.2</aggroMentalBreakSelectionChanceFactor>
+							<prisonBreakMTBFactor Operation="SafeReplace">0.2</prisonBreakMTBFactor>
+							<socialFightChanceFactor Operation="SafeReplace">0.2</socialFightChanceFactor>
+							<statOffsets Operation="Safe">
+								<RoyalFavorValue MayRequire="Ludeon.RimWorld.Royalty" Operation="SafeReplace">2</RoyalFavorValue>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="Turn_Gene_Terrified"]</xpath>
