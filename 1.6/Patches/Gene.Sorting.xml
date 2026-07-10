@@ -207,11 +207,59 @@
 					<displayOrderInCategory Operation="AddOrReplace">-498</displayOrderInCategory>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="VacuumResistance_Total"]</xpath>
-				<value>
-					<displayOrderInCategory Operation="AddOrReplace">-490</displayOrderInCategory>
-				</value>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>ludeon.rimworld.odyssey</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.SetScope">
+						<xpath>Defs/GeneDef[defName="VacuumResistance_Total"]</xpath>
+						<apply>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>GeneDef</xpath>
+								<value>
+									<displayOrderInCategory Operation="AddOrReplace">-490</displayOrderInCategory>
+								</value>
+							</Operation>
+							<Operation Class="XmlExtensions.FindMod">
+								<mods>
+									<li>vanillaracesexpanded.fungoid</li>
+								</mods>
+								<packageId>true</packageId>
+								<caseTrue>
+									<Operation Class="XmlExtensions.HybridPatch">
+										<xpath>GeneDef</xpath>
+										<value>
+											<exclusionTags Operation="Safe">
+												<li Operation="SafeAdd" Compare="InnerText">AG_LungRot</li>
+											</exclusionTags>
+											<makeImmuneTo Operation="Safe">
+												<li Operation="SafeAdd" Compare="InnerText">LungRot</li>
+											</makeImmuneTo>
+										</value>
+									</Operation>
+								</caseTrue>
+							</Operation>
+						</apply>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaracesexpanded.fungoid</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>Defs/ThoughtDef[defName="RotStink"]</xpath>
+								<value>
+									<nullifyingGenes Operation="Safe">
+										<li Operation="SafeAdd" Compare="InnerText">VacuumResistance_Total</li>
+									</nullifyingGenes>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
@@ -1233,15 +1281,44 @@
 							</Operation>
 						</apply>
 					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThoughtDef[defName="MissingTongue"]</xpath>
-						<value>
-							<nullifyingGenes Operation="Safe">
-								<li Operation="SafeAdd" Compare="InnerText">VRE_SpeechInability</li>
-							</nullifyingGenes>
-						</value>
-					</Operation>
 				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThoughtDef[defName="MissingTongue"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaracesexpanded.insector</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseFalse>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThoughtDef</xpath>
+								<value>
+									<nullifyingGenes Operation="Safe">
+										<li Operation="SafeAdd" Compare="InnerText">VRE_VocalChitters</li>
+									</nullifyingGenes>
+								</value>
+							</Operation>
+						</caseFalse>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaracesexpanded.lycanthrope</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseFalse>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThoughtDef</xpath>
+								<value>
+									<nullifyingGenes Operation="Safe">
+										<li Operation="SafeAdd" Compare="InnerText">VRE_SpeechInability</li>
+									</nullifyingGenes>
+								</value>
+							</Operation>
+						</caseFalse>
+					</Operation>
+				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>

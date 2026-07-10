@@ -7,6 +7,27 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- juggernaut serum -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="JuggernautSerum"]/stages/li</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="SafeAdd">Moving</capacity>
+							<offset Operation="SafeAdd">0.1</offset>
+						</li>
+					</capMods>
+					<statFactors Operation="Safe">
+						<MeleeDamageFactor Operation="SafeRemove">0</MeleeDamageFactor>
+						<InjuryHealingFactor Operation="SafeRemove">0</InjuryHealingFactor>
+					</statFactors>
+					<statOffsets>
+						<InjuryHealingFactor Operation="SafeAdd">0.5</InjuryHealingFactor>
+						<MeleeDamageFactor Operation="SafeAdd">1</MeleeDamageFactor>
+						<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
 			<!-- metalblood serum -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/HediffDef[defName="Metalblood"]/stages/li</xpath>

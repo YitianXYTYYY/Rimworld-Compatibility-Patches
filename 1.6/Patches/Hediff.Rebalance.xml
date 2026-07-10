@@ -7,6 +7,7 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- prosthetics -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/HediffDef[defName="Immunoenhancer"]/stages/li</xpath>
 				<value>
@@ -18,13 +19,13 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/HediffDef[defName="HealingEnhancer"]/stages/li</xpath>
 				<value>
+					<naturalHealingFactor Operation="SafeRemove"/>
 					<statFactors Operation="Safe">
 						<InjuryHealingFactor Operation="SafeRemove">0</InjuryHealingFactor>
 					</statFactors>
 					<statOffsets Operation="Safe">
 						<InjuryHealingFactor Operation="SafeAdd">1</InjuryHealingFactor>
 					</statOffsets>
-					<naturalHealingFactor Operation="SafeRemove"/>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
@@ -97,10 +98,217 @@
 
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
+			<li>ludeon.rimworld.anomaly</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- prosthetics -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="GhoulPlating"]/stages/li</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="SafeAdd">Moving</capacity>
+							<offset Operation="SafeAdd">-0.1</offset>
+						</li>
+					</capMods>
+					<statOffsets Operation="Safe">
+						<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="GhoulBarbs"]/stages/li</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="SafeAdd">Moving</capacity>
+							<offset Operation="SafeAdd">-0.1</offset>
+						</li>
+					</capMods>
+					<statFactors Operation="Safe">
+						<MeleeDamageFactor Operation="SafeRemove">0</MeleeDamageFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<MeleeDamageFactor Operation="SafeAdd">0.5</MeleeDamageFactor>
+						<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="AdrenalHeart"]/stages/li</xpath>
+				<value>
+					<hungerRateFactorOffset Operation="SafeReplace">0.2</hungerRateFactorOffset>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="MetalbloodHeart"]/stages/li</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="SafeAdd">Moving</capacity>
+							<offset Operation="SafeAdd">-0.05</offset>
+						</li>
+					</capMods>
+					<statOffsets Operation="Safe">
+						<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
+			<!-- misc -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="PsychicTrance"]/stages/li</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<RestFallRateFactor Operation="SafeAdd">0.1</RestFallRateFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<RestFallRateFactor Operation="SafeRemove">0</RestFallRateFactor>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="BlissLobotomy"]/stages/li</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<GlobalLearningFactor Operation="SafeAdd">0.5</GlobalLearningFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<GlobalLearningFactor Operation="SafeRemove">0</GlobalLearningFactor>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="NeurosisPulse"]/stages/li</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<WorkSpeedGlobal Operation="SafeRemove">0</WorkSpeedGlobal>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<MentalBreakThreshold Operation="SafeReplace">0.1</MentalBreakThreshold>
+						<WorkSpeedGlobal Operation="SafeAdd">0.5</WorkSpeedGlobal>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="BloodRage"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>HediffDef/stages/li/statFactors/MeleeDamageFactor</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[label="mild"]</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<MeleeDamageFactor Operation="SafeAdd">0.1</MeleeDamageFactor>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[label="moderate"]</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<PsychicSensitivity Operation="SafeAdd">0.2</PsychicSensitivity>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[label="severe"]</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<PsychicSensitivity Operation="SafeAdd">0.4</PsychicSensitivity>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[label="extreme"]</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<PsychicSensitivity Operation="SafeAdd">0.5</PsychicSensitivity>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="FrenzyField"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[label="mild"]</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<MoveSpeed Operation="SafeRemove">0.1</MoveSpeed>
+								<WorkSpeedGlobal Operation="SafeReplace">0.1</WorkSpeedGlobal>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[label="moderate"]</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<WorkSpeedGlobal Operation="SafeReplace">0.2</WorkSpeedGlobal>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[label="extreme"]</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<WorkSpeedGlobal Operation="SafeReplace">0.5</WorkSpeedGlobal>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="CubeInterest"]/stages/li[label="obsessed"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<MentalBreakThreshold Operation="SafeReplace">0.05</MentalBreakThreshold>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="VoidShock"]/stages/li</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Consciousness</capacity>
+							<offset Operation="SafeAdd">0.1</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+					</capMods>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="Psychophage"]/stages/li</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<PsychicSensitivity Operation="SafeReplace">0.6</PsychicSensitivity>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="RageSpeed"]/stages/li</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<MoveSpeed Operation="SafeAdd">2.8</MoveSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
 			<li>ludeon.rimworld.odyssey</li>
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- prosthetics -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/HediffDef[defName="BloodWarmer"]/stages/li</xpath>
 				<value>

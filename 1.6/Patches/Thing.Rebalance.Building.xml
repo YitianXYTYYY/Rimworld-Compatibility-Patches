@@ -64,6 +64,72 @@
 		</caseTrue>
 	</Operation>
 
+	<!-- Dlc collaboration - Void universe -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>hailuan.voiduniverse</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- void grav field extender -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="UV_VoidGravFieldExtender"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef</xpath>
+						<attribute>ParentName</attribute>
+						<value>GravshipComponentBase</value>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef/comps/li[@Class="CompProperties_Facility"]</xpath>
+						<attribute>Class</attribute>
+						<value>CompProperties_GravshipFacility</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<building Operation="Safe">
+								<destroySound Operation="SafeRemove">BuildingDestroyed_Metal_Small</destroySound>
+								<relatedTerrain Operation="Safe">
+									<li Operation="SafeAdd" Compare="InnerText">Substructure</li>
+								</relatedTerrain>
+							</building>
+							<castEdgeShadows Operation="SafeRemove"/>
+							<comps Operation="Safe">
+								<li Class="CompProperties_SubstructureFootprint" Operation="Safe" CheckAttributes="True">
+									<radius Operation="SafeAdd">10.9</radius>
+								</li>
+								<li Class="CompProperties_GravshipFacility" Operation="Safe" CheckAttributes="True">
+									<requiresLOS Operation="SafeAdd">false</requiresLOS>
+									<maxDistance Operation="SafeAdd">99.9</maxDistance>
+									<onlyRequiresLooseConnection Operation="SafeAdd">true</onlyRequiresLooseConnection>
+								</li>
+							</comps>
+							<designationCategory Operation="SafeReplace">Odyssey</designationCategory>
+							<designationHotKey Operation="SafeRemove"/>
+							<fillPercent Operation="SafeReplace">0.4</fillPercent>
+							<pathCost Operation="SafeReplace">14</pathCost>
+							<placeWorkers Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">PlaceWorker_InRangeOfGravEngine</li>
+								<li Operation="SafeRemove" Compare="InnerText">PlaceWorker_ShowFacilitiesConnections</li>
+							</placeWorkers>
+							<resourcesFractionWhenDeconstructed Operation="SafeAdd">1</resourcesFractionWhenDeconstructed>
+							<statBases Operation="Safe">
+								<Flammability Operation="SafeRemove">0</Flammability>
+								<MaxHitPoints Operation="SafeReplace">200</MaxHitPoints>
+							</statBases>
+							<staticSunShadowHeight Operation="SafeRemove"/>
+							<terrainAffordanceNeeded Operation="SafeAdd">Substructure</terrainAffordanceNeeded>
+							<thingCategories Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">BuildingsMisc</li>
+							</thingCategories>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 	<!-- Genepack Reprocessor -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
@@ -98,10 +164,10 @@
 		</caseTrue>
 	</Operation>
 
-	<!-- Vanilla Helixien Gas Expanded -->
+	<!-- ReBuild: Doors and Corners -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>vanillaexpanded.helixiengas</li>
+			<li>rebuild.cotr.doorsandcorners</li>
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
@@ -114,9 +180,23 @@
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="RB_GravshipWindowHull" or 
-					defName="RB_GravshipPanoramaHull"]</xpath>
+				<xpath>Defs/ThingDef[defName="RB_GravshipWindowHull"]</xpath>
 				<value>
+					<costStuffCount Operation="SafeReplace">4</costStuffCount>
+					<costList Operation="Safe">
+						<RB_BallisticGlass Operation="SafeAdd">3</RB_BallisticGlass>
+						<RB_Glass Operation="SafeRemove">3</RB_Glass>
+					</costList>
+					<terrainAffordanceNeeded Operation="SafeReplace">Substructure</terrainAffordanceNeeded>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="RB_GravshipPanoramaHull"]</xpath>
+				<value>
+					<costList Operation="Safe">
+						<RB_BallisticGlass Operation="SafeAdd">5</RB_BallisticGlass>
+						<RB_Glass Operation="SafeRemove">6</RB_Glass>
+					</costList>
 					<terrainAffordanceNeeded Operation="SafeReplace">Substructure</terrainAffordanceNeeded>
 				</value>
 			</Operation>

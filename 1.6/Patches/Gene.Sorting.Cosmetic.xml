@@ -62,8 +62,8 @@
 							<displayCategory Operation="AddOrReplace">Skin</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">30</displayOrderInCategory>
 							<statOffsets Operation="Safe">
-								<ArmorRating_Sharp Operation="SafeReplace">0.20</ArmorRating_Sharp>
-								<ArmorRating_Blunt Operation="SafeReplace">0.20</ArmorRating_Blunt>
+								<ArmorRating_Sharp Operation="SafeReplace">0.10</ArmorRating_Sharp>
+								<ArmorRating_Blunt Operation="SafeReplace">0.30</ArmorRating_Blunt>
 							</statOffsets>
 						</value>
 					</Operation>
