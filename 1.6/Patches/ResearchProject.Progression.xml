@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-	<!-- genetics -->
+	<!-- Progression: Genetics -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
 			<li>ferny.progressiongenetics</li>
@@ -31,6 +31,31 @@
 		</caseTrue>
 	</Operation>
 
+	<!-- Vanilla Weapons Expanded -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaexpanded.vwe</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/ResearchProjectDef[defName="VAE_TrooperArmor"]</xpath>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>ludeon.rimworld.royalty</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>Defs/ResearchProjectDef[defName="VAE_SiegebreakerArmor"]</xpath>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Vanilla Furniture Expanded -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
 			<li>vanillaexpanded.vfecore</li>
@@ -43,6 +68,7 @@
 		</caseTrue>
 	</Operation>
 
+	<!-- Vanilla Weapons Expanded -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
 			<li>vanillaexpanded.vwe</li>
@@ -60,4 +86,24 @@
 		</caseTrue>
 	</Operation>
 
+	<!-- Waster's Breath -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>wasterbreath.mod</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaexpanded.varme</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>Defs/ResearchProjectDef[defName="ToxFilterVAEHelmets"]</xpath>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
+	</Operation>
 </Patch>

@@ -1,6 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
+	<!-- psylink -->
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/HediffDef[defName="PsychicAmplifier"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li/statFactors</xpath>
+				<value>
+					<PsychicEntropyMax Operation="SafeRemove"/>
+					<PsychicEntropyRecoveryRate Operation="SafeRemove"/>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[minSeverity="2"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<PsychicEntropyMax Operation="SafeAdd">10</PsychicEntropyMax>
+						<PsychicEntropyRecoveryRate Operation="SafeAdd">0.06</PsychicEntropyRecoveryRate>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[minSeverity="3"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<PsychicEntropyMax Operation="SafeAdd">20</PsychicEntropyMax>
+						<PsychicEntropyRecoveryRate Operation="SafeAdd">0.12</PsychicEntropyRecoveryRate>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[minSeverity="4"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<PsychicEntropyMax Operation="SafeAdd">30</PsychicEntropyMax>
+						<PsychicEntropyRecoveryRate Operation="SafeAdd">0.18</PsychicEntropyRecoveryRate>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[minSeverity="5"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<PsychicEntropyMax Operation="SafeAdd">40</PsychicEntropyMax>
+						<PsychicEntropyRecoveryRate Operation="SafeAdd">0.24</PsychicEntropyRecoveryRate>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[minSeverity="6"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<PsychicEntropyMax Operation="SafeAdd">50</PsychicEntropyMax>
+						<PsychicEntropyRecoveryRate Operation="SafeAdd">0.30</PsychicEntropyRecoveryRate>
+					</statOffsets>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
+
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
 			<li>ludeon.rimworld.royalty</li>
@@ -8,6 +67,16 @@
 		<packageId>true</packageId>
 		<caseTrue>
 			<!-- prosthetics -->
+			<!-- archotech -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="PsychicSensitizer"]/stages/li</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<PsychicSensitivity Operation="SafeReplace">0.4</PsychicSensitivity>
+					</statOffsets>
+				</value>
+			</Operation>
+			<!-- bionic -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/HediffDef[defName="Immunoenhancer"]/stages/li</xpath>
 				<value>
@@ -90,6 +159,23 @@
 					</statFactors>
 					<statOffsets Operation="Safe">
 						<RestFallRateFactor Operation="SafeRemove">0</RestFallRateFactor>
+					</statOffsets>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ludeon.rimworld.biotech</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="PsychofluidRush"]/stages/li</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<PsychicSensitivity Operation="SafeReplace">0.2</PsychicSensitivity>
 					</statOffsets>
 				</value>
 			</Operation>
@@ -280,6 +366,37 @@
 					</capMods>
 				</value>
 			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="VoidTouched"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li</xpath>
+						<value>
+							<statFactors Operation="Safe">
+								<StudyEfficiency Operation="SafeRemove">0</StudyEfficiency>
+								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+							</statFactors>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>resplice.xotr.core</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseFalse>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>HediffDef/stages/li</xpath>
+								<value>
+									<statOffsets Operation="Safe">
+										<StudyEfficiency Operation="SafeAdd">1</StudyEfficiency>
+										<PsychicSensitivity Operation="SafeAdd">2</PsychicSensitivity>
+									</statOffsets>
+								</value>
+							</Operation>
+						</caseFalse>
+					</Operation>
+				</apply>
+			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/HediffDef[defName="Psychophage"]/stages/li</xpath>
 				<value>
@@ -291,12 +408,15 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/HediffDef[defName="RageSpeed"]/stages/li</xpath>
 				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="SafeAdd">Moving</capacity>
+							<offset Operation="SafeAdd">0.75</offset>
+						</li>
+					</capMods>
 					<statFactors Operation="Safe">
 						<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
 					</statFactors>
-					<statOffsets Operation="Safe">
-						<MoveSpeed Operation="SafeAdd">2.8</MoveSpeed>
-					</statOffsets>
 				</value>
 			</Operation>
 		</caseTrue>
@@ -340,6 +460,7 @@
 		</caseTrue>
 	</Operation>
 
+	<!-- Medical System Expansion 2 -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
 			<li>mse2.core</li>
@@ -359,6 +480,40 @@
 				<xpath>Defs/HediffDef/comps/li[@Class="MSE2.HediffCompProperties_ModuleHolder" and maxModules="2"]</xpath>
 				<value>
 					<maxModules>1</maxModules>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Waster's Breath -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>wasterbreath.mod</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="ToxApparelWasterStimulusMask"]</xpath>
+				<value>
+					<comps Operation="Safe">
+						<li Class="HediffCompProperties_RemoveIfApparelDropped" Operation="SafeRemove">0</li>
+						<li Class="Tox.HediffCompProperties_ToxFilterWasterStimulus" Operation="Safe" CheckAttributes="True">
+							<maxPollutionSeverity Operation="SafeReplace">0.49</maxPollutionSeverity>
+							<maxStimulusSeverity Operation="SafeReplace">0.49</maxStimulusSeverity>
+						</li>
+					</comps>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="ToxApparelWasterStimulusHelmet"]</xpath>
+				<value>
+					<comps Operation="Safe">
+						<li Class="HediffCompProperties_RemoveIfApparelDropped" Operation="SafeRemove">0</li>
+						<li Class="Tox.HediffCompProperties_ToxFilterWasterStimulus" Operation="Safe" CheckAttributes="True">
+							<maxPollutionSeverity Operation="SafeReplace">1</maxPollutionSeverity>
+							<maxStimulusSeverity Operation="SafeReplace">1</maxStimulusSeverity>
+						</li>
+					</comps>
 				</value>
 			</Operation>
 		</caseTrue>

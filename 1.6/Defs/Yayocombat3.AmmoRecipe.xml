@@ -127,7 +127,7 @@
 		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<effectWorking>Smith</effectWorking>
 		<soundWorking>Recipe_Machining</soundWorking>
-		<researchPrerequisite>ChargedShot</researchPrerequisite>
+		<researchPrerequisite>BeamWeapons</researchPrerequisite>
 		<recipeUsers>
 			<li>FabricationBench</li>
 		</recipeUsers>
