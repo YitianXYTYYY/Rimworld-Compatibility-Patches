@@ -266,6 +266,9 @@
 							<coversFloor Operation="SafeRemove"/>
 							<minifiedDef Operation="SafeAdd">MinifiedThing</minifiedDef>
 							<pathCost Operation="SafeAdd">40</pathCost>
+							<statBases Operation="Safe">
+								<Mass Operation="SafeAdd">10</Mass>
+							</statBases>
 							<staticSunShadowHeight Operation="SafeRemove"/>
 							<terrainAffordanceNeeded Operation="SafeReplace">Light</terrainAffordanceNeeded>
 							<thingCategories Operation="Safe">

@@ -21,9 +21,9 @@
 						<MeleeDamageFactor Operation="SafeRemove">0</MeleeDamageFactor>
 						<InjuryHealingFactor Operation="SafeRemove">0</InjuryHealingFactor>
 					</statFactors>
-					<statOffsets>
-						<InjuryHealingFactor Operation="SafeAdd">0.5</InjuryHealingFactor>
-						<MeleeDamageFactor Operation="SafeAdd">1</MeleeDamageFactor>
+					<statOffsets Operation="Safe">
+						<InjuryHealingFactor Operation="SafeAdd">1</InjuryHealingFactor>
+						<MeleeDamageFactor Operation="SafeAdd">0.5</MeleeDamageFactor>
 						<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
 					</statOffsets>
 				</value>

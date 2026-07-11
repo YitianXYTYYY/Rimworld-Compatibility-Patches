@@ -154,88 +154,87 @@
 					</statOffsets>
 				</value>
 			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_Stenothermic"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<ComfyTemperatureMin Operation="SafeReplace">5</ComfyTemperatureMin>
+						<ComfyTemperatureMax Operation="SafeReplace">-5</ComfyTemperatureMax>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>oskarpotocki.vfe.insectoid2</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<!-- evolutions -->
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_InsectRostrum"]</xpath>
+						<value>
+							<statFactors Operation="Safe">
+								<EatingSpeed Operation="SafeRemove">0</EatingSpeed>
+							</statFactors>
+							<statOffsets Operation="Safe">
+								<EatingSpeed Operation="SafeAdd">3</EatingSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_InfraredSensors"]</xpath>
+						<value>
+							<statFactors Operation="Safe">
+								<ShootingAccuracyFactor_Medium Operation="SafeRemove">0</ShootingAccuracyFactor_Medium>
+								<ShootingAccuracyFactor_Long Operation="SafeRemove">0</ShootingAccuracyFactor_Long>
+							</statFactors>
+							<statOffsets Operation="Safe">
+								<ShootingAccuracyFactor_Medium Operation="SafeAdd">0.1</ShootingAccuracyFactor_Medium>
+								<ShootingAccuracyFactor_Long Operation="SafeAdd">0.1</ShootingAccuracyFactor_Long>
+							</statOffsets>
+						</value>
+					</Operation>
+					<!-- mutations -->
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_Microsized"]</xpath>
+						<value>
+							<statFactors Operation="Safe">
+								<LeatherAmount Operation="SafeRemove">0</LeatherAmount>
+								<MeatAmount Operation="SafeRemove">0</MeatAmount>
+								<StaggerDurationFactor Operation="SafeRemove">0</StaggerDurationFactor>
+								<VEF_FoodCapacityMultiplier Operation="SafeRemove">0</VEF_FoodCapacityMultiplier>
+							</statFactors>
+							<statOffsets Operation="Safe">
+								<StaggerDurationFactor Operation="SafeAdd">1</StaggerDurationFactor>
+								<VEF_BodySize_Offset Operation="SafeReplace">-0.4</VEF_BodySize_Offset>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_Colossal"]</xpath>
+						<value>
+							<statFactors Operation="Safe">
+								<LeatherAmount Operation="SafeRemove">0</LeatherAmount>
+								<MeatAmount Operation="SafeRemove">0</MeatAmount>
+								<MeleeDodgeChance Operation="SafeReplace">0.2</MeleeDodgeChance>
+								<VEF_FoodCapacityMultiplier Operation="SafeRemove">0</VEF_FoodCapacityMultiplier>
+							</statFactors>
+							<statOffsets Operation="Safe">
+								<VEF_BodySize_Offset Operation="SafeReplace">0.6</VEF_BodySize_Offset>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_Pyrophiliac"]</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<ComfyTemperatureMin Operation="SafeReplace">5</ComfyTemperatureMin>
+							</statOffsets>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
 		</caseTrue>
-		<Operation Class="XmlExtensions.HybridPatch">
-			<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_Stenothermic"]</xpath>
-			<value>
-				<statOffsets Operation="Safe">
-					<ComfyTemperatureMin Operation="SafeReplace">5</ComfyTemperatureMin>
-					<ComfyTemperatureMax Operation="SafeReplace">-5</ComfyTemperatureMax>
-				</statOffsets>
-			</value>
-		</Operation>
-
-		<Operation Class="XmlExtensions.FindMod">
-			<mods>
-				<li>oskarpotocki.vfe.insectoid2</li>
-			</mods>
-			<packageId>true</packageId>
-			<caseTrue>
-				<!-- evolutions -->
-				<Operation Class="XmlExtensions.HybridPatch">
-					<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_InsectRostrum"]</xpath>
-					<value>
-						<statFactors Operation="Safe">
-							<EatingSpeed Operation="SafeRemove">0</EatingSpeed>
-						</statFactors>
-						<statOffsets Operation="Safe">
-							<EatingSpeed Operation="SafeAdd">3</EatingSpeed>
-						</statOffsets>
-					</value>
-				</Operation>
-				<Operation Class="XmlExtensions.HybridPatch">
-					<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_InfraredSensors"]</xpath>
-					<value>
-						<statFactors Operation="Safe">
-							<ShootingAccuracyFactor_Medium Operation="SafeRemove">0</ShootingAccuracyFactor_Medium>
-							<ShootingAccuracyFactor_Long Operation="SafeRemove">0</ShootingAccuracyFactor_Long>
-						</statFactors>
-						<statOffsets Operation="Safe">
-							<ShootingAccuracyFactor_Medium Operation="SafeAdd">0.1</ShootingAccuracyFactor_Medium>
-							<ShootingAccuracyFactor_Long Operation="SafeAdd">0.1</ShootingAccuracyFactor_Long>
-						</statOffsets>
-					</value>
-				</Operation>
-				<!-- mutations -->
-				<Operation Class="XmlExtensions.HybridPatch">
-					<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_Microsized"]</xpath>
-					<value>
-						<statFactors Operation="Safe">
-							<LeatherAmount Operation="SafeRemove">0</LeatherAmount>
-							<MeatAmount Operation="SafeRemove">0</MeatAmount>
-							<StaggerDurationFactor Operation="SafeRemove">0</StaggerDurationFactor>
-							<VEF_FoodCapacityMultiplier Operation="SafeRemove">0</VEF_FoodCapacityMultiplier>
-						</statFactors>
-						<statOffsets Operation="Safe">
-							<StaggerDurationFactor Operation="SafeAdd">1</StaggerDurationFactor>
-							<VEF_BodySize_Offset Operation="SafeReplace">-0.4</VEF_BodySize_Offset>
-						</statOffsets>
-					</value>
-				</Operation>
-				<Operation Class="XmlExtensions.HybridPatch">
-					<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_Colossal"]</xpath>
-					<value>
-						<statFactors Operation="Safe">
-							<LeatherAmount Operation="SafeRemove">0</LeatherAmount>
-							<MeatAmount Operation="SafeRemove">0</MeatAmount>
-							<MeleeDodgeChance Operation="SafeReplace">0.2</MeleeDodgeChance>
-							<VEF_FoodCapacityMultiplier Operation="SafeRemove">0</VEF_FoodCapacityMultiplier>
-						</statFactors>
-						<statOffsets Operation="Safe">
-							<VEF_BodySize_Offset Operation="SafeReplace">0.6</VEF_BodySize_Offset>
-						</statOffsets>
-					</value>
-				</Operation>
-				<Operation Class="XmlExtensions.HybridPatch">
-					<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_Pyrophiliac"]</xpath>
-					<value>
-						<statOffsets Operation="Safe">
-							<ComfyTemperatureMin Operation="SafeReplace">5</ComfyTemperatureMin>
-						</statOffsets>
-					</value>
-				</Operation>
-			</caseTrue>
-		</Operation>
 	</Operation>
 
 </Patch>
