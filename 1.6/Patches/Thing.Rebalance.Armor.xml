@@ -36,15 +36,183 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<!-- eltex -->
+			<!-- eltex (make craftable) -->
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Apparel_PsyfocusHelmet" 
-					or defName="Apparel_PsyfocusShirt" 
-					or defName="Apparel_PsyfocusVest"]</xpath>
+				<xpath>Defs/ThingDef[@Name="PsychicApparelBase"]</xpath>
+				<value>
+					<techLevel Operation="SafeReplace">Spacer</techLevel>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Apparel_PsyfocusHelmet"]</xpath>
 				<value>
 					<equippedStatOffsets Operation="Safe">
 						<PsychicSensitivityOffset Operation="SafeReplace">0.2</PsychicSensitivityOffset>
 					</equippedStatOffsets>
+					<costList Operation="Safe">
+						<Gold Operation="SafeAdd">2</Gold>
+					</costList>
+					<costStuffCount Operation="SafeAdd">50</costStuffCount>
+					<stuffCategories Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">Metallic</li>
+					</stuffCategories>
+					<recipeMaker Operation="Safe">
+						<recipeUsers Operation="Safe">
+							<li Operation="SafeAdd" Compare="InnerText">ElectricSmithy</li>
+							<li Operation="SafeAdd" Compare="InnerText">FueledSmithy</li>
+							<li MayRequire="vanillaexpanded.helixiengas" Operation="SafeAdd" Compare="InnerText">VHGE_GasPoweredSmithy</li>
+						</recipeUsers>
+						<researchPrerequisites Inherit="False" Operation="Safe">
+							<li Operation="SafeAdd" Compare="InnerText">EltexApparel</li>
+						</researchPrerequisites>
+						<effectWorking Operation="SafeAdd">Smith</effectWorking>
+						<soundWorking Operation="SafeAdd">Recipe_Smith</soundWorking>
+						<unfinishedThingDef Operation="SafeAdd">UnfinishedMetallicTechArmor</unfinishedThingDef>
+						<workSkill Operation="SafeAdd">Crafting</workSkill>
+						<workSpeedStat Operation="SafeAdd">GeneralLaborSpeed</workSpeedStat>
+						<skillRequirements Operation="Safe">
+							<Crafting Operation="SafeAdd">8</Crafting>
+						</skillRequirements>
+					</recipeMaker>
+					<statBases Operation="Safe">
+						<ArmorRating_Blunt Operation="SafeRemove">0</ArmorRating_Blunt>
+						<ArmorRating_Heat Operation="SafeRemove">0</ArmorRating_Heat>
+						<ArmorRating_Sharp Operation="SafeRemove">0</ArmorRating_Sharp>
+						<Insulation_Cold Operation="SafeRemove">0</Insulation_Cold>
+      					<Insulation_Heat Operation="SafeRemove">0</Insulation_Heat>
+						<MarketValue Operation="SafeRemove">0</MarketValue>
+						<StuffEffectMultiplierArmor Operation="SafeAdd">0.5</StuffEffectMultiplierArmor>
+						<StuffEffectMultiplierInsulation_Cold Operation="SafeAdd">0.40</StuffEffectMultiplierInsulation_Cold>
+						<StuffEffectMultiplierInsulation_Heat Operation="SafeAdd">0.10</StuffEffectMultiplierInsulation_Heat>
+						<WorkToMake Operation="SafeAdd">18000</WorkToMake>
+					</statBases>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Apparel_EltexSkullcap"]</xpath>
+				<value>
+					<costList Operation="Safe">
+						<Gold Operation="SafeAdd">4</Gold>
+					</costList>
+					<costStuffCount Operation="SafeAdd">40</costStuffCount>
+					<stuffCategories Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">Fabric</li>
+						<li Operation="SafeAdd" Compare="InnerText">Leathery</li>
+					</stuffCategories>
+					<recipeMaker Operation="Safe">
+						<recipeUsers Operation="Safe">
+							<li Operation="SafeAdd" Compare="InnerText">ElectricTailoringBench</li>
+							<li Operation="SafeAdd" Compare="InnerText">HandTailoringBench</li>
+						</recipeUsers>
+						<researchPrerequisites Inherit="False" Operation="Safe">
+							<li Operation="SafeAdd" Compare="InnerText">EltexApparel</li>
+						</researchPrerequisites>
+						<effectWorking Operation="SafeAdd">Tailor</effectWorking>
+						<soundWorking Operation="SafeAdd">Recipe_Tailor</soundWorking>
+						<unfinishedThingDef Operation="SafeAdd">UnfinishedApparel</unfinishedThingDef>
+						<workSkill Operation="SafeAdd">Crafting</workSkill>
+						<workSpeedStat Operation="SafeAdd">GeneralLaborSpeed</workSpeedStat>
+						<skillRequirements Operation="Safe">
+							<Crafting Operation="SafeAdd">8</Crafting>
+						</skillRequirements>
+					</recipeMaker>
+					<statBases Operation="Safe">
+						<MarketValue Operation="SafeRemove">0</MarketValue>
+						<StuffEffectMultiplierArmor Operation="SafeAdd">0.2</StuffEffectMultiplierArmor>
+						<StuffEffectMultiplierInsulation_Cold Operation="SafeAdd">0.10</StuffEffectMultiplierInsulation_Cold>
+						<StuffEffectMultiplierInsulation_Heat Operation="SafeAdd">0.40</StuffEffectMultiplierInsulation_Heat>
+						<WorkToMake Operation="SafeAdd">12000</WorkToMake>
+					</statBases>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Apparel_PsyfocusShirt"]</xpath>
+				<value>
+					<equippedStatOffsets Operation="Safe">
+						<PsychicSensitivityOffset Operation="SafeReplace">0.2</PsychicSensitivityOffset>
+					</equippedStatOffsets>
+					<costList Operation="Safe">
+						<Gold Operation="SafeAdd">2</Gold>
+					</costList>
+					<costStuffCount Operation="SafeAdd">45</costStuffCount>
+					<stuffCategories Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">Fabric</li>
+						<li Operation="SafeAdd" Compare="InnerText">Leathery</li>
+					</stuffCategories>
+					<recipeMaker Operation="Safe">
+						<recipeUsers Operation="Safe">
+							<li Operation="SafeAdd" Compare="InnerText">ElectricTailoringBench</li>
+							<li Operation="SafeAdd" Compare="InnerText">HandTailoringBench</li>
+						</recipeUsers>
+						<researchPrerequisites Inherit="False" Operation="Safe">
+							<li Operation="SafeAdd" Compare="InnerText">EltexApparel</li>
+						</researchPrerequisites>
+						<effectWorking Operation="SafeAdd">Tailor</effectWorking>
+						<soundWorking Operation="SafeAdd">Recipe_Tailor</soundWorking>
+						<unfinishedThingDef Operation="SafeAdd">UnfinishedApparel</unfinishedThingDef>
+						<workSkill Operation="SafeAdd">Crafting</workSkill>
+						<workSpeedStat Operation="SafeAdd">GeneralLaborSpeed</workSpeedStat>
+						<skillRequirements Operation="Safe">
+							<Crafting Operation="SafeAdd">8</Crafting>
+						</skillRequirements>
+					</recipeMaker>
+					<statBases Operation="Safe">
+						<ArmorRating_Blunt Operation="SafeRemove">0</ArmorRating_Blunt>
+						<ArmorRating_Heat Operation="SafeRemove">0</ArmorRating_Heat>
+						<ArmorRating_Sharp Operation="SafeRemove">0</ArmorRating_Sharp>
+						<Insulation_Cold Operation="SafeRemove">0</Insulation_Cold>
+      					<Insulation_Heat Operation="SafeRemove">0</Insulation_Heat>
+						<MarketValue Operation="SafeRemove">0</MarketValue>
+						<StuffEffectMultiplierArmor Operation="SafeAdd">0.2</StuffEffectMultiplierArmor>
+						<StuffEffectMultiplierInsulation_Cold Operation="SafeAdd">0.4</StuffEffectMultiplierInsulation_Cold>
+						<StuffEffectMultiplierInsulation_Heat Operation="SafeAdd">0.1</StuffEffectMultiplierInsulation_Heat>
+						<WorkToMake Operation="SafeAdd">24000</WorkToMake>
+					</statBases>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Apparel_PsyfocusVest"]</xpath>
+				<value>
+					<equippedStatOffsets Operation="Safe">
+						<PsychicSensitivityOffset Operation="SafeReplace">0.2</PsychicSensitivityOffset>
+					</equippedStatOffsets>
+					<costList Operation="Safe">
+						<Gold Operation="SafeAdd">2</Gold>
+					</costList>
+					<costStuffCount Operation="SafeAdd">45</costStuffCount>
+					<stuffCategories Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">Fabric</li>
+						<li Operation="SafeAdd" Compare="InnerText">Leathery</li>
+					</stuffCategories>
+					<recipeMaker Operation="Safe">
+						<recipeUsers Operation="Safe">
+							<li Operation="SafeAdd" Compare="InnerText">ElectricTailoringBench</li>
+							<li Operation="SafeAdd" Compare="InnerText">HandTailoringBench</li>
+						</recipeUsers>
+						<researchPrerequisites Inherit="False" Operation="Safe">
+							<li Operation="SafeAdd" Compare="InnerText">EltexApparel</li>
+						</researchPrerequisites>
+						<effectWorking Operation="SafeAdd">Tailor</effectWorking>
+						<soundWorking Operation="SafeAdd">Recipe_Tailor</soundWorking>
+						<unfinishedThingDef Operation="SafeAdd">UnfinishedApparel</unfinishedThingDef>
+						<workSkill Operation="SafeAdd">Crafting</workSkill>
+						<workSpeedStat Operation="SafeAdd">GeneralLaborSpeed</workSpeedStat>
+						<skillRequirements Operation="Safe">
+							<Crafting Operation="SafeAdd">8</Crafting>
+						</skillRequirements>
+					</recipeMaker>
+					<statBases Operation="Safe">
+						<ArmorRating_Blunt Operation="SafeRemove">0</ArmorRating_Blunt>
+						<ArmorRating_Heat Operation="SafeRemove">0</ArmorRating_Heat>
+						<ArmorRating_Sharp Operation="SafeRemove">0</ArmorRating_Sharp>
+						<Insulation_Cold Operation="SafeRemove">0</Insulation_Cold>
+      					<Insulation_Heat Operation="SafeRemove">0</Insulation_Heat>
+						<MarketValue Operation="SafeRemove">0</MarketValue>
+						<StuffEffectMultiplierArmor Operation="SafeAdd">0.2</StuffEffectMultiplierArmor>
+						<StuffEffectMultiplierInsulation_Cold Operation="SafeAdd">0.6</StuffEffectMultiplierInsulation_Cold>
+						<StuffEffectMultiplierInsulation_Heat Operation="SafeAdd">0.1</StuffEffectMultiplierInsulation_Heat>
+						<WorkToMake Operation="SafeAdd">24000</WorkToMake>
+					</statBases>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
@@ -53,13 +221,51 @@
 					<equippedStatOffsets Operation="Safe">
 						<PsychicSensitivityOffset Operation="SafeReplace">0.4</PsychicSensitivityOffset>
 					</equippedStatOffsets>
+					<costList Operation="Safe">
+						<Gold Operation="SafeAdd">4</Gold>
+					</costList>
+					<costStuffCount Operation="SafeAdd">100</costStuffCount>
+					<stuffCategories Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">Fabric</li>
+						<li Operation="SafeAdd" Compare="InnerText">Leathery</li>
+					</stuffCategories>
+					<recipeMaker Operation="Safe">
+						<recipeUsers Operation="Safe">
+							<li Operation="SafeAdd" Compare="InnerText">ElectricTailoringBench</li>
+							<li Operation="SafeAdd" Compare="InnerText">HandTailoringBench</li>
+						</recipeUsers>
+						<researchPrerequisites Inherit="False" Operation="Safe">
+							<li Operation="SafeAdd" Compare="InnerText">EltexApparel</li>
+						</researchPrerequisites>
+						<effectWorking Operation="SafeAdd">Tailor</effectWorking>
+						<soundWorking Operation="SafeAdd">Recipe_Tailor</soundWorking>
+						<unfinishedThingDef Operation="SafeAdd">UnfinishedApparel</unfinishedThingDef>
+						<workSkill Operation="SafeAdd">Crafting</workSkill>
+						<workSpeedStat Operation="SafeAdd">GeneralLaborSpeed</workSpeedStat>
+						<skillRequirements Operation="Safe">
+							<Crafting Operation="SafeAdd">8</Crafting>
+						</skillRequirements>
+					</recipeMaker>
+					<statBases Operation="Safe">
+						<ArmorRating_Blunt Operation="SafeRemove">0</ArmorRating_Blunt>
+						<ArmorRating_Heat Operation="SafeRemove">0</ArmorRating_Heat>
+						<ArmorRating_Sharp Operation="SafeRemove">0</ArmorRating_Sharp>
+						<Insulation_Cold Operation="SafeRemove">0</Insulation_Cold>
+      					<Insulation_Heat Operation="SafeRemove">0</Insulation_Heat>
+						<MarketValue Operation="SafeRemove">0</MarketValue>
+						<StuffEffectMultiplierArmor Operation="SafeAdd">0.2</StuffEffectMultiplierArmor>
+						<StuffEffectMultiplierInsulation_Cold Operation="SafeAdd">0.8</StuffEffectMultiplierInsulation_Cold>
+						<StuffEffectMultiplierInsulation_Heat Operation="SafeAdd">0.25</StuffEffectMultiplierInsulation_Heat>
+						<WorkToMake Operation="SafeAdd">36000</WorkToMake>
+					</statBases>
 				</value>
 			</Operation>
+
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="MeleeWeapon_PsyfocusStaff"]</xpath>
 				<value>
 					<equippedStatOffsets Operation="Safe">
-						<PsychicSensitivityOffset Operation="SafeReplace">0.6</PsychicSensitivityOffset>
+						<PsychicSensitivityOffset Operation="SafeReplace">0.8</PsychicSensitivityOffset>
 					</equippedStatOffsets>
 				</value>
 			</Operation>
@@ -460,6 +666,15 @@
 						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 						<!--PsychicSensitivityOffset Operation="SafeAdd">-0.5</PsychicSensitivityOffset-->
 					</equippedStatOffsets>
+					<recipeMaker Operation="Safe">
+						<skillRequirements Operation="Safe">
+							<Crafting Operation="SafeReplace">6</Crafting>
+						</skillRequirements>
+						<recipeUsers Inherit="False" Operation="Safe">
+							<li Operation="SafeRemove" Compare="InnerText">FabricationBench</li>
+							<li Operation="SafeAdd" Compare="InnerText">TableMachining</li>
+						</recipeUsers>
+					</recipeMaker>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
@@ -469,6 +684,15 @@
 						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 						<!--PsychicSensitivityOffset Operation="SafeAdd">-0.5</PsychicSensitivityOffset-->
 					</equippedStatOffsets>
+					<recipeMaker Operation="Safe">
+						<skillRequirements Operation="Safe">
+							<Crafting Operation="SafeReplace">6</Crafting>
+						</skillRequirements>
+						<recipeUsers Inherit="False" Operation="Safe">
+							<li Operation="SafeRemove" Compare="InnerText">FabricationBench</li>
+							<li Operation="SafeAdd" Compare="InnerText">TableMachining</li>
+						</recipeUsers>
+					</recipeMaker>
 				</value>
 			</Operation>
 
@@ -706,6 +930,9 @@
 					<costList Operation="Safe">
 						<ComponentIndustrial Operation="SafeRemove">0</ComponentIndustrial>
 						<ComponentSpacer Operation="SafeReplace">2</ComponentSpacer>
+						<Plasteel Operation="SafeReplace">60</Plasteel>
+						<Steel Operation="SafeRemove">0</Steel>
+						<Uranium Operation="SafeAdd">20</Uranium>
 					</costList>
 					<equippedStatOffsets Operation="Safe">
 						<CarryingCapacity Operation="SafeAdd">30</CarryingCapacity>
@@ -718,6 +945,9 @@
 							<li Operation="SafeAdd" Compare="InnerText">AdvancedFabrication</li>
 						</researchPrerequisites>
 					</recipeMaker>
+					<statBases Operation="Safe">
+						<MaxHitPoints Operation="SafeAdd">300</MaxHitPoints>
+					</statBases>
 				</value>
 			</Operation>
 		</caseTrue>

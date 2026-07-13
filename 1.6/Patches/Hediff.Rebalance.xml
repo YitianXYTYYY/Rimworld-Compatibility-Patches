@@ -460,6 +460,23 @@
 		</caseTrue>
 	</Operation>
 
+	<!-- [FSF] Vanilla Bionics Expansion -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>frozensnowfox.vanillabionicsexpansion</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- archotech -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="FSFArchotechStomach"]/stages/li</xpath>
+				<value>
+					<hungerRateFactor MayRequire="Ludeon.RimWorld.Royalty" Operation="SafeReplace">0.2</hungerRateFactor>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 	<!-- Medical System Expansion 2 -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
@@ -467,12 +484,6 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/HediffDef[@Name="AddedBodyPart_Limb_Archotech"]</xpath>
-				<value>
-					<defaultLabelColor Operation="AddOrReplace">(139, 143, 104)</defaultLabelColor>
-				</value>
-			</Operation>
 			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 				<xpath>Defs/HediffDef/comps/li[@Class="MSE2.HediffCompProperties_ModuleHolder" and maxModules="1"]</xpath>
 			</Operation>
@@ -481,6 +492,83 @@
 				<value>
 					<maxModules>1</maxModules>
 				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[@Name="AddedBodyPart_Limb_Archotech"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef</xpath>
+						<value>
+							<defaultLabelColor Operation="AddOrReplace">(139, 143, 104)</defaultLabelColor>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>v1024.ebframework</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>HediffDef</xpath>
+								<value>
+									<comps Operation="Safe">
+										<li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust" Operation="Safe" CheckAttributes="True">
+											<scaleAdjustment Operation="SafeReplace">0.5</scaleAdjustment>
+										</li>
+									</comps>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[@Name="AddedBodyPart_Limb_Bionic"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef</xpath>
+						<value>
+							<defaultLabelColor Operation="AddOrReplace">(0.6, 0.6, 1.0)</defaultLabelColor>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>v1024.ebframework</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>HediffDef</xpath>
+								<value>
+									<comps Operation="Safe">
+										<li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust" Operation="Safe" CheckAttributes="True">
+											<scaleAdjustment Operation="SafeReplace">0.25</scaleAdjustment>
+										</li>
+									</comps>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>v1024.ebframework</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/HediffDef[defName="ArchotechArm" or 
+							defName="ArchotechLeg" or 
+							çdefName="BionicArm" or 
+							çdefName="BionicLeg"]</xpath>
+						<value>
+							<comps Operation="Safe">
+								<li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust" Operation="SafeRemove" CheckAttributes="True">0</li>
+							</comps>
+						</value>
+					</Operation>
+				</caseTrue>
 			</Operation>
 		</caseTrue>
 	</Operation>
@@ -493,26 +581,11 @@
 		<packageId>true</packageId>
 		<caseTrue>
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/HediffDef[defName="ToxApparelWasterStimulusMask"]</xpath>
+				<xpath>Defs/HediffDef[defName="ToxApparelWasterStimulusMask" or 
+					defName="ToxApparelWasterStimulusHelmet"]</xpath>
 				<value>
 					<comps Operation="Safe">
 						<li Class="HediffCompProperties_RemoveIfApparelDropped" Operation="SafeRemove">0</li>
-						<li Class="Tox.HediffCompProperties_ToxFilterWasterStimulus" Operation="Safe" CheckAttributes="True">
-							<maxPollutionSeverity Operation="SafeReplace">0.49</maxPollutionSeverity>
-							<maxStimulusSeverity Operation="SafeReplace">0.49</maxStimulusSeverity>
-						</li>
-					</comps>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/HediffDef[defName="ToxApparelWasterStimulusHelmet"]</xpath>
-				<value>
-					<comps Operation="Safe">
-						<li Class="HediffCompProperties_RemoveIfApparelDropped" Operation="SafeRemove">0</li>
-						<li Class="Tox.HediffCompProperties_ToxFilterWasterStimulus" Operation="Safe" CheckAttributes="True">
-							<maxPollutionSeverity Operation="SafeReplace">1</maxPollutionSeverity>
-							<maxStimulusSeverity Operation="SafeReplace">1</maxStimulusSeverity>
-						</li>
 					</comps>
 				</value>
 			</Operation>

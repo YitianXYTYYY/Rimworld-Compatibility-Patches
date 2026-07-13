@@ -164,6 +164,26 @@
 		</caseTrue>
 	</Operation>
 
+	<!-- [SYR] Prosthetic Table (Continued) -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>mlie.syrprosthetictable</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- gravship hull -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="TableSyrProsthetics"]</xpath>
+				<value>
+					<researchPrerequisites Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">Machining</li>
+						<li Operation="SafeAdd" Compare="InnerText">Prosthetics</li>
+					</researchPrerequisites>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 	<!-- ReBuild: Doors and Corners -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>

@@ -185,7 +185,7 @@
 							<capMods Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
 									<capacity Operation="SafeAdd">Moving</capacity>
-									<offset Operation="SafeAdd">0.05</offset>
+									<offset Operation="SafeAdd">0.1</offset>
 								</li>
 							</capMods>
 						</value>
@@ -197,14 +197,14 @@
 							<capMods Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
 									<capacity Operation="SafeAdd">Moving</capacity>
-									<offset Operation="SafeAdd">0.1</offset>
+									<offset Operation="SafeAdd">0.15</offset>
 								</li>
 							</capMods>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.PatchOperationAdd">
 						<xpath>HediffDef/stages</xpath>
-						<Order>Prepend</Order>
+						<order>Prepend</order>
 						<value>
 							<li>
 								<label>inactive</label>
