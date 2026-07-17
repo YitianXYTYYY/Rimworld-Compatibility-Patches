@@ -36,6 +36,9 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_InsectMandibles"]</xpath>
 				<value>
+					<customEffectDescriptions Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">Causes cuts when using unarmed attacks.</li>
+					</customEffectDescriptions>
 					<statFactors Operation="Safe">
 						<EatingSpeed Operation="SafeRemove">0</EatingSpeed>
 					</statFactors>
@@ -102,8 +105,41 @@
 				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_Serotonin"]</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="SafeAdd">Consciousness</capacity>
+							<offset Operation="SafeAdd">-0.2</offset>
+						</li>
+					</capMods>
+					<modExtensions Operation="Safe">
+						<li Class="VEF.Genes.GeneExtension" Operation="Safe" CheckAttributes="True">
+							<hediffsToBodyParts Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText" XPathLocal="hediff">
+									<hediff>VRE_Serotonin</hediff>
+								</li>
+							</hediffsToBodyParts>
+						</li>
+					</modExtensions>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThoughtDef[defName="VRE_Serotonin"]</xpath>
+				<value>
+					<workerClass Operation="SafeReplace">ThoughtWorker_AlwaysActive</workerClass>
+					<hediff Operation="SafeRemove">VRE_Serotonin</hediff>
+					<requiredGenes Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">VRE_Serotonin</li>
+					</requiredGenes>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_RipperBlades"]</xpath>
 				<value>
+					<customEffectDescriptions Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">Causes cuts when using unarmed attacks.</li>
+					</customEffectDescriptions>
 					<statFactors Operation="Safe">
 						<WorkSpeedGlobal Operation="SafeAdd">0.8</WorkSpeedGlobal>
 					</statFactors>
@@ -139,7 +175,7 @@
 						<IncomingDamageFactor Operation="SafeRemove">0</IncomingDamageFactor>
 					</statFactors>
 					<statOffsets Operation="Safe">
-						<IncomingDamageFactor Operation="SafeReplace">0.5</IncomingDamageFactor>
+						<IncomingDamageFactor Operation="SafeAdd">0.5</IncomingDamageFactor>
 					</statOffsets>
 				</value>
 			</Operation>
@@ -150,7 +186,7 @@
 						<RestFallRateFactor Operation="SafeRemove">0</RestFallRateFactor>
 					</statFactors>
 					<statOffsets Operation="Safe">
-						<RestFallRateFactor Operation="SafeReplace">0.8</RestFallRateFactor>
+						<RestFallRateFactor Operation="SafeAdd">0.8</RestFallRateFactor>
 					</statOffsets>
 				</value>
 			</Operation>

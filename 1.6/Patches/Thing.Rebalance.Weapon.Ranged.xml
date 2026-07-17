@@ -8,48 +8,6 @@
 			@Name="MeleeWeaponUltratech"]/comps/li[@Class="CompProperties_Art"]</xpath>
 	</Operation>
 
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>mlie.yayoscombat3</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>			
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Pilum_Thrown"]</xpath>
-				<value>
-					<projectile Operation="SafeReplace">
-						<damageDef>RangedStab</damageDef>
-						<damageAmountBase>25</damageAmountBase>
-						<stoppingPower>2.5</stoppingPower>
-						<armorPenetrationBase>0.10</armorPenetrationBase>
-						<speed>26</speed>
-					</projectile>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Bullet_AssaultRifle"]</xpath>
-				<value>
-					<projectile Operation="SafeReplace">
-						<damageDef>Bullet</damageDef>
-						<damageAmountBase>11</damageAmountBase>
-						<speed>70</speed>
-					</projectile>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Bullet_BoltActionRifle"]</xpath>
-				<value>
-					<projectile Operation="SafeReplace">
-						<damageDef>Bullet</damageDef>
-						<damageAmountBase>18</damageAmountBase>
-						<stoppingPower>1.5</stoppingPower>
-						<speed>70</speed>
-					</projectile>
-				</value>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
 	<!-- Ammo assign -->
 	<!-- Core -->
 	<Operation Class="XmlExtensions.HybridPatch">
@@ -620,6 +578,9 @@
 					<weaponTags Operation="Safe">
 						<li Operation="Add">ammoDef_AmmoIndustrial/10/2</li>
 					</weaponTags>
+					<recipeMaker Operation="Safe">
+						<researchPrerequisite Operation="SafeReplace">Gunsmithing</researchPrerequisite>
+					</recipeMaker>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
@@ -862,6 +823,49 @@
 					<weaponTags Operation="Safe">
 						<li Operation="Add">ammo_none</li>
 					</weaponTags>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!--Yayo's Combat 3 (Continued) -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>mlie.yayoscombat3</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>			
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Pilum_Thrown"]</xpath>
+				<value>
+					<projectile Operation="SafeReplace">
+						<damageDef>RangedStab</damageDef>
+						<damageAmountBase>25</damageAmountBase>
+						<stoppingPower>2.5</stoppingPower>
+						<armorPenetrationBase>0.10</armorPenetrationBase>
+						<speed>26</speed>
+					</projectile>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Bullet_AssaultRifle"]</xpath>
+				<value>
+					<projectile Operation="SafeReplace">
+						<damageDef>Bullet</damageDef>
+						<damageAmountBase>11</damageAmountBase>
+						<speed>70</speed>
+					</projectile>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Bullet_BoltActionRifle"]</xpath>
+				<value>
+					<projectile Operation="SafeReplace">
+						<damageDef>Bullet</damageDef>
+						<damageAmountBase>18</damageAmountBase>
+						<stoppingPower>1.5</stoppingPower>
+						<speed>70</speed>
+					</projectile>
 				</value>
 			</Operation>
 		</caseTrue>

@@ -44,6 +44,76 @@
 		</caseTrue>
 	</Operation>
 
+	<!-- Vanilla Quests Expanded - Ancients -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaquestsexpanded.ancients</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="VQEA_PlasteelClaws"]</xpath>
+				<value>
+					<comps Operation="Safe">
+						<li Class="HediffCompProperties_VerbGiver" Operation="Safe" CheckAttributes="True">
+							<tools Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="label">
+									<label Operation="Safe">plasteel claw</label>
+									<power Operation="SafeReplace">24</power>
+								</li>
+							</tools>
+						</li>
+					</comps>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="VQEA_Enormous"]/stages/li</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeRemove"/>
+					<hungerRateFactorOffset Operation="SafeAdd">1</hungerRateFactorOffset>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="VQEA_HemocollapseSyndrome"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.0"]</xpath>
+						<value>
+							<statFactors Operation="Safe">
+								<ImmunityGainSpeed Operation="SafeAdd">0.9</ImmunityGainSpeed>
+							</statFactors>
+							<statOffsets Operation="Safe">
+								<ImmunityGainSpeed Operation="SafeRemove">0</ImmunityGainSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.25"]</xpath>
+						<value>
+							<statFactors Operation="Safe">
+								<ImmunityGainSpeed Operation="SafeAdd">0.8</ImmunityGainSpeed>
+							</statFactors>
+							<statOffsets Operation="Safe">
+								<ImmunityGainSpeed Operation="SafeRemove">0</ImmunityGainSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.55"]</xpath>
+						<value>
+							<statFactors Operation="Safe">
+								<ImmunityGainSpeed Operation="SafeAdd">0.5</ImmunityGainSpeed>
+							</statFactors>
+							<statOffsets Operation="Safe">
+								<ImmunityGainSpeed Operation="SafeRemove">0</ImmunityGainSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 	<!-- VRE.Fungoid -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
@@ -111,6 +181,46 @@
 						</value>
 					</Operation>
 				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- VRE.Insector -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.insector</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="VRE_RipperBlades"]</xpath>
+				<value>
+					<comps Operation="Safe">
+						<li Class="HediffCompProperties_VerbGiver" Operation="Safe" CheckAttributes="True">
+							<tools Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="label">
+									<label Operation="Safe">ripper-blade</label>
+									<power Operation="SafeReplace">16</power>
+									<armorPenetration Operation="SafeReplace">0.24</armorPenetration>
+								</li>
+							</tools>
+						</li>
+					</comps>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="VRE_InefficientMidgut"]/stages/li</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeRemove"/>
+					<hungerRateFactorOffset Operation="SafeAdd">1.5</hungerRateFactorOffset>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="VRE_Dormant"]/stages/li</xpath>
+				<value>
+					<hungerRateFactorOffset Operation="SafeRemove"/>
+					<hungerRateFactor Operation="SafeAdd">0.8</hungerRateFactor>
+				</value>
 			</Operation>
 		</caseTrue>
 	</Operation>

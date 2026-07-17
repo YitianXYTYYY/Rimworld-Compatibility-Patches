@@ -233,7 +233,7 @@
 							<capMods Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
 									<capacity Operation="Safe">Manipulation</capacity>
-									<offset Operation="SafeAdd">-0.05</offset>
+									<offset Operation="SafeAdd">-0.1</offset>
 									<postFactor Operation="SafeRemove">0</postFactor>
 								</li>
 							</capMods>
@@ -255,7 +255,7 @@
 							<capMods Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
 									<capacity Operation="Safe">Manipulation</capacity>
-									<offset Operation="SafeAdd">-0.05</offset>
+									<offset Operation="SafeAdd">-0.1</offset>
 									<postFactor Operation="SafeRemove">0</postFactor>
 								</li>
 							</capMods>

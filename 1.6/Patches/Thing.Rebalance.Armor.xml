@@ -38,12 +38,6 @@
 		<caseTrue>
 			<!-- eltex (make craftable) -->
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[@Name="PsychicApparelBase"]</xpath>
-				<value>
-					<techLevel Operation="SafeReplace">Spacer</techLevel>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="Apparel_PsyfocusHelmet"]</xpath>
 				<value>
 					<equippedStatOffsets Operation="Safe">
@@ -258,15 +252,6 @@
 						<StuffEffectMultiplierInsulation_Heat Operation="SafeAdd">0.25</StuffEffectMultiplierInsulation_Heat>
 						<WorkToMake Operation="SafeAdd">36000</WorkToMake>
 					</statBases>
-				</value>
-			</Operation>
-
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="MeleeWeapon_PsyfocusStaff"]</xpath>
-				<value>
-					<equippedStatOffsets Operation="Safe">
-						<PsychicSensitivityOffset Operation="SafeReplace">0.8</PsychicSensitivityOffset>
-					</equippedStatOffsets>
 				</value>
 			</Operation>
 
