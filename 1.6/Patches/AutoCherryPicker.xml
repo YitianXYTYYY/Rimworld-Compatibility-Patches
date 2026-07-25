@@ -132,20 +132,25 @@
 						<xpath>defs</xpath>
 						<value>
 							<li>HediffDef/RangedPlatformModule</li>
-							<li>ThingDef/RangedPlatformModule</li>
-							<li>RecipeDef/InstallRangedPlatformModule</li>
 							<li>HediffDef/MeleePlatformModule</li>
-							<li>ThingDef/MeleePlatformModule</li>
-							<li>RecipeDef/InstallMeleePlatformModule</li>
 							<li>HediffDef/ModuleEfficiency</li>
-							<li>ThingDef/ModuleEfficiency</li>
-							<li>RecipeDef/InstallModuleEfficiency</li>
 							<li>HediffDef/CraftingToolsModule</li>
-							<li>ThingDef/CraftingToolsModule</li>
-							<li>RecipeDef/InstallCraftingToolsModule</li>
 							<li>HediffDef/ModuleArmorEBF</li>
-							<li>ThingDef/ModuleArmorEBF</li>
+							<li>RecipeDef/InstallRangedPlatformModule</li>
+							<li>RecipeDef/InstallMeleePlatformModule</li>
+							<li>RecipeDef/InstallModuleEfficiency</li>
+							<li>RecipeDef/InstallCraftingToolsModule</li>
 							<li>RecipeDef/InstallModuleArmorEBF</li>
+							<li>RecipeDef/Make_RangedPlatformModule</li>
+							<li>RecipeDef/Make_MeleePlatformModule</li>
+							<li>RecipeDef/Make_ModuleEfficiency</li>
+							<li>RecipeDef/Make_CraftingToolsModule</li>
+							<li>RecipeDef/Make_ModuleArmorEBF</li>
+							<li>ThingDef/RangedPlatformModule</li>
+							<li>ThingDef/MeleePlatformModule</li>
+							<li>ThingDef/ModuleEfficiency</li>
+							<li>ThingDef/CraftingToolsModule</li>
+							<li>ThingDef/ModuleArmorEBF</li>
 						</value>
 					</Operation>
 				</caseTrue>

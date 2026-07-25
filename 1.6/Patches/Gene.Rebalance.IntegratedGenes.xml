@@ -167,9 +167,7 @@
 					<displayCategory Operation="AddOrReplace">Turn_GeneCategory_Slavery</displayCategory>
         			<displayOrderInCategory Operation="AddOrReplace">10</displayOrderInCategory>
 					<exclusionTags Operation="Safe">
-						<li Operation="SafeRemove" Compare="InnerText">Turn_Exclusion_FreeSpirit</li>
 						<li Operation="SafeRemove" Compare="InnerText">Turn_Exclusion_FreeSpirit_DeadCalm</li>
-						<li Operation="SafeAdd" Compare="InnerText">Turn_Gene_AgressionSubmissive</li>
 					</exclusionTags>
 					<prisonBreakMTBFactor Operation="SafeReplace">0.8</prisonBreakMTBFactor>
 					<socialFightChanceFactor Operation="SafeRemove"/>
@@ -210,11 +208,9 @@
 							</customEffectDescriptions>
 							<displayOrderInCategory Operation="AddOrReplace">20</displayOrderInCategory>
 							<exclusionTags Operation="Safe">
-								<li Operation="SafeRemove" Compare="InnerText">Turn_Exclusion_FreeSpirit</li>
-								<li Operation="SafeAdd" Compare="InnerText">Turn_Gene_AgressionSubmissive</li>
+								<li Operation="SafeRemove" Compare="InnerText">Turn_Exclusion_Submissive</li>
 							</exclusionTags>
 							<aggroMentalBreakSelectionChanceFactor Operation="SafeReplace">0.2</aggroMentalBreakSelectionChanceFactor>
-							<prisonBreakMTBFactor Operation="SafeReplace">0.2</prisonBreakMTBFactor>
 							<socialFightChanceFactor Operation="SafeReplace">0.2</socialFightChanceFactor>
 							<statOffsets Operation="Safe">
 								<RoyalFavorValue MayRequire="Ludeon.RimWorld.Royalty" Operation="SafeReplace">2</RoyalFavorValue>

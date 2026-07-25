@@ -982,35 +982,22 @@
 					</Operation>
 				</apply>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Apparel_ToxVAE_TrooperHelmet"]</xpath>
-				<value>
-					<recipeMaker Operation="Safe">
-						<researchPrerequisites Inherit="False" Operation="Safe">
-							<li Operation="SafeAdd" Compare="InnerText">ReconArmor</li>
-							<li Operation="SafeAdd" Compare="InnerText">ToxFilterArmor</li>
-							<li Operation="SafeRemove" Compare="InnerText">ToxFilterVAEHelmets</li>
-						</researchPrerequisites>
-					</recipeMaker>
-				</value>
-			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/ThingDef[defName="Apparel_ToxVAE_SiegebreakerHelmet"]</xpath>
+				<xpath>Defs/ThingDef[defName="Apparel_ToxArmorHelmetMechlord"]</xpath>
 				<apply>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef</xpath>
 						<value>
-							<recipeMaker Operation="Safe">
-								<researchPrerequisites Inherit="False" Operation="Safe">
-									<li Operation="SafeRemove" Compare="InnerText">ToxFilterVAEHelmets</li>
-									<li Operation="SafeAdd" Compare="InnerText">ToxFilterArmor</li>
-								</researchPrerequisites>
-							</recipeMaker>
+							<equippedStatOffsets Operation="Safe">
+								<MeleeHitChance Operation="SafeReplace">-1</MeleeHitChance>
+								<ShootingAccuracyPawn Operation="SafeReplace">-4</ShootingAccuracyPawn>
+								<VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey" Operation="SafeRemove">0</VacuumResistance>
+							</equippedStatOffsets>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
-							<li>ludeon.rimworld.royalty</li>
+							<li>ferny.progressionrobotics2</li>
 						</mods>
 						<packageId>true</packageId>
 						<caseTrue>
@@ -1019,9 +1006,8 @@
 								<value>
 									<recipeMaker Operation="Safe">
 										<researchPrerequisites Inherit="False" Operation="Safe">
-											<li Operation="SafeAdd" Compare="InnerText">CataphractArmor</li>
-											<li Operation="SafeAdd" Compare="InnerText">ShieldBelt</li>
-											<li Operation="SafeRemove" Compare="InnerText">VAE_SiegebreakerArmor</li>
+											<li Operation="SafeAdd" Compare="InnerText">Ferny_MechlordSuit</li>
+											<li Operation="SafeRemove" Compare="InnerText">UltraMechtech</li>
 										</researchPrerequisites>
 									</recipeMaker>
 								</value>
@@ -1029,6 +1015,62 @@
 						</caseTrue>
 					</Operation>
 				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaexpanded.varme</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="Apparel_ToxVAE_TrooperHelmet"]</xpath>
+						<value>
+							<recipeMaker Operation="Safe">
+								<researchPrerequisites Inherit="False" Operation="Safe">
+									<li Operation="SafeAdd" Compare="InnerText">ReconArmor</li>
+									<li Operation="SafeAdd" Compare="InnerText">ToxFilterArmor</li>
+									<li Operation="SafeRemove" Compare="InnerText">ToxFilterVAEHelmets</li>
+								</researchPrerequisites>
+							</recipeMaker>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.SetScope">
+						<xpath>Defs/ThingDef[defName="Apparel_ToxVAE_SiegebreakerHelmet"]</xpath>
+						<apply>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<recipeMaker Operation="Safe">
+										<researchPrerequisites Inherit="False" Operation="Safe">
+											<li Operation="SafeRemove" Compare="InnerText">ToxFilterVAEHelmets</li>
+											<li Operation="SafeAdd" Compare="InnerText">ToxFilterArmor</li>
+										</researchPrerequisites>
+									</recipeMaker>
+								</value>
+							</Operation>
+							<Operation Class="XmlExtensions.FindMod">
+								<mods>
+									<li>ludeon.rimworld.royalty</li>
+								</mods>
+								<packageId>true</packageId>
+								<caseTrue>
+									<Operation Class="XmlExtensions.HybridPatch">
+										<xpath>ThingDef</xpath>
+										<value>
+											<recipeMaker Operation="Safe">
+												<researchPrerequisites Inherit="False" Operation="Safe">
+													<li Operation="SafeAdd" Compare="InnerText">CataphractArmor</li>
+													<li Operation="SafeAdd" Compare="InnerText">ShieldBelt</li>
+													<li Operation="SafeRemove" Compare="InnerText">VAE_SiegebreakerArmor</li>
+												</researchPrerequisites>
+											</recipeMaker>
+										</value>
+									</Operation>
+								</caseTrue>
+							</Operation>
+						</apply>
+					</Operation>
+				</caseTrue>
 			</Operation>
 		</caseTrue>
 	</Operation>

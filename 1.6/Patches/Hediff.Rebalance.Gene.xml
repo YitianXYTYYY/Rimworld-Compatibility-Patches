@@ -59,7 +59,7 @@
 							<tools Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="label">
 									<label Operation="Safe">plasteel claw</label>
-									<power Operation="SafeReplace">24</power>
+									<armorPenetration Operation="SafeRemove">0</armorPenetration>
 								</li>
 							</tools>
 						</li>
@@ -201,7 +201,7 @@
 								<li Operation="Safe" Compare="InnerText" XPathLocal="label">
 									<label Operation="Safe">ripper-blade</label>
 									<power Operation="SafeReplace">16</power>
-									<armorPenetration Operation="SafeReplace">0.24</armorPenetration>
+									<armorPenetration Operation="SafeRemove">0</armorPenetration>
 								</li>
 							</tools>
 						</li>

@@ -263,6 +263,27 @@
 		</caseTrue>
 	</Operation>
 
+	<!-- Reel's Turret Pipeline -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>reel.turretpipeline</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- ammunition hub -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="REEL_AmmoTank"]</xpath>
+				<value>
+					<comps Operation="Safe">
+						<li Class="PipeSystem.CompProperties_ResourceStorage" Operation="Safe" CheckAttributes="True">
+							<storageCapacity Operation="SafeReplace">3000</storageCapacity>
+						</li>
+					</comps>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 	<!-- Vanilla Helixien Gas Expanded -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
@@ -270,6 +291,18 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- gas cooler -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="VHGE_GasWallLamp"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<altitudeLayer Operation="SafeReplace">BuildingBelowTop</altitudeLayer>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
 			<!-- gas cooler -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="VHGE_GasCooler"]</xpath>
