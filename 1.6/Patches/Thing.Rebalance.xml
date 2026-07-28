@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-	<!-- Vanilla Factions Expanded - Insectoids 2 -->
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/RecipeDef[defName="Make_ChemfuelFromOrganics"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.sanguophage</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>RecipeDef</xpath>
+						<value>
+							<fixedIngredientFilter Operation="Safe">
+								<disallowedThingDefs Operation="Safe">
+									<li Operation="SafeAdd" Compare="InnerText">VRE_HemogenPack_Animal</li>
+									<li Operation="SafeAdd" Compare="InnerText">VRE_HemogenPack_Corpse</li>
+									<li Operation="SafeAdd" Compare="InnerText">VRE_HemogenPack_Sanguophage</li>
+								</disallowedThingDefs>
+							</fixedIngredientFilter>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
+	</Operation>
+
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
 			<li>ludeon.rimworld.biotech</li>

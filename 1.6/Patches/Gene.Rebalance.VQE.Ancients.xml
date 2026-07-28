@@ -119,7 +119,7 @@
 								<WorkSpeedGlobal Operation="SafeAdd">0.1</WorkSpeedGlobal>
 								<ShootingAccuracyPawn Operation="SafeAdd">4</ShootingAccuracyPawn>
 								<MeleeHitChance Operation="SafeAdd">4</MeleeHitChance>
-								<MeleeDodgeChance Operation="SafeAdd">8</MeleeDodgeChance>
+								<MeleeDodgeChance Operation="SafeAdd">4</MeleeDodgeChance>
 								<VEF_VerbRangeFactor Operation="SafeAdd">0.2</VEF_VerbRangeFactor>
 							</statOffsets>
 						</value>

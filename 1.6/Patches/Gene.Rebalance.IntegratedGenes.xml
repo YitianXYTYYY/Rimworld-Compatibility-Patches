@@ -136,7 +136,7 @@
 						<MeleeHitChance Operation="SafeRemove">0</MeleeHitChance>
 					</statFactors>
 					<statOffsets Operation="Safe">
-						<MeleeDodgeChance Operation="SafeAdd">8</MeleeDodgeChance>
+						<MeleeDodgeChance Operation="SafeAdd">4</MeleeDodgeChance>
 						<MeleeHitChance Operation="SafeAdd">4</MeleeHitChance>
 					</statOffsets>
 				</value>

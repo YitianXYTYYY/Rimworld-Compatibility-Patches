@@ -1515,6 +1515,25 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.starjack</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VREStarjack_GravshipAffinity"]</xpath>
+						<value>
+							<statFactors Operation="Safe">
+								<PilotingAbility Operation="SafeRemove">0</PilotingAbility>
+							</statFactors>
+							<statOffsets Operation="Safe">
+								<PilotingAbility Operation="SafeAdd">0.2</PilotingAbility>
+							</statOffsets>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
 		</caseTrue>
 	</Operation>
 

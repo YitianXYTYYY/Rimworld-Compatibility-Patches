@@ -150,6 +150,7 @@
 							<showHoursToRecover Operation="SafeAdd">true</showHoursToRecover>
 						</li>
 					</comps>
+					<hediffClass Operation="SafeReplace">Hediff_High</hediffClass>
 				</value>
 			</Operation>
 			<!-- Featherdust Joint -->
@@ -186,6 +187,7 @@
 							<showHoursToRecover Operation="SafeAdd">true</showHoursToRecover>
 						</li>
 					</comps>
+					<hediffClass Operation="SafeReplace">Hediff_High</hediffClass>
 					<stages Operation="Safe">
 						<li Operation="Safe">
 							<hungerRateFactor Operation="SafeRemove">0</hungerRateFactor>

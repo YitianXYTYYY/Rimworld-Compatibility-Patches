@@ -85,8 +85,12 @@
 						</mods>
 						<packageId>true</packageId>
 						<caseTrue>
-							<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-								<xpath>XenotypeDef/genes/li[text()="VREStarjack_Gene_Randomizer"]</xpath>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>XenotypeDef/genes</xpath>
+								<value>
+									<li Operation="SafeAdd" Compare="InnerText">BfG_MoveSpeed_SpaceArchite</li>
+									<li Operation="SafeRemove" Compare="InnerText">BfG_RandomGene_Space</li>
+								</value>
 							</Operation>
 						</caseTrue>
 					</Operation>

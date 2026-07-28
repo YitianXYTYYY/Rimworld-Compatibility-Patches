@@ -358,7 +358,7 @@
 							<displayCategory Operation="AddOrReplace">Tail</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">50</displayOrderInCategory>
 							<statOffsets Operation="Safe">
-								<MeleeDodgeChance Operation="SafeReplace">8</MeleeDodgeChance>
+								<MeleeDodgeChance Operation="SafeReplace">4</MeleeDodgeChance>
 							</statOffsets>
 						</value>
 					</Operation>

@@ -15,6 +15,7 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
+					<!-- vertical gene bank -->
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/ThingDef[defName="BfG_GeneBank"]</xpath>
 						<value>
@@ -23,6 +24,7 @@
 							</researchPrerequisites>
 						</value>
 					</Operation>
+					<!-- smaller gene extractor -->
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/ThingDef[defName="BfG_GeneExtractor"]</xpath>
 						<value>
@@ -41,6 +43,7 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
+					<!-- mounted band node -->
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/ThingDef[defName="BfG_BandNode"]</xpath>
 						<value>
@@ -50,6 +53,7 @@
 							</researchPrerequisites>
 						</value>
 					</Operation>
+					<!-- floor mech booster -->
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/ThingDef[defName="BfG_MechBooster"]</xpath>
 						<value>
@@ -171,7 +175,7 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<!-- gravship hull -->
+			<!-- prosthetics table -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="TableSyrProsthetics"]</xpath>
 				<value>
@@ -293,18 +297,6 @@
 		<caseTrue>
 			<!-- gas cooler -->
 			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/ThingDef[defName="VHGE_GasWallLamp"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ThingDef</xpath>
-						<value>
-							<altitudeLayer Operation="SafeReplace">BuildingBelowTop</altitudeLayer>
-						</value>
-					</Operation>
-				</apply>
-			</Operation>
-			<!-- gas cooler -->
-			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="VHGE_GasCooler"]</xpath>
 				<apply>
 					<Operation Class="XmlExtensions.HybridPatch">
@@ -330,6 +322,26 @@
 						</value>
 					</Operation>
 				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>rebuild.cotr.doorsandcorners</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<!-- gas wall lamp -->
+					<Operation Class="XmlExtensions.SetScope">
+						<xpath>Defs/ThingDef[defName="VHGE_GasWallLamp"]</xpath>
+						<apply>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<altitudeLayer Operation="SafeReplace">BuildingBelowTop</altitudeLayer>
+								</value>
+							</Operation>
+						</apply>
+					</Operation>
+				</caseTrue>
 			</Operation>
 		</caseTrue>
 	</Operation>

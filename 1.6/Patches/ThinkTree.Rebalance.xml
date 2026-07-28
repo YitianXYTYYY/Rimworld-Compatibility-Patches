@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>	
+
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/ThinkTreeDef[defName="Humanlike"]</xpath>
+		<apply>
+			<!-- Prevent Packing Food -->
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>ThinkTreeDef/thinkRoot//li[@Class="ThinkNode_ConditionalNeedPercentageAbove"][need="Food"][subNodes/li[@Class="JobGiver_PackFood"]]</xpath>
+			</Operation>
+		</apply>
+	</Operation>
+
+</Patch>

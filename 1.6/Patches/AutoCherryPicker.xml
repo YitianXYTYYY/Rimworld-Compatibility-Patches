@@ -72,6 +72,34 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>als.biotechgravship</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaracesexpanded.starjack</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>GeneDef/BfG_Hemogen_Space</li>
+									<li>GeneDef/BfG_PsychicAbility_Space</li>
+									<li>GeneDef/BfG_WoundHealing_Space</li>
+									<li>GeneDef/BfG_MinTemp_Space</li>
+									<li>GeneDef/BfG_Sleep_Space</li>
+									<li>GeneDef/BfG_Robust_Space</li>
+									<li>GeneDef/BfG_Learning_Space</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
 			<!-- Integrated Genes -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
