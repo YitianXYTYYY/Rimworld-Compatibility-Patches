@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
+	<!-- Headgear -->
+	<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+		<xpath>Defs/ThingDef[defName="Apparel_PowerArmorHelmet"]</xpath>
+		<attribute>Name</attribute>
+		<value>Apparel_PowerArmorHelmet</value>
+	</Operation>
+	<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+		<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetRecon"]</xpath>
+		<attribute>Name</attribute>
+		<value>Apparel_ArmorHelmetRecon</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Apparel_PsychicFoilHelmet"]</xpath>
+		<value>
+			<equippedStatOffsets Operation="Safe">
+				<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+				<PsychicSensitivityOffset Operation="SafeAdd">-0.9</PsychicSensitivityOffset>
+			</equippedStatOffsets>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+		<xpath>Defs/ThingDef[defName="Apparel_ClothMask"]</xpath>
+		<attribute>Name</attribute>
+		<value>Apparel_ClothMask</value>
+	</Operation>
+
+	<!-- Various -->
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ThingDef[defName="Apparel_FlakVest" 
 			or defName="Apparel_FlakPants" 
@@ -16,16 +43,6 @@
 		<value>
 			<equippedStatOffsets Operation="Safe">
 				<MoveSpeed Operation="SafeReplace">-0.2</MoveSpeed>
-			</equippedStatOffsets>
-		</value>
-	</Operation>
-
-	<Operation Class="XmlExtensions.HybridPatch">
-		<xpath>Defs/ThingDef[defName="Apparel_PsychicFoilHelmet"]</xpath>
-		<value>
-			<equippedStatOffsets Operation="Safe">
-				<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
-				<PsychicSensitivityOffset Operation="SafeAdd">-0.9</PsychicSensitivityOffset>
 			</equippedStatOffsets>
 		</value>
 	</Operation>
@@ -1002,18 +1019,8 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<Operation Class="XmlExtensions.PatchOperationAttributeSet">
-				<xpath>Defs/ThingDef[defName="Apparel_ClothMask"]</xpath>
-				<attribute>Name</attribute>
-				<value>Apparel_ClothMask</value>
-			</Operation>
 			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 				<xpath>Defs/ThingDef[defName="Apparel_ToxClothMask"][@ParentName!="Apparel_ClothMask"]</xpath>
-			</Operation>
-			<Operation Class="XmlExtensions.PatchOperationAttributeSet">
-				<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetRecon"]</xpath>
-				<attribute>Name</attribute>
-				<value>Apparel_ArmorHelmetRecon</value>
 			</Operation>
 			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 				<xpath>Defs/ThingDef[defName="Apparel_ToxArmorHelmetRecon"][@ParentName!="Apparel_ArmorHelmetRecon"]</xpath>
@@ -1048,6 +1055,25 @@
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 						<xpath>Defs/ThingDef[defName="Apparel_ToxArmorHelmetMechlord"][@ParentName!="Apparel_ArmorHelmetMechlordHelmet"]</xpath>
 					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>ferny.progressionrobotics2</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>Defs/ThingDef[defName="Apparel_ToxArmorHelmetMechlord"]</xpath>
+								<value>
+									<recipeMaker Operation="Safe">
+										<researchPrerequisites Operation="Safe">
+											<li Operation="SafeRemove" Compare="InnerText">UltraMechtech</li>
+											<li Operation="SafeAdd" Compare="InnerText">Ferny_MechlordSuit</li>
+										</researchPrerequisites>
+									</recipeMaker>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
 				</caseTrue>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
@@ -1080,6 +1106,17 @@
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 						<xpath>Defs/ThingDef[defName="Apparel_ToxVAE_TrooperHelmet"][@ParentName!="VAE_Headgear_TrooperHelmet"]</xpath>
 					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="Apparel_ToxVAE_TrooperHelmet"]</xpath>
+						<value>
+							<recipeMaker Operation="Safe">
+								<researchPrerequisites Operation="Safe">
+									<li Operation="SafeAdd" Compare="InnerText">ReconArmor</li>
+									<li Operation="SafeRemove" Compare="InnerText">VAE_TrooperArmor</li>
+								</researchPrerequisites>
+							</recipeMaker>
+						</value>
+					</Operation>
 					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
 						<xpath>Defs/ThingDef[defName="VAE_Headgear_HeavyMarineHelmet"]</xpath>
 						<attribute>Name</attribute>
@@ -1087,6 +1124,18 @@
 					</Operation>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 						<xpath>Defs/ThingDef[defName="Apparel_ToxVAE_SiegebreakerHelmet"][@ParentName!="VAE_Headgear_HeavyMarineHelmet"]</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="Apparel_ToxVAE_SiegebreakerHelmet"]</xpath>
+						<value>
+							<recipeMaker Operation="Safe">
+								<researchPrerequisites Operation="Safe">
+									<li Operation="SafeAdd" Compare="InnerText">CataphractArmor</li>
+									<li Operation="SafeAdd" Compare="InnerText">ShieldBelt</li>
+									<li Operation="SafeRemove" Compare="InnerText">VAE_SiegebreakerArmor</li>
+								</researchPrerequisites>
+							</recipeMaker>
+						</value>
 					</Operation>
 				</caseTrue>
 			</Operation>

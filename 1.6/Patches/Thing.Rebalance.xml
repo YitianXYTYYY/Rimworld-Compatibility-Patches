@@ -218,4 +218,25 @@
 		</caseTrue>
 	</Operation>
 
+	<!-- Vanilla Races Expanded - Sanguophage -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.sanguophage</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- Hemogen Packs -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VRE_HemogenPack_Animal" or 
+					defName="VRE_HemogenPack_Corpse" or 
+					defName="VRE_HemogenPack_Sanguophage"]</xpath>
+				<value>
+					<ingestible Operation="Safe">
+						<nonDrugIngestibleWithoutFoodNeed Operation="SafeAdd">true</nonDrugIngestibleWithoutFoodNeed>
+					</ingestible>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 </Patch>

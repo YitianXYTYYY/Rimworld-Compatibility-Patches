@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
+	<!-- temperature -->
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/HediffDef[defName="HypothermicSlowdown"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>HediffDef/stages/li/hungerRateFactorOffset</xpath>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[minSeverity="0.04"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeAdd">0.9</hungerRateFactor>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="moderate"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeAdd">0.8</hungerRateFactor>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="serious"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeAdd">0.5</hungerRateFactor>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="extreme"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeAdd">0.05</hungerRateFactor>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
 	<!-- psylink -->
 	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/HediffDef[defName="PsychicAmplifier"]</xpath>
@@ -172,6 +205,20 @@
 		<packageId>true</packageId>
 		<caseTrue>
 			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="GlucosoidRush"]/stages/li</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="SafeAdd">Moving</capacity>
+							<offset Operation="SafeAdd">0.1</offset>
+						</li>
+					</capMods>
+					<statFactors Operation="Safe">
+						<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+					</statFactors>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/HediffDef[defName="PsychofluidRush"]/stages/li</xpath>
 				<value>
 					<statOffsets Operation="Safe">
@@ -252,6 +299,35 @@
 						<RestFallRateFactor Operation="SafeRemove">0</RestFallRateFactor>
 					</statOffsets>
 				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="DuplicateSickness"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[label="initial"]</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<MentalBreakThreshold Operation="SafeReplace">0.05</MentalBreakThreshold>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[label="moderate"]</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<MentalBreakThreshold Operation="SafeReplace">0.1</MentalBreakThreshold>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[label="extreme"]</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<MentalBreakThreshold Operation="SafeReplace">0.15</MentalBreakThreshold>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/HediffDef[defName="BlissLobotomy"]/stages/li</xpath>
@@ -417,6 +493,65 @@
 					<statFactors Operation="Safe">
 						<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
 					</statFactors>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="LightExposure"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>HediffDef/stages/li/statFactors/MoveSpeed</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[label="moderate"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="SafeAdd">Moving</capacity>
+									<offset Operation="SafeAdd">-0.1</offset>
+								</li>
+							</capMods>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[label="serious"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="SafeAdd">Moving</capacity>
+									<offset Operation="SafeAdd">-0.2</offset>
+								</li>
+							</capMods>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[label="extreme"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="SafeAdd">Moving</capacity>
+									<offset Operation="SafeAdd">-0.5</offset>
+								</li>
+							</capMods>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<!-- mutants -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="GhoulFrenzy"]/stages/li</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="SafeAdd">Moving</capacity>
+							<offset Operation="SafeAdd">1</offset>
+						</li>
+					</capMods>
+					<statFactors Operation="Safe">
+						<MeleeCooldownFactor Operation="SafeReplace">0.8</MeleeCooldownFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+					</statOffsets>
 				</value>
 			</Operation>
 		</caseTrue>

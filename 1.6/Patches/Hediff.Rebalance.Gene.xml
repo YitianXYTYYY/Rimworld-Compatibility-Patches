@@ -245,6 +245,63 @@
 		</caseTrue>
 	</Operation>
 
+	<!-- VRE.Starjack -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.starjack</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="VREStarjack_CryostasisHediff"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>HediffDef/stages/li/hungerRateFactorOffset</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>HediffDef/stages/li/restFallFactor</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.04"]</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeAdd">0.9</hungerRateFactor>
+							<statOffsets Operation="Safe">
+								<RestFallRateFactor Operation="SafeAdd">0.2</RestFallRateFactor>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.22"]</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeAdd">0.8</hungerRateFactor>
+							<statOffsets Operation="Safe">
+								<RestFallRateFactor Operation="SafeAdd">0.5</RestFallRateFactor>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.3"]</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeAdd">0.5</hungerRateFactor>
+							<statOffsets Operation="Safe">
+								<RestFallRateFactor Operation="SafeAdd">1</RestFallRateFactor>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.6"]</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeAdd">0.05</hungerRateFactor>
+							<statOffsets Operation="Safe">
+								<RestFallRateFactor Operation="SafeAdd">1</RestFallRateFactor>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 	<!-- VRE.Waster -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>

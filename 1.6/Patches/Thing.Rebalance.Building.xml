@@ -176,14 +176,39 @@
 		<packageId>true</packageId>
 		<caseTrue>
 			<!-- prosthetics table -->
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="TableSyrProsthetics"]</xpath>
-				<value>
-					<researchPrerequisites Operation="Safe">
-						<li Operation="SafeRemove" Compare="InnerText">Machining</li>
-						<li Operation="SafeAdd" Compare="InnerText">Prosthetics</li>
-					</researchPrerequisites>
-				</value>
+				<apply>
+					<!-- Medical System Expansion 2 -->
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>mse2.core</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseFalse>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<researchPrerequisites Operation="Safe">
+										<li Operation="SafeRemove" Compare="InnerText">Machining</li>
+										<li Operation="SafeAdd" Compare="InnerText">Prosthetics</li>
+									</researchPrerequisites>
+								</value>
+							</Operation>
+						</caseFalse>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<researchPrerequisites Operation="Safe">
+										<li Operation="SafeRemove" Compare="InnerText">Machining</li>
+										<li Operation="SafeAdd" Compare="InnerText">BoneProstheticsSimple</li>
+									</researchPrerequisites>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
 			</Operation>
 		</caseTrue>
 	</Operation>

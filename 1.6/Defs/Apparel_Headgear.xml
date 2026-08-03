@@ -50,7 +50,7 @@
 			</li>
 		</comps>
 		<costList>
-			<Chemfuel>15</Chemfuel>
+			<Chemfuel>20</Chemfuel>
 		</costList>
 		<recipeMaker>
 			<researchPrerequisite Inherit="False"/>
@@ -59,6 +59,37 @@
 				<li>ToxFilterArmor</li>
 			</researchPrerequisites>
 			<displayPriority>111</displayPriority>
+		</recipeMaker>
+		<tickerType>Normal</tickerType>
+	</ThingDef>
+
+	<ThingDef ParentName="Apparel_PowerArmorHelmet" MayRequire="wasterbreath.mod">
+		<defName>Apparel_ToxArmorHelmetMarine</defName>
+		<label>tox marine helmet</label>
+		<description>A marine armor helmet, with a built-in status computer and layered plasteel-weave plates.\n\nArmor like this is often used by rapid-incursion space marines.\n\nA special filter delivers toxins to stimulate toxic genes.</description>
+		<descriptionHyperlinks>
+			<HediffDef>ToxicBuildup</HediffDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="Tox.CompProperties_ToxFilterCharge">
+				<fuelDef>Wastepack</fuelDef>
+				<fuelAmount>5</fuelAmount>
+				<chargeDays>5</chargeDays>
+				<hediff>ToxApparelPoisoningHelmet</hediff>
+				<wasterHediff>ToxApparelWasterStimulusHelmet</wasterHediff>
+				<part>Head</part>
+			</li>
+		</comps>
+		<costList>
+			<Chemfuel>20</Chemfuel>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite Inherit="False"/>
+			<researchPrerequisites Inherit="False">
+				<li>PoweredArmor</li>
+				<li>ToxFilterArmor</li>
+			</researchPrerequisites>
+			<displayPriority>101</displayPriority>
 		</recipeMaker>
 		<tickerType>Normal</tickerType>
 	</ThingDef>
@@ -112,7 +143,7 @@
 			</li>
 		</comps>
 		<costList>
-			<Chemfuel>25</Chemfuel>
+			<Chemfuel>20</Chemfuel>
 		</costList>
 		<recipeMaker>
 			<researchPrerequisite Inherit="False"/>
@@ -143,7 +174,7 @@
 			</li>
 		</comps>
 		<costList>
-			<Chemfuel>15</Chemfuel>
+			<Chemfuel>20</Chemfuel>
 		</costList>
 		<recipeMaker>
 			<researchPrerequisite Inherit="False"/>
@@ -174,7 +205,7 @@
 			</li>
 		</comps>
 		<costList>
-			<Chemfuel>15</Chemfuel>
+			<Chemfuel>20</Chemfuel>
 		</costList>
 		<recipeMaker>
 			<researchPrerequisite Inherit="False"/>

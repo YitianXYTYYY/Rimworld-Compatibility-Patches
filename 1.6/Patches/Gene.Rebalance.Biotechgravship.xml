@@ -71,8 +71,6 @@
 									</statOffsets>
 								</li>
 							</conditionalStatAffecters>
-							<displayCategory Operation="AddOrReplace">Astrogen</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">-1000</displayOrderInCategory>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.FindMod">

@@ -188,12 +188,10 @@
 					<statFactors Operation="Safe">
 						<MeleeDamageFactor Operation="SafeRemove">0</MeleeDamageFactor>
 						<CarryingCapacity Operation="SafeRemove">0</CarryingCapacity>
-						<VEF_MassCarryCapacity Operation="SafeRemove">0</VEF_MassCarryCapacity>
 					</statFactors>
 					<statOffsets Operation="Safe">
 						<MeleeDamageFactor Operation="SafeAdd">2</MeleeDamageFactor>
 						<CarryingCapacity Operation="SafeAdd">150</CarryingCapacity>
-						<VEF_MassCarryCapacity Operation="SafeAdd">70</VEF_MassCarryCapacity>
 					</statOffsets>
 				</value>
 			</Operation>
@@ -238,6 +236,12 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VQEA_Enormous"]</xpath>
 				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="SafeAdd">Moving</capacity>
+							<offset Operation="SafeAdd">-0.2</offset>
+						</li>
+					</capMods>
 					<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
 					<displayOrderInCategory Operation="AddOrReplace">0</displayOrderInCategory>
 					<statFactors Operation="Safe">
@@ -246,7 +250,7 @@
 						<MeleeDodgeChance Operation="SafeReplace">0.2</MeleeDodgeChance>
 					</statFactors>
 					<statOffsets Operation="Safe">
-							<MoveSpeed Operation="SafeReplace">-1</MoveSpeed>
+							<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
 							<VEF_BodySize_Multiplier Operation="SafeAdd">1</VEF_BodySize_Multiplier>
 							<VEF_BodySize_Offset Operation="SafeRemove">1</VEF_BodySize_Offset>
 					</statOffsets>
