@@ -95,6 +95,12 @@
 
 	<!-- VEF stats -->
 	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/StatDef[defName="VEF_BodySize_Offset"]</xpath>
+		<value>
+			<toStringStyle Operation="SafeReplace">PercentZero</toStringStyle>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/StatDef[defName="VEF_FoodCapacityMultiplier"]</xpath>
 		<value>
 			<toStringStyle Operation="SafeReplace">PercentZero</toStringStyle>

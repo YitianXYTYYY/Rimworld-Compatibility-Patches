@@ -23,6 +23,9 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_AntimicrobialPeptides"]</xpath>
 				<value>
+					<exclusionTags Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">Immunity</li>
+					</exclusionTags>
 					<statFactors Operation="Safe">
 						<ImmunityGainSpeed Operation="SafeRemove">0</ImmunityGainSpeed>
 						<InjuryHealingFactor Operation="SafeRemove">0</InjuryHealingFactor>
@@ -31,6 +34,15 @@
 						<ImmunityGainSpeed Operation="SafeAdd">0.5</ImmunityGainSpeed>
 						<InjuryHealingFactor Operation="SafeAdd">1</InjuryHealingFactor>
 					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_InsectWings"]</xpath>
+				<value>
+					<exclusionTags Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">Wing</li>
+						<li Operation="SafeAdd" Compare="InnerText">Wings</li>
+					</exclusionTags>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
@@ -150,6 +162,14 @@
 			</Operation>
 			<!-- mutations -->
 			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_Immunodeficiency"]</xpath>
+				<value>
+					<exclusionTags Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">Immunity</li>
+					</exclusionTags>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_LowGreyMatter"]</xpath>
 				<value>
 					<statFactors Operation="Safe">
@@ -158,6 +178,14 @@
 					<statOffsets Operation="Safe">
 						<PsychicSensitivity Operation="SafeReplace">-0.4</PsychicSensitivity>
 					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_HypothermicHibernation"]</xpath>
+				<value>
+					<exclusionTags Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">MinTemperature</li>
+					</exclusionTags>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
@@ -191,8 +219,20 @@
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_LowOctopamine"]</xpath>
+				<value>
+					<exclusionTags Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">Fertility</li>
+					</exclusionTags>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_Stenothermic"]</xpath>
 				<value>
+					<exclusionTags Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">MinTemperature</li>
+						<li Operation="SafeRemove" Compare="InnerText">MaxTemperature</li>
+					</exclusionTags>
 					<statOffsets Operation="Safe">
 						<ComfyTemperatureMin Operation="SafeReplace">5</ComfyTemperatureMin>
 						<ComfyTemperatureMax Operation="SafeReplace">-5</ComfyTemperatureMax>
@@ -206,6 +246,15 @@
 				<packageId>true</packageId>
 				<caseTrue>
 					<!-- evolutions -->
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_LocustWings"]</xpath>
+						<value>
+							<exclusionTags Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">Wing</li>
+								<li Operation="SafeAdd" Compare="InnerText">Wings</li>
+							</exclusionTags>
+						</value>
+					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_InsectRostrum"]</xpath>
 						<value>
@@ -249,6 +298,12 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_Colossal"]</xpath>
 						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="SafeAdd">Moving</capacity>
+									<offset Operation="SafeAdd">-0.20</offset>
+								</li>
+							</capMods>
 							<statFactors Operation="Safe">
 								<LeatherAmount Operation="SafeRemove">0</LeatherAmount>
 								<MeatAmount Operation="SafeRemove">0</MeatAmount>
@@ -256,6 +311,7 @@
 								<VEF_FoodCapacityMultiplier Operation="SafeRemove">0</VEF_FoodCapacityMultiplier>
 							</statFactors>
 							<statOffsets Operation="Safe">
+								<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
 								<VEF_BodySize_Offset Operation="SafeReplace">0.6</VEF_BodySize_Offset>
 							</statOffsets>
 						</value>
@@ -263,8 +319,25 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_Pyrophiliac"]</xpath>
 						<value>
+							<exclusionTags Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">MinTemperature</li>
+							</exclusionTags>
 							<statOffsets Operation="Safe">
 								<ComfyTemperatureMin Operation="SafeReplace">5</ComfyTemperatureMin>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_HardLockedJoints"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="SafeAdd">Moving</capacity>
+									<offset Operation="SafeAdd">-0.20</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
 							</statOffsets>
 						</value>
 					</Operation>

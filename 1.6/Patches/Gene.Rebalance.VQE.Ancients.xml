@@ -244,6 +244,9 @@
 					</capMods>
 					<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
 					<displayOrderInCategory Operation="AddOrReplace">0</displayOrderInCategory>
+					<exclusionTags Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">InsectorSize</li>
+					</exclusionTags>
 					<statFactors Operation="Safe">
 						<LeatherAmount Operation="SafeRemove">0</LeatherAmount>
 						<MeatAmount Operation="SafeRemove">0</MeatAmount>
@@ -251,8 +254,6 @@
 					</statFactors>
 					<statOffsets Operation="Safe">
 							<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
-							<VEF_BodySize_Multiplier Operation="SafeAdd">1</VEF_BodySize_Multiplier>
-							<VEF_BodySize_Offset Operation="SafeRemove">1</VEF_BodySize_Offset>
 					</statOffsets>
 				</value>
 			</Operation>

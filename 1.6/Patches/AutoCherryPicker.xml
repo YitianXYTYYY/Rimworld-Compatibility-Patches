@@ -322,6 +322,29 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
+			<!-- Vanilla Races Expanded - Insector -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.insector</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>oskarpotocki.vfe.insectoid2</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>VanillaRacesExpandedInsector.GenelineGeneDef/VRE_InflexibleJoints</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
 			<!-- Vanilla Races Expanded - Starjack -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
@@ -334,6 +357,20 @@
 						<value>
 							<li>GeneDef/VREStarjack_VacuumEfficiency</li>
 						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>goji.gojismiscgenes</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>GeneDef/VREStarjack_Cryostasis</li>
+								</value>
+							</Operation>
+						</caseTrue>
 					</Operation>
 				</caseTrue>
 			</Operation>

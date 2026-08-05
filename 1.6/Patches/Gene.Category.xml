@@ -118,6 +118,18 @@
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneCategoryDef[defName="Temperature"]</xpath>
+				<value>
+					<displayPriorityInXenotype Operation="AddOrReplace">480</displayPriorityInXenotype>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneCategoryDef[defName="Movement"]</xpath>
+				<value>
+					<displayPriorityInXenotype Operation="AddOrReplace">470</displayPriorityInXenotype>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneCategoryDef[defName="Violence"]</xpath>
 				<value>
 					<displayPriorityInXenotype Operation="AddOrReplace">400</displayPriorityInXenotype>

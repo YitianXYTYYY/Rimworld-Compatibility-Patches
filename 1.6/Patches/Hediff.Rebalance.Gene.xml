@@ -222,6 +222,27 @@
 					<hungerRateFactor Operation="SafeAdd">0.8</hungerRateFactor>
 				</value>
 			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>oskarpotocki.vfe.insectoid2</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/HediffDef[defName="VRE_Microsized"]/stages/li</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeReplace">0.8</hungerRateFactor>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/HediffDef[defName="VRE_Colossal"]/stages/li</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeRemove"/>
+							<hungerRateFactorOffset Operation="SafeAdd">1</hungerRateFactorOffset>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
 		</caseTrue>
 	</Operation>
 
@@ -255,6 +276,12 @@
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/HediffDef[defName="VREStarjack_CryostasisHediff"]</xpath>
 				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef</xpath>
+						<value>
+							<maxSeverity>1</maxSeverity>
+						</value>
+					</Operation>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 						<xpath>HediffDef/stages/li/hungerRateFactorOffset</xpath>
 					</Operation>
