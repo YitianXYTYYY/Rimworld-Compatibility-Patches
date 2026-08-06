@@ -80,24 +80,45 @@
 					<displayOrderInCategory Operation="AddOrReplace">-499</displayOrderInCategory>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="VQEA_BlurRunner"]</xpath>
-				<value>
-					<capMods Operation="Safe">
-						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-							<capacity Operation="SafeAdd">Moving</capacity>
-							<offset Operation="SafeAdd">0.2</offset>
-						</li>
-					</capMods>
-					<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
-					<displayOrderInCategory Operation="AddOrReplace">-470</displayOrderInCategory>
-					<statFactors Operation="Safe">
-						<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
-					</statFactors>
-					<statOffsets Operation="Safe">
-						<VEF_RangedDodgeChance Operation="SafeReplace">0.20</VEF_RangedDodgeChance>
-					</statOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="SafeAdd">Moving</capacity>
+									<offset Operation="SafeAdd">0.2</offset>
+								</li>
+							</capMods>
+							<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">-470</displayOrderInCategory>
+							<statFactors Operation="Safe">
+								<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+							</statFactors>
+							<statOffsets Operation="Safe">
+								<VEF_RangedDodgeChance Operation="SafeReplace">0.20</VEF_RangedDodgeChance>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>goji.gojismiscgenes</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>GeneDef</xpath>
+								<value>
+									<statOffsets Operation="Safe">
+										<VEF_RangedDodgeChance Operation="SafeRemove">0</VEF_RangedDodgeChance>
+									</statOffsets>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="VQEA_PerfectVision"]</xpath>
@@ -213,6 +234,12 @@
 				<value>
 					<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
 					<displayOrderInCategory Operation="AddOrReplace">-370</displayOrderInCategory>
+					<modExtensions Operation="Safe">
+						<li Class="VEF.Genes.GeneExtension" Operation="Safe" CheckAttributes="True">
+							<hediffToWholeBody Operation="SafeRemove" Compare="Both">VQEA_Bulwark</hediffToWholeBody>
+						</li>
+					</modExtensions>
+					<painFactor Operation="SafeAdd">0.1</painFactor>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
@@ -233,29 +260,78 @@
 					<displayOrderInCategory Operation="AddOrReplace">-110</displayOrderInCategory>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="VQEA_Enormous"]</xpath>
-				<value>
-					<capMods Operation="Safe">
-						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-							<capacity Operation="SafeAdd">Moving</capacity>
-							<offset Operation="SafeAdd">-0.2</offset>
-						</li>
-					</capMods>
-					<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
-					<displayOrderInCategory Operation="AddOrReplace">0</displayOrderInCategory>
-					<exclusionTags Operation="Safe">
-						<li Operation="SafeRemove" Compare="InnerText">InsectorSize</li>
-					</exclusionTags>
-					<statFactors Operation="Safe">
-						<LeatherAmount Operation="SafeRemove">0</LeatherAmount>
-						<MeatAmount Operation="SafeRemove">0</MeatAmount>
-						<MeleeDodgeChance Operation="SafeReplace">0.2</MeleeDodgeChance>
-					</statFactors>
-					<statOffsets Operation="Safe">
-							<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
-					</statOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">0</displayOrderInCategory>
+							<statFactors Operation="Safe">
+								<LeatherAmount Operation="SafeRemove">0</LeatherAmount>
+								<MeatAmount Operation="SafeRemove">0</MeatAmount>
+								<MeleeDodgeChance Operation="SafeRemove">0</MeleeDodgeChance>
+							</statFactors>
+							<statOffsets Operation="Safe">
+									<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaracesexpanded.insector</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseFalse>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>GeneDef</xpath>
+								<value>
+									<capMods Operation="Safe">
+										<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+											<capacity Operation="SafeAdd">Moving</capacity>
+											<offset Operation="SafeAdd">-0.2</offset>
+										</li>
+									</capMods>
+									<statFactors Operation="Safe">
+										<MeleeDodgeChance Operation="SafeAdd">0.2</MeleeDodgeChance>
+									</statFactors>
+								</value>
+							</Operation>
+						</caseFalse>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>GeneDef</xpath>
+								<value>
+									<exclusionTags Operation="Safe">
+										<li Operation="SafeRemove" Compare="InnerText">InsectorSize</li>
+									</exclusionTags>
+									<modExtensions Operation="Safe">
+										<li Class="VEF.Genes.GeneExtension" Operation="Safe" CheckAttributes="True">
+											<hediffToWholeBody Operation="SafeRemove" Compare="Both">VQEA_Enormous</hediffToWholeBody>
+										</li>
+									</modExtensions>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaracesexpanded.hussar</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>GeneDef</xpath>
+								<value>
+									<exclusionTags Operation="Safe">
+										<li Operation="SafeAdd" Compare="InnerText">VQEA_Enormous_VREH_Giant</li>
+									</exclusionTags>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VQEA_PlasteelSkin"]</xpath>

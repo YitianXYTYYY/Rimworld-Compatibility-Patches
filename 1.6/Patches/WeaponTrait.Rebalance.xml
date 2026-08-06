@@ -3,6 +3,22 @@
 
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
+			<li>ludeon.rimworld.royalty</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="HungerMaker"]/stages/li</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeAdd">1.5</hungerRateFactor>
+					<hungerRateFactorOffset Operation="SafeRemove"/>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
 			<li>ludeon.rimworld.odyssey</li>
 		</mods>
 		<packageId>true</packageId>

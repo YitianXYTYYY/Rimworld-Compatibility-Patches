@@ -1,15 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-	<!-- temperature -->
+	<!-- global needs -->
 	<Operation Class="XmlExtensions.SetScope">
-		<xpath>Defs/HediffDef[defName="HypothermicSlowdown"]</xpath>
+		<xpath>Defs/HediffDef[defName="Malnutrition"]</xpath>
 		<apply>
 			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 				<xpath>HediffDef/stages/li/hungerRateFactorOffset</xpath>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>HediffDef/stages/li[minSeverity="0.04"]</xpath>
+				<xpath>HediffDef/stages/li[label="trivial"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeAdd">1.5</hungerRateFactor>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="minor"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeAdd">1.6</hungerRateFactor>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="moderate"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeAdd">1.6</hungerRateFactor>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="severe"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeAdd">1.6</hungerRateFactor>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="extreme"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeAdd">1.6</hungerRateFactor>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
+	<!-- global temperature -->
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/HediffDef[defName="HypothermicSlowdown"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef</xpath>
+				<value>
+					<maxSeverity Operation="SafeAdd">2.0</maxSeverity>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>HediffDef/stages/li/hungerRateFactorOffset</xpath>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="minor"][becomeVisible="false"]</xpath>
+				<value>
+					<label Operation="SafeReplace">initial</label>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="minor"][minSeverity="0.04"]</xpath>
 				<value>
 					<hungerRateFactor Operation="SafeAdd">0.9</hungerRateFactor>
 				</value>
@@ -33,6 +84,14 @@
 				</value>
 			</Operation>
 		</apply>
+	</Operation>
+	<!-- local infections -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/HediffDef[defName="GutWorms"]/stages/li</xpath>
+		<value>
+			<hungerRateFactor Operation="SafeAdd">2</hungerRateFactor>
+			<hungerRateFactorOffset Operation="SafeRemove"/>
+		</value>
 	</Operation>
 	<!-- psylink -->
 	<Operation Class="XmlExtensions.SetScope">
@@ -95,103 +154,18 @@
 
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>ludeon.rimworld.royalty</li>
+			<li>ludeon.rimworld.ideology</li>
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<!-- prosthetics -->
-			<!-- archotech -->
+			<!-- various -->
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/HediffDef[defName="PsychicSensitizer"]/stages/li</xpath>
+				<xpath>Defs/HediffDef[defName="NeuralSupercharge"]/stages/li</xpath>
 				<value>
+					<hungerRateFactor Operation="SafeAdd">1.2</hungerRateFactor>
+					<hungerRateFactorOffset Operation="SafeRemove"/>
 					<statOffsets Operation="Safe">
-						<PsychicSensitivity Operation="SafeReplace">0.4</PsychicSensitivity>
-					</statOffsets>
-				</value>
-			</Operation>
-			<!-- bionic -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/HediffDef[defName="Immunoenhancer"]/stages/li</xpath>
-				<value>
-					<statOffsets Operation="Safe">
-						<ImmunityGainSpeed Operation="SafeReplace">0.1</ImmunityGainSpeed>
-					</statOffsets>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/HediffDef[defName="HealingEnhancer"]/stages/li</xpath>
-				<value>
-					<naturalHealingFactor Operation="SafeRemove"/>
-					<statFactors Operation="Safe">
-						<InjuryHealingFactor Operation="SafeRemove">0</InjuryHealingFactor>
-					</statFactors>
-					<statOffsets Operation="Safe">
-						<InjuryHealingFactor Operation="SafeAdd">1</InjuryHealingFactor>
-					</statOffsets>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/HediffDef[defName="ToughskinGland"]/stages/li</xpath>
-				<value>
-					<capMods Operation="Safe">
-						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-							<capacity Operation="Safe">Moving</capacity>
-							<offset Operation="SafeAdd">-0.1</offset>
-							<postFactor Operation="SafeRemove">0</postFactor>
-						</li>
-					</capMods>
-					<statOffsets Operation="Safe">
-						<ArmorRating_Sharp Operation="SafeReplace">0.4</ArmorRating_Sharp>
-					</statOffsets>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/HediffDef[defName="ArmorskinGland"]/stages/li</xpath>
-				<value>
-					<capMods Operation="Safe">
-						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-							<capacity Operation="Safe">Moving</capacity>
-							<offset Operation="SafeAdd">-0.15</offset>
-							<postFactor Operation="SafeRemove">0</postFactor>
-						</li>
-					</capMods>
-					<statOffsets Operation="Safe">
-						<ArmorRating_Sharp Operation="SafeReplace">0.5</ArmorRating_Sharp>
-					</statOffsets>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/HediffDef[defName="StoneskinGland"]/stages/li</xpath>
-				<value>
-					<capMods Operation="Safe">
-						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-							<capacity Operation="Safe">Moving</capacity>
-							<offset Operation="SafeAdd">-0.2</offset>
-							<postFactor Operation="SafeRemove">0</postFactor>
-						</li>
-					</capMods>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/HediffDef[defName="ReprocessorStomach"]/stages/li</xpath>
-				<value>
-					<hungerRateFactor Operation="SafeReplace">0.8</hungerRateFactor>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/HediffDef[defName="NuclearStomach"]/stages/li</xpath>
-				<value>
-					<hungerRateFactor Operation="SafeReplace">0.2</hungerRateFactor>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/HediffDef[defName="CircadianAssistant"]/stages/li</xpath>
-				<value>
-					<statFactors Operation="Safe">
-						<RestFallRateFactor Operation="SafeAdd">0.8</RestFallRateFactor>
-					</statFactors>
-					<statOffsets Operation="Safe">
-						<RestFallRateFactor Operation="SafeRemove">0</RestFallRateFactor>
+						<GlobalLearningFactor Operation="SafeReplace">0.2</GlobalLearningFactor>
 					</statOffsets>
 				</value>
 			</Operation>
@@ -204,6 +178,42 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- global misc -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="PregnantHuman"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>HediffDef/stages/li/hungerRateFactorOffset</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[label="first trimester"]</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeAdd">1.2</hungerRateFactor>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[label="second trimester"]</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeAdd">1.2</hungerRateFactor>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[label="third trimester"]</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeAdd">1.5</hungerRateFactor>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<!-- various -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="BioStarvation"]/stages/li</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeAdd">1.5</hungerRateFactor>
+					<hungerRateFactorOffset Operation="SafeRemove"/>
+				</value>
+			</Operation>
+			<!-- deathrest -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/HediffDef[defName="GlucosoidRush"]/stages/li</xpath>
 				<value>
@@ -235,59 +245,6 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<!-- prosthetics -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/HediffDef[defName="GhoulPlating"]/stages/li</xpath>
-				<value>
-					<capMods Operation="Safe">
-						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-							<capacity Operation="SafeAdd">Moving</capacity>
-							<offset Operation="SafeAdd">-0.1</offset>
-						</li>
-					</capMods>
-					<statOffsets Operation="Safe">
-						<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
-					</statOffsets>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/HediffDef[defName="GhoulBarbs"]/stages/li</xpath>
-				<value>
-					<capMods Operation="Safe">
-						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-							<capacity Operation="SafeAdd">Moving</capacity>
-							<offset Operation="SafeAdd">-0.1</offset>
-						</li>
-					</capMods>
-					<statFactors Operation="Safe">
-						<MeleeDamageFactor Operation="SafeRemove">0</MeleeDamageFactor>
-					</statFactors>
-					<statOffsets Operation="Safe">
-						<MeleeDamageFactor Operation="SafeAdd">0.5</MeleeDamageFactor>
-						<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
-					</statOffsets>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/HediffDef[defName="AdrenalHeart"]/stages/li</xpath>
-				<value>
-					<hungerRateFactorOffset Operation="SafeReplace">0.2</hungerRateFactorOffset>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/HediffDef[defName="MetalbloodHeart"]/stages/li</xpath>
-				<value>
-					<capMods Operation="Safe">
-						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-							<capacity Operation="SafeAdd">Moving</capacity>
-							<offset Operation="SafeAdd">-0.05</offset>
-						</li>
-					</capMods>
-					<statOffsets Operation="Safe">
-						<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
-					</statOffsets>
-				</value>
-			</Operation>
 			<!-- misc -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/HediffDef[defName="PsychicTrance"]/stages/li</xpath>
@@ -557,158 +514,36 @@
 		</caseTrue>
 	</Operation>
 
+	<!--Big and Small - Framework -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>ludeon.rimworld.odyssey</li>
+			<li>redmattis.betterprerequisites</li>
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<!-- prosthetics -->
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/HediffDef[defName="BloodWarmer"]/stages/li</xpath>
+				<xpath>Defs/HediffDef[defName="BS_CryogenicInhibition"]/stages/li[label="extreme"]</xpath>
 				<value>
-					<statOffsets Operation="Safe">
-						<ComfyTemperatureMin Operation="SafeReplace">-25</ComfyTemperatureMin>
-					</statOffsets>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/HediffDef[defName="PilotAssistant"]/stages/li</xpath>
-				<value>
-					<statOffsets Operation="Safe">
-						<PilotingAbility Operation="SafeReplace">0.5</PilotingAbility>
-					</statOffsets>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/HediffDef[defName="VacskinGland"]/stages/li</xpath>
-				<value>
-					<capMods Operation="Safe">
-						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-							<capacity Operation="Safe">Moving</capacity>
-							<offset Operation="SafeAdd">-0.1</offset>
-							<postFactor Operation="SafeRemove">0</postFactor>
-						</li>
-					</capMods>
+					<hungerRateFactor Operation="SafeAdd">0.2</hungerRateFactor>
+					<hungerRateFactorOffset Operation="SafeRemove"/>
 				</value>
 			</Operation>
 		</caseTrue>
 	</Operation>
 
-	<!-- [FSF] Vanilla Bionics Expansion -->
+	<!--Contagion -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>frozensnowfox.vanillabionicsexpansion</li>
+			<li>cheatereater.contagion</li>
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<!-- archotech -->
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/HediffDef[defName="FSFArchotechStomach"]/stages/li</xpath>
+				<xpath>Defs/HediffDef[defName="Contagion_Animal_GutWorms"]/stages/li</xpath>
 				<value>
-					<hungerRateFactor MayRequire="Ludeon.RimWorld.Royalty" Operation="SafeReplace">0.2</hungerRateFactor>
+					<hungerRateFactor Operation="SafeAdd">2</hungerRateFactor>
+					<hungerRateFactorOffset Operation="SafeRemove"/>
 				</value>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
-	<!-- Medical System Expansion 2 -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>mse2.core</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-				<xpath>Defs/HediffDef/comps/li[@Class="MSE2.HediffCompProperties_ModuleHolder" and maxModules="1"]</xpath>
-			</Operation>
-			<Operation Class="XmlExtensions.PatchOperationSafeReplace">
-				<xpath>Defs/HediffDef/comps/li[@Class="MSE2.HediffCompProperties_ModuleHolder" and maxModules="2"]</xpath>
-				<value>
-					<maxModules>1</maxModules>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/HediffDef[@Name="AddedBodyPart_Limb_Archotech"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>HediffDef</xpath>
-						<value>
-							<defaultLabelColor Operation="AddOrReplace">(139, 143, 104)</defaultLabelColor>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>v1024.ebframework</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>HediffDef</xpath>
-								<value>
-									<comps Operation="Safe">
-										<li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust" Operation="SafeRemove" CheckAttributes="True">0</li>
-									</comps>
-								</value>
-							</Operation>
-						</caseTrue>
-					</Operation>
-				</apply>
-			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/HediffDef[@Name="AddedBodyPart_Limb_Bionic"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>HediffDef</xpath>
-						<value>
-							<defaultLabelColor Operation="AddOrReplace">(0.6, 0.6, 1.0)</defaultLabelColor>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>v1024.ebframework</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>HediffDef</xpath>
-								<value>
-									<comps Operation="Safe">
-										<li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust" Operation="SafeRemove" CheckAttributes="True">0</li>
-									</comps>
-								</value>
-							</Operation>
-						</caseTrue>
-					</Operation>
-				</apply>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>v1024.ebframework</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/HediffDef[@ParentName="AddedBodyPart_Limb_Archotech" and defName!="ArchotechLeg"]</xpath>
-						<value>
-							<comps Operation="Safe">
-								<li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust" Operation="Safe" CheckAttributes="True">
-									<scaleAdjustment Operation="SafeAdd">0.5</scaleAdjustment>
-								</li>
-							</comps>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/HediffDef[@ParentName="AddedBodyPart_Limb_Bionic" and defName!="BionicLeg"]</xpath>
-						<value>
-							<comps Operation="Safe">
-								<li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust" Operation="Safe" CheckAttributes="True">
-									<scaleAdjustment Operation="SafeAdd">0.25</scaleAdjustment>
-								</li>
-							</comps>
-						</value>
-					</Operation>
-				</caseTrue>
 			</Operation>
 		</caseTrue>
 	</Operation>
@@ -720,34 +555,32 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- Reproduction -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/HediffDef[defName="VFEI2_EmpressSpawn"]</xpath>
 				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>HediffDef/stages/li/hungerRateFactor</xpath>
-					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="egg"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeAdd">0.2</hungerRateFactorOffset>
+							<hungerRateFactor Operation="SafeReplace">1.2</hungerRateFactor>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="larva"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeAdd">0.5</hungerRateFactorOffset>
+							<hungerRateFactor Operation="SafeReplace">1.5</hungerRateFactor>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="pupa"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeAdd">1</hungerRateFactorOffset>
+							<hungerRateFactor Operation="SafeReplace">2</hungerRateFactor>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="juvenile"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeAdd">1</hungerRateFactorOffset>
+							<hungerRateFactor Operation="SafeReplace">2</hungerRateFactor>
 						</value>
 					</Operation>
 				</apply>
@@ -755,31 +588,28 @@
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/HediffDef[defName="VFEI2_GigamiteSpawn"]</xpath>
 				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>HediffDef/stages/li/hungerRateFactor</xpath>
-					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="egg"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeAdd">0.2</hungerRateFactorOffset>
+							<hungerRateFactor Operation="SafeReplace">1.2</hungerRateFactor>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="larva"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeAdd">0.5</hungerRateFactorOffset>
+							<hungerRateFactor Operation="SafeReplace">1.5</hungerRateFactor>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="pupa"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeAdd">1</hungerRateFactorOffset>
+							<hungerRateFactor Operation="SafeReplace">2</hungerRateFactor>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="juvenile"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeAdd">1</hungerRateFactorOffset>
+							<hungerRateFactor Operation="SafeReplace">2</hungerRateFactor>
 						</value>
 					</Operation>
 				</apply>
@@ -787,31 +617,28 @@
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/HediffDef[defName="VFEI2_SilverfishSpawn"]</xpath>
 				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>HediffDef/stages/li/hungerRateFactor</xpath>
-					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="egg"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeAdd">0.2</hungerRateFactorOffset>
+							<hungerRateFactor Operation="SafeReplace">1.2</hungerRateFactor>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="larva"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeAdd">0.5</hungerRateFactorOffset>
+							<hungerRateFactor Operation="SafeReplace">1.5</hungerRateFactor>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="pupa"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeAdd">1</hungerRateFactorOffset>
+							<hungerRateFactor Operation="SafeReplace">2</hungerRateFactor>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="juvenile"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeAdd">1</hungerRateFactorOffset>
+							<hungerRateFactor Operation="SafeReplace">2</hungerRateFactor>
 						</value>
 					</Operation>
 				</apply>
@@ -819,31 +646,28 @@
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/HediffDef[defName="VFEI2_TitantickSpawn"]</xpath>
 				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>HediffDef/stages/li/hungerRateFactor</xpath>
-					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="egg"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeAdd">0.2</hungerRateFactorOffset>
+							<hungerRateFactor Operation="SafeReplace">1.2</hungerRateFactor>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="larva"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeAdd">0.5</hungerRateFactorOffset>
+							<hungerRateFactor Operation="SafeReplace">1.5</hungerRateFactor>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="pupa"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeAdd">1</hungerRateFactorOffset>
+							<hungerRateFactor Operation="SafeReplace">2</hungerRateFactor>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="juvenile"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeAdd">1</hungerRateFactorOffset>
+							<hungerRateFactor Operation="SafeReplace">2</hungerRateFactor>
 						</value>
 					</Operation>
 				</apply>
@@ -851,34 +675,94 @@
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/HediffDef[defName="VFEI2_TeramantisSpawn"]</xpath>
 				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>HediffDef/stages/li/hungerRateFactor</xpath>
-					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="egg"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeAdd">0.2</hungerRateFactorOffset>
+							<hungerRateFactor Operation="SafeReplace">1.2</hungerRateFactor>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="larva"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeAdd">0.5</hungerRateFactorOffset>
+							<hungerRateFactor Operation="SafeReplace">1.5</hungerRateFactor>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="pupa"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeAdd">1</hungerRateFactorOffset>
+							<hungerRateFactor Operation="SafeReplace">2</hungerRateFactor>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="juvenile"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeAdd">1</hungerRateFactorOffset>
+							<hungerRateFactor Operation="SafeReplace">2</hungerRateFactor>
 						</value>
 					</Operation>
 				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!--Vanilla Genetics Expanded -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaexpanded.vgeneticse</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- Hybird HungerByQuality -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="GR_HungerByQuality"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>HediffDef/stages/li/hungerRateFactorOffset</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0"]</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeAdd">2</hungerRateFactor>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.1"]</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeAdd">1.5</hungerRateFactor>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.3"]</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeAdd">0.8</hungerRateFactor>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.4"]</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeAdd">0.5</hungerRateFactor>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.5"]</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeAdd">0.2</hungerRateFactor>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.6"]</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeAdd">0.05</hungerRateFactor>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<!-- lifespan diseases -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="GR_GreaterScaria"]/stages/li</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeAdd">0</hungerRateFactor>
+					<hungerRateFactorOffset Operation="SafeRemove"/>
+				</value>
 			</Operation>
 		</caseTrue>
 	</Operation>
@@ -893,31 +777,28 @@
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/HediffDef[defName="VRE_ChestburstPregnancy_Victim"]</xpath>
 				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>HediffDef/stages/li/hungerRateFactor</xpath>
-					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="egg"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeAdd">0.2</hungerRateFactorOffset>
+							<hungerRateFactor Operation="SafeReplace">1.2</hungerRateFactor>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="larva"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeAdd">0.5</hungerRateFactorOffset>
+							<hungerRateFactor Operation="SafeReplace">1.5</hungerRateFactor>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="pupa"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeAdd">1</hungerRateFactorOffset>
+							<hungerRateFactor Operation="SafeReplace">2</hungerRateFactor>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="juvenile"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeAdd">1</hungerRateFactorOffset>
+							<hungerRateFactor Operation="SafeReplace">2</hungerRateFactor>
 						</value>
 					</Operation>
 				</apply>
@@ -925,31 +806,28 @@
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/HediffDef[defName="VRE_ChestburstPregnancy_Victim_Hidden"]</xpath>
 				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>HediffDef/stages/li/hungerRateFactor</xpath>
-					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="egg"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeAdd">0.2</hungerRateFactorOffset>
+							<hungerRateFactor Operation="SafeReplace">1.2</hungerRateFactor>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="larva"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeAdd">0.5</hungerRateFactorOffset>
+							<hungerRateFactor Operation="SafeReplace">1.5</hungerRateFactor>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="pupa"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeAdd">1</hungerRateFactorOffset>
+							<hungerRateFactor Operation="SafeReplace">2</hungerRateFactor>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="juvenile"]</xpath>
 						<value>
-							<hungerRateFactorOffset Operation="SafeAdd">1</hungerRateFactorOffset>
+							<hungerRateFactor Operation="SafeReplace">2</hungerRateFactor>
 						</value>
 					</Operation>
 				</apply>

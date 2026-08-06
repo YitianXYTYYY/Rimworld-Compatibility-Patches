@@ -223,7 +223,27 @@
 				<value>
 					<exclusionTags Operation="Safe">
 						<li Operation="SafeRemove" Compare="InnerText">Fertility</li>
+						<li Operation="SafeRemove" Compare="InnerText">InsectorAggression</li>
 					</exclusionTags>
+					<modExtensions Operation="Safe">
+						<li Class="VEF.Genes.GeneExtension" Operation="Safe" CheckAttributes="True">
+							<hediffsToBodyParts Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText" XPathLocal="hediff">
+									<hediff>VRE_LowOctopamine</hediff>
+								</li>
+							</hediffsToBodyParts>
+						</li>
+					</modExtensions>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThoughtDef[defName="VRE_LowOctopamine"]</xpath>
+				<value>
+					<workerClass Operation="SafeReplace">ThoughtWorker_AlwaysActive</workerClass>
+					<hediff Operation="SafeRemove">VRE_LowOctopamine</hediff>
+					<requiredGenes Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">VRE_LowOctopamine</li>
+					</requiredGenes>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
@@ -291,7 +311,7 @@
 							</statFactors>
 							<statOffsets Operation="Safe">
 								<StaggerDurationFactor Operation="SafeAdd">1</StaggerDurationFactor>
-								<VEF_BodySize_Offset Operation="SafeReplace">-0.4</VEF_BodySize_Offset>
+								<VEF_BodySize_Offset Operation="SafeReplace">-0.6</VEF_BodySize_Offset>
 							</statOffsets>
 						</value>
 					</Operation>
@@ -326,6 +346,9 @@
 								<ComfyTemperatureMin Operation="SafeReplace">5</ComfyTemperatureMin>
 							</statOffsets>
 						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_InflexibleJoints"]</xpath>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_HardLockedJoints"]</xpath>

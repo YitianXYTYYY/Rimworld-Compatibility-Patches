@@ -66,13 +66,6 @@
 					</comps>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/HediffDef[defName="VQEA_Enormous"]/stages/li</xpath>
-				<value>
-					<hungerRateFactor Operation="SafeRemove"/>
-					<hungerRateFactorOffset Operation="SafeAdd">1</hungerRateFactorOffset>
-				</value>
-			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/HediffDef[defName="VQEA_HemocollapseSyndrome"]</xpath>
 				<apply>
@@ -192,6 +185,7 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- attacks -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/HediffDef[defName="VRE_RipperBlades"]</xpath>
 				<value>
@@ -208,11 +202,11 @@
 					</comps>
 				</value>
 			</Operation>
+			<!-- hunger -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/HediffDef[defName="VRE_InefficientMidgut"]/stages/li</xpath>
 				<value>
-					<hungerRateFactor Operation="SafeRemove"/>
-					<hungerRateFactorOffset Operation="SafeAdd">1.5</hungerRateFactorOffset>
+					<hungerRateFactor Operation="SafeReplace">2</hungerRateFactor>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
@@ -222,23 +216,117 @@
 					<hungerRateFactor Operation="SafeAdd">0.8</hungerRateFactor>
 				</value>
 			</Operation>
+			<!-- temperature -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="VRE_HeatshockHediff"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef</xpath>
+						<value>
+							<maxSeverity Operation="SafeAdd">2.0</maxSeverity>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>HediffDef/stages/li/hungerRateFactorOffset</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>HediffDef/stages/li[label="initial" and becomeVisible="false"]/label</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[label="initial"]</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeAdd">2</hungerRateFactor>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[label="minor"]</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeAdd">3</hungerRateFactor>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[label="serious"]</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeAdd">4</hungerRateFactor>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[label="extreme"]</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeAdd">5</hungerRateFactor>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="VRE_HypothermicHibernationHediff"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef</xpath>
+						<value>
+							<maxSeverity Operation="SafeAdd">2.0</maxSeverity>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>HediffDef/stages/li/hungerRateFactorOffset</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>HediffDef/stages/li/restFallFactor</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[label="initial"]</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<RestFallRateFactor Operation="SafeAdd">0.4</RestFallRateFactor>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[label="drowsy"]</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeAdd">0.8</hungerRateFactor>
+							<statOffsets Operation="Safe">
+								<RestFallRateFactor Operation="SafeAdd">0.8</RestFallRateFactor>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[label="sleep"]</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeAdd">0.2</hungerRateFactor>
+							<statOffsets Operation="Safe">
+								<RestFallRateFactor Operation="SafeAdd">1</RestFallRateFactor>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[label="deep sleep"]</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeAdd">0.05</hungerRateFactor>
+							<statOffsets Operation="Safe">
+								<RestFallRateFactor Operation="SafeAdd">1</RestFallRateFactor>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
 					<li>oskarpotocki.vfe.insectoid2</li>
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
+					<!-- hunger -->
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/HediffDef[defName="VRE_Microsized"]/stages/li</xpath>
 						<value>
-							<hungerRateFactor Operation="SafeReplace">0.8</hungerRateFactor>
+							<hungerRateFactor Operation="SafeReplace">0.5</hungerRateFactor>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/HediffDef[defName="VRE_Colossal"]/stages/li</xpath>
 						<value>
-							<hungerRateFactor Operation="SafeRemove"/>
-							<hungerRateFactorOffset Operation="SafeAdd">1</hungerRateFactorOffset>
+							<hungerRateFactor Operation="SafeReplace">1.6</hungerRateFactor>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -279,7 +367,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef</xpath>
 						<value>
-							<maxSeverity>1</maxSeverity>
+							<maxSeverity Operation="SafeAdd">2</maxSeverity>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
@@ -293,7 +381,7 @@
 						<value>
 							<hungerRateFactor Operation="SafeAdd">0.9</hungerRateFactor>
 							<statOffsets Operation="Safe">
-								<RestFallRateFactor Operation="SafeAdd">0.2</RestFallRateFactor>
+								<RestFallRateFactor Operation="SafeAdd">0.4</RestFallRateFactor>
 							</statOffsets>
 						</value>
 					</Operation>
@@ -302,7 +390,7 @@
 						<value>
 							<hungerRateFactor Operation="SafeAdd">0.8</hungerRateFactor>
 							<statOffsets Operation="Safe">
-								<RestFallRateFactor Operation="SafeAdd">0.5</RestFallRateFactor>
+								<RestFallRateFactor Operation="SafeAdd">0.8</RestFallRateFactor>
 							</statOffsets>
 						</value>
 					</Operation>

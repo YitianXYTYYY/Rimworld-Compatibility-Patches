@@ -176,10 +176,23 @@
 							<li>RecipeDef/Make_ModuleArmorEBF</li>
 							<li>ThingDef/RangedPlatformModule</li>
 							<li>ThingDef/MeleePlatformModule</li>
-							<li>ThingDef/ModuleEfficiency</li>
-							<li>ThingDef/CraftingToolsModule</li>
-							<li>ThingDef/ModuleArmorEBF</li>
 						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>v1024.ebframework</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>ThingDef/ModuleEfficiency</li>
+									<li>ThingDef/CraftingToolsModule</li>
+									<li>ThingDef/ModuleArmorEBF</li>
+								</value>
+							</Operation>
+						</caseTrue>
 					</Operation>
 				</caseTrue>
 			</Operation>
@@ -319,29 +332,6 @@
 						<value>
 							<li>ThingDef/NutrientPasteDispenser</li>
 						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-			<!-- Vanilla Races Expanded - Insector -->
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.insector</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>oskarpotocki.vfe.insectoid2</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="PatchOperationAdd">
-								<xpath>defs</xpath>
-								<value>
-									<li>VanillaRacesExpandedInsector.GenelineGeneDef/VRE_InflexibleJoints</li>
-								</value>
-							</Operation>
-						</caseTrue>
 					</Operation>
 				</caseTrue>
 			</Operation>

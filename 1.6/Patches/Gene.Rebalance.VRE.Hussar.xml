@@ -56,16 +56,37 @@
 			</Operation>
 
 			<!-- 0 misc -->
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="VREH_Giant"]</xpath>
-				<value>
-					<statFactors Operation="Safe">
-						<VEF_BodySize_Multiplier Operation="SafeRemove">0</VEF_BodySize_Multiplier>
-					</statFactors>
-					<statOffsets Operation="Safe">
-						<VEF_BodySize_Offset Operation="SafeAdd">0.2</VEF_BodySize_Offset>
-					</statOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<statFactors Operation="Safe">
+								<VEF_BodySize_Multiplier Operation="SafeRemove">0</VEF_BodySize_Multiplier>
+							</statFactors>
+							<statOffsets Operation="Safe">
+								<VEF_BodySize_Offset Operation="SafeAdd">0.2</VEF_BodySize_Offset>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaquestsexpanded.ancients</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>GeneDef</xpath>
+								<value>
+									<exclusionTags Operation="Safe">
+										<li Operation="SafeAdd" Compare="InnerText">VQEA_Enormous_VREH_Giant</li>
+									</exclusionTags>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
 			</Operation>
 
 			<!-- -40 wing -->

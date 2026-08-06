@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
+	<!-- go-juice -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/HediffDef[defName="GoJuiceAddiction"]/stages/li[label="withdrawal"]</xpath>
+		<value>
+			<hungerRateFactor Operation="SafeAdd">1.5</hungerRateFactor>
+			<hungerRateFactorOffset Operation="SafeRemove"/>
+		</value>
+	</Operation>
+
+	<!-- go-juice -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/HediffDef[defName="SmokeleafHigh"]/stages/li</xpath>
+		<value>
+			<hungerRateFactor Operation="SafeAdd">1.2</hungerRateFactor>
+			<hungerRateFactorOffset Operation="SafeRemove"/>
+		</value>
+	</Operation>
+
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
 			<li>ludeon.rimworld.anomaly</li>
@@ -74,6 +92,13 @@
 						</value>
 					</Operation>
 				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="VFEE_IngestedAperitif"]/stages/li</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeAdd">2</hungerRateFactor>
+					<hungerRateFactorOffset Operation="SafeRemove"/>
+				</value>
 			</Operation>
 		</caseTrue>
 	</Operation>
@@ -188,12 +213,6 @@
 						</li>
 					</comps>
 					<hediffClass Operation="SafeReplace">Hediff_High</hediffClass>
-					<stages Operation="Safe">
-						<li Operation="Safe">
-							<hungerRateFactor Operation="SafeRemove">0</hungerRateFactor>
-							<hungerRateFactorOffset Operation="SafeAdd">0.1</hungerRateFactorOffset>
-						</li>
-					</stages>
 				</value>
 			</Operation>
 		</caseTrue>

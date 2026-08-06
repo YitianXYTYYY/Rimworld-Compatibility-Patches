@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- Bodyparts -->
+	<!-- bionic -->
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/HediffDef[defName="BionicStomach"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li</xpath>
+				<value>
+					<foodPoisoningChanceFactor Operation="SafeRemove"/>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>mse2.core</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef</xpath>
+						<value>
+							<comps Operation="Safe">
+								<li Class="MSE2.HediffCompProperties_ModuleHolder" Operation="SafeAdd" CheckAttributes="True">
+									<maxModules>1</maxModules>
+								</li>
+								<li Class="HediffCompProperties_ReactOnDamage" Operation="SafeAdd" CheckAttributes="True">
+									<damageDefIncoming>EMP</damageDefIncoming>
+									<vomit>true</vomit>
+								</li>
+							</comps>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
+	</Operation>
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ludeon.rimworld.royalty</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- prosthetics -->
+			<!-- archotech -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="PsychicSensitizer"]/stages/li</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<PsychicSensitivity Operation="SafeReplace">0.4</PsychicSensitivity>
+					</statOffsets>
+				</value>
+			</Operation>
+			<!-- bionic -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="Immunoenhancer"]/stages/li</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<ImmunityGainSpeed Operation="SafeReplace">0.1</ImmunityGainSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="HealingEnhancer"]/stages/li</xpath>
+				<value>
+					<naturalHealingFactor Operation="SafeRemove"/>
+					<statFactors Operation="Safe">
+						<InjuryHealingFactor Operation="SafeRemove">0</InjuryHealingFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<InjuryHealingFactor Operation="SafeAdd">1</InjuryHealingFactor>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="ToughskinGland"]/stages/li</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Moving</capacity>
+							<offset Operation="SafeAdd">-0.1</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+					</capMods>
+					<statOffsets Operation="Safe">
+						<ArmorRating_Sharp Operation="SafeReplace">0.4</ArmorRating_Sharp>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="ArmorskinGland"]/stages/li</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Moving</capacity>
+							<offset Operation="SafeAdd">-0.15</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+					</capMods>
+					<statOffsets Operation="Safe">
+						<ArmorRating_Sharp Operation="SafeReplace">0.5</ArmorRating_Sharp>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="StoneskinGland"]/stages/li</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Moving</capacity>
+							<offset Operation="SafeAdd">-0.2</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+					</capMods>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="CircadianAssistant"]/stages/li</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<RestFallRateFactor Operation="SafeAdd">0.8</RestFallRateFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<RestFallRateFactor Operation="SafeRemove">0</RestFallRateFactor>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>mse2.core</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseFalse>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/HediffDef[defName="ReprocessorStomach"]/stages/li</xpath>
+						<value>
+							<hungerRateFactor Operation="Safe">0.8</hungerRateFactor>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/HediffDef[defName="NuclearStomach"]/stages/li</xpath>
+						<value>
+							<hungerRateFactor Operation="Safe">0.2</hungerRateFactor>
+						</value>
+					</Operation>
+				</caseFalse>
+				<caseTrue>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>Defs/HediffDef[(defName="DetoxifierStomach" or defName="ReprocessorStomach" or defName="NuclearStomach") and @ParentName!="MSE_ModuleAddedBionic"]</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>Defs/ThingDef[(defName="DetoxifierStomach" or defName="ReprocessorStomach" or defName="NuclearStomach") and @ParentName!="MSE_ModuleBionic"]</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>Defs/RecipeDef[(defName="InstallDetoxifierStomach" or defName="InstallReprocessorStomach" or defName="InstallNuclearStomach") and @ParentName!="MSE_SurgeryInstallModuleBase"]</xpath>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ludeon.rimworld.biotech</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- detoxifier -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="DetoxifierLung"]</xpath>
+				<value>
+					<addedPartProps Operation="Safe">
+						<partEfficiency Operation="SafeReplace">1.25</partEfficiency>
+					</addedPartProps>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="DetoxifierKidney"]</xpath>
+				<value>
+					<addedPartProps Operation="Safe">
+						<partEfficiency Operation="SafeReplace">1.25</partEfficiency>
+					</addedPartProps>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ludeon.rimworld.anomaly</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- prosthetics -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="GhoulPlating"]/stages/li</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="SafeAdd">Moving</capacity>
+							<offset Operation="SafeAdd">-0.1</offset>
+						</li>
+					</capMods>
+					<statOffsets Operation="Safe">
+						<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="GhoulBarbs"]/stages/li</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="SafeAdd">Moving</capacity>
+							<offset Operation="SafeAdd">-0.1</offset>
+						</li>
+					</capMods>
+					<statFactors Operation="Safe">
+						<MeleeDamageFactor Operation="SafeRemove">0</MeleeDamageFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<MeleeDamageFactor Operation="SafeAdd">0.5</MeleeDamageFactor>
+						<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="AdrenalHeart"]/stages/li</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeAdd">1.2</hungerRateFactor>
+					<hungerRateFactorOffset Operation="SafeRemove"/>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="MetalbloodHeart"]/stages/li</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="SafeAdd">Moving</capacity>
+							<offset Operation="SafeAdd">-0.05</offset>
+						</li>
+					</capMods>
+					<statOffsets Operation="Safe">
+						<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ludeon.rimworld.odyssey</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- prosthetics -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="BloodWarmer"]/stages/li</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<ComfyTemperatureMin Operation="SafeReplace">-25</ComfyTemperatureMin>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="PilotAssistant"]/stages/li</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<PilotingAbility Operation="SafeReplace">0.5</PilotingAbility>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="VacskinGland"]/stages/li</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Moving</capacity>
+							<offset Operation="SafeAdd">-0.1</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+					</capMods>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- [FSF] Vanilla Bionics Expansion -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>frozensnowfox.vanillabionicsexpansion</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- archotech -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="FSFArchotechStomach"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li</xpath>
+						<value>
+							<hungerRateFactor MayRequire="Ludeon.RimWorld.Royalty" Operation="SafeReplace">0.2</hungerRateFactor>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>mse2.core</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>HediffDef</xpath>
+								<value>
+									<comps Operation="Safe">
+										<li Class="MSE2.HediffCompProperties_ModuleHolder" Operation="SafeAdd" CheckAttributes="True">
+											<maxModules>1</maxModules>
+										</li>
+									</comps>
+								</value>
+							</Operation>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>HediffDef/stages/li</xpath>
+								<value>
+									<foodPoisoningChanceFactor Operation="SafeRemove"/>
+									<hungerRateFactor Operation="SafeRemove"/>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Medical System Expansion 2 -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>mse2.core</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/HediffDef[@ParentName="AddedBodyPart_Limb_Archotech" or @ParentName="AddedBodyPart_Limb_Bionic"]/comps/li[@Class="MSE2.HediffCompProperties_ModuleHolder" and maxModules="1"]</xpath>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationSafeReplace">
+				<xpath>Defs/HediffDef[@ParentName="AddedBodyPart_Limb_Archotech" or @ParentName="AddedBodyPart_Limb_Bionic"]/comps/li[@Class="MSE2.HediffCompProperties_ModuleHolder" and maxModules="2"]</xpath>
+				<value>
+					<maxModules>1</maxModules>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[@Name="AddedBodyPart_Limb_Archotech"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef</xpath>
+						<value>
+							<defaultLabelColor Operation="AddOrReplace">(139, 143, 104)</defaultLabelColor>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>v1024.ebframework</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>HediffDef</xpath>
+								<value>
+									<comps Operation="Safe">
+										<li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust" Operation="SafeRemove" CheckAttributes="True">0</li>
+									</comps>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[@Name="AddedBodyPart_Limb_Bionic"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef</xpath>
+						<value>
+							<defaultLabelColor Operation="AddOrReplace">(0.6, 0.6, 1.0)</defaultLabelColor>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>v1024.ebframework</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>HediffDef</xpath>
+								<value>
+									<comps Operation="Safe">
+										<li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust" Operation="SafeRemove" CheckAttributes="True">0</li>
+									</comps>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>v1024.ebframework</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/HediffDef[@ParentName="AddedBodyPart_Limb_Archotech" and defName!="ArchotechLeg"]</xpath>
+						<value>
+							<comps Operation="Safe">
+								<li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust" Operation="Safe" CheckAttributes="True">
+									<scaleAdjustment Operation="SafeAdd">0.5</scaleAdjustment>
+								</li>
+							</comps>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/HediffDef[@ParentName="AddedBodyPart_Limb_Bionic" and defName!="BionicLeg"]</xpath>
+						<value>
+							<comps Operation="Safe">
+								<li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust" Operation="Safe" CheckAttributes="True">
+									<scaleAdjustment Operation="SafeAdd">0.25</scaleAdjustment>
+								</li>
+							</comps>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!--Vanilla Genetics Expanded -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaexpanded.vgeneticse</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- implant human -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="GR_ChemfuelStomach"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>HediffDef/stages/li/hungerRateFactorOffset</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.1"]</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeAdd">0.9</hungerRateFactor>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.2"]</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeAdd">0.8</hungerRateFactor>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.3"]</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeAdd">0.7</hungerRateFactor>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.4"]</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeAdd">0.6</hungerRateFactor>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.5"]</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeAdd">0.5</hungerRateFactor>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.6"]</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeAdd">0.4</hungerRateFactor>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<!-- lifespan diseases -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="GR_GreaterScaria"]/stages/li</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeAdd">0</hungerRateFactor>
+					<hungerRateFactorOffset Operation="SafeRemove"/>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>

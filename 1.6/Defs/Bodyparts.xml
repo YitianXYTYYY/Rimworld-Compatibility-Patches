@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Sterilizing stomach -->
+	<HediffDef ParentName="MSE_ModuleAddedBionic" MayRequire="mse2.core">
+		<defName>DetoxifierStomach</defName>
+		<label>stomach sterilizer</label>
+		<labelNoun>a stomach sterilizer</labelNoun>
+		<description>An installed stomach sterilizer. Allows the user to eat almost anything without ever worrying about food poisoning.</description>
+		<descriptionHyperlinks>
+			<ThingDef>DetoxifierStomach</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>DetoxifierStomach</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<foodPoisoningChanceFactor>0</foodPoisoningChanceFactor>
+			</li>
+		</stages>
+	</HediffDef>
+	<ThingDef ParentName="MSE_ModuleBionic" MayRequire="mse2.core">
+		<defName>DetoxifierStomach</defName>
+		<label>stomach sterilizer</label>
+		<description>An artificial stomach module with a broad-spectrum filtration and sterilization system. It allows the user to eat almost anything without ever worrying about food poisoning.</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallDetoxifierStomach</RecipeDef>
+		</descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>ArtificialMetabolism</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	<RecipeDef ParentName="MSE_SurgeryInstallModuleBase" MayRequire="mse2.core">
+		<defName>InstallDetoxifierStomach</defName>
+		<label>install stomach sterilizer</label>
+		<description>Install a stomach sterilizer.</description>
+		<descriptionHyperlinks>
+			<ThingDef>DetoxifierStomach</ThingDef>
+			<HediffDef>DetoxifierStomach</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing stomach sterilizer.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>DetoxifierStomach</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>DetoxifierStomach</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Stomach</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>DetoxifierStomach</addsHediff>
+		<uiIconThing>DetoxifierStomach</uiIconThing>
+	</RecipeDef>
+	
+	<!-- Reprocessor stomach -->
+	<HediffDef ParentName="MSE_ModuleAddedBionic" MayRequire="mse2.core">
+		<defName>ReprocessorStomach</defName>
+		<label>stomach reprocessor</label>
+		<labelNoun>a stomach reprocessor</labelNoun>
+		<description>An installed stomach reprocessor. Includes an advanced chemical processing system breaks down nutrients the body could normally never use, leading to increased efficiency.</description>
+		<descriptionHyperlinks>
+			<ThingDef>ReprocessorStomach</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>ReprocessorStomach</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<hungerRateFactor>0.8</hungerRateFactor>
+			</li>
+		</stages>
+	</HediffDef>
+	<ThingDef ParentName="MSE_ModuleBionic" MayRequire="mse2.core">
+		<defName>ReprocessorStomach</defName>
+		<label>stomach reprocessor</label>
+		<description>An advanced chemical processing system breaks down nutrients the body could normally never use, leading to increased efficiency.</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallReprocessorStomach</RecipeDef>
+		</descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>ArtificialMetabolism</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	<RecipeDef ParentName="MSE_SurgeryInstallModuleBase" MayRequire="mse2.core">
+		<defName>InstallReprocessorStomach</defName>
+		<label>install stomach reprocessor</label>
+		<description>Install a stomach reprocessor.</description>
+		<descriptionHyperlinks>
+			<ThingDef>ReprocessorStomach</ThingDef>
+			<HediffDef>ReprocessorStomach</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing stomach reprocessor.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ReprocessorStomach</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ReprocessorStomach</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Stomach</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ReprocessorStomach</addsHediff>
+		<uiIconThing>ReprocessorStomach</uiIconThing>
+	</RecipeDef>
+
+	<!-- Nuclear stomach -->
+	<HediffDef ParentName="MSE_ModuleAddedBionic" MayRequire="mse2.core">
+		<defName>NuclearStomach</defName>
+		<label>stomach reactor</label>
+		<labelNoun>a stomach reactor</labelNoun>
+		<description>An installed stomach reactor. A micro-nuclear reactor combined with complex chemical synthesis replaces the body's need for food energy. Food is required only to replace matter lost from the body, reducing the user's intake needs significantly. This artificial stomach cannot get food poisoning. However, there is little room to shield the reactor, so the radiation increases the risk of cancer.</description>
+		<descriptionHyperlinks>
+			<ThingDef>NuclearStomach</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>NuclearStomach</spawnThingOnRemoved>
+		<hediffGivers>
+			<li Class="HediffGiver_Random">
+				<mtbDays>120</mtbDays>
+				<hediff>Carcinoma</hediff>
+				<partsToAffect>
+					<li>Torso</li>
+				</partsToAffect>
+			</li>
+		</hediffGivers>
+		<stages>
+			<li>
+				<hungerRateFactor>0.2</hungerRateFactor>
+				<foodPoisoningChanceFactor>0</foodPoisoningChanceFactor>
+			</li>
+		</stages>
+	</HediffDef>
+	<ThingDef ParentName="MSE_ModuleBionic" MayRequire="mse2.core">
+		<defName>NuclearStomach</defName>
+		<label>stomach reactor</label>
+		<description>A micro-nuclear reactor combined with complex chemical synthesis replaces the body's need for food energy. Food is required only to replace matter lost from the body, reducing the user's intake needs significantly. This artificial stomach cannot get food poisoning. However, there is little room to shield the reactor, so the radiation increases the risk of cancer.</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallNuclearStomach</RecipeDef>
+		</descriptionHyperlinks>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>ArtificialMetabolism</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	<RecipeDef ParentName="MSE_SurgeryInstallModuleBase" MayRequire="mse2.core">
+		<defName>InstallNuclearStomach</defName>
+		<label>install stomach reactor</label>
+		<description>Install a stomach reactor.</description>
+		<descriptionHyperlinks>
+			<ThingDef>NuclearStomach</ThingDef>
+			<HediffDef>NuclearStomach</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing stomach reactor.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>NuclearStomach</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>NuclearStomach</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Stomach</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>NuclearStomach</addsHediff>
+		<uiIconThing>NuclearStomach</uiIconThing>
+	</RecipeDef>
+
+</Defs>
