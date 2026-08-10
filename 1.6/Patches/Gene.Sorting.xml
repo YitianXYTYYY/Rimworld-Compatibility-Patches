@@ -1025,6 +1025,9 @@
 				<value>
 					<displayCategory Operation="AddOrReplace">Movement</displayCategory>
 					<displayOrderInCategory Operation="AddOrReplace">530</displayOrderInCategory>
+					<exclusionTags Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">Unstoppable</li>
+					</exclusionTags>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">

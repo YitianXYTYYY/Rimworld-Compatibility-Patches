@@ -25,7 +25,7 @@
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>Defs/GeneDef/renderNodeProperties/li[@Class="PawnRenderNodeProperties_Eye"]</xpath>
+						<xpath>GeneDef/renderNodeProperties/li[@Class="PawnRenderNodeProperties_Eye"]</xpath>
 					</Operation>
 				</apply>
 			</Operation>

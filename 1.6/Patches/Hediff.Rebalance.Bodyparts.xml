@@ -25,10 +25,6 @@
 								<li Class="MSE2.HediffCompProperties_ModuleHolder" Operation="SafeAdd" CheckAttributes="True">
 									<maxModules>1</maxModules>
 								</li>
-								<li Class="HediffCompProperties_ReactOnDamage" Operation="SafeAdd" CheckAttributes="True">
-									<damageDefIncoming>EMP</damageDefIncoming>
-									<vomit>true</vomit>
-								</li>
 							</comps>
 						</value>
 					</Operation>

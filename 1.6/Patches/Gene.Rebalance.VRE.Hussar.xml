@@ -62,6 +62,13 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef</xpath>
 						<value>
+							<biostatMet Operation="SafeReplace">-4</biostatMet>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="SafeAdd">Moving</capacity>
+									<offset Operation="SafeAdd">-0.05</offset>
+								</li>
+							</capMods>
 							<statFactors Operation="Safe">
 								<VEF_BodySize_Multiplier Operation="SafeRemove">0</VEF_BodySize_Multiplier>
 							</statFactors>

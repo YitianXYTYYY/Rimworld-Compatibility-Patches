@@ -53,6 +53,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_EverGrowing"]</xpath>
 						<value>
+							<biostatMet Operation="SafeReplace">-4</biostatMet>
 							<displayCategory Operation="AddOrReplace">Health_Age</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">200</displayOrderInCategory>
 						</value>

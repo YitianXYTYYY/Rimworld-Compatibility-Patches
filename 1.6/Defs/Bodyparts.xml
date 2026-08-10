@@ -136,7 +136,7 @@
 		<defName>NuclearStomach</defName>
 		<label>stomach reactor</label>
 		<labelNoun>a stomach reactor</labelNoun>
-		<description>An installed stomach reactor. A micro-nuclear reactor combined with complex chemical synthesis replaces the body's need for food energy. Food is required only to replace matter lost from the body, reducing the user's intake needs significantly. This artificial stomach cannot get food poisoning. However, there is little room to shield the reactor, so the radiation increases the risk of cancer.</description>
+		<description>An installed stomach reactor. A micro-nuclear reactor combined with complex chemical synthesis replaces the body's need for food energy. Food is required only to replace matter lost from the body, reducing the user's intake needs significantly. This reactor prevents getting food poisoning. However, there is little room to shield the reactor, so the radiation increases the risk of cancer.</description>
 		<descriptionHyperlinks>
 			<ThingDef>NuclearStomach</ThingDef>
 		</descriptionHyperlinks>
@@ -160,7 +160,7 @@
 	<ThingDef ParentName="MSE_ModuleBionic" MayRequire="mse2.core">
 		<defName>NuclearStomach</defName>
 		<label>stomach reactor</label>
-		<description>A micro-nuclear reactor combined with complex chemical synthesis replaces the body's need for food energy. Food is required only to replace matter lost from the body, reducing the user's intake needs significantly. This artificial stomach cannot get food poisoning. However, there is little room to shield the reactor, so the radiation increases the risk of cancer.</description>
+		<description>A micro-nuclear reactor combined with complex chemical synthesis replaces the body's need for food energy. Food is required only to replace matter lost from the body, reducing the user's intake needs significantly. This reactor prevents getting food poisoning. However, there is little room to shield the reactor, so the radiation increases the risk of cancer.</description>
 		<descriptionHyperlinks>
 			<RecipeDef>InstallNuclearStomach</RecipeDef>
 		</descriptionHyperlinks>

@@ -320,7 +320,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/HediffDef[defName="VRE_Microsized"]/stages/li</xpath>
 						<value>
-							<hungerRateFactor Operation="SafeReplace">0.5</hungerRateFactor>
+							<hungerRateFactor Operation="SafeReplace">0.4</hungerRateFactor>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">

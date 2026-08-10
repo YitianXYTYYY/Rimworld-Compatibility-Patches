@@ -60,8 +60,16 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VQEA_Woundless"]</xpath>
 				<value>
+					<customEffectDescriptions Operation="SafeAdd">
+						<li>Bleeding wounds close very quickly.</li>
+					</customEffectDescriptions>
 					<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
 					<displayOrderInCategory Operation="AddOrReplace">-500</displayOrderInCategory>
+					<modExtensions Operation="Safe">
+						<li Class="VEF.Genes.GeneExtension" Operation="Safe" CheckAttributes="True">
+							<hediffToWholeBody Operation="SafeRemove" Compare="Both">VQEA_Woundless</hediffToWholeBody>
+						</li>
+					</modExtensions>
 					<statFactors Operation="Safe">
 						<InjuryHealingFactor Operation="SafeRemove">0</InjuryHealingFactor>
 					</statFactors>
@@ -152,12 +160,14 @@
 						<packageId>true</packageId>
 						<caseTrue>
 							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>GeneDef/exclusionTags</xpath>
+								<xpath>GeneDef</xpath>
 								<value>
-									<li Operation="SafeRemove" Compare="InnerText">ShootingAccuracy</li>
-									<li Operation="SafeAdd" Compare="InnerText">Turn_Exclusion_Blindness</li>
-									<li Operation="SafeAdd" Compare="InnerText">Turn_Exclusion_NearSighted</li>
-									<li Operation="SafeAdd" Compare="InnerText">Turn_Exclusion_NightVision</li>
+									<exclusionTags Operation="Safe">
+										<li Operation="SafeRemove" Compare="InnerText">ShootingAccuracy</li>
+										<li Operation="SafeAdd" Compare="InnerText">Turn_Exclusion_Blindness</li>
+										<li Operation="SafeAdd" Compare="InnerText">Turn_Exclusion_NearSighted</li>
+										<li Operation="SafeAdd" Compare="InnerText">Turn_Exclusion_NightVision</li>
+									</exclusionTags>
 								</value>
 							</Operation>
 						</caseTrue>
@@ -206,6 +216,9 @@
 				<value>
 					<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
 					<displayOrderInCategory Operation="AddOrReplace">-380</displayOrderInCategory>
+					<exclusionTags Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">Unstoppable</li>
+					</exclusionTags>
 					<statFactors Operation="Safe">
 						<MeleeDamageFactor Operation="SafeRemove">0</MeleeDamageFactor>
 						<CarryingCapacity Operation="SafeRemove">0</CarryingCapacity>
@@ -239,7 +252,7 @@
 							<hediffToWholeBody Operation="SafeRemove" Compare="Both">VQEA_Bulwark</hediffToWholeBody>
 						</li>
 					</modExtensions>
-					<painFactor Operation="SafeAdd">0.1</painFactor>
+					<!--painFactor Operation="SafeAdd">0.1</painFactor-->
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
@@ -266,54 +279,30 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef</xpath>
 						<value>
+							<biostatMet Operation="SafeReplace">-10</biostatMet>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="SafeAdd">Moving</capacity>
+									<offset Operation="SafeAdd">-0.25</offset>
+								</li>
+							</capMods>
 							<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">0</displayOrderInCategory>
+							<modExtensions Operation="Safe">
+								<li Class="VEF.Genes.GeneExtension" Operation="Safe" CheckAttributes="True">
+									<hediffToWholeBody Operation="SafeRemove" Compare="Both">VQEA_Enormous</hediffToWholeBody>
+								</li>
+							</modExtensions>
 							<statFactors Operation="Safe">
 								<LeatherAmount Operation="SafeRemove">0</LeatherAmount>
 								<MeatAmount Operation="SafeRemove">0</MeatAmount>
 								<MeleeDodgeChance Operation="SafeRemove">0</MeleeDodgeChance>
+								<StaggerDurationFactor Operation="SafeRemove">0</StaggerDurationFactor>
 							</statFactors>
 							<statOffsets Operation="Safe">
-									<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+								<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
 							</statOffsets>
 						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>vanillaracesexpanded.insector</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseFalse>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>GeneDef</xpath>
-								<value>
-									<capMods Operation="Safe">
-										<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-											<capacity Operation="SafeAdd">Moving</capacity>
-											<offset Operation="SafeAdd">-0.2</offset>
-										</li>
-									</capMods>
-									<statFactors Operation="Safe">
-										<MeleeDodgeChance Operation="SafeAdd">0.2</MeleeDodgeChance>
-									</statFactors>
-								</value>
-							</Operation>
-						</caseFalse>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>GeneDef</xpath>
-								<value>
-									<exclusionTags Operation="Safe">
-										<li Operation="SafeRemove" Compare="InnerText">InsectorSize</li>
-									</exclusionTags>
-									<modExtensions Operation="Safe">
-										<li Class="VEF.Genes.GeneExtension" Operation="Safe" CheckAttributes="True">
-											<hediffToWholeBody Operation="SafeRemove" Compare="Both">VQEA_Enormous</hediffToWholeBody>
-										</li>
-									</modExtensions>
-								</value>
-							</Operation>
-						</caseTrue>
 					</Operation>
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
@@ -326,6 +315,22 @@
 								<value>
 									<exclusionTags Operation="Safe">
 										<li Operation="SafeAdd" Compare="InnerText">VQEA_Enormous_VREH_Giant</li>
+									</exclusionTags>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaracesexpanded.insector</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>GeneDef</xpath>
+								<value>
+									<exclusionTags Operation="Safe">
+										<li Operation="SafeRemove" Compare="InnerText">InsectorSize</li>
 									</exclusionTags>
 								</value>
 							</Operation>

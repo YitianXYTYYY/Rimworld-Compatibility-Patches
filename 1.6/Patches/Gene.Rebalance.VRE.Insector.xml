@@ -300,41 +300,69 @@
 						</value>
 					</Operation>
 					<!-- mutations -->
-					<Operation Class="XmlExtensions.HybridPatch">
+					<Operation Class="XmlExtensions.SetScope">
 						<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_Microsized"]</xpath>
-						<value>
-							<statFactors Operation="Safe">
-								<LeatherAmount Operation="SafeRemove">0</LeatherAmount>
-								<MeatAmount Operation="SafeRemove">0</MeatAmount>
-								<StaggerDurationFactor Operation="SafeRemove">0</StaggerDurationFactor>
-								<VEF_FoodCapacityMultiplier Operation="SafeRemove">0</VEF_FoodCapacityMultiplier>
-							</statFactors>
-							<statOffsets Operation="Safe">
-								<StaggerDurationFactor Operation="SafeAdd">1</StaggerDurationFactor>
-								<VEF_BodySize_Offset Operation="SafeReplace">-0.6</VEF_BodySize_Offset>
-							</statOffsets>
-						</value>
+						<apply>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>VanillaRacesExpandedInsector.GenelineGeneDef</xpath>
+								<value>
+									<biostatMet Operation="SafeAdd">4</biostatMet>
+									<capMods Operation="Safe">
+										<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+											<capacity Operation="SafeAdd">Moving</capacity>
+											<offset Operation="SafeAdd">0.1</offset>
+										</li>
+									</capMods>
+									<modExtensions Operation="Safe">
+										<li Class="VEF.Genes.GeneExtension" Operation="Safe" CheckAttributes="True">
+											<hediffToWholeBody Operation="SafeRemove" Compare="Both">VRE_Microsized</hediffToWholeBody>
+										</li>
+									</modExtensions>
+									<statFactors Operation="Safe">
+										<LeatherAmount Operation="SafeRemove">0</LeatherAmount>
+										<MeatAmount Operation="SafeRemove">0</MeatAmount>
+										<StaggerDurationFactor Operation="SafeRemove">0</StaggerDurationFactor>
+										<VEF_FoodCapacityMultiplier Operation="SafeRemove">0</VEF_FoodCapacityMultiplier>
+									</statFactors>
+									<statOffsets Operation="Safe">
+										<VEF_BodySize_Offset Operation="SafeReplace">-0.4</VEF_BodySize_Offset>
+									</statOffsets>
+								</value>
+							</Operation>
+						</apply>
 					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
+					<Operation Class="XmlExtensions.SetScope">
 						<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_Colossal"]</xpath>
-						<value>
-							<capMods Operation="Safe">
-								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-									<capacity Operation="SafeAdd">Moving</capacity>
-									<offset Operation="SafeAdd">-0.20</offset>
-								</li>
-							</capMods>
-							<statFactors Operation="Safe">
-								<LeatherAmount Operation="SafeRemove">0</LeatherAmount>
-								<MeatAmount Operation="SafeRemove">0</MeatAmount>
-								<MeleeDodgeChance Operation="SafeReplace">0.2</MeleeDodgeChance>
-								<VEF_FoodCapacityMultiplier Operation="SafeRemove">0</VEF_FoodCapacityMultiplier>
-							</statFactors>
-							<statOffsets Operation="Safe">
-								<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
-								<VEF_BodySize_Offset Operation="SafeReplace">0.6</VEF_BodySize_Offset>
-							</statOffsets>
-						</value>
+						<apply>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>VanillaRacesExpandedInsector.GenelineGeneDef</xpath>
+								<value>
+									<biostatMet Operation="SafeAdd">-6</biostatMet>
+									<capMods Operation="Safe">
+										<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+											<capacity Operation="SafeAdd">Moving</capacity>
+											<offset Operation="SafeAdd">-0.15</offset>
+										</li>
+									</capMods>
+									<modExtensions Operation="Safe">
+										<li Class="VEF.Genes.GeneExtension" Operation="Safe" CheckAttributes="True">
+											<hediffToWholeBody Operation="SafeRemove" Compare="Both">VRE_Colossal</hediffToWholeBody>
+										</li>
+									</modExtensions>
+									<statFactors Operation="Safe">
+										<LeatherAmount Operation="SafeRemove">0</LeatherAmount>
+										<MeatAmount Operation="SafeRemove">0</MeatAmount>
+										<MeleeDodgeChance Operation="SafeRemove">0</MeleeDodgeChance>
+										<StaggerDurationFactor Operation="SafeRemove">0</StaggerDurationFactor>
+										<VEF_FoodCapacityMultiplier Operation="SafeRemove">0</VEF_FoodCapacityMultiplier>
+									</statFactors>
+									<statOffsets Operation="Safe">
+										<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+										<VEF_BodySize_Offset Operation="SafeReplace">0.6</VEF_BodySize_Offset>
+									</statOffsets>
+								</value>
+							</Operation>
+						</apply>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_Pyrophiliac"]</xpath>
