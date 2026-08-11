@@ -40,6 +40,30 @@
 		</apply>
 	</Operation>
 	<!-- Medieval -->
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/ResearchProjectDef[defName="ComplexFurniture"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaexpanded.vfecore</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ResearchProjectDef</xpath>
+						<value>
+							<prerequisites Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">MF_BasicFurniture</li>
+							</prerequisites>
+							<hiddenPrerequisites Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">MF_BasicFurniture</li>
+							</hiddenPrerequisites>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
+	</Operation>
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ResearchProjectDef[defName="PlateArmor"]</xpath>
 		<value>
@@ -1024,6 +1048,25 @@
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ResearchProjectDef[defName="Ferny_BilliardsTable"]</xpath>
 				<apply>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>ferny.progressionfurniture</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ResearchProjectDef</xpath>
+								<value>
+									<prerequisites Operation="Safe">
+										<li Operation="SafeRemove" Compare="InnerText">Ferny_Tables</li>
+									</prerequisites>
+									<hiddenPrerequisites Operation="Safe">
+										<li Operation="SafeAdd" Compare="InnerText">Ferny_Tables</li>
+									</hiddenPrerequisites>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
 							<li>vanillaexpanded.vfecore</li>

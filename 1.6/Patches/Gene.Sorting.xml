@@ -716,7 +716,7 @@
 						<InjuryHealingFactor Operation="SafeRemove">0</InjuryHealingFactor>
 					</statFactors>
 					<statOffsets Operation="Safe">
-						<InjuryHealingFactor Operation="SafeAdd">3</InjuryHealingFactor>
+						<InjuryHealingFactor Operation="SafeAdd">4</InjuryHealingFactor>
 					</statOffsets>
 				</value>
 			</Operation>

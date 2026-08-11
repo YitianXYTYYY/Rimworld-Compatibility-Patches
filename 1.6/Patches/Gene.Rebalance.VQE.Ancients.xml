@@ -74,7 +74,7 @@
 						<InjuryHealingFactor Operation="SafeRemove">0</InjuryHealingFactor>
 					</statFactors>
 					<statOffsets Operation="Safe">
-						<InjuryHealingFactor Operation="SafeAdd">7</InjuryHealingFactor>
+						<InjuryHealingFactor Operation="SafeAdd">8</InjuryHealingFactor>
 					</statOffsets>
 				</value>
 			</Operation>

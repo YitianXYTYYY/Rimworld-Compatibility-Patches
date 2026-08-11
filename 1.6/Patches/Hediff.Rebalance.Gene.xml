@@ -66,6 +66,16 @@
 					</comps>
 				</value>
 			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="VQEA_MasterfulIntellectual"]</xpath>
+				<value>
+					<comps Operation="Safe">
+						<li Class="VEF.AnimalBehaviours.HediffCompProperties_PassiveResearch" Operation="Safe" CheckAttributes="True">
+							<tickInterval Operation="SafeReplace">2,500</tickInterval>
+						</li>
+					</comps>
+				</value>
+			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/HediffDef[defName="VQEA_HemocollapseSyndrome"]</xpath>
 				<apply>
@@ -153,7 +163,7 @@
 						<xpath>HediffDef/stages/li[minSeverity="0.1"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
-								<InjuryHealingFactor Operation="SafeAdd">5</InjuryHealingFactor>
+								<InjuryHealingFactor Operation="SafeAdd">4</InjuryHealingFactor>
 							</statOffsets>
 						</value>
 					</Operation>
@@ -161,7 +171,7 @@
 						<xpath>HediffDef/stages/li[minSeverity="0.4"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
-								<InjuryHealingFactor Operation="SafeAdd">3</InjuryHealingFactor>
+								<InjuryHealingFactor Operation="SafeAdd">2</InjuryHealingFactor>
 							</statOffsets>
 						</value>
 					</Operation>
@@ -506,7 +516,7 @@
 						<xpath>HediffDef/stages/li[label="minor"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
-								<InjuryHealingFactor Operation="SafeAdd">1</InjuryHealingFactor>
+								<InjuryHealingFactor Operation="SafeAdd">0.5</InjuryHealingFactor>
 							</statOffsets>
 						</value>
 					</Operation>
@@ -522,7 +532,7 @@
 						<xpath>HediffDef/stages/li[label="extreme"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
-								<InjuryHealingFactor Operation="SafeAdd">3</InjuryHealingFactor>
+								<InjuryHealingFactor Operation="SafeAdd">2</InjuryHealingFactor>
 							</statOffsets>
 						</value>
 					</Operation>

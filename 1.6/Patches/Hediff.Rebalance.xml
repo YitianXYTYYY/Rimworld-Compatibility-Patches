@@ -846,6 +846,33 @@
 		</caseTrue>
 	</Operation>
 
+	<!-- Vanilla Races Expanded - Sanguophage -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.sanguophage</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="VRE_ConsumedAnimalHemogen"]/stages/li</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<MeleeDPS Operation="SafeRemove">0</MeleeDPS>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<InjuryHealingFactor Operation="SafeReplace">0.5</InjuryHealingFactor>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="VRE_ConsumedSanguophageHemogen"]/stages/li</xpath>
+				<value>
+					<painOffset Operation="SafeRemove"/>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 	<!-- Waster's Breath -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>

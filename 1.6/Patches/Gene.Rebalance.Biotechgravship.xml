@@ -177,7 +177,7 @@
 								</li>
 								<li Class="ConditionalStatAffecter_NotInSpace" Operation="Safe" CheckAttributes="True">
 									<statFactors Operation="Safe">
-										<InjuryHealingFactor Operation="SafeReplace">0.5</InjuryHealingFactor>
+										<InjuryHealingFactor Operation="SafeReplace">0.8</InjuryHealingFactor>
 									</statFactors>
 								</li>
 							</conditionalStatAffecters>

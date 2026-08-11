@@ -155,6 +155,7 @@
 						<value>
 							<displayCategory Operation="AddOrReplace">Pain</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">40</displayOrderInCategory>
+							<painOffset Operation="SafeReplace">0.2</painOffset>
 						</value>
 					</Operation>
 				</apply>
