@@ -53,9 +53,17 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_EverGrowing"]</xpath>
 						<value>
-							<biostatMet Operation="SafeReplace">-4</biostatMet>
+							<biostatMet Operation="SafeReplace">-3</biostatMet>
 							<displayCategory Operation="AddOrReplace">Health_Age</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">200</displayOrderInCategory>
+							<modExtensions Operation="Safe">
+								<li Class="VEF.Genes.GeneExtension" Operation="Safe" CheckAttributes="True">
+									<sizeByAge Operation="Safe">
+										<maxOffset Operation="SafeReplace">0.6</maxOffset>
+										<range Operation="SafeReplace">0~60</range>
+									</sizeByAge>
+								</li>
+							</modExtensions>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.FindMod">

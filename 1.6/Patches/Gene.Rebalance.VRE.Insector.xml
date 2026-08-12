@@ -306,7 +306,7 @@
 							<Operation Class="XmlExtensions.HybridPatch">
 								<xpath>VanillaRacesExpandedInsector.GenelineGeneDef</xpath>
 								<value>
-									<biostatMet Operation="SafeAdd">4</biostatMet>
+									<biostatMet Operation="SafeAdd">2</biostatMet>
 									<capMods Operation="Safe">
 										<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
 											<capacity Operation="SafeAdd">Moving</capacity>
@@ -337,7 +337,7 @@
 							<Operation Class="XmlExtensions.HybridPatch">
 								<xpath>VanillaRacesExpandedInsector.GenelineGeneDef</xpath>
 								<value>
-									<biostatMet Operation="SafeAdd">-6</biostatMet>
+									<biostatMet Operation="SafeAdd">-3</biostatMet>
 									<capMods Operation="Safe">
 										<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
 											<capacity Operation="SafeAdd">Moving</capacity>

@@ -253,6 +253,9 @@
 						</li>
 					</modExtensions>
 					<!--painFactor Operation="SafeAdd">0.1</painFactor-->
+					<statOffsets Operation="Safe">
+						<PainShockThreshold Operation="SafeAdd">0.2</PainShockThreshold>
+					</statOffsets>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
@@ -279,7 +282,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef</xpath>
 						<value>
-							<biostatMet Operation="SafeReplace">-10</biostatMet>
+							<biostatMet Operation="SafeReplace">-5</biostatMet>
 							<capMods Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
 									<capacity Operation="SafeAdd">Moving</capacity>

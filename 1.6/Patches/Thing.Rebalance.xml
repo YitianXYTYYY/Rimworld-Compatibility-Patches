@@ -27,6 +27,53 @@
 		</apply>
 	</Operation>
 
+	<!-- Mechanoid Chip -->
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/ThingDef[defName="InsectJelly"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>oskarpotocki.vfe.insectoid2</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<comps Operation="Safe">
+								<li Class="CompProperties_CompAnalyzableUnlockResearch" Operation="SafeAdd" CheckAttributes="True">
+									<analysisID>10006502</analysisID>
+									<requiresMechanitor>false</requiresMechanitor>
+									<analysisDurationHours>0.5</analysisDurationHours>
+									<destroyedOnAnalyzed>false</destroyedOnAnalyzed>
+									<completedLetterLabel>Insect jelly studied: {RESEARCH} unlocked</completedLetterLabel>
+									<completedLetter>By studying insect jelly, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+									<completedLetterDef>PositiveEvent</completedLetterDef>
+									<activateTexPath>UI/Icons/Study</activateTexPath>
+									<activateLabelString>Analyze...</activateLabelString>
+									<activateDescString>Analyze insect jelly.</activateDescString>
+									<jobString>Analyze insect jelly</jobString>
+									<guiLabelString>Choose who should analyze this</guiLabelString>
+									<inspectString>Can be analyzed by a colonist.</inspectString>
+									<targetingParameters>
+										<canTargetBuildings>false</canTargetBuildings>
+										<canTargetAnimals>false</canTargetAnimals>
+										<canTargetMechs>false</canTargetMechs>
+										<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+									</targetingParameters>
+								</li>
+							</comps>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="GR_MechanoidChip"]</xpath>
+				<value>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
 			<li>ludeon.rimworld.biotech</li>
@@ -202,7 +249,7 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<!-- Pelt -->
+			<!-- Hybrid Animal Products - Other -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="GR_HugeBearPelt" or 
 					defName="GR_HugeBearCatPelt" or 
@@ -213,6 +260,35 @@
 						<li Operation="SafeRemove" Compare="InnerText">ResourcesRaw</li>
 						<li Operation="SafeAdd" Compare="InnerText">GRPelts</li>
 					</thingCategories>
+				</value>
+			</Operation>
+			<!-- Mechanoid Chip -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="GR_MechanoidChip"]</xpath>
+				<value>
+					<comps Operation="Safe">
+						<li Class="CompProperties_CompAnalyzableUnlockResearch" Operation="SafeAdd" CheckAttributes="True">
+							<analysisID>10006506</analysisID>
+							<requiresMechanitor>false</requiresMechanitor>
+							<analysisDurationHours>0.5</analysisDurationHours>
+							<destroyedOnAnalyzed>false</destroyedOnAnalyzed>
+							<completedLetterLabel>Mechanoid chip studied: {RESEARCH} unlocked</completedLetterLabel>
+							<completedLetter>By studying mechanoid chip, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+							<completedLetterDef>PositiveEvent</completedLetterDef>
+							<activateTexPath>UI/Icons/Study</activateTexPath>
+							<activateLabelString>Analyze...</activateLabelString>
+							<activateDescString>Analyze mechanoid chip.</activateDescString>
+							<jobString>Analyze mechanoid chip</jobString>
+							<guiLabelString>Choose who should analyze this</guiLabelString>
+							<inspectString>Can be analyzed by a colonist.</inspectString>
+							<targetingParameters>
+								<canTargetBuildings>false</canTargetBuildings>
+								<canTargetAnimals>false</canTargetAnimals>
+								<canTargetMechs>false</canTargetMechs>
+								<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+							</targetingParameters>
+						</li>
+					</comps>
 				</value>
 			</Operation>
 		</caseTrue>

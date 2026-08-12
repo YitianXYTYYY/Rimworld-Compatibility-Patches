@@ -434,18 +434,7 @@
 		</apply>
 	</Operation>
 
-	<!-- Ship -->	
-	<Operation Class="XmlExtensions.HybridPatch">
-		<xpath>Defs/ResearchProjectDef[defName="ShipBasics"]</xpath>
-		<value>
-			<prerequisites Operation="Safe">
-				<li Operation="SafeRemove" Compare="InnerText">AdvancedFabrication</li>
-			</prerequisites>
-			<hiddenPrerequisites Operation="Safe">
-				<li Operation="SafeAdd" Compare="InnerText">AdvancedFabrication</li>
-			</hiddenPrerequisites>
-		</value>
-	</Operation>
+	<!-- Ship -->
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ResearchProjectDef[defName="ShipCryptosleep"]</xpath>
 		<value>
@@ -737,6 +726,30 @@
 						<li Operation="SafeRemove" Compare="InnerText">Machining</li>
 					</hiddenPrerequisites>
 				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ResearchProjectDef[defName="HeavyBridges"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>ferny.progressionfurniture</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ResearchProjectDef</xpath>
+								<value>
+									<prerequisites Operation="Safe">
+										<li Operation="SafeRemove" Compare="InnerText">Ferny_Bridge</li>
+									</prerequisites>
+									<hiddenPrerequisites Operation="Safe">
+										<li Operation="SafeAdd" Compare="InnerText">Ferny_Bridge</li>
+									</hiddenPrerequisites>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ResearchProjectDef[defName="BeamWeapons"]</xpath>
@@ -1198,17 +1211,6 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ResearchProjectDef[defName="GR_GeneticAlteration"]</xpath>
-				<value>
-					<prerequisites Operation="Safe">
-						<li Operation="SafeRemove" Compare="InnerText">MicroelectronicsBasics</li>
-					</prerequisites>
-					<requiredResearchFacilities Operation="Safe">
-						<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
-					</requiredResearchFacilities>
-				</value>
-			</Operation>
 			<!-- Genepack Reprocessor -->
 			<!-- ReSplice: Core -->
 			<Operation Class="XmlExtensions.FindMod">
@@ -1598,6 +1600,14 @@
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ResearchProjectDef[defName="VFEI2_BasicHivetech"]</xpath>
 				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ResearchProjectDef</xpath>
+						<value>
+							<requiredAnalyzed Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">GR_MechanoidChip</li>
+							</requiredAnalyzed>
+						</value>
+					</Operation>
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
 							<li>ferny.progressioncore</li>
@@ -1716,8 +1726,143 @@
 		</caseTrue>
 	</Operation>
 
-	<!-- Vanilla Helixien Gas Expanded -->
+	<!-- Vanilla Genetics Expanded -->
 	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaexpanded.vgeneticse</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ResearchProjectDef[defName="GR_GeneticAlteration"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ResearchProjectDef</xpath>
+						<value>
+							<requiredResearchBuilding Operation="SafeAdd">HiTechResearchBench</requiredResearchBuilding>
+							<requiredResearchFacilities Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
+							</requiredResearchFacilities>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>ferny.progressiongenetics</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseFalse>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ResearchProjectDef</xpath>
+								<value>
+									<prerequisites Operation="Safe">
+										<li Operation="SafeRemove" Compare="InnerText">Electricity</li>
+										<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
+									</prerequisites>
+								</value>
+							</Operation>
+						</caseFalse>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ResearchProjectDef</xpath>
+								<value>
+									<prerequisites Operation="Safe">
+										<li Operation="SafeRemove" Compare="InnerText">MicroelectronicsBasics</li>
+									</prerequisites>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ResearchProjectDef[defName="GR_GeneticEngineering"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ResearchProjectDef</xpath>
+						<value>
+							<requiredResearchBuilding Operation="SafeAdd">HiTechResearchBench</requiredResearchBuilding>
+							<requiredResearchFacilities Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
+							</requiredResearchFacilities>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>ferny.progressiongenetics</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseFalse>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ResearchProjectDef</xpath>
+								<value>
+									<prerequisites Operation="Safe">
+										<li Operation="SafeRemove" Compare="InnerText">Electricity</li>
+										<li Operation="SafeAdd" Compare="InnerText">GR_GeneticAlteration</li>
+									</prerequisites>
+								</value>
+							</Operation>
+						</caseFalse>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ResearchProjectDef[defName="GR_GeneticDuplication"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ResearchProjectDef</xpath>
+						<value>
+							<requiredResearchBuilding Operation="SafeAdd">HiTechResearchBench</requiredResearchBuilding>
+							<requiredResearchFacilities Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
+							</requiredResearchFacilities>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>ferny.progressiongenetics</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseFalse>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ResearchProjectDef</xpath>
+								<value>
+									<prerequisites Operation="Safe">
+										<li Operation="SafeRemove" Compare="InnerText">Electricity</li>
+										<li Operation="SafeAdd" Compare="InnerText">GR_GeneticAlteration</li>
+									</prerequisites>
+								</value>
+							</Operation>
+						</caseFalse>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ResearchProjectDef[defName="GR_HybridImplantology" or 
+					defName="GR_GeneticCompatibility"]</xpath>
+				<value>
+					<requiredResearchBuilding Operation="SafeAdd">HiTechResearchBench</requiredResearchBuilding>	
+					<requiredResearchFacilities Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
+					</requiredResearchFacilities>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ResearchProjectDef[defName="GR_GeneticMechahybridization"]</xpath>
+				<value>
+					<requiredAnalyzed Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">GR_MechanoidChip</li>
+					</requiredAnalyzed>
+					<requiredResearchBuilding Operation="SafeAdd">HiTechResearchBench</requiredResearchBuilding>
+					<requiredResearchFacilities Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
+					</requiredResearchFacilities>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Vanilla Helixien Gas Expanded -->
+	<!--Operation Class="XmlExtensions.FindMod">
 		<mods>
 			<li>vanillaexpanded.helixiengas</li>
 		</mods>
@@ -1735,7 +1880,7 @@
 				</value>
 			</Operation>
 		</caseTrue>
-	</Operation>
+	</Operation-->
 
 	<!-- Vanilla Races Expanded - Android -->
 	<Operation Class="XmlExtensions.FindMod">
