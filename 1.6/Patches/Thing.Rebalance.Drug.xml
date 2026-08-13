@@ -176,6 +176,20 @@
 						</li>
 					</comps>
 					<hediffClass Operation="SafeReplace">Hediff_High</hediffClass>
+					<stages Operation="Safe">
+						<li Operation="Safe">
+							<capMods Operation="Safe">								
+								<li Operation="SafeRemove" Compare="InnerText" XPathLocal="capacity">
+									<capacity>Metabolism</capacity>
+								</li>
+							</capMods>
+							<hungerRateFactor Operation="SafeAdd">0.8</hungerRateFactor>
+							<painFactor Operation="SafeRemove">0</painFactor>
+							<statOffsets Operation="Safe">
+								<RestFallRateFactor Operation="SafeAdd">0.8</RestFallRateFactor>
+							</statOffsets>
+						</li>
+					</stages>
 				</value>
 			</Operation>
 			<!-- Featherdust Joint -->
