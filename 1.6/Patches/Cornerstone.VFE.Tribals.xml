@@ -60,7 +60,7 @@
 						<EatingSpeed Operation="SafeRemove">0</EatingSpeed>
 					</statFactors>
 					<statOffsets Operation="Safe">
-						<EatingSpeed Operation="SafeAdd">0.3</EatingSpeed>
+						<EatingSpeed Operation="SafeAdd">0.5</EatingSpeed>
 					</statOffsets>
 				</value>
 			</Operation>
@@ -84,7 +84,7 @@
 						<InjuryHealingFactor Operation="SafeRemove">0</InjuryHealingFactor>
 					</statFactors>
 					<statOffsets Operation="Safe">
-						<InjuryHealingFactor Operation="SafeAdd">0.2</InjuryHealingFactor>
+						<InjuryHealingFactor Operation="SafeAdd">0.5</InjuryHealingFactor>
 					</statOffsets>
 				</value>
 			</Operation>
