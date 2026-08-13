@@ -185,9 +185,9 @@
 							</capMods>
 							<hungerRateFactor Operation="SafeAdd">0.8</hungerRateFactor>
 							<painFactor Operation="SafeRemove">0</painFactor>
-							<statOffsets Operation="Safe">
+							<statFactors Operation="Safe">
 								<RestFallRateFactor Operation="SafeAdd">0.8</RestFallRateFactor>
-							</statOffsets>
+							</statFactors>
 						</li>
 					</stages>
 				</value>
