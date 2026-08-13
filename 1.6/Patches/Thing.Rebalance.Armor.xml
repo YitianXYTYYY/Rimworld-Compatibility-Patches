@@ -996,7 +996,7 @@
 					<equippedStatOffsets Operation="Safe">
 						<CarryingCapacity Operation="SafeAdd">30</CarryingCapacity>
 						<VEF_MassCarryCapacity Operation="SafeReplace">20</VEF_MassCarryCapacity>
-						<WorkSpeedGlobal Operation="SafeReplace">0.1</WorkSpeedGlobal>
+						<WorkSpeedGlobal Operation="SafeRemove">0</WorkSpeedGlobal>
 					</equippedStatOffsets>
 					<recipeMaker Operation="Safe">
 						<researchPrerequisite Operation="SafeRemove">0</researchPrerequisite>
