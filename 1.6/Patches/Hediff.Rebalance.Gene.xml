@@ -652,6 +652,29 @@
 				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThoughtDef[defName="VRE_PollutionHappinessThoughts"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThoughtDef/stages/li[label="minor pollution happiness"]</xpath>
+						<value>
+							<baseMoodEffect Operation="SafeReplace">3</baseMoodEffect>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThoughtDef/stages/li[label="moderate pollution happiness"]</xpath>
+						<value>
+							<baseMoodEffect Operation="SafeReplace">6</baseMoodEffect>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThoughtDef/stages/li[label="extreme pollution happiness"]</xpath>
+						<value>
+							<baseMoodEffect Operation="SafeReplace">10</baseMoodEffect>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/HediffDef[defName="VRE_PollutionProductivity"]</xpath>
 				<apply>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
@@ -710,6 +733,38 @@
 						<value>
 							<statOffsets Operation="Safe">
 								<PsychicSensitivity Operation="SafeAdd">0.4</PsychicSensitivity>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="VRE_PollutionFertility"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>HediffDef/stages/li/statFactors/Fertility</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[label="minor"]</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<Fertility Operation="SafeAdd">0.2</Fertility>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[label="moderate"]</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<Fertility Operation="SafeAdd">0.5</Fertility>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[label="extreme"]</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<Fertility Operation="SafeAdd">1</Fertility>
 							</statOffsets>
 						</value>
 					</Operation>

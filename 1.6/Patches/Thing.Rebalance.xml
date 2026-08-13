@@ -117,10 +117,10 @@
 						<xpath>ThingDef/stuffProps/statFactorsQuality/li[stat="PsychicSensitivityFactor"]</xpath>
 					</Operation>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>ThingDef/stuffProps/statFactorsQuality/li[stat="PsychicEntropyMaxOffset"]</xpath>
+						<xpath>ThingDef/stuffProps/statOffsetsQuality/li[stat="PsychicEntropyMaxOffset"]</xpath>
 					</Operation>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>ThingDef/stuffProps/statFactorsQuality/li[stat="PsychicEntropyRecoveryRateOffset"]</xpath>
+						<xpath>ThingDef/stuffProps/statOffsetsQuality/li[stat="PsychicEntropyRecoveryRateOffset"]</xpath>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef</xpath>

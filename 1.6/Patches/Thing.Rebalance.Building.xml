@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ludeon.rimworld.odyssey</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- grav field extender -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="GravFieldExtender"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<comps Operation="Safe">
+								<li Class="CompProperties_GravshipFacility" Operation="Safe" CheckAttributes="True">
+									<maxDistance Operation="SafeReplace">200</maxDistance>
+								</li>
+							</comps>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 	<!-- Biotech for Gravship -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
@@ -105,7 +131,7 @@
 								</li>
 								<li Class="CompProperties_GravshipFacility" Operation="Safe" CheckAttributes="True">
 									<requiresLOS Operation="SafeAdd">false</requiresLOS>
-									<maxDistance Operation="SafeAdd">99.9</maxDistance>
+									<maxDistance Operation="SafeAdd">200</maxDistance>
 									<onlyRequiresLooseConnection Operation="SafeAdd">true</onlyRequiresLooseConnection>
 								</li>
 							</comps>
