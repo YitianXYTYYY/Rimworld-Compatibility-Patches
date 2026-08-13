@@ -14,6 +14,13 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef</xpath>
 						<value>
+							<customEffectDescriptions Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">Gives the void touched hediff!</li>
+								<li Operation="SafeAdd" Compare="InnerText">Healing: 100 hp/day</li>
+							</customEffectDescriptions>
+							<exclusionTags Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">EyeColor</li>
+							</exclusionTags>
 							<statFactors Operation="Safe">
 								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 								<StudyEfficiency Operation="SafeRemove">0</StudyEfficiency>
