@@ -17,6 +17,13 @@
 							<equippedStatOffsets Operation="Safe">
 								<MoveSpeed Operation="SafeReplace">-0.5</MoveSpeed>
 							</equippedStatOffsets>
+							<modExtensions Operation="Safe">
+								<li Class="VEF.Weapons.HeavyWeapon" Operation="Safe" CheckAttributes="True">
+									<supportedTraits Operation="Safe">
+										<li Operation="SafeRemove" Compare="InnerText">Tough</li>
+									</supportedTraits>
+								</li>
+							</modExtensions>
 							<statBases Operation="Safe">
 								<AccuracyTouch Operation="SafeReplace">0.28</AccuracyTouch>
 								<AccuracyShort Operation="SafeReplace">0.72</AccuracyShort>
@@ -41,15 +48,23 @@
 							</weaponClasses>
 						</value>
 					</Operation>
-					<Operation Class="PatchOperationReplace">
-						<xpath>ThingDef/recipeMaker/researchPrerequisite</xpath>
-						<value>
-							<researchPrerequisite></researchPrerequisite>
-							<researchPrerequisites Inherit='False'>
-								<li>HeavyTurrets</li>
-								<li>VWE_HeavyWeapons</li>
-							</researchPrerequisites>
-						</value>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaexpanded.vwe</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef/recipeMaker</xpath>
+								<value>
+									<researchPrerequisite Operation="SafeReplace"/>
+									<researchPrerequisites Inherit="False" Operation="Safe">
+										<li Operation="SafeAdd" Compare="InnerText">HeavyTurrets</li>
+										<li Operation="SafeAdd" Compare="InnerText">VWE_HeavyWeapons</li>
+									</researchPrerequisites>
+								</value>
+							</Operation>
+						</caseTrue>
 					</Operation>
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
@@ -98,11 +113,40 @@
 									<descriptionHyperlinks Operation="SafeRemove"/>
 								</value>
 							</Operation>
-							<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-								<xpath>ThingDef/comps/li[compClass="MVCF.Comps.Comp_VerbProps"]</xpath>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<description Operation="SafeReplace">A self-loading uranium slug cannon. Its ultra-dense uranium shells can punch through heavy armor. It's more accurate at longer ranges.\n\nBeing an extremely heavy weapon, this gun requires a power armor to be effectively used.</description>
+									<descriptionHyperlinks Operation="SafeRemove"/>
+								</value>
 							</Operation>
-							<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-								<xpath>ThingDef/verbs/li[verbClass="VEF.Weapons.Verb_Shoot"]/label</xpath>
+							<Operation Class="XmlExtensions.FindMod">
+								<mods>
+									<li>mlie.yayoscombat3</li>
+								</mods>
+								<packageId>true</packageId>
+								<caseFalse>
+									<Operation Class="XmlExtensions.HybridPatch">
+										<xpath>ThingDef/comps/li[compClass="MVCF.Comps.Comp_VerbProps"]/verbProps/li</xpath>
+										<value>
+											<label Operation="SafeReplace">autocannon</label>
+										</value>
+									</Operation>
+									<Operation Class="XmlExtensions.HybridPatch">
+										<xpath>ThingDef/verbs/li[verbClass="VEF.Weapons.Verb_Shoot"]</xpath>
+										<value>
+											<label Operation="SafeReplace">autocannon</label>
+										</value>
+									</Operation>
+								</caseFalse>
+								<caseTrue>
+									<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+										<xpath>ThingDef/comps/li[compClass="MVCF.Comps.Comp_VerbProps"]</xpath>
+									</Operation>
+									<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+										<xpath>ThingDef/verbs/li[verbClass="VEF.Weapons.Verb_Shoot"]/label</xpath>
+									</Operation>
+								</caseTrue>
 							</Operation>
 						</caseTrue>
 					</Operation>
@@ -122,6 +166,13 @@
 							<equippedStatOffsets Operation="Safe">
 								<MoveSpeed Operation="SafeReplace">-0.4</MoveSpeed>
 							</equippedStatOffsets>
+							<modExtensions Operation="Safe">
+								<li Class="VEF.Weapons.HeavyWeapon" Operation="Safe" CheckAttributes="True">
+									<supportedTraits Operation="Safe">
+										<li Operation="SafeRemove" Compare="InnerText">Tough</li>
+									</supportedTraits>
+								</li>
+							</modExtensions>
 							<statBases Operation="Safe">
 								<RangedWeapon_Cooldown Operation="SafeReplace">4</RangedWeapon_Cooldown>
 								<DeteriorationRate Operation="SafeRemove">0</DeteriorationRate>
@@ -142,15 +193,23 @@
 							</weaponClasses>
 						</value>
 					</Operation>
-					<Operation Class="PatchOperationReplace">
-						<xpath>ThingDef/recipeMaker/researchPrerequisite</xpath>
-						<value>
-							<researchPrerequisite></researchPrerequisite>
-							<researchPrerequisites Inherit='False'>
-								<li>Mortars</li>
-								<li>VWE_HeavyWeapons</li>
-							</researchPrerequisites>
-						</value>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaexpanded.vwe</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef/recipeMaker</xpath>
+								<value>
+									<researchPrerequisite Operation="SafeReplace"/>
+									<researchPrerequisites Inherit="False" Operation="Safe">
+										<li Operation="SafeAdd" Compare="InnerText">Mortars</li>
+										<li Operation="SafeAdd" Compare="InnerText">VWE_HeavyWeapons</li>
+									</researchPrerequisites>
+								</value>
+							</Operation>
+						</caseTrue>
 					</Operation>
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
@@ -204,6 +263,13 @@
 							<equippedStatOffsets Operation="Safe">
 								<MoveSpeed Operation="SafeReplace">-0.6</MoveSpeed>
 							</equippedStatOffsets>
+							<modExtensions Operation="Safe">
+								<li Class="VEF.Weapons.HeavyWeapon" Operation="Safe" CheckAttributes="True">
+									<supportedTraits Operation="Safe">
+										<li Operation="SafeRemove" Compare="InnerText">Tough</li>
+									</supportedTraits>
+								</li>
+							</modExtensions>
 							<statBases Operation="Safe">
 								<RangedWeapon_Cooldown Operation="SafeReplace">2</RangedWeapon_Cooldown>
 								<DeteriorationRate Operation="SafeRemove">0</DeteriorationRate>
@@ -226,15 +292,23 @@
 							</weaponClasses>
 						</value>
 					</Operation>
-					<Operation Class="PatchOperationReplace">
-						<xpath>ThingDef/recipeMaker/researchPrerequisite</xpath>
-						<value>
-							<researchPrerequisite></researchPrerequisite>
-							<researchPrerequisites Inherit='False'>
-								<li>RocketswarmLauncher</li>
-								<li>MultibarrelWeapons</li>
-							</researchPrerequisites>
-						</value>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaexpanded.vwe</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef/recipeMaker</xpath>
+								<value>
+									<researchPrerequisite Operation="SafeReplace"/>
+									<researchPrerequisites Inherit="False" Operation="Safe">
+										<li Operation="SafeAdd" Compare="InnerText">MultibarrelWeapons</li>
+										<li Operation="SafeAdd" Compare="InnerText">RocketswarmLauncher</li>
+									</researchPrerequisites>
+								</value>
+							</Operation>
+						</caseTrue>
 					</Operation>
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
@@ -250,20 +324,20 @@
 									</weaponTags>
 								</value>
 							</Operation>
-							<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-								<xpath>ThingDef/comps/li[compClass="MVCF.Comps.Comp_VerbProps"]</xpath>
-							</Operation>
-							<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-								<xpath>ThingDef/verbs/li[verbClass="VEF.Weapons.Verb_Shoot"]/label</xpath>
-							</Operation>
 						</caseTrue>
-						<caseFalse>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>zal.heavyweaponsreloading</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
 							<Operation Class="XmlExtensions.FindMod">
 								<mods>
-									<li>zal.heavyweaponsreloading</li>
+									<li>mlie.yayoscombat3</li>
 								</mods>
 								<packageId>true</packageId>
-								<caseTrue>
+								<caseFalse>
 									<Operation Class="XmlExtensions.HybridPatch">
 										<xpath>ThingDef/comps/li[compClass="MVCF.Comps.Comp_VerbProps"]/verbProps/li</xpath>
 										<value>
@@ -276,9 +350,17 @@
 											<label Operation="SafeReplace">swarm missile launcher</label>
 										</value>
 									</Operation>
+								</caseFalse>
+								<caseTrue>
+									<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+										<xpath>ThingDef/comps/li[compClass="MVCF.Comps.Comp_VerbProps"]</xpath>
+									</Operation>
+									<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+										<xpath>ThingDef/verbs/li[verbClass="VEF.Weapons.Verb_Shoot"]/label</xpath>
+									</Operation>
 								</caseTrue>
 							</Operation>
-						</caseFalse>
+						</caseTrue>
 					</Operation>
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
@@ -299,15 +381,23 @@
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="VWEHR_SwarmMissileAmmo"]</xpath>
 				<apply>
-					<Operation Class="PatchOperationReplace">
-						<xpath>ThingDef/recipeMaker/researchPrerequisite</xpath>
-						<value>
-							<researchPrerequisite></researchPrerequisite>
-							<researchPrerequisites Inherit='False'>
-								<li>RocketswarmLauncher</li>
-								<li>MultibarrelWeapons</li>
-							</researchPrerequisites>
-						</value>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaexpanded.vwe</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef/recipeMaker</xpath>
+								<value>
+									<researchPrerequisite Operation="SafeReplace"/>
+									<researchPrerequisites Inherit="False" Operation="Safe">
+										<li Operation="SafeAdd" Compare="InnerText">MultibarrelWeapons</li>
+										<li Operation="SafeAdd" Compare="InnerText">RocketswarmLauncher</li>
+									</researchPrerequisites>
+								</value>
+							</Operation>
+						</caseTrue>
 					</Operation>
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
@@ -342,6 +432,13 @@
 							<equippedStatOffsets Operation="Safe">
 								<MoveSpeed Operation="SafeReplace">-0.5</MoveSpeed>
 							</equippedStatOffsets>
+							<modExtensions Operation="Safe">
+								<li Class="VEF.Weapons.HeavyWeapon" Operation="Safe" CheckAttributes="True">
+									<supportedTraits Operation="Safe">
+										<li Operation="SafeRemove" Compare="InnerText">Tough</li>
+									</supportedTraits>
+								</li>
+							</modExtensions>
 							<statBases Operation="Safe">
 								<AccuracyTouch Operation="SafeReplace">0.22</AccuracyTouch>
 								<AccuracyShort Operation="SafeReplace">0.33</AccuracyShort>
@@ -367,15 +464,23 @@
 							</weaponClasses>
 						</value>
 					</Operation>
-					<Operation Class="PatchOperationReplace">
-						<xpath>ThingDef/recipeMaker/researchPrerequisite</xpath>
-						<value>
-							<researchPrerequisite></researchPrerequisite>
-							<researchPrerequisites Inherit='False'>
-								<li>SniperTurret</li>
-								<li>VWE_HeavyWeapons</li>
-							</researchPrerequisites>
-						</value>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaexpanded.vwe</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef/recipeMaker</xpath>
+								<value>
+									<researchPrerequisite Operation="SafeReplace"/>
+									<researchPrerequisites Inherit="False" Operation="Safe">
+										<li Operation="SafeAdd" Compare="InnerText">SniperTurret</li>
+										<li Operation="SafeAdd" Compare="InnerText">VWE_HeavyWeapons</li>
+									</researchPrerequisites>
+								</value>
+							</Operation>
+						</caseTrue>
 					</Operation>
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
@@ -424,11 +529,33 @@
 									<descriptionHyperlinks Operation="SafeRemove"/>
 								</value>
 							</Operation>
-							<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-								<xpath>ThingDef/comps/li[compClass="MVCF.Comps.Comp_VerbProps"]</xpath>
-							</Operation>
-							<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-								<xpath>ThingDef/verbs/li[verbClass="VEF.Weapons.Verb_Shoot"]/label</xpath>
+							<Operation Class="XmlExtensions.FindMod">
+								<mods>
+									<li>mlie.yayoscombat3</li>
+								</mods>
+								<packageId>true</packageId>
+								<caseFalse>
+									<Operation Class="XmlExtensions.HybridPatch">
+										<xpath>ThingDef/comps/li[compClass="MVCF.Comps.Comp_VerbProps"]/verbProps/li</xpath>
+										<value>
+											<label Operation="SafeReplace">uranium slug rifle</label>
+										</value>
+									</Operation>
+									<Operation Class="XmlExtensions.HybridPatch">
+										<xpath>ThingDef/verbs/li[verbClass="VEF.Weapons.Verb_Shoot"]</xpath>
+										<value>
+											<label Operation="SafeReplace">uranium slug rifle</label>
+										</value>
+									</Operation>
+								</caseFalse>
+								<caseTrue>
+									<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+										<xpath>ThingDef/comps/li[compClass="MVCF.Comps.Comp_VerbProps"]</xpath>
+									</Operation>
+									<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+										<xpath>ThingDef/verbs/li[verbClass="VEF.Weapons.Verb_Shoot"]/label</xpath>
+									</Operation>
+								</caseTrue>
 							</Operation>
 						</caseTrue>
 					</Operation>
