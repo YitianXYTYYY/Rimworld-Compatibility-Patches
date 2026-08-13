@@ -1663,6 +1663,17 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="Fertile"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<Fertility Operation="SafeRemove">0</Fertility>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<Fertility Operation="SafeAdd">1</Fertility>
+					</statOffsets>
+				</value>
+			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
 					<li>vanillaracesexpanded.insector</li>
