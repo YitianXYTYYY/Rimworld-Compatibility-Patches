@@ -53,7 +53,7 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<!-- eltex (make craftable) -->
+			<!-- Apparel Psychic -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="Apparel_PsyfocusHelmet"]</xpath>
 				<value>
@@ -272,20 +272,125 @@
 				</value>
 			</Operation>
 
-			<!-- prestige armor -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Apparel_ArmorReconPrestige" or
-					defName="Apparel_ArmorHelmetReconPrestige" or 
-					defName="Apparel_ArmorMarinePrestige" or 
-					defName="Apparel_ArmorMarineHelmetPrestige" or 
-					defName="Apparel_ArmorCataphractPrestige" or 
-					defName="Apparel_ArmorHelmetCataphractPrestige"]</xpath>
-				<value>
-					<equippedStatOffsets Operation="Safe">
-						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
-						<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
-					</equippedStatOffsets>
-				</value>
+			<!-- Apparel Various -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorReconPrestige"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef</xpath>
+						<attribute>Name</attribute>
+						<value>Apparel_ArmorReconPrestige</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<equippedStatOffsets Operation="Safe">
+								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+							</equippedStatOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetReconPrestige"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef</xpath>
+						<attribute>Name</attribute>
+						<value>Apparel_ArmorHelmetReconPrestige</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<equippedStatOffsets Operation="Safe">
+								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+							</equippedStatOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorMarinePrestige"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef</xpath>
+						<attribute>Name</attribute>
+						<value>Apparel_ArmorMarinePrestige</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<equippedStatOffsets Operation="Safe">
+								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+							</equippedStatOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorMarineHelmetPrestige"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef</xpath>
+						<attribute>Name</attribute>
+						<value>Apparel_ArmorMarineHelmetPrestige</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<equippedStatOffsets Operation="Safe">
+								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+							</equippedStatOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetCataphract"]</xpath>
+				<attribute>Name</attribute>
+				<value>Apparel_ArmorHelmetCataphract</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPrestige"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef</xpath>
+						<attribute>Name</attribute>
+						<value>Apparel_ArmorCataphractPrestige</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<equippedStatOffsets Operation="Safe">
+								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+							</equippedStatOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetCataphractPrestige"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef</xpath>
+						<attribute>Name</attribute>
+						<value>Apparel_ArmorHelmetCataphractPrestige</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<equippedStatOffsets Operation="Safe">
+								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+							</equippedStatOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
 
 			<!-- gunlink -->
@@ -362,8 +467,27 @@
 			</Operation>
 
 			<!-- mechlord -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetMechlordHelmet"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef</xpath>
+						<attribute>Name</attribute>
+						<value>Apparel_ArmorHelmetMechlordHelmet</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<equippedStatOffsets Operation="Safe">
+								<ShootingAccuracyPawn Operation="SafeReplace">-4</ShootingAccuracyPawn>
+								<MeleeHitChance Operation="SafeReplace">-1</MeleeHitChance>
+							</equippedStatOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetMechlordHelmet" or defName="Apparel_MechlordSuit"]</xpath>
+				<xpath>Defs/ThingDef[defName="Apparel_MechlordSuit"]</xpath>
 				<value>
 					<equippedStatOffsets Operation="Safe">
 						<ShootingAccuracyPawn Operation="SafeReplace">-4</ShootingAccuracyPawn>
@@ -404,6 +528,11 @@
 						<MoveSpeed Operation="SafeReplace">-1.2</MoveSpeed>
 					</equippedStatOffsets>
 				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+				<xpath>Defs/ThingDef[defName="Apparel_VacsuitHelmet"]</xpath>
+				<attribute>Name</attribute>
+				<value>Apparel_VacsuitHelmet</value>
 			</Operation>
 		</caseTrue>
 	</Operation>
@@ -716,23 +845,27 @@
 			</Operation>
 
 			<!-- spacer -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="VAE_Headgear_TrooperHelmet" or 
-					defName="VAE_Apparel_TrooperArmor"]</xpath>
-				<value>
-					<recipeMaker Operation="Safe">
-						<researchPrerequisite Operation="SafeReplace">ReconArmor</researchPrerequisite>
-					</recipeMaker>
-				</value>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="VAE_Headgear_TrooperHelmet"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef</xpath>
+						<attribute>Name</attribute>
+						<value>VAE_Headgear_TrooperHelmet</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<recipeMaker Operation="Safe">
+								<researchPrerequisite Operation="SafeReplace">ReconArmor</researchPrerequisite>
+							</recipeMaker>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="VAE_Headgear_RoyalTrooperHelmet" or 
-					defName="VAE_Apparel_RoyalTrooperArmor"]</xpath>
+				<xpath>Defs/ThingDef[defName="VAE_Apparel_TrooperArmor"]</xpath>
 				<value>
-					<equippedStatOffsets Operation="Safe">
-						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
-						<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
-					</equippedStatOffsets>
 					<recipeMaker Operation="Safe">
 						<researchPrerequisite Operation="SafeReplace">ReconArmor</researchPrerequisite>
 					</recipeMaker>
@@ -741,6 +874,11 @@
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="VAE_Headgear_HeavyMarineHelmet"]</xpath>
 				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef</xpath>
+						<attribute>Name</attribute>
+						<value>VAE_Headgear_HeavyMarineHelmet</value>
+					</Operation>
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
 							<li>ludeon.rimworld.royalty</li>
@@ -789,8 +927,47 @@
 				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="VAE_Headgear_RoyalTrooperHelmet"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef</xpath>
+						<attribute>Name</attribute>
+						<value>VAE_Headgear_RoyalTrooperHelmet</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<equippedStatOffsets Operation="Safe">
+								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+							</equippedStatOffsets>
+							<recipeMaker Operation="Safe">
+								<researchPrerequisite Operation="SafeReplace">ReconArmor</researchPrerequisite>
+							</recipeMaker>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VAE_Apparel_RoyalTrooperArmor"]</xpath>
+				<value>
+					<equippedStatOffsets Operation="Safe">
+						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+						<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+					</equippedStatOffsets>
+					<recipeMaker Operation="Safe">
+						<researchPrerequisite Operation="SafeReplace">ReconArmor</researchPrerequisite>
+					</recipeMaker>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="VAE_Headgear_RoyalSiegeHelmet"]</xpath>
 				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef</xpath>
+						<attribute>Name</attribute>
+						<value>VAE_Headgear_RoyalSiegeHelmet</value>
+					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef</xpath>
 						<value>
@@ -1031,11 +1208,6 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
-					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
-						<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetCataphract"]</xpath>
-						<attribute>Name</attribute>
-						<value>Apparel_ArmorHelmetCataphract</value>
-					</Operation>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 						<xpath>Defs/ThingDef[defName="Apparel_ToxArmorHelmetCataphract"][@ParentName!="Apparel_ArmorHelmetCataphract"]</xpath>
 					</Operation>
@@ -1047,11 +1219,6 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
-					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
-						<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetMechlordHelmet"]</xpath>
-						<attribute>Name</attribute>
-						<value>Apparel_ArmorHelmetMechlordHelmet</value>
-					</Operation>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 						<xpath>Defs/ThingDef[defName="Apparel_ToxArmorHelmetMechlord"][@ParentName!="Apparel_ArmorHelmetMechlordHelmet"]</xpath>
 					</Operation>
@@ -1082,11 +1249,6 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
-					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
-						<xpath>Defs/ThingDef[defName="Apparel_VacsuitHelmet"]</xpath>
-						<attribute>Name</attribute>
-						<value>Apparel_VacsuitHelmet</value>
-					</Operation>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 						<xpath>Defs/ThingDef[defName="Apparel_ToxVacsuitHelmet"][@ParentName!="Apparel_VacsuitHelmet"]</xpath>
 					</Operation>
@@ -1098,11 +1260,6 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
-					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
-						<xpath>Defs/ThingDef[defName="VAE_Headgear_TrooperHelmet"]</xpath>
-						<attribute>Name</attribute>
-						<value>VAE_Headgear_TrooperHelmet</value>
-					</Operation>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 						<xpath>Defs/ThingDef[defName="Apparel_ToxVAE_TrooperHelmet"][@ParentName!="VAE_Headgear_TrooperHelmet"]</xpath>
 					</Operation>
@@ -1116,11 +1273,6 @@
 								</researchPrerequisites>
 							</recipeMaker>
 						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
-						<xpath>Defs/ThingDef[defName="VAE_Headgear_HeavyMarineHelmet"]</xpath>
-						<attribute>Name</attribute>
-						<value>VAE_Headgear_HeavyMarineHelmet</value>
 					</Operation>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 						<xpath>Defs/ThingDef[defName="Apparel_ToxVAE_SiegebreakerHelmet"][@ParentName!="VAE_Headgear_HeavyMarineHelmet"]</xpath>
