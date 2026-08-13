@@ -41,8 +41,8 @@
 		</descriptionHyperlinks>
 		<comps>
 			<li Class="Tox.CompProperties_ToxFilterCharge">
-				<fuelDef>Wastepack</fuelDef>
-				<fuelAmount>5</fuelAmount>
+				<fuelDef>Chemfuel</fuelDef>
+				<fuelAmount>20</fuelAmount>
 				<chargeDays>5</chargeDays>
 				<hediff>ToxApparelPoisoningHelmet</hediff>
 				<wasterHediff>ToxApparelWasterStimulusHelmet</wasterHediff>
@@ -72,8 +72,8 @@
 		</descriptionHyperlinks>
 		<comps>
 			<li Class="Tox.CompProperties_ToxFilterCharge">
-				<fuelDef>Wastepack</fuelDef>
-				<fuelAmount>5</fuelAmount>
+				<fuelDef>Chemfuel</fuelDef>
+				<fuelAmount>20</fuelAmount>
 				<chargeDays>5</chargeDays>
 				<hediff>ToxApparelPoisoningHelmet</hediff>
 				<wasterHediff>ToxApparelWasterStimulusHelmet</wasterHediff>
@@ -103,8 +103,8 @@
 		</descriptionHyperlinks>
 		<comps>
 			<li Class="Tox.CompProperties_ToxFilterCharge">
-				<fuelDef>Wastepack</fuelDef>
-				<fuelAmount>5</fuelAmount>
+				<fuelDef>Chemfuel</fuelDef>
+				<fuelAmount>20</fuelAmount>
 				<chargeDays>5</chargeDays>
 				<hediff>ToxApparelPoisoningHelmet</hediff>
 				<wasterHediff>ToxApparelWasterStimulusHelmet</wasterHediff>
@@ -134,8 +134,8 @@
 		</descriptionHyperlinks>
 		<comps>
 			<li Class="Tox.CompProperties_ToxFilterCharge">
-				<fuelDef>Wastepack</fuelDef>
-				<fuelAmount>5</fuelAmount>
+				<fuelDef>Chemfuel</fuelDef>
+				<fuelAmount>20</fuelAmount>
 				<chargeDays>5</chargeDays>
 				<hediff>ToxApparelPoisoningHelmet</hediff>
 				<wasterHediff>ToxApparelWasterStimulusHelmet</wasterHediff>
@@ -165,8 +165,8 @@
 		</descriptionHyperlinks>
 		<comps>
 			<li Class="Tox.CompProperties_ToxFilterCharge">
-				<fuelDef>Wastepack</fuelDef>
-				<fuelAmount>5</fuelAmount>
+				<fuelDef>Chemfuel</fuelDef>
+				<fuelAmount>20</fuelAmount>
 				<chargeDays>5</chargeDays>
 				<hediff>ToxApparelPoisoningHelmet</hediff>
 				<wasterHediff>ToxApparelWasterStimulusHelmet</wasterHediff>
@@ -196,8 +196,8 @@
 		</descriptionHyperlinks>
 		<comps>
 			<li Class="Tox.CompProperties_ToxFilterCharge">
-				<fuelDef>Wastepack</fuelDef>
-				<fuelAmount>5</fuelAmount>
+				<fuelDef>Chemfuel</fuelDef>
+				<fuelAmount>20</fuelAmount>
 				<chargeDays>5</chargeDays>
 				<hediff>ToxApparelPoisoningHelmet</hediff>
 				<wasterHediff>ToxApparelWasterStimulusHelmet</wasterHediff>
@@ -227,8 +227,8 @@
 		</descriptionHyperlinks>
 		<comps>
 			<li Class="Tox.CompProperties_ToxFilterCharge">
-				<fuelDef>Wastepack</fuelDef>
-				<fuelAmount>5</fuelAmount>
+				<fuelDef>Chemfuel</fuelDef>
+				<fuelAmount>20</fuelAmount>
 				<chargeDays>5</chargeDays>
 				<hediff>ToxApparelPoisoningHelmet</hediff>
 				<wasterHediff>ToxApparelWasterStimulusHelmet</wasterHediff>
