@@ -304,6 +304,7 @@
 							</statFactors>
 							<statOffsets Operation="Safe">
 								<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+								<StaggerDurationFactor Operation="SafeAdd">-0.5</StaggerDurationFactor>
 							</statOffsets>
 						</value>
 					</Operation>
