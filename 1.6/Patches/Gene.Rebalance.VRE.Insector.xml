@@ -113,6 +113,9 @@
 									<backgroundPathXenogenes Operation="SafeReplace">UI/Icons/Genes/VRE_MutationBG</backgroundPathXenogenes>
 								</li>
 							</modExtensions>
+							<statOffsets Operation="Safe">
+								<ComfyTemperatureMin Operation="SafeAdd">5</ComfyTemperatureMin>
+							</statOffsets>
 						</value>
 					</Operation>
 				</apply>
@@ -214,9 +217,14 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_Immunodeficiency"]</xpath>
 				<value>
+					<description Operation="SafeReplace">Carriers of this gene are much more likely to die from infection due to low immunity.</description>
 					<exclusionTags Operation="Safe">
 						<li Operation="SafeRemove" Compare="InnerText">Immunity</li>
 					</exclusionTags>
+					<statFactors Operation="Safe">
+						<InjuryHealingFactor Operation="SafeRemove">0</InjuryHealingFactor>
+						<ImmunityGainSpeed Operation="SafeReplace">0.8</ImmunityGainSpeed>
+					</statFactors>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
@@ -335,6 +343,14 @@
 					</Operation>
 					<!-- evolutions -->
 					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_PyroResistantChitin"]</xpath>
+						<value>
+							<exclusionTags Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">Tail</li>
+							</exclusionTags>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_LocustWings"]</xpath>
 						<value>
 							<exclusionTags Operation="Safe">
@@ -410,6 +426,7 @@
 										<VEF_FoodCapacityMultiplier Operation="SafeRemove">0</VEF_FoodCapacityMultiplier>
 									</statFactors>
 									<statOffsets Operation="Safe">
+										<StaggerDurationFactor Operation="SafeAdd">0.4</StaggerDurationFactor>
 										<VEF_BodySize_Offset Operation="SafeReplace">-0.4</VEF_BodySize_Offset>
 									</statOffsets>
 								</value>
@@ -443,6 +460,7 @@
 									</statFactors>
 									<statOffsets Operation="Safe">
 										<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+										<StaggerDurationFactor Operation="SafeAdd">-0.3</StaggerDurationFactor>
 										<VEF_BodySize_Offset Operation="SafeReplace">0.6</VEF_BodySize_Offset>
 									</statOffsets>
 								</value>
