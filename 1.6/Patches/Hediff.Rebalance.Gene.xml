@@ -339,6 +339,30 @@
 							<hungerRateFactor Operation="SafeReplace">1.6</hungerRateFactor>
 						</value>
 					</Operation>
+					<!-- misc -->
+					<Operation Class="XmlExtensions.SetScope">
+						<xpath>Defs/HediffDef[defName="VRE_MineralRichInsectskin"]</xpath>
+						<apply>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>HediffDef/stages/li[minSeverity="0.1"]</xpath>
+								<value>
+									<statOffsets Operation="Safe">
+										<ArmorRating_Blunt Operation="SafeReplace">0.3</ArmorRating_Blunt>
+										<ArmorRating_Sharp Operation="SafeReplace">0.4</ArmorRating_Sharp>
+									</statOffsets>
+								</value>
+							</Operation>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>HediffDef/stages/li[minSeverity="1"]</xpath>
+								<value>
+									<statOffsets Operation="Safe">
+										<ArmorRating_Blunt Operation="SafeReplace">0.6</ArmorRating_Blunt>
+										<ArmorRating_Sharp Operation="SafeReplace">0.8</ArmorRating_Sharp>
+									</statOffsets>
+								</value>
+							</Operation>
+						</apply>
+					</Operation>
 				</caseTrue>
 			</Operation>
 		</caseTrue>
