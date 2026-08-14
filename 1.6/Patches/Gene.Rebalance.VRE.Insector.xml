@@ -94,6 +94,29 @@
 					</statOffsets>
 				</value>
 			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_HypothermicSlowdown"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>VanillaRacesExpandedInsector.GenelineGeneDef</xpath>
+						<attribute>ParentName</attribute>
+						<value>VRE_MutationGene</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VanillaRacesExpandedInsector.GenelineGeneDef</xpath>
+						<value>
+							<displayOrderInCategory Operation="AddOrReplace">9</displayOrderInCategory>
+							<iconPath Operation="SafeReplace">UI/Icons/Genes/Gene_HypothermicHibernation</iconPath>
+							<modExtensions Operation="Safe">
+								<li Class="VEF.Genes.GeneExtension" Operation="Safe" CheckAttributes="True">
+									<backgroundPathEndogenes Operation="SafeReplace">UI/Icons/Genes/VRE_MutationBG</backgroundPathEndogenes>
+									<backgroundPathXenogenes Operation="SafeReplace">UI/Icons/Genes/VRE_MutationBG</backgroundPathXenogenes>
+								</li>
+							</modExtensions>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_HardenedChitin"]</xpath>
 				<value>
@@ -162,12 +185,16 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_RipperBlades"]</xpath>
 				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="SafeAdd">Manipulation</capacity>
+							<offset Operation="SafeAdd">-0.1</offset>
+						</li>
+					</capMods>
 					<customEffectDescriptions Operation="Safe">
 						<li Operation="SafeAdd" Compare="InnerText">Causes cuts when using unarmed attacks.</li>
 					</customEffectDescriptions>
-					<statFactors Operation="Safe">
-						<WorkSpeedGlobal Operation="SafeAdd">0.8</WorkSpeedGlobal>
-					</statFactors>
+					<description Operation="SafeReplace">Carriers of this gene have long and deadly ripper-blades instead of hands. While the blades greatly reduce ability to manipulate objects, they can be used in melee combat and are capable of ripping even armored enemies in half.</description>
 					<statOffsets Operation="Safe">
 						<WorkSpeedGlobal Operation="SafeRemove">0</WorkSpeedGlobal>
 					</statOffsets>
@@ -214,13 +241,8 @@
 					</statOffsets>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 				<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_HypothermicHibernation"]</xpath>
-				<value>
-					<exclusionTags Operation="Safe">
-						<li Operation="SafeRemove" Compare="InnerText">MinTemperature</li>
-					</exclusionTags>
-				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_RapidLifeCycle"]</xpath>
@@ -305,6 +327,12 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_InsectMandibles"]</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_InflexibleJoints"]</xpath>
+					</Operation>
 					<!-- evolutions -->
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_LocustWings"]</xpath>
@@ -345,9 +373,12 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_ChargerClaws"]</xpath>
 						<value>
-							<statFactors Operation="Safe">
-								<WorkSpeedGlobal Operation="SafeAdd">0.5</WorkSpeedGlobal>
-							</statFactors>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="SafeAdd">Manipulation</capacity>
+									<offset Operation="SafeAdd">-0.4</offset>
+								</li>
+							</capMods>
 							<statOffsets Operation="Safe">
 								<WorkSpeedGlobal Operation="SafeRemove">0</WorkSpeedGlobal>
 							</statOffsets>
@@ -428,9 +459,6 @@
 								<ComfyTemperatureMin Operation="SafeReplace">5</ComfyTemperatureMin>
 							</statOffsets>
 						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_InflexibleJoints"]</xpath>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_HardLockedJoints"]</xpath>
