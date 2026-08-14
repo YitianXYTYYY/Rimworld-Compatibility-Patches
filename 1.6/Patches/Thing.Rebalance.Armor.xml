@@ -958,6 +958,7 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="VAE_Apparel_RoyalTrooperArmor"]</xpath>
 				<value>
+					<label Operation="SafeReplace">trooper armor - prestige</label>
 					<equippedStatOffsets Operation="Safe">
 						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 						<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
@@ -1013,6 +1014,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef</xpath>
 						<value>
+							<label Operation="SafeReplace">siegebreaker armor - prestige</label>
 							<equippedStatOffsets Operation="Safe">
 								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
@@ -1108,10 +1110,29 @@
 		<packageId>true</packageId>
 		<caseTrue>
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Apparel_ArmorPhoenixPrestige" or
-					defName="Apparel_ArmorLocustPrestige" or
-					defName="Apparel_ArmorGrenadierPrestige"]</xpath>
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorPhoenixPrestige"]</xpath>
 				<value>
+    				<label Operation="SafeReplace">phoenix armor - prestige</label>
+					<equippedStatOffsets Operation="Safe">
+						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+						<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+					</equippedStatOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorLocustPrestige"]</xpath>
+				<value>
+    				<label Operation="SafeReplace">locust armor - prestige</label>
+					<equippedStatOffsets Operation="Safe">
+						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+						<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+					</equippedStatOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorGrenadierPrestige"]</xpath>
+				<value>
+    				<label Operation="SafeReplace">grenadier armor - prestige</label>
 					<equippedStatOffsets Operation="Safe">
 						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 						<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
