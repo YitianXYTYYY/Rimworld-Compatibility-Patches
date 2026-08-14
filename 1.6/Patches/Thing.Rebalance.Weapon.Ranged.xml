@@ -691,6 +691,17 @@
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="VWE_FlashGrenade"]</xpath>
 				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<recipeMaker Operation="Safe">
+								<recipeUsers Inherit="False" Operation="Safe">
+									<li Operation="SafeRemove" Compare="InnerText">FabricationBench</li>
+									<li Operation="SafeAdd" Compare="InnerText">TableMachining</li>
+								</recipeUsers>
+							</recipeMaker>
+						</value>
+					</Operation>
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
 							<li>mlie.yayoscombat3</li>
