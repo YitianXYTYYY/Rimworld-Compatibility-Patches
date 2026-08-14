@@ -241,11 +241,12 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_LowGreyMatter"]</xpath>
 				<value>
+					<description Operation="SafeReplace">Carriers of this gene are unable to process new information and are incapable of evaluating their decisions and learning from them. They are incredibly slow at learning new skills and knowledge.</description>
 					<statFactors Operation="Safe">
-						<GlobalLearningFactor Operation="SafeReplace">0.5</GlobalLearningFactor>
+						<GlobalLearningFactor Operation="SafeReplace">0.2</GlobalLearningFactor>
 					</statFactors>
 					<statOffsets Operation="Safe">
-						<PsychicSensitivity Operation="SafeReplace">-0.4</PsychicSensitivity>
+						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 					</statOffsets>
 				</value>
 			</Operation>
@@ -316,6 +317,16 @@
 					</requiredGenes>
 				</value>
 			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_ProteinDenaturation"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>VanillaRacesExpandedInsector.GenelineGeneDef/conditionalStatAffecters/li[@Class="VEF.Genes.ConditionalStatAffecter_AnyLightSensitivity"]</xpath>
+						<attribute>Class</attribute>
+						<value>ConditionalStatAffecter_InSunlight</value>
+					</Operation>
+				</apply>
+			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_Stenothermic"]</xpath>
 				<value>
@@ -384,6 +395,16 @@
 								<ShootingAccuracyFactor_Medium Operation="SafeAdd">0.1</ShootingAccuracyFactor_Medium>
 								<ShootingAccuracyFactor_Long Operation="SafeAdd">0.1</ShootingAccuracyFactor_Long>
 							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_MineralRichInsectskin"]</xpath>
+						<value>
+							<exclusionTags Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">AG_Armour</li>
+								<li Operation="SafeRemove" Compare="InnerText">Armour</li>
+								<li Operation="SafeRemove" Compare="InnerText">Armor</li>
+							</exclusionTags>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
