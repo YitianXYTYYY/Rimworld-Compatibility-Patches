@@ -3,7 +3,7 @@
 
 	<ThingDef ParentName="Apparel_ClothMask" MayRequire="wasterbreath.mod">
 		<defName>Apparel_ToxClothMask</defName>
-		<label>tox face mask</label>
+		<label>face mask - tox</label>
 		<description>Several layers of fabric soaked in unstable chemfuel compounds. The treatment is meant to neutralize tox gas, but a charged filter leaches poison into the wearer's lungs.\n\nWhile the filter is charged, causes toxic buildup over time.\n\nThe wrap is soaked with toxic substances. I love the smell of napalm in the morning!</description>
 		<descriptionHyperlinks>
 			<HediffDef>ToxicBuildup</HediffDef>
@@ -34,7 +34,7 @@
 
 	<ThingDef ParentName="Apparel_ArmorHelmetRecon" MayRequire="wasterbreath.mod">
 		<defName>Apparel_ToxArmorHelmetRecon</defName>
-		<label>tox recon helmet</label>
+		<label>recon helmet - tox</label>
 		<description>A high-tech armored helmet with a built-in status computer and a protective plasteel-weave plate.\n\nArmor like this is often used by imperial scout troops or glitterworld police forces.\n\nA special filter delivers toxins to stimulate toxic genes.</description>
 		<descriptionHyperlinks>
 			<HediffDef>ToxicBuildup</HediffDef>
@@ -65,7 +65,7 @@
 
 	<ThingDef ParentName="Apparel_PowerArmorHelmet" MayRequire="wasterbreath.mod">
 		<defName>Apparel_ToxArmorHelmetMarine</defName>
-		<label>tox marine helmet</label>
+		<label>marine helmet - tox</label>
 		<description>A marine armor helmet, with a built-in status computer and layered plasteel-weave plates.\n\nArmor like this is often used by rapid-incursion space marines.\n\nA special filter delivers toxins to stimulate toxic genes.</description>
 		<descriptionHyperlinks>
 			<HediffDef>ToxicBuildup</HediffDef>
@@ -94,9 +94,71 @@
 		<tickerType>Normal</tickerType>
 	</ThingDef>
 
-	<ThingDef ParentName="Apparel_ArmorHelmetCataphract" MayRequire="wasterbreath.mod,ludeon.rimworld.royalty">
+	<ThingDef ParentName="Apparel_ArmorHelmetReconPrestige" MayRequire="ludeon.rimworld.royalty,wasterbreath.mod">
+		<defName>Apparel_ToxArmorHelmetReconPrestige</defName>
+		<label>recon helmet - tox prestige</label>
+		<description>A high-tech armored helmet with a built-in status computer and a protective plasteel-weave plate.\n\nExpensive and beautiful, prestige armor like this is usually made for those of high status. Embedded eltex threads also enhance the wearer's psychic sensitivity.\n\nA special filter delivers toxins to stimulate toxic genes.</description>
+		<descriptionHyperlinks>
+			<HediffDef>ToxicBuildup</HediffDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="Tox.CompProperties_ToxFilterCharge">
+				<fuelDef>Chemfuel</fuelDef>
+				<fuelAmount>20</fuelAmount>
+				<chargeDays>5</chargeDays>
+				<hediff>ToxApparelPoisoningHelmet</hediff>
+				<wasterHediff>ToxApparelWasterStimulusHelmet</wasterHediff>
+				<part>Head</part>
+			</li>
+		</comps>
+		<costList>
+			<Chemfuel>20</Chemfuel>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite Inherit="False"/>
+			<researchPrerequisites Inherit="False">
+				<li>ReconArmor</li>
+				<li>ToxFilterArmor</li>
+			</researchPrerequisites>
+			<displayPriority>141</displayPriority>
+		</recipeMaker>
+		<tickerType>Normal</tickerType>
+	</ThingDef>
+
+	<ThingDef ParentName="Apparel_ArmorMarineHelmetPrestige" MayRequire="ludeon.rimworld.royalty,wasterbreath.mod">
+		<defName>Apparel_ToxArmorMarineHelmetPrestige</defName>
+		<label>marine helmet - tox prestige</label>
+		<description>A marine armor helmet, with a built-in status computer and layered plasteel-weave plates.\n\nExpensive and beautiful, prestige armor like this is usually made for those of high status. Embedded eltex threads also enhance the wearer's psychic sensitivity.\n\nA special filter delivers toxins to stimulate toxic genes.</description>
+		<descriptionHyperlinks>
+			<HediffDef>ToxicBuildup</HediffDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="Tox.CompProperties_ToxFilterCharge">
+				<fuelDef>Chemfuel</fuelDef>
+				<fuelAmount>20</fuelAmount>
+				<chargeDays>5</chargeDays>
+				<hediff>ToxApparelPoisoningHelmet</hediff>
+				<wasterHediff>ToxApparelWasterStimulusHelmet</wasterHediff>
+				<part>Head</part>
+			</li>
+		</comps>
+		<costList>
+			<Chemfuel>20</Chemfuel>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite Inherit="False"/>
+			<researchPrerequisites Inherit="False">
+				<li>PoweredArmor</li>
+				<li>ToxFilterArmor</li>
+			</researchPrerequisites>
+			<displayPriority>151</displayPriority>
+		</recipeMaker>
+		<tickerType>Normal</tickerType>
+	</ThingDef>
+
+	<ThingDef ParentName="Apparel_ArmorHelmetCataphract" MayRequire="ludeon.rimworld.royalty,wasterbreath.mod">
 		<defName>Apparel_ToxArmorHelmetCataphract</defName>
-		<label>tox cataphract helmet</label>
+		<label>cataphract helmet - tox</label>
 		<description>A heavily-armored high-tech helmet, with a solid plasteel-weave shell and indirect visual system for non-frontal view angles. It protects against all but the most powerful or luckily-aimed shots.\n\nArmor like this is used by imperial cataphracts to break heavily fortified positions in frontal assaults when no other option is available.\n\nA special filter delivers toxins to stimulate toxic genes.</description>
 		<descriptionHyperlinks>
 			<HediffDef>ToxicBuildup</HediffDef>
@@ -125,9 +187,40 @@
 		<tickerType>Normal</tickerType>
 	</ThingDef>
 
-	<ThingDef ParentName="Apparel_ArmorHelmetMechlordHelmet" MayRequire="wasterbreath.mod,ludeon.rimworld.biotech">
+	<ThingDef ParentName="Apparel_ArmorHelmetCataphractPrestige" MayRequire="ludeon.rimworld.royalty,wasterbreath.mod">
+		<defName>Apparel_ToxArmorHelmetCataphractPrestige</defName>
+		<label>cataphract helmet - tox prestige</label>
+		<description>A heavily-armored high-tech helmet, with a solid plasteel-weave shell and indirect visual system for non-frontal view angles. It protects against all but the most powerful or luckily-aimed shots.\n\nExpensive and beautiful, prestige armor like this is usually made for those of high status. Embedded eltex threads also enhance the wearer's psychic sensitivity.\n\nA special filter delivers toxins to stimulate toxic genes.</description>
+		<descriptionHyperlinks>
+			<HediffDef>ToxicBuildup</HediffDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="Tox.CompProperties_ToxFilterCharge">
+				<fuelDef>Chemfuel</fuelDef>
+				<fuelAmount>20</fuelAmount>
+				<chargeDays>5</chargeDays>
+				<hediff>ToxApparelPoisoningHelmet</hediff>
+				<wasterHediff>ToxApparelWasterStimulusHelmet</wasterHediff>
+				<part>Head</part>
+			</li>
+		</comps>
+		<costList>
+			<Chemfuel>20</Chemfuel>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite Inherit="False"/>
+			<researchPrerequisites Inherit="False">
+				<li>CataphractArmor</li>
+				<li>ToxFilterArmor</li>
+			</researchPrerequisites>
+			<displayPriority>161</displayPriority>
+		</recipeMaker>
+		<tickerType>Normal</tickerType>
+	</ThingDef>
+
+	<ThingDef ParentName="Apparel_ArmorHelmetMechlordHelmet" MayRequire="ludeon.rimworld.biotech,wasterbreath.mod">
 		<defName>Apparel_ToxArmorHelmetMechlord</defName>
-		<label>tox mechlord helmet</label>
+		<label>mechlord helmet - tox</label>
 		<description>A heavy plasteel-weave helmet packed with mechanitor-assistance gear. The mechlord helmet dramatically amplifies a mechanitor's bandwidth, but is somewhat less protective than dedicated heavy armor.\n\nA special filter delivers toxins to stimulate toxic genes.</description>
 		<descriptionHyperlinks>
 			<HediffDef>ToxicBuildup</HediffDef>
@@ -156,9 +249,9 @@
 		<tickerType>Normal</tickerType>
 	</ThingDef>
 
-	<ThingDef ParentName="Apparel_VacsuitHelmet" MayRequire="wasterbreath.mod,ludeon.rimworld.odyssey">
+	<ThingDef ParentName="Apparel_VacsuitHelmet" MayRequire="ludeon.rimworld.odyssey,wasterbreath.mod">
 		<defName>Apparel_ToxVacsuitHelmet</defName>
-		<label>tox vacsuit helmet</label>
+		<label>vacsuit helmet - tox</label>
 		<description>A helmet that efficiently recycles the user's oxygen, allowing them to breathe in the vacuum of space for hours at a time. The process isn't perfectly efficient, so the user must periodically return to a pressurized environment.\n\nA special filter delivers toxins to stimulate toxic genes.</description>
 		<descriptionHyperlinks>
 		<HediffDef>ToxicBuildup</HediffDef>
@@ -187,9 +280,9 @@
 		<tickerType>Normal</tickerType>
 	</ThingDef>
 
-	<ThingDef ParentName="VAE_Headgear_TrooperHelmet" MayRequire="wasterbreath.mod,vanillaexpanded.varme">
+	<ThingDef ParentName="VAE_Headgear_TrooperHelmet" MayRequire="vanillaexpanded.varme,wasterbreath.mod">
 		<defName>Apparel_ToxVAE_TrooperHelmet</defName>
-		<label>tox trooper helmet</label>
+		<label>trooper helmet - tox</label>
 		<description>A high-tech and lightweight armored helmet with a protective plasteel-weave plate.\n\nArmor like this is often used by imperial conscripts and late-midworld military forces.\n\nA special filter delivers toxins to stimulate toxic genes.</description>
 		<descriptionHyperlinks>
 			<HediffDef>ToxicBuildup</HediffDef>
@@ -220,7 +313,7 @@
 
 	<ThingDef ParentName="VAE_Headgear_HeavyMarineHelmet" MayRequire="wasterbreath.mod,vanillaexpanded.varme">
 		<defName>Apparel_ToxVAE_SiegebreakerHelmet</defName>
-		<label>tox siegebreaker helmet</label>
+		<label>siegebreaker helmet - tox</label>
 		<description>A heavily-armored high-tech helmet, with a solid plasteel-weave plate and omni-spectrum camera.\n\nArmor like this is often used by imperial stormtroopers and glitterworld peacekeepers.\n\nA special filter delivers toxins to stimulate toxic genes.</description>
 		<descriptionHyperlinks>
 			<HediffDef>ToxicBuildup</HediffDef>
@@ -245,6 +338,66 @@
 				<li>VAE_SiegebreakerArmor</li>
 			</researchPrerequisites>
 			<displayPriority>122</displayPriority>
+		</recipeMaker>
+		<tickerType>Normal</tickerType>
+	</ThingDef>
+
+	<ThingDef ParentName="VAE_Headgear_RoyalTrooperHelmet" MayRequire="ludeon.rimworld.royalty,vanillaexpanded.varme,wasterbreath.mod">
+		<defName>Apparel_ToxVAE_RoyalTrooperHelmet</defName>
+		<label>trooper helmet - tox prestige</label>
+		<description>A high-tech and lightweight armored helmet with a protective plasteel-weave plate.\n\nExpensive and beautiful, prestige armor like this is usually made for those of high status. Embedded eltex threads also enhance the wearer's psychic sensitivity.\n\nA special filter delivers toxins to stimulate toxic genes.</description>
+		<descriptionHyperlinks>
+			<HediffDef>ToxicBuildup</HediffDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="Tox.CompProperties_ToxFilterCharge">
+				<fuelDef>Chemfuel</fuelDef>
+				<fuelAmount>20</fuelAmount>
+				<chargeDays>5</chargeDays>
+				<hediff>ToxApparelPoisoningHelmet</hediff>
+				<wasterHediff>ToxApparelWasterStimulusHelmet</wasterHediff>
+				<part>Head</part>
+			</li>
+		</comps>
+		<costList>
+			<Chemfuel>20</Chemfuel>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite Inherit="False"/>
+			<researchPrerequisites Inherit="False">
+				<li>ToxFilterArmor</li>
+				<li>VAE_TrooperArmor</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<tickerType>Normal</tickerType>
+	</ThingDef>
+
+	<ThingDef ParentName="VAE_Headgear_RoyalSiegeHelmet" MayRequire="wasterbreath.mod,vanillaexpanded.varme">
+		<defName>Apparel_ToxVAE_RoyalSiegeHelmet</defName>
+		<label>siegebreaker helmet - tox prestige</label>
+		<description>A heavily-armored high-tech helmet, with a solid plasteel-weave shell and omni-spectrum camera.\n\nExpensive and beautiful, prestige armor like this is usually made for those of high status. Embedded eltex threads also enhance the wearer's psychic sensitivity.\n\nA special filter delivers toxins to stimulate toxic genes.</description>
+		<descriptionHyperlinks>
+			<HediffDef>ToxicBuildup</HediffDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="Tox.CompProperties_ToxFilterCharge">
+				<fuelDef>Chemfuel</fuelDef>
+				<fuelAmount>20</fuelAmount>
+				<chargeDays>5</chargeDays>
+				<hediff>ToxApparelPoisoningHelmet</hediff>
+				<wasterHediff>ToxApparelWasterStimulusHelmet</wasterHediff>
+				<part>Head</part>
+			</li>
+		</comps>
+		<costList>
+			<Chemfuel>20</Chemfuel>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite Inherit="False"/>
+			<researchPrerequisites Inherit="False">
+				<li>ToxFilterArmor</li>
+				<li>VAE_SiegebreakerArmor</li>
+			</researchPrerequisites>
 		</recipeMaker>
 		<tickerType>Normal</tickerType>
 	</ThingDef>
