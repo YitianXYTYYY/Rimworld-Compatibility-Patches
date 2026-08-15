@@ -179,7 +179,7 @@
 					<modExtensions Operation="Safe">
 						<li Class="VEF.Genes.GeneExtension" Operation="Safe" CheckAttributes="True">
 							<hediffsToBodyParts Operation="Safe">
-								<li Operation="SafeRemove" Compare="InnerText" XPathLocal="hediff">
+								<li Operation="SafeRemove" Compare="Both" XPathLocal="hediff">
 									<hediff>VRE_Serotonin</hediff>
 								</li>
 							</hediffsToBodyParts>
@@ -311,7 +311,7 @@
 					<modExtensions Operation="Safe">
 						<li Class="VEF.Genes.GeneExtension" Operation="Safe" CheckAttributes="True">
 							<hediffsToBodyParts Operation="Safe">
-								<li Operation="SafeRemove" Compare="InnerText" XPathLocal="hediff">
+								<li Operation="SafeRemove" Compare="Both" XPathLocal="hediff">
 									<hediff>VRE_LowOctopamine</hediff>
 								</li>
 							</hediffsToBodyParts>
