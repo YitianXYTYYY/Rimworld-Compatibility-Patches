@@ -1,6 +1,197 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
+	<!-- global misc -->
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/HediffDef[defName="PsychicHangover"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="buzzing"]</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Consciousness</capacity>
+							<postFactor Operation="SafeRemove">0</postFactor>
+							<setMax Operation="SafeAdd">0.8</setMax>
+						</li>
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Manipulation</capacity>
+							<offset Operation="SafeAdd">-0.2</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+					</capMods>
+					<statFactors Operation="Safe">
+						<RestFallRateFactor Operation="SafeRemove">0</RestFallRateFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<RestFallRateFactor Operation="SafeAdd">0.5</RestFallRateFactor>
+					</statOffsets>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/HediffDef[defName="CryptosleepSickness"]/stages/li</xpath>
+		<value>
+			<capMods Operation="Safe">
+				<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+					<capacity Operation="Safe">Consciousness</capacity>
+					<postFactor Operation="SafeRemove">0</postFactor>
+					<setMax Operation="SafeAdd">0.8</setMax>
+				</li>
+				<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+					<capacity Operation="Safe">Moving</capacity>
+					<offset Operation="SafeAdd">-0.1</offset>
+					<postFactor Operation="SafeRemove">0</postFactor>
+				</li>
+				<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+					<capacity Operation="Safe">Manipulation</capacity>
+					<offset Operation="SafeAdd">-0.1</offset>
+					<postFactor Operation="SafeRemove">0</postFactor>
+				</li>
+			</capMods>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/HediffDef[defName="FoodPoisoning"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="recovering"]</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Consciousness</capacity>
+							<offset Operation="SafeAdd">-0.4</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Moving</capacity>
+							<offset Operation="SafeAdd">-0.2</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Manipulation</capacity>
+							<offset Operation="SafeAdd">-0.1</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">BloodFiltration</capacity>
+							<offset Operation="SafeAdd">-0.05</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Eating</capacity>
+							<offset Operation="SafeAdd">-0.5</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+					</capMods>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="major"]</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Consciousness</capacity>
+							<offset Operation="SafeAdd">-0.5</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Moving</capacity>
+							<offset Operation="SafeAdd">-0.5</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Manipulation</capacity>
+							<offset Operation="SafeAdd">-0.2</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">BloodFiltration</capacity>
+							<offset Operation="SafeAdd">-0.15</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Talking</capacity>
+							<offset Operation="SafeAdd">-0.2</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Eating</capacity>
+							<offset Operation="SafeAdd">-0.8</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+					</capMods>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="initial"]</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Consciousness</capacity>
+							<offset Operation="SafeAdd">-0.4</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Moving</capacity>
+							<offset Operation="SafeAdd">-0.2</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Manipulation</capacity>
+							<offset Operation="SafeAdd">-0.1</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">BloodFiltration</capacity>
+							<offset Operation="SafeAdd">-0.05</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Eating</capacity>
+							<offset Operation="SafeAdd">-0.5</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+					</capMods>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/HediffDef[defName="HeartAttack"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="painful"]</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Consciousness</capacity>
+							<postFactor Operation="SafeRemove">0</postFactor>
+							<setMax Operation="SafeAdd">0.5</setMax>
+						</li>
+					</capMods>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/HediffDef[defName="ResurrectionSickness"]/stages/li</xpath>
+		<value>
+			<capMods Operation="Safe">
+				<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+					<capacity Operation="Safe">Moving</capacity>
+					<postFactor Operation="SafeRemove">0</postFactor>
+					<setMax Operation="SafeAdd">0.1</setMax>
+				</li>
+				<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+					<capacity Operation="Safe">Manipulation</capacity>
+					<postFactor Operation="SafeRemove">0</postFactor>
+					<setMax Operation="SafeAdd">0.1</setMax>
+				</li>
+			</capMods>
+		</value>
+	</Operation>
 	<!-- global needs -->
 	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/HediffDef[defName="Malnutrition"]</xpath>
@@ -41,6 +232,22 @@
 		</apply>
 	</Operation>
 	<!-- global temperature -->
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/HediffDef[defName="Hypothermia"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="shivering"][minSeverity="0.04"]</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Manipulation</capacity>
+							<offset Operation="SafeReplace">-0.1</offset>
+						</li>
+					</capMods>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
 	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/HediffDef[defName="HypothermicSlowdown"]</xpath>
 		<apply>
@@ -93,7 +300,122 @@
 			<hungerRateFactorOffset Operation="SafeRemove"/>
 		</value>
 	</Operation>
-	<!-- psylink -->
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/HediffDef[defName="WoundInfection"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="major"]</xpath>
+				<value>
+					<painOffset Operation="SafeReplace">0.1</painOffset>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="extreme"]</xpath>
+				<value>
+					<painOffset Operation="SafeReplace">0.15</painOffset>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/HediffDef[defName="Malaria"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="major"]</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Consciousness</capacity>
+							<offset Operation="SafeReplace">-0.15</offset>
+						</li>
+					</capMods>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Manipulation</capacity>
+							<offset Operation="SafeReplace">-0.1</offset>
+						</li>
+					</capMods>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="extreme"]</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">BloodFiltration</capacity>
+							<offset Operation="SafeReplace">-0.25</offset>
+						</li>
+					</capMods>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/HediffDef[defName="SleepingSickness"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="minor"][minSeverity="0.4375"]</xpath>
+				<value>
+					<painOffset Operation="SafeReplace">0.05</painOffset>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Consciousness</capacity>
+							<offset Operation="SafeReplace">-0.05</offset>
+						</li>
+					</capMods>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Manipulation</capacity>
+							<offset Operation="SafeReplace">-0.05</offset>
+						</li>
+					</capMods>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="major"]</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Manipulation</capacity>
+							<offset Operation="SafeReplace">-0.1</offset>
+						</li>
+					</capMods>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/HediffDef[defName="ScariaInfection"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="minor"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<MentalBreakThreshold Operation="SafeRemove">0</MentalBreakThreshold>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="major"]</xpath>
+				<value>
+					<painOffset Operation="SafeReplace">0.1</painOffset>
+					<statOffsets Operation="Safe">
+						<MentalBreakThreshold Operation="SafeReplace">0.05</MentalBreakThreshold>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="extreme"]</xpath>
+				<value>
+					<painOffset Operation="SafeReplace">0.15</painOffset>
+					<statOffsets Operation="Safe">
+						<MentalBreakThreshold Operation="SafeReplace">0.1</MentalBreakThreshold>
+					</statOffsets>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
+	<!-- psycasts -->
 	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/HediffDef[defName="PsychicAmplifier"]</xpath>
 		<apply>
@@ -154,7 +476,7 @@
 
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>ludeon.rimworld.ideology</li>
+			<li>ludeon.rimworld.royalty</li>
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
