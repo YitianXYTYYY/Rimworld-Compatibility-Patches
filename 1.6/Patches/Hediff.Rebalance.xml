@@ -158,6 +158,38 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- psycasts -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="PsychicFocus"]/stages/li</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Sight</capacity>
+							<offset Operation="SafeAdd">0.3</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Hearing</capacity>
+							<offset Operation="SafeAdd">0.3</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Moving</capacity>
+							<offset Operation="SafeAdd">0.3</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+					</capMods>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ludeon.rimworld.ideology</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
 			<!-- various -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/HediffDef[defName="NeuralSupercharge"]/stages/li</xpath>
@@ -214,19 +246,54 @@
 				</value>
 			</Operation>
 			<!-- deathrest -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/HediffDef[defName="GlucosoidRush"]/stages/li</xpath>
-				<value>
-					<capMods Operation="Safe">
-						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-							<capacity Operation="SafeAdd">Moving</capacity>
-							<offset Operation="SafeAdd">0.1</offset>
-						</li>
-					</capMods>
-					<statFactors Operation="Safe">
-						<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
-					</statFactors>
-				</value>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="GlucosoidRush"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>HediffDef/stages/li</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages</xpath>
+						<value>
+							<li Operation="Safe" Compare="InnerText" XPathLocal="minSeverity">
+								<minSeverity Operation="SafeAdd">1</minSeverity>
+								<capMods Operation="Safe">
+									<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+										<capacity Operation="SafeAdd">Moving</capacity>
+										<offset Operation="SafeAdd">0.1</offset>
+									</li>
+								</capMods>
+							</li>
+							<li Operation="Safe" Compare="InnerText" XPathLocal="minSeverity">
+								<minSeverity Operation="SafeAdd">2</minSeverity>
+								<capMods Operation="Safe">
+									<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+										<capacity Operation="SafeAdd">Moving</capacity>
+										<offset Operation="SafeAdd">0.2</offset>
+									</li>
+								</capMods>
+							</li>
+							<li Operation="Safe" Compare="InnerText" XPathLocal="minSeverity">
+								<minSeverity Operation="SafeAdd">3</minSeverity>
+								<capMods Operation="Safe">
+									<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+										<capacity Operation="SafeAdd">Moving</capacity>
+										<offset Operation="SafeAdd">0.3</offset>
+									</li>
+								</capMods>
+							</li>
+							<li Operation="Safe" Compare="InnerText" XPathLocal="minSeverity">
+								<minSeverity Operation="SafeAdd">4</minSeverity>
+								<capMods Operation="Safe">
+									<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+										<capacity Operation="SafeAdd">Moving</capacity>
+										<offset Operation="SafeAdd">0.4</offset>
+									</li>
+								</capMods>
+							</li>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/HediffDef[defName="PsychofluidRush"]/stages/li</xpath>
@@ -785,6 +852,7 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- hediffs reproduction -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/HediffDef[defName="VRE_ChestburstPregnancy_Victim"]</xpath>
 				<apply>
