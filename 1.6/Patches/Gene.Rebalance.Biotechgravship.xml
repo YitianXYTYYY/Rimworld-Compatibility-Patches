@@ -36,6 +36,9 @@
 								</li>
 							</conditionalStatAffecters>
 							<displayOrderInCategory Operation="AddOrReplace">-670</displayOrderInCategory>
+							<exclusionTags Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">SpaceAdaption</li>
+							</exclusionTags>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.FindMod">
