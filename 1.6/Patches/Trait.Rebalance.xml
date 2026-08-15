@@ -41,14 +41,28 @@
 			</statOffsets>
 		</value>
 	</Operation>
-	<!-- gourmand -->
-	<!--Operation Class="XmlExtensions.HybridPatch">
-		<xpath>Defs/TraitDef[defName="Gourmand"]/degreeDatas/li[label="gourmand"]</xpath>
+	<!-- slow learner -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/TraitDef[defName="SlowLearner"]/degreeDatas/li[label="slow learner"]</xpath>
 		<value>
-        	<hungerRateFactor Operation="SafeRemove"/>
-			<hungerRateFactorOffset Operation="SafeAdd">0.5</hungerRateFactorOffset>
+			<statFactors Operation="Safe">
+				<GlobalLearningFactor Operation="SafeAdd">0.5</GlobalLearningFactor>
+			</statFactors>
+			<statOffsets Operation="Safe">
+				<GlobalLearningFactor Operation="SafeRemove">0</GlobalLearningFactor>
+			</statOffsets>
 		</value>
-	</Operation-->
+	</Operation>
+	<!-- tough -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/TraitDef[defName="Tough"]/degreeDatas/li[label="tough"]</xpath>
+		<value>
+			<statFactors Operation="Safe">
+				<IncomingDamageFactor Operation="SafeReplace">0.8</IncomingDamageFactor>
+			</statFactors>
+		</value>
+	</Operation>
+
 	<!-- Moodoffset -->
 	<!-- sanguine -->
 	<Operation Class="XmlExtensions.HybridPatch">

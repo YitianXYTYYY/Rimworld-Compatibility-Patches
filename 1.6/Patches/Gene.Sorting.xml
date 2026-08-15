@@ -1355,6 +1355,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VREH_Toughness"]</xpath>
 						<value>
+							<biostatMet Operation="SafeReplace">-2</biostatMet>
 							<displayCategory Operation="AddOrReplace">Pain</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">15</displayOrderInCategory>
 						</value>
