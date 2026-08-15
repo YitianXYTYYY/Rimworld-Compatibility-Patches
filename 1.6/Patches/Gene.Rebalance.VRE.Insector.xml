@@ -52,6 +52,12 @@
 					<abilities Operation="Safe">
 						<li Operation="SafeRemove" Compare="InnerText">VREInsector_WingPoweredJump</li>
 					</abilities>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Moving</capacity>
+							<offset Operation="SafeReplace">0.2</offset>
+						</li>
+					</capMods>
 					<exclusionTags Operation="Safe">
 						<li Operation="SafeAdd" Compare="InnerText">Wing</li>
 						<li Operation="SafeAdd" Compare="InnerText">Wings</li>
@@ -123,8 +129,14 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_HardenedChitin"]</xpath>
 				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Moving</capacity>
+							<offset Operation="SafeReplace">-0.1</offset>
+						</li>
+					</capMods>
 					<statFactors Operation="Safe">
-						<IncomingDamageFactor Operation="SafeReplace">0.8</IncomingDamageFactor>
+						<IncomingDamageFactor Operation="SafeReplace">0.5</IncomingDamageFactor>
 					</statFactors>
 				</value>
 			</Operation>
