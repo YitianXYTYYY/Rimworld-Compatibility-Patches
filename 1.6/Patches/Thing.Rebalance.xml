@@ -67,11 +67,6 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="GR_MechanoidChip"]</xpath>
-				<value>
-				</value>
-			</Operation>
 		</apply>
 	</Operation>
 	<Operation Class="XmlExtensions.FindMod">

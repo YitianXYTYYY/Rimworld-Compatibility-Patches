@@ -628,7 +628,7 @@
 					<prerequisites Operation="Safe">
 						<li Operation="SafeRemove" Compare="InnerText">Electricity</li>
 						<li Operation="SafeAdd" Compare="InnerText">MicroelectronicsBasics</li>
-					</prerequisites>ç
+					</prerequisites>
 					<requiredResearchBuilding Operation="SafeAdd">HiTechResearchBench</requiredResearchBuilding>
 				</value>
 			</Operation>
