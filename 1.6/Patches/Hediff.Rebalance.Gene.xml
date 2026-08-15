@@ -375,15 +375,27 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- misc -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="VRE_Photosynthetic"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.1"]</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeAdd">0</hungerRateFactor>
+							<hungerRateFactorOffset Operation="SafeRemove"/>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="1"]</xpath>
+						<value>
+							<becomeVisible Operation="SafeAdd">false</becomeVisible>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
 			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 				<xpath>Defs/HediffDef[defName="VRE_SapBlood"]/stages/li[minSeverity="1"]/statOffsets/WorkSpeedGlobal</xpath>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/HediffDef[defName="VRE_Photosynthetic"]/stages/li[minSeverity="0.1"]</xpath>
-				<value>
-					<hungerRateFactor Operation="SafeAdd">0</hungerRateFactor>
-					<hungerRateFactorOffset Operation="SafeRemove"/>
-				</value>
 			</Operation>
 		</caseTrue>
 	</Operation>
