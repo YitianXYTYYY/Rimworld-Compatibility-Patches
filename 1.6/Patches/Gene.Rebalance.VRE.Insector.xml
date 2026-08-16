@@ -240,6 +240,17 @@
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_InflexibleJoints"]</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Moving</capacity>
+							<offset Operation="SafeReplace">-0.20</offset>
+						</li>
+					</capMods>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_InefficientMidgut"]</xpath>
 				<value>
 					<biostatMet Operation="SafeAdd">-4</biostatMet>
@@ -261,9 +272,6 @@
 						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 					</statOffsets>
 				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-				<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_HypothermicHibernation"]</xpath>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_RapidLifeCycle"]</xpath>
@@ -358,12 +366,6 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_InsectMandibles"]</xpath>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_InflexibleJoints"]</xpath>
-					</Operation>
 					<!-- evolutions -->
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_PyroResistantChitin"]</xpath>
