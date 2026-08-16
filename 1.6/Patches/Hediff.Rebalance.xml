@@ -3,6 +3,22 @@
 
 	<!-- global misc -->
 	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/HediffDef[defName="Anesthetic"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="sedated"]</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Consciousness</capacity>
+							<setMax Operation="SafeReplace">0.1</setMax>
+						</li>
+					</capMods>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
+	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/HediffDef[defName="PsychicHangover"]</xpath>
 		<apply>
 			<Operation Class="XmlExtensions.HybridPatch">
