@@ -291,6 +291,9 @@
 			<prerequisites Operation="Safe">
 				<li Operation="SafeRemove" Compare="InnerText">MicroelectronicsBasics</li>
 			</prerequisites>
+			<hiddenPrerequisites Operation="Safe">
+				<li Operation="SafeRemove" Compare="InnerText">Machining</li>
+			</hiddenPrerequisites>
 		</value>
 	</Operation>
 	<Operation Class="XmlExtensions.HybridPatch">
@@ -650,6 +653,29 @@
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ResearchProjectDef[defName="Deathrest"]</xpath>
+				<value>
+					<prerequisites Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">Electricity</li>
+					</prerequisites>
+					<hiddenPrerequisites Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">Electricity</li>
+					</hiddenPrerequisites>
+					<requiredResearchBuilding Operation="SafeAdd">HiTechResearchBench</requiredResearchBuilding>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ResearchProjectDef[defName="FertilityProcedures"]</xpath>
+				<value>
+					<prerequisites Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">Electricity</li>
+					</prerequisites>
+					<hiddenPrerequisites Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">HospitalBed</li>
+					</hiddenPrerequisites>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ResearchProjectDef[defName="ToxFiltration"]</xpath>
 				<value>
 					<prerequisites Operation="Safe">
@@ -667,6 +693,9 @@
 					<prerequisites Operation="Safe">
 						<li Operation="SafeRemove" Compare="InnerText">MicroelectronicsBasics</li>
 					</prerequisites>
+					<hiddenPrerequisites Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">VitalsMonitor</li>
+					</hiddenPrerequisites>
 					<requiredResearchFacilities Operation="Safe">
 						<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
 					</requiredResearchFacilities>
