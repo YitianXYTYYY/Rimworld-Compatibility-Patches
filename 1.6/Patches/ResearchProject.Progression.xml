@@ -978,6 +978,40 @@
 		</caseTrue>
 	</Operation>
 
+	<!-- Progression: Attire -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ferny.progressionattire</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ResearchProjectDef[defName="LemonSkin_RusticClothing"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaexpanded.vfecore</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ResearchProjectDef</xpath>
+								<value>
+									<prerequisites Operation="Safe">
+										<li Operation="SafeRemove" Compare="InnerText">Ferny_Tables</li>
+									</prerequisites>
+									<hiddenPrerequisites Operation="Safe">
+										<li Operation="SafeAdd" Compare="InnerText">Ferny_Tables</li>
+									</hiddenPrerequisites>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 	<!-- Progression: Furniture -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
@@ -1277,7 +1311,7 @@
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ResearchProjectDef[defName="Ferny_ArcadeMachine"]</xpath>
+						<xpath>Defs/ResearchProjectDef[defName="Ferny_SittingCushion"]</xpath>
 						<value>
 							<prerequisites Operation="Safe">
 								<li Operation="SafeRemove" Compare="InnerText">VFET_Furniture</li>
@@ -1474,7 +1508,7 @@
 						<xpath>Defs/ResearchProjectDef[defName="Ferny_Boxes"]</xpath>
 						<value>
 							<prerequisites Operation="Safe">
-								<li Operation="SafeAdd" Compare="InnerText">ReelNeolithicStorage</li>
+								<li Operation="SafeAdd" Compare="InnerText">ReelMedievalStorage</li>
 								<li Operation="SafeRemove" Compare="InnerText">Ferny_Pallets</li>
 							</prerequisites>
 							<hiddenPrerequisites Operation="Safe">
