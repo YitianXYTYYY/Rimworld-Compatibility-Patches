@@ -25,7 +25,7 @@
 			<researchPrerequisite Inherit="False"/>
 			<researchPrerequisites Inherit="False">
 				<li>ComplexClothing</li>
-				<li>ToxFilterApparel</li>
+				<li>ToxGas</li>
 			</researchPrerequisites>
 			<displayPriority>166</displayPriority>
 		</recipeMaker>

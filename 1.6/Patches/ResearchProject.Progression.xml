@@ -89,6 +89,17 @@
 			<requiredResearchBuilding Operation="SafeAdd">HiTechResearchBench</requiredResearchBuilding>
 		</value>
 	</Operation>
+	<!--Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ResearchProjectDef[defName="BiofuelRefining"]</xpath>
+		<value>
+			<prerequisites Operation="Safe">
+				<li Operation="SafeRemove" Compare="InnerText">Electricity</li>
+			</prerequisites>
+			<hiddenPrerequisites Operation="Safe">
+				<li Operation="SafeAdd" Compare="InnerText">Electricity</li>
+			</hiddenPrerequisites>
+		</value>
+	</Operation-->
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ResearchProjectDef[defName="WatermillGenerator"]</xpath>
 		<value>
@@ -125,6 +136,16 @@
 				<li Operation="SafeRemove" Compare="InnerText">Electricity</li>
 				<li Operation="SafeAdd" Compare="InnerText">Machining</li>
 			</prerequisites>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ResearchProjectDef[defName="Hydroponics"]</xpath>
+		<value>
+			<prerequisites Operation="Safe">
+				<li Operation="SafeRemove" Compare="InnerText">Electricity</li>
+				<li Operation="SafeAdd" Compare="InnerText">MicroelectronicsBasics</li>
+			</prerequisites>
+			<requiredResearchBuilding Operation="SafeAdd">HiTechResearchBench</requiredResearchBuilding>
 		</value>
 	</Operation>
 	<Operation Class="XmlExtensions.SetScope">
@@ -240,8 +261,7 @@
 		</value>
 	</Operation>
 	<Operation Class="XmlExtensions.HybridPatch">
-		<xpath>Defs/ResearchProjectDef[defName="MoisturePump" or 
-			defName="LongRangeMineralScanner"]</xpath>
+		<xpath>Defs/ResearchProjectDef[defName="MoisturePump"]</xpath>
 		<value>
 			<prerequisites Operation="Safe">
 				<li Operation="SafeRemove" Compare="InnerText">MicroelectronicsBasics</li>
@@ -294,6 +314,21 @@
 			<hiddenPrerequisites Operation="Safe">
 				<li Operation="SafeRemove" Compare="InnerText">Machining</li>
 			</hiddenPrerequisites>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ResearchProjectDef[defName="LongRangeMineralScanner"]</xpath>
+		<value>
+			<prerequisites Operation="Safe">
+				<li Operation="SafeRemove" Compare="InnerText">MicroelectronicsBasics</li>
+				<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
+			</prerequisites>
+			<hiddenPrerequisites Operation="Safe">
+				<li Operation="SafeRemove" Compare="InnerText">Machining</li>
+			</hiddenPrerequisites>
+			<requiredResearchFacilities Operation="Safe">
+				<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
+			</requiredResearchFacilities>
 		</value>
 	</Operation>
 	<Operation Class="XmlExtensions.HybridPatch">
@@ -669,10 +704,8 @@
 				<value>
 					<prerequisites Operation="Safe">
 						<li Operation="SafeRemove" Compare="InnerText">Electricity</li>
-					</prerequisites>
-					<hiddenPrerequisites Operation="Safe">
 						<li Operation="SafeAdd" Compare="InnerText">HospitalBed</li>
-					</hiddenPrerequisites>
+					</prerequisites>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
@@ -1008,38 +1041,25 @@
 	</Operation>
 
 	<!-- Progression: Attire -->
-	<!--Operation Class="XmlExtensions.FindMod">
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
 			<li>ferny.progressionattire</li>
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/ResearchProjectDef[defName="LemonSkin_RusticClothing"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>vanillaexpanded.vfecore</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>ResearchProjectDef</xpath>
-								<value>
-									<prerequisites Operation="Safe">
-										<li Operation="SafeRemove" Compare="InnerText">Ferny_Tables</li>
-									</prerequisites>
-									<hiddenPrerequisites Operation="Safe">
-										<li Operation="SafeAdd" Compare="InnerText">Ferny_Tables</li>
-									</hiddenPrerequisites>
-								</value>
-							</Operation>
-						</caseTrue>
-					</Operation>
-				</apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ResearchProjectDef[defName="LemonSkin_ElectricTailoringBench"]</xpath>
+				<value>
+					<prerequisites Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">Electricity</li>
+					</prerequisites>
+					<hiddenPrerequisites Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">Electricity</li>
+					</hiddenPrerequisites>
+				</value>
 			</Operation>
 		</caseTrue>
-	</Operation-->
+	</Operation>
 
 	<!-- Progression: Furniture -->
 	<Operation Class="XmlExtensions.FindMod">
@@ -1474,6 +1494,65 @@
 					</Operation>
 				</apply>
 			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ResearchProjectDef[defName="Ferny_ElectricStove"]</xpath>
+				<value>
+					<prerequisites Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">Ferny_FueledStove</li>
+					</prerequisites>
+					<hiddenPrerequisites Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">Ferny_FueledStove</li>
+					</hiddenPrerequisites>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaexpanded.helixiengas</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ResearchProjectDef[defName="Ferny_GasPoweredStove"]</xpath>
+						<value>
+							<prerequisites Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">Ferny_FueledStove</li>
+							</prerequisites>
+							<hiddenPrerequisites Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">Ferny_FueledStove</li>
+							</hiddenPrerequisites>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Progression: Production -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ferny.progressionproduction</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaexpanded.helixiengas</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ResearchProjectDef[defName="Ferny_GasPoweredRefinery"]</xpath>
+						<value>
+							<prerequisites Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">BiofuelRefining</li>
+							</prerequisites>
+							<hiddenPrerequisites Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">BiofuelRefining</li>
+							</hiddenPrerequisites>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
 		</caseTrue>
 	</Operation>
 
@@ -1778,7 +1857,7 @@
 	</Operation>
 
 	<!-- Vanilla Armour Expanded -->
-	<Operation Class="XmlExtensions.FindMod">
+	<!--Operation Class="XmlExtensions.FindMod">
 		<mods>
 			<li>vanillaexpanded.varme</li>
 		</mods>
@@ -1799,7 +1878,7 @@
 				</caseTrue>
 			</Operation>
 		</caseTrue>
-	</Operation>
+	</Operation-->
 
 	<!-- Vanilla Factions Expanded - Empire -->
 	<Operation Class="XmlExtensions.FindMod">
@@ -1932,9 +2011,8 @@
 				<value>
 					<prerequisites Operation="Safe">
 						<li Operation="SafeRemove" Compare="InnerText">Electricity</li>
-						<li Operation="SafeAdd" Compare="InnerText">MicroelectronicsBasics</li>
+						<li Operation="SafeAdd" Compare="InnerText">Machining</li>
 					</prerequisites>
-					<requiredResearchBuilding Operation="SafeAdd">HiTechResearchBench</requiredResearchBuilding>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
@@ -1951,8 +2029,11 @@
 				<value>
 					<prerequisites Operation="Safe">
 						<li Operation="SafeRemove" Compare="InnerText">MicroelectronicsBasics</li>
-						<li Operation="SafeAdd" Compare="InnerText">VFE_IndustrialGenerators</li>
+						<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
 					</prerequisites>
+					<hiddenPrerequisites Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">VFE_IndustrialGenerators</li>
+					</hiddenPrerequisites>
 					<techLevel Operation="SafeReplace">Industrial</techLevel>
 				</value>
 			</Operation>
@@ -2176,6 +2257,9 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/ResearchProjectDef[defName="ToxFilterApparel"]</xpath>
+			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ResearchProjectDef[defName="ToxFilterArmor"]</xpath>
 				<value>
@@ -2183,7 +2267,7 @@
 						<li Operation="SafeRemove" Compare="InnerText">ToxFilterApparel</li>
 					</prerequisites>
 					<hiddenPrerequisites Operation="Safe">
-						<li Operation="SafeAdd" Compare="InnerText">ToxFilterApparel</li>
+						<li Operation="SafeAdd" Compare="InnerText">ToxGas</li>
 					</hiddenPrerequisites>
 				</value>
 			</Operation>
