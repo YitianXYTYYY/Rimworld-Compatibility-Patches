@@ -1008,7 +1008,7 @@
 	</Operation>
 
 	<!-- Progression: Attire -->
-	<Operation Class="XmlExtensions.FindMod">
+	<!--Operation Class="XmlExtensions.FindMod">
 		<mods>
 			<li>ferny.progressionattire</li>
 		</mods>
@@ -1039,7 +1039,7 @@
 				</apply>
 			</Operation>
 		</caseTrue>
-	</Operation>
+	</Operation-->
 
 	<!-- Progression: Furniture -->
 	<Operation Class="XmlExtensions.FindMod">
