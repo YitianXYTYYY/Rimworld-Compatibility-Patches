@@ -386,12 +386,6 @@
 							<hungerRateFactorOffset Operation="SafeRemove"/>
 						</value>
 					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>HediffDef/stages/li[minSeverity="1"]</xpath>
-						<value>
-							<becomeVisible Operation="SafeAdd">false</becomeVisible>
-						</value>
-					</Operation>
 				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
