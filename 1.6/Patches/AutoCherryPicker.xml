@@ -681,36 +681,6 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
-			<!--Vanilla Races Expanded - Insector -->
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.insector</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="PatchOperationAdd">
-						<xpath>defs</xpath>
-						<value>
-							<li>GenelineGeneDef/VRE_HypothermicHibernation/VanillaRacesExpandedInsector</li>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>vanillaracesexpanded.insector</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="PatchOperationAdd">
-								<xpath>defs</xpath>
-								<value>
-									<li>GenelineGeneDef/VRE_InsectMandibles/VanillaRacesExpandedInsector</li>
-									<li>GenelineGeneDef/VRE_InflexibleJoints/VanillaRacesExpandedInsector</li>
-								</value>
-							</Operation>
-						</caseTrue>
-					</Operation>
-				</caseTrue>
-			</Operation>
 			<!-- Vanilla Races Expanded - Starjack -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
