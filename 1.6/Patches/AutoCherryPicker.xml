@@ -101,6 +101,26 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
+			<!-- FSF Vanilla Bionics Expansion -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>frozensnowfox.vanillabionicsexpansion</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>HediffDef/FSFArchotechJaw</li>
+							<li>HediffDef/FSFArchotechSpine</li>
+							<li>RecipeDef/InstallFSFArchotechJaw</li>
+							<li>RecipeDef/InstallFSFArchotechSpine</li>
+							<li>ThingDef/FSFArchotechJaw</li>
+							<li>ThingDef/FSFArchotechSpine</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
 			<!-- Gene Fabrication -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
@@ -489,19 +509,18 @@
 							<li>HediffDef/MeleePlatformModule</li>
 							<li>HediffDef/ModuleEfficiency</li>
 							<li>HediffDef/CraftingToolsModule</li>
-							<li>HediffDef/ModuleArmorEBF</li>
 							<li>RecipeDef/InstallRangedPlatformModule</li>
 							<li>RecipeDef/InstallMeleePlatformModule</li>
 							<li>RecipeDef/InstallModuleEfficiency</li>
 							<li>RecipeDef/InstallCraftingToolsModule</li>
-							<li>RecipeDef/InstallModuleArmorEBF</li>
 							<li>RecipeDef/Make_RangedPlatformModule</li>
 							<li>RecipeDef/Make_MeleePlatformModule</li>
 							<li>RecipeDef/Make_ModuleEfficiency</li>
 							<li>RecipeDef/Make_CraftingToolsModule</li>
-							<li>RecipeDef/Make_ModuleArmorEBF</li>
 							<li>ThingDef/RangedPlatformModule</li>
 							<li>ThingDef/MeleePlatformModule</li>
+							<li>ThingDef/ModuleEfficiency</li>
+							<li>ThingDef/CraftingToolsModule</li>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.FindMod">
@@ -513,8 +532,9 @@
 							<Operation Class="PatchOperationAdd">
 								<xpath>defs</xpath>
 								<value>
-									<li>ThingDef/ModuleEfficiency</li>
-									<li>ThingDef/CraftingToolsModule</li>
+									<li>HediffDef/ModuleArmorEBF</li>
+									<li>RecipeDef/InstallModuleArmorEBF</li>
+									<li>RecipeDef/Make_ModuleArmorEBF</li>
 									<li>ThingDef/ModuleArmorEBF</li>
 								</value>
 							</Operation>
