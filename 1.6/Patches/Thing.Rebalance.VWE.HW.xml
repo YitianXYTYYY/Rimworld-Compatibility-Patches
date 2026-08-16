@@ -358,21 +358,17 @@
 									<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 										<xpath>ThingDef/verbs/li[verbClass="VEF.Weapons.Verb_Shoot"]/label</xpath>
 									</Operation>
+									<Operation Class="XmlExtensions.HybridPatch">
+										<xpath>ThingDef</xpath>
+										<value>
+											<description Operation="SafeReplace">A rocket launcher that fires small-bore explosive swarm missiles that track different targets.\n\nBeing an extremely heavy weapon, this gun requires a power armor to be effectively used.</description>
+											<descriptionHyperlinks Operation="Safe">
+												<ThingDef Operation="SafeAdd" Compare="Both">VWEHRSwarmMissileAmmo</ThingDef>
+												<ThingDef Operation="SafeRemove" Compare="Both">VWEHR_SwarmMissileAmmo</ThingDef>
+											</descriptionHyperlinks>
+										</value>
+									</Operation>
 								</caseTrue>
-							</Operation>
-						</caseTrue>
-					</Operation>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>zal.heavyweaponsreloading</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>ThingDef</xpath>
-								<value>
-									<description Operation="SafeReplace">A rocket launcher that fires small-bore explosive swarm missiles that track different targets.\n\nBeing an extremely heavy weapon, this gun requires a power armor to be effectively used.</description>
-								</value>
 							</Operation>
 						</caseTrue>
 					</Operation>
