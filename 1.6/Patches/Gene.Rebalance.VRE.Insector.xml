@@ -88,7 +88,7 @@
 						<packageId>true</packageId>
 						<caseTrue>
 							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>GeneDef</xpath>
+								<xpath>VanillaRacesExpandedInsector.GenelineGeneDef</xpath>
 								<value>
 									<modExtensions Operation="Safe">
 										<li Class="VEF.Genes.GeneExtension" Operation="Safe" CheckAttributes="True">
@@ -283,7 +283,7 @@
 						<packageId>true</packageId>
 						<caseTrue>
 							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>GeneDef</xpath>
+								<xpath>VanillaRacesExpandedInsector.GenelineGeneDef</xpath>
 								<value>
 									<modExtensions Operation="Safe">
 										<li Class="VEF.Genes.GeneExtension" Operation="Safe" CheckAttributes="True">
