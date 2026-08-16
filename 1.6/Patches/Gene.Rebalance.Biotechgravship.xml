@@ -287,6 +287,61 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="BfG_RandomGene_Space"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<biostatCpx Operation="SafeReplace">0</biostatCpx>
+							<modExtensions Operation="Safe">
+								<li Class="als.BfG.GeneExtension_ChanceAddGenes" Operation="Safe" CheckAttributes="True">
+									<chanceToAstroGene Operation="SafeReplace">1</chanceToAstroGene>
+									<chanceToRareGene Operation="SafeReplace">0.1</chanceToRareGene>
+								</li>
+							</modExtensions>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaracesexpanded.starjack</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseFalse>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>GeneDef</xpath>
+								<value>
+									<modExtensions Operation="Safe">
+										<li Class="als.BfG.GeneExtension_ChanceAddGenes" Operation="Safe" CheckAttributes="True">
+											<astroGenesPool Operation="Safe">
+												<li Operation="SafeAdd" Compare="InnerText">BfG_PsychicAbility_Space</li>
+											</astroGenesPool>
+										</li>
+									</modExtensions>
+								</value>
+							</Operation>
+						</caseFalse>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>GeneDef</xpath>
+								<value>
+									<modExtensions Operation="Safe">
+										<li Class="als.BfG.GeneExtension_ChanceAddGenes" Operation="Safe" CheckAttributes="True">
+											<astroGenesPool Operation="Safe">
+												<li Operation="SafeRemove" Compare="InnerText">BfG_MinTemp_Space</li>
+												<li Operation="SafeRemove" Compare="InnerText">BfG_Sleep_Space</li>
+												<li Operation="SafeRemove" Compare="InnerText">BfG_Robust_Space</li>
+												<li Operation="SafeRemove" Compare="InnerText">BfG_Learning_Space</li>
+												<li Operation="SafeRemove" Compare="InnerText">BfG_WoundHealing_Space</li>
+											</astroGenesPool>
+										</li>
+									</modExtensions>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="BfG_RandomGene_Space"]</xpath>
 				<value>
@@ -294,7 +349,7 @@
 					<modExtensions Operation="Safe">
 						<li Class="als.BfG.GeneExtension_ChanceAddGenes" Operation="Safe" CheckAttributes="True">
 							<chanceToAstroGene Operation="SafeReplace">1</chanceToAstroGene>
-							<chanceToRareGene Operation="SafeReplace">0.1</chanceToRareGene>
+							<chanceToRareGene Operation="SafeReplace">0.2</chanceToRareGene>
 							<astroGenesPool Operation="Safe">
 								<li Operation="SafeAdd" Compare="InnerText">BfG_PsychicAbility_Space</li>
 							</astroGenesPool>

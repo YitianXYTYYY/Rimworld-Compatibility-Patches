@@ -1,15 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-	<!-- Biotech for Gravship -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>als.biotechgravship</li>
+			<li>ludeon.rimworld.biotech</li>
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-				<xpath>Defs/XenotypeDef/genes/li[text()="BfG_RandomGene_Blood"]</xpath>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/XenotypeDef[defName="Sanguophage"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>als.biotechgravship</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>XenotypeDef/genes</xpath>
+								<value>
+									<li Operation="SafeRemove" Compare="InnerText">BfG_RandomGene_Blood</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ludeon.rimworld.odyssey</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/XenotypeDef[defName="Starjack"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>goji.gojismiscgenes</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>XenotypeDef/genes</xpath>
+								<value>
+									<li Operation="SafeAdd" Compare="InnerText">Goji_Hibernation</li>
+									<li Operation="SafeRemove" Compare="InnerText">VREStarjack_Cryostasis</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaracesexpanded.starjack</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.FindMod">
+								<mods>
+									<li>als.biotechgravship</li>
+								</mods>
+								<packageId>true</packageId>
+								<caseTrue>
+									<Operation Class="XmlExtensions.HybridPatch">
+										<xpath>XenotypeDef/genes</xpath>
+										<value>
+											<li Operation="SafeAdd" Compare="InnerText">MoveSpeed_Space</li>
+											<li Operation="SafeRemove" Compare="InnerText">VREStarjack_VacuumEfficiency</li>
+										</value>
+									</Operation>
+								</caseTrue>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
 			</Operation>
 		</caseTrue>
 	</Operation>
@@ -27,10 +94,11 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
-					<Operation Class="PatchOperationReplace">
-						<xpath>Defs/XenotypeDef/genes/li[text()="VRE_Female"]</xpath>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/XenotypeDef/genes</xpath>
 						<value>
-							<li>Body_FemaleOnly</li>
+							<li Operation="SafeAdd" Compare="InnerText">Body_FemaleOnly</li>
+							<li Operation="SafeRemove" Compare="InnerText">VRE_Female</li>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -59,58 +127,6 @@
 								<value>
 									<li Operation="SafeAdd" Compare="InnerText">AFU_BA_SmoothLizardTail</li>
 									<li Operation="SafeRemove" Compare="InnerText">VRESaurids_GeckoTail</li>
-								</value>
-							</Operation>
-						</caseTrue>
-					</Operation>
-				</apply>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
-	<!-- Vanilla Races Expanded - Starjack -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>vanillaracesexpanded.starjack</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/XenotypeDef[defName="Starjack"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>XenotypeDef/genes</xpath>
-						<value>
-							<li Operation="SafeAdd" Compare="InnerText">MoveSpeed_Space</li>
-							<li Operation="SafeRemove" Compare="InnerText">VREStarjack_VacuumEfficiency</li>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>als.biotechgravship</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>XenotypeDef/genes</xpath>
-								<value>
-									<li Operation="SafeAdd" Compare="InnerText">BfG_MoveSpeed_SpaceArchite</li>
-									<li Operation="SafeRemove" Compare="InnerText">BfG_RandomGene_Space</li>
-								</value>
-							</Operation>
-						</caseTrue>
-					</Operation>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>goji.gojismiscgenes</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>XenotypeDef/genes</xpath>
-								<value>
-									<li Operation="SafeAdd" Compare="InnerText">Goji_Hibernation</li>
-									<li Operation="SafeRemove" Compare="InnerText">VREStarjack_Cryostasis</li>
 								</value>
 							</Operation>
 						</caseTrue>
