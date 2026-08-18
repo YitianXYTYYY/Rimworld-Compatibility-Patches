@@ -27,7 +27,7 @@
 		</apply>
 	</Operation>
 
-	<!-- Mechanoid Chip -->
+	<!-- insect jelly -->
 	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/ThingDef[defName="InsectJelly"]</xpath>
 		<apply>
