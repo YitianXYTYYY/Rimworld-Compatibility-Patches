@@ -17,6 +17,7 @@
 			</recipeMaker>
 		</value>
 	</Operation>
+
 	<!-- Apparel Headgear -->
 	<Operation Class="XmlExtensions.PatchOperationAttributeSet">
 		<xpath>Defs/ThingDef[defName="Apparel_PowerArmorHelmet"]</xpath>
@@ -71,7 +72,7 @@
 		<caseTrue>
 			<!-- Apparel Belts -->
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="BroadshieldPack"]</xpath>
+				<xpath>Defs/ThingDef[defName="Apparel_PackBroadshield"]</xpath>
 				<value>
 					<costList Operation="Safe">
 						<ComponentIndustrial Operation="SafeRemove">0</ComponentIndustrial>
