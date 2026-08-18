@@ -164,62 +164,20 @@
 	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/ThingDef[defName="Weapon_GrenadeFrag"]</xpath>
 		<apply>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>mlie.yayoscombat3</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ThingDef</xpath>
-						<value>
-							<costList Operation="SafeReplace">
-								<Steel>5</Steel>
-								<Chemfuel>10</Chemfuel>
-							</costList>
-							<defName Operation="SafeReplace">WeaponGrenadeFrag</defName>
-							<stackLimit Operation="SafeAdd">10</stackLimit>
-							<statBases Operation="Safe">
-								<Mass Operation="SafeReplace">0.2</Mass>
-								<WorkToMake Operation="SafeReplace">1200</WorkToMake>
-							</statBases>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_WeaponGrenadeFrag/1/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-				</caseTrue>
+			<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+				<xpath>ThingDef</xpath>
+				<attribute>Name</attribute>
+				<value>Weapon_GrenadeFrag</value>
 			</Operation>
 		</apply>
 	</Operation>
 	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/ThingDef[defName="Weapon_GrenadeEMP"]</xpath>
 		<apply>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>mlie.yayoscombat3</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ThingDef</xpath>
-						<value>
-							<costList Operation="SafeReplace">
-								<Steel>5</Steel>
-								<ComponentIndustrial>1</ComponentIndustrial>
-							</costList>
-							<defName Operation="SafeReplace">WeaponGrenadeEMP</defName>
-							<stackLimit Operation="SafeAdd">10</stackLimit>
-							<statBases Operation="Safe">
-								<Mass Operation="SafeReplace">0.2</Mass>
-								<WorkToMake Operation="SafeReplace">1800</WorkToMake>
-							</statBases>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_WeaponGrenadeEMP/1/1</li>
-							</weaponTags>
-						</value>
-					</Operation>
-				</caseTrue>
+			<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+				<xpath>ThingDef</xpath>
+				<attribute>Name</attribute>
+				<value>Weapon_GrenadeEMP</value>
 			</Operation>
 		</apply>
 	</Operation>
@@ -336,31 +294,10 @@
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="Weapon_GrenadeTox"]</xpath>
 				<apply>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>mlie.yayoscombat3</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>ThingDef</xpath>
-								<value>
-									<costList Operation="SafeReplace">
-										<Steel>5</Steel>
-										<ComponentIndustrial>1</ComponentIndustrial>
-									</costList>
-									<defName Operation="SafeReplace">WeaponGrenadeTox</defName>
-									<stackLimit Operation="SafeAdd">10</stackLimit>
-									<statBases Operation="Safe">
-										<Mass Operation="SafeReplace">0.2</Mass>
-										<WorkToMake Operation="SafeReplace">1800</WorkToMake>
-									</statBases>
-									<weaponTags Operation="Safe">
-										<li Operation="Add">ammoDef_WeaponGrenadeTox/1/1</li>
-									</weaponTags>
-								</value>
-							</Operation>
-						</caseTrue>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef</xpath>
+						<attribute>Name</attribute>
+						<value>Weapon_GrenadeTox</value>
 					</Operation>
 				</apply>
 			</Operation>
@@ -660,37 +597,21 @@
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="VWE_SmokeGrenade"]</xpath>
 				<apply>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>mlie.yayoscombat3</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>ThingDef</xpath>
-								<value>
-									<costList Operation="SafeReplace">
-										<Steel>5</Steel>
-										<Chemfuel>5</Chemfuel>
-									</costList>
-									<defName Operation="SafeReplace">VWESmokeGrenade</defName>
-									<stackLimit Operation="SafeAdd">10</stackLimit>
-									<statBases Operation="Safe">
-										<Mass Operation="SafeReplace">0.2</Mass>
-										<WorkToMake Operation="SafeReplace">900</WorkToMake>
-									</statBases>
-									<weaponTags Operation="Safe">
-										<li Operation="Add">ammoDef_VWESmokeGrenade/1/1</li>
-									</weaponTags>
-								</value>
-							</Operation>
-						</caseTrue>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef</xpath>
+						<attribute>Name</attribute>
+						<value>VWE_SmokeGrenade</value>
 					</Operation>
 				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="VWE_FlashGrenade"]</xpath>
 				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef</xpath>
+						<attribute>Name</attribute>
+						<value>VWE_FlashGrenade</value>
+					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef</xpath>
 						<value>
@@ -701,32 +622,6 @@
 								</recipeUsers>
 							</recipeMaker>
 						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>mlie.yayoscombat3</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>ThingDef</xpath>
-								<value>
-									<costList Operation="SafeReplace">
-										<Steel>5</Steel>
-										<ComponentIndustrial>1</ComponentIndustrial>
-									</costList>
-									<defName Operation="SafeReplace">VWEFlashGrenade</defName>
-									<stackLimit Operation="SafeAdd">10</stackLimit>
-									<statBases Operation="Safe">
-										<Mass Operation="SafeReplace">0.2</Mass>
-										<WorkToMake Operation="SafeReplace">1800</WorkToMake>
-									</statBases>
-									<weaponTags Operation="Safe">
-										<li Operation="Add">ammoDef_VWEFlashGrenade/1/1</li>
-									</weaponTags>
-								</value>
-							</Operation>
-						</caseTrue>
 					</Operation>
 				</apply>
 			</Operation>

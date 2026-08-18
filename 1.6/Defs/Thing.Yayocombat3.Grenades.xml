@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="Weapon_GrenadeFrag" MayRequire="mlie.yayoscombat3">
+		<defName>WeaponGrenadeFrag</defName>
+		<costList Inherit="False">
+			<Steel>5</Steel>
+			<Chemfuel>10</Chemfuel>
+		</costList>
+		<stackLimit>10</stackLimit>
+		<statBases>
+			<Mass>0.2</Mass>
+			<WorkToMake>1200</WorkToMake>
+		</statBases>
+		<weaponTags>
+			<li>ammoDef_WeaponGrenadeFrag/1/1</li>
+		</weaponTags>
+	</ThingDef>
+
+	<ThingDef ParentName="Weapon_GrenadeEMP" MayRequire="mlie.yayoscombat3">
+		<defName>WeaponGrenadeEMP</defName>
+		<costList Inherit="False">
+			<Steel>5</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<stackLimit>10</stackLimit>
+		<statBases>
+			<Mass>0.2</Mass>
+			<WorkToMake>1800</WorkToMake>
+		</statBases>
+		<weaponTags>
+			<li>ammoDef_WeaponGrenadeEMP/1/1</li>
+		</weaponTags>
+	</ThingDef>
+
+	<ThingDef ParentName="Weapon_GrenadeTox" MayRequire="ludeon.rimworld.biotech,mlie.yayoscombat3">
+		<defName>WeaponGrenadeTox</defName>
+		<costList Inherit="False">
+			<Steel>5</Steel>
+			<Chemfuel>10</Chemfuel>
+		</costList>
+		<stackLimit>10</stackLimit>
+		<statBases>
+			<Mass>0.2</Mass>
+			<WorkToMake>1800</WorkToMake>
+		</statBases>
+		<weaponTags>
+			<li>ammoDef_WeaponGrenadeTox/1/1</li>
+		</weaponTags>
+	</ThingDef>
+
+	<ThingDef ParentName="VWE_SmokeGrenade" MayRequire="vanillaexpanded.vwe,mlie.yayoscombat3">
+		<defName>VWESmokeGrenade</defName>
+		<costList Inherit="False">
+			<Steel>5</Steel>
+			<Chemfuel>5</Chemfuel>
+		</costList>
+		<stackLimit>10</stackLimit>
+		<statBases>
+			<Mass>0.2</Mass>
+			<WorkToMake>900</WorkToMake>
+		</statBases>
+		<weaponTags>
+			<li>ammoDef_VWESmokeGrenade/1/1</li>
+		</weaponTags>
+	</ThingDef>
+
+	<ThingDef ParentName="VWE_FlashGrenade" MayRequire="vanillaexpanded.vwe,mlie.yayoscombat3">
+		<defName>VWEFlashGrenade</defName>
+		<costList Inherit="False">
+			<Steel>5</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<stackLimit>10</stackLimit>
+		<statBases>
+			<Mass>0.2</Mass>
+			<WorkToMake>1800</WorkToMake>
+		</statBases>
+		<weaponTags>
+			<li>ammoDef_VWEFlashGrenade/1/1</li>
+		</weaponTags>
+	</ThingDef>
+
+</Defs>

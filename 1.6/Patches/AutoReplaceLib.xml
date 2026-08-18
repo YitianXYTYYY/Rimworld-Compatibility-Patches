@@ -41,6 +41,57 @@
 						<xpath>ReplaceLib.ReplacerDef/replacers</xpath>
 						<value>
 							<li>
+								<replace>Weapon_GrenadeFrag</replace>
+								<with>WeaponGrenadeFrag</with>
+							</li>
+							<li>
+								<replace>Weapon_GrenadeEMP</replace>
+								<with>WeaponGrenadeEMP</with>
+							</li>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>ludeon.rimworld.biotech</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>ReplaceLib.ReplacerDef/replacers</xpath>
+								<value>
+									<li>
+										<replace>Weapon_GrenadeTox</replace>
+										<with>WeaponGrenadeTox</with>
+									</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaexpanded.vwe</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>ReplaceLib.ReplacerDef/replacers</xpath>
+								<value>
+									<li>
+										<replace>VWE_SmokeGrenade</replace>
+										<with>VWESmokeGrenade</with>
+									</li>
+									<li>
+										<replace>VWE_FlashGrenade</replace>
+										<with>VWEFlashGrenade</with>
+									</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+					<Operation Class="PatchOperationAdd">
+						<xpath>ReplaceLib.ReplacerDef/replacers</xpath>
+						<value>
+							<li>
 								<replace>yy_ammo_primitive_fire</replace>
 								<with>yy_ammo_primitive</with>
 							</li>
