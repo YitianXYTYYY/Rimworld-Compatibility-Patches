@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-	<!-- Headgear -->
+	<!-- Apparel Belts -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Apparel_ShieldBelt"]</xpath>
+		<value>
+			<costList Operation="Safe">
+				<ComponentIndustrial Operation="SafeRemove">0</ComponentIndustrial>
+				<ComponentSpacer Operation="SafeAdd">1</ComponentSpacer>
+			</costList>
+			<recipeMaker Operation="Safe">
+				<recipeUsers Operation="Safe">
+					<li Operation="SafeAdd" Compare="InnerText">FabricationBench</li>
+					<li Operation="SafeRemove" Compare="InnerText">TableMachining</li>
+				</recipeUsers>
+			</recipeMaker>
+		</value>
+	</Operation>
+	<!-- Apparel Headgear -->
 	<Operation Class="XmlExtensions.PatchOperationAttributeSet">
 		<xpath>Defs/ThingDef[defName="Apparel_PowerArmorHelmet"]</xpath>
 		<attribute>Name</attribute>
@@ -27,7 +43,7 @@
 		<value>Apparel_ClothMask</value>
 	</Operation>
 
-	<!-- Various -->
+	<!-- Apparel Various -->
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ThingDef[defName="Apparel_FlakVest" 
 			or defName="Apparel_FlakPants" 
@@ -53,6 +69,22 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- Apparel Belts -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="BroadshieldPack"]</xpath>
+				<value>
+					<costList Operation="Safe">
+						<ComponentIndustrial Operation="SafeRemove">0</ComponentIndustrial>
+						<ComponentSpacer Operation="SafeAdd">1</ComponentSpacer>
+					</costList>
+					<recipeMaker Operation="Safe">
+						<recipeUsers Operation="Safe">
+							<li Operation="SafeAdd" Compare="InnerText">FabricationBench</li>
+							<li Operation="SafeRemove" Compare="InnerText">TableMachining</li>
+						</recipeUsers>
+					</recipeMaker>
+				</value>
+			</Operation>
 			<!-- Apparel Psychic -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="Apparel_PsyfocusHelmet"]</xpath>
