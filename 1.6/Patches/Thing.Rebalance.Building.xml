@@ -339,6 +339,25 @@
 		</caseTrue>
 	</Operation>
 
+	<!-- Vanilla Factions Expanded - Empire -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>oskarpotocki.vfe.empire</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- candelabra -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VFEE_Candelabra"]</xpath>
+				<value>
+					<researchPrerequisites Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">Electricity</li>
+					</researchPrerequisites>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 	<!-- Vanilla Helixien Gas Expanded -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
