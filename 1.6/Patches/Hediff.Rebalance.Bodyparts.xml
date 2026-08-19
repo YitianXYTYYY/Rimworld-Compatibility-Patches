@@ -82,6 +82,7 @@
 					</capMods>
 					<statOffsets Operation="Safe">
 						<ArmorRating_Sharp Operation="SafeReplace">0.4</ArmorRating_Sharp>
+						<ArmorRating_Blunt Operation="SafeReplace">0.2</ArmorRating_Blunt>
 					</statOffsets>
 				</value>
 			</Operation>
@@ -97,6 +98,7 @@
 					</capMods>
 					<statOffsets Operation="Safe">
 						<ArmorRating_Sharp Operation="SafeReplace">0.5</ArmorRating_Sharp>
+						<ArmorRating_Blunt Operation="SafeReplace">0.3</ArmorRating_Blunt>
 					</statOffsets>
 				</value>
 			</Operation>
@@ -110,6 +112,10 @@
 							<postFactor Operation="SafeRemove">0</postFactor>
 						</li>
 					</capMods>
+					<statOffsets Operation="Safe">
+						<ArmorRating_Sharp Operation="SafeReplace">0.6</ArmorRating_Sharp>
+						<ArmorRating_Blunt Operation="SafeReplace">0.4</ArmorRating_Blunt>
+					</statOffsets>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
@@ -460,11 +466,18 @@
 					[defName="ArchotechArm" or 
 					defName="ArchotechForearm" or 
 					defName="ArchotechHand" or 
-					defName="ArchotechFinger" or 
 					defName="ArchotechToe"]</xpath>
 				<value>
 					<addedPartProps Operation="Safe">
 						<partEfficiency Operation="SafeReplace">1.4</partEfficiency>
+					</addedPartProps>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[@ParentName="AddedBodyPart_Limb_Archotech"][defName="ArchotechFinger"]</xpath>
+				<value>
+					<addedPartProps Operation="Safe">
+						<partEfficiency Operation="SafeReplace">1.3</partEfficiency>
 					</addedPartProps>
 				</value>
 			</Operation>
