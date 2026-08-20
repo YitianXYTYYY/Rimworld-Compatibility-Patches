@@ -18,7 +18,7 @@
 	<ThingCategoryDef>
 		<defName>VFEI2Pherocores</defName>
 		<label>pherocores</label>
-		<parent>Items</parent>
+		<parent>Manufactured</parent>
 	</ThingCategoryDef>
 
 	<ThingCategoryDef>
