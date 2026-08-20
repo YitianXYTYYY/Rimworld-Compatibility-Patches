@@ -477,11 +477,13 @@
 		<value>
 			<prerequisites Operation="Safe">
 				<li Operation="SafeRemove" Compare="InnerText">MultiAnalyzer</li>
-				<li Operation="SafeAdd" Compare="InnerText">VitalsMonitor</li>
 			</prerequisites>
+			<hiddenPrerequisites Operation="Safe">
+				<li Operation="SafeAdd" Compare="InnerText">VitalsMonitor</li>
+			</hiddenPrerequisites>
 		</value>
 	</Operation>
-	<Operation Class="XmlExtensions.HybridPatch">
+	<!--Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ResearchProjectDef[defName="ReconArmor"]</xpath>
 		<value>
 			<prerequisites Operation="Safe">
@@ -493,7 +495,7 @@
 				<li Operation="SafeAdd" Compare="InnerText">Fabrication</li>
 			</hiddenPrerequisites>
 		</value>
-	</Operation>
+	</Operation-->
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ResearchProjectDef[defName="ChargedShot"]</xpath>
 		<value>
@@ -549,6 +551,19 @@
 				</caseTrue>
 			</Operation>
 		</apply>
+	</Operation>
+
+	<!-- Ship -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ResearchProjectDef[defName="ShipCryptosleep"]</xpath>
+		<value>
+			<prerequisites Operation="Safe">
+				<li Operation="SafeAdd" Compare="InnerText">Cryptosleep</li>
+			</prerequisites>
+			<hiddenPrerequisites Operation="Safe">
+				<li Operation="SafeRemove" Compare="InnerText">Cryptosleep</li>
+			</hiddenPrerequisites>
+		</value>
 	</Operation>
 
 	<Operation Class="XmlExtensions.FindMod">
@@ -776,8 +791,10 @@
 				<value>
 					<prerequisites Operation="Safe">
 						<li Operation="SafeRemove" Compare="InnerText">MicroelectronicsBasics</li>
-						<li Operation="SafeAdd" Compare="InnerText">VitalsMonitor</li>
 					</prerequisites>
+					<hiddenPrerequisites Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">VitalsMonitor</li>
+					</hiddenPrerequisites>
 					<requiredResearchFacilities Operation="Safe">
 						<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
 					</requiredResearchFacilities>
@@ -1083,6 +1100,149 @@
 					</prerequisites>
 					<hiddenPrerequisites Operation="Safe">
 						<li Operation="SafeAdd" Compare="InnerText">AdvancedFabrication</li>
+					</hiddenPrerequisites>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Mechanoid Upgrades -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>gogatio.mechanoidupgrades</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- basic -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ResearchProjectDef[@Name="MU_BasicBase"]</xpath>
+				<value>
+					<requiredResearchFacilities Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
+					</requiredResearchFacilities>
+					<techLevel Operation="SafeReplace">Spacer</techLevel>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ResearchProjectDef[defName="MU_BasicShields"]</xpath>
+				<value>
+					<prerequisites Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">ShieldBelt</li>
+					</prerequisites>
+					<hiddenPrerequisites Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">ShieldBelt</li>
+					</hiddenPrerequisites>
+				</value>
+			</Operation>
+			<!-- standard -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ResearchProjectDef[defName="MU_StandardUpgrades"]</xpath>
+				<value>
+					<prerequisites Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">HighMechtech</li>
+					</prerequisites>
+					<hiddenPrerequisites Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">HighMechtech</li>
+					</hiddenPrerequisites>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ResearchProjectDef[defName="MU_StandardChips"]</xpath>
+				<value>
+					<prerequisites Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">MU_StandardUpgrades</li>
+					</prerequisites>
+					<hiddenPrerequisites Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">MU_StandardUpgrades</li>
+					</hiddenPrerequisites>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ResearchProjectDef[defName="MU_StandardModules"]</xpath>
+				<value>
+					<prerequisites Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">MU_StandardUpgrades</li>
+					</prerequisites>
+					<hiddenPrerequisites Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">MU_StandardUpgrades</li>
+					</hiddenPrerequisites>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ResearchProjectDef[defName="MU_StandardArmor"]</xpath>
+				<value>
+					<prerequisites Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">MU_StandardUpgrades</li>
+					</prerequisites>
+					<hiddenPrerequisites Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">MU_StandardUpgrades</li>
+					</hiddenPrerequisites>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ResearchProjectDef[defName="MU_StandardShields"]</xpath>
+				<value>
+					<prerequisites Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">MU_StandardUpgrades</li>
+					</prerequisites>
+					<hiddenPrerequisites Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">MU_StandardUpgrades</li>
+					</hiddenPrerequisites>
+				</value>
+			</Operation>
+			<!-- advanced -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ResearchProjectDef[defName="MU_AdvancedUpgrades"]</xpath>
+				<value>
+					<prerequisites Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">UltraMechtech</li>
+					</prerequisites>
+					<hiddenPrerequisites Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">UltraMechtech</li>
+					</hiddenPrerequisites>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ResearchProjectDef[defName="MU_AdvancedChips"]</xpath>
+				<value>
+					<prerequisites Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">MU_AdvancedUpgrades</li>
+					</prerequisites>
+					<hiddenPrerequisites Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">MU_AdvancedUpgrades</li>
+					</hiddenPrerequisites>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ResearchProjectDef[defName="MU_AdvancedModules"]</xpath>
+				<value>
+					<prerequisites Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">MU_AdvancedUpgrades</li>
+					</prerequisites>
+					<hiddenPrerequisites Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">MU_AdvancedUpgrades</li>
+					</hiddenPrerequisites>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ResearchProjectDef[defName="MU_AdvancedArmor"]</xpath>
+				<value>
+					<prerequisites Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">MU_AdvancedUpgrades</li>
+					</prerequisites>
+					<hiddenPrerequisites Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">MU_AdvancedUpgrades</li>
+					</hiddenPrerequisites>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ResearchProjectDef[defName="MU_AdvancedShields"]</xpath>
+				<value>
+					<prerequisites Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">MU_AdvancedUpgrades</li>
+					</prerequisites>
+					<hiddenPrerequisites Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">MU_AdvancedUpgrades</li>
 					</hiddenPrerequisites>
 				</value>
 			</Operation>
