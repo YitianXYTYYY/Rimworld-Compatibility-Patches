@@ -445,6 +445,15 @@
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/HediffDef[@ParentName="AddedBodyPart_Limb_Bionic"]
+					[defName="BionicArm"]</xpath>
+				<value>
+					<addedPartProps Operation="Safe">
+						<partEfficiency Operation="SafeReplace">1.25</partEfficiency>
+					</addedPartProps>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[@ParentName="AddedBodyPart_Limb_Bionic"]
 					[defName="BionicForearm" or 
 					defName="BionicHand"]</xpath>
 				<value>
@@ -453,6 +462,26 @@
 					</addedPartProps>
 				</value>
 			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[@ParentName="AddedBodyPart_Limb_Bionic"]
+					[defName="BionicFinger"]</xpath>
+				<value>
+					<addedPartProps Operation="Safe">
+						<partEfficiency Operation="SafeReplace">1.15</partEfficiency>
+					</addedPartProps>
+				</value>
+			</Operation>
+			<!--Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[@ParentName="AddedBodyPart_Limb_Bionic"]
+					[defName="BionicLeg" or 
+					defName="BionicFoot" or 
+					defName="BionicToe"]</xpath>
+				<value>
+					<addedPartProps Operation="Safe">
+						<partEfficiency Operation="SafeReplace">1.25</partEfficiency>
+					</addedPartProps>
+				</value>
+			</Operation-->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/HediffDef[defName="ArchotechInternalSupport"]</xpath>
 				<value>
@@ -487,7 +516,7 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
+					<!--Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/HediffDef[defName="FSFBionicDrillArm" or 
 							defName="FSFBionicFieldArm"]</xpath>
 						<value>
@@ -495,7 +524,7 @@
 								<partEfficiency Operation="SafeReplace">1.2</partEfficiency>
 							</addedPartProps>
 						</value>
-					</Operation>
+					</Operation-->
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/HediffDef[defName="BionicDrillForearm" or 
 							defName="BionicManipulator" or 
@@ -504,6 +533,15 @@
 						<value>
 							<addedPartProps Operation="Safe">
 								<partEfficiency Operation="SafeReplace">1.2</partEfficiency>
+							</addedPartProps>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/HediffDef[defName="BionicManipulatorFinger" or 
+							defName="BionicFieldFinger"]</xpath>
+						<value>
+							<addedPartProps Operation="Safe">
+								<partEfficiency Operation="SafeReplace">1.15</partEfficiency>
 							</addedPartProps>
 						</value>
 					</Operation>
