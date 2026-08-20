@@ -432,6 +432,31 @@
 				</apply>
 			</Operation>
 
+			<!-- apparel various -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>mlie.yayoscombat3</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<comps Operation="Safe">
+										<li Class="CompProperties_ApparelReloadable" Operation="Safe" CheckAttributes="True">
+											<ammoDef Operation="SafeReplace">WeaponGrenadeFrag</ammoDef>
+											<ammoCountPerCharge Operation="SafeReplace">1</ammoCountPerCharge>
+										</li>
+									</comps>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
 			<!-- gunlink -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="Apparel_Gunlink"]</xpath>
@@ -1162,15 +1187,39 @@
 					</equippedStatOffsets>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="Apparel_ArmorGrenadierPrestige"]</xpath>
-				<value>
-    				<label Operation="SafeReplace">grenadier armor - prestige</label>
-					<equippedStatOffsets Operation="Safe">
-						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
-						<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
-					</equippedStatOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<label Operation="SafeReplace">grenadier armor - prestige</label>
+							<equippedStatOffsets Operation="Safe">
+								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+							</equippedStatOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>mlie.yayoscombat3</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<comps Operation="Safe">
+										<li Class="CompProperties_ApparelReloadable" Operation="Safe" CheckAttributes="True">
+											<ammoDef Operation="SafeReplace">WeaponGrenadeFrag</ammoDef>
+											<ammoCountPerCharge Operation="SafeReplace">1</ammoCountPerCharge>
+										</li>
+									</comps>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
 			</Operation>
 		</caseTrue>
 	</Operation>
