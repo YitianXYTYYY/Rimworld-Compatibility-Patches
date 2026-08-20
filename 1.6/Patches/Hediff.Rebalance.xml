@@ -651,6 +651,37 @@
 		<packageId>true</packageId>
 		<caseTrue>
 			<!-- misc -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="DeathRefusalSickness"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>wara.toomanymods</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="TooManyMods.PatchOperationIfToggled">
+								<settingDef>TMM_OtherRebalances</settingDef>
+								<legacyName>General: Enable other rebalances</legacyName>
+								<default>true</default>
+								<operations>
+									<li Class="XmlExtensions.HybridPatch">
+										<xpath>HediffDef/stages/li[label="severe"]</xpath>
+										<value>
+											<capMods Operation="Safe">
+												<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+													<capacity Operation="Safe">Consciousness</capacity>
+													<setMax Operation="SafeReplace">0.5</setMax>
+												</li>
+											</capMods>
+										</value>
+									</li>
+								</operations>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/HediffDef[defName="PsychicTrance"]/stages/li</xpath>
 				<value>
