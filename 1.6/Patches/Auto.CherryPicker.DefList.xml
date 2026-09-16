@@ -616,6 +616,23 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
+			<!-- Vanilla Factions Expanded - Insectoids 2 - Swarm Disaster -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>cn.vfei2swarmdisaster</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>RecipeDef/VFEI2E_ExtractNeutroamine</li>
+							<li>RecipeDef/VFEI2E_CarbonizeChitin</li>
+							<li>RecipeDef/VFEI2E_SmeltChitinToSteel</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
 			<!-- Vanilla Factions Expanded - Tribals -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
