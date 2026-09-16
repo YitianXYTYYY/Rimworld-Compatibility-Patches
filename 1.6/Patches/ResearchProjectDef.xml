@@ -64,19 +64,72 @@
 			</Operation>
 		</apply>
 	</Operation>
-	<Operation Class="XmlExtensions.HybridPatch">
+	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/ResearchProjectDef[defName="PlateArmor"]</xpath>
-		<value>
-			<prerequisites Operation="Safe">
-				<li Operation="SafeRemove" Compare="InnerText">ComplexClothing</li>
-			</prerequisites>
-		</value>
+		<apply>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>ferny.progressionattire</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseFalse>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ResearchProjectDef</xpath>
+						<value>
+							<prerequisites Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">ComplexClothing</li>
+							</prerequisites>
+							<hiddenPrerequisites Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">ComplexClothing</li>
+							</hiddenPrerequisites>
+						</value>
+					</Operation>
+				</caseFalse>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ResearchProjectDef</xpath>
+						<value>
+							<prerequisites Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">LemonSkin_RusticClothing</li>
+							</prerequisites>
+							<hiddenPrerequisites Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">LemonSkin_RusticClothing</li>
+							</hiddenPrerequisites>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
 	</Operation>
-	<Operation Class="XmlExtensions.HybridPatch">
+	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/ResearchProjectDef[defName="DrugProduction"]</xpath>
-		<value>
-			<techLevel Operation="SafeReplace">Medieval</techLevel>
-		</value>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>ResearchProjectDef</xpath>
+				<value>
+					<techLevel Operation="SafeReplace">Medieval</techLevel>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>ferny.progressionfurniture</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ResearchProjectDef</xpath>
+						<value>
+							<prerequisites Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">Ferny_Tables</li>
+							</prerequisites>
+							<hiddenPrerequisites Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">Ferny_Tables</li>
+							</hiddenPrerequisites>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
 	</Operation>
 	<!-- Industrial -->
 	<!-- Electricity -->
@@ -199,6 +252,28 @@
 				<li Operation="SafeRemove" Compare="InnerText">Electricity</li>
 			</prerequisites>
 		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/ResearchProjectDef[defName="ColoredLights"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>ferny.progressionfurniture</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ResearchProjectDef</xpath>
+						<value>
+							<prerequisites Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">Electricity</li>
+								<li Operation="SafeAdd" Compare="InnerText">Ferny_StandingLamp</li>
+							</prerequisites>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
 	</Operation>
 	<!-- Machining -->
 	<Operation Class="XmlExtensions.HybridPatch">
@@ -1459,15 +1534,17 @@
 						<caseFalse>
 							<Operation Class="XmlExtensions.FindMod">
 								<mods>
-									<li>vanillaexpanded.vfecore</li>
+									<li>oskarpotocki.vfe.tribals</li>
 								</mods>
 								<packageId>true</packageId>
+								<caseFalse>
+								</caseFalse>
 								<caseTrue>
 									<Operation Class="XmlExtensions.HybridPatch">
 										<xpath>ResearchProjectDef</xpath>
 										<value>
 											<prerequisites Operation="Safe">
-												<li Operation="SafeAdd" Compare="InnerText">MF_BasicFurniture</li>
+												<li Operation="SafeAdd" Compare="InnerText">VFET_Furniture</li>
 											</prerequisites>
 										</value>
 									</Operation>
@@ -1479,7 +1556,7 @@
 								<xpath>ResearchProjectDef</xpath>
 								<value>
 									<prerequisites Operation="Safe">
-										<li Operation="SafeAdd" Compare="InnerText">VFET_Furniture</li>
+										<li Operation="SafeAdd" Compare="InnerText">MF_BasicFurniture</li>
 									</prerequisites>
 								</value>
 							</Operation>
@@ -1490,24 +1567,16 @@
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ResearchProjectDef[defName="Ferny_BilliardsTable"]</xpath>
 				<apply>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>ferny.progressionfurniture</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>ResearchProjectDef</xpath>
-								<value>
-									<prerequisites Operation="Safe">
-										<li Operation="SafeRemove" Compare="InnerText">Ferny_Tables</li>
-									</prerequisites>
-									<hiddenPrerequisites Operation="Safe">
-										<li Operation="SafeAdd" Compare="InnerText">Ferny_Tables</li>
-									</hiddenPrerequisites>
-								</value>
-							</Operation>
-						</caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ResearchProjectDef</xpath>
+						<value>
+							<prerequisites Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">Ferny_Tables</li>
+							</prerequisites>
+							<hiddenPrerequisites Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">Ferny_Tables</li>
+							</hiddenPrerequisites>
+						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
@@ -1536,6 +1605,140 @@
 						</caseTrue>
 					</Operation>
 				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ResearchProjectDef[defName="Ferny_Sarcophagus"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaexpanded.vfecore</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ResearchProjectDef</xpath>
+								<value>
+									<prerequisites Operation="Safe">
+										<li Operation="SafeAdd" Compare="InnerText">MF_BasicFurniture</li>
+										<li Operation="SafeRemove" Compare="InnerText">VFET_Furniture</li>
+									</prerequisites>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ResearchProjectDef[defName="Ferny_ChessTable" or 
+					defName="Ferny_Dresser"or 
+					defName="Ferny_EndTable"]</xpath>
+				<value>
+					<prerequisites Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">ComplexFurniture</li>
+						<li Operation="SafeRemove" Compare="InnerText">Ferny_Tables</li>
+					</prerequisites>
+					<hiddenPrerequisites Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">Ferny_Tables</li>
+					</hiddenPrerequisites>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ResearchProjectDef[defName="Ferny_PokerTable"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ResearchProjectDef</xpath>
+						<value>
+							<prerequisites Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">Ferny_Tables</li>
+							</prerequisites>
+							<hiddenPrerequisites Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">Ferny_Tables</li>
+							</hiddenPrerequisites>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaexpanded.vfecore</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseFalse>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ResearchProjectDef</xpath>
+								<value>
+									<prerequisites Operation="Safe">
+										<li Operation="SafeAdd" Compare="InnerText">ComplexFurniture</li>
+									</prerequisites>
+								</value>
+							</Operation>
+						</caseFalse>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ResearchProjectDef</xpath>
+								<value>
+									<prerequisites Operation="Safe">
+										<li Operation="SafeAdd" Compare="InnerText">MF_ModernFurniture</li>
+									</prerequisites>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+			<!-- Royalty -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>ludeon.rimworld.royalty</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ResearchProjectDef[defName="Ferny_Brazier"]</xpath>
+						<value>
+							<prerequisites Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">VFET_Furniture</li>
+							</prerequisites>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Biotech -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>ludeon.rimworld.biotech</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.SetScope">
+						<xpath>Defs/ResearchProjectDef[defName="Ferny_Crib"]</xpath>
+						<apply>
+							<Operation Class="XmlExtensions.FindMod">
+								<mods>
+									<li>ferny.ProgressionEducation</li>
+								</mods>
+								<packageId>true</packageId>
+								<caseFalse>
+									<Operation Class="XmlExtensions.HybridPatch">
+										<xpath>ResearchProjectDef</xpath>
+										<value>
+											<prerequisites Operation="Safe">
+												<li Operation="SafeAdd" Compare="InnerText">ComplexFurniture</li>
+											</prerequisites>
+										</value>
+									</Operation>
+								</caseFalse>
+							</Operation>
+						</apply>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ResearchProjectDef[defName="Ferny_BabyToys"]</xpath>
+						<value>
+							<prerequisites Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">ComplexFurniture</li>
+								<li Operation="SafeRemove" Compare="InnerText">VFET_Furniture</li>
+							</prerequisites>
+						</value>
+					</Operation>
+				</caseTrue>
 			</Operation>
 			<!-- Vanilla Furniture Expanded -->
 			<Operation Class="XmlExtensions.FindMod">
@@ -1637,6 +1840,28 @@
 							</prerequisites>
 						</value>
 					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ResearchProjectDef[defName="Ferny_ModularCounter"]</xpath>
+						<value>
+							<prerequisites Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">ComplexFurniture</li>
+								<li Operation="SafeRemove" Compare="InnerText">Ferny_Tables</li>
+							</prerequisites>
+							<hiddenPrerequisites Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">Ferny_Tables</li>
+							</hiddenPrerequisites>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ResearchProjectDef[defName="Ferny_DeskLamp"]</xpath>
+						<value>
+							<prerequisites Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">Ferny_StandingLamp</li>
+								<li Operation="SafeRemove" Compare="InnerText">Smithing</li>
+								<li Operation="SafeRemove" Compare="InnerText">VFET_Furniture</li>
+							</prerequisites>
+						</value>
+					</Operation>
 				</caseTrue>
 			</Operation>
 		</caseTrue>
@@ -1692,10 +1917,10 @@
 								<xpath>ResearchProjectDef</xpath>
 								<value>
 									<prerequisites Operation="Safe">
-										<li Operation="SafeRemove" Compare="InnerText">Ferny_SimpleMeals</li>
+										<li Operation="SafeRemove" Compare="InnerText">Ferny_Tables</li>
 									</prerequisites>
 									<hiddenPrerequisites Operation="Safe">
-										<li Operation="SafeAdd" Compare="InnerText">Ferny_SimpleMeals</li>
+										<li Operation="SafeAdd" Compare="InnerText">Ferny_Tables</li>
 									</hiddenPrerequisites>
 								</value>
 							</Operation>
@@ -1813,6 +2038,37 @@
 						</caseTrue>
 					</Operation>
 				</apply>
+			</Operation>
+			<!-- Odyssey -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>ludeon.rimworld.odyssey</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.SetScope">
+						<xpath>Defs/ResearchProjectDef[defName="Ferny_OutfitStands"]</xpath>
+						<apply>
+							<Operation Class="XmlExtensions.FindMod">
+								<mods>
+									<li>vanillaexpanded.vfecore</li>
+								</mods>
+								<packageId>true</packageId>
+								<caseTrue>
+									<Operation Class="XmlExtensions.HybridPatch">
+										<xpath>ResearchProjectDef</xpath>
+										<value>
+											<prerequisites Operation="Safe">
+												<li Operation="SafeAdd" Compare="InnerText">MF_BasicFurniture</li>
+												<li Operation="SafeRemove" Compare="InnerText">VFET_Furniture</li>
+											</prerequisites>
+										</value>
+									</Operation>
+								</caseTrue>
+							</Operation>
+						</apply>
+					</Operation>
+				</caseTrue>
 			</Operation>
 			<!-- Reel's Expanded Storage -->
 			<Operation Class="XmlExtensions.FindMod">
