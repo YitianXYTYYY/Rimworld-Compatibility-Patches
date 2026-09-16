@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>gogatio.mechanoidupgrades</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- CargoCells -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_CargoCell_Small"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<MechEnergyUsageFactor Operation="SafeRemove">0</MechEnergyUsageFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<MechEnergyUsageFactor Operation="SafeAdd">0.1</MechEnergyUsageFactor>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_CargoCell_Double"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<MechEnergyUsageFactor Operation="SafeRemove">0</MechEnergyUsageFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<MechEnergyUsageFactor Operation="SafeAdd">0.2</MechEnergyUsageFactor>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_CargoCell_Large"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<MechEnergyUsageFactor Operation="SafeRemove">0</MechEnergyUsageFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<MechEnergyUsageFactor Operation="SafeAdd">0.3</MechEnergyUsageFactor>
+					</statOffsets>
+				</value>
+			</Operation>
+			<!-- Misc -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_LegActuators"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<MoveSpeed Operation="SafeReplace">1.2</MoveSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_FrequencyAmplifier"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<AimingDelayFactor Operation="SafeRemove">0</AimingDelayFactor>
+						<MU_RangedDamageFactor Operation="SafeRemove">0</MU_RangedDamageFactor>
+						<RangedCooldownFactor Operation="SafeReplace">0.8</RangedCooldownFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<AimingDelayFactor Operation="SafeAdd">0.2</AimingDelayFactor>
+						<MechEnergyUsageFactor Operation="SafeReplace">0.8</MechEnergyUsageFactor>
+						<MU_RangedDamageFactor Operation="SafeAdd">0.2</MU_RangedDamageFactor>
+						<MU_WeaponRangeFactor Operation="SafeReplace">0.2</MU_WeaponRangeFactor>
+					</statOffsets>
+				</value>
+			</Operation>
+			<!-- Modules -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_Module_Repair_B"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<MechEnergyLossPerHP Operation="SafeReplace">0.8</MechEnergyLossPerHP>
+					</statFactors>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_Module_Melee_A"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<MeleeDamageFactor Operation="SafeRemove">0</MeleeDamageFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<MeleeDamageFactor Operation="SafeAdd">0.5</MeleeDamageFactor>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_Module_Melee_B"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<MeleeDamageFactor Operation="SafeRemove">0</MeleeDamageFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<MeleeDamageFactor Operation="SafeAdd">0.2</MeleeDamageFactor>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_Module_Melee_C"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<MeleeDamageFactor Operation="SafeRemove">0</MeleeDamageFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<MeleeDamageFactor Operation="SafeAdd">0.1</MeleeDamageFactor>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_Module_Ranged_A"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<MU_RangedDamageFactor Operation="SafeRemove">0</MU_RangedDamageFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<MU_RangedDamageFactor Operation="SafeAdd">0.5</MU_RangedDamageFactor>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_Module_Ranged_B"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<MU_RangedDamageFactor Operation="SafeRemove">0</MU_RangedDamageFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<MU_RangedDamageFactor Operation="SafeAdd">0.2</MU_RangedDamageFactor>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_Module_Ranged_C"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<MU_RangedDamageFactor Operation="SafeRemove">0</MU_RangedDamageFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<MU_RangedDamageFactor Operation="SafeAdd">0.1</MU_RangedDamageFactor>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_Module_Shield_C"]</xpath>
+				<value>
+					<comps Operation="Safe">
+						<li Class="MU.UpgradeCompProperties_ShieldUpgrade" Operation="Safe" CheckAttributes="True">
+							<factor Operation="SafeReplace">1.2</factor>
+						</li>
+					</comps>
+					<statFactors Operation="Safe">
+						<EnergyShieldEnergyMax Operation="SafeReplace">1.2</EnergyShieldEnergyMax>
+					</statFactors>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_Module_Robust"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<IncomingDamageFactor Operation="SafeReplace">0.8</IncomingDamageFactor>
+					</statFactors>
+				</value>
+			</Operation>
+			<!-- SpecificPacks -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_UpgradePack_Militor"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<AimingDelayFactor Operation="SafeReplace">0.5</AimingDelayFactor>
+						<IncomingDamageFactor Operation="SafeReplace">0.8</IncomingDamageFactor>
+						<MU_RangedDamageFactor Operation="SafeRemove">0</MU_RangedDamageFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<MU_RangedDamageFactor Operation="SafeAdd">0.5</MU_RangedDamageFactor>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_UpgradePack_Scyther"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<IncomingDamageFactor Operation="SafeReplace">0.8</IncomingDamageFactor>
+						<MeleeCooldownFactor Operation="SafeReplace">0.8</MeleeCooldownFactor>
+						<MeleeDamageFactor Operation="SafeRemove">0</MeleeDamageFactor>
+						<MeleeHitChance Operation="SafeRemove">0</MeleeHitChance>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<MeleeDamageFactor Operation="SafeAdd">0.5</MeleeDamageFactor>
+						<MeleeHitChance Operation="SafeReplace">12</MeleeHitChance>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_UpgradePack_Tesseron"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<AimingDelayFactor Operation="SafeAdd">0.5</AimingDelayFactor>
+						<RangedCooldownFactor Operation="SafeReplace">0.2</RangedCooldownFactor>
+						<IncomingDamageFactor Operation="SafeReplace">0.8</IncomingDamageFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<AimingDelayFactor Operation="SafeRemove">0</AimingDelayFactor>
+					</statOffsets>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>
