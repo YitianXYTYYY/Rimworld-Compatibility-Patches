@@ -328,20 +328,16 @@
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
-					<li>ferny.progressionattire</li>
+					<li>vanillaexpanded.varme</li>
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ResearchProjectDef</xpath>
 						<value>
-							<prerequisites Operation="Safe">
-								<li Operation="SafeAdd" Compare="InnerText">ComplexClothing</li>
-								<li Operation="SafeRemove" Compare="InnerText">Machining</li>
-							</prerequisites>
 							<hiddenPrerequisites Operation="Safe">
 								<li Operation="SafeRemove" Compare="InnerText">ComplexClothing</li>
-								<li Operation="SafeAdd" Compare="InnerText">Machining</li>
+								<li Operation="SafeAdd" Compare="InnerText">VAE_MilitaryClothing</li>
 							</hiddenPrerequisites>
 						</value>
 					</Operation>
@@ -2799,6 +2795,18 @@
 						<li Operation="SafeAdd" Compare="InnerText">GasOperation</li>
 						<li Operation="SafeRemove" Compare="InnerText">HeavyTurrets</li>
 					</prerequisites>
+					<requiredResearchBuilding Operation="SafeAdd">HiTechResearchBench</requiredResearchBuilding>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ResearchProjectDef[defName="VWE_LaserTargetingSystems"]</xpath>
+				<value>
+					<prerequisites Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">VWE_HeavyWeapons</li>
+					</prerequisites>
+					<hiddenPrerequisites Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">VWE_HeavyWeapons</li>
+					</hiddenPrerequisites>
 					<requiredResearchBuilding Operation="SafeAdd">HiTechResearchBench</requiredResearchBuilding>
 				</value>
 			</Operation>
