@@ -200,9 +200,9 @@
 				<xpath>Defs/HediffDef[defName="GhoulPlating"]/stages/li</xpath>
 				<value>
 					<capMods Operation="Safe">
-						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-							<capacity Operation="SafeAdd">Moving</capacity>
-							<offset Operation="SafeAdd">-0.1</offset>
+						<li Operation="SafeAdd" Compare="InnerText" XPathLocal="capacity">
+							<capacity>Moving</capacity>
+							<offset>-0.1</offset>
 						</li>
 					</capMods>
 					<statOffsets Operation="Safe">
@@ -214,9 +214,9 @@
 				<xpath>Defs/HediffDef[defName="GhoulBarbs"]/stages/li</xpath>
 				<value>
 					<capMods Operation="Safe">
-						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-							<capacity Operation="SafeAdd">Moving</capacity>
-							<offset Operation="SafeAdd">-0.1</offset>
+						<li Operation="SafeAdd" Compare="InnerText" XPathLocal="capacity">
+							<capacity>Moving</capacity>
+							<offset>-0.1</offset>
 						</li>
 					</capMods>
 					<statFactors Operation="Safe">
@@ -239,9 +239,9 @@
 				<xpath>Defs/HediffDef[defName="MetalbloodHeart"]/stages/li</xpath>
 				<value>
 					<capMods Operation="Safe">
-						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-							<capacity Operation="SafeAdd">Moving</capacity>
-							<offset Operation="SafeAdd">-0.05</offset>
+						<li Operation="SafeAdd" Compare="InnerText" XPathLocal="capacity">
+							<capacity>Moving</capacity>
+							<offset>-0.05</offset>
 						</li>
 					</capMods>
 					<statOffsets Operation="Safe">

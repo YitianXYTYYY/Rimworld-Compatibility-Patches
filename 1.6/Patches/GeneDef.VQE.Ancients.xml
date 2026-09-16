@@ -95,9 +95,9 @@
 						<xpath>GeneDef</xpath>
 						<value>
 							<capMods Operation="Safe">
-								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-									<capacity Operation="SafeAdd">Moving</capacity>
-									<offset Operation="SafeAdd">0.2</offset>
+								<li Operation="SafeAdd" Compare="InnerText" XPathLocal="capacity">
+									<capacity>Moving</capacity>
+									<offset>0.2</offset>
 								</li>
 							</capMods>
 							<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
@@ -284,9 +284,9 @@
 						<value>
 							<biostatMet Operation="SafeReplace">-5</biostatMet>
 							<capMods Operation="Safe">
-								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-									<capacity Operation="SafeAdd">Moving</capacity>
-									<offset Operation="SafeAdd">-0.25</offset>
+								<li Operation="SafeAdd" Compare="InnerText" XPathLocal="capacity">
+									<capacity>Moving</capacity>
+									<offset>-0.25</offset>
 								</li>
 							</capMods>
 							<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>

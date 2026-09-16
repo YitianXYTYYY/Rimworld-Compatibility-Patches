@@ -494,9 +494,9 @@
 						<value>
 							<minSeverity Operation="SafeAdd">0.02</minSeverity>
 							<capMods Operation="Safe">
-								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-									<capacity Operation="SafeAdd">Moving</capacity>
-									<offset Operation="SafeAdd">0.05</offset>
+								<li Operation="SafeAdd" Compare="InnerText" XPathLocal="capacity">
+									<capacity>Moving</capacity>
+									<offset>0.05</offset>
 								</li>
 							</capMods>
 						</value>
@@ -505,9 +505,9 @@
 						<xpath>HediffDef/stages/li[label="moderate"]</xpath>
 						<value>
 							<capMods Operation="Safe">
-								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-									<capacity Operation="SafeAdd">Moving</capacity>
-									<offset Operation="SafeAdd">0.1</offset>
+								<li Operation="SafeAdd" Compare="InnerText" XPathLocal="capacity">
+									<capacity>Moving</capacity>
+									<offset>0.1</offset>
 								</li>
 							</capMods>
 						</value>
@@ -517,9 +517,9 @@
 						<value>
 							<label Operation="SafeReplace">extreme</label>
 							<capMods Operation="Safe">
-								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-									<capacity Operation="SafeAdd">Moving</capacity>
-									<offset Operation="SafeAdd">0.15</offset>
+								<li Operation="SafeAdd" Compare="InnerText" XPathLocal="capacity">
+									<capacity>Moving</capacity>
+									<offset>0.15</offset>
 								</li>
 							</capMods>
 						</value>
