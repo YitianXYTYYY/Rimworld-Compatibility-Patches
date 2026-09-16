@@ -6,7 +6,7 @@
 		<label>make arrow</label>
 		<description>Ammunition used in bow weapons.</description>
 		<jobString>Making arrow.</jobString>
-		<workAmount>240</workAmount>
+		<workAmount>300</workAmount>
 		<workSkill>Crafting</workSkill>
 		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<effectWorking>Smith</effectWorking>
@@ -81,7 +81,7 @@
 		<label>make charge battery</label>
 		<description>Ammunition used for charge weapons.</description>
 		<jobString>Making charge battery.</jobString>
-		<workAmount>1500</workAmount>
+		<workAmount>1800</workAmount>
 		<workSkill>Crafting</workSkill>
 		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<effectWorking>Smith</effectWorking>
@@ -122,7 +122,7 @@
 		<label>make spacer ammo - special</label>
 		<description>Spacer ammunition used for special weapons.</description>
 		<jobString>Making spacer ammo - special.</jobString>
-		<workAmount>1800</workAmount>
+		<workAmount>2100</workAmount>
 		<workSkill>Crafting</workSkill>
 		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<effectWorking>Smith</effectWorking>

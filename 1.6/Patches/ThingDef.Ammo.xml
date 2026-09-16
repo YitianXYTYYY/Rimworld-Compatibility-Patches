@@ -41,7 +41,7 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/RecipeDef[defName="Make_TurretAmmo"]</xpath>
 				<value>
-					<workAmount Operation="SafeReplace">900</workAmount>
+					<workAmount Operation="SafeReplace">1500</workAmount>
 					<ingredients Operation="SafeReplace">
 						<li>
 							<filter>
