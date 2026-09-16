@@ -347,13 +347,36 @@
 		<packageId>true</packageId>
 		<caseTrue>
 			<!-- candelabra -->
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="VFEE_Candelabra"]</xpath>
-				<value>
-					<researchPrerequisites Operation="Safe">
-						<li Operation="SafeAdd" Compare="InnerText">Electricity</li>
-					</researchPrerequisites>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>ferny.progressionfurniture</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseFalse>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<researchPrerequisites Operation="Safe">
+										<li Operation="SafeAdd" Compare="InnerText">Electricity</li>
+									</researchPrerequisites>
+								</value>
+							</Operation>
+						</caseFalse>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<researchPrerequisites Operation="Safe">
+										<li Operation="SafeAdd" Compare="InnerText">Ferny_StandingLamp</li>
+									</researchPrerequisites>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
 			</Operation>
 		</caseTrue>
 	</Operation>

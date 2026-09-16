@@ -648,6 +648,15 @@
 		<packageId>true</packageId>
 		<caseTrue>
 			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ResearchProjectDef[defName="Harp"]</xpath>
+				<value>
+					<prerequisites Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">ComplexFurniture</li>
+						<li Operation="SafeAdd" Compare="InnerText">Smithing</li>
+					</prerequisites>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ResearchProjectDef[defName="Harpsichord"]</xpath>
 				<value>
 					<prerequisites Operation="Safe">
@@ -1699,6 +1708,15 @@
 							</prerequisites>
 						</value>
 					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ResearchProjectDef[defName="Ferny_Curtains"]</xpath>
+						<value>
+							<prerequisites Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">VFET_Furniture</li>
+								<li Operation="SafeAdd" Compare="InnerText">ComplexFurniture</li>
+							</prerequisites>
+						</value>
+					</Operation>
 				</caseTrue>
 			</Operation>
 			<!-- Biotech -->
@@ -2322,28 +2340,99 @@
 	</Operation>
 
 	<!-- Vanilla Armour Expanded -->
-	<!--Operation Class="XmlExtensions.FindMod">
+	<Operation Class="XmlExtensions.FindMod">
 		<mods>
 			<li>vanillaexpanded.varme</li>
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-				<xpath>Defs/ResearchProjectDef[defName="VAE_TrooperArmor"]</xpath>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>ludeon.rimworld.royalty</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>Defs/ResearchProjectDef[defName="VAE_SiegebreakerArmor"]</xpath>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ResearchProjectDef[defName="VAE_LeatherTanning"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>ferny.progressionattire</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ResearchProjectDef</xpath>
+								<value>
+									<prerequisites Operation="Safe">
+										<li Operation="SafeRemove" Compare="InnerText">ComplexClothing</li>
+										<li Operation="SafeAdd" Compare="InnerText">LemonSkin_RusticClothing</li>
+									</prerequisites>
+								</value>
+							</Operation>
+						</caseTrue>
 					</Operation>
-				</caseTrue>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ResearchProjectDef[defName="VAE_MilitaryClothing"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>ferny.progressionattire</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ResearchProjectDef</xpath>
+								<value>
+									<prerequisites Operation="Safe">
+										<li Operation="SafeRemove" Compare="InnerText">VAE_LeatherTanning</li>
+										<li Operation="SafeAdd" Compare="InnerText">ComplexClothing</li>
+									</prerequisites>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ResearchProjectDef[defName="VAE_SiegebreakerArmor"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ResearchProjectDef</xpath>
+						<value>
+							<prerequisites Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">ShieldBelt</li>
+							</prerequisites>
+							<hiddenPrerequisites Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">ShieldBelt</li>
+							</hiddenPrerequisites>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>ludeon.rimworld.royalty</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ResearchProjectDef</xpath>
+								<value>
+									<prerequisites Operation="Safe">
+										<li Operation="SafeRemove" Compare="InnerText">PoweredArmor</li>
+										<li Operation="SafeAdd" Compare="InnerText">CataphractArmor</li>
+									</prerequisites>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ResearchProjectDef[defName="VAE_TrooperArmor"]</xpath>
+				<value>
+					<prerequisites Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">FlakArmor</li>
+					</prerequisites>
+				</value>
 			</Operation>
 		</caseTrue>
-	</Operation-->
+	</Operation>
 
 	<!-- Vanilla Factions Expanded - Empire -->
 	<Operation Class="XmlExtensions.FindMod">
