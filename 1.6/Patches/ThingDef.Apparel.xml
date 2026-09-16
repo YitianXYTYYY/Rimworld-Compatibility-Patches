@@ -909,86 +909,15 @@
 			</Operation>
 
 			<!-- spacer -->
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.PatchOperationAttributeSet">
 				<xpath>Defs/ThingDef[defName="VAE_Headgear_TrooperHelmet"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
-						<xpath>ThingDef</xpath>
-						<attribute>Name</attribute>
-						<value>VAE_Headgear_TrooperHelmet</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ThingDef</xpath>
-						<value>
-							<recipeMaker Operation="Safe">
-								<researchPrerequisite Operation="SafeReplace">ReconArmor</researchPrerequisite>
-							</recipeMaker>
-						</value>
-					</Operation>
-				</apply>
+				<attribute>Name</attribute>
+				<value>VAE_Headgear_TrooperHelmet</value>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="VAE_Apparel_TrooperArmor"]</xpath>
-				<value>
-					<recipeMaker Operation="Safe">
-						<researchPrerequisite Operation="SafeReplace">ReconArmor</researchPrerequisite>
-					</recipeMaker>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.PatchOperationAttributeSet">
 				<xpath>Defs/ThingDef[defName="VAE_Headgear_HeavyMarineHelmet"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
-						<xpath>ThingDef</xpath>
-						<attribute>Name</attribute>
-						<value>VAE_Headgear_HeavyMarineHelmet</value>
-					</Operation>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>ludeon.rimworld.royalty</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>ThingDef</xpath>
-								<value>
-									<recipeMaker Operation="Safe">
-										<researchPrerequisite Operation="SafeRemove">0</researchPrerequisite>
-										<researchPrerequisites Inherit="False" Operation="Safe">
-											<li Operation="SafeAdd" Compare="InnerText">CataphractArmor</li>
-											<li Operation="SafeAdd" Compare="InnerText">ShieldBelt</li>
-										</researchPrerequisites>
-									</recipeMaker>
-								</value>
-							</Operation>
-						</caseTrue>
-					</Operation>
-				</apply>
-			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/ThingDef[defName="VAE_Apparel_HeavyMarineArmor"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>ludeon.rimworld.royalty</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>ThingDef</xpath>
-								<value>
-									<recipeMaker Operation="Safe">
-										<researchPrerequisite Operation="SafeRemove">0</researchPrerequisite>
-										<researchPrerequisites Inherit="False" Operation="Safe">
-											<li Operation="SafeAdd" Compare="InnerText">CataphractArmor</li>
-											<li Operation="SafeAdd" Compare="InnerText">ShieldBelt</li>
-										</researchPrerequisites>
-									</recipeMaker>
-								</value>
-							</Operation>
-						</caseTrue>
-					</Operation>
-				</apply>
+				<attribute>Name</attribute>
+				<value>VAE_Headgear_HeavyMarineHelmet</value>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="VAE_Headgear_RoyalTrooperHelmet"]</xpath>
@@ -1006,9 +935,6 @@
 								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
 							</equippedStatOffsets>
-							<recipeMaker Operation="Safe">
-								<researchPrerequisite Operation="SafeReplace">ReconArmor</researchPrerequisite>
-							</recipeMaker>
 						</value>
 					</Operation>
 				</apply>
@@ -1021,9 +947,6 @@
 						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 						<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
 					</equippedStatOffsets>
-					<recipeMaker Operation="Safe">
-						<researchPrerequisite Operation="SafeReplace">ReconArmor</researchPrerequisite>
-					</recipeMaker>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
@@ -1044,26 +967,6 @@
 							</equippedStatOffsets>
 						</value>
 					</Operation>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>ludeon.rimworld.royalty</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>ThingDef</xpath>
-								<value>
-									<recipeMaker Operation="Safe">
-										<researchPrerequisite Operation="SafeRemove">0</researchPrerequisite>
-										<researchPrerequisites Inherit="False" Operation="Safe">
-											<li Operation="SafeAdd" Compare="InnerText">CataphractArmor</li>
-											<li Operation="SafeAdd" Compare="InnerText">ShieldBelt</li>
-										</researchPrerequisites>
-									</recipeMaker>
-								</value>
-							</Operation>
-						</caseTrue>
-					</Operation>
 				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
@@ -1078,26 +981,6 @@
 								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
 							</equippedStatOffsets>
 						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>ludeon.rimworld.royalty</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>ThingDef</xpath>
-								<value>
-									<recipeMaker Operation="Safe">
-										<researchPrerequisite Operation="SafeRemove">0</researchPrerequisite>
-										<researchPrerequisites Inherit="False" Operation="Safe">
-											<li Operation="SafeAdd" Compare="InnerText">CataphractArmor</li>
-											<li Operation="SafeAdd" Compare="InnerText">ShieldBelt</li>
-										</researchPrerequisites>
-									</recipeMaker>
-								</value>
-							</Operation>
-						</caseTrue>
 					</Operation>
 				</apply>
 			</Operation>
@@ -1374,31 +1257,8 @@
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 						<xpath>Defs/ThingDef[defName="Apparel_ToxVAE_TrooperHelmet"][@ParentName!="VAE_Headgear_TrooperHelmet"]</xpath>
 					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="Apparel_ToxVAE_TrooperHelmet"]</xpath>
-						<value>
-							<recipeMaker Operation="Safe">
-								<researchPrerequisites Operation="Safe">
-									<li Operation="SafeAdd" Compare="InnerText">ReconArmor</li>
-									<li Operation="SafeRemove" Compare="InnerText">VAE_TrooperArmor</li>
-								</researchPrerequisites>
-							</recipeMaker>
-						</value>
-					</Operation>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 						<xpath>Defs/ThingDef[defName="Apparel_ToxVAE_SiegebreakerHelmet"][@ParentName!="VAE_Headgear_HeavyMarineHelmet"]</xpath>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="Apparel_ToxVAE_SiegebreakerHelmet"]</xpath>
-						<value>
-							<recipeMaker Operation="Safe">
-								<researchPrerequisites Operation="Safe">
-									<li Operation="SafeAdd" Compare="InnerText">CataphractArmor</li>
-									<li Operation="SafeAdd" Compare="InnerText">ShieldBelt</li>
-									<li Operation="SafeRemove" Compare="InnerText">VAE_SiegebreakerArmor</li>
-								</researchPrerequisites>
-							</recipeMaker>
-						</value>
 					</Operation>
 				</caseTrue>
 			</Operation>
