@@ -234,6 +234,22 @@
 					</thingCategories>
 				</value>
 			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[@ParentName="VFEI2_PherocoreBase"][defName="VFEI2_PherocoreSorne"]</xpath>
+				<value>
+					<statBases Operation="Safe">
+						<MarketValue Operation="SafeReplace">1500</MarketValue>
+					</statBases>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[@ParentName="VFEI2_PherocoreBase"][defName!="VFEI2_PherocoreSorne"]</xpath>
+				<value>
+					<statBases Operation="Safe">
+						<MarketValue Operation="SafeReplace">2500</MarketValue>
+					</statBases>
+				</value>
+			</Operation>
 		</caseTrue>
 	</Operation>
 
