@@ -322,26 +322,9 @@
 				<xpath>ResearchProjectDef</xpath>
 				<value>
 					<hiddenPrerequisites Operation="Safe">
-						<li Operation="SafeRemove" Compare="InnerText">PlateArmor</li>
+						<li Operation="SafeRemove" Compare="InnerText">ComplexClothing</li>
 					</hiddenPrerequisites>
 				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaexpanded.varme</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ResearchProjectDef</xpath>
-						<value>
-							<hiddenPrerequisites Operation="Safe">
-								<li Operation="SafeRemove" Compare="InnerText">ComplexClothing</li>
-								<li Operation="SafeAdd" Compare="InnerText">VAE_MilitaryClothing</li>
-							</hiddenPrerequisites>
-						</value>
-					</Operation>
-				</caseTrue>
 			</Operation>
 		</apply>
 	</Operation>
@@ -554,19 +537,15 @@
 			</hiddenPrerequisites>
 		</value>
 	</Operation>
-	<!--Operation Class="XmlExtensions.HybridPatch">
+	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ResearchProjectDef[defName="ReconArmor"]</xpath>
 		<value>
-			<prerequisites Operation="Safe">
-				<li Operation="SafeAdd" Compare="InnerText">ComplexClothing</li>
-				<li Operation="SafeRemove" Compare="InnerText">Fabrication</li>
-			</prerequisites>
 			<hiddenPrerequisites Operation="Safe">
 				<li Operation="SafeRemove" Compare="InnerText">ComplexClothing</li>
-				<li Operation="SafeAdd" Compare="InnerText">Fabrication</li>
+				<li Operation="SafeAdd" Compare="InnerText">FlakArmor</li>
 			</hiddenPrerequisites>
 		</value>
-	</Operation-->
+	</Operation>
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ResearchProjectDef[defName="ChargedShot"]</xpath>
 		<value>
@@ -2419,14 +2398,6 @@
 					</Operation>
 				</apply>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ResearchProjectDef[defName="VAE_TrooperArmor"]</xpath>
-				<value>
-					<prerequisites Operation="Safe">
-						<li Operation="SafeRemove" Compare="InnerText">FlakArmor</li>
-					</prerequisites>
-				</value>
-			</Operation>
 		</caseTrue>
 	</Operation>
 
@@ -2827,6 +2798,8 @@
 				<xpath>Defs/ResearchProjectDef[defName="ToxFilterArmor"]</xpath>
 				<value>
 					<prerequisites Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">Fabrication</li>
+						<li Operation="SafeRemove" Compare="InnerText">ReconArmor</li>
 						<li Operation="SafeRemove" Compare="InnerText">ToxFilterApparel</li>
 					</prerequisites>
 					<hiddenPrerequisites Operation="Safe">
