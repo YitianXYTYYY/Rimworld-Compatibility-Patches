@@ -145,7 +145,7 @@
 							<displayCategory Operation="AddOrReplace">Archite</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">-600</displayOrderInCategory>
 							<statOffsets Operation="Safe">
-								<PsychicSensitivity Operation="SafeReplace">1</PsychicSensitivity>
+								<PsychicSensitivity Operation="SafeReplace">0.8</PsychicSensitivity>
 							</statOffsets>
 						</value>
 					</Operation>
