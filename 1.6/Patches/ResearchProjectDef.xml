@@ -142,7 +142,7 @@
 			<requiredResearchBuilding Operation="SafeAdd">HiTechResearchBench</requiredResearchBuilding>
 		</value>
 	</Operation>
-	<!--Operation Class="XmlExtensions.HybridPatch">
+	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ResearchProjectDef[defName="BiofuelRefining"]</xpath>
 		<value>
 			<prerequisites Operation="Safe">
@@ -152,7 +152,7 @@
 				<li Operation="SafeAdd" Compare="InnerText">Electricity</li>
 			</hiddenPrerequisites>
 		</value>
-	</Operation-->
+	</Operation>
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ResearchProjectDef[defName="WatermillGenerator"]</xpath>
 		<value>
@@ -400,6 +400,7 @@
 				<li Operation="SafeRemove" Compare="InnerText">MicroelectronicsBasics</li>
 			</prerequisites>
 			<hiddenPrerequisites Operation="Safe">
+				<li Operation="SafeRemove" Compare="InnerText">BiofuelRefining</li>
 				<li Operation="SafeRemove" Compare="InnerText">Machining</li>
 			</hiddenPrerequisites>
 		</value>
@@ -2729,7 +2730,7 @@
 	</Operation-->
 
 	<!-- Vanilla Races Expanded - Android -->
-	<Operation Class="XmlExtensions.FindMod">
+	<!--Operation Class="XmlExtensions.FindMod">
 		<mods>
 			<li>vanillaracesexpanded.android</li>
 		</mods>
@@ -2747,7 +2748,7 @@
 				</value>
 			</Operation>
 		</caseTrue>
-	</Operation>
+	</Operation-->
 
 	<!-- Vanilla Weapons Expanded -->
 	<Operation Class="XmlExtensions.FindMod">
