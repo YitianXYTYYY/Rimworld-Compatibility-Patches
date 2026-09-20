@@ -101,6 +101,22 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
+			<!-- Even Bigger Vac Barriers -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>nebulae.evenbiggervacbarriers</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>ThingDef/EBVB_AdvancedVacBarrier</li>
+							<li>ThingDef/EBVB_QuantumStasisBarrier</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
 			<!-- FSF Vanilla Bionics Expansion -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
