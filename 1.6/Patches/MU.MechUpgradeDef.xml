@@ -8,6 +8,281 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- Armor -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_MechArmor_Large_C" or
+					defName="MU_MechArmor_Medium_C" or
+					defName="MU_MechArmor_Small_C" or
+					defName="MU_MechArmor_UltraLarge_C"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<ArmorRating_Blunt Operation="SafeReplace">0.2</ArmorRating_Blunt>
+						<ArmorRating_Sharp Operation="SafeReplace">0.2</ArmorRating_Sharp>
+						<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_MechArmor_Large_B" or
+					defName="MU_MechArmor_Medium_B" or
+					defName="MU_MechArmor_Small_B" or
+					defName="MU_MechArmor_UltraLarge_B"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<ArmorRating_Blunt Operation="SafeReplace">0.4</ArmorRating_Blunt>
+						<ArmorRating_Sharp Operation="SafeReplace">0.4</ArmorRating_Sharp>
+						<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_MechArmor_Large_A" or
+					defName="MU_MechArmor_Medium_A" or
+					defName="MU_MechArmor_Small_A" or
+					defName="MU_MechArmor_UltraLarge_A"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<IncomingDamageFactor Operation="SafeReplace">0.8</IncomingDamageFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<ArmorRating_Blunt Operation="SafeReplace">0.6</ArmorRating_Blunt>
+						<ArmorRating_Sharp Operation="SafeReplace">0.6</ArmorRating_Sharp>
+						<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
+			<!-- Chip Melee -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_MechChip_Melee_A"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<MeleeHitChance Operation="SafeReplace">16</MeleeHitChance>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_MechChip_Melee_B"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<MeleeHitChance Operation="SafeReplace">8</MeleeHitChance>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_MechChip_Melee_C"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<MeleeHitChance Operation="SafeReplace">4</MeleeHitChance>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_MechChip_Dodge_A"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<MeleeHitChance Operation="SafeReplace">24</MeleeHitChance>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_MechChip_Dodge_B"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<MeleeHitChance Operation="SafeReplace">16</MeleeHitChance>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_MechChip_Dodge_C"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<MeleeHitChance Operation="SafeReplace">8</MeleeHitChance>
+					</statOffsets>
+				</value>
+			</Operation>
+			<!-- Chip Misc -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_MechChip_GastroAnalize_A"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<CookSpeed Operation="SafeRemove">0</CookSpeed>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<CookSpeed Operation="SafeAdd">0.5</CookSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_MechChip_GastroAnalize_B"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<CookSpeed Operation="SafeRemove">0</CookSpeed>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<CookSpeed Operation="SafeAdd">0.2</CookSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_MechChip_Production_A"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<GeneralLaborSpeed Operation="SafeRemove">0</GeneralLaborSpeed>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<GeneralLaborSpeed Operation="SafeAdd">0.2</GeneralLaborSpeed>
+						<ConstructionSpeed Operation="SafeReplace">0.5</ConstructionSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_MechChip_Production_B"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<GeneralLaborSpeed Operation="SafeRemove">0</GeneralLaborSpeed>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<GeneralLaborSpeed Operation="SafeAdd">0.1</GeneralLaborSpeed>
+						<ConstructionSpeed Operation="SafeReplace">0.2</ConstructionSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_MechChip_Medical_A"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<MedicalOperationSpeed Operation="SafeRemove">0</MedicalOperationSpeed>
+						<MedicalTendSpeed Operation="SafeRemove">0</MedicalTendSpeed>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<MedicalOperationSpeed Operation="SafeAdd">0.5</MedicalOperationSpeed>
+						<MedicalTendSpeed Operation="SafeAdd">0.5</MedicalTendSpeed>
+						<MedicalTendQuality Operation="SafeReplace">0.8</MedicalTendQuality>
+						<MedicalSurgerySuccessChance Operation="SafeReplace">0.2</MedicalSurgerySuccessChance>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_MechChip_Medical_B"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<MedicalOperationSpeed Operation="SafeRemove">0</MedicalOperationSpeed>
+						<MedicalTendSpeed Operation="SafeRemove">0</MedicalTendSpeed>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<MedicalOperationSpeed Operation="SafeAdd">0.2</MedicalOperationSpeed>
+						<MedicalTendSpeed Operation="SafeAdd">0.2</MedicalTendSpeed>
+						<MedicalTendQuality Operation="SafeReplace">0.5</MedicalTendQuality>
+						<MedicalSurgerySuccessChance Operation="SafeReplace">0.1</MedicalSurgerySuccessChance>
+					</statOffsets>
+				</value>
+			</Operation>
+			<!-- Chip Ranged -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_MechChip_Ranged_A"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<ShootingAccuracyPawn Operation="SafeReplace">12</ShootingAccuracyPawn>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_MechChip_Ranged_B"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<ShootingAccuracyPawn Operation="SafeReplace">8</ShootingAccuracyPawn>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_MechChip_Ranged_C"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<ShootingAccuracyPawn Operation="SafeReplace">4</ShootingAccuracyPawn>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_MechChip_Reload_B"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<RangedCooldownFactor Operation="SafeReplace">0.8</RangedCooldownFactor>
+					</statFactors>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_MechChip_Aiming_B"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<AimingDelayFactor Operation="SafeReplace">0.8</AimingDelayFactor>
+					</statFactors>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_MechChip_Range_A"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<MU_WeaponRangeFactor Operation="SafeReplace">0.3</MU_WeaponRangeFactor>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_MechChip_Range_B"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<MU_WeaponRangeFactor Operation="SafeReplace">0.2</MU_WeaponRangeFactor>
+					</statOffsets>
+				</value>
+			</Operation>
+			<!-- Chip Work -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_MechChip_Work_A"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<WorkSpeedGlobal Operation="SafeReplace">0.5</WorkSpeedGlobal>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_MechChip_Work_B"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<WorkSpeedGlobal Operation="SafeReplace">0.2</WorkSpeedGlobal>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_MechChip_Speed_A"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<MoveSpeed Operation="SafeReplace">1.3</MoveSpeed>
+					</statFactors>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_MechChip_Speed_B"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<MoveSpeed Operation="SafeReplace">1.2</MoveSpeed>
+					</statFactors>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_MechChip_Speed_C"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<MoveSpeed Operation="SafeReplace">1.1</MoveSpeed>
+					</statFactors>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/MU.MechUpgradeDef[defName="MU_MechChip_Energy_B"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<MechEnergyUsageFactor Operation="SafeReplace">0.8</MechEnergyUsageFactor>
+					</statFactors>
+				</value>
+			</Operation>
 			<!-- CargoCells -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/MU.MechUpgradeDef[defName="MU_CargoCell_Small"]</xpath>
