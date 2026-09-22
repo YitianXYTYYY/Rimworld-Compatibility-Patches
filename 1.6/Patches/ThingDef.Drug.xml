@@ -75,6 +75,35 @@
 	<!-- Vanilla Factions Expanded - Empire -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
+			<li>als.anomalygravship</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- vac protect serum -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VacProtectSerum"]</xpath>
+				<value>
+					<costList Operation="Safe">
+						<Bioferrite Operation="SafeAdd">10</Bioferrite>
+						<GravlitePanel Operation="SafeRemove">0</GravlitePanel>
+					</costList>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="VacProtect"]/stages/li</xpath>
+				<value>
+					<restFallFactorOffset Operation="SafeRemove"/>
+					<statOffsets Operation="Safe">
+						<RestFallRateFactor Operation="SafeAdd">0.2</RestFallRateFactor>
+					</statOffsets>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Vanilla Factions Expanded - Empire -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
 			<li>oskarpotocki.vfe.empire</li>
 		</mods>
 		<packageId>true</packageId>
