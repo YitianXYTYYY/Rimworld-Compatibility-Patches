@@ -139,6 +139,9 @@
 			<prerequisites Operation="Safe">
 				<li Operation="SafeRemove" Compare="InnerText">Electricity</li>
 			</prerequisites>
+			<hiddenPrerequisites Operation="Safe">
+				<li Operation="SafeAdd" Compare="InnerText">Electricity</li>
+			</hiddenPrerequisites>
 			<requiredResearchBuilding Operation="SafeAdd">HiTechResearchBench</requiredResearchBuilding>
 		</value>
 	</Operation>
@@ -323,6 +326,7 @@
 				<value>
 					<hiddenPrerequisites Operation="Safe">
 						<li Operation="SafeRemove" Compare="InnerText">ComplexClothing</li>
+						<li Operation="SafeAdd" Compare="InnerText">PlateArmor</li>
 					</hiddenPrerequisites>
 				</value>
 			</Operation>
@@ -403,6 +407,9 @@
 				<li Operation="SafeRemove" Compare="InnerText">BiofuelRefining</li>
 				<li Operation="SafeRemove" Compare="InnerText">Machining</li>
 			</hiddenPrerequisites>
+			<requiredResearchFacilities Operation="Safe">
+				<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
+			</requiredResearchFacilities>
 		</value>
 	</Operation>
 	<Operation Class="XmlExtensions.HybridPatch">
@@ -999,8 +1006,8 @@
 				<xpath>Defs/ResearchProjectDef[defName="HunterDrones"]</xpath>
 				<value>
 					<prerequisites Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">IEDs</li>
 						<li Operation="SafeRemove" Compare="InnerText">MicroelectronicsBasics</li>
-						<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
 					</prerequisites>
 					<requiredResearchFacilities Operation="Safe">
 						<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
@@ -2412,6 +2419,17 @@
 						</caseTrue>
 					</Operation>
 				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ResearchProjectDef[defName="VAE_TrooperArmor"]</xpath>
+				<value>
+					<prerequisites Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">FlakArmor</li>
+					</prerequisites>
+					<hiddenPrerequisites Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">FlakArmor</li>
+					</hiddenPrerequisites>
+				</value>
 			</Operation>
 		</caseTrue>
 	</Operation>
