@@ -84,8 +84,9 @@
 				<xpath>Defs/ThingDef[defName="VacProtectSerum"]</xpath>
 				<value>
 					<costList Operation="Safe">
-						<Bioferrite Operation="SafeAdd">10</Bioferrite>
+						<Bioferrite Operation="SafeAdd">20</Bioferrite>
 						<GravlitePanel Operation="SafeRemove">0</GravlitePanel>
+						<Meat_Twisted Operation="SafeReplace">20</Meat_Twisted>
 					</costList>
 				</value>
 			</Operation>
