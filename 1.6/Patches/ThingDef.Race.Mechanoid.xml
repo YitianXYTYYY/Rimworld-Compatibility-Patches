@@ -50,8 +50,8 @@
 				<xpath>Defs/ThingDef[defName="Mech_Tunneler"]</xpath>
 				<value>
 					<statBases Operation="Safe">
-						<ArmorRating_Blunt Operation="SafeReplace">0.6</ArmorRating_Blunt>
-						<ArmorRating_Sharp Operation="SafeReplace">1.2</ArmorRating_Sharp>
+						<ArmorRating_Blunt Operation="SafeReplace">0.4</ArmorRating_Blunt>
+						<ArmorRating_Sharp Operation="SafeReplace">0.8</ArmorRating_Sharp>
 					</statBases>
 				</value>
 			</Operation>
