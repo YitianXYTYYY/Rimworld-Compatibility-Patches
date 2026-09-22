@@ -616,6 +616,39 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
+			<!-- Security and Blast Doors Expanded -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>jarocks.securitydoorsexpanded</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>ThingDef/SDE_ArmoredSecurityDoorSmall</li>
+							<li>ThingDef/SDE_ArmoredSecurityDoor</li>
+							<li>ThingDef/SDE_ArmoredSecurityDoorLarge</li>
+							<li>ThingDef/SDE_ArmoredVehicleDoor</li>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>ludeon.rimworld.odyssey</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>ThingDef/SDE_SecurityDoorSmall</li>
+									<li>ThingDef/SDE_VehicleDoor</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
 			<!-- Vanilla Armour Expanded -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>

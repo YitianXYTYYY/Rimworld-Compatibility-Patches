@@ -2281,6 +2281,20 @@
 		</caseTrue>
 	</Operation>
 
+
+	<!-- Security and Blast Doors Expanded -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>jarocks.securitydoorsexpanded</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/ResearchProjectDef[defName="SDE_ArmoredSecurityDoors"]</xpath>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 	<!-- Unique Weapons Unbound -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
