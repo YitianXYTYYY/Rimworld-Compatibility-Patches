@@ -4,6 +4,21 @@
 	<Operation Class="XmlExtensions.SetScope" MayRequire="Owlchemist.CherryPicker">
 		<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
 		<apply>
+			<!-- Anomaly for Gravship -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>als.anomalygravship</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>ThingDef/ShipSecurityDoor</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
 			<!-- AFU Cosmetic Gene Expanded -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
@@ -591,13 +606,36 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
+			<!-- ReBuild: Doors and Corners -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>rebuild.cotr.doorsandcorners</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<!-- Security and Blast Doors Expanded -->
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>jarocks.securitydoorsexpanded</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>ThingDef/RB_LargeSecurityDoor</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
 			<!-- ReSplice: Core -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
 					<li>resplice.xotr.core</li>
 				</mods>
 				<packageId>true</packageId>
-				<logic>and</logic>
 				<caseTrue>
 					<!-- Genepack Reprocessor -->
 					<Operation Class="XmlExtensions.FindMod">
