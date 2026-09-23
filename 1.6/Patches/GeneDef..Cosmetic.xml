@@ -332,22 +332,6 @@
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
-					<li>vanillaracesexpanded.starjack</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VREStarjack_SpacejumpLegs"]</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Tail</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">40</displayOrderInCategory>
-							<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
 					<li>JintuziLamian.Gene.XenoCosmetic</li>
 				</mods>
 				<packageId>true</packageId>
@@ -356,10 +340,26 @@
 						<xpath>Defs/GeneDef[defName="AFU_BA_SmoothLizardTail"]</xpath>
 						<value>
 							<displayCategory Operation="AddOrReplace">Tail</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">50</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">40</displayOrderInCategory>
 							<statOffsets Operation="Safe">
 								<MeleeDodgeChance Operation="SafeReplace">4</MeleeDodgeChance>
 							</statOffsets>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.starjack</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VREStarjack_SpacejumpLegs"]</xpath>
+						<value>
+							<displayCategory Operation="AddOrReplace">Tail</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">50</displayOrderInCategory>
+							<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
 						</value>
 					</Operation>
 				</caseTrue>
