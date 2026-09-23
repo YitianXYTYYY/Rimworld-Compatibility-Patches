@@ -166,6 +166,13 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
+			<!-- prosthetic -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="Mindscrew"]/stages/li</xpath>
+				<value>
+					<painOffset Operation="SafeReplace">0.25</painOffset>
+				</value>
+			</Operation>
 		</caseTrue>
 	</Operation>
 
