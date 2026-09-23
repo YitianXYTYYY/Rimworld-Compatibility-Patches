@@ -73,6 +73,7 @@
 								<VEF_BodySize_Multiplier Operation="SafeRemove">0</VEF_BodySize_Multiplier>
 							</statFactors>
 							<statOffsets Operation="Safe">
+								<StaggerDurationFactor Operation="SafeAdd">-0.2</StaggerDurationFactor>
 								<VEF_BodySize_Offset Operation="SafeAdd">0.4</VEF_BodySize_Offset>
 							</statOffsets>
 						</value>
