@@ -762,7 +762,7 @@
 						<xpath>HediffDef/stages/li[label="extreme"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
-								<PsychicSensitivity Operation="SafeAdd">0.6</PsychicSensitivity>
+								<PsychicSensitivity Operation="SafeAdd">0.8</PsychicSensitivity>
 							</statOffsets>
 						</value>
 					</Operation>
