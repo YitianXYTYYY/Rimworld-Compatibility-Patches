@@ -11,50 +11,52 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VQEA_Electromagnetized"]</xpath>
 				<value>
-					<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
-					<displayOrderInCategory Operation="AddOrReplace">-700</displayOrderInCategory>
+					<displayOrderInCategory Operation="AddOrReplace">-705</displayOrderInCategory>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VQEA_HellsphereBlast"]</xpath>
 				<value>
-					<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
-					<displayOrderInCategory Operation="AddOrReplace">-699</displayOrderInCategory>
+					<displayOrderInCategory Operation="AddOrReplace">-704</displayOrderInCategory>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VQEA_InfernoSpew"]</xpath>
 				<value>
-					<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
-					<displayOrderInCategory Operation="AddOrReplace">-698</displayOrderInCategory>
+					<displayOrderInCategory Operation="AddOrReplace">-703</displayOrderInCategory>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VQEA_Invisibility"]</xpath>
 				<value>
-					<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
-					<displayOrderInCategory Operation="AddOrReplace">-697</displayOrderInCategory>
+					<displayOrderInCategory Operation="AddOrReplace">-702</displayOrderInCategory>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VQEA_Levitation"]</xpath>
 				<value>
-					<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
-					<displayOrderInCategory Operation="AddOrReplace">-696</displayOrderInCategory>
+					<displayOrderInCategory Operation="AddOrReplace">-701</displayOrderInCategory>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VQEA_MatterPhasing"]</xpath>
 				<value>
-					<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
-					<displayOrderInCategory Operation="AddOrReplace">-695</displayOrderInCategory>
+					<displayOrderInCategory Operation="AddOrReplace">-700</displayOrderInCategory>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VQEA_PassiveMeditation"]</xpath>
 				<value>
-					<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
 					<displayOrderInCategory Operation="AddOrReplace">-590</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_SelfRepairingTissue"]</xpath>
+				<value>
+					<customEffectDescriptions Operation="SafeAdd">
+						<li>Can regrow missing organs and body parts.</li>
+					</customEffectDescriptions>
+					<displayOrderInCategory Operation="AddOrReplace">-501</displayOrderInCategory>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
@@ -63,7 +65,6 @@
 					<customEffectDescriptions Operation="SafeAdd">
 						<li>Bleeding wounds close very quickly.</li>
 					</customEffectDescriptions>
-					<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
 					<displayOrderInCategory Operation="AddOrReplace">-500</displayOrderInCategory>
 					<modExtensions Operation="Safe">
 						<li Class="VEF.Genes.GeneExtension" Operation="Safe" CheckAttributes="True">
@@ -78,16 +79,6 @@
 					</statOffsets>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="VQEA_SelfRepairingTissue"]</xpath>
-				<value>
-					<customEffectDescriptions Operation="SafeAdd">
-						<li>Can regrow missing organs and body parts.</li>
-					</customEffectDescriptions>
-					<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
-					<displayOrderInCategory Operation="AddOrReplace">-499</displayOrderInCategory>
-				</value>
-			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="VQEA_BlurRunner"]</xpath>
 				<apply>
@@ -100,8 +91,7 @@
 									<offset>0.2</offset>
 								</li>
 							</capMods>
-							<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">-470</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">-471</displayOrderInCategory>
 							<statFactors Operation="Safe">
 								<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
 							</statFactors>
@@ -134,7 +124,6 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>GeneDef</xpath>
 						<value>
-							<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">-410</displayOrderInCategory>
 							<exclusionTags Operation="Safe">
 								<li Operation="SafeAdd" Compare="InnerText">VRE_SuperiorDarkVision</li>
@@ -193,14 +182,12 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VQEA_Serene"]</xpath>
 				<value>
-					<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
 					<displayOrderInCategory Operation="AddOrReplace">-400</displayOrderInCategory>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VQEA_Marksman"]</xpath>
 				<value>
-					<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
 					<displayOrderInCategory Operation="AddOrReplace">-390</displayOrderInCategory>
 					<statFactors Operation="Safe">
 						<AimingDelayFactor Operation="SafeAdd">0.5</AimingDelayFactor>
@@ -214,8 +201,7 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VQEA_Herculean"]</xpath>
 				<value>
-					<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
-					<displayOrderInCategory Operation="AddOrReplace">-380</displayOrderInCategory>
+					<displayOrderInCategory Operation="AddOrReplace">-381</displayOrderInCategory>
 					<exclusionTags Operation="Safe">
 						<li Operation="SafeAdd" Compare="InnerText">Unstoppable</li>
 					</exclusionTags>
@@ -232,8 +218,7 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VQEA_Prowess"]</xpath>
 				<value>
-					<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
-					<displayOrderInCategory Operation="AddOrReplace">-379</displayOrderInCategory>
+					<displayOrderInCategory Operation="AddOrReplace">-380</displayOrderInCategory>
 					<statFactors Operation="Safe">
 						<VQEA_Prowess Operation="SafeRemove">0</VQEA_Prowess>
 					</statFactors>
@@ -245,8 +230,7 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VQEA_Bulwark"]</xpath>
 				<value>
-					<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
-					<displayOrderInCategory Operation="AddOrReplace">-370</displayOrderInCategory>
+					<displayOrderInCategory Operation="AddOrReplace">-371</displayOrderInCategory>
 					<modExtensions Operation="Safe">
 						<li Class="VEF.Genes.GeneExtension" Operation="Safe" CheckAttributes="True">
 							<hediffToWholeBody Operation="SafeRemove" Compare="Both">VQEA_Bulwark</hediffToWholeBody>
@@ -265,14 +249,12 @@
 						<li>Immune to addictions.</li>
 						<li>Overdose chance factor x0%</li>
 					</customEffectDescriptions>
-					<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
 					<displayOrderInCategory Operation="AddOrReplace">-200</displayOrderInCategory>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VQEA_Genius"]</xpath>
 				<value>
-					<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
 					<displayOrderInCategory Operation="AddOrReplace">-110</displayOrderInCategory>
 				</value>
 			</Operation>
@@ -289,7 +271,6 @@
 									<offset>-0.25</offset>
 								</li>
 							</capMods>
-							<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">0</displayOrderInCategory>
 							<modExtensions Operation="Safe">
 								<li Class="VEF.Genes.GeneExtension" Operation="Safe" CheckAttributes="True">
@@ -346,7 +327,6 @@
 				<xpath>Defs/GeneDef[defName="VQEA_PlasteelSkin"]</xpath>
 				<value>
 					<customEffectDescriptions Operation="SafeRemove"/>
-					<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
 					<displayOrderInCategory Operation="AddOrReplace">10</displayOrderInCategory>
 					<modExtensions Operation="Safe">
 						<li Class="VEF.Genes.GeneExtension" Operation="Safe" CheckAttributes="True">
@@ -369,7 +349,6 @@
 					<customEffectDescriptions Operation="Safe">
 						<li Operation="SafeAdd" Compare="InnerText">Causes cuts when using unarmed attacks.</li>
 					</customEffectDescriptions>
-					<displayCategory Operation="AddOrReplace">Archite_Ancient</displayCategory>
 					<displayOrderInCategory Operation="AddOrReplace">210</displayOrderInCategory>
 				</value>
 			</Operation>

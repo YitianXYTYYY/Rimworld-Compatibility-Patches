@@ -2,12 +2,6 @@
 <Defs>
 
 	<GeneCategoryDef>
-		<defName>Archite_Ancient</defName>
-		<label>archite - ancient</label>
-		<displayPriorityInXenotype>1010</displayPriorityInXenotype>
-	</GeneCategoryDef>
-
-	<GeneCategoryDef>
 		<defName>Astrogen</defName>
 		<label>astro genes</label>
 		<displayPriorityInXenotype>670</displayPriorityInXenotype>

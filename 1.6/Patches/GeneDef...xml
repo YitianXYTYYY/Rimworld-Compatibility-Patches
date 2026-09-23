@@ -2,7 +2,6 @@
 <Patch>
 <!--
 1100 dark archite
-1010 archite - ancient
 1000 archite
 990 archite aptitude
 720 morph - lycan
@@ -76,7 +75,7 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="XenogermReimplanter"]</xpath>
 				<value>
-					<displayOrderInCategory Operation="AddOrReplace">-900</displayOrderInCategory>
+					<displayOrderInCategory Operation="AddOrReplace">-901</displayOrderInCategory>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
@@ -88,7 +87,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_GeneInfector"]</xpath>
 						<value>
-							<displayOrderInCategory Operation="AddOrReplace">-899</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">-900</displayOrderInCategory>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -103,6 +102,20 @@
 						<xpath>Defs/GeneDef[defName="VRE_GermlineReimplanter"]</xpath>
 						<value>
 							<displayOrderInCategory Operation="AddOrReplace">-898</displayOrderInCategory>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.archon</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VRE_LeapjumpLegs"]</xpath>
+						<value>
+							<displayOrderInCategory Operation="AddOrReplace">-700</displayOrderInCategory>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -127,12 +140,6 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_LeapjumpLegs"]</xpath>
-						<value>
-							<displayOrderInCategory Operation="AddOrReplace">-700</displayOrderInCategory>
-						</value>
-					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_InnatePsylink"]</xpath>
 						<value>
@@ -160,7 +167,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="Goji_NatureRhythm"]</xpath>
 						<value>
-							<displayOrderInCategory Operation="AddOrReplace">-590</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">-585</displayOrderInCategory>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -174,19 +181,19 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_AnimaAffinity"]</xpath>
 						<value>
-							<displayOrderInCategory Operation="AddOrReplace">-580</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">-582</displayOrderInCategory>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_GauranlenAffinity"]</xpath>
 						<value>
-							<displayOrderInCategory Operation="AddOrReplace">-579</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">-581</displayOrderInCategory>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_PoluxAffinity"]</xpath>
 						<value>
-							<displayOrderInCategory Operation="AddOrReplace">-578</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">-580</displayOrderInCategory>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -206,19 +213,19 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="DiseaseFree"]</xpath>
 				<value>
-					<displayOrderInCategory Operation="AddOrReplace">-500</displayOrderInCategory>
+					<displayOrderInCategory Operation="AddOrReplace">-504</displayOrderInCategory>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="PerfectImmunity"]</xpath>
 				<value>
-					<displayOrderInCategory Operation="AddOrReplace">-499</displayOrderInCategory>
+					<displayOrderInCategory Operation="AddOrReplace">-503</displayOrderInCategory>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="TotalHealing"]</xpath>
 				<value>
-					<displayOrderInCategory Operation="AddOrReplace">-498</displayOrderInCategory>
+					<displayOrderInCategory Operation="AddOrReplace">-502</displayOrderInCategory>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
@@ -337,7 +344,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VREH_ChemicalDependency_Luciferium"]</xpath>
 						<value>
-							<displayOrderInCategory Operation="AddOrReplace">-200</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">-201</displayOrderInCategory>
 						</value>
 					</Operation>
 				</caseTrue>

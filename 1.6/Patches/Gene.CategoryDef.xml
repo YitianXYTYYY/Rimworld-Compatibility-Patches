@@ -21,6 +21,12 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneCategoryDef[defName="Archite"]</xpath>
+				<value>
+					<displayPriorityInXenotype Operation="AddOrReplace">1000</displayPriorityInXenotype>
+				</value>
+			</Operation>
 			<!-- Vanilla Quests Expanded - Ancients -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
@@ -32,6 +38,33 @@
 						<xpath>Defs/GeneCategoryDef[defName="VQEA_ArchiteAptitudes"]</xpath>
 						<value>
 							<displayPriorityInXenotype Operation="AddOrReplace">990</displayPriorityInXenotype>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Vanilla Races Expanded - Insector -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.insector</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneCategoryDef[defName="VRE_EvolutionGene"]</xpath>
+						<value>
+							<displayPriorityInXenotype Operation="AddOrReplace">920</displayPriorityInXenotype>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneCategoryDef[defName="VRE_MutationGene"]</xpath>
+						<value>
+							<displayPriorityInXenotype Operation="AddOrReplace">910</displayPriorityInXenotype>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneCategoryDef[defName="VRE_InsectorCosmeticGene"]</xpath>
+						<value>
+							<displayPriorityInXenotype Operation="AddOrReplace">900</displayPriorityInXenotype>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -94,19 +127,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneCategoryDef[defName="Turn_GeneCategory_Fleshbeast"]</xpath>
 						<value>
-							<displayPriorityInXenotype Operation="AddOrReplace">519</displayPriorityInXenotype>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneCategoryDef[defName="Turn_GeneCategory_Slavery"]</xpath>
-						<value>
-							<displayPriorityInXenotype Operation="AddOrReplace">320</displayPriorityInXenotype>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneCategoryDef[defName="Turn_GeneCategory_Ideology"]</xpath>
-						<value>
-							<displayPriorityInXenotype Operation="AddOrReplace">290</displayPriorityInXenotype>
+							<displayPriorityInXenotype Operation="AddOrReplace">510</displayPriorityInXenotype>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -141,11 +162,41 @@
 					<displayPriorityInXenotype Operation="AddOrReplace">370</displayPriorityInXenotype>
 				</value>
 			</Operation>
+			<!-- Integrated Genes -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>Turnovus.Biotech.IntegratedGenes</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneCategoryDef[defName="Turn_GeneCategory_Slavery"]</xpath>
+						<value>
+							<displayPriorityInXenotype Operation="AddOrReplace">320</displayPriorityInXenotype>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneCategoryDef[defName="Mood"]</xpath>
 				<value>
 					<displayPriorityInXenotype Operation="AddOrReplace">300</displayPriorityInXenotype>
 				</value>
+			</Operation>
+			<!-- Integrated Genes -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>Turnovus.Biotech.IntegratedGenes</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneCategoryDef[defName="Turn_GeneCategory_Ideology"]</xpath>
+						<value>
+							<displayPriorityInXenotype Operation="AddOrReplace">290</displayPriorityInXenotype>
+						</value>
+					</Operation>
+				</caseTrue>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneCategoryDef[defName="Beauty"]</xpath>
