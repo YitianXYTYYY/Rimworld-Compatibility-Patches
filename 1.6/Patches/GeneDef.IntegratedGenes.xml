@@ -166,7 +166,7 @@
 							<biostatMet Operation="SafeReplace">2</biostatMet>
 							<displayCategory Operation="AddOrReplace">Pain</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">40</displayOrderInCategory>
-							<painOffset Operation="SafeReplace">0.2</painOffset>
+							<painOffset Operation="SafeReplace">0.25</painOffset>
 						</value>
 					</Operation>
 				</apply>
