@@ -742,8 +742,16 @@
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 						<xpath>HediffDef/stages/li/statFactors/PsychicSensitivity</xpath>
 					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
+					<!--Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="minor"]</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<PsychicSensitivity Operation="SafeAdd">0.2</PsychicSensitivity>
+							</statOffsets>
+						</value>
+					</Operation-->
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[label="moderate"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
 								<PsychicSensitivity Operation="SafeAdd">0.2</PsychicSensitivity>
@@ -751,18 +759,10 @@
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>HediffDef/stages/li[label="moderate"]</xpath>
-						<value>
-							<statOffsets Operation="Safe">
-								<PsychicSensitivity Operation="SafeAdd">0.4</PsychicSensitivity>
-							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="extreme"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
-								<PsychicSensitivity Operation="SafeAdd">0.8</PsychicSensitivity>
+								<PsychicSensitivity Operation="SafeAdd">0.4</PsychicSensitivity>
 							</statOffsets>
 						</value>
 					</Operation>
