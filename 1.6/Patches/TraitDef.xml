@@ -197,6 +197,36 @@
 			</Operation>
 		</apply>
 	</Operation>
+	
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/TraitDef[defName="PsychicSensitivity"]</xpath>
+		<apply>
+			<!-- psychically dull -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>TraitDef/degreeDatas/li[degree="-1"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+					</statOffsets>
+					<statFactors Operation="Safe">
+						<PsychicSensitivity Operation="SafeAdd">0.5</PsychicSensitivity>
+					</statFactors>
+				</value>
+			</Operation>
+			<!-- trigger-happy -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>TraitDef/degreeDatas/li[degree="-2"]</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+					</statOffsets>
+					<statFactors Operation="Safe">
+						<PsychicSensitivity Operation="SafeAdd">0</PsychicSensitivity>
+					</statFactors>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
 
 	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/TraitDef[defName="ShootingAccuracy"]</xpath>
