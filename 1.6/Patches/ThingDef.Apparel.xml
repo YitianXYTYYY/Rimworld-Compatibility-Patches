@@ -34,7 +34,7 @@
 		<value>
 			<equippedStatOffsets Operation="Safe">
 				<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
-				<PsychicSensitivityOffset Operation="SafeAdd">-0.9</PsychicSensitivityOffset>
+				<PsychicSensitivityOffset Operation="SafeAdd">-1</PsychicSensitivityOffset>
 			</equippedStatOffsets>
 		</value>
 	</Operation>
@@ -90,16 +90,13 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="Apparel_PsyfocusHelmet"]</xpath>
 				<value>
-					<equippedStatOffsets Operation="Safe">
-						<PsychicSensitivityOffset Operation="SafeReplace">0.2</PsychicSensitivityOffset>
-					</equippedStatOffsets>
 					<costList Operation="Safe">
 						<Gold Operation="SafeAdd">2</Gold>
 					</costList>
 					<costStuffCount Operation="SafeAdd">50</costStuffCount>
-					<stuffCategories Operation="Safe">
-						<li Operation="SafeAdd" Compare="InnerText">Metallic</li>
-					</stuffCategories>
+					<equippedStatOffsets Operation="Safe">
+						<PsychicSensitivityOffset Operation="SafeReplace">0.4</PsychicSensitivityOffset>
+					</equippedStatOffsets>
 					<recipeMaker Operation="Safe">
 						<recipeUsers Operation="Safe">
 							<li Operation="SafeAdd" Compare="InnerText">ElectricSmithy</li>
@@ -130,6 +127,9 @@
 						<StuffEffectMultiplierInsulation_Heat Operation="SafeAdd">0.10</StuffEffectMultiplierInsulation_Heat>
 						<WorkToMake Operation="SafeAdd">18000</WorkToMake>
 					</statBases>
+					<stuffCategories Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">Metallic</li>
+					</stuffCategories>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
@@ -139,10 +139,9 @@
 						<Gold Operation="SafeAdd">4</Gold>
 					</costList>
 					<costStuffCount Operation="SafeAdd">40</costStuffCount>
-					<stuffCategories Operation="Safe">
-						<li Operation="SafeAdd" Compare="InnerText">Fabric</li>
-						<li Operation="SafeAdd" Compare="InnerText">Leathery</li>
-					</stuffCategories>
+					<equippedStatOffsets Operation="Safe">
+						<PsychicSensitivityOffset Operation="SafeReplace">0.6</PsychicSensitivityOffset>
+					</equippedStatOffsets>
 					<recipeMaker Operation="Safe">
 						<recipeUsers Operation="Safe">
 							<li Operation="SafeAdd" Compare="InnerText">ElectricTailoringBench</li>
@@ -167,22 +166,22 @@
 						<StuffEffectMultiplierInsulation_Heat Operation="SafeAdd">0.40</StuffEffectMultiplierInsulation_Heat>
 						<WorkToMake Operation="SafeAdd">12000</WorkToMake>
 					</statBases>
+					<stuffCategories Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">Fabric</li>
+						<li Operation="SafeAdd" Compare="InnerText">Leathery</li>
+					</stuffCategories>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="Apparel_PsyfocusShirt"]</xpath>
 				<value>
-					<equippedStatOffsets Operation="Safe">
-						<PsychicSensitivityOffset Operation="SafeReplace">0.2</PsychicSensitivityOffset>
-					</equippedStatOffsets>
 					<costList Operation="Safe">
 						<Gold Operation="SafeAdd">2</Gold>
 					</costList>
 					<costStuffCount Operation="SafeAdd">45</costStuffCount>
-					<stuffCategories Operation="Safe">
-						<li Operation="SafeAdd" Compare="InnerText">Fabric</li>
-						<li Operation="SafeAdd" Compare="InnerText">Leathery</li>
-					</stuffCategories>
+					<equippedStatOffsets Operation="Safe">
+						<PsychicSensitivityOffset Operation="SafeReplace">0.4</PsychicSensitivityOffset>
+					</equippedStatOffsets>
 					<recipeMaker Operation="Safe">
 						<recipeUsers Operation="Safe">
 							<li Operation="SafeAdd" Compare="InnerText">ElectricTailoringBench</li>
@@ -212,22 +211,22 @@
 						<StuffEffectMultiplierInsulation_Heat Operation="SafeAdd">0.1</StuffEffectMultiplierInsulation_Heat>
 						<WorkToMake Operation="SafeAdd">24000</WorkToMake>
 					</statBases>
+					<stuffCategories Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">Fabric</li>
+						<li Operation="SafeAdd" Compare="InnerText">Leathery</li>
+					</stuffCategories>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="Apparel_PsyfocusVest"]</xpath>
 				<value>
-					<equippedStatOffsets Operation="Safe">
-						<PsychicSensitivityOffset Operation="SafeReplace">0.2</PsychicSensitivityOffset>
-					</equippedStatOffsets>
 					<costList Operation="Safe">
 						<Gold Operation="SafeAdd">2</Gold>
 					</costList>
 					<costStuffCount Operation="SafeAdd">45</costStuffCount>
-					<stuffCategories Operation="Safe">
-						<li Operation="SafeAdd" Compare="InnerText">Fabric</li>
-						<li Operation="SafeAdd" Compare="InnerText">Leathery</li>
-					</stuffCategories>
+					<equippedStatOffsets Operation="Safe">
+						<PsychicSensitivityOffset Operation="SafeReplace">0.4</PsychicSensitivityOffset>
+					</equippedStatOffsets>
 					<recipeMaker Operation="Safe">
 						<recipeUsers Operation="Safe">
 							<li Operation="SafeAdd" Compare="InnerText">ElectricTailoringBench</li>
@@ -257,22 +256,22 @@
 						<StuffEffectMultiplierInsulation_Heat Operation="SafeAdd">0.1</StuffEffectMultiplierInsulation_Heat>
 						<WorkToMake Operation="SafeAdd">24000</WorkToMake>
 					</statBases>
+					<stuffCategories Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">Fabric</li>
+						<li Operation="SafeAdd" Compare="InnerText">Leathery</li>
+					</stuffCategories>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="Apparel_PsyfocusRobe"]</xpath>
 				<value>
-					<equippedStatOffsets Operation="Safe">
-						<PsychicSensitivityOffset Operation="SafeReplace">0.4</PsychicSensitivityOffset>
-					</equippedStatOffsets>
 					<costList Operation="Safe">
 						<Gold Operation="SafeAdd">4</Gold>
 					</costList>
 					<costStuffCount Operation="SafeAdd">100</costStuffCount>
-					<stuffCategories Operation="Safe">
-						<li Operation="SafeAdd" Compare="InnerText">Fabric</li>
-						<li Operation="SafeAdd" Compare="InnerText">Leathery</li>
-					</stuffCategories>
+					<equippedStatOffsets Operation="Safe">
+						<PsychicSensitivityOffset Operation="SafeReplace">0.6</PsychicSensitivityOffset>
+					</equippedStatOffsets>
 					<recipeMaker Operation="Safe">
 						<recipeUsers Operation="Safe">
 							<li Operation="SafeAdd" Compare="InnerText">ElectricTailoringBench</li>
@@ -302,6 +301,10 @@
 						<StuffEffectMultiplierInsulation_Heat Operation="SafeAdd">0.25</StuffEffectMultiplierInsulation_Heat>
 						<WorkToMake Operation="SafeAdd">36000</WorkToMake>
 					</statBases>
+					<stuffCategories Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">Fabric</li>
+						<li Operation="SafeAdd" Compare="InnerText">Leathery</li>
+					</stuffCategories>
 				</value>
 			</Operation>
 
@@ -1119,7 +1122,7 @@
 				<value>
 					<equippedStatOffsets Operation="Safe">
 						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
-						<PsychicSensitivityOffset Operation="SafeAdd">0.6</PsychicSensitivityOffset>
+						<PsychicSensitivityOffset Operation="SafeAdd">0.8</PsychicSensitivityOffset>
 					</equippedStatOffsets>
 				</value>
 			</Operation>
