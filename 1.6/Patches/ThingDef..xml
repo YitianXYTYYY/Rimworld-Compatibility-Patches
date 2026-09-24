@@ -122,15 +122,15 @@
 						<value>
 							<stuffProps Operation="Safe">
 								<statOffsetsQuality Operation="Safe">
-									<li MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech" Operation="Add">
+									<li MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech" Operation="SafeAdd" XPathLocal="stat">
 										<stat>PsychicSensitivityOffset</stat>
-										<awful>0.2</awful>
-										<poor>0.2</poor>
-										<normal>0.2</normal>
-										<good>0.2</good>
-										<excellent>0.2</excellent>
-										<masterwork>0.2</masterwork>
-										<legendary>0.2</legendary>
+										<awful>0.1</awful>
+										<poor>0.1</poor>
+										<normal>0.1</normal>
+										<good>0.1</good>
+										<excellent>0.1</excellent>
+										<masterwork>0.1</masterwork>
+										<legendary>0.1</legendary>
 									</li>
 								</statOffsetsQuality>
 							</stuffProps>
