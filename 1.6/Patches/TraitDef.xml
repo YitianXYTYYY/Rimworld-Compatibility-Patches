@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-	<!-- nimble -->
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/TraitDef[defName="Nimble"]/degreeDatas/li[label="nimble"]</xpath>
 		<value>
@@ -10,7 +9,7 @@
 			</statOffsets>
 		</value>
 	</Operation>
-	<!-- too smart -->
+
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/TraitDef[defName="TooSmart"]/degreeDatas/li[label="too smart"]</xpath>
 		<value>
@@ -20,7 +19,7 @@
 			</statOffsets>
 		</value>
 	</Operation>
-	<!-- fast learner -->
+
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/TraitDef[defName="FastLearner"]/degreeDatas/li[label="fast learner"]</xpath>
 		<value>
@@ -29,7 +28,7 @@
 			</statOffsets>
 		</value>
 	</Operation>
-	<!-- slow learner -->
+
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/TraitDef[defName="SlowLearner"]/degreeDatas/li[label="slow learner"]</xpath>
 		<value>
@@ -41,7 +40,7 @@
 			</statOffsets>
 		</value>
 	</Operation>
-	<!-- slow learner -->
+
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/TraitDef[defName="SlowLearner"]/degreeDatas/li[label="slow learner"]</xpath>
 		<value>
@@ -53,7 +52,7 @@
 			</statOffsets>
 		</value>
 	</Operation>
-	<!-- tough -->
+
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/TraitDef[defName="Tough"]/degreeDatas/li[label="tough"]</xpath>
 		<value>
@@ -63,6 +62,7 @@
 		</value>
 	</Operation>
 
+	<!-- spectrum -->
 	<!-- Moodoffset -->
 	<!-- sanguine -->
 	<Operation Class="XmlExtensions.HybridPatch">
@@ -93,7 +93,6 @@
 		</value>
 	</Operation>
 
-	<!-- spectrum -->
 	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/TraitDef[defName="Nerves"]</xpath>
 		<apply>
@@ -129,6 +128,7 @@
 			</Operation>
 		</apply>
 	</Operation>
+
 	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/TraitDef[defName="Neurotic"]</xpath>
 		<apply>
@@ -152,6 +152,7 @@
 			</Operation>
 		</apply>
 	</Operation>
+
 	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/TraitDef[defName="Industriousness"]</xpath>
 		<apply>
@@ -196,6 +197,7 @@
 			</Operation>
 		</apply>
 	</Operation>
+
 	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/TraitDef[defName="ShootingAccuracy"]</xpath>
 		<apply>
