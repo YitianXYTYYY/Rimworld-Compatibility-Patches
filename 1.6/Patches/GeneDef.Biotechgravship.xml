@@ -35,7 +35,7 @@
 									</statOffsets>
 								</li>
 							</conditionalStatAffecters>
-							<displayOrderInCategory Operation="AddOrReplace">-670</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">1</displayOrderInCategory>
 							<exclusionTags Operation="Safe">
 								<li Operation="SafeRemove" Compare="InnerText">SpaceAdaption</li>
 							</exclusionTags>
