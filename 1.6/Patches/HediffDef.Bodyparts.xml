@@ -272,13 +272,26 @@
 		<packageId>true</packageId>
 		<caseTrue>
 			<!-- prosthetics -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/HediffDef[defName="BloodWarmer"]/stages/li</xpath>
-				<value>
-					<statOffsets Operation="Safe">
-						<ComfyTemperatureMin Operation="SafeReplace">-25</ComfyTemperatureMin>
-					</statOffsets>
-				</value>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="BloodWarmer"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef</xpath>
+						<value>
+							<addedPartProps Operation="Safe">
+								<partEfficiency Operation="SafeRemove">0</partEfficiency>
+							</addedPartProps>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<ComfyTemperatureMin Operation="SafeReplace">-20</ComfyTemperatureMin>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/HediffDef[defName="PilotAssistant"]/stages/li</xpath>
