@@ -428,51 +428,6 @@
 							</Operation>
 						</caseTrue>
 					</Operation>
-					<!--Vanilla Races Expanded - Starjack -->
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>vanillaracesexpanded.starjack</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="PatchOperationAdd">
-								<xpath>defs</xpath>
-								<value>
-									<li>RecipeDef/Make_Genepack_Robust_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_WoundHealing_SuperFast_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_Immunity_SuperStrong_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_ToxicEnvironmentResistance_Total_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_FireSpew_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_AcidSpray_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_PsychicAbility_Extreme_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_MoveSpeed_Quick_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_Beauty_Beautiful_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_Learning_Fast_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_Mood_Optimist_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_ToxResist_Total_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_Pain_Reduced_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_Aggression_DeadCalm_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_LowSleep_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_MeleeDamage_Strong_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_Libido_High_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_KindInstinct_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_StrongStomach_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_DarkVision_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_FireResistant_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_RobustDigestion_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_Unstoppable_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_Superclotting_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_VRE_MinorSkillLoss_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_VREH_Dutiful_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_VRE_FastShooter_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_VRE_FastMeleeHitter_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_VRE_SwiftMeditation_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_VRE_HighEntropyCapacity_Astrogene</li>
-									<li>RecipeDef/Make_Genepack_VRE_Brave_Astrogene</li>
-								</value>
-							</Operation>
-						</caseTrue>
-					</Operation>
 				</caseTrue>
 			</Operation>
 			<!-- Gojis-Misc-Genes -->
