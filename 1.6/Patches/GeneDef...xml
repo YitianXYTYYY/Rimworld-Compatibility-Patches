@@ -435,12 +435,6 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="PsychicBonding"]</xpath>
-				<value>
-					<displayOrderInCategory Operation="AddOrReplace">5000</displayOrderInCategory>
-				</value>
-			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
 					<li>goji.gojismiscgenes</li>
@@ -450,16 +444,36 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="Goji_Clairvoyance"]</xpath>
 						<value>
-							<displayOrderInCategory Operation="AddOrReplace">4900</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">5030</displayOrderInCategory>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="Goji_LatentPsychic"]</xpath>
 						<value>
-							<displayOrderInCategory Operation="AddOrReplace">4910</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">5120</displayOrderInCategory>
 						</value>
 					</Operation>
 				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.phytokin</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VRE_ProgressiveAttunement"]</xpath>
+						<value>
+							<displayOrderInCategory Operation="AddOrReplace">5210</displayOrderInCategory>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="PsychicBonding"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">5211</displayOrderInCategory>
+				</value>
 			</Operation>
 		</caseTrue>
 	</Operation>
@@ -1684,6 +1698,38 @@
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
+					<li>RedMattis.BetterGeneInheritance</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaracesexpanded.highmate</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>Defs/GeneDef[defName="BGI_RecessiveGenes"]</xpath>
+								<value>
+									<biostatMet Operation="SafeReplace">1</biostatMet>
+									<displayOrderInCategory Operation="AddOrReplace">120</displayOrderInCategory>
+									<iconPath Operation="SafeReplace">UI/Icons/Genes/Gene_GenomeRecessive</iconPath>
+								</value>
+							</Operation>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>Defs/GeneDef[defName="BGI_DominantGenes"]</xpath>
+								<value>
+									<biostatMet Operation="SafeReplace">-2</biostatMet>
+									<displayOrderInCategory Operation="AddOrReplace">121</displayOrderInCategory>
+									<iconPath Operation="SafeReplace">UI/Icons/Genes/Gene_GenomeDominant</iconPath>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
 					<li>vanillaracesexpanded.insector</li>
 				</mods>
 				<packageId>true</packageId>
@@ -1691,10 +1737,17 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_ChestburstPregnancy"]</xpath>
 						<value>
-							<displayOrderInCategory Operation="AddOrReplace">200</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">300</displayOrderInCategory>
 						</value>
 					</Operation>
 				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="Inbred"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Reproduction</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">90</displayOrderInCategory>
+				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
@@ -1705,7 +1758,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRESaurids_Oviparous"]</xpath>
 						<value>
-							<displayOrderInCategory Operation="AddOrReplace">201</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">210</displayOrderInCategory>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -1738,14 +1791,62 @@
 		<caseTrue>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
-					<li>vanillaracesexpanded.insector</li>
+					<li>vanillaracesexpanded.pigskin</li>
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_InsectPheromones"]</xpath>
+						<xpath>Defs/GeneDef[defName="VRE_EverGrowing"]</xpath>
 						<value>
+							<biostatMet Operation="SafeReplace">-3</biostatMet>
+							<capMods Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText" XPathLocal="capacity">
+									<capacity>Moving</capacity>
+									<offset>-0.15</offset>
+								</li>
+							</capMods>
 							<displayCategory Operation="AddOrReplace">Miscellaneous</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">50</displayOrderInCategory>
+							<statOffsets Operation="Safe">
+								<StaggerDurationFactor Operation="SafeAdd">-0.3</StaggerDurationFactor>
+							</statOffsets>
+							<modExtensions Operation="Safe">
+								<li Class="VEF.Genes.GeneExtension" Operation="Safe" CheckAttributes="True">
+									<sizeByAge Operation="Safe">
+										<maxOffset Operation="SafeReplace">0.6</maxOffset>
+										<range Operation="SafeReplace">0~60</range>
+									</sizeByAge>
+								</li>
+							</modExtensions>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.hussar</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VREH_Giant"]</xpath>
+						<value>
+							<biostatMet Operation="SafeReplace">-2</biostatMet>
+							<capMods Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText" XPathLocal="capacity">
+									<capacity>Moving</capacity>
+									<offset>-0.1</offset>
+								</li>
+							</capMods>
+							<displayCategory Operation="AddOrReplace">Miscellaneous</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">70</displayOrderInCategory>
+							<statFactors Operation="Safe">
+								<VEF_BodySize_Multiplier Operation="SafeRemove">0</VEF_BodySize_Multiplier>
+							</statFactors>
+							<statOffsets Operation="Safe">
+								<StaggerDurationFactor Operation="SafeAdd">-0.2</StaggerDurationFactor>
+								<VEF_BodySize_Offset Operation="SafeAdd">0.4</VEF_BodySize_Offset>
+							</statOffsets>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -1759,12 +1860,122 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VREStarjack_GravshipAffinity"]</xpath>
 						<value>
+							<displayCategory Operation="AddOrReplace">Miscellaneous</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">71</displayOrderInCategory>
 							<statFactors Operation="Safe">
 								<PilotingAbility Operation="SafeRemove">0</PilotingAbility>
 							</statFactors>
 							<statOffsets Operation="Safe">
 								<PilotingAbility Operation="SafeAdd">0.2</PilotingAbility>
 							</statOffsets>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>goji.gojismiscgenes</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="Goji_Hoarder"]</xpath>
+						<value>
+							<displayOrderInCategory Operation="AddOrReplace">80</displayOrderInCategory>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="CaveDweller"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">90</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.insector</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VRE_InsectPheromones"]</xpath>
+						<value>
+							<displayCategory Operation="AddOrReplace">Miscellaneous</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">91</displayOrderInCategory>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="MoveSpeed_Space"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<biostatCpx Operation="SafeRemove"/>
+							<conditionalStatAffecters Operation="Safe">
+								<li Class="ConditionalStatAffecter_NotInSpace" Operation="Safe" CheckAttributes="True">
+									<statFactors Operation="Safe">
+										<WorkSpeedGlobal Operation="SafeAdd">0.8</WorkSpeedGlobal>
+									</statFactors>
+									<statOffsets Operation="Safe">
+										<WorkSpeedGlobal Operation="SafeRemove">0</WorkSpeedGlobal>
+									</statOffsets>
+								</li>
+							</conditionalStatAffecters>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaracesexpanded.starjack</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseFalse>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>GeneDef</xpath>
+								<value>
+									<displayCategory Operation="AddOrReplace">Astrogen</displayCategory>
+									<displayOrderInCategory Operation="AddOrReplace">-1000</displayOrderInCategory>
+								</value>
+							</Operation>
+						</caseFalse>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>GeneDef</xpath>
+								<value>
+									<displayCategory Operation="AddOrReplace">Miscellaneous</displayCategory>
+									<displayOrderInCategory Operation="AddOrReplace">120</displayOrderInCategory>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>goji.gojismiscgenes</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="Goji_MotionSickness"]</xpath>
+						<value>
+							<displayOrderInCategory Operation="AddOrReplace">130</displayOrderInCategory>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.saurid</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VRESaurids_Pheromones"]</xpath>
+						<value>
+							<displayOrderInCategory Operation="AddOrReplace">160</displayOrderInCategory>
 						</value>
 					</Operation>
 				</caseTrue>

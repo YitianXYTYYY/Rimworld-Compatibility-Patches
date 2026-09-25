@@ -57,42 +57,6 @@
 					</Operation>
 				</apply>
 			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/GeneDef[defName="MoveSpeed_Space"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<biostatCpx Operation="SafeRemove"/>
-							<conditionalStatAffecters Operation="Safe">
-								<li Class="ConditionalStatAffecter_NotInSpace" Operation="Safe" CheckAttributes="True">
-									<statFactors Operation="Safe">
-										<WorkSpeedGlobal Operation="SafeAdd">0.8</WorkSpeedGlobal>
-									</statFactors>
-									<statOffsets Operation="Safe">
-										<WorkSpeedGlobal Operation="SafeRemove">0</WorkSpeedGlobal>
-									</statOffsets>
-								</li>
-							</conditionalStatAffecters>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>vanillaracesexpanded.starjack</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseFalse>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>GeneDef</xpath>
-								<value>
-									<displayCategory Operation="AddOrReplace">Astrogen</displayCategory>
-									<displayOrderInCategory Operation="AddOrReplace">-1000</displayOrderInCategory>
-								</value>
-							</Operation>
-						</caseFalse>
-					</Operation>
-				</apply>
-			</Operation>
 			<!-- 670 astrogen -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>

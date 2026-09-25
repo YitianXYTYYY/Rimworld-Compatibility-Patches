@@ -291,22 +291,6 @@
 					</Operation>
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
-							<li>vanillaracesexpanded.hussar</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>GeneDef</xpath>
-								<value>
-									<exclusionTags Operation="Safe">
-										<li Operation="SafeAdd" Compare="InnerText">VQEA_Enormous_VREH_Giant</li>
-									</exclusionTags>
-								</value>
-							</Operation>
-						</caseTrue>
-					</Operation>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
 							<li>vanillaracesexpanded.insector</li>
 						</mods>
 						<packageId>true</packageId>
