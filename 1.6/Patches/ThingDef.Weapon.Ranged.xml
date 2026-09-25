@@ -118,16 +118,44 @@
 			</weaponTags>
 		</value>
 	</Operation>
-	<Operation Class="XmlExtensions.HybridPatch">
+	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/ThingDef[defName="Gun_Minigun"]</xpath>
-		<value>
-			<equippedStatOffsets Operation="Safe">
-				<MoveSpeed Operation="SafeReplace">-0.2</MoveSpeed>
-			</equippedStatOffsets>
-			<weaponTags Operation="Safe">
-				<li Operation="Add">ammoDef_AmmoIndustrial/150/1</li>
-			</weaponTags>
-		</value>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>ThingDef</xpath>
+				<value>
+					<equippedStatOffsets Operation="Safe">
+						<MoveSpeed Operation="SafeReplace">-0.2</MoveSpeed>
+					</equippedStatOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>reel.turretpipeline</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseFalse>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<weaponTags Operation="Safe">
+								<li Operation="Add">ammoDef_AmmoIndustrial/150/1</li>
+							</weaponTags>
+						</value>
+					</Operation>
+				</caseFalse>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<weaponTags Operation="Safe">
+								<li Operation="Add">ammoDef_ReelTurretAmmo/150/1</li>
+							</weaponTags>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
 	</Operation>
 	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/ThingDef[defName="Weapon_GrenadeMolotov"]</xpath>
@@ -528,16 +556,54 @@
 					</weaponTags>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="VWE_Gun_AntiMaterialRifle"]</xpath>
-				<value>
-					<equippedStatOffsets Operation="Safe">
-						<MoveSpeed Operation="SafeReplace">-0.1</MoveSpeed>
-					</equippedStatOffsets>
-					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_AmmoIndustrial/15/2</li>
-					</weaponTags>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<equippedStatOffsets Operation="Safe">
+								<MoveSpeed Operation="SafeReplace">-0.1</MoveSpeed>
+							</equippedStatOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef/recipeMaker</xpath>
+						<value>
+							<researchPrerequisite Operation="SafeReplace"/>
+							<researchPrerequisites Inherit="False" Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">PrecisionRifling</li>
+								<li Operation="SafeAdd" Compare="InnerText">VWE_HeavyWeapons</li>
+							</researchPrerequisites>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>reel.turretpipeline</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseFalse>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<weaponTags Operation="Safe">
+										<li Operation="Add">ammoDef_AmmoIndustrial/15/2</li>
+									</weaponTags>
+								</value>
+							</Operation>
+						</caseFalse>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<weaponTags Operation="Safe">
+										<li Operation="Add">ammoDef_ReelTurretAmmo/15/1</li>
+									</weaponTags>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="VWE_Gun_LightSMG"]</xpath>
@@ -572,19 +638,57 @@
 					</weaponTags>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="VWE_Gun_HMG"]</xpath>
-				<value>
-					<equippedStatOffsets Operation="Safe">
-						<MoveSpeed Operation="SafeReplace">-0.2</MoveSpeed>
-					</equippedStatOffsets>
-					<statBases Operation="Safe">
-						<Mass Operation="SafeReplace">10</Mass>
-					</statBases>
-					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_AmmoIndustrial/80/1</li>
-					</weaponTags>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<equippedStatOffsets Operation="Safe">
+								<MoveSpeed Operation="SafeReplace">-0.2</MoveSpeed>
+							</equippedStatOffsets>
+							<statBases Operation="Safe">
+								<Mass Operation="SafeReplace">10</Mass>
+							</statBases>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef/recipeMaker</xpath>
+						<value>
+							<researchPrerequisite Operation="SafeReplace"/>
+							<researchPrerequisites Inherit="False" Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">GasOperation</li>
+								<li Operation="SafeAdd" Compare="InnerText">VWE_HeavyWeapons</li>
+							</researchPrerequisites>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>reel.turretpipeline</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseFalse>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<weaponTags Operation="Safe">
+										<li Operation="Add">ammoDef_AmmoIndustrial/80/1</li>
+									</weaponTags>
+								</value>
+							</Operation>
+						</caseFalse>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<weaponTags Operation="Safe">
+										<li Operation="Add">ammoDef_ReelTurretAmmo/80/1</li>
+									</weaponTags>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="VWE_Gun_GrenadeLauncher"]</xpath>
