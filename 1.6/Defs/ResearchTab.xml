@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ResearchTabDef MayRequire="ludeon.rimworld.odyssey">
+		<defName>TechGravship</defName>
+		<label>gravship</label>
+	</ResearchTabDef>
+
+	<ResearchTabDef MayRequire="oskarpotocki.vfe.insectoid2">
+		<defName>TechInsectoids</defName>
+		<label>hives</label>
+	</ResearchTabDef>
+
+	<ResearchTabDef MayRequire="ludeon.rimworld.biotech">
+		<defName>TechMechanoids</defName>
+		<label>mechanoids</label>
+	</ResearchTabDef>
+
+	<ResearchTabDef>
+		<defName>TechProsthetics</defName>
+		<label>prosthetics</label>
+	</ResearchTabDef>
+
+	<ResearchTabDef>
+		<defName>TechStarship</defName>
+		<label>starflight</label>
+	</ResearchTabDef>
+
+</Defs>
