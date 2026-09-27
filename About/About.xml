@@ -37,24 +37,36 @@ Personal Made compatibility patches for mods.
 		</li>
 	</modDependencies>
 	<loadAfter>
+		<li>als.anomalygravship</li>
 		<li>als.biotechgravship</li>
 		<li>amch.eragon.hcgenefabrication</li>
 		<li>anonemous2.genepackreprocessor</li>
 		<li>com.abobashark.zoologymod</li>
+		<li>chaoticenrico.researchpapers</li>
+		<li>cheatereater.contagion</li>
 		<li>davai.sortedcategories</li>
 		<li>ferny.progressionattire</li>
+		<li>ferny.progressioncore</li>
 		<li>ferny.progressionfurniture</li>
 		<li>ferny.progressiongenetics</li>
 		<li>ferny.progressiongravship</li>
+		<li>ferny.progressionhives</li>
+		<li>ferny.progressionkitchen</li>
 		<li>ferny.progressionproduction</li>
 		<li>ferny.progressionrobotics2</li>
 		<li>ferny.progressionstorage</li>
 		<li>ferny.replacelib</li>
+		<li>frozensnowfox.vanillabionicsexpansion</li>
 		<li>fuu.uncompromisingtribalfaction</li>
+		<li>gogatio.mechanoidupgrades</li>
+		<li>goji.gojismiscgenes</li>
+		<li>hailuan.voiduniverse</li>
 		<li>hussars.blablabla.cantbearsedtocomeupwithafunnyid</li>
 		<li>imranfish.xmlextensions</li>
+		<li>jarocks.securitydoorsexpanded</li>
 		<li>jintuzilamian.gene.xenocosmetic</li>
 		<li>lucius.eyegenes3</li>
+		<li>mlie.syrprosthetictable</li>
 		<li>mlie.yayoscombat3</li>
 		<li>mse2.core</li>
 		<li>og.maarx.meditateasworktype.continued</li>
@@ -71,16 +83,21 @@ Personal Made compatibility patches for mods.
 		<li>reel.turretpipeline</li>
 		<li>resplice.xotr.core</li>
 		<li>seohyeon.optimizationmeats</li>
+		<li>seohyeon.yart</li>
+		<li>shunter.uniqueweaponsunbound</li>
 		<li>syrus.yayoscombataddon</li>
 		<li>teiwaz.gtgot</li>
 		<li>turnovus.biotech.integratedgenes</li>
+		<li>vanillaexpanded.helixiengas</li>
 		<li>vanillaexpanded.varme</li>
 		<li>vanillaexpanded.vfecore</li>
+		<li>vanillaexpanded.vfepower</li>
 		<li>vanillaexpanded.vgeneticse</li>
 		<li>vanillaexpanded.vnutriente</li>
 		<li>vanillaexpanded.vwe</li>
 		<li>vanillaexpanded.vwehw</li>
 		<li>vanillaquestsexpanded.ancients</li>
+		<li>vanillaracesexpanded.android</li>
 		<li>vanillaracesexpanded.archon</li>
 		<li>vanillaracesexpanded.fungoid</li>
 		<li>vanillaracesexpanded.genie</li>
@@ -95,6 +112,7 @@ Personal Made compatibility patches for mods.
 		<li>vanillaracesexpanded.starjack</li>
 		<li>vanillaracesexpanded.waster</li>
 		<li>wara.toomanymods</li>
+		<li>wasterbreath.mod</li>
 		<li>zal.heavyweaponsreloading</li>
 	</loadAfter>
 	<loadBefore>
