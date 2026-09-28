@@ -10,7 +10,7 @@
 		</value>
 	</Operation>
 
-	<!-- go-juice -->
+	<!-- smokeleaf -->
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/HediffDef[defName="SmokeleafHigh"]/stages/li</xpath>
 		<value>
@@ -109,7 +109,7 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<!-- Aperitif -->
+			<!-- aperitif -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="VFEE_Aperitif"]</xpath>
 				<apply>
@@ -140,10 +140,13 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<!-- Royal Insect Jelly -->
+			<!-- royal insect jelly -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="VFEI2_RoyalInsectJelly"]</xpath>
 				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>ThingDef/comps/li[@Class="CompProperties_Rottable"]</xpath>
+					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef</xpath>
 						<value>
@@ -167,7 +170,7 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<!-- Mechanoid Egg -->
+			<!-- mechanoid egg -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="GR_ElectroEgg"]</xpath>
 				<apply>
@@ -222,7 +225,7 @@
 					</stages>
 				</value>
 			</Operation>
-			<!-- Featherdust Joint -->
+			<!-- featherdust joint -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="GR_FeatherdustJoint"]</xpath>
 				<apply>
