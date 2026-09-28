@@ -600,6 +600,21 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
+			<!-- Reel's Turret Pipeline -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>reel.turretpipeline</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>RecipeDef/Make_TurretAmmoBulk</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
 			<!-- ReSplice: Core -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
