@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/RecipeDef[defName="Make_ChemfuelFromOrganics"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.sanguophage</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>RecipeDef</xpath>
+						<value>
+							<fixedIngredientFilter Operation="Safe">
+								<disallowedThingDefs Operation="Safe">
+									<li Operation="SafeAdd" Compare="InnerText">VRE_HemogenPack_Animal</li>
+									<li Operation="SafeAdd" Compare="InnerText">VRE_HemogenPack_Corpse</li>
+									<li Operation="SafeAdd" Compare="InnerText">VRE_HemogenPack_Sanguophage</li>
+								</disallowedThingDefs>
+							</fixedIngredientFilter>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
+	</Operation>
+
+	<!-- ReBuild: Doors and Corners -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>rebuild.cotr.doorsandcorners</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- make glass -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/RecipeDef[defName="RB_Make_GlassFromChunks"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>RecipeDef/ingredients/li[filter[categories[li="StoneChunks"]]]</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>RecipeDef</xpath>
+						<value>
+							<label Operation="SafeReplace">make glass</label>
+							<fixedIngredientFilter Operation="Safe">
+								<categories Operation="Safe">
+									<li Operation="SafeRemove" Compare="InnerText">StoneChunks</li>
+									<li Operation="SafeAdd" Compare="InnerText">StoneBlocks</li>
+								</categories>
+							</fixedIngredientFilter>
+							<ingredients Operation="Safe">
+								<li Operation="SafeAdd">
+									<filter>
+										<categories>
+											<li>StoneBlocks</li>
+										</categories>
+									</filter>
+									<count>20</count>
+								</li>
+							</ingredients>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<!-- make ballistic glass -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/RecipeDef[defName="RB_Make_GlassFromChunks"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>RecipeDef/ingredients/li[filter[categories[li="StoneChunks"]]]</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>RecipeDef</xpath>
+						<value>
+							<label Operation="SafeReplace">make glass from blocks</label>
+							<fixedIngredientFilter Operation="Safe">
+								<categories Operation="Safe">
+									<li Operation="SafeRemove" Compare="InnerText">StoneChunks</li>
+									<li Operation="SafeAdd" Compare="InnerText">StoneBlocks</li>
+								</categories>
+							</fixedIngredientFilter>
+							<ingredients Operation="Safe">
+								<li Operation="SafeAdd">
+									<filter>
+										<categories>
+											<li>StoneBlocks</li>
+										</categories>
+									</filter>
+									<count>20</count>
+								</li>
+							</ingredients>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>

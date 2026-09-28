@@ -1,32 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-	<Operation Class="XmlExtensions.SetScope">
-		<xpath>Defs/RecipeDef[defName="Make_ChemfuelFromOrganics"]</xpath>
-		<apply>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.sanguophage</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>RecipeDef</xpath>
-						<value>
-							<fixedIngredientFilter Operation="Safe">
-								<disallowedThingDefs Operation="Safe">
-									<li Operation="SafeAdd" Compare="InnerText">VRE_HemogenPack_Animal</li>
-									<li Operation="SafeAdd" Compare="InnerText">VRE_HemogenPack_Corpse</li>
-									<li Operation="SafeAdd" Compare="InnerText">VRE_HemogenPack_Sanguophage</li>
-								</disallowedThingDefs>
-							</fixedIngredientFilter>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-		</apply>
-	</Operation>
-
 	<!-- insect jelly -->
 	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/ThingDef[defName="InsectJelly"]</xpath>
@@ -69,6 +43,7 @@
 			</Operation>
 		</apply>
 	</Operation>
+
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
 			<li>ludeon.rimworld.biotech</li>
@@ -85,7 +60,7 @@
 					</thingCategories>
 				</value>
 			</Operation>
-			<!-- Subcore -->
+			<!-- Chips -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[@Name="MechResourceBase"]</xpath>
 				<value>
@@ -104,7 +79,7 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<!-- Bioferrite -->
+			<!-- bioferrite -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="Bioferrite"]</xpath>
 				<apply>
@@ -152,7 +127,7 @@
 				<ModClass>DavaiSortedCategories.Mod</ModClass>
 				<field>CreateComponentsCategory</field>
 				<caseTrue>
-					<!-- ARC Component -->
+					<!-- ARC component -->
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
 							<li>vanillaquestsexpanded.generator</li>
@@ -182,7 +157,7 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<!-- Module -->
+			<!-- modules -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingCategoryDef[defName="MSE2Modules"]</xpath>
 				<value>
