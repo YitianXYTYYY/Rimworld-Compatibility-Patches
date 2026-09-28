@@ -611,6 +611,31 @@
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
+					<li>danzinagri.highmatecatfolkpatch</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.SetScope">
+						<xpath>Defs/GeneDef[defName="DZ_HighmateCatfolkHead"]</xpath>
+						<apply>
+							<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+								<xpath>GeneDef</xpath>
+								<attribute>ParentName</attribute>
+								<value>GeneJawBase</value>
+							</Operation>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>GeneDef</xpath>
+								<value>
+    								<displayCategory Operation="SafeRemove"/>
+									<displayOrderInCategory Operation="SafeRemove"/>
+								</value>
+							</Operation>
+						</apply>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
 					<li>vanillaracesexpanded.pigskin</li>
 				</mods>
 				<packageId>true</packageId>
