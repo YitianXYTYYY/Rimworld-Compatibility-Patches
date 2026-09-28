@@ -67,7 +67,7 @@
 			</Operation>
 			<!-- make ballistic glass -->
 			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/RecipeDef[defName="RB_Make_GlassFromChunks"]</xpath>
+				<xpath>Defs/RecipeDef[defName="RB_Make_BallisticGlassFromChunks"]</xpath>
 				<apply>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 						<xpath>RecipeDef/ingredients/li[filter[categories[li="StoneChunks"]]]</xpath>
@@ -75,7 +75,6 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>RecipeDef</xpath>
 						<value>
-							<label Operation="SafeReplace">make glass from blocks</label>
 							<fixedIngredientFilter Operation="Safe">
 								<categories Operation="Safe">
 									<li Operation="SafeRemove" Compare="InnerText">StoneChunks</li>
