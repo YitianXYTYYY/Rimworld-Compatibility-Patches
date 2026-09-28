@@ -256,7 +256,16 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_MoveSpeed_ExtremelyQuick"]</xpath>
 						<value>
+							<capMods Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText" XPathLocal="capacity">
+									<capacity>Moving</capacity>
+									<offset>0.3</offset>
+								</li>
+							</capMods>
 							<displayOrderInCategory Operation="AddOrReplace">-470</displayOrderInCategory>
+							<statOffsets Operation="Safe">
+								<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+							</statOffsets>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -1010,6 +1019,48 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="MoveSpeed_Slow"]</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText" XPathLocal="capacity">
+							<capacity>Moving</capacity>
+							<offset>-0.1</offset>
+						</li>
+					</capMods>
+					<statOffsets Operation="Safe">
+						<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="MoveSpeed_Quick"]</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText" XPathLocal="capacity">
+							<capacity>Moving</capacity>
+							<offset>0.1</offset>
+						</li>
+					</capMods>
+					<statOffsets Operation="Safe">
+						<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="MoveSpeed_VeryQuick"]</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText" XPathLocal="capacity">
+							<capacity>Moving</capacity>
+							<offset>0.2</offset>
+						</li>
+					</capMods>
+					<statOffsets Operation="Safe">
+						<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
 					<li>goji.gojismiscgenes</li>

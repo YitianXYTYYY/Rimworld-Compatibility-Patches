@@ -88,7 +88,7 @@
 							<capMods Operation="Safe">
 								<li Operation="SafeAdd" Compare="InnerText" XPathLocal="capacity">
 									<capacity>Moving</capacity>
-									<offset>0.2</offset>
+									<offset>0.4</offset>
 								</li>
 							</capMods>
 							<displayOrderInCategory Operation="AddOrReplace">-471</displayOrderInCategory>
@@ -96,6 +96,7 @@
 								<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
 							</statFactors>
 							<statOffsets Operation="Safe">
+								<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
 								<VEF_RangedDodgeChance Operation="SafeReplace">0.20</VEF_RangedDodgeChance>
 							</statOffsets>
 						</value>
@@ -109,6 +110,7 @@
 							<Operation Class="XmlExtensions.HybridPatch">
 								<xpath>GeneDef</xpath>
 								<value>
+									<description Operation="SafeReplace">Carriers of this gene move at blinding speed. Their enhanced reflexes and kinetic control allow them to traverse the battlefield in a blur.</description>
 									<statOffsets Operation="Safe">
 										<VEF_RangedDodgeChance Operation="SafeRemove">0</VEF_RangedDodgeChance>
 									</statOffsets>
