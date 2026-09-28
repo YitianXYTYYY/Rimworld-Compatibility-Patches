@@ -445,6 +445,28 @@
 		</caseTrue>
 	</Operation>
 
+	<!-- Vanilla Furniture Expanded -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaexpanded.vfecore</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- longwave radio -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Radio_Spacer"]</xpath>
+				<value>
+					<costList Operation="Safe">
+						<Steel Operation="SafeReplace">75</Steel>
+						<Plasteel Operation="SafeReplace">25</Plasteel>
+						<ComponentIndustrial Operation="SafeReplace">6</ComponentIndustrial>
+						<ComponentSpacer Operation="SafeRemove">0</ComponentSpacer>
+					</costList>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 	<!-- Vanilla Helixien Gas Expanded -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
