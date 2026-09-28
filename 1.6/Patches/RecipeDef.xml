@@ -99,4 +99,42 @@
 		</caseTrue>
 	</Operation>
 
+	<!-- Reel's Turret Pipeline -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>reel.turretpipeline</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- make turret ammo -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/RecipeDef[defName="Make_TurretAmmo"]</xpath>
+				<value>
+					<workAmount Operation="SafeReplace">1500</workAmount>
+					<ingredients Operation="SafeReplace">
+						<li>
+							<filter>
+								<thingDefs>
+									<li>Uranium</li>
+								</thingDefs>
+							</filter>
+							<count>15</count>
+						</li>
+						<li>
+							<filter>
+								<thingDefs>
+									<li>Steel</li>
+								</thingDefs>
+							</filter>
+							<count>30</count>
+						</li>
+					</ingredients>
+					<products Operation="Safe">
+						<ReelTurretAmmo Operation="SafeReplace">50</ReelTurretAmmo>
+					</products>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 </Patch>
