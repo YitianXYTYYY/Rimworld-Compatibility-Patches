@@ -520,7 +520,7 @@
 								<li Operation="SafeRemove" Compare="InnerText">MinTemperature</li>
 							</exclusionTags>
 							<statOffsets Operation="Safe">
-								<ComfyTemperatureMin Operation="SafeReplace">5</ComfyTemperatureMin>
+								<ComfyTemperatureMin Operation="SafeRemove">5</ComfyTemperatureMin>
 							</statOffsets>
 						</value>
 					</Operation>
