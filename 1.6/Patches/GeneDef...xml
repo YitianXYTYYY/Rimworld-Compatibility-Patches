@@ -4,6 +4,7 @@
 1100 dark archite
 1000 archite
 990 archite aptitude
+900 insector
 720 morph - lycan
 700 abilities
 690 hemogen
@@ -1432,6 +1433,28 @@
 							<displayOrderInCategory Operation="AddOrReplace">15</displayOrderInCategory>
 						</value>
 					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>goji.gojismiscgenes</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="Goji_PhantomPain"]</xpath>
+						<value>
+							<displayOrderInCategory Operation="AddOrReplace">110</displayOrderInCategory>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.hussar</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VREH_BulletproofSkin"]</xpath>
 						<value>
@@ -1447,12 +1470,6 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="Goji_PhantomPain"]</xpath>
-						<value>
-							<displayOrderInCategory Operation="AddOrReplace">110</displayOrderInCategory>
-						</value>
-					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="Goji_DenseScar"]</xpath>
 						<value>
@@ -1625,7 +1642,6 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VREH_Arrogant"]</xpath>
 						<value>
-							<description Operation="SafeReplace">Carriers of this gene do not have a filter and always say what's on their mind, even if it rubs the others the wrong way.</description>
 							<displayCategory Operation="AddOrReplace">Social</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">100</displayOrderInCategory>
 						</value>
@@ -1889,7 +1905,6 @@
 									<offset>-0.1</offset>
 								</li>
 							</capMods>
-							<displayCategory Operation="AddOrReplace">Miscellaneous</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">70</displayOrderInCategory>
 							<statFactors Operation="Safe">
 								<VEF_BodySize_Multiplier Operation="SafeRemove">0</VEF_BodySize_Multiplier>

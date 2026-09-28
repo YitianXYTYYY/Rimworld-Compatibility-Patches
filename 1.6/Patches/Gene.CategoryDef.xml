@@ -21,12 +21,12 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<!--Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneCategoryDef[defName="Archite"]</xpath>
 				<value>
 					<displayPriorityInXenotype Operation="AddOrReplace">1000</displayPriorityInXenotype>
 				</value>
-			</Operation>
+			</Operation-->
 			<!-- Vanilla Quests Expanded - Ancients -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>

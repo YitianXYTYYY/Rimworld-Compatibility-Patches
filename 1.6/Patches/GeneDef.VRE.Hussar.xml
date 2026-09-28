@@ -54,14 +54,6 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
-
-			<!-- -40 wing -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="VREH_Glidewings"]</xpath>
-				<value>
-					<displayCategory Operation="AddOrReplace">Wings</displayCategory>
-				</value>
-			</Operation>
 		</caseTrue>
 	</Operation>
 

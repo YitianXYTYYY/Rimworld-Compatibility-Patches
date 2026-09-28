@@ -291,6 +291,22 @@
 		</caseTrue>
 	</Operation>
 
+	<!-- -40 wing -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.hussar</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VREH_Glidewings"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Wings</displayCategory>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 	<!-- -50 tail(functional) -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
