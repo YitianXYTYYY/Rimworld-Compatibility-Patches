@@ -162,7 +162,6 @@
 					<displayPriorityInXenotype Operation="AddOrReplace">370</displayPriorityInXenotype>
 				</value>
 			</Operation>
-			<!-- Integrated Genes -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
 					<li>Turnovus.Biotech.IntegratedGenes</li>
@@ -171,6 +170,12 @@
 				<caseTrue>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneCategoryDef[defName="Turn_GeneCategory_Slavery"]</xpath>
+						<value>
+							<displayPriorityInXenotype Operation="AddOrReplace">330</displayPriorityInXenotype>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneCategoryDef[defName="Turn_GeneCategory_Ideology"]</xpath>
 						<value>
 							<displayPriorityInXenotype Operation="AddOrReplace">320</displayPriorityInXenotype>
 						</value>
@@ -183,25 +188,16 @@
 					<displayPriorityInXenotype Operation="AddOrReplace">300</displayPriorityInXenotype>
 				</value>
 			</Operation>
-			<!-- Integrated Genes -->
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>Turnovus.Biotech.IntegratedGenes</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneCategoryDef[defName="Turn_GeneCategory_Ideology"]</xpath>
-						<value>
-							<displayPriorityInXenotype Operation="AddOrReplace">290</displayPriorityInXenotype>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneCategoryDef[defName="Beauty"]</xpath>
 				<value>
-					<displayPriorityInXenotype Operation="AddOrReplace">270</displayPriorityInXenotype>
+					<displayPriorityInXenotype Operation="AddOrReplace">280</displayPriorityInXenotype>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneCategoryDef[defName="Reproduction"]</xpath>
+				<value>
+					<displayPriorityInXenotype Operation="AddOrReplace">250</displayPriorityInXenotype>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
@@ -213,16 +209,10 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneCategoryDef[defName="ForcedSex"]</xpath>
 						<value>
-							<displayPriorityInXenotype Operation="AddOrReplace">260</displayPriorityInXenotype>
+							<displayPriorityInXenotype Operation="AddOrReplace">240</displayPriorityInXenotype>
 						</value>
 					</Operation>
 				</caseTrue>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneCategoryDef[defName="Reproduction"]</xpath>
-				<value>
-					<displayPriorityInXenotype Operation="AddOrReplace">250</displayPriorityInXenotype>
-				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneCategoryDef[defName="Drugs"]</xpath>
