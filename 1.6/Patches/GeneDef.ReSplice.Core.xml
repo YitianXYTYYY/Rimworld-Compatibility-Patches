@@ -26,7 +26,7 @@
 								<StudyEfficiency Operation="SafeRemove">0</StudyEfficiency>
 							</statFactors>
 							<statOffsets Operation="Safe">
-								<PsychicSensitivity Operation="SafeAdd">2</PsychicSensitivity>
+								<PsychicSensitivity Operation="SafeAdd">1</PsychicSensitivity>
 								<StudyEfficiency Operation="SafeAdd">1</StudyEfficiency>
 							</statOffsets>
 						</value>
