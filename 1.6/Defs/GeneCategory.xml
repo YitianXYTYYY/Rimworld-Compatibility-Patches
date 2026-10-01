@@ -70,7 +70,13 @@
 	<GeneCategoryDef>
 		<defName>Social</defName>
 		<label>social</label>
-		<displayPriorityInXenotype>280</displayPriorityInXenotype>
+		<displayPriorityInXenotype>290</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Loving</defName>
+		<label>loving</label>
+		<displayPriorityInXenotype>260</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
