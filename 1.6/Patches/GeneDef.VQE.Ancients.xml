@@ -225,7 +225,7 @@
 						<VQEA_Prowess Operation="SafeRemove">0</VQEA_Prowess>
 					</statFactors>
 					<statOffsets Operation="Safe">
-						<VQEA_Prowess Operation="SafeAdd">1</VQEA_Prowess>
+						<VQEA_Prowess Operation="SafeAdd">0.2</VQEA_Prowess>
 					</statOffsets>
 				</value>
 			</Operation>
