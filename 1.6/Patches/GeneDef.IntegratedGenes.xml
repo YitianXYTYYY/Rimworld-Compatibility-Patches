@@ -3,7 +3,7 @@
 
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>Turnovus.Biotech.IntegratedGenes</li>
+			<li>turnovus.biotech.integratedgenes</li>
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
@@ -150,26 +150,6 @@
 						<MeleeHitChance Operation="SafeAdd">4</MeleeHitChance>
 					</statOffsets>
 				</value>
-			</Operation>
-
-			<!-- 370 pain -->
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/GeneDef[defName="Turn_Gene_ConstantPain"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.PatchOperationAttributeRemove">
-						<xpath>GeneDef</xpath>
-						<attribute>ParentName</attribute>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<biostatMet Operation="SafeReplace">2</biostatMet>
-							<displayCategory Operation="AddOrReplace">Pain</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">40</displayOrderInCategory>
-							<painOffset Operation="SafeReplace">0.25</painOffset>
-						</value>
-					</Operation>
-				</apply>
 			</Operation>
 
 			<!-- 320 slavery -->

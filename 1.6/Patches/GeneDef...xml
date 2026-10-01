@@ -28,14 +28,15 @@
 390 violence - ranged
 380 violence - melee
 370 pain
-320 slavery
+330 slavery
+320 ideology
 310 mental
 300 mood
-290 ideology
-280 social
-270 beauty
-260 biological sex
+290 social
+280 beauty
+260 loving
 250 reproduction
+240 biological sex
 200 drugs
 110 skills
 100 aptitudes
@@ -1435,6 +1436,43 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="Pain_Extra"]</xpath>
+				<value>
+					<painFactor Operation="SafeAdd">1.5</painFactor>
+					<forcedTraits Operation="Safe">
+						<li Operation="SafeRemove" Compare="Both" XPathLocal="def">
+							<def>Wimp</def>
+						</li>
+					</forcedTraits>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>turnovus.biotech.integratedgenes</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.SetScope">
+						<xpath>Defs/GeneDef[defName="Turn_Gene_ConstantPain"]</xpath>
+						<apply>
+							<Operation Class="XmlExtensions.PatchOperationAttributeRemove">
+								<xpath>GeneDef</xpath>
+								<attribute>ParentName</attribute>
+							</Operation>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>GeneDef</xpath>
+								<value>
+									<biostatMet Operation="SafeReplace">2</biostatMet>
+									<displayCategory Operation="AddOrReplace">Pain</displayCategory>
+									<displayOrderInCategory Operation="AddOrReplace">40</displayOrderInCategory>
+									<painOffset Operation="SafeReplace">0.25</painOffset>
+								</value>
+							</Operation>
+						</apply>
+					</Operation>
+				</caseTrue>
+			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
 					<li>goji.gojismiscgenes</li>
@@ -1537,7 +1575,7 @@
 									<displayOrderInCategory Operation="AddOrReplace">-100</displayOrderInCategory>
 									<exclusionTags Operation="Safe">
 										<li Operation="SafeRemove" Compare="InnerText">VRE_ExtremelyAggressiveAndSpeechInability</li>
-										<li Operation="SafeAdd" Compare="InnerText">XYTYYY_RequireSpeechAbility</li>
+										<li Operation="SafeAdd" Compare="InnerText">VRE_SpeechInability</li>
 									</exclusionTags>
 								</value>
 							</Operation>
@@ -1551,12 +1589,6 @@
 										<xpath>GeneDef</xpath>
 										<value>
 											<iconPath Operation="SafeReplace">UI/Icons/Genes/Gene_Speechless</iconPath>
-											<exclusionTags Operation="Safe">
-												<li Operation="SafeAdd" Compare="InnerText">Voice</li>
-												<li Operation="SafeAdd" Compare="InnerText">Turn_Exclusion_Speechless</li>
-												<li Operation="SafeAdd" Compare="InnerText">Turn_Exclusion_VREH_Speechless</li>
-												<li Operation="SafeAdd" Compare="InnerText">Turn_Exclusion_Speechless_NaturalLeader</li>
-											</exclusionTags>
 											<symbolPack Operation="Safe">
 												<prefixSymbols Operation="Safe">
 													<li><symbol>hush</symbol></li>
@@ -1644,6 +1676,9 @@
 						<value>
 							<displayCategory Operation="AddOrReplace">Social</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">100</displayOrderInCategory>
+							<exclusionTags Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">VRE_SpeechInability</li>
+							</exclusionTags>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -1658,16 +1693,16 @@
 						<xpath>Defs/GeneDef[defName="VRE_Distressed"]</xpath>
 						<value>
 							<displayCategory Operation="AddOrReplace">Social</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">200</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">400</displayOrderInCategory>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_Flirty"]</xpath>
 						<value>
 							<displayCategory Operation="AddOrReplace">Social</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">300</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">600</displayOrderInCategory>
 							<exclusionTags Operation="Safe">
-								<li Operation="SafeAdd" Compare="InnerText">XYTYYY_RequireSpeechAbility</li>
+								<li Operation="SafeAdd" Compare="InnerText">VRE_SpeechInability</li>
 							</exclusionTags>
 						</value>
 					</Operation>
@@ -1683,7 +1718,7 @@
 						<xpath>Defs/GeneDef[defName="Turn_Gene_TraitGrandeur"]</xpath>
 						<value>
 							<displayCategory Operation="AddOrReplace">Social</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">400</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">700</displayOrderInCategory>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -1692,7 +1727,7 @@
 				<xpath>Defs/GeneDef[defName="KindInstinct"]</xpath>
 				<value>
 					<displayCategory Operation="AddOrReplace">Social</displayCategory>
-					<displayOrderInCategory Operation="AddOrReplace">500</displayOrderInCategory>
+					<displayOrderInCategory Operation="AddOrReplace">1100</displayOrderInCategory>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
@@ -1705,7 +1740,7 @@
 						<xpath>Defs/GeneDef[defName="Goji_Parroting"]</xpath>
 						<value>
 							<displayCategory Operation="AddOrReplace">Social</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">600</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">1600</displayOrderInCategory>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -1723,7 +1758,38 @@
 								<li>Social interactions between carriers of this gene ignore distance requirement.</li>
 							</customEffectDescriptions>
 							<displayCategory Operation="AddOrReplace">Social</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">1000</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">2000</displayOrderInCategory>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- 260 loving -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>Ludeon.RimWorld.Biotech</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[@Name="LibidoBase"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Loving</displayCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.highmate</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VRE_LovinDependency"]</xpath>
+						<value>
+							<displayCategory Operation="AddOrReplace">Loving</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">20</displayOrderInCategory>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -1738,23 +1804,10 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.highmate</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_LovinDependency"]</xpath>
-						<value>
-							<displayOrderInCategory Operation="AddOrReplace">11</displayOrderInCategory>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="Fertile"]</xpath>
 				<value>
+					<displayOrderInCategory Operation="AddOrReplace">101</displayOrderInCategory>
 					<statFactors Operation="Safe">
 						<Fertility Operation="SafeRemove">0</Fertility>
 					</statFactors>
@@ -1779,7 +1832,7 @@
 								<xpath>Defs/GeneDef[defName="BGI_RecessiveGenes"]</xpath>
 								<value>
 									<biostatMet Operation="SafeReplace">1</biostatMet>
-									<displayOrderInCategory Operation="AddOrReplace">120</displayOrderInCategory>
+									<displayOrderInCategory Operation="AddOrReplace">110</displayOrderInCategory>
 									<iconPath Operation="SafeReplace">UI/Icons/Genes/Gene_GenomeRecessive</iconPath>
 								</value>
 							</Operation>
@@ -1787,7 +1840,7 @@
 								<xpath>Defs/GeneDef[defName="BGI_DominantGenes"]</xpath>
 								<value>
 									<biostatMet Operation="SafeReplace">-2</biostatMet>
-									<displayOrderInCategory Operation="AddOrReplace">121</displayOrderInCategory>
+									<displayOrderInCategory Operation="AddOrReplace">111</displayOrderInCategory>
 									<iconPath Operation="SafeReplace">UI/Icons/Genes/Gene_GenomeDominant</iconPath>
 								</value>
 							</Operation>
@@ -1804,17 +1857,10 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_ChestburstPregnancy"]</xpath>
 						<value>
-							<displayOrderInCategory Operation="AddOrReplace">300</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">120</displayOrderInCategory>
 						</value>
 					</Operation>
 				</caseTrue>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[defName="Inbred"]</xpath>
-				<value>
-					<displayCategory Operation="AddOrReplace">Reproduction</displayCategory>
-					<displayOrderInCategory Operation="AddOrReplace">90</displayOrderInCategory>
-				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
@@ -1825,7 +1871,28 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRESaurids_Oviparous"]</xpath>
 						<value>
-							<displayOrderInCategory Operation="AddOrReplace">210</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">121</displayOrderInCategory>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="Inbred"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Reproduction</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">900</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>lovelydovey.sex.witheuterpe</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="SEX_NoRefractory"]</xpath>
+						<value>
+							<displayOrderInCategory Operation="AddOrReplace">1400</displayOrderInCategory>
 						</value>
 					</Operation>
 				</caseTrue>
