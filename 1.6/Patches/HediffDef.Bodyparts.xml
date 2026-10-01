@@ -239,7 +239,7 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/HediffDef[defName="Mindscrew"]/stages/li</xpath>
 				<value>
-					<painOffset Operation="SafeReplace">0.25</painOffset>
+					<painOffset Operation="SafeReplace">0.3</painOffset>
 				</value>
 			</Operation>
 		</caseTrue>
