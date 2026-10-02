@@ -1440,11 +1440,7 @@
 				<xpath>Defs/GeneDef[defName="Pain_Extra"]</xpath>
 				<value>
 					<painFactor Operation="SafeAdd">1.5</painFactor>
-					<forcedTraits Operation="Safe">
-						<li Operation="SafeRemove" Compare="Both" XPathLocal="def">
-							<def>Wimp</def>
-						</li>
-					</forcedTraits>
+					<forcedTraits Operation="SafeRemove"/>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
