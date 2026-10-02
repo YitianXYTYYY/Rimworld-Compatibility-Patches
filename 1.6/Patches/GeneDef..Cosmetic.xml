@@ -19,7 +19,7 @@
 						<value>
 							<biostatMet Operation="SafeReplace">-2</biostatMet>
 							<displayCategory Operation="AddOrReplace">Skin</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">0</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">20</displayOrderInCategory>
 							<statOffsets Operation="Safe">
 								<ArmorRating_Blunt Operation="SafeReplace">0.40</ArmorRating_Blunt>
 							</statOffsets>
@@ -33,12 +33,38 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
+					<Operation Class="XmlExtensions.SetScope">
 						<xpath>Defs/GeneDef[defName="VRE_ChestFur"]</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Skin</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">10</displayOrderInCategory>
-						</value>
+						<apply>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>GeneDef</xpath>
+								<value>
+									<displayCategory Operation="AddOrReplace">Skin</displayCategory>
+								</value>
+							</Operation>
+							<Operation Class="XmlExtensions.FindMod">
+								<mods>
+									<li>danzinagri.lycanchestfurattachment</li>
+								</mods>
+								<packageId>true</packageId>
+								<caseFalse>
+									<Operation Class="XmlExtensions.HybridPatch">
+										<xpath>GeneDef/exclusionTags</xpath>
+										<value>
+											<displayOrderInCategory Operation="AddOrReplace">30</displayOrderInCategory>
+										</value>
+									</Operation>
+								</caseFalse>
+								<caseTrue>
+									<Operation Class="XmlExtensions.HybridPatch">
+										<xpath>GeneDef</xpath>
+										<value>
+											<displayOrderInCategory Operation="AddOrReplace">1030</displayOrderInCategory>
+										</value>
+									</Operation>
+								</caseTrue>
+							</Operation>
+						</apply>
 					</Operation>
 				</caseTrue>
 			</Operation>
@@ -46,8 +72,27 @@
 				<xpath>Defs/GeneDef[defName="Furskin"]</xpath>
 				<value>
 					<displayCategory Operation="AddOrReplace">Skin</displayCategory>
-					<displayOrderInCategory Operation="AddOrReplace">20</displayOrderInCategory>
+					<displayOrderInCategory Operation="AddOrReplace">60</displayOrderInCategory>
 				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.waster</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VRE_GauntBody"]</xpath>
+						<value>
+							<displayCategory Operation="AddOrReplace">Skin</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">70</displayOrderInCategory>
+							<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
+							<exclusionTags Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">Fur</li>
+							</exclusionTags>
+						</value>
+					</Operation>
+				</caseTrue>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
@@ -60,7 +105,7 @@
 						<value>
 							<biostatCpx Operation="SafeReplace">1</biostatCpx>
 							<displayCategory Operation="AddOrReplace">Skin</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">30</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">90</displayOrderInCategory>
 							<statOffsets Operation="Safe">
 								<ArmorRating_Sharp Operation="SafeReplace">0.10</ArmorRating_Sharp>
 								<ArmorRating_Blunt Operation="SafeReplace">0.30</ArmorRating_Blunt>
@@ -79,49 +124,11 @@
 						<xpath>Defs/GeneDef[defName="VRE_Leatherskin"]</xpath>
 						<value>
 							<displayCategory Operation="AddOrReplace">Skin</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">40</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">120</displayOrderInCategory>
 							<statOffsets Operation="Safe">
 								<ArmorRating_Sharp Operation="SafeReplace">0.30</ArmorRating_Sharp>
 								<ArmorRating_Blunt Operation="SafeReplace">0.10</ArmorRating_Blunt>
 							</statOffsets>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.saurid</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRESaurids_ScaleSkin"]</xpath>
-						<value>
-							<biostatMet Operation="SafeReplace">-2</biostatMet>
-							<displayCategory Operation="AddOrReplace">Skin</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">50</displayOrderInCategory>
-							<statOffsets Operation="Safe">
-								<ArmorRating_Sharp Operation="SafeReplace">0.4</ArmorRating_Sharp>
-							</statOffsets>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.waster</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_GauntBody"]</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Skin</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">100</displayOrderInCategory>
-							<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
-							<exclusionTags Operation="Safe">
-								<li Operation="SafeAdd" Compare="InnerText">Fur</li>
-							</exclusionTags>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -151,7 +158,7 @@
 									<Operation Class="XmlExtensions.HybridPatch">
 										<xpath>GeneDef/exclusionTags</xpath>
 										<value>
-											<displayOrderInCategory Operation="AddOrReplace">90</displayOrderInCategory>
+											<displayOrderInCategory Operation="AddOrReplace">160</displayOrderInCategory>
 											<exclusionTags Operation="Safe">
 												<li Operation="SafeAdd" Compare="InnerText">Fur</li>
 											</exclusionTags>
@@ -162,7 +169,7 @@
 									<Operation Class="XmlExtensions.HybridPatch">
 										<xpath>GeneDef</xpath>
 										<value>
-											<displayOrderInCategory Operation="AddOrReplace">1000</displayOrderInCategory>
+											<displayOrderInCategory Operation="AddOrReplace">1160</displayOrderInCategory>
 											<exclusionTags Operation="Safe">
 												<li Operation="SafeRemove" Compare="InnerText">AG_Bodies</li>
 												<li Operation="SafeRemove" Compare="InnerText">Bodies</li>
@@ -173,6 +180,25 @@
 								</caseTrue>
 							</Operation>
 						</apply>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.saurid</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VRESaurids_ScaleSkin"]</xpath>
+						<value>
+							<biostatMet Operation="SafeReplace">-2</biostatMet>
+							<displayCategory Operation="AddOrReplace">Skin</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">190</displayOrderInCategory>
+							<statOffsets Operation="Safe">
+								<ArmorRating_Sharp Operation="SafeReplace">0.4</ArmorRating_Sharp>
+							</statOffsets>
+						</value>
 					</Operation>
 				</caseTrue>
 			</Operation>
