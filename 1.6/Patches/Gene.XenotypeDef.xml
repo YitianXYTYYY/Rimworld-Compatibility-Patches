@@ -90,12 +90,14 @@
 		<caseTrue>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
-					<li>RedMattis.BetterPrerequisites</li>
+					<li>redmattis.betterprerequisites</li>
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/XenotypeDef/genes</xpath>
+						<xpath>Defs/XenotypeDef[defName="VRE_Animakin" or 
+							defName="VRE_Gauranlenkin" or 
+							defName="VRE_Poluxkin"]/genes</xpath>
 						<value>
 							<li Operation="SafeAdd" Compare="InnerText">Body_FemaleOnly</li>
 							<li Operation="SafeRemove" Compare="InnerText">VRE_Female</li>
