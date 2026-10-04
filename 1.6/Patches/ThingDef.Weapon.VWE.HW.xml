@@ -32,13 +32,13 @@
 								<DeteriorationRate Operation="SafeRemove">0</DeteriorationRate>
 								<Flammability Operation="SafeRemove">0</Flammability>
 								<Mass Operation="SafeReplace">25</Mass>
-								<RangedWeapon_Cooldown Operation="SafeReplace">2</RangedWeapon_Cooldown>
+								<RangedWeapon_Cooldown Operation="SafeReplace">1.5</RangedWeapon_Cooldown>
 								<WorkToMake Operation="SafeReplace">45000</WorkToMake>
 							</statBases>
 							<verbs Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="verbClass">
 									<verbClass Operation="Safe">VEF.Weapons.Verb_Shoot</verbClass>
-									<warmupTime Operation="SafeReplace">1.5</warmupTime>
+									<warmupTime Operation="SafeReplace">2</warmupTime>
 									<minRange Operation="SafeRemove">0</minRange>
 									<burstShotCount Operation="SafeReplace">3</burstShotCount>
 								</li>
@@ -174,7 +174,7 @@
 								</li>
 							</modExtensions>
 							<statBases Operation="Safe">
-								<RangedWeapon_Cooldown Operation="SafeReplace">4</RangedWeapon_Cooldown>
+								<RangedWeapon_Cooldown Operation="SafeReplace">3</RangedWeapon_Cooldown>
 								<DeteriorationRate Operation="SafeRemove">0</DeteriorationRate>
 								<Flammability Operation="SafeRemove">0</Flammability>
 								<Mass Operation="SafeReplace">20</Mass>
@@ -185,7 +185,7 @@
 									<verbClass Operation="Safe">VEF.Weapons.Verb_Shoot</verbClass>
 									<forcedMissRadius Operation="SafeReplace">1.9</forcedMissRadius>
 									<minRange Operation="SafeReplace">4</minRange>
-									<warmupTime Operation="SafeReplace">4</warmupTime>
+									<warmupTime Operation="SafeReplace">5</warmupTime>
 								</li>
 							</verbs>
 							<weaponClasses Operation="Safe">
