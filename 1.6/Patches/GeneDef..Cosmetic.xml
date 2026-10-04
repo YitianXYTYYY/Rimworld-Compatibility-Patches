@@ -156,7 +156,7 @@
 								<packageId>true</packageId>
 								<caseFalse>
 									<Operation Class="XmlExtensions.HybridPatch">
-										<xpath>GeneDef/exclusionTags</xpath>
+										<xpath>GeneDef</xpath>
 										<value>
 											<displayOrderInCategory Operation="AddOrReplace">160</displayOrderInCategory>
 											<exclusionTags Operation="Safe">
