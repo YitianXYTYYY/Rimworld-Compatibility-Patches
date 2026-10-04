@@ -17,7 +17,7 @@
 						<value>
 							<comps Operation="Safe">
 								<li Class="CompProperties_GravshipFacility" Operation="Safe" CheckAttributes="True">
-									<maxDistance Operation="SafeReplace">200</maxDistance>
+									<maxDistance Operation="SafeReplace">100</maxDistance>
 								</li>
 							</comps>
 						</value>
@@ -34,7 +34,7 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<!-- vertical gene bank -->
+			<!-- grav holding platform -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="GravHoldingPlatform"]</xpath>
 				<value>
