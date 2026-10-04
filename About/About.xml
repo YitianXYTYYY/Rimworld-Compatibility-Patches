@@ -45,16 +45,6 @@ Personal Made compatibility patches for mods.
 		<li>chaoticenrico.researchpapers</li>
 		<li>cheatereater.contagion</li>
 		<li>davai.sortedcategories</li>
-		<li>ferny.progressionattire</li>
-		<li>ferny.progressioncore</li>
-		<li>ferny.progressionfurniture</li>
-		<li>ferny.progressiongenetics</li>
-		<li>ferny.progressiongravship</li>
-		<li>ferny.progressionhives</li>
-		<li>ferny.progressionkitchen</li>
-		<li>ferny.progressionproduction</li>
-		<li>ferny.progressionrobotics2</li>
-		<li>ferny.progressionstorage</li>
 		<li>ferny.replacelib</li>
 		<li>frozensnowfox.vanillabionicsexpansion</li>
 		<li>fuu.uncompromisingtribalfaction</li>
@@ -112,12 +102,12 @@ Personal Made compatibility patches for mods.
 		<li>vanillaracesexpanded.saurid</li>
 		<li>vanillaracesexpanded.starjack</li>
 		<li>vanillaracesexpanded.waster</li>
+		<li>xytyyy.progression</li>
 		<li>wara.toomanymods</li>
 		<li>wasterbreath.mod</li>
 		<li>zal.heavyweaponsreloading</li>
 	</loadAfter>
 	<loadBefore>
 		<li>teiwaz.vtoada</li>
-		<li>vr.missilegirl</li>
 	</loadBefore>
 </ModMetaData>

@@ -57,107 +57,6 @@
 		</caseTrue>
 	</Operation>
 
-	<!-- Biotech for Gravship -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>als.biotechgravship</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<!-- vertical gene bank -->
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/ThingDef[defName="BfG_GeneBank"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>ferny.progressiongenetics</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>ThingDef</xpath>
-								<value>
-									<researchPrerequisites Operation="Safe">
-										<li Operation="SafeAdd" Compare="InnerText">GR_GeneticAlteration</li>
-									</researchPrerequisites>
-								</value>
-							</Operation>
-						</caseTrue>
-					</Operation>
-				</apply>
-			</Operation>
-			<!-- smaller gene extractor -->
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/ThingDef[defName="BfG_GeneExtractor"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>ferny.progressiongenetics</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>ThingDef</xpath>
-								<value>
-									<researchPrerequisites Operation="Safe">
-										<li Operation="SafeRemove" Compare="InnerText">Xenogermination</li>
-										<li Operation="SafeAdd" Compare="InnerText">GR_GeneticAlteration</li>
-									</researchPrerequisites>
-								</value>
-							</Operation>
-						</caseTrue>
-					</Operation>
-				</apply>
-			</Operation>
-			<!-- mounted band node -->
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/ThingDef[defName="BfG_GeneExtractor"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>ferny.progressionrobotics2</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>ThingDef</xpath>
-								<value>
-									<researchPrerequisites Operation="Safe">
-										<li Operation="SafeRemove" Compare="InnerText">BasicMechtech</li>
-										<li Operation="SafeAdd" Compare="InnerText">Ferny_BandNode</li>
-									</researchPrerequisites>
-								</value>
-							</Operation>
-						</caseTrue>
-					</Operation>
-				</apply>
-			</Operation>
-			<!-- floor mech booster -->
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/ThingDef[defName="BfG_MechBooster"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>ferny.progressionrobotics2</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>ThingDef</xpath>
-								<value>
-									<researchPrerequisites Operation="Safe">
-										<li Operation="SafeRemove" Compare="InnerText">HighMechtech</li>
-										<li Operation="SafeAdd" Compare="InnerText">Ferny_MechBooster</li>
-									</researchPrerequisites>
-								</value>
-							</Operation>
-						</caseTrue>
-					</Operation>
-				</apply>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
 	<!-- Dlc collaboration - Void universe -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
@@ -218,40 +117,6 @@
 								<li Operation="SafeRemove" Compare="InnerText">BuildingsMisc</li>
 							</thingCategories>
 						</value>
-					</Operation>
-				</apply>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
-	<!-- Genepack Reprocessor -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>anonemous2.genepackreprocessor</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<!-- genepack reprocessor -->
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/ThingDef[defName="GeneSeparator"]</xpath>
-				<apply>
-					<!-- Progression: Genetics -->
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>ferny.progressiongenetics</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>ThingDef</xpath>
-								<value>
-									<researchPrerequisites Operation="Safe">
-										<li Operation="SafeRemove" Compare="InnerText">GeneProcessor</li>
-										<li Operation="SafeAdd" Compare="InnerText">Ferny_GenepackCentrifuge</li>
-									</researchPrerequisites>
-								</value>
-							</Operation>
-						</caseTrue>
 					</Operation>
 				</apply>
 			</Operation>
@@ -399,48 +264,6 @@
 						</li>
 					</comps>
 				</value>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
-	<!-- Vanilla Factions Expanded - Empire -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>oskarpotocki.vfe.empire</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<!-- candelabra -->
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/ThingDef[defName="VFEE_Candelabra"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>ferny.progressionfurniture</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseFalse>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>ThingDef</xpath>
-								<value>
-									<researchPrerequisites Operation="Safe">
-										<li Operation="SafeAdd" Compare="InnerText">Electricity</li>
-									</researchPrerequisites>
-								</value>
-							</Operation>
-						</caseFalse>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>ThingDef</xpath>
-								<value>
-									<researchPrerequisites Operation="Safe">
-										<li Operation="SafeAdd" Compare="InnerText">Ferny_StandingLamp</li>
-									</researchPrerequisites>
-								</value>
-							</Operation>
-						</caseTrue>
-					</Operation>
-				</apply>
 			</Operation>
 		</caseTrue>
 	</Operation>
