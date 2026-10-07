@@ -123,6 +123,12 @@
 		</value>
 	</Operation>
 	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/StatDef[defName="VEF_MTBLovinFactor"]</xpath>
+		<value>
+			<label Operation="SafeReplace">lovin' interval factor</label>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/StatDef[defName="VEF_RangedDodgeChance"]</xpath>
 		<value>
 			<hideAtValue Operation="SafeAdd">0</hideAtValue>

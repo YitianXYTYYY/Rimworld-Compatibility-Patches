@@ -1,6 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>/Defs/ThoughtDef[defName="PawnWithGoodOpinionDied"]/stages/li[label="my friend {0} died"]</xpath>
+		<value>
+			<baseMoodEffect Operation="SafeReplace">-20</baseMoodEffect>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>/Defs/ThoughtDef[defName="MySonDied"]/stages/li[label="my son {0} died"]</xpath>
+		<value>
+			<baseMoodEffect>-40</baseMoodEffect>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>/Defs/ThoughtDef[defName="MyDaughterDied"]/stages/li[label="my daughter {0} died"]</xpath>
+		<value>
+			<baseMoodEffect>-40</baseMoodEffect>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>/Defs/ThoughtDef[defName="MyHusbandDied"]/stages/li[label="my husband {0} died"]</xpath>
+		<value>
+			<baseMoodEffect>-40</baseMoodEffect>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>/Defs/ThoughtDef[defName="MyWifeDied"]/stages/li[label="my wife {0} died"]</xpath>
+		<value>
+			<baseMoodEffect>-40</baseMoodEffect>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>/Defs/ThoughtDef[defName="MyFianceDied"]/stages/li[label="my fiance {0} died"]</xpath>
+		<value>
+			<baseMoodEffect>-40</baseMoodEffect>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>/Defs/ThoughtDef[defName="MyFianceeDied"]/stages/li[label="my fiancée {0} died"]</xpath>
+		<value>
+			<baseMoodEffect>-40</baseMoodEffect>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>/Defs/ThoughtDef[defName="MyLoverDied"]/stages/li[label="my lover {0} died"]</xpath>
+		<value>
+			<baseMoodEffect>-40</baseMoodEffect>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>/Defs/ThoughtDef[defName="MyFatherDied"]/stages/li[label="my father {0} died"]</xpath>
+		<value>
+			<baseMoodEffect>-20</baseMoodEffect>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>/Defs/ThoughtDef[defName="MyMotherDied"]/stages/li[label="my mother {0} died"]</xpath>
+		<value>
+			<baseMoodEffect>-20</baseMoodEffect>
+		</value>
+	</Operation>
+
 	<!-- global misc -->
 	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/HediffDef[defName="Anesthetic"]</xpath>
@@ -496,6 +557,41 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThoughtDef[defName="PsychicDrone"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThoughtDef/stages/li[label="psychic soothe"]</xpath>
+						<value>
+							<baseMoodEffect Operation="SafeReplace">10</baseMoodEffect>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThoughtDef/stages/li[label="low psychic drone"]</xpath>
+						<value>
+							<baseMoodEffect Operation="SafeReplace">-20</baseMoodEffect>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThoughtDef/stages/li[label="moderate psychic drone"]</xpath>
+						<value>
+							<baseMoodEffect Operation="SafeReplace">-30</baseMoodEffect>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThoughtDef/stages/li[label="high psychic drone"]</xpath>
+						<value>
+							<baseMoodEffect Operation="SafeReplace">-40</baseMoodEffect>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThoughtDef/stages/li[label="extreme psychic drone"]</xpath>
+						<value>
+							<baseMoodEffect Operation="SafeReplace">-50</baseMoodEffect>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
 			<!-- psycasts -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/HediffDef[defName="PsychicFocus"]/stages/li</xpath>
@@ -651,37 +747,6 @@
 		<packageId>true</packageId>
 		<caseTrue>
 			<!-- misc -->
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/HediffDef[defName="DeathRefusalSickness"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>wara.toomanymods</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="TooManyMods.PatchOperationIfToggled">
-								<settingDef>TMM_OtherRebalances</settingDef>
-								<legacyName>General: Enable other rebalances</legacyName>
-								<default>true</default>
-								<operations>
-									<li Class="XmlExtensions.HybridPatch">
-										<xpath>HediffDef/stages/li[label="severe"]</xpath>
-										<value>
-											<capMods Operation="Safe">
-												<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-													<capacity Operation="Safe">Consciousness</capacity>
-													<setMax Operation="SafeReplace">0.5</setMax>
-												</li>
-											</capMods>
-										</value>
-									</li>
-								</operations>
-							</Operation>
-						</caseTrue>
-					</Operation>
-				</apply>
-			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/HediffDef[defName="PsychicTrance"]/stages/li</xpath>
 				<value>

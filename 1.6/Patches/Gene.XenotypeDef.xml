@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
+	<!-- Biotech -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
 			<li>ludeon.rimworld.biotech</li>
@@ -29,6 +30,7 @@
 		</caseTrue>
 	</Operation>
 
+	<!-- Odyssey -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
 			<li>ludeon.rimworld.odyssey</li>
@@ -77,6 +79,31 @@
 						</caseTrue>
 					</Operation>
 				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Vanilla Races Expanded - Highmate -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.highmate</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>redmattis.bettergeneinheritance</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/XenotypeDef[defName="Highmate"]/genes</xpath>
+						<value>
+							<li Operation="SafeAdd" Compare="InnerText">BGI_RecessiveGenes</li>
+							<li Operation="SafeRemove" Compare="InnerText">VRE_RecessiveGenome</li>
+						</value>
+					</Operation>
+				</caseTrue>
 			</Operation>
 		</caseTrue>
 	</Operation>

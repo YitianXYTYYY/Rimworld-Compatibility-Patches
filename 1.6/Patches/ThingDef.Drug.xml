@@ -12,6 +12,12 @@
 
 	<!-- smokeleaf -->
 	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ChemicalDef[defName="Smokeleaf"]</xpath>
+		<value>
+			<label Operation="SafeReplace">smokeleaf</label>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/HediffDef[defName="SmokeleafHigh"]/stages/li</xpath>
 		<value>
 			<hungerRateFactor Operation="SafeAdd">1.2</hungerRateFactor>
@@ -67,6 +73,19 @@
 						<StudyEfficiency Operation="SafeAdd">0.2</StudyEfficiency>
 						<PsychicSensitivity Operation="SafeAdd">0.4</PsychicSensitivity>
 					</statOffsets>
+				</value>
+			</Operation>
+			<!-- mind-numb serum -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="MindNumbSerum"]/stages/li</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Consciousness</capacity>
+							<offset Operation="SafeRemove">0</offset>
+							<setMax Operation="SafeAdd">0.9</setMax>
+						</li>
+					</capMods>
 				</value>
 			</Operation>
 		</caseTrue>

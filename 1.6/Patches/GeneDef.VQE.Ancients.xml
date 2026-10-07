@@ -36,6 +36,7 @@
 				<xpath>Defs/GeneDef[defName="VQEA_Levitation"]</xpath>
 				<value>
 					<displayOrderInCategory Operation="AddOrReplace">-701</displayOrderInCategory>
+					<waterCellCost Operation="SafeAdd">1</waterCellCost>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">

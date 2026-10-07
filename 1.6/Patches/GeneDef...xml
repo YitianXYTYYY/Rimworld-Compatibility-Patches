@@ -55,6 +55,9 @@
 				<xpath>Defs/GeneDef[defName="Deathless"]</xpath>
 				<value>
 					<displayOrderInCategory Operation="AddOrReplace">-1000</displayOrderInCategory>
+					<exclusionTags Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">Deathless</li>
+					</exclusionTags>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
@@ -70,6 +73,9 @@
 								<li>Allowed using archon equipments.</li>
 							</customEffectDescriptions>
 							<displayOrderInCategory Operation="AddOrReplace">-999</displayOrderInCategory>
+							<exclusionTags Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">Deathless</li>
+							</exclusionTags>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -498,6 +504,36 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>ludeon.rimworld.ideology</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>Defs/ThoughtDef[defName="AteHumanMeat_Abhorrent" or 
+									defName="AteHumanMeat_Know_Abhorrent" or 
+									defName="AteHumanMeat_Horrible" or 
+									defName="AteHumanMeat_Know_Horrible" or 
+									defName="AteHumanMeat_Disapproved" or 
+									defName="AteHumanMeat_Know_Disapproved" or 
+									defName="AteHumanMeat_Preferred" or 
+									defName="AteHumanMeat_RequiredStrong" or 
+									defName="AteHumanMeat_RequiredRavenous"]/stages/li</xpath>
+						<value>
+							<label Operation="SafeReplace">committed cannibalism</label>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>Defs/ThoughtDef[defName="NoRecentHumanMeat_Preferred" or 
+									defName="NoRecentHumanMeat_RequiredStrong" or 
+									defName="NoRecentHumanMeat_RequiredRavenous"]/stages/li</xpath>
+						<value>
+							<label Operation="SafeReplace">no recent cannibalism</label>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
 					<li>vanillaracesexpanded.pigskin</li>
@@ -1229,6 +1265,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VRE_Gluttonous"]</xpath>
 						<value>
+							<label Operation="SafeReplace">gluttonous</label>
 							<displayCategory Operation="AddOrReplace">Health_Digestion</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">300</displayOrderInCategory>
 						</value>

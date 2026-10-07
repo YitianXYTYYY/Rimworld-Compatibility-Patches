@@ -275,6 +275,15 @@
 					</statOffsets>
 				</value>
 			</Operation>
+			<!-- recluse -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/TraitDef[defName="Recluse"]/degreeDatas/li[label="recluse"]</xpath>
+				<value>
+					<disallowedInspirations Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">Inspired_Recruitment</li>
+					</disallowedInspirations>
+				</value>
+			</Operation>
 		</caseTrue>
 	</Operation>
 

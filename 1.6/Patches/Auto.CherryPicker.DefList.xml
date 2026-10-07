@@ -755,6 +755,29 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
+			<!-- Vanilla Genetics Expanded -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaexpanded.vgeneticse</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaexpanded.vchemfuele</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>ThingDef/GR_CompressedChemfuel</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
 			<!-- Vanilla Nutrient Paste Expanded -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
@@ -767,6 +790,33 @@
 						<value>
 							<li>ThingDef/NutrientPasteDispenser</li>
 						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Vanilla Races Expanded - Highmate -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.highmate</li>
+				</mods>
+				<packageId>true</packageId>
+				<logic>and</logic>
+				<caseTrue>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>RedMattis.BetterGeneInheritance</li>
+						</mods>
+						<packageId>true</packageId>
+						<logic>and</logic>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>GeneDef/VRE_RecessiveGenome</li>
+									<li>GeneDef/VRE_DominantGenome</li>
+									<li>GeneDef/VRE_DominantGenome_Astrogene</li>
+								</value>
+							</Operation>
+						</caseTrue>
 					</Operation>
 				</caseTrue>
 			</Operation>

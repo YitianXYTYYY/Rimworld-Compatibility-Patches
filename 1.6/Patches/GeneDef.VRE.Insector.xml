@@ -46,23 +46,54 @@
 					</statOffsets>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_InsectWings"]</xpath>
-				<value>
-					<abilities Operation="Safe">
-						<li Operation="SafeRemove" Compare="InnerText">VREInsector_WingPoweredJump</li>
-					</abilities>
-					<capMods Operation="Safe">
-						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-							<capacity Operation="Safe">Moving</capacity>
-							<offset Operation="SafeReplace">0.2</offset>
-						</li>
-					</capMods>
-					<exclusionTags Operation="Safe">
-						<li Operation="SafeAdd" Compare="InnerText">Wing</li>
-						<li Operation="SafeAdd" Compare="InnerText">Wings</li>
-					</exclusionTags>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>VanillaRacesExpandedInsector.GenelineGeneDef</xpath>
+						<value>
+							<abilities Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">VREInsector_WingPoweredJump</li>
+							</abilities>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Moving</capacity>
+									<offset Operation="SafeReplace">0.2</offset>
+								</li>
+							</capMods>
+							<exclusionTags Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">Wings</li>
+							</exclusionTags>
+							<waterCellCost Operation="SafeAdd">1</waterCellCost>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>redmattis.betterprerequisites</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+								<xpath>VanillaRacesExpandedInsector.GenelineGeneDef/modExtensions/li[@Class="VEF.Genes.GeneExtension"]/hediffToWholeBody</xpath>
+							</Operation>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>VanillaRacesExpandedInsector.GenelineGeneDef</xpath>
+								<value>
+									<modExtensions Operation="Safe">
+										<li Class="BigAndSmall.PawnExtension" Operation="Safe" CheckAttributes="True">
+											<thingDefSwap Operation="SafeAdd">BS_HumanoidWithWings</thingDefSwap>
+											<applyBodyHediff Operation="Safe">
+												<li Operation="SafeAdd" Compare="InnerText" XPathLocal="hediff">
+													<hediff>BS_Floating</hediff>
+												</li>
+											</applyBodyHediff>
+										</li>
+									</modExtensions>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VanillaRacesExpandedInsector.GenelineGeneDef[defName="VRE_RobustMidgut"]</xpath>
