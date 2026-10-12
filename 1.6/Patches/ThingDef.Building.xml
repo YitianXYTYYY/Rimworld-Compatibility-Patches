@@ -497,4 +497,25 @@
 		</caseTrue>
 	</Operation>
 
+	<!-- Vanilla Races Expanded - Android -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.android</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- neutro casket -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="VREA_NeutroCasket"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
+						<xpath>ThingDef/thingCategories</xpath>
+						<attribute>Inherit</attribute>
+						<value>False</value>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 </Patch>
