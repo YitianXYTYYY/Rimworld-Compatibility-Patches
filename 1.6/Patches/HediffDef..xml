@@ -624,6 +624,246 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- casts -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="CombatCommand"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef</xpath>
+						<value>
+							<stages Operation="Safe">
+								<li Operation="Safe">
+									<statOffsets Operation="Safe">
+										<ShootingAccuracyPawn Operation="SafeAdd">4</ShootingAccuracyPawn>
+										<MeleeHitChance Operation="SafeAdd">4</MeleeHitChance>
+									</statOffsets>
+								</li>
+							</stages>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>redmattis.betterprerequisites</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>HediffDef</xpath>
+								<value>
+									<modExtensions Operation="Safe">
+										<li Class="BigAndSmall.PawnExtension" Operation="Safe" CheckAttributes="True">
+											<hediffFilters Operation="Safe">
+												<banlist  Operation="Safe">
+													<li  Operation="SafeAdd" Compare="InnerText">CombatCommandBuff</li>
+												</banlist>
+											</hediffFilters>
+										</li>
+									</modExtensions>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="CombatCommandBuff"]/stages/li</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<ShootingAccuracyPawn Operation="SafeReplace">4</ShootingAccuracyPawn>
+						<MeleeHitChance Operation="SafeReplace">4</MeleeHitChance>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="MarksmanCommand"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>redmattis.betterprerequisites</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>HediffDef</xpath>
+								<value>
+									<modExtensions Operation="Safe">
+										<li Class="BigAndSmall.PawnExtension" Operation="Safe" CheckAttributes="True">
+											<hediffFilters Operation="Safe">
+												<banlist  Operation="Safe">
+													<li  Operation="SafeAdd" Compare="InnerText">MarksmanCommandBuff</li>
+												</banlist>
+											</hediffFilters>
+										</li>
+									</modExtensions>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="MarksmanCommandBuff"]/stages/li</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<AimingDelayFactor Operation="SafeAdd">0.8</AimingDelayFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<AimingDelayFactor Operation="SafeRemove">0</AimingDelayFactor>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="ResearchCommand"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>redmattis.betterprerequisites</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>HediffDef</xpath>
+								<value>
+									<modExtensions Operation="Safe">
+										<li Class="BigAndSmall.PawnExtension" Operation="Safe" CheckAttributes="True">
+											<hediffFilters Operation="Safe">
+												<banlist  Operation="Safe">
+													<li  Operation="SafeAdd" Compare="InnerText">ResearchCommandBuff</li>
+												</banlist>
+											</hediffFilters>
+										</li>
+									</modExtensions>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="ResearchCommandBuff"]/stages/li</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<ResearchSpeed Operation="SafeReplace">0.2</ResearchSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="FarmingCommand"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>redmattis.betterprerequisites</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>HediffDef</xpath>
+								<value>
+									<modExtensions Operation="Safe">
+										<li Class="BigAndSmall.PawnExtension" Operation="Safe" CheckAttributes="True">
+											<hediffFilters Operation="Safe">
+												<banlist  Operation="Safe">
+													<li  Operation="SafeAdd" Compare="InnerText">FarmingCommandBuff</li>
+												</banlist>
+											</hediffFilters>
+										</li>
+									</modExtensions>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="FarmingCommandBuff"]/stages/li</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<PlantWorkSpeed Operation="SafeReplace">0.5</PlantWorkSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="ProductionCommand"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>redmattis.betterprerequisites</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>HediffDef</xpath>
+								<value>
+									<modExtensions Operation="Safe">
+										<li Class="BigAndSmall.PawnExtension" Operation="Safe" CheckAttributes="True">
+											<hediffFilters Operation="Safe">
+												<banlist  Operation="Safe">
+													<li  Operation="SafeAdd" Compare="InnerText">ProductionCommandBuff</li>
+												</banlist>
+											</hediffFilters>
+										</li>
+									</modExtensions>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="ProductionCommandBuff"]/stages/li</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<ConstructionSpeed Operation="SafeReplace">0.2</ConstructionSpeed>
+						<GeneralLaborSpeed Operation="SafeReplace">0.1</GeneralLaborSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="MiningCommand"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>redmattis.betterprerequisites</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>HediffDef</xpath>
+								<value>
+									<modExtensions Operation="Safe">
+										<li Class="BigAndSmall.PawnExtension" Operation="Safe" CheckAttributes="True">
+											<hediffFilters Operation="Safe">
+												<banlist  Operation="Safe">
+													<li  Operation="SafeAdd" Compare="InnerText">MiningCommandBuff</li>
+												</banlist>
+											</hediffFilters>
+										</li>
+									</modExtensions>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="MiningCommandBuff"]/stages/li</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<MiningSpeed Operation="SafeReplace">0.5</MiningSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="ImmunityDrive"]/stages/li</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<ImmunityGainSpeed Operation="SafeRemove">0</ImmunityGainSpeed>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<ImmunityGainSpeed Operation="SafeAdd">1</ImmunityGainSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
 			<!-- various -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/HediffDef[defName="NeuralSupercharge"]/stages/li</xpath>

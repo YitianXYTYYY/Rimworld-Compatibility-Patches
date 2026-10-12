@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
 			<li>ludeon.rimworld.ideology</li>
@@ -45,31 +44,6 @@
 						<xpath>PreceptDef/roleEffects/li[@Class="RoleEffect_PawnStatOffset" and statDef="MeleeDodgeChance"]</xpath>
 						<value>
 							<modifier Operation="SafeReplace">8</modifier>
-						</value>
-					</Operation>
-				</apply>
-			</Operation>
-
-			<!-- command buff -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/HediffDef[defName="CombatCommandBuff"]/stages/li/statOffsets</xpath>
-				<value>
-					<ShootingAccuracyPawn Operation="SafeReplace">4</ShootingAccuracyPawn>
-					<MeleeHitChance Operation="SafeReplace">4</MeleeHitChance>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/HediffDef[defName="MarksmanCommandBuff"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>HediffDef/stages/li/statOffsets/AimingDelayFactor</xpath>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>HediffDef/stages/li</xpath>
-						<value>
-							<statFactors Operation="Safe">
-								<AimingDelayFactor Operation="SafeAdd">0.5</AimingDelayFactor>
-							</statFactors>
 						</value>
 					</Operation>
 				</apply>
