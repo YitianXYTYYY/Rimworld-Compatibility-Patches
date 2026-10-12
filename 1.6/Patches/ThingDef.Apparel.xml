@@ -1178,9 +1178,6 @@
 							<li Operation="SafeAdd" Compare="InnerText">AdvancedFabrication</li>
 						</researchPrerequisites>
 					</recipeMaker>
-					<statBases Operation="Safe">
-						<MaxHitPoints Operation="SafeAdd">300</MaxHitPoints>
-					</statBases>
 				</value>
 			</Operation>
 		</caseTrue>
