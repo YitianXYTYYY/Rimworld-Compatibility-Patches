@@ -59,7 +59,7 @@
 									<Operation Class="XmlExtensions.HybridPatch">
 										<xpath>GeneDef</xpath>
 										<value>
-											<displayOrderInCategory Operation="AddOrReplace">1030</displayOrderInCategory>
+											<displayOrderInCategory Operation="AddOrReplace">2030</displayOrderInCategory>
 										</value>
 									</Operation>
 								</caseTrue>
@@ -74,25 +74,6 @@
 					<displayCategory Operation="AddOrReplace">Skin</displayCategory>
 					<displayOrderInCategory Operation="AddOrReplace">60</displayOrderInCategory>
 				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.waster</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="VRE_GauntBody"]</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Skin</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">70</displayOrderInCategory>
-							<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
-							<exclusionTags Operation="Safe">
-								<li Operation="SafeAdd" Compare="InnerText">Fur</li>
-							</exclusionTags>
-						</value>
-					</Operation>
-				</caseTrue>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
@@ -135,56 +116,6 @@
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
-					<li>vanillaracesexpanded.highmate</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.SetScope">
-						<xpath>Defs/GeneDef[defName="VRE_PerfectBody"]</xpath>
-						<apply>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>GeneDef</xpath>
-								<value>
-									<displayCategory Operation="AddOrReplace">Skin</displayCategory>
-									<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
-								</value>
-							</Operation>
-							<Operation Class="XmlExtensions.FindMod">
-								<mods>
-									<li>mac.bettervrehighmates</li>
-								</mods>
-								<packageId>true</packageId>
-								<caseFalse>
-									<Operation Class="XmlExtensions.HybridPatch">
-										<xpath>GeneDef</xpath>
-										<value>
-											<displayOrderInCategory Operation="AddOrReplace">160</displayOrderInCategory>
-											<exclusionTags Operation="Safe">
-												<li Operation="SafeAdd" Compare="InnerText">Fur</li>
-											</exclusionTags>
-										</value>
-									</Operation>
-								</caseFalse>
-								<caseTrue>
-									<Operation Class="XmlExtensions.HybridPatch">
-										<xpath>GeneDef</xpath>
-										<value>
-											<displayOrderInCategory Operation="AddOrReplace">1160</displayOrderInCategory>
-											<exclusionTags Operation="Safe">
-												<li Operation="SafeRemove" Compare="InnerText">AG_Bodies</li>
-												<li Operation="SafeRemove" Compare="InnerText">Bodies</li>
-												<li Operation="SafeRemove" Compare="InnerText">Body</li>
-											</exclusionTags>
-										</value>
-									</Operation>
-								</caseTrue>
-							</Operation>
-						</apply>
-					</Operation>
-				</caseTrue>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
 					<li>vanillaracesexpanded.saurid</li>
 				</mods>
 				<packageId>true</packageId>
@@ -199,6 +130,74 @@
 								<ArmorRating_Sharp Operation="SafeReplace">0.4</ArmorRating_Sharp>
 							</statOffsets>
 						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.waster</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VRE_GauntBody"]</xpath>
+						<value>
+							<displayCategory Operation="AddOrReplace">Skin</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">1070</displayOrderInCategory>
+							<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
+							<exclusionTags Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">Fur</li>
+							</exclusionTags>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.highmate</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.SetScope">
+						<xpath>Defs/GeneDef[defName="VRE_PerfectBody"]</xpath>
+						<apply>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>GeneDef</xpath>
+								<value>
+									<displayCategory Operation="AddOrReplace">Skin</displayCategory>
+									<displayOrderInCategory Operation="AddOrReplace">1160</displayOrderInCategory>
+									<iconColor Operation="SafeAdd">(0.75, 0.75, 0.75)</iconColor>
+								</value>
+							</Operation>
+							<Operation Class="XmlExtensions.FindMod">
+								<mods>
+									<li>mac.bettervrehighmates</li>
+								</mods>
+								<packageId>true</packageId>
+								<caseFalse>
+									<Operation Class="XmlExtensions.HybridPatch">
+										<xpath>GeneDef</xpath>
+										<value>
+											<exclusionTags Operation="Safe">
+												<li Operation="SafeAdd" Compare="InnerText">Fur</li>
+											</exclusionTags>
+										</value>
+									</Operation>
+								</caseFalse>
+								<caseTrue>
+									<Operation Class="XmlExtensions.HybridPatch">
+										<xpath>GeneDef</xpath>
+										<value>
+											<exclusionTags Operation="Safe">
+												<li Operation="SafeRemove" Compare="InnerText">AG_Bodies</li>
+												<li Operation="SafeRemove" Compare="InnerText">Bodies</li>
+												<li Operation="SafeRemove" Compare="InnerText">Body</li>
+											</exclusionTags>
+										</value>
+									</Operation>
+								</caseTrue>
+							</Operation>
+						</apply>
 					</Operation>
 				</caseTrue>
 			</Operation>
