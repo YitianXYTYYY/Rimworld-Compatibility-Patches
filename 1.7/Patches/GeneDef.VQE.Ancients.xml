@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- 1010 archite - ancient -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaquestsexpanded.ancients</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_Electromagnetized"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">-705</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_HellsphereBlast"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">-704</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_InfernoSpew"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">-703</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_Invisibility"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">-702</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_Levitation"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">-701</displayOrderInCategory>
+					<waterCellCost Operation="SafeAdd">1</waterCellCost>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_MatterPhasing"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">-700</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_PassiveMeditation"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">-590</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_SelfRepairingTissue"]</xpath>
+				<value>
+					<customEffectDescriptions Operation="SafeAdd">
+						<li>Can regrow missing organs and body parts.</li>
+					</customEffectDescriptions>
+					<displayOrderInCategory Operation="AddOrReplace">-501</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_Woundless"]</xpath>
+				<value>
+					<customEffectDescriptions Operation="SafeAdd">
+						<li>Bleeding wounds close very quickly.</li>
+					</customEffectDescriptions>
+					<displayOrderInCategory Operation="AddOrReplace">-500</displayOrderInCategory>
+					<modExtensions Operation="Safe">
+						<li Class="VEF.Genes.GeneExtension" Operation="Safe" CheckAttributes="True">
+							<hediffToWholeBody Operation="SafeRemove" Compare="Both">VQEA_Woundless</hediffToWholeBody>
+						</li>
+					</modExtensions>
+					<statFactors Operation="Safe">
+						<InjuryHealingFactor Operation="SafeRemove">0</InjuryHealingFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<InjuryHealingFactor Operation="SafeAdd">8</InjuryHealingFactor>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="VQEA_BlurRunner"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText" XPathLocal="capacity">
+									<capacity>Moving</capacity>
+									<offset>0.4</offset>
+								</li>
+							</capMods>
+							<displayOrderInCategory Operation="AddOrReplace">-471</displayOrderInCategory>
+							<statFactors Operation="Safe">
+								<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+							</statFactors>
+							<statOffsets Operation="Safe">
+								<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+								<VEF_RangedDodgeChance Operation="SafeReplace">0.20</VEF_RangedDodgeChance>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>goji.gojismiscgenes</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>GeneDef</xpath>
+								<value>
+									<description Operation="SafeReplace">Carriers of this gene move at blinding speed. Their enhanced reflexes and kinetic control allow them to traverse the battlefield in a blur.</description>
+									<statOffsets Operation="Safe">
+										<VEF_RangedDodgeChance Operation="SafeRemove">0</VEF_RangedDodgeChance>
+									</statOffsets>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="VQEA_PerfectVision"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<displayOrderInCategory Operation="AddOrReplace">-410</displayOrderInCategory>
+							<exclusionTags Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">VRE_SuperiorDarkVision</li>
+							</exclusionTags>
+							<statFactors Operation="Safe">
+								<ShootingAccuracyFactor_Long Operation="SafeRemove">0</ShootingAccuracyFactor_Long>
+								<ShootingAccuracyFactor_Medium Operation="SafeRemove">0</ShootingAccuracyFactor_Medium>
+								<VEF_VerbRangeFactor Operation="SafeRemove">0</VEF_VerbRangeFactor>
+							</statFactors>
+							<statOffsets Operation="Safe">
+								<WorkSpeedGlobal Operation="SafeAdd">0.1</WorkSpeedGlobal>
+								<ShootingAccuracyPawn Operation="SafeAdd">4</ShootingAccuracyPawn>
+								<MeleeHitChance Operation="SafeAdd">4</MeleeHitChance>
+								<MeleeDodgeChance Operation="SafeAdd">4</MeleeDodgeChance>
+								<VEF_VerbRangeFactor Operation="SafeAdd">0.2</VEF_VerbRangeFactor>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>Turnovus.Biotech.IntegratedGenes</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>GeneDef</xpath>
+								<value>
+									<exclusionTags Operation="Safe">
+										<li Operation="SafeRemove" Compare="InnerText">ShootingAccuracy</li>
+										<li Operation="SafeAdd" Compare="InnerText">Turn_Exclusion_Blindness</li>
+										<li Operation="SafeAdd" Compare="InnerText">Turn_Exclusion_NearSighted</li>
+										<li Operation="SafeAdd" Compare="InnerText">Turn_Exclusion_NightVision</li>
+									</exclusionTags>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.lycanthrope</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseFalse>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="DarkVision"]</xpath>
+						<value>
+							<exclusionTags Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">VRE_SuperiorDarkVision</li>
+							</exclusionTags>
+						</value>
+					</Operation>
+				</caseFalse>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_Serene"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">-400</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_Marksman"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">-390</displayOrderInCategory>
+					<statFactors Operation="Safe">
+						<AimingDelayFactor Operation="SafeAdd">0.5</AimingDelayFactor>
+						<RangedCooldownFactor Operation="SafeReplace">0.8</RangedCooldownFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<ShootingAccuracyPawn Operation="SafeReplace">12</ShootingAccuracyPawn>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_Herculean"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">-381</displayOrderInCategory>
+					<exclusionTags Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">Unstoppable</li>
+					</exclusionTags>
+					<statFactors Operation="Safe">
+						<MeleeDamageFactor Operation="SafeRemove">0</MeleeDamageFactor>
+						<CarryingCapacity Operation="SafeRemove">0</CarryingCapacity>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<MeleeDamageFactor Operation="SafeAdd">2</MeleeDamageFactor>
+						<CarryingCapacity Operation="SafeAdd">150</CarryingCapacity>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_Prowess"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">-380</displayOrderInCategory>
+					<statFactors Operation="Safe">
+						<VQEA_Prowess Operation="SafeRemove">0</VQEA_Prowess>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<VQEA_Prowess Operation="SafeAdd">0.2</VQEA_Prowess>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_Bulwark"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">-371</displayOrderInCategory>
+					<modExtensions Operation="Safe">
+						<li Class="VEF.Genes.GeneExtension" Operation="Safe" CheckAttributes="True">
+							<hediffToWholeBody Operation="SafeRemove" Compare="Both">VQEA_Bulwark</hediffToWholeBody>
+						</li>
+					</modExtensions>
+					<!--painFactor Operation="SafeAdd">0.1</painFactor-->
+					<statOffsets Operation="Safe">
+						<PainShockThreshold Operation="SafeAdd">0.2</PainShockThreshold>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_SubstanceImpervious"]</xpath>
+				<value>
+					<customEffectDescriptions Operation="SafeAdd">
+						<li>Immune to addictions.</li>
+						<li>Overdose chance factor x0%</li>
+					</customEffectDescriptions>
+					<displayOrderInCategory Operation="AddOrReplace">-200</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_Genius"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">-110</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="VQEA_Enormous"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<biostatMet Operation="SafeReplace">-5</biostatMet>
+							<capMods Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText" XPathLocal="capacity">
+									<capacity>Moving</capacity>
+									<offset>-0.25</offset>
+								</li>
+							</capMods>
+							<displayOrderInCategory Operation="AddOrReplace">0</displayOrderInCategory>
+							<modExtensions Operation="Safe">
+								<li Class="VEF.Genes.GeneExtension" Operation="Safe" CheckAttributes="True">
+									<hediffToWholeBody Operation="SafeRemove" Compare="Both">VQEA_Enormous</hediffToWholeBody>
+								</li>
+							</modExtensions>
+							<statFactors Operation="Safe">
+								<LeatherAmount Operation="SafeRemove">0</LeatherAmount>
+								<MeatAmount Operation="SafeRemove">0</MeatAmount>
+								<MeleeDodgeChance Operation="SafeRemove">0</MeleeDodgeChance>
+								<StaggerDurationFactor Operation="SafeRemove">0</StaggerDurationFactor>
+							</statFactors>
+							<statOffsets Operation="Safe">
+								<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+								<StaggerDurationFactor Operation="SafeAdd">-0.5</StaggerDurationFactor>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaracesexpanded.insector</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>GeneDef</xpath>
+								<value>
+									<exclusionTags Operation="Safe">
+										<li Operation="SafeRemove" Compare="InnerText">InsectorSize</li>
+									</exclusionTags>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_PlasteelSkin"]</xpath>
+				<value>
+					<customEffectDescriptions Operation="SafeRemove"/>
+					<displayOrderInCategory Operation="AddOrReplace">10</displayOrderInCategory>
+					<modExtensions Operation="Safe">
+						<li Class="VEF.Genes.GeneExtension" Operation="Safe" CheckAttributes="True">
+							<hediffToWholeBody Operation="SafeRemove" Compare="Both">VQEA_PlasteelSkin</hediffToWholeBody>
+						</li>
+					</modExtensions>
+					<statFactors Operation="Safe">
+						<Flammability Operation="SafeAdd">0</Flammability>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<ArmorRating_Sharp Operation="SafeAdd">0.6</ArmorRating_Sharp>
+						<ArmorRating_Blunt Operation="SafeAdd">0.4</ArmorRating_Blunt>
+						<ArmorRating_Heat Operation="SafeAdd">1.5</ArmorRating_Heat>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_PlasteelClaws"]</xpath>
+				<value>
+					<customEffectDescriptions Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">Causes cuts when using unarmed attacks.</li>
+					</customEffectDescriptions>
+					<displayOrderInCategory Operation="AddOrReplace">210</displayOrderInCategory>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- 990 archite aptitude -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaquestsexpanded.ancients</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_MasterfulShooting"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">1</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_MasterfulMelee"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">2</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_MasterfulConstruction"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">3</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_MasterfulMining"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">4</displayOrderInCategory>
+					<statOffsets Operation="Safe">
+						<MiningYield Operation="SafeReplace">0.2</MiningYield>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_MasterfulCooking"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">5</displayOrderInCategory>
+					<statOffsets Operation="Safe">
+						<ButcheryFleshEfficiency Operation="SafeReplace">0.2</ButcheryFleshEfficiency>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_MasterfulPlants"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">6</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_MasterfulAnimals"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">7</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_MasterfulCrafting"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">8</displayOrderInCategory>
+					<statOffsets Operation="Safe">
+						<ButcheryMechanoidEfficiency Operation="SafeReplace">0.2</ButcheryMechanoidEfficiency>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_MasterfulArtistic"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">9</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_MasterfulMedical"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">10</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_MasterfulSocial"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">11</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VQEA_MasterfulIntellectual"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">12</displayOrderInCategory>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>

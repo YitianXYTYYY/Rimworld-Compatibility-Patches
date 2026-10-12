@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- Biotech -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ludeon.rimworld.biotech</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- Subcore -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[@Name="SubcoreBase"]</xpath>
+				<value>
+					<thingCategories Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">Manufactured</li>
+						<li Operation="SafeAdd" Compare="InnerText">BiotechSubcores</li>
+					</thingCategories>
+				</value>
+			</Operation>
+			<!-- Chips -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[@Name="MechResourceBase"]</xpath>
+				<value>
+					<thingCategories Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">Manufactured</li>
+						<li Operation="SafeAdd" Compare="InnerText">BiotechChips</li>
+					</thingCategories>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Anomaly -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ludeon.rimworld.anomaly</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="GoldenCube"]</xpath>
+				<value>
+					<statBases Operation="Safe">
+						<MarketValue Operation="SafeReplace">0</MarketValue>
+					</statBases>
+				</value>
+			</Operation>
+			<!-- bioferrite -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="Bioferrite"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>ThingDef/stuffProps/statFactorsQuality/li[stat="PsychicSensitivityFactor"]</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>ThingDef/stuffProps/statOffsetsQuality/li[stat="PsychicEntropyMaxOffset"]</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>ThingDef/stuffProps/statOffsetsQuality/li[stat="PsychicEntropyRecoveryRateOffset"]</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<stuffProps Operation="Safe">
+								<statOffsetsQuality Operation="Safe">
+									<li MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech" Operation="SafeAdd" XPathLocal="stat">
+										<stat>PsychicSensitivityOffset</stat>
+										<awful>0.1</awful>
+										<poor>0.1</poor>
+										<normal>0.1</normal>
+										<good>0.1</good>
+										<excellent>0.1</excellent>
+										<masterwork>0.1</masterwork>
+										<legendary>0.1</legendary>
+									</li>
+								</statOffsetsQuality>
+							</stuffProps>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Davai's Sorted Categories -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>davai.sortedcategories</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.OptionalPatchExternal">
+				<ModClass>DavaiSortedCategories.Mod</ModClass>
+				<field>CreateComponentsCategory</field>
+				<caseTrue>
+					<!-- ARC component -->
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaquestsexpanded.generator</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>Defs/ThingDef[defName="VQE_GenetronComponent"]</xpath>
+								<value>
+									<thingCategories Operation="Safe">
+										<li Operation="SafeRemove" Compare="InnerText">Manufactured</li>
+										<li Operation="SafeAdd" Compare="InnerText">DavaiComponents</li>
+									</thingCategories>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Medical System Expansion 2 -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>mse2.core</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- modules -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingCategoryDef[defName="MSE2Modules"]</xpath>
+				<value>
+					<parent Operation="SafeReplace">BodyParts</parent>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- ReBuild: Doors and Corners -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>rebuild.cotr.doorsandcorners</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- Glass -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[@Name="RB_GlassBase"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<thingCategories Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">Manufactured</li>
+								<li Operation="SafeAdd" Compare="InnerText">ResourcesRaw</li>
+							</thingCategories>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Vanilla Factions Expanded - Insectoids 2 -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>oskarpotocki.vfe.insectoid2</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- Pherocore -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[@Name="VFEI2_PherocoreBase"]</xpath>
+				<value>
+					<thingCategories Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">ItemsMisc</li>
+						<li Operation="SafeAdd" Compare="InnerText">VFEI2Pherocores</li>
+					</thingCategories>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[@ParentName="VFEI2_PherocoreBase"][defName="VFEI2_PherocoreSorne"]</xpath>
+				<value>
+					<statBases Operation="Safe">
+						<MarketValue Operation="SafeReplace">1500</MarketValue>
+					</statBases>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[@ParentName="VFEI2_PherocoreBase"][defName!="VFEI2_PherocoreSorne"]</xpath>
+				<value>
+					<statBases Operation="Safe">
+						<MarketValue Operation="SafeReplace">2500</MarketValue>
+					</statBases>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Vanilla Genetics Expanded -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaexpanded.vgeneticse</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- Items Resource GenomeExcavators -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="GR_ArchotechGenomeExcavator"]</xpath>
+				<value>
+					<techLevel Operation="SafeAdd">Archotech</techLevel>
+				</value>
+			</Operation>
+			<!-- Items Resource GrowthCells -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="GR_ArchoGrowthcell"]</xpath>
+				<value>
+					<techLevel Operation="SafeAdd">Archotech</techLevel>
+				</value>
+			</Operation>
+			<!-- Items Resource HybridAnimalProducts - Other -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="GR_HugeBearPelt" or 
+					defName="GR_HugeBearCatPelt" or 
+					defName="GR_MuffaloPelt" or 
+					defName="GR_WolfPelt"]</xpath>
+				<value>
+					<thingCategories Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">ResourcesRaw</li>
+						<li Operation="SafeAdd" Compare="InnerText">GRPelts</li>
+					</thingCategories>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Vanilla Races Expanded - Sanguophage -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.sanguophage</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- Hemogen Packs -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VRE_HemogenPack_Animal" or 
+					defName="VRE_HemogenPack_Corpse" or 
+					defName="VRE_HemogenPack_Sanguophage"]</xpath>
+				<value>
+					<ingestible Operation="Safe">
+						<nonDrugIngestibleWithoutFoodNeed Operation="SafeAdd">true</nonDrugIngestibleWithoutFoodNeed>
+					</ingestible>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>

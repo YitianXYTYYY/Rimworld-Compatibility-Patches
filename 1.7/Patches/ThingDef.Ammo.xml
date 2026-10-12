@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>reel.turretpipeline</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="ReelTurretAmmo"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<stackLimit Operation="SafeReplace">150</stackLimit>
+							<statBases Operation="Safe">
+								<Flammability Operation="SafeReplace">0.6</Flammability>
+								<MarketValue Operation="SafeReplace">3</MarketValue>
+								<Mass Operation="SafeReplace">0.1</Mass>
+							</statBases>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>mlie.yayoscombat3</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef/thingCategories</xpath>
+								<value>
+									<li Operation="SafeAdd" Compare="InnerText">yy_ammo_category</li>
+									<li Operation="SafeRemove" Compare="InnerText">Manufactured</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>mlie.yayoscombat3</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingCategoryDef[defName="yy_ammo_category"]</xpath>
+				<value>
+					<label Operation="SafeReplace">ammunition</label>
+					<parent Operation="SafeReplace">Manufactured</parent>
+				</value>
+			</Operation>
+			<!-- Ammo -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="yy_ammo_primitive" or 
+					defName="yy_ammo_primitive_fire" or 
+					defName="yy_ammo_primitive_emp" or 
+					defName="yy_ammo_industrial" or 
+					defName="yy_ammo_industrial_fire" or 
+					defName="yy_ammo_industrial_emp" or 
+					defName="yy_ammo_spacer" or 
+					defName="yy_ammo_spacer_fire" or 
+					defName="yy_ammo_spacer_emp"]</xpath>
+				<value>
+					<statBases Operation="Safe">
+						<Mass Operation="SafeReplace">0</Mass>
+					</statBases>
+					<thingCategories Operation="SafeRemove"/>
+					<tradeability Operation="SafeAdd">None</tradeability>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>syrus.yayoscombataddon</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="yy_ammo_primitive_light" or 
+							defName="yy_ammo_primitive_heavy" or 
+							defName="yy_ammo_industrial_light" or 
+							defName="yy_ammo_industrial_heavy" or 
+							defName="yy_ammo_spacer_light" or 
+							defName="yy_ammo_spacer_heavy"]</xpath>
+						<value>
+							<statBases Operation="Safe">
+								<Mass Operation="SafeReplace">0</Mass>
+							</statBases>
+							<thingCategories Operation="SafeRemove"/>
+							<tradeability Operation="SafeAdd">None</tradeability>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>

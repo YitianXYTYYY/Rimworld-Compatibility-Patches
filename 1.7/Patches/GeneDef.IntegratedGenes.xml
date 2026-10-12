@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>turnovus.biotech.integratedgenes</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- 600 psychic -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="Turn_Gene_SlowNeuralHeat"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<PsychicEntropyRecoveryRate Operation="SafeReplace">0.8</PsychicEntropyRecoveryRate>
+					</statFactors>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="Turn_Gene_FastNeuralHeat"]</xpath>
+				<value>
+					<biostatMet Operation="SafeReplace">-2</biostatMet>
+					<statFactors Operation="Safe">
+						<PsychicEntropyRecoveryRate Operation="SafeRemove">0</PsychicEntropyRecoveryRate>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<PsychicEntropyRecoveryRate Operation="SafeAdd">0.15</PsychicEntropyRecoveryRate>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="Turn_Gene_VeryFastNeuralHeat"]</xpath>
+				<value>
+					<biostatCpx Operation="SafeAdd">2</biostatCpx>
+					<biostatMet Operation="SafeReplace">-5</biostatMet>
+					<statFactors Operation="Safe">
+						<PsychicEntropyRecoveryRate Operation="SafeRemove">0</PsychicEntropyRecoveryRate>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<PsychicEntropyRecoveryRate Operation="SafeAdd">0.3</PsychicEntropyRecoveryRate>
+					</statOffsets>
+				</value>
+			</Operation>
+
+			<!-- 590 meditation -->			
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.archon</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="Turn_Gene_MeditationNeed"]</xpath>
+						<value>
+							<displayCategory Operation="AddOrReplace">Psychic_Meditation</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">100</displayOrderInCategory>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="Turn_Gene_PruningAccelerated"]</xpath>
+						<value>
+							<displayCategory Operation="AddOrReplace">Psychic_Meditation</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">1000</displayOrderInCategory>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="Turn_Gene_GauranlenNeed"]</xpath>
+						<value>
+							<displayCategory Operation="AddOrReplace">Psychic_Meditation</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">1010</displayOrderInCategory>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+
+			<!-- 510 health -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="Turn_Gene_FleshbeastMutating" or 
+					defName="Turn_Gene_FleshbeastBurster"]</xpath>
+				<value>
+					<biostatCpx Operation="SafeRemove"/>
+				</value>
+			</Operation>
+
+			<!-- 500 health -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="Turn_Gene_BiosculptAccelerated"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Healing</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">1000</displayOrderInCategory>
+					<statOffsets Operation="Safe">
+						<BiosculpterOccupantSpeed Operation="SafeReplace">0.4</BiosculpterOccupantSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="Turn_Gene_BiosculptNeed"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Healing</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">1010</displayOrderInCategory>
+					<statOffsets Operation="Safe">
+						<BiosculpterOccupantSpeed Operation="SafeReplace">0.2</BiosculpterOccupantSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
+
+			<!-- 410 sight -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="Turn_Gene_Blindness"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<displayCategory Operation="AddOrReplace">Health_Eye</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">0</displayOrderInCategory>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaracesexpanded.lycanthrope</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>GeneDef</xpath>
+								<value>
+									<exclusionTags Operation="Safe">
+										<li Operation="SafeAdd" Compare="InnerText">VRE_SuperiorDarkVision</li>
+									</exclusionTags>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+
+			<!-- 380 melee -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="Turn_Gene_Duelist"]</xpath>
+				<value>
+					<biostatMet Operation="SafeReplace">-2</biostatMet>
+					<displayCategory Operation="AddOrReplace">Violence_Melee</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">300</displayOrderInCategory>
+					<statFactors Operation="Safe">
+						<MeleeDodgeChance Operation="SafeRemove">0</MeleeDodgeChance>
+						<MeleeHitChance Operation="SafeRemove">0</MeleeHitChance>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<MeleeDodgeChance Operation="SafeAdd">4</MeleeDodgeChance>
+						<MeleeHitChance Operation="SafeAdd">4</MeleeHitChance>
+					</statOffsets>
+				</value>
+			</Operation>
+
+			<!-- 320 slavery -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="Turn_Gene_FreeSpirit"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Turn_GeneCategory_Slavery</displayCategory>
+        			<displayOrderInCategory Operation="AddOrReplace">10</displayOrderInCategory>
+					<exclusionTags Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">Turn_Exclusion_FreeSpirit_DeadCalm</li>
+					</exclusionTags>
+					<prisonBreakMTBFactor Operation="SafeReplace">0.8</prisonBreakMTBFactor>
+					<socialFightChanceFactor Operation="SafeRemove"/>
+					<statFactors Operation="Safe">
+						<SlaveSuppressionFallRate Operation="SafeRemove">0</SlaveSuppressionFallRate>
+						<RoyalFavorValue Operation="SafeRemove">0</RoyalFavorValue>
+					</statFactors>
+					<statOffsets Operation="Safe">
+            			<SlaveSuppressionFallRate MayRequire="Ludeon.RimWorld.Ideology" Operation="SafeAdd">3.0</SlaveSuppressionFallRate>
+						<RoyalFavorValue MayRequire="Ludeon.RimWorld.Royalty" Operation="SafeAdd">-2</RoyalFavorValue>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThoughtDef[defName="Turn_Thought_FreeSpiritImprisoned"]</xpath>
+				<value>
+					<stages Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="label">
+							<label Operation="Safe">imprisoned</label>
+							<baseMoodEffect Operation="SafeReplace">-15</baseMoodEffect>
+						</li>
+					</stages>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="Turn_Gene_AgressionSubmissive"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeRemove">
+						<xpath>GeneDef</xpath>
+						<attribute>ParentName</attribute>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<customEffectDescriptions Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">Mood bonus while enslaved.</li>
+								<li Operation="SafeRemove" Compare="InnerText">Mood penalty while free.</li>
+							</customEffectDescriptions>
+							<displayOrderInCategory Operation="AddOrReplace">20</displayOrderInCategory>
+							<exclusionTags Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">Turn_Exclusion_Submissive</li>
+							</exclusionTags>
+							<aggroMentalBreakSelectionChanceFactor Operation="SafeReplace">0.2</aggroMentalBreakSelectionChanceFactor>
+							<socialFightChanceFactor Operation="SafeReplace">0.2</socialFightChanceFactor>
+							<statOffsets Operation="Safe">
+								<RoyalFavorValue MayRequire="Ludeon.RimWorld.Royalty" Operation="SafeReplace">2</RoyalFavorValue>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="Turn_Gene_Terrified"]</xpath>
+				<value>
+        			<displayOrderInCategory Operation="AddOrReplace">100</displayOrderInCategory>
+					<statOffsets Operation="Safe">
+            			<RoyalFavorValue MayRequire="Ludeon.RimWorld.Royalty" Operation="SafeReplace">1</RoyalFavorValue>
+					</statOffsets>
+				</value>
+			</Operation>
+
+			<!-- 0 miscellaneous -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="Turn_Gene_MotivationLow"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">-1000</displayOrderInCategory>
+					<statFactors Operation="Safe">								
+						<GeneralLaborSpeed Operation="SafeRemove">0</GeneralLaborSpeed>
+						<WorkSpeedGlobal Operation="SafeAdd">0.8</WorkSpeedGlobal>
+					</statFactors>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="Turn_Gene_MotivationHigh"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">-990</displayOrderInCategory>
+					<statFactors Operation="Safe">								
+						<GeneralLaborSpeed Operation="SafeRemove">0</GeneralLaborSpeed>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<WorkSpeedGlobal Operation="SafeAdd">0.1</WorkSpeedGlobal>
+					</statOffsets>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>

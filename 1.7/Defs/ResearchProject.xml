@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ResearchProjectDef MayRequire="ludeon.rimworld.royalty">
+		<defName>EltexApparel</defName>
+		<label>eltex apparel</label>
+		<description>Craft eltex apparel for psycasters, like royal robes and crowns.</description>
+		<baseCost>4000</baseCost>
+		<techLevel>Ultra</techLevel>
+		<hiddenPrerequisites>
+			<li>ComplexClothing</li>
+			<li>RoyalApparel</li>
+		</hiddenPrerequisites>
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<requiredResearchFacilities>
+			<li>MultiAnalyzer</li>
+		</requiredResearchFacilities>
+		<researchViewX>3.10</researchViewX>
+		<researchViewY>4.90</researchViewY>
+		<techprintCount>1</techprintCount>
+		<techprintCommonality>1</techprintCommonality>
+		<techprintMarketValue>4000</techprintMarketValue>
+		<heldByFactionCategoryTags>
+			<li>Empire</li>
+		</heldByFactionCategoryTags>
+	</ResearchProjectDef>
+
+</Defs>

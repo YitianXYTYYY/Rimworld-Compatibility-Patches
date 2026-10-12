@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>resplice.xotr.core</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- 600 psychic -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="RS_VoidTouched"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<customEffectDescriptions Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">Gives the void touched hediff!</li>
+								<li Operation="SafeAdd" Compare="InnerText">Healing: 100 hp/day</li>
+							</customEffectDescriptions>
+							<exclusionTags Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">EyeColor</li>
+							</exclusionTags>
+							<statFactors Operation="Safe">
+								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+								<StudyEfficiency Operation="SafeRemove">0</StudyEfficiency>
+							</statFactors>
+							<statOffsets Operation="Safe">
+								<PsychicSensitivity Operation="SafeAdd">1</PsychicSensitivity>
+								<StudyEfficiency Operation="SafeAdd">1</StudyEfficiency>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>GeneDef/renderNodeProperties/li[@Class="PawnRenderNodeProperties_Eye"]</xpath>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>

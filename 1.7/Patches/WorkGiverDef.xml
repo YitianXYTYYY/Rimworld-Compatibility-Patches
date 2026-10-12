@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>	
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>og.maarx.meditateasworktype.continued</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/WorkTypeDef[defName="MeditateForPsyfocus"]</xpath>
+				<value>
+					<labelShort Operation="SafeReplace">Meditate</labelShort>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/WorkGiverDef[defName="MeditateAnima"]</xpath>
+				<value>
+					<workType Operation="SafeReplace">MeditateForPsyfocus</workType>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaexpanded.vgeneticse</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/WorkGiverDef[defName="CreateXenogerm"]</xpath>
+				<value>
+					<workType Operation="SafeReplace">GR_Genetics</workType>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>amch.eragon.hcgenefabrication</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/WorkGiverDef[defName="GeneFab_DoBillsGeneBench"]</xpath>
+						<value>
+							<workType Operation="SafeReplace">GR_Genetics</workType>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>anonemous2.genepackreprocessor</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/WorkGiverDef[defName="SeparateGenepack"]</xpath>
+						<value>
+							<workType Operation="SafeReplace">GR_Genetics</workType>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>

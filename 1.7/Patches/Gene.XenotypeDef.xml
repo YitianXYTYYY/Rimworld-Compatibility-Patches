@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- Biotech -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ludeon.rimworld.biotech</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/XenotypeDef[defName="Sanguophage"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>als.biotechgravship</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>XenotypeDef/genes</xpath>
+								<value>
+									<li Operation="SafeRemove" Compare="InnerText">BfG_RandomGene_Blood</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Odyssey -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ludeon.rimworld.odyssey</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/XenotypeDef[defName="Starjack"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>goji.gojismiscgenes</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>XenotypeDef/genes</xpath>
+								<value>
+									<li Operation="SafeAdd" Compare="InnerText">Goji_Hibernation</li>
+									<li Operation="SafeRemove" Compare="InnerText">VREStarjack_Cryostasis</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaracesexpanded.starjack</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.FindMod">
+								<mods>
+									<li>als.biotechgravship</li>
+								</mods>
+								<packageId>true</packageId>
+								<caseTrue>
+									<Operation Class="XmlExtensions.HybridPatch">
+										<xpath>XenotypeDef/genes</xpath>
+										<value>
+											<li Operation="SafeAdd" Compare="InnerText">MoveSpeed_Space</li>
+											<li Operation="SafeRemove" Compare="InnerText">VREStarjack_VacuumEfficiency</li>
+										</value>
+									</Operation>
+								</caseTrue>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Vanilla Races Expanded - Highmate -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.highmate</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>redmattis.bettergeneinheritance</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/XenotypeDef[defName="Highmate"]/genes</xpath>
+						<value>
+							<li Operation="SafeAdd" Compare="InnerText">BGI_RecessiveGenes</li>
+							<li Operation="SafeRemove" Compare="InnerText">VRE_RecessiveGenome</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Vanilla Races Expanded - Phytokin -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.phytokin</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>redmattis.betterprerequisites</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/XenotypeDef[defName="VRE_Animakin" or 
+							defName="VRE_Gauranlenkin" or 
+							defName="VRE_Poluxkin"]/genes</xpath>
+						<value>
+							<li Operation="SafeAdd" Compare="InnerText">Body_FemaleOnly</li>
+							<li Operation="SafeRemove" Compare="InnerText">VRE_Female</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Vanilla Races Expanded - Saurid -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.saurid</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/XenotypeDef[defName="VRESaurids_Saurid"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>jintuzilamian.gene.xenocosmetic</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>XenotypeDef/genes</xpath>
+								<value>
+									<li Operation="SafeAdd" Compare="InnerText">AFU_BA_SmoothLizardTail</li>
+									<li Operation="SafeRemove" Compare="InnerText">VRESaurids_GeckoTail</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.hussar</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- weapon aptitude -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VREHT_WeaponAptitude_Randomizer"]</xpath>
+				<value>
+					<biostatCpx Operation="SafeAdd">0</biostatCpx>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>hussars.blablabla.cantbearsedtocomeupwithafunnyid</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="SEX_RangedWeaponAptitude"]</xpath>
+						<value>
+							<displayCategory Operation="AddOrReplace">Violence_Ranged</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">-100</displayOrderInCategory>
+							<exclusionTags Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">SEX_WeaponAptitude</li>
+							</exclusionTags>
+							<statFactors Operation="Safe">
+								<ShootingAccuracyPawn Operation="SafeRemove">0</ShootingAccuracyPawn>
+							</statFactors>
+							<statOffsets Operation="Safe">
+								<ShootingAccuracyPawn Operation="SafeAdd">12</ShootingAccuracyPawn>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="SEX_MeleeWeaponAptitude"]</xpath>
+						<value>
+							<displayCategory Operation="AddOrReplace">Violence_Melee</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">-100</displayOrderInCategory>
+							<exclusionTags Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">SEX_WeaponAptitude</li>
+							</exclusionTags>
+							<statFactors Operation="Safe">
+								<MeleeHitChance Operation="SafeRemove">0</MeleeHitChance>
+							</statFactors>
+							<statOffsets Operation="Safe">
+								<MeleeHitChance Operation="SafeAdd">12</MeleeHitChance>
+							</statOffsets>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- Vanilla Genetics Expanded -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.saurid</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/FactionDef[defName="VRESaurids_OutlanderRoughSaurid"]</xpath>
+				<value>
+					<settlementGenerationWeight Operation="SafeAdd">0.4</settlementGenerationWeight>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>

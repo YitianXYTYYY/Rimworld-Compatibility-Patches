@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- Primitive -->
+	<ThingDef ParentName="ResourceBase" MayRequire="mlie.yayoscombat3">
+		<defName>AmmoPrimitive</defName>
+		<label>arrow</label>
+		<description>Ammunition used in bow weapons.</description>
+		<graphicData>
+			<texPath>yy_ammo_primitive</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<soundInteract>Wood_Drop</soundInteract>
+		<soundDrop>Wood_Drop</soundDrop>
+		<stackLimit>75</stackLimit>
+		<statBases>
+			<MarketValue>1</MarketValue>
+			<MaxHitPoints>20</MaxHitPoints>
+			<Mass>0.04</Mass>
+			<Flammability>1</Flammability>
+			<DeteriorationRate>1.0</DeteriorationRate>
+		</statBases>
+    	<techLevel>Neolithic</techLevel>
+		<thingCategories>
+			<li>yy_ammo_category</li>
+		</thingCategories>
+		<tradeTags>
+			<li>Ammo</li>
+		</tradeTags>
+	</ThingDef>
+
+	<!-- Industrial -->
+	<ThingDef ParentName="ResourceBase" MayRequire="mlie.yayoscombat3">
+		<defName>AmmoIndustrial</defName>
+		<label>ammo</label>
+		<description>Ammunition used for most industrial era ranged weapons.</description>
+		<graphicData>
+			<texPath>yy_ammo_industrial</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Standard_Drop</soundDrop>
+		<stackLimit>150</stackLimit>
+		<statBases>
+			<MarketValue>2.5</MarketValue>
+			<MaxHitPoints>20</MaxHitPoints>
+			<Mass>0.02</Mass>
+			<Flammability>0.6</Flammability>
+			<DeteriorationRate>1.0</DeteriorationRate>
+		</statBases>
+    	<techLevel>Industrial</techLevel>
+		<thingCategories>
+			<li>yy_ammo_category</li>
+		</thingCategories>
+		<tradeTags>
+			<li>Ammo</li>
+		</tradeTags>
+	</ThingDef>
+
+	<!-- Spacer -->
+	<ThingDef ParentName="ResourceBase" MayRequire="mlie.yayoscombat3">
+		<defName>AmmoSpacer</defName>
+		<label>charged battery</label>
+		<description>Ammunition used for charge weapons.</description>
+		<graphicData>
+			<texPath>yy_ammo_spacer</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Standard_Drop</soundDrop>
+		<stackLimit>150</stackLimit>
+		<statBases>
+			<MarketValue>6</MarketValue>
+			<MaxHitPoints>20</MaxHitPoints>
+			<Mass>0.01</Mass>
+			<Flammability>0.6</Flammability>
+			<DeteriorationRate>1.0</DeteriorationRate>
+		</statBases>
+    	<techLevel>Spacer</techLevel>
+		<thingCategories>
+			<li>yy_ammo_category</li>
+		</thingCategories>
+		<tradeTags>
+			<li>Ammo</li>
+		</tradeTags>
+	</ThingDef>
+	<ThingDef ParentName="ResourceBase" MayRequire="mlie.yayoscombat3">
+		<defName>AmmoSpacerEMP</defName>
+		<label>energy ammo</label>
+		<description>Spacer ammunition used for special weapons.</description>
+		<graphicData>
+			<texPath>yy_ammo_spacer_emp</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Standard_Drop</soundDrop>
+		<stackLimit>150</stackLimit>
+		<statBases>
+			<MarketValue>7</MarketValue>
+			<Mass>0.01</Mass>
+			<Flammability>0.6</Flammability>
+			<DeteriorationRate>1.0</DeteriorationRate>
+		</statBases>
+    	<techLevel>Spacer</techLevel>
+		<thingCategories>
+			<li>yy_ammo_category</li>
+		</thingCategories>
+		<tradeTags>
+			<li>Ammo</li>
+		</tradeTags>
+	</ThingDef>
+
+	<ThingDef ParentName="UnfinishedBase" MayRequire="mlie.yayoscombat3">
+		<defName>AmmoPrimitive_Unfinish</defName>
+		<label>unfinished arrow</label>
+		<description>An unfinished arrow.</description>
+		<statBases>
+			<Flammability>1</Flammability>
+		</statBases>
+		<graphicData>
+			<texPath>Things/Item/Unfinished/UnfinishedWeapon</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<color>(133,97,67)</color>
+		</graphicData>
+		<stuffCategories Inherit="false"/>
+	</ThingDef>
+	<ThingDef ParentName="UnfinishedBase" MayRequire="mlie.yayoscombat3">
+		<defName>AmmoIndustrial_Unfinish</defName>
+		<label>unfinished ammo</label>
+		<description>An unfinished ammo.</description>
+		<statBases>
+			<Flammability>0.6</Flammability>
+		</statBases>
+		<graphicData>
+			<texPath>Things/Item/Unfinished/UnfinishedBelt</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<stuffCategories Inherit="false"/>
+	</ThingDef>
+	<ThingDef ParentName="UnfinishedBase" MayRequire="mlie.yayoscombat3">
+		<defName>AmmoSpacer_Unfinish</defName>
+		<label>unfinished ammo</label>
+		<description>An unfinished ammo.</description>
+		<statBases>
+			<Flammability>0.6</Flammability>
+		</statBases>
+		<graphicData>
+			<texPath>Things/Item/Unfinished/unfinishedcomponent</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<stuffCategories Inherit="false"/>
+	</ThingDef>
+
+</Defs>

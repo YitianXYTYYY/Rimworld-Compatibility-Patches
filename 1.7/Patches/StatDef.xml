@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- weapon stats -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/StatDef[@Name="AccuracyBase"]</xpath>
+		<value>
+			<maxValue Operation="SafeReplace">2</maxValue>
+		</value>
+	</Operation>
+	<!-- pawn stats - combat -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/StatDef[defName="MeleeDodgeChance"]</xpath>
+		<value>
+			<postProcessCurve Operation="Safe">
+				<points Operation="SafeReplace">
+					<li>(0, 0)</li>
+					<li>(8, 0.10)</li>
+					<li>(18, 0.20)</li>
+					<li>(30, 0.30)</li>
+					<li>(44, 0.40)</li>
+					<li>(60, 0.50)</li>
+				</points>
+			</postProcessCurve>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/StatDef[defName="MeleeHitChance"]</xpath>
+		<value>
+			<postProcessCurve Operation="Safe">
+				<points Operation="SafeReplace">
+					<li>(-24, 0.061)</li>
+					<li>(-16, 0.122)</li>
+					<li>(-8, 0.244)</li>
+					<li>(0, 0.488)</li>
+					<li>(8, 0.744)</li>
+					<li>(16, 0.872)</li>
+					<li>(24, 0.936)</li>
+					<li>(32, 0.968)</li>
+					<li>(40, 0.984)</li>
+					<li>(48, 0.992)</li>
+					<li>(56, 0.996)</li>
+					<li>(64, 0.998)</li>
+					<li>(72, 0.999)</li>
+					<li>(80, 1.000)</li>
+				</points>
+			</postProcessCurve>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/StatDef[defName="ShootingAccuracyPawn"]</xpath>
+		<value>
+			<postProcessCurve Operation="Safe">
+				<points Operation="SafeReplace">
+					<li>(-24, 0.488)</li>
+					<li>(-16, 0.744)</li>
+					<li>(-8, 0.872)</li>
+					<li>(0, 0.936)</li>
+					<li>(8, 0.968)</li>
+					<li>(16, 0.984)</li>
+					<li>(28, 0.992)</li>
+					<li>(40, 0.996)</li>
+					<li>(52, 0.998)</li>
+					<li>(64, 0.999)</li>
+					<li>(80, 1.000)</li>
+				</points>
+			</postProcessCurve>
+		</value>
+	</Operation>
+	<!-- pawn stats - psychic -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/StatDef[defName="PsychicSensitivity"]</xpath>
+		<value>
+			<category Operation="SafeReplace">PawnPsyfocus</category>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/StatDef[defName="PsychicSensitivityOffset"]/parts/li[@Class="StatPart_Quality"]</xpath>
+		<value>
+			<factorAwful Operation="SafeReplace">0.0</factorAwful>
+			<factorPoor Operation="SafeReplace">0.5</factorPoor>
+			<factorNormal Operation="SafeReplace">1</factorNormal>
+			<factorGood Operation="SafeReplace">1</factorGood>
+			<factorExcellent Operation="SafeReplace">1.5</factorExcellent>
+			<factorMasterwork Operation="SafeReplace">1.5</factorMasterwork>
+			<factorLegendary Operation="SafeReplace">2</factorLegendary>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/StatDef[defName="PsychicEntropyRecoveryRate"]</xpath>
+		<value>
+			<defaultBaseValue Operation="SafeReplace">0.6</defaultBaseValue>
+		</value>
+	</Operation>
+
+	<!-- VEF stats -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/StatDef[defName="VEF_BodySize_Offset"]</xpath>
+		<value>
+			<toStringStyle Operation="SafeReplace">PercentZero</toStringStyle>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/StatDef[defName="VEF_FoodCapacityMultiplier"]</xpath>
+		<value>
+			<toStringStyle Operation="SafeReplace">PercentZero</toStringStyle>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/StatDef[defName="VEF_MassCarryCapacity"]</xpath>
+		<value>
+			<parts Operation="Safe">
+				<li Class="StatPart_Quality" Operation="SafeReplace" CheckAttributes="True">
+					<factorAwful>0.5</factorAwful>
+					<factorPoor >0.75</factorPoor>
+					<factorNormal>1</factorNormal>
+					<factorGood>1.25</factorGood>
+					<factorExcellent>1.5</factorExcellent>
+					<factorMasterwork>1.75</factorMasterwork>
+					<factorLegendary>2</factorLegendary>
+				</li>
+			</parts>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/StatDef[defName="VEF_MTBLovinFactor"]</xpath>
+		<value>
+			<label Operation="SafeReplace">lovin' interval factor</label>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/StatDef[defName="VEF_RangedDodgeChance"]</xpath>
+		<value>
+			<hideAtValue Operation="SafeAdd">0</hideAtValue>
+			<toStringStyleUnfinalized Operation="SafeRemove"/>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/StatDef[defName="VEF_VerbRangeFactor"]</xpath>
+		<value>
+			<toStringStyle Operation="SafeReplace">PercentZero</toStringStyle>
+			<toStringStyleUnfinalized Operation="SafeRemove"/>
+		</value>
+	</Operation>
+</Patch>

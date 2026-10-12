@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- go-juice -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/HediffDef[defName="GoJuiceAddiction"]/stages/li[label="withdrawal"]</xpath>
+		<value>
+			<hungerRateFactor Operation="SafeAdd">1.5</hungerRateFactor>
+			<hungerRateFactorOffset Operation="SafeRemove"/>
+		</value>
+	</Operation>
+
+	<!-- smokeleaf -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ChemicalDef[defName="Smokeleaf"]</xpath>
+		<value>
+			<label Operation="SafeReplace">smokeleaf</label>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/HediffDef[defName="SmokeleafHigh"]/stages/li</xpath>
+		<value>
+			<hungerRateFactor Operation="SafeAdd">1.2</hungerRateFactor>
+			<hungerRateFactorOffset Operation="SafeRemove"/>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ludeon.rimworld.anomaly</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- juggernaut serum -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="JuggernautSerum"]/stages/li</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText" XPathLocal="capacity">
+							<capacity>Moving</capacity>
+							<offset>0.1</offset>
+						</li>
+					</capMods>
+					<statFactors Operation="Safe">
+						<MeleeDamageFactor Operation="SafeRemove">0</MeleeDamageFactor>
+						<InjuryHealingFactor Operation="SafeRemove">0</InjuryHealingFactor>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<InjuryHealingFactor Operation="SafeAdd">1</InjuryHealingFactor>
+						<MeleeDamageFactor Operation="SafeAdd">0.5</MeleeDamageFactor>
+						<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
+			<!-- metalblood serum -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="Metalblood"]/stages/li</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<IncomingDamageFactor Operation="SafeReplace">0.5</IncomingDamageFactor>
+					</statFactors>
+				</value>
+			</Operation>
+			<!-- voidsight serum -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="Voidsight"]/stages/li</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<StudyEfficiency Operation="SafeRemove">0</StudyEfficiency>
+						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<StudyEfficiency Operation="SafeAdd">0.2</StudyEfficiency>
+						<PsychicSensitivity Operation="SafeAdd">0.4</PsychicSensitivity>
+					</statOffsets>
+				</value>
+			</Operation>
+			<!-- mind-numb serum -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="MindNumbSerum"]/stages/li</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Consciousness</capacity>
+							<offset Operation="SafeRemove">0</offset>
+							<setMax Operation="SafeAdd">0.9</setMax>
+						</li>
+					</capMods>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Vanilla Factions Expanded - Empire -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>als.anomalygravship</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- vac protect serum -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VacProtectSerum"]</xpath>
+				<value>
+					<costList Operation="Safe">
+						<Bioferrite Operation="SafeAdd">20</Bioferrite>
+						<GravlitePanel Operation="SafeRemove">0</GravlitePanel>
+						<Meat_Twisted Operation="SafeReplace">20</Meat_Twisted>
+					</costList>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="VacProtect"]/stages/li</xpath>
+				<value>
+					<restFallFactorOffset Operation="SafeRemove"/>
+					<statOffsets Operation="Safe">
+						<RestFallRateFactor Operation="SafeAdd">0.2</RestFallRateFactor>
+					</statOffsets>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Vanilla Factions Expanded - Empire -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>oskarpotocki.vfe.empire</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- aperitif -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="VFEE_Aperitif"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<ingestible Operation="Safe">
+								<drugCategory Operation="SafeReplace">Social</drugCategory>
+							</ingestible>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="VFEE_IngestedAperitif"]/stages/li</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeAdd">2</hungerRateFactor>
+					<hungerRateFactorOffset Operation="SafeRemove"/>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Vanilla Factions Expanded - Insectoids 2 -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>oskarpotocki.vfe.insectoid2</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- royal insect jelly -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="VFEI2_RoyalInsectJelly"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>ThingDef/comps/li[@Class="CompProperties_Rottable"]</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<ingestible Operation="Safe">
+								<drugCategory Operation="SafeReplace">Social</drugCategory>
+							</ingestible>
+							<thingCategories Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">AnimalProductRaw</li>
+							</thingCategories>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Vanilla Genetics Expanded -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaexpanded.vgeneticse</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- mechanoid egg -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="GR_ElectroEgg"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<ingestible Operation="Safe">
+								<drugCategory Operation="SafeReplace">Medical</drugCategory>
+							</ingestible>
+							<tradeability Operation="SafeRemove"/>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef/ingestible/outcomeDoers/li[@Class="IngestionOutcomeDoer_GiveHediff" and hediffDef="GR_ElectroEggTolerance"]</xpath>
+						<value>
+							<multiplyByGeneToleranceFactors Operation="SafeAdd">true</multiplyByGeneToleranceFactors>
+							<toleranceChemical Operation="SafeAdd">GR_ElectroEgg</toleranceChemical>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ChemicalDef[defName="GR_ElectroEgg"]</xpath>
+				<value>
+					<geneToleranceBuildupFactorResist Operation="SafeAdd">0.5</geneToleranceBuildupFactorResist>
+					<geneToleranceBuildupFactorImmune Operation="SafeAdd">0</geneToleranceBuildupFactorImmune>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="GR_ElectroEggHigh"]</xpath>
+				<value>
+					<comps Operation="Safe">
+						<li Class="HediffCompProperties_SeverityPerDay" Operation="Safe" CheckAttributes="True">
+							<severityPerDay Operation="SafeReplace">-0.75</severityPerDay>
+							<showHoursToRecover Operation="SafeAdd">true</showHoursToRecover>
+						</li>
+					</comps>
+					<hediffClass Operation="SafeReplace">Hediff_High</hediffClass>
+					<stages Operation="Safe">
+						<li Operation="Safe">
+							<capMods Operation="Safe">								
+								<li Operation="SafeRemove" Compare="InnerText" XPathLocal="capacity">
+									<capacity>Metabolism</capacity>
+								</li>
+							</capMods>
+							<hungerRateFactor Operation="SafeAdd">0.8</hungerRateFactor>
+							<painFactor Operation="SafeRemove">0</painFactor>
+							<statFactors Operation="Safe">
+								<RestFallRateFactor Operation="SafeAdd">0.8</RestFallRateFactor>
+							</statFactors>
+						</li>
+					</stages>
+				</value>
+			</Operation>
+			<!-- featherdust joint -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="GR_FeatherdustJoint"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<tradeability Operation="SafeRemove"/>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef/ingestible/outcomeDoers/li[@Class="IngestionOutcomeDoer_GiveHediff" and hediffDef="GR_FeatherdustTolerance"]</xpath>
+						<value>
+							<multiplyByGeneToleranceFactors Operation="SafeAdd">true</multiplyByGeneToleranceFactors>
+							<toleranceChemical Operation="SafeAdd">GR_Featherdust</toleranceChemical>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ChemicalDef[defName="GR_Featherdust"]</xpath>
+				<value>
+					<geneToleranceBuildupFactorResist Operation="SafeAdd">0.5</geneToleranceBuildupFactorResist>
+					<geneToleranceBuildupFactorImmune Operation="SafeAdd">0</geneToleranceBuildupFactorImmune>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="GR_FeatherdustHigh"]</xpath>
+				<value>
+					<comps Operation="Safe">
+						<li Class="HediffCompProperties_SeverityPerDay" Operation="Safe" CheckAttributes="True">
+							<showHoursToRecover Operation="SafeAdd">true</showHoursToRecover>
+						</li>
+					</comps>
+					<hediffClass Operation="SafeReplace">Hediff_High</hediffClass>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>

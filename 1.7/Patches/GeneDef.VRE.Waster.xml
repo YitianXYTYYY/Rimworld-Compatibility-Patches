@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- 680 pollution -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.waster</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_ToxAbsorption"]</xpath>
+				<value>
+					<displayCategory Operation="SafeReplace">VREW_Mutations</displayCategory>
+					<displayOrderInCategory Operation="SafeReplace">-1000</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VREW_PollutionRegeneration"]</xpath>
+				<value>
+					<customEffectDescriptions Operation="SafeAdd">
+						<li>Gain stat bonuses when exposed to pollution.</li>
+					</customEffectDescriptions>
+					<displayOrderInCategory Operation="SafeReplace">-500</displayOrderInCategory>
+					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VREW_PollutionSustenance"]</xpath>
+				<value>
+					<customEffectDescriptions Operation="SafeAdd">
+						<li>Gain stat bonuses when exposed to pollution.</li>
+					</customEffectDescriptions>
+					<displayOrderInCategory Operation="SafeReplace">-498</displayOrderInCategory>
+					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VREW_PollutionPsySensitivity"]</xpath>
+				<value>
+					<customEffectDescriptions Operation="SafeAdd">
+						<li>Gain stat bonuses when exposed to pollution.</li>
+					</customEffectDescriptions>
+					<displayOrderInCategory Operation="SafeReplace">-490</displayOrderInCategory>
+					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VREW_PollutionRush"]</xpath>
+				<value>
+					<customEffectDescriptions Operation="SafeAdd">
+						<li>Gain stat bonuses when exposed to pollution.</li>
+					</customEffectDescriptions>
+					<displayOrderInCategory Operation="SafeReplace">-470</displayOrderInCategory>
+					<geneClass Operation="SafeRemove"/>
+					<modExtensions Operation="Safe">
+						<li Class="VEF.Genes.GeneExtension" Operation="Safe">
+							<hediffToWholeBody Operation="SafeAdd">PollutionStimulus</hediffToWholeBody>
+						</li>
+					</modExtensions>
+					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VREW_PollutionAccuracy"]</xpath>
+				<value>
+					<customEffectDescriptions Operation="SafeAdd">
+						<li>Gain stat bonuses when exposed to pollution.</li>
+					</customEffectDescriptions>
+					<displayOrderInCategory Operation="SafeReplace">-417</displayOrderInCategory>
+					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VREW_PollutionRage"]</xpath>
+				<value>
+					<customEffectDescriptions Operation="SafeAdd">
+						<li>Gain stat bonuses when exposed to pollution.</li>
+					</customEffectDescriptions>
+					<displayOrderInCategory Operation="SafeReplace">-416</displayOrderInCategory>
+					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VREW_PollutionNumbness"]</xpath>
+				<value>
+					<customEffectDescriptions Operation="SafeAdd">
+						<li>Gain stat bonuses when exposed to pollution.</li>
+					</customEffectDescriptions>
+					<displayOrderInCategory Operation="SafeReplace">-410</displayOrderInCategory>
+					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VREW_PollutionFertility"]</xpath>
+				<value>
+					<customEffectDescriptions Operation="SafeAdd">
+						<li>Gain stat bonuses when exposed to pollution.</li>
+					</customEffectDescriptions>
+					<displayOrderInCategory Operation="SafeReplace">-400</displayOrderInCategory>
+					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VREW_PollutionHappiness"]</xpath>
+				<value>
+					<customEffectDescriptions Operation="SafeAdd">
+						<li>Gain stat bonuses when exposed to pollution.</li>
+					</customEffectDescriptions>
+					<displayOrderInCategory Operation="SafeReplace">-390</displayOrderInCategory>
+					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VREW_PollutionCognition"]</xpath>
+				<value>
+					<customEffectDescriptions Operation="SafeAdd">
+						<li>Gain stat bonuses when exposed to pollution.</li>
+					</customEffectDescriptions>
+					<displayOrderInCategory Operation="SafeReplace">-200</displayOrderInCategory>
+					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VREW_PollutionProductivity"]</xpath>
+				<value>
+					<customEffectDescriptions Operation="SafeAdd">
+						<li>Gain stat bonuses when exposed to pollution.</li>
+					</customEffectDescriptions>
+					<displayOrderInCategory Operation="SafeReplace">0</displayOrderInCategory>
+					<prerequisite Operation="SafeAdd">VRE_ToxAbsorption</prerequisite>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- 520 cell -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ludeon.rimworld.biotech</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[@Name="CellInstabilityBase"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Health_Cell</displayCategory>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.waster</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_Instability_Nominal"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<LifespanFactor Operation="SafeReplace">0.9</LifespanFactor>
+						<CancerRate Operation="SafeReplace">2</CancerRate>
+					</statFactors>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="Instability_Mild"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<LifespanFactor Operation="SafeReplace">0.8</LifespanFactor>
+						<CancerRate Operation="SafeReplace">4</CancerRate>
+						<ImmunityGainSpeed Operation="SafeReplace">0.95</ImmunityGainSpeed>
+					</statFactors>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="Instability_Major"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<LifespanFactor Operation="SafeReplace">0.6</LifespanFactor>
+						<CancerRate Operation="SafeReplace">6</CancerRate>
+						<ImmunityGainSpeed Operation="SafeReplace">0.90</ImmunityGainSpeed>
+					</statFactors>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_Instability_Progressive"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Health_Cell</displayCategory>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>

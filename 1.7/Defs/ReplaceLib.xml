@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ReplaceLib.ReplacerDef MayRequire="ferny.replacelib">
+		<defName>ReplaceLib_XYTYYY</defName>
+		<replacers/>
+	</ReplaceLib.ReplacerDef>
+
+</Defs>

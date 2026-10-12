@@ -1,0 +1,980 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="XmlExtensions.SetScope" MayRequire="Owlchemist.CherryPicker">
+		<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
+		<apply>
+			<!-- Anomaly for Gravship -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>als.anomalygravship</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>ThingDef/ShipSecurityDoor</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- AFU Cosmetic Gene Expanded -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>JintuziLamian.Gene.XenoCosmetic</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>GeneDef/AFU_BA_NineTailedFox</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Better Gene Inheritance -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>RedMattis.BetterGeneInheritance</li>
+				</mods>
+				<packageId>true</packageId>
+				<logic>and</logic>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>GeneDef/BGI_BinaryInheritance</li>
+							<li>GeneDef/BGI_PrimaryGenes</li>
+							<li>GeneDef/BGI_SecondaryGenes</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Big and Small - Framework -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>RedMattis.BetterPrerequisites</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>GeneDef/BS_FA_Keep_Brows</li>
+							<li>GeneDef/BS_FA_Keep_Lid</li>
+							<li>GeneDef/BS_FA_Keep_LidBrow</li>
+							<li>GeneDef/BS_FA_Keep_Eyes</li>
+							<li>GeneDef/BS_FacialAnimDisabled</li>
+							<li>RecipeDef/BS_ShredRobot</li>
+							<li>RecipeDef/BS_SmashRobot</li>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaracesexpanded.phytokin</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>GeneDef/VRE_Female</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Biotech for Gravship -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>als.biotechgravship</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaracesexpanded.starjack</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>GeneDef/BfG_Hemogen_Space</li>
+									<li>GeneDef/BfG_PsychicAbility_Space</li>
+									<li>GeneDef/BfG_WoundHealing_Space</li>
+									<li>GeneDef/BfG_MinTemp_Space</li>
+									<li>GeneDef/BfG_Sleep_Space</li>
+									<li>GeneDef/BfG_Robust_Space</li>
+									<li>GeneDef/BfG_Learning_Space</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Dynamic Effects Forge -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>blues.forge</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>ThingDef/BluesHumidifier</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Even Bigger Vac Barriers -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>nebulae.evenbiggervacbarriers</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>ThingDef/EBVB_AdvancedVacBarrier</li>
+							<li>ThingDef/EBVB_QuantumStasisBarrier</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- FSF Vanilla Bionics Expansion -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>frozensnowfox.vanillabionicsexpansion</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>HediffDef/FSFArchotechJaw</li>
+							<li>HediffDef/FSFArchotechSpine</li>
+							<li>RecipeDef/InstallFSFArchotechJaw</li>
+							<li>RecipeDef/InstallFSFArchotechSpine</li>
+							<li>ThingDef/FSFArchotechJaw</li>
+							<li>ThingDef/FSFArchotechSpine</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Gene Fabrication -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>amch.eragon.hcgenefabrication</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<!--Vanilla Races Expanded - Android -->
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaracesexpanded.android</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>RecipeDef/Make_Genepack_VREA_Skin_Melanin1</li>
+									<li>RecipeDef/Make_Genepack_VREA_Skin_Melanin2</li>
+									<li>RecipeDef/Make_Genepack_VREA_Skin_Melanin3</li>
+									<li>RecipeDef/Make_Genepack_VREA_Skin_Melanin4</li>
+									<li>RecipeDef/Make_Genepack_VREA_Skin_Melanin5</li>
+									<li>RecipeDef/Make_Genepack_VREA_Skin_Melanin6</li>
+									<li>RecipeDef/Make_Genepack_VREA_Skin_Melanin7</li>
+									<li>RecipeDef/Make_Genepack_VREA_Skin_Melanin8</li>
+									<li>RecipeDef/Make_Genepack_VREA_Skin_Melanin9</li>
+									<li>RecipeDef/Make_Genepack_VREA_Skin_InkBlack</li>
+									<li>RecipeDef/Make_Genepack_VREA_Skin_LightGray</li>
+									<li>RecipeDef/Make_Genepack_VREA_Skin_SheerWhite</li>
+									<li>RecipeDef/Make_Genepack_VREA_Skin_Blue</li>
+									<li>RecipeDef/Make_Genepack_VREA_Skin_Purple</li>
+									<li>RecipeDef/Make_Genepack_VREA_Skin_PaleRed</li>
+									<li>RecipeDef/Make_Genepack_VREA_Skin_DeepRed</li>
+									<li>RecipeDef/Make_Genepack_VREA_Skin_SlateGray</li>
+									<li>RecipeDef/Make_Genepack_VREA_Skin_PaleYellow</li>
+									<li>RecipeDef/Make_Genepack_VREA_Skin_DeepYellow</li>
+									<li>RecipeDef/Make_Genepack_VREA_Skin_Orange</li>
+									<li>RecipeDef/Make_Genepack_VREA_Skin_Green</li>
+									<li>RecipeDef/Make_Genepack_VREA_MemoryProcessing</li>
+									<li>RecipeDef/Make_Genepack_VREA_Power</li>
+									<li>RecipeDef/Make_Genepack_VREA_JoyDisabled</li>
+									<li>RecipeDef/Make_Genepack_VREA_BeautyDisabled</li>
+									<li>RecipeDef/Make_Genepack_VREA_ComfortDisabled</li>
+									<li>RecipeDef/Make_Genepack_VREA_OutdoorsDisabled</li>
+									<li>RecipeDef/Make_Genepack_VREA_DrugDesireDisabled</li>
+									<li>RecipeDef/Make_Genepack_VREA_RoomSizeDisabled</li>
+									<li>RecipeDef/Make_Genepack_VREA_PainDisabled</li>
+									<li>RecipeDef/Make_Genepack_VREA_SyntheticBody</li>
+									<li>RecipeDef/Make_Genepack_VREA_NeutroCirculation</li>
+									<li>RecipeDef/Make_Genepack_VREA_SyntheticImmunity</li>
+									<li>RecipeDef/Make_Genepack_VREA_ComponentFreezing</li>
+									<li>RecipeDef/Make_Genepack_VREA_ComponentOverheating</li>
+									<li>RecipeDef/Make_Genepack_VREA_ColdTolerant</li>
+									<li>RecipeDef/Make_Genepack_VREA_HeatTolerant</li>
+									<li>RecipeDef/Make_Genepack_VREA_NoSkillGain</li>
+									<li>RecipeDef/Make_Genepack_VREA_Uninspired</li>
+									<li>RecipeDef/Make_Genepack_VREA_PsychicallyDeaf</li>
+									<li>RecipeDef/Make_Genepack_VREA_MentalBreaksDisabled</li>
+									<li>RecipeDef/Make_Genepack_VREA_PsychologyDisabled</li>
+									<li>RecipeDef/Make_Genepack_VREA_SyntheticSkin</li>
+									<li>RecipeDef/Make_Genepack_VREA_EMPVulnerability</li>
+									<li>RecipeDef/Make_Genepack_VREA_SolarFlareVulnerability</li>
+									<li>RecipeDef/Make_Genepack_VREA_CombatIncapability</li>
+									<li>RecipeDef/Make_Genepack_VREA_FireVulnerability</li>
+									<li>RecipeDef/Make_Genepack_VREA_RainVulnerability</li>
+									<li>RecipeDef/Make_Genepack_VREA_SlowRAM</li>
+									<li>RecipeDef/Make_Genepack_VREA_FastRAM</li>
+									<li>RecipeDef/Make_Genepack_VREA_ColdEfficiency</li>
+									<li>RecipeDef/Make_Genepack_VREA_LowPowerMode</li>
+									<li>RecipeDef/Make_Genepack_VREA_HighPowerMode</li>
+									<li>RecipeDef/Make_Genepack_VREA_Uncontrollable</li>
+									<li>RecipeDef/Make_Genepack_VREA_AntiAwakeningProtocols</li>
+									<li>RecipeDef/Make_Genepack_VREA_EmotionSimulators</li>
+									<li>RecipeDef/Make_Genepack_VREA_PresenceFirewall</li>
+									<li>RecipeDef/Make_Genepack_VREA_ZeroWaste</li>
+									<li>RecipeDef/Make_Genepack_VREA_ExtraWaste</li>
+									<li>RecipeDef/Make_Genepack_VREA_SelfRecharge</li>
+									<li>RecipeDef/Make_Genepack_VREA_MemoryDecay</li>
+									<li>RecipeDef/Make_Genepack_VREA_SleepMode</li>
+									<li>RecipeDef/Make_Genepack_VREA_MechlinkSupport</li>
+									<li>RecipeDef/Make_Genepack_VREA_NeutroSynthesis</li>
+									<li>RecipeDef/Make_Genepack_VREA_SolarPowered</li>
+									<li>RecipeDef/Make_Genepack_VREA_ClearInstructions</li>
+									<li>RecipeDef/Make_Genepack_VREA_SelfDestructProtocols</li>
+									<li>RecipeDef/Make_Genepack_VREA_Brow_Heavy</li>
+									<li>RecipeDef/Make_Genepack_VREA_FacialRidges</li>
+									<li>RecipeDef/Make_Genepack_VREA_Beauty_VeryUgly</li>
+									<li>RecipeDef/Make_Genepack_VREA_Beauty_Ugly</li>
+									<li>RecipeDef/Make_Genepack_VREA_Beauty_Pretty</li>
+									<li>RecipeDef/Make_Genepack_VREA_Beauty_Beautiful</li>
+									<li>RecipeDef/Make_Genepack_VREA_Turn_Gene_DryadFace</li>
+									<li>RecipeDef/Make_Genepack_VREA_Turn_Gene_LowBeautyStandard</li>
+									<li>RecipeDef/Make_Genepack_VREA_Turn_Gene_HighBeautyStandard</li>
+									<li>RecipeDef/Make_Genepack_VREA_Turn_Gene_SkinBrightOrange</li>
+									<li>RecipeDef/Make_Genepack_VREA_Turn_Gene_SkinFleshColor</li>
+									<li>RecipeDef/Make_Genepack_VREA_VRE_FacialSpots</li>
+									<li>RecipeDef/Make_Genepack_VREA_VRE_Repulsive</li>
+									<li>RecipeDef/Make_Genepack_VREA_VRE_CanineNose</li>
+									<li>RecipeDef/Make_Genepack_VREA_VRE_ChocolateSkin</li>
+									<li>RecipeDef/Make_Genepack_VREA_VRE_HazelnutSkin</li>
+									<li>RecipeDef/Make_Genepack_VREA_VRE_AuburnSkin</li>
+									<li>RecipeDef/Make_Genepack_VREA_VRE_VatGrownInsectoidSkin</li>
+									<li>RecipeDef/Make_Genepack_VREA_VRE_MegaspiderInsectoidSkin</li>
+									<li>RecipeDef/Make_Genepack_VREA_VRE_MegascarabInsectoidSkin</li>
+									<li>RecipeDef/Make_Genepack_VREA_VRE_SpelopedeInsectoidSkin</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeIncapable_Construction</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeIncapable_Mining</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeIncapable_Cooking</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeIncapable_Plants</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeIncapable_Animals</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeIncapable_Crafting</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeIncapable_Artistic</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeIncapable_Medicine</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeIncapable_Social</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeIncapable_Intellectual</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeBasic_Shooting</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeBasic_Melee</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeBasic_Construction</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeBasic_Mining</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeBasic_Cooking</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeBasic_Plants</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeBasic_Animals</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeBasic_Crafting</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeBasic_Artistic</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeBasic_Medicine</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeBasic_Social</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeBasic_Intellectual</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeIntermediate_Shooting</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeIntermediate_Melee</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeIntermediate_Construction</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeIntermediate_Mining</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeIntermediate_Cooking</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeIntermediate_Plants</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeIntermediate_Animals</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeIntermediate_Crafting</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeIntermediate_Artistic</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeIntermediate_Medicine</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeIntermediate_Social</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeIntermediate_Intellectual</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeAdvanced_Shooting</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeAdvanced_Melee</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeAdvanced_Construction</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeAdvanced_Mining</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeAdvanced_Cooking</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeAdvanced_Plants</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeAdvanced_Animals</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeAdvanced_Crafting</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeAdvanced_Artistic</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeAdvanced_Medicine</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeAdvanced_Social</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeAdvanced_Intellectual</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeExpert_Shooting</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeExpert_Melee</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeExpert_Construction</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeExpert_Mining</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeExpert_Cooking</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeExpert_Animals</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeExpert_Plants</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeExpert_Crafting</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeExpert_Artistic</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeExpert_Medicine</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeExpert_Social</li>
+									<li>RecipeDef/Make_Genepack_VREA_AptitudeExpert_Intellectual</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+					<!--Vanilla Races Expanded - Insector -->
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaracesexpanded.insector</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>RecipeDef/Make_Genepack_VRE_PassiveInsect</li>
+									<li>RecipeDef/Make_Genepack_VRE_HardLockedJoints</li>
+									<li>RecipeDef/Make_Genepack_VRE_SolidGreyMatter</li>
+									<li>RecipeDef/Make_Genepack_VRE_AcidBurstSack</li>
+									<li>RecipeDef/Make_Genepack_VRE_EcdysoneOverdrive</li>
+									<li>RecipeDef/Make_Genepack_VRE_InsectVolatile</li>
+									<li>RecipeDef/Make_Genepack_VRE_Pyrophiliac</li>
+									<li>RecipeDef/Make_Genepack_VRE_ChemfuelSacks</li>
+									<li>RecipeDef/Make_Genepack_VRE_Colossal</li>
+									<li>RecipeDef/Make_Genepack_VRE_Microsized</li>
+									<li>RecipeDef/Make_Genepack_VRE_ChargerClaws</li>
+									<li>RecipeDef/Make_Genepack_VRE_MineralRichInsectskin</li>
+									<li>RecipeDef/Make_Genepack_VRE_InfraredSensors</li>
+									<li>RecipeDef/Make_Genepack_VRE_AcidGlands</li>
+									<li>RecipeDef/Make_Genepack_VRE_InsectRostrum</li>
+									<li>RecipeDef/Make_Genepack_VRE_LocustWings</li>
+									<li>RecipeDef/Make_Genepack_VRE_FlameGlands</li>
+									<li>RecipeDef/Make_Genepack_VRE_PyroResistantChitin</li>
+									<li>RecipeDef/Make_Genepack_VRE_RoyalJellyInjector</li>
+									<li>RecipeDef/Make_Genepack_VRE_SwarmSynapse</li>
+									<li>RecipeDef/Make_Genepack_VRE_AcidBlood</li>
+									<li>RecipeDef/Make_Genepack_VRE_Stenothermic</li>
+									<li>RecipeDef/Make_Genepack_VRE_ProteinDenaturation</li>
+									<li>RecipeDef/Make_Genepack_VRE_PollutionDependency</li>
+									<li>RecipeDef/Make_Genepack_VRE_LowOctopamine</li>
+									<li>RecipeDef/Make_Genepack_VRE_Dormant</li>
+									<li>RecipeDef/Make_Genepack_VRE_Heatstress</li>
+									<li>RecipeDef/Make_Genepack_VRE_WeakenedChitin</li>
+									<li>RecipeDef/Make_Genepack_VRE_RapidLifeCycle</li>
+									<li>RecipeDef/Make_Genepack_VRE_HypothermicHibernation</li>
+									<li>RecipeDef/Make_Genepack_VRE_VestigialTubules</li>
+									<li>RecipeDef/Make_Genepack_VRE_LowGreyMatter</li>
+									<li>RecipeDef/Make_Genepack_VRE_PorousSkin</li>
+									<li>RecipeDef/Make_Genepack_VRE_InefficientMidgut</li>
+									<li>RecipeDef/Make_Genepack_VRE_Immunodeficiency</li>
+									<li>RecipeDef/Make_Genepack_VRE_OcelliEyes</li>
+									<li>RecipeDef/Make_Genepack_VRE_RipperBlades</li>
+									<li>RecipeDef/Make_Genepack_VRE_VocalChitters</li>
+									<li>RecipeDef/Make_Genepack_VRE_SpelopedeHorn</li>
+									<li>RecipeDef/Make_Genepack_VRE_CuticleShell</li>
+									<li>RecipeDef/Make_Genepack_VRE_Parthenogenesis</li>
+									<li>RecipeDef/Make_Genepack_VRE_SpawningSack</li>
+									<li>RecipeDef/Make_Genepack_VRE_JellySacks</li>
+									<li>RecipeDef/Make_Genepack_VRE_Heatshock</li>
+									<li>RecipeDef/Make_Genepack_VRE_Serotonin</li>
+									<li>RecipeDef/Make_Genepack_VRE_SensitiveBrainGoop</li>
+									<li>RecipeDef/Make_Genepack_VRE_HardenedChitin</li>
+									<li>RecipeDef/Make_Genepack_VRE_SlowedLifeCycle</li>
+									<li>RecipeDef/Make_Genepack_VRE_HypothermicSlowdown</li>
+									<li>RecipeDef/Make_Genepack_VRE_DetoxifierTubules</li>
+									<li>RecipeDef/Make_Genepack_VRE_MegaspiderHorns</li>
+									<li>RecipeDef/Make_Genepack_VRE_HighGreyMatter</li>
+									<li>RecipeDef/Make_Genepack_VRE_RobustMidgut</li>
+									<li>RecipeDef/Make_Genepack_VRE_InsectMandibles</li>
+									<li>RecipeDef/Make_Genepack_VRE_InsectWings</li>
+									<li>RecipeDef/Make_Genepack_VRE_AntimicrobialPeptides</li>
+									<li>RecipeDef/Make_Genepack_VRE_VocalGlands</li>
+									<li>RecipeDef/Make_Genepack_VRE_CompoundEyes</li>
+									<li>RecipeDef/Make_Genepack_VRE_Hiveglands</li>
+									<li>RecipeDef/Make_Genepack_VRE_CompoundEyes_Cosmetic</li>
+									<li>RecipeDef/Make_Genepack_VRE_OcelliEyes_Cosmetic</li>
+									<li>RecipeDef/Make_Genepack_VRE_InsectAntennae_Cosmetic</li>
+									<li>RecipeDef/Make_Genepack_VRE_VatGrownInsectoidSkin_Cosmetic</li>
+									<li>RecipeDef/Make_Genepack_VRE_MegaspiderInsectoidSkin_Cosmetic</li>
+									<li>RecipeDef/Make_Genepack_VRE_MegascarabInsectoidSkin_Cosmetic</li>
+									<li>RecipeDef/Make_Genepack_VRE_SpelopedeInsectoidSkin_Cosmetic</li>
+									<li>RecipeDef/Make_Genepack_VRE_NuchadusInsectoidSkin_Cosmetic</li>
+									<li>RecipeDef/Make_Genepack_VRE_ChelisInsectoidSkin_Cosmetic</li>
+									<li>RecipeDef/Make_Genepack_VRE_KemiaInsectoidSkin_Cosmetic</li>
+									<li>RecipeDef/Make_Genepack_VRE_XanidesInsectoidSkin_Cosmetic</li>
+									<li>RecipeDef/Make_Genepack_VRE_InsectWings_Cosmetic</li>
+									<li>RecipeDef/Make_Genepack_VRE_InsectMandibles_Cosmetic</li>
+									<li>RecipeDef/Make_Genepack_VRE_MegaspiderHorns_Cosmetic</li>
+									<li>RecipeDef/Make_Genepack_VRE_JellySacks_Cosmetic</li>
+									<li>RecipeDef/Make_Genepack_VRE_SpawningSack_Cosmetic</li>
+									<li>RecipeDef/Make_Genepack_VRE_SpelopedeHorn_Cosmetic</li>
+									<li>RecipeDef/Make_Genepack_VRE_Eyes_Red_Cosmetic</li>
+									<li>RecipeDef/Make_Genepack_VRE_Eyes_Gray_Cosmetic</li>
+									<li>RecipeDef/Make_Genepack_VRE_Headbone_MiniHorns_Cosmetic</li>
+									<li>RecipeDef/Make_Genepack_VRE_Headbone_CenterHorn_Cosmetic</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Gojis-Misc-Genes -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>goji.gojismiscgenes</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>GeneDef/Goji_CheekPouch</li>
+							<li>GeneDef/Goji_WindRider</li>
+							<li>GeneDef/Goji_RouteMemory</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Integrated Genes -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>Turnovus.Biotech.IntegratedGenes</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>GeneDef/Turn_Gene_ArchotechAttunement</li>
+							<li>GeneDef/Turn_Gene_Bliss</li>
+							<li>GeneDef/Turn_Gene_LatentPsychic</li>
+							<li>GeneDef/Turn_Gene_NaturalLeader</li>
+							<li>GeneDef/Turn_Gene_VariablePhenotype</li>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaracesexpanded.lycanthrope</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>GeneDef/Turn_Gene_Speechless</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Keyz' Allow Utilities -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>keyz182.keyzallowutilities</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>DesignationDef/KAU_HaulUrgentlyDesignation</li>
+							<li>WorkTypeDef/KAU_UrgentHaul</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Medical System Expansion 2 -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>MSE2.Core</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>HediffDef/RangedPlatformModule</li>
+							<li>HediffDef/MeleePlatformModule</li>
+							<li>HediffDef/ModuleEfficiency</li>
+							<li>HediffDef/CraftingToolsModule</li>
+							<li>RecipeDef/InstallRangedPlatformModule</li>
+							<li>RecipeDef/InstallMeleePlatformModule</li>
+							<li>RecipeDef/InstallModuleEfficiency</li>
+							<li>RecipeDef/InstallCraftingToolsModule</li>
+							<li>RecipeDef/Make_RangedPlatformModule</li>
+							<li>RecipeDef/Make_MeleePlatformModule</li>
+							<li>RecipeDef/Make_ModuleEfficiency</li>
+							<li>RecipeDef/Make_CraftingToolsModule</li>
+							<li>ThingDef/RangedPlatformModule</li>
+							<li>ThingDef/MeleePlatformModule</li>
+							<li>ThingDef/ModuleEfficiency</li>
+							<li>ThingDef/CraftingToolsModule</li>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>v1024.ebframework</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>HediffDef/ModuleArmorEBF</li>
+									<li>RecipeDef/InstallModuleArmorEBF</li>
+									<li>RecipeDef/Make_ModuleArmorEBF</li>
+									<li>ThingDef/ModuleArmorEBF</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Meditate As WorkType (Continued) -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>og.maarx.meditateasworktype.continued</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>WorkTypeDef/MeditateForAnima</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Melee Animation -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>co.uk.epicguru.meleeanimation</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>ThingDef/AM_LassoCloth</li>
+							<li>ThingDef/AM_LassoDevilstrand</li>
+							<li>ThingDef/AM_LassoHyperwave</li>
+							<li>ThingDef/AM_Weebstick</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- ReBuild: Doors and Corners -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>rebuild.cotr.doorsandcorners</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<!-- Security and Blast Doors Expanded -->
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>jarocks.securitydoorsexpanded</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>ThingDef/RB_LargeSecurityDoor</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Reel's Turret Pipeline -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>reel.turretpipeline</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>RecipeDef/Make_TurretAmmoBulk</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- ReSplice: Core -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>resplice.xotr.core</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<!-- Genepack Reprocessor -->
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>Anonemous2.GenepackReprocessor</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>ThingDef/RS_GeneCentrifuge</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Security and Blast Doors Expanded -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>jarocks.securitydoorsexpanded</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>ThingDef/SDE_ArmoredSecurityDoorSmall</li>
+							<li>ThingDef/SDE_ArmoredSecurityDoor</li>
+							<li>ThingDef/SDE_ArmoredSecurityDoorLarge</li>
+							<li>ThingDef/SDE_ArmoredVehicleDoor</li>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>ludeon.rimworld.odyssey</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>ThingDef/SDE_SecurityDoorSmall</li>
+									<li>ThingDef/SDE_VehicleDoor</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Vanilla Armour Expanded -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaexpanded.varme</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>RecipeDef/Make_VAE_Apparel_Shield_Riot</li>
+							<li>ThingDef/VAE_Apparel_Shield_Riot</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Vanilla Factions Expanded - Insectoids 2 - Swarm Disaster -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>cn.vfei2swarmdisaster</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>RecipeDef/VFEI2E_ExtractNeutroamine</li>
+							<li>RecipeDef/VFEI2E_CarbonizeChitin</li>
+							<li>RecipeDef/VFEI2E_SmeltChitinToSteel</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Vanilla Factions Expanded - Tribals -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>oskarpotocki.vfe.tribals</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>RecipeDef/Make_VFET_Chunk</li>
+							<li>RecipeDef/Make_VFET_Throwspikes</li>
+							<li>ThingDef/VFET_Chunk</li>
+							<li>ThingDef/VFET_Throwspikes</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Vanilla Furniture Expanded -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaexpanded.vfecore</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>ThingDef/Bin_Small</li>
+							<li>ThingDef/Bin_Large</li>
+							<li>ThingDef/Joy_Piano</li>
+						</value>
+					</Operation>
+					<!-- Reel's Expanded Storage -->
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>reel.expanded.storage</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>ThingDef/Shelf_WeaponRack</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Vanilla Genetics Expanded -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaexpanded.vgeneticse</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaexpanded.vchemfuele</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>ThingDef/GR_CompressedChemfuel</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Vanilla Nutrient Paste Expanded -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaexpanded.vnutriente</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>ThingDef/NutrientPasteDispenser</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Vanilla Races Expanded - Highmate -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.highmate</li>
+				</mods>
+				<packageId>true</packageId>
+				<logic>and</logic>
+				<caseTrue>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>RedMattis.BetterGeneInheritance</li>
+						</mods>
+						<packageId>true</packageId>
+						<logic>and</logic>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>GeneDef/VRE_RecessiveGenome</li>
+									<li>GeneDef/VRE_DominantGenome</li>
+									<li>GeneDef/VRE_DominantGenome_Astrogene</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Vanilla Races Expanded - Starjack -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.starjack</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>GeneDef/VREStarjack_VacuumEfficiency</li>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>goji.gojismiscgenes</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>GeneDef/VREStarjack_Cryostasis</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Vanilla Races Expanded - Waster -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.waster</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>GeneDef/PollutionRush</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Vanilla Weapons Expanded -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaexpanded.vwe</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>RecipeDef/Make_VWE_Gun_Flamethrower</li>
+							<li>RecipeDef/Make_VWE_Throwing_Knives</li>
+							<li>RecipeDef/VWE_MakeThrowingRocks</li>
+							<li>ThingDef/VWE_Gun_Flamethrower</li>
+							<li>ThingDef/VWE_Throwing_Knives</li>
+							<li>ThingDef/VWE_Throwing_Rocks</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Vanilla Weapons Expanded - Heavy Weapons -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaexpanded.vwehw</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>RecipeDef/Make_VWE_Gun_HeavyFlamer</li>
+							<li>ThingDef/VWE_Gun_HeavyFlamer</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Yayo's Combat 3 (Continued) -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>mlie.yayoscombat3</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>RecipeDef/Make_yy_ammo_primitive</li>
+							<li>RecipeDef/Make_yy_ammo_primitive10</li>
+							<li>RecipeDef/Make_yy_ammo_primitive_fire</li>
+							<li>RecipeDef/Make_yy_ammo_primitive_fire10</li>
+							<li>RecipeDef/Make_yy_ammo_primitive_emp</li>
+							<li>RecipeDef/Make_yy_ammo_primitive_emp10</li>
+							<li>RecipeDef/Make_yy_ammo_industrial</li>
+							<li>RecipeDef/Make_yy_ammo_industrial10</li>
+							<li>RecipeDef/Make_yy_ammo_industrial_fire</li>
+							<li>RecipeDef/Make_yy_ammo_industrial_fire10</li>
+							<li>RecipeDef/Make_yy_ammo_industrial_emp</li>
+							<li>RecipeDef/Make_yy_ammo_industrial_emp10</li>
+							<li>RecipeDef/Make_yy_ammo_spacer</li>
+							<li>RecipeDef/Make_yy_ammo_spacer10</li>
+							<li>RecipeDef/Make_yy_ammo_spacer_fire</li>
+							<li>RecipeDef/Make_yy_ammo_spacer_fire10</li>
+							<li>RecipeDef/Make_yy_ammo_spacer_emp</li>
+							<li>RecipeDef/Make_yy_ammo_spacer_emp10</li>
+							<li>RecipeDef/Make_Gun_AntiArmor_Rocket</li>
+							<li>ThingDef/Gun_AntiArmor_Rocket</li>
+							<li>ThingDef/yy_ammo_primitive</li>
+							<li>ThingDef/yy_ammo_primitive_fire</li>
+							<li>ThingDef/yy_ammo_primitive_emp</li>
+							<li>ThingDef/yy_ammo_industrial</li>
+							<li>ThingDef/yy_ammo_industrial_fire</li>
+							<li>ThingDef/yy_ammo_industrial_emp</li>
+							<li>ThingDef/yy_ammo_spacer</li>
+							<li>ThingDef/yy_ammo_spacer_fire</li>
+							<li>ThingDef/yy_ammo_spacer_emp</li>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>syrus.yayoscombataddon</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>RecipeDef/Make_yy_ammo_primitive_light</li>
+									<li>RecipeDef/Make_yy_ammo_primitive_light10</li>
+									<li>RecipeDef/Make_yy_ammo_primitive_heavy</li>
+									<li>RecipeDef/Make_yy_ammo_primitive_heavy10</li>
+									<li>RecipeDef/Make_yy_ammo_industrial_light</li>
+									<li>RecipeDef/Make_yy_ammo_industrial_light10</li>
+									<li>RecipeDef/Make_yy_ammo_industrial_heavy</li>
+									<li>RecipeDef/Make_yy_ammo_industrial_heavy10</li>
+									<li>RecipeDef/Make_yy_ammo_spacer_light</li>
+									<li>RecipeDef/Make_yy_ammo_spacer_light10</li>
+									<li>RecipeDef/Make_yy_ammo_spacer_heavy</li>
+									<li>RecipeDef/Make_yy_ammo_spacer_heavy10</li>
+									<li>ThingDef/yy_ammo_primitive_light</li>
+									<li>ThingDef/yy_ammo_primitive_heavy</li>
+									<li>ThingDef/yy_ammo_industrial_light</li>
+									<li>ThingDef/yy_ammo_industrial_heavy</li>
+									<li>ThingDef/yy_ammo_spacer_light</li>
+									<li>ThingDef/yy_ammo_spacer_heavy</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
+	</Operation>
+
+</Patch>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- 550 aging -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.pigskin</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.pigskin</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VRE_RapidAging"]</xpath>
+						<value>
+							<displayCategory Operation="AddOrReplace">Health_Age</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">0</displayOrderInCategory>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VRE_FastAging"]</xpath>
+						<value>
+							<displayCategory Operation="AddOrReplace">Health_Age</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">10</displayOrderInCategory>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VRE_SlowAging"]</xpath>
+						<value>
+							<displayCategory Operation="AddOrReplace">Health_Age</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">20</displayOrderInCategory>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaracesexpanded.archon</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>Defs/GeneDef[defName="VRE_EarlyMaturity"]</xpath>
+								<value>
+									<displayCategory Operation="AddOrReplace">Health_Age</displayCategory>
+									<displayOrderInCategory Operation="AddOrReplace">100</displayOrderInCategory>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- 310 mental -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.pigskin</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_Coward"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Mood_Mental</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">0</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_Brave"]</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Mood_Mental</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">10</displayOrderInCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.hussar</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VREH_Dutiful"]</xpath>
+						<value>
+							<customEffectDescriptions Operation="SafeAdd">
+								<li>Will never mental break while drafted.</li>
+							</customEffectDescriptions>
+							<displayCategory Operation="AddOrReplace">Mood_Mental</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">100</displayOrderInCategory>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.lycanthrope</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VRE_Territorial"]</xpath>
+						<value>
+							<displayCategory Operation="AddOrReplace">Mood_Mental</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">200</displayOrderInCategory>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>

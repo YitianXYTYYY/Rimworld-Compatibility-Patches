@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ResearchTabDef>
+		<defName>TechProsthetics</defName>
+		<label>prosthetics</label>
+	</ResearchTabDef>
+
+	<ResearchTabDef>
+		<defName>TechStarship</defName>
+		<label>starflight</label>
+	</ResearchTabDef>
+
+</Defs>

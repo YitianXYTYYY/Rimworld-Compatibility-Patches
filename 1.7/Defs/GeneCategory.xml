@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<GeneCategoryDef>
+		<defName>Astrogen</defName>
+		<label>astro genes</label>
+		<displayPriorityInXenotype>670</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Psychic_Meditation</defName>
+		<label>psychic - meditation</label>
+		<displayPriorityInXenotype>590</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Health_Age</defName>
+		<label>aging</label>
+		<displayPriorityInXenotype>550</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>MeatLeather</defName>
+		<label>flesh and leather</label>
+		<displayPriorityInXenotype>540</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Health_Blood</defName>
+		<label>blood</label>
+		<displayPriorityInXenotype>530</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Health_Cell</defName>
+		<label>cell stability</label>
+		<displayPriorityInXenotype>520</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Health_Digestion</defName>
+		<label>digestion</label>
+		<displayPriorityInXenotype>430</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Health_Eye</defName>
+		<label>sight</label>
+		<displayPriorityInXenotype>410</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Violence_Ranged</defName>
+		<label>violence - ranged</label>
+		<displayPriorityInXenotype>390</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Violence_Melee</defName>
+		<label>violence - melee</label>
+		<displayPriorityInXenotype>380</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Mood_Mental</defName>
+		<label>mentality</label>
+		<displayPriorityInXenotype>310</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Social</defName>
+		<label>social</label>
+		<displayPriorityInXenotype>290</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Loving</defName>
+		<label>loving</label>
+		<displayPriorityInXenotype>260</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Skin</defName>
+		<label>skin</label>
+		<displayPriorityInXenotype>-10</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Arms</defName>
+		<label>arms</label>
+		<displayPriorityInXenotype>-20</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Hands</defName>
+		<label>hands</label>
+		<displayPriorityInXenotype>-30</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Wings</defName>
+		<label>wings</label>
+		<displayPriorityInXenotype>-40</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Tail</defName>
+		<label>tail</label>
+		<displayPriorityInXenotype>-50</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Cosmetic_Voice</defName>
+		<label>cosmetic - voice</label>
+		<!-- Cosmetic -100 -->
+		<displayPriorityInXenotype>-160</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Cosmetic_HairStyle</defName>
+		<label>cosmetic - hair</label>
+		<!-- Cosmetic -100 -->
+		<displayPriorityInXenotype>-170</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Cosmetic_Headbone</defName>
+		<label>cosmetic - headbone</label>
+		<displayPriorityInXenotype>-180</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Cosmetic_Ears</defName>
+		<label>cosmetic - ears</label>
+		<displayPriorityInXenotype>-190</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Cosmetic_Nose</defName>
+		<label>cosmetic - nose</label>
+		<displayPriorityInXenotype>-210</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Cosmetic_Jaw</defName>
+		<label>cosmetic - jaw</label>
+		<!-- Cosmetic -100 -->
+		<displayPriorityInXenotype>-220</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Cosmetic_Beard</defName>
+		<label>cosmetic - beard</label>
+		<!-- Cosmetic -100 -->
+		<displayPriorityInXenotype>-230</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Cosmetic_BodyType</defName>
+		<label>cosmetic - body type</label>
+		<displayPriorityInXenotype>-300</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Cosmetic_Tail</defName>
+		<label>cosmetic - tail</label>
+		<displayPriorityInXenotype>-400</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Cosmetic_HairColor</defName>
+		<label>cosmetic - hair color</label>
+		<displayPriorityInXenotype>-1000</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<GeneCategoryDef>
+		<defName>Cosmetic_EyeColor</defName>
+		<label>cosmetic - eye color</label>
+		<displayPriorityInXenotype>-1010</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+</Defs>

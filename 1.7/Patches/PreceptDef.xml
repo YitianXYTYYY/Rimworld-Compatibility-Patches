@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ludeon.rimworld.ideology</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- precept -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/PreceptDef[defName="IdeoRole_ShootingSpecialist"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>PreceptDef/roleEffects/li[@Class="RoleEffect_PawnStatOffset" and statDef="ShootingAccuracyPawn"]</xpath>
+						<value>
+							<modifier Operation="SafeReplace">8</modifier>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>PreceptDef/roleEffects/li[@Class="RoleEffect_PawnStatOffset" and statDef="AimingDelayFactor"]</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationAdd">
+						<xpath>PreceptDef/roleEffects</xpath>
+						<value>
+							<li Class="RoleEffect_PawnStatFactor">
+								<statDef>AimingDelayFactor</statDef>
+								<modifier>0.5</modifier>
+							</li>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/PreceptDef[defName="IdeoRole_MeleeSpecialist"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>PreceptDef/roleEffects/li[@Class="RoleEffect_PawnStatOffset" and statDef="MeleeHitChance"]</xpath>
+						<value>
+							<modifier Operation="SafeReplace">8</modifier>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>PreceptDef/roleEffects/li[@Class="RoleEffect_PawnStatOffset" and statDef="MeleeDodgeChance"]</xpath>
+						<value>
+							<modifier Operation="SafeReplace">8</modifier>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>

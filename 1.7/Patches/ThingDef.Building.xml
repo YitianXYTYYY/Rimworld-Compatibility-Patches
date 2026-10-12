@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- vanometric power cell -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="VanometricPowerCell"]</xpath>
+		<value>
+			<techLevel Operation="SafeAdd">Archotech</techLevel>
+		</value>
+	</Operation>
+
+	<!-- Odyssey -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ludeon.rimworld.odyssey</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- grav field extender -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="GravFieldExtender"]</xpath>
+				<value>
+					<comps Operation="Safe">
+						<li Class="CompProperties_GravshipFacility" Operation="Safe" CheckAttributes="True">
+							<maxDistance Operation="SafeReplace">100</maxDistance>
+						</li>
+					</comps>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Anomaly for Gravship -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>als.anomalygravship</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- grav holding platform -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="GravHoldingPlatform"]</xpath>
+				<value>
+					<statBases Operation="Safe">
+						<ContainmentStrength Operation="SafeAdd">20</ContainmentStrength>
+					</statBases>
+					<comps Operation="Safe">
+						<li Class="CompProperties_Power" Operation="Safe" CheckAttributes="True">
+							<basePowerConsumption Operation="SafeReplace">100</basePowerConsumption>
+						</li>
+						<li Class="CompProperties_Facility" Operation="Safe" CheckAttributes="True">
+							<maxSimultaneous Operation="SafeReplace">2</maxSimultaneous>
+							<statOffsets Operation="Safe">
+								<ContainmentStrength Operation="SafeReplace">20</ContainmentStrength>
+							</statOffsets>
+						</li>
+					</comps>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Dlc collaboration - Void universe -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>hailuan.voiduniverse</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="UV_BiomutationTerraformer"]/description</xpath>
+				<value>
+					<description Operation="SafeReplace">A biometal-powered terraformer that generates breathable safe zones in space and significantly raises the region's minimum temperature.</description>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ResearchProjectDef[defName="UV_Project_DistortedTerraformer"]/description</xpath>
+				<value>
+					<description Operation="SafeReplace">Build a biometal-powered terraformer that generates breathable safe zones in space and significantly raises the region's minimum temperature.</description>
+				</value>
+			</Operation>
+			<!-- void grav field extender -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="UV_VoidGravFieldExtender"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef</xpath>
+						<attribute>ParentName</attribute>
+						<value>GravshipComponentBase</value>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef/comps/li[@Class="CompProperties_Facility"]</xpath>
+						<attribute>Class</attribute>
+						<value>CompProperties_GravshipFacility</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<building Operation="Safe">
+								<destroySound Operation="SafeRemove">BuildingDestroyed_Metal_Small</destroySound>
+								<relatedTerrain Operation="Safe">
+									<li Operation="SafeAdd" Compare="InnerText">Substructure</li>
+								</relatedTerrain>
+							</building>
+							<castEdgeShadows Operation="SafeRemove"/>
+							<comps Operation="Safe">
+								<li Class="CompProperties_SubstructureFootprint" Operation="Safe" CheckAttributes="True">
+									<radius Operation="SafeAdd">10.9</radius>
+								</li>
+								<li Class="CompProperties_GravshipFacility" Operation="Safe" CheckAttributes="True">
+									<requiresLOS Operation="SafeAdd">false</requiresLOS>
+									<maxDistance Operation="SafeAdd">200</maxDistance>
+									<onlyRequiresLooseConnection Operation="SafeAdd">true</onlyRequiresLooseConnection>
+								</li>
+							</comps>
+							<designationCategory Operation="SafeReplace">Odyssey</designationCategory>
+							<designationHotKey Operation="SafeRemove"/>
+							<fillPercent Operation="SafeReplace">0.4</fillPercent>
+							<pathCost Operation="SafeReplace">14</pathCost>
+							<placeWorkers Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">PlaceWorker_InRangeOfGravEngine</li>
+								<li Operation="SafeRemove" Compare="InnerText">PlaceWorker_ShowFacilitiesConnections</li>
+							</placeWorkers>
+							<resourcesFractionWhenDeconstructed Operation="SafeAdd">1</resourcesFractionWhenDeconstructed>
+							<statBases Operation="Safe">
+								<Flammability Operation="SafeRemove">0</Flammability>
+								<MaxHitPoints Operation="SafeReplace">200</MaxHitPoints>
+							</statBases>
+							<staticSunShadowHeight Operation="SafeRemove"/>
+							<terrainAffordanceNeeded Operation="SafeAdd">Substructure</terrainAffordanceNeeded>
+							<thingCategories Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">BuildingsMisc</li>
+							</thingCategories>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- [SYR] Prosthetic Table (Continued) -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>mlie.syrprosthetictable</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- prosthetics table -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="TableSyrProsthetics"]</xpath>
+				<apply>
+					<!-- Medical System Expansion 2 -->
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>mse2.core</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseFalse>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<researchPrerequisites Operation="Safe">
+										<li Operation="SafeRemove" Compare="InnerText">Machining</li>
+										<li Operation="SafeAdd" Compare="InnerText">Prosthetics</li>
+									</researchPrerequisites>
+								</value>
+							</Operation>
+						</caseFalse>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<researchPrerequisites Operation="Safe">
+										<li Operation="SafeRemove" Compare="InnerText">Machining</li>
+										<li Operation="SafeAdd" Compare="InnerText">BoneProstheticsSimple</li>
+									</researchPrerequisites>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- ReBuild: Doors and Corners -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>rebuild.cotr.doorsandcorners</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- gravship hull -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="RB_SmoothGravshipHull"]</xpath>
+				<value>
+					<label Operation="SafeReplace">smooth gravship hull</label>
+					<terrainAffordanceNeeded Operation="SafeReplace">Substructure</terrainAffordanceNeeded>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="RB_GravshipWindowHull"]</xpath>
+				<value>
+					<costStuffCount Operation="SafeReplace">4</costStuffCount>
+					<costList Operation="Safe">
+						<RB_BallisticGlass Operation="SafeAdd">3</RB_BallisticGlass>
+						<RB_Glass Operation="SafeRemove">3</RB_Glass>
+					</costList>
+					<terrainAffordanceNeeded Operation="SafeReplace">Substructure</terrainAffordanceNeeded>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="RB_GravshipPanoramaHull"]</xpath>
+				<value>
+					<costList Operation="Safe">
+						<RB_BallisticGlass Operation="SafeAdd">5</RB_BallisticGlass>
+						<RB_Glass Operation="SafeRemove">6</RB_Glass>
+					</costList>
+					<terrainAffordanceNeeded Operation="SafeReplace">Substructure</terrainAffordanceNeeded>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Reel's Expanded Storage -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>reel.expanded.storage</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- medical cabinet -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="ReelStorageNewMedicineCabinet"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaracesexpanded.sanguophage</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<building Operation="Safe">
+										<fixedStorageSettings Operation="Safe">
+											<filter Operation="Safe">
+												<thingDefs Operation="Safe">
+													<li Operation="SafeAdd" Compare="InnerText">VRE_HemogenPack_Animal</li>
+													<li Operation="SafeAdd" Compare="InnerText">VRE_HemogenPack_Corpse</li>
+													<li Operation="SafeAdd" Compare="InnerText">VRE_HemogenPack_Sanguophage</li>
+												</thingDefs>
+											</filter>
+										</fixedStorageSettings>
+									</building>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Reel's Turret Pipeline -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>reel.turretpipeline</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- ammunition hub -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="REEL_AmmoTank"]</xpath>
+				<value>
+					<comps Operation="Safe">
+						<li Class="PipeSystem.CompProperties_ResourceStorage" Operation="Safe" CheckAttributes="True">
+							<storageCapacity Operation="SafeReplace">3000</storageCapacity>
+						</li>
+					</comps>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Vanilla Factions Expanded - Empire -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>oskarpotocki.vfe.empire</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- grande table -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VFEE_GrandTable"]</xpath>
+				<value>
+					<costList Operation="Safe">
+						<Gold Operation="SafeReplace">100</Gold>
+					</costList>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Vanilla Furniture Expanded -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaexpanded.vfecore</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- longwave radio -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Radio_Spacer"]</xpath>
+				<value>
+					<costList Operation="Safe">
+						<Steel Operation="SafeReplace">75</Steel>
+						<Plasteel Operation="SafeReplace">25</Plasteel>
+						<ComponentIndustrial Operation="SafeReplace">6</ComponentIndustrial>
+						<ComponentSpacer Operation="SafeRemove">0</ComponentSpacer>
+					</costList>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/JoyGiverDef[defName="VFE_ListenToMusic"]</xpath>
+				<value>
+					<requiredCapacities Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">Hearing</li>
+					</requiredCapacities>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Vanilla Furniture Expanded - Power -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaexpanded.vfepower</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- small vanometric power cell -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VFE_SmallVanometricPowerCell"]</xpath>
+				<value>
+					<techLevel Operation="SafeAdd">Archotech</techLevel>
+				</value>
+			</Operation>
+			<!-- large vanometric power cell -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VFE_LargeVanometricPowerCell"]</xpath>
+				<value>
+					<techLevel Operation="SafeAdd">Archotech</techLevel>
+				</value>
+			</Operation>
+			<!-- archotech violence generator -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VPE_ArchotechViolenceGenerator"]</xpath>
+				<value>
+					<techLevel Operation="SafeAdd">Archotech</techLevel>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Vanilla Genetics Expanded -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaexpanded.vgeneticse</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- DNA storage bank -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="GR_DNAStorageBank"]</xpath>
+				<value>
+					<techLevel Operation="SafeAdd">Archotech</techLevel>
+				</value>
+			</Operation>
+			<!-- archocentipede former -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="GR_ArchocentipedeFormer"]</xpath>
+				<value>
+					<techLevel Operation="SafeAdd">Archotech</techLevel>
+				</value>
+			</Operation>
+			<!-- archowomb -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="GR_ArchoWomb"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<techLevel Operation="SafeAdd">Archotech</techLevel>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>rebuild.cotr.doorsandcorners</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<costList Operation="Safe">
+										<ComponentSpacer Operation="SafeAdd">4</ComponentSpacer>
+										<Plasteel Operation="SafeRemove">0</Plasteel>
+										<RB_BallisticGlass Operation="SafeAdd">50</RB_BallisticGlass>
+									</costList>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>rebuild.cotr.doorsandcorners</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<!-- electrowomb -->
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="GR_ElectroWomb"]</xpath>
+						<value>
+							<costList Operation="Safe">
+								<RB_Glass Operation="SafeAdd">10</RB_Glass>
+							</costList>
+						</value>
+					</Operation>
+					<!-- large electrowomb -->
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="GR_LargeElectroWomb"]</xpath>
+						<value>
+							<costList Operation="Safe">
+								<Steel Operation="SafeReplace">75</Steel>
+								<RB_Glass Operation="SafeAdd">50</RB_Glass>
+							</costList>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Vanilla Helixien Gas Expanded -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaexpanded.helixiengas</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- gas cooler -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="VHGE_GasCooler"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<blockLight Operation="SafeRemove"/>
+							<building Operation="Safe">
+								<canPlaceOverWall Operation="SafeRemove">true</canPlaceOverWall>
+							</building>
+							<canOverlapZones Operation="SafeRemove"/>
+							<castEdgeShadows Operation="SafeRemove"/>
+							<coversFloor Operation="SafeRemove"/>
+							<minifiedDef Operation="SafeAdd">MinifiedThing</minifiedDef>
+							<pathCost Operation="SafeAdd">40</pathCost>
+							<statBases Operation="Safe">
+								<Mass Operation="SafeAdd">10</Mass>
+							</statBases>
+							<staticSunShadowHeight Operation="SafeRemove"/>
+							<terrainAffordanceNeeded Operation="SafeReplace">Light</terrainAffordanceNeeded>
+							<thingCategories Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">BuildingsTemperature</li>
+							</thingCategories>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>rebuild.cotr.doorsandcorners</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<!-- gas wall lamp -->
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="VHGE_GasWallLamp"]</xpath>
+						<value>
+							<altitudeLayer Operation="SafeReplace">BuildingBelowTop</altitudeLayer>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Vanilla Races Expanded - Android -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.android</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- neutro casket -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="VREA_NeutroCasket"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
+						<xpath>ThingDef/thingCategories</xpath>
+						<attribute>Inherit</attribute>
+						<value>False</value>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>
