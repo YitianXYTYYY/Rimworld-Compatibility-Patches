@@ -146,7 +146,7 @@
 									<li>Uranium</li>
 								</thingDefs>
 							</filter>
-							<count>15</count>
+							<count>25</count>
 						</li>
 						<li>
 							<filter>
@@ -154,7 +154,7 @@
 									<li>Steel</li>
 								</thingDefs>
 							</filter>
-							<count>30</count>
+							<count>50</count>
 						</li>
 					</ingredients>
 					<products Operation="Safe">
