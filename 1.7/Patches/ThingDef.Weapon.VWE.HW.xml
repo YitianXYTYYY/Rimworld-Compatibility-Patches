@@ -7,6 +7,9 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/ThingDef/modExtensions/li[@Class="VEF.Weapons.HeavyWeapon"]/supportedTraits/li[text()="Tough"]</xpath>
+			</Operation>
 			<!-- Autocannon -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="VWE_Gun_Autocannon"]</xpath>
@@ -14,16 +17,14 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef</xpath>
 						<value>
+							<costList Operation="SafeReplace">
+								<ComponentIndustrial>8</ComponentIndustrial>
+								<Plasteel>75</Plasteel>
+								<Steel>150</Steel>
+							</costList>
 							<equippedStatOffsets Operation="Safe">
 								<MoveSpeed Operation="SafeReplace">-0.5</MoveSpeed>
 							</equippedStatOffsets>
-							<modExtensions Operation="Safe">
-								<li Class="VEF.Weapons.HeavyWeapon" Operation="Safe" CheckAttributes="True">
-									<supportedTraits Operation="Safe">
-										<li Operation="SafeRemove" Compare="InnerText">Tough</li>
-									</supportedTraits>
-								</li>
-							</modExtensions>
 							<statBases Operation="Safe">
 								<AccuracyTouch Operation="SafeReplace">0.28</AccuracyTouch>
 								<AccuracyShort Operation="SafeReplace">0.72</AccuracyShort>
@@ -160,19 +161,14 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef</xpath>
 						<value>
-							<costList Operation="Safe">
-								<ReinforcedBarrel Operation="SafeAdd">1</ReinforcedBarrel>
+							<costList Operation="SafeReplace">
+								<ComponentIndustrial>8</ComponentIndustrial>
+								<ReinforcedBarrel>1</ReinforcedBarrel>
+								<Steel>75</Steel>
 							</costList>
 							<equippedStatOffsets Operation="Safe">
 								<MoveSpeed Operation="SafeReplace">-0.4</MoveSpeed>
 							</equippedStatOffsets>
-							<modExtensions Operation="Safe">
-								<li Class="VEF.Weapons.HeavyWeapon" Operation="Safe" CheckAttributes="True">
-									<supportedTraits Operation="Safe">
-										<li Operation="SafeRemove" Compare="InnerText">Tough</li>
-									</supportedTraits>
-								</li>
-							</modExtensions>
 							<statBases Operation="Safe">
 								<RangedWeapon_Cooldown Operation="SafeReplace">3</RangedWeapon_Cooldown>
 								<DeteriorationRate Operation="SafeRemove">0</DeteriorationRate>
@@ -257,19 +253,15 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef</xpath>
 						<value>
-							<costList Operation="Safe">
-								<ReinforcedBarrel Operation="SafeAdd">1</ReinforcedBarrel>
+							<costList Operation="SafeReplace">
+								<ComponentIndustrial>8</ComponentIndustrial>
+								<ReinforcedBarrel>5</ReinforcedBarrel>
+								<Plasteel>25</Plasteel>
+								<Steel>75</Steel>
 							</costList>
 							<equippedStatOffsets Operation="Safe">
 								<MoveSpeed Operation="SafeReplace">-0.6</MoveSpeed>
 							</equippedStatOffsets>
-							<modExtensions Operation="Safe">
-								<li Class="VEF.Weapons.HeavyWeapon" Operation="Safe" CheckAttributes="True">
-									<supportedTraits Operation="Safe">
-										<li Operation="SafeRemove" Compare="InnerText">Tough</li>
-									</supportedTraits>
-								</li>
-							</modExtensions>
 							<statBases Operation="Safe">
 								<RangedWeapon_Cooldown Operation="SafeReplace">2</RangedWeapon_Cooldown>
 								<DeteriorationRate Operation="SafeRemove">0</DeteriorationRate>
@@ -361,6 +353,14 @@
 					</Operation>
 				</apply>
 			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VWE_Bullet_SwarmRocket"]</xpath>
+				<value>
+					<projectile Operation="Safe">
+						<damageAmountBase Operation="SafeReplace">24</damageAmountBase>
+					</projectile>
+				</value>
+			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
 					<li>zal.heavyweaponsreloading</li>
@@ -370,6 +370,15 @@
 					<Operation Class="XmlExtensions.SetScope">
 						<xpath>Defs/ThingDef[defName="VWEHR_SwarmMissileAmmo"]</xpath>
 						<apply>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef/recipeMaker</xpath>
+								<value>
+									<costList Operation="SafeReplace">
+										<Steel>10</Steel>
+										<Chemfuel>5</Chemfuel>
+									</costList>
+								</value>
+							</Operation>
 							<Operation Class="XmlExtensions.FindMod">
 								<mods>
 									<li>vanillaexpanded.vwe</li>
@@ -418,16 +427,15 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef</xpath>
 						<value>
+							<costList Operation="SafeReplace">
+								<ComponentIndustrial>8</ComponentIndustrial>
+								<Plasteel>75</Plasteel>
+								<Steel>150</Steel>
+								<Uranium>50</Uranium>
+							</costList>
 							<equippedStatOffsets Operation="Safe">
 								<MoveSpeed Operation="SafeReplace">-0.5</MoveSpeed>
 							</equippedStatOffsets>
-							<modExtensions Operation="Safe">
-								<li Class="VEF.Weapons.HeavyWeapon" Operation="Safe" CheckAttributes="True">
-									<supportedTraits Operation="Safe">
-										<li Operation="SafeRemove" Compare="InnerText">Tough</li>
-									</supportedTraits>
-								</li>
-							</modExtensions>
 							<statBases Operation="Safe">
 								<AccuracyTouch Operation="SafeReplace">0.22</AccuracyTouch>
 								<AccuracyShort Operation="SafeReplace">0.33</AccuracyShort>
