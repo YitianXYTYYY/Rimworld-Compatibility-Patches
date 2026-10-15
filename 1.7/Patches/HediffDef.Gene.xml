@@ -213,19 +213,19 @@
 				</value>
 			</Operation>
 			<!-- hunger -->
-			<Operation Class="XmlExtensions.HybridPatch">
+			<!--Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/HediffDef[defName="VRE_InefficientMidgut"]/stages/li</xpath>
 				<value>
 					<hungerRateFactor Operation="SafeReplace">2</hungerRateFactor>
 				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			</Operation-->
+			<!--Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/HediffDef[defName="VRE_Dormant"]/stages/li</xpath>
 				<value>
 					<hungerRateFactorOffset Operation="SafeRemove"/>
 					<hungerRateFactor Operation="SafeAdd">0.8</hungerRateFactor>
 				</value>
-			</Operation>
+			</Operation-->
 			<!-- temperature -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/HediffDef[defName="VRE_HeatshockHediff"]</xpath>
@@ -305,7 +305,7 @@
 						<value>
 							<hungerRateFactor Operation="SafeAdd">0.2</hungerRateFactor>
 							<statOffsets Operation="Safe">
-								<RestFallRateFactor Operation="SafeAdd">1</RestFallRateFactor>
+								<RestFallRateFactor Operation="SafeAdd">1.2</RestFallRateFactor>
 							</statOffsets>
 						</value>
 					</Operation>
@@ -314,7 +314,7 @@
 						<value>
 							<hungerRateFactor Operation="SafeAdd">0.05</hungerRateFactor>
 							<statOffsets Operation="Safe">
-								<RestFallRateFactor Operation="SafeAdd">1</RestFallRateFactor>
+								<RestFallRateFactor Operation="SafeAdd">1.2</RestFallRateFactor>
 							</statOffsets>
 						</value>
 					</Operation>
@@ -327,18 +327,18 @@
 				<packageId>true</packageId>
 				<caseTrue>
 					<!-- hunger -->
-					<Operation Class="XmlExtensions.HybridPatch">
+					<!--Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/HediffDef[defName="VRE_Microsized"]/stages/li</xpath>
 						<value>
 							<hungerRateFactor Operation="SafeReplace">0.4</hungerRateFactor>
 						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
+					</Operation-->
+					<!--Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/HediffDef[defName="VRE_Colossal"]/stages/li</xpath>
 						<value>
 							<hungerRateFactor Operation="SafeReplace">1.6</hungerRateFactor>
 						</value>
-					</Operation>
+					</Operation-->
 					<!-- misc -->
 					<Operation Class="XmlExtensions.SetScope">
 						<xpath>Defs/HediffDef[defName="VRE_MineralRichInsectskin"]</xpath>
@@ -439,7 +439,7 @@
 						<value>
 							<hungerRateFactor Operation="SafeAdd">0.5</hungerRateFactor>
 							<statOffsets Operation="Safe">
-								<RestFallRateFactor Operation="SafeAdd">1</RestFallRateFactor>
+								<RestFallRateFactor Operation="SafeAdd">1.2</RestFallRateFactor>
 							</statOffsets>
 						</value>
 					</Operation>
@@ -448,7 +448,7 @@
 						<value>
 							<hungerRateFactor Operation="SafeAdd">0.05</hungerRateFactor>
 							<statOffsets Operation="Safe">
-								<RestFallRateFactor Operation="SafeAdd">1</RestFallRateFactor>
+								<RestFallRateFactor Operation="SafeAdd">1.2</RestFallRateFactor>
 							</statOffsets>
 						</value>
 					</Operation>
@@ -473,10 +473,10 @@
 							<allowMothballIfLowPriorityWorldPawn Operation="SafeAdd">true</allowMothballIfLowPriorityWorldPawn>
 							<comps Operation="Safe">
 								<li Class="HediffCompProperties_Pollution" Operation="SafeRemove" CheckAttributes="True">0</li>
-								<li Class="VanillaRacesExpandedWaster.HediffCompProperties_GeneDependentPollution" Operation="Safe" CheckAttributes="True">
-									<pollutedSeverity Operation="SafeAdd">0.0333</pollutedSeverity>
-									<unpollutedSeverity Operation="SafeAdd">-0.003</unpollutedSeverity>
-									<interval Operation="SafeAdd">60</interval>
+								<li Class="VanillaRacesExpandedWaster.HediffCompProperties_GeneDependentPollution" Operation="SafeAdd" CheckAttributes="True">
+									<pollutedSeverity>0.0333</pollutedSeverity>
+									<unpollutedSeverity>-0.003</unpollutedSeverity>
+									<interval>60</interval>
 								</li>
 							</comps>
     						<initialSeverity Operation="SafeReplace">0.002</initialSeverity>
@@ -488,6 +488,16 @@
 					</Operation>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 						<xpath>HediffDef/stages/li/capMods/li[capacity="Consciousness"]</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationAdd">
+						<xpath>HediffDef/stages</xpath>
+						<order>Prepend</order>
+						<value>
+							<li>
+								<label>inactive</label>
+								<minSeverity>0.01</minSeverity>
+							</li>
+						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="minor"]</xpath>
@@ -519,19 +529,9 @@
 							<capMods Operation="Safe">
 								<li Operation="SafeAdd" Compare="InnerText" XPathLocal="capacity">
 									<capacity>Moving</capacity>
-									<offset>0.15</offset>
+									<offset>0.2</offset>
 								</li>
 							</capMods>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationAdd">
-						<xpath>HediffDef/stages</xpath>
-						<order>Prepend</order>
-						<value>
-							<li>
-								<label>inactive</label>
-								<minSeverity>0.01</minSeverity>
-							</li>
 						</value>
 					</Operation>
 				</apply>
@@ -687,13 +687,13 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThoughtDef/stages/li[label="minor pollution happiness"]</xpath>
 						<value>
-							<baseMoodEffect Operation="SafeReplace">3</baseMoodEffect>
+							<baseMoodEffect Operation="SafeReplace">2</baseMoodEffect>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThoughtDef/stages/li[label="moderate pollution happiness"]</xpath>
 						<value>
-							<baseMoodEffect Operation="SafeReplace">6</baseMoodEffect>
+							<baseMoodEffect Operation="SafeReplace">5</baseMoodEffect>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
@@ -742,14 +742,14 @@
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 						<xpath>HediffDef/stages/li/statFactors/PsychicSensitivity</xpath>
 					</Operation>
-					<!--Operation Class="XmlExtensions.HybridPatch">
+					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="minor"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
 								<PsychicSensitivity Operation="SafeAdd">0.2</PsychicSensitivity>
 							</statOffsets>
 						</value>
-					</Operation-->
+					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[label="moderate"]</xpath>
 						<value>
