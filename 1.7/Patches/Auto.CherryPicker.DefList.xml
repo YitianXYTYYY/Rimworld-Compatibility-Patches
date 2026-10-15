@@ -40,7 +40,6 @@
 					<li>RedMattis.BetterGeneInheritance</li>
 				</mods>
 				<packageId>true</packageId>
-				<logic>and</logic>
 				<caseTrue>
 					<Operation Class="PatchOperationAdd">
 						<xpath>defs</xpath>
@@ -94,6 +93,13 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>ThingDef/BfG_GravFocuser</li>
+							<li>HediffDef/BfG_GravFocuserImplant</li>
+						</value>
+					</Operation>
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
 							<li>vanillaracesexpanded.starjack</li>
