@@ -160,26 +160,31 @@
 	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/ThingDef[defName="Weapon_GrenadeMolotov"]</xpath>
 		<apply>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>mlie.yayoscombat3</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ThingDef</xpath>
-						<value>
-							<costList Operation="Safe">
-								<Chemfuel Operation="SafeReplace">20</Chemfuel>
-							</costList>
-							<weaponTags Operation="Safe">
-								<li Operation="Add">ammoDef_Chemfuel/2/10</li>
-							</weaponTags>
-						</value>
-					</Operation>
-				</caseTrue>
+			<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+				<xpath>ThingDef</xpath>
+				<attribute>Name</attribute>
+				<value>Weapon_GrenadeMolotov</value>
 			</Operation>
 		</apply>
+	</Operation>
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>mlie.yayoscombat3</li>
+			<li>rebuild.cotr.doorsandcorners</li>
+		</mods>
+		<packageId>true</packageId>
+		<logic>and</logic>
+		<caseTrue>			
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="WeaponGrenadeMolotov"]</xpath>
+				<value>
+					<costList Operation="Safe">
+						<Steel Operation="SafeRemove">5</Steel>
+						<RB_Glass Operation="SafeAdd">5</RB_Glass>
+					</costList>
+				</value>
+			</Operation>
+		</caseTrue>
 	</Operation>
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ThingDef[defName="Gun_IncendiaryLauncher"]</xpath>
@@ -222,35 +227,27 @@
 		<apply>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
-					<li>mlie.yayoscombat3</li>
+					<li>vanillaexpanded.vwe</li>
 				</mods>
 				<packageId>true</packageId>
+				<caseFalse>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<weaponTags Operation="Safe">
+								<li Operation="Add">ammoDef_Chemfuel/5/10</li>
+							</weaponTags>
+						</value>
+					</Operation>
+				</caseFalse>
 				<caseTrue>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>vanillaexpanded.vwe</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseFalse>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>ThingDef</xpath>
-								<value>
-									<weaponTags Operation="Safe">
-										<li Operation="Add">ammoDef_Chemfuel/5/5</li>
-									</weaponTags>
-								</value>
-							</Operation>
-						</caseFalse>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>ThingDef</xpath>
-								<value>
-									<weaponTags Operation="Safe">
-										<li Operation="Add">ammoDef_VWESmokeGrenade/5/1</li>
-									</weaponTags>
-								</value>
-							</Operation>
-						</caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<weaponTags Operation="Safe">
+								<li Operation="Add">ammoDef_VWESmokeGrenade/5/1</li>
+							</weaponTags>
+						</value>
 					</Operation>
 				</caseTrue>
 			</Operation>
