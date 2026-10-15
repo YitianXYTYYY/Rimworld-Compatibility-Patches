@@ -45,10 +45,10 @@
 							</costList>
 							<description Operation="SafeReplace">Pilum is a spear for throwing. It takes a long time to throw, but one hit can do heavy damage.</description>
 							<label Operation="SafeReplace">pilum</label>
-							<stackLimit Operation="SafeAdd">10</stackLimit>
+							<stackLimit Operation="SafeAdd">25</stackLimit>
 							<statBases Operation="Safe">
 								<Mass Operation="SafeReplace">0.4</Mass>
-								<WorkToMake Operation="SafeReplace">600</WorkToMake>
+								<WorkToMake Operation="SafeReplace">900</WorkToMake>
 							</statBases>
 							<weaponTags Operation="Safe">
 								<li Operation="Add">ammoDef_Pila/1/1</li>

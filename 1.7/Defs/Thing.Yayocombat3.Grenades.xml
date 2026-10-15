@@ -8,7 +8,7 @@
 			<Cloth>5</Cloth>
 			<Chemfuel>10</Chemfuel>
 		</costList>
-		<stackLimit>10</stackLimit>
+		<stackLimit>25</stackLimit>
 		<statBases>
 			<Mass>0.2</Mass>
 			<WorkToMake>900</WorkToMake>
@@ -24,7 +24,7 @@
 			<Steel>10</Steel>
 			<Chemfuel>10</Chemfuel>
 		</costList>
-		<stackLimit>10</stackLimit>
+		<stackLimit>25</stackLimit>
 		<statBases>
 			<Mass>0.2</Mass>
 			<WorkToMake>1200</WorkToMake>
@@ -40,7 +40,7 @@
 			<Steel>10</Steel>
 			<ComponentIndustrial>1</ComponentIndustrial>
 		</costList>
-		<stackLimit>10</stackLimit>
+		<stackLimit>25</stackLimit>
 		<statBases>
 			<Mass>0.2</Mass>
 			<WorkToMake>1800</WorkToMake>
@@ -56,7 +56,7 @@
 			<Steel>10</Steel>
 			<Chemfuel>10</Chemfuel>
 		</costList>
-		<stackLimit>10</stackLimit>
+		<stackLimit>25</stackLimit>
 		<statBases>
 			<Mass>0.2</Mass>
 			<WorkToMake>1800</WorkToMake>
@@ -70,9 +70,9 @@
 		<defName>VWESmokeGrenade</defName>
 		<costList Inherit="False">
 			<Steel>10</Steel>
-			<Chemfuel>5</Chemfuel>
+			<Chemfuel>10</Chemfuel>
 		</costList>
-		<stackLimit>10</stackLimit>
+		<stackLimit>25</stackLimit>
 		<statBases>
 			<Mass>0.2</Mass>
 			<WorkToMake>900</WorkToMake>
@@ -88,7 +88,7 @@
 			<Steel>10</Steel>
 			<ComponentIndustrial>1</ComponentIndustrial>
 		</costList>
-		<stackLimit>10</stackLimit>
+		<stackLimit>25</stackLimit>
 		<statBases>
 			<Mass>0.2</Mass>
 			<WorkToMake>1800</WorkToMake>
