@@ -41,6 +41,10 @@
 						<xpath>ReplaceLib.ReplacerDef/replacers</xpath>
 						<value>
 							<li>
+								<replace>Weapon_GrenadeMolotov</replace>
+								<with>WeaponGrenadeMolotov</with>
+							</li>
+							<li>
 								<replace>Weapon_GrenadeFrag</replace>
 								<with>WeaponGrenadeFrag</with>
 							</li>
