@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
+	<!-- compacted machinery -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="MineableComponentsIndustrial"]</xpath>
+		<value>
+			<building Operation="Safe">
+				<mineableScatterCommonality Operation="SafeReplace">0</mineableScatterCommonality>
+				<mineableScatterLumpSizeRange Operation="SafeReplace">0~0</mineableScatterLumpSizeRange>
+			</building>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>Defs/ThingDef[defName="PreciousLump"]/genStep/li[text()=MineableComponentsIndustrial]</xpath>
+	</Operation>
+
 	<!-- vanometric power cell -->
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ThingDef[defName="VanometricPowerCell"]</xpath>
