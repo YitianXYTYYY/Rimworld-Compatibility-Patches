@@ -102,12 +102,141 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<!-- Insectoidhybrids -->
+			<!-- archocentipede -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="GR_ArchotechCentipede"]</xpath>
+				<value>
+					<statBases Operation="Safe">
+						<VacuumResistance MayRequire="ludeon.rimworld.odyssey" Operation="SafeAdd">1</VacuumResistance>
+					</statBases>
+				</value>
+			</Operation>
+			<!-- insectoidhybrids -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[@Name="GR_BaseInsect"]</xpath>
 				<value>
 					<statBases Operation="Safe">
-						<VacuumResistance Operation="SafeAdd">1</VacuumResistance>
+      					<ToxicEnvironmentResistance Operation="SafeAdd">0.8</ToxicEnvironmentResistance>
+						<VacuumResistance MayRequire="ludeon.rimworld.odyssey" Operation="SafeAdd">1</VacuumResistance>
+					</statBases>
+				</value>
+			</Operation>
+			<!-- mechanoidhybrids -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="GR_Mechabear"]</xpath>
+				<value>
+					<statBases Operation="Safe">
+      					<PsychicSensitivity Operation="SafeReplace">0.5</PsychicSensitivity>
+      					<ToxicEnvironmentResistance Operation="SafeAdd">1</ToxicEnvironmentResistance>
+						<VacuumResistance MayRequire="ludeon.rimworld.odyssey" Operation="SafeAdd">1</VacuumResistance>
+					</statBases>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="GR_Mechalope"]</xpath>
+				<value>
+					<statBases Operation="Safe">
+      					<PsychicSensitivity Operation="SafeReplace">0.5</PsychicSensitivity>
+      					<ToxicEnvironmentResistance Operation="SafeAdd">1</ToxicEnvironmentResistance>
+						<VacuumResistance MayRequire="ludeon.rimworld.odyssey" Operation="SafeAdd">1</VacuumResistance>
+					</statBases>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="GR_Mechachicken"]</xpath>
+				<value>
+					<statBases Operation="Safe">
+      					<PsychicSensitivity Operation="SafeReplace">0.5</PsychicSensitivity>
+      					<ToxicEnvironmentResistance Operation="SafeAdd">1</ToxicEnvironmentResistance>
+						<VacuumResistance MayRequire="ludeon.rimworld.odyssey" Operation="SafeAdd">1</VacuumResistance>
+					</statBases>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="GR_Mechaspider"]</xpath>
+				<value>
+					<statBases Operation="Safe">
+      					<PsychicSensitivity Operation="SafeReplace">0.5</PsychicSensitivity>
+      					<ToxicEnvironmentResistance Operation="SafeAdd">1</ToxicEnvironmentResistance>
+						<VacuumResistance MayRequire="ludeon.rimworld.odyssey" Operation="SafeAdd">1</VacuumResistance>
+					</statBases>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="GR_Mechamuffalo"]</xpath>
+				<value>
+					<statBases Operation="Safe">
+      					<PsychicSensitivity Operation="SafeReplace">0.5</PsychicSensitivity>
+      					<ToxicEnvironmentResistance Operation="SafeAdd">1</ToxicEnvironmentResistance>
+						<VacuumResistance MayRequire="ludeon.rimworld.odyssey" Operation="SafeAdd">1</VacuumResistance>
+					</statBases>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="GR_Mecharat"]</xpath>
+				<value>
+					<statBases Operation="Safe">
+      					<PsychicSensitivity Operation="SafeReplace">0.5</PsychicSensitivity>
+      					<ToxicEnvironmentResistance Operation="SafeAdd">1</ToxicEnvironmentResistance>
+						<VacuumResistance MayRequire="ludeon.rimworld.odyssey" Operation="SafeAdd">1</VacuumResistance>
+					</statBases>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="GR_Mechaturtle"]</xpath>
+				<value>
+					<statBases Operation="Safe">
+      					<PsychicSensitivity Operation="SafeReplace">0.5</PsychicSensitivity>
+      					<ToxicEnvironmentResistance Operation="SafeAdd">1</ToxicEnvironmentResistance>
+						<VacuumResistance MayRequire="ludeon.rimworld.odyssey" Operation="SafeAdd">1</VacuumResistance>
+					</statBases>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="GR_Mechawolf"]</xpath>
+				<value>
+					<statBases Operation="Safe">
+						<VacuumResistance MayRequire="ludeon.rimworld.odyssey" Operation="SafeAdd">1</VacuumResistance>
+					</statBases>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="GR_Mechathrumbo"]</xpath>
+				<value>
+					<statBases Operation="Safe">
+      					<PsychicSensitivity Operation="SafeReplace">0.5</PsychicSensitivity>
+      					<ToxicEnvironmentResistance Operation="SafeAdd">1</ToxicEnvironmentResistance>
+						<VacuumResistance MayRequire="ludeon.rimworld.odyssey" Operation="SafeAdd">1</VacuumResistance>
+					</statBases>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="GR_Mechacat"]</xpath>
+				<value>
+					<statBases Operation="Safe">
+      					<PsychicSensitivity Operation="SafeReplace">0.5</PsychicSensitivity>
+      					<ToxicEnvironmentResistance Operation="SafeAdd">1</ToxicEnvironmentResistance>
+						<VacuumResistance MayRequire="ludeon.rimworld.odyssey" Operation="SafeAdd">1</VacuumResistance>
+					</statBases>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="GR_Mechahorse"]</xpath>
+				<value>
+					<statBases Operation="Safe">
+      					<PsychicSensitivity Operation="SafeReplace">0.5</PsychicSensitivity>
+      					<ToxicEnvironmentResistance Operation="SafeAdd">1</ToxicEnvironmentResistance>
+						<VacuumResistance MayRequire="ludeon.rimworld.odyssey" Operation="SafeAdd">1</VacuumResistance>
+					</statBases>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="GR_Mechamime"]</xpath>
+				<value>
+					<statBases Operation="Safe">
+      					<PsychicSensitivity Operation="SafeReplace">0.5</PsychicSensitivity>
+      					<ToxicEnvironmentResistance Operation="SafeAdd">1</ToxicEnvironmentResistance>
+						<VacuumResistance MayRequire="ludeon.rimworld.odyssey" Operation="SafeAdd">1</VacuumResistance>
 					</statBases>
 				</value>
 			</Operation>
