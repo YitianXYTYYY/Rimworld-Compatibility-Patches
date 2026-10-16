@@ -68,10 +68,7 @@
 					<li Class="StockGenerator_Category" Operation="Add">
 						<categoryDef>Grenades</categoryDef>
 						<thingDefCountRange>1~5</thingDefCountRange>
-						<countRange>10~30</countRange>
-						<excludedThingDefs>
-							<li>Weapon_GrenadeMolotov</li>
-						</excludedThingDefs>
+						<countRange>1~10</countRange>
 					</li>
 				</value>
 			</Operation>
@@ -99,10 +96,7 @@
 					<li Class="StockGenerator_Category" Operation="Add">
 						<categoryDef>Grenades</categoryDef>
 						<thingDefCountRange>2~5</thingDefCountRange>
-						<countRange>10~30</countRange>
-						<excludedThingDefs>
-							<li>Weapon_GrenadeMolotov</li>
-						</excludedThingDefs>
+						<countRange>1~10</countRange>
 					</li>
 				</value>
 			</Operation>
@@ -135,35 +129,32 @@
 					<li Class="StockGenerator_Category" Operation="Add">
 						<categoryDef>Grenades</categoryDef>
 						<thingDefCountRange>3~5</thingDefCountRange>
-						<countRange>15~75</countRange>
-						<excludedThingDefs>
-							<li>Weapon_GrenadeMolotov</li>
-						</excludedThingDefs>
+						<countRange>5~15</countRange>
 					</li>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
-					<li>Teiwaz.GTGOT</li>
+					<li>teiwaz.gtgot</li>
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/TraderKindDef[defName="Orbital_GTGMilitary"]/stockGenerators</xpath>
+						<xpath>Defs/TraderKindDef[defName="Orbital_GTGMilitaryCorporation"]/stockGenerators</xpath>
 						<value>
-							<li Class="StockGenerator_SingleDef" Operation="Add">
+							<li Class="GTGTraderCore.GTGTC_StockGenerator_GlobalSingleDef" Operation="Add">
 								<thingDef>AmmoIndustrial</thingDef>
-								<countRange>750~3000</countRange>
+								<countRange>900~3000</countRange>
 							</li>
-							<li Class="StockGenerator_SingleDef" Operation="Add">
+							<li Class="GTGTraderCore.GTGTC_StockGenerator_GlobalSingleDef" Operation="Add">
 								<thingDef>AmmoSpacer</thingDef>
-								<countRange>450~1500</countRange>
+								<countRange>600~1800</countRange>
 							</li>
-							<li Class="StockGenerator_SingleDef" Operation="Add">
+							<li Class="GTGTraderCore.GTGTC_StockGenerator_GlobalSingleDef" Operation="Add">
 								<thingDef>AmmoSpacerEMP</thingDef>
 								<countRange>300~1200</countRange>
 							</li>
-							<li Class="StockGenerator_Category" Operation="Add">
+							<li Class="GTGTraderCore.GTGTC_StockGenerator_GlobalCategory" Operation="Add">
 								<categoryDef>yy_ammo_category</categoryDef>
 								<thingDefCountRange>2~5</thingDefCountRange>
 								<countRange>150~600</countRange>
@@ -174,44 +165,38 @@
 									<li>AmmoSpacerEMP</li>
 								</excludedThingDefs>
 							</li>
-							<li Class="StockGenerator_Category" Operation="Add">
+							<li Class="GTGTraderCore.GTGTC_StockGenerator_GlobalCategory" Operation="Add">
 								<categoryDef>Grenades</categoryDef>
-								<thingDefCountRange>3~5</thingDefCountRange>
-								<countRange>50~150</countRange>
-								<excludedThingDefs>
-									<li>Weapon_GrenadeMolotov</li>
-								</excludedThingDefs>
+								<thingDefCountRange>3~6</thingDefCountRange>
+								<countRange>10~50</countRange>
 							</li>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/TraderKindDef[defName="Orbital_GTGBlackMarket"]/stockGenerators</xpath>
 						<value>
-							<li Class="StockGenerator_SingleDef" Operation="Add">
+							<li Class="GTGTraderCore.GTGTC_StockGenerator_GlobalSingleDef" Operation="Add">
 								<thingDef>AmmoIndustrial</thingDef>
 								<countRange>150~900</countRange>
 							</li>
-							<li Class="StockGenerator_SingleDef" Operation="Add">
+							<li Class="GTGTraderCore.GTGTC_StockGenerator_GlobalSingleDef" Operation="Add">
 								<thingDef>AmmoSpacer</thingDef>
 								<countRange>150~450</countRange>
 							</li>
-							<li Class="StockGenerator_Category" Operation="Add">
+							<li Class="GTGTraderCore.GTGTC_StockGenerator_GlobalCategory" Operation="Add">
 								<categoryDef>yy_ammo_category</categoryDef>
 								<thingDefCountRange>2~5</thingDefCountRange>
-								<countRange>25~150</countRange>
+								<countRange>50~150</countRange>
 								<excludedThingDefs>
 									<li>AmmoPrimitive</li>
 									<li>AmmoIndustrial</li>
 									<li>AmmoSpacer</li>
 								</excludedThingDefs>
 							</li>
-							<li Class="StockGenerator_Category" Operation="Add">
+							<li Class="GTGTraderCore.GTGTC_StockGenerator_GlobalCategory" Operation="Add">
 								<categoryDef>Grenades</categoryDef>
 								<thingDefCountRange>2~5</thingDefCountRange>
-								<countRange>10~50</countRange>
-								<excludedThingDefs>
-									<li>Weapon_GrenadeMolotov</li>
-								</excludedThingDefs>
+								<countRange>5~25</countRange>
 							</li>
 						</value>
 					</Operation>
