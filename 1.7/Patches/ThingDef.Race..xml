@@ -8,88 +8,87 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<Operation Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="Sightstealer"]/race/baseHealthScale</xpath>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Sightstealer"]</xpath>
 				<value>
-					<baseHealthScale>1.5</baseHealthScale>
+					<race Operation="Safe">
+						<baseHealthScale Operation="SafeReplace">1.5</baseHealthScale>
+					</race>
 				</value>
 			</Operation>
-			<Operation Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="Gorehulk"]/race/baseHealthScale</xpath>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Gorehulk"]</xpath>
 				<value>
-					<baseHealthScale>2</baseHealthScale>
+					<race Operation="Safe">
+						<baseHealthScale Operation="SafeReplace">2</baseHealthScale>
+					</race>
 				</value>
 			</Operation>
-			<Operation Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="Chimera"]/race/baseHealthScale</xpath>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Chimera"]</xpath>
 				<value>
-					<baseHealthScale>4.5</baseHealthScale>
+					<race Operation="Safe">
+						<baseHealthScale Operation="SafeReplace">4.5</baseHealthScale>
+					</race>
 				</value>
 			</Operation>
-			<Operation Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="Noctol"]/race/baseHealthScale</xpath>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Noctol"]</xpath>
 				<value>
-					<baseHealthScale>3</baseHealthScale>
+					<race Operation="Safe">
+						<baseHealthScale Operation="SafeReplace">3</baseHealthScale>
+					</race>
 				</value>
 			</Operation>
-			<Operation Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="Devourer"]/race/baseHealthScale</xpath>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Devourer"]</xpath>
 				<value>
-					<baseHealthScale>9.6</baseHealthScale>
+					<race Operation="Safe">
+						<baseHealthScale Operation="SafeReplace">9</baseHealthScale>
+					</race>
 				</value>
 			</Operation>
-			<Operation Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="Revenant"]/race/baseHealthScale</xpath>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Revenant"]</xpath>
 				<value>
-					<baseHealthScale>15</baseHealthScale>
+					<race Operation="Safe">
+						<baseHealthScale Operation="SafeReplace">15</baseHealthScale>
+					</race>
 				</value>
 			</Operation>
-			<Operation Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="Metalhorror"]/statBases/ArmorRating_Sharp</xpath>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Metalhorror"]</xpath>
 				<value>
-					<ArmorRating_Sharp>1.0</ArmorRating_Sharp>
+					<statBases Operation="Safe">
+						<ArmorRating_Sharp Operation="SafeReplace">1</ArmorRating_Sharp>
+						<ArmorRating_Blunt Operation="SafeReplace">1</ArmorRating_Blunt>
+					</statBases>
+					<tools Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocalName="label">
+							<label Operation="Safe">left blade</label>
+							<armorPenetration Operation="SafeAdd">1</armorPenetration>
+						</li>
+						<li Operation="Safe" Compare="InnerText" XPathLocalName="label">
+							<label Operation="Safe">right blade</label>
+							<armorPenetration Operation="SafeAdd">1</armorPenetration>
+						</li>
+					</tools>
 				</value>
 			</Operation>
-			<Operation Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="Metalhorror"]/statBases/ArmorRating_Blunt</xpath>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Bulbfreak"]</xpath>
 				<value>
-					<ArmorRating_Blunt>1.0</ArmorRating_Blunt>
+					<race Operation="Safe">
+						<baseHealthScale Operation="SafeReplace">1</baseHealthScale>
+					</race>
 				</value>
 			</Operation>
-			<Operation Class="PatchOperationAdd">
-				<xpath>Defs/ThingDef[defName="Metalhorror"]/tools/li[label="left blade" or label="right blade"]</xpath>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Dreadmeld"]</xpath>
 				<value>
-					<armorPenetration>1.5</armorPenetration>
-				</value>
-			</Operation>
-			<Operation Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="Bulbfreak"]/race/baseHealthScale</xpath>
-				<value>
-					<baseHealthScale>1</baseHealthScale>
-				</value>
-			</Operation>
-			<Operation Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="Toughspike"]/statBases/ArmorRating_Blunt</xpath>
-				<value>
-					<ArmorRating_Blunt>0.6</ArmorRating_Blunt>
-				</value>
-			</Operation>
-			<Operation Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="Toughspike"]/statBases/ArmorRating_Sharp</xpath>
-				<value>
-					<ArmorRating_Sharp>0.8</ArmorRating_Sharp>
-				</value>
-			</Operation>
-			<Operation Class="PatchOperationAdd">
-				<xpath>Defs/ThingDef[defName="Toughspike"]/tools/li[label="left spike" or label="right spike"]</xpath>
-				<value>
-					<armorPenetration>0.8</armorPenetration>
-				</value>
-			</Operation>
-			<Operation Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="Dreadmeld"]/race/baseHealthScale</xpath>
-				<value>
-					<baseHealthScale>20</baseHealthScale>
+					<race Operation="Safe">
+						<baseHealthScale Operation="SafeReplace">20</baseHealthScale>
+					</race>
 				</value>
 			</Operation>
 		</caseTrue>
