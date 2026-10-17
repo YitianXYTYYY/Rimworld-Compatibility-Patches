@@ -116,42 +116,4 @@
         </match>
     </Operation>
 
-    <!-- <Operation Class="PatchOperationFindMod">
-        <mods>
-            <li>Ancient urban ruins</li>
-        </mods>
-        <match Class="PatchOperationSequence">
-            <operations>
-                <li Class="PatchOperationConditional">
-                    <xpath>Defs/SitePartDef[defName="AM_StreetSite"]/gravShipsCanLandOn</xpath>
-                    <nomatch Class="PatchOperationAdd">
-                        <xpath>Defs/SitePartDef[defName="AM_StreetSite" or defName="AM_ReserveSite" or defName="AM_MALL_S_Site" or defName="AM_MALL_L_Site"]</xpath>
-                        <value>
-                            <gravShipsCanLandOn>true</gravShipsCanLandOn>
-                        </value>
-                    </nomatch>
-                </li>
-            </operations>
-        </match>
-    </Operation> -->
-
-    <Operation Class="PatchOperationFindMod">
-        <mods>
-            <li>Ancient mining industry</li>
-        </mods>
-        <match Class="PatchOperationSequence">
-            <operations>
-                <li Class="PatchOperationConditional">
-                    <xpath>Defs/SitePartDef[defName="AncientShieldMiningSite_Site"]/gravShipsCanLandOn</xpath>
-                    <nomatch Class="PatchOperationAdd">
-                        <xpath>Defs/SitePartDef[defName="AncientShieldMiningSite_Site" or defName="AncientTunnelRuins_Site" or defName="AncientOpenPitMiningSite_Site" or defName="AbandonedSteelMineSite_Site" or defName="Soldier_S" or defName="AbandonedUraniumMiningSite_Site" or defName="Soldier_L" or defName="AbandonedPlasteelMineSite_Site" or defName="Soldier_M" or defName="MineralScreeningStation_Site" or defName="AbandonedMine_Site"]</xpath>
-                        <value>
-                            <gravShipsCanLandOn>true</gravShipsCanLandOn>
-                        </value>
-                    </nomatch>
-                </li>
-            </operations>
-        </match>
-    </Operation>
-
 </Patch>
