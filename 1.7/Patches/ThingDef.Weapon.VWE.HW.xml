@@ -18,7 +18,7 @@
 						<xpath>ThingDef</xpath>
 						<value>
 							<costList Operation="SafeReplace">
-								<ComponentIndustrial>8</ComponentIndustrial>
+								<ComponentIndustrial>10</ComponentIndustrial>
 								<Plasteel>75</Plasteel>
 								<Steel>150</Steel>
 							</costList>
@@ -162,7 +162,7 @@
 						<xpath>ThingDef</xpath>
 						<value>
 							<costList Operation="SafeReplace">
-								<ComponentIndustrial>8</ComponentIndustrial>
+								<ComponentIndustrial>10</ComponentIndustrial>
 								<ReinforcedBarrel>1</ReinforcedBarrel>
 								<Steel>75</Steel>
 							</costList>
@@ -254,7 +254,7 @@
 						<xpath>ThingDef</xpath>
 						<value>
 							<costList Operation="SafeReplace">
-								<ComponentIndustrial>8</ComponentIndustrial>
+								<ComponentIndustrial>10</ComponentIndustrial>
 								<ReinforcedBarrel>5</ReinforcedBarrel>
 								<Plasteel>25</Plasteel>
 								<Steel>75</Steel>
@@ -428,7 +428,7 @@
 						<xpath>ThingDef</xpath>
 						<value>
 							<costList Operation="SafeReplace">
-								<ComponentIndustrial>8</ComponentIndustrial>
+								<ComponentIndustrial>10</ComponentIndustrial>
 								<Plasteel>75</Plasteel>
 								<Steel>150</Steel>
 								<Uranium>50</Uranium>
