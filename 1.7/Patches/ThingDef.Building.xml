@@ -405,6 +405,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef</xpath>
 						<value>
+							<label Operation="SafeReplace">archotech electrowomb</label>
 							<techLevel Operation="SafeAdd">Archotech</techLevel>
 						</value>
 					</Operation>
