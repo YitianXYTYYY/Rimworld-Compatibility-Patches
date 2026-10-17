@@ -122,12 +122,60 @@
 				<packageId>true</packageId>
 				<caseTrue>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/XenotypeDef[defName="VRE_Animakin" or 
-							defName="VRE_Gauranlenkin" or 
-							defName="VRE_Poluxkin"]/genes</xpath>
+						<xpath>Defs/XenotypeDef[defName="VRE_Animakin"]/genes</xpath>
 						<value>
 							<li Operation="SafeAdd" Compare="InnerText">Body_FemaleOnly</li>
 							<li Operation="SafeRemove" Compare="InnerText">VRE_Female</li>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/XenotypeDef[defName="VRE_Gauranlenkin"]/genes</xpath>
+						<value>
+							<li Operation="SafeAdd" Compare="InnerText">Body_FemaleOnly</li>
+							<li Operation="SafeRemove" Compare="InnerText">VRE_Female</li>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/XenotypeDef[defName="VRE_Poluxkin"]/genes</xpath>
+						<value>
+							<li Operation="SafeAdd" Compare="InnerText">Body_FemaleOnly</li>
+							<li Operation="SafeRemove" Compare="InnerText">VRE_Female</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Vanilla Races Expanded - Sanguophage -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.sanguophage</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>als.biotechgravship</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/XenotypeDef[defName="VRE_Strigoi"]/genes</xpath>
+						<value>
+							<li Operation="SafeRemove" Compare="InnerText">BfG_RandomGene_Blood</li>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/XenotypeDef[defName="VRE_Ekkimian"]/genes</xpath>
+						<value>
+							<li Operation="SafeRemove" Compare="InnerText">BfG_RandomGene_Blood</li>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/XenotypeDef[defName="VRE_Bruxa"]/genes</xpath>
+						<value>
+							<li Operation="SafeRemove" Compare="InnerText">BfG_RandomGene_Blood</li>
 						</value>
 					</Operation>
 				</caseTrue>
