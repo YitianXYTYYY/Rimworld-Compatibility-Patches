@@ -628,19 +628,6 @@
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/HediffDef[defName="CombatCommand"]</xpath>
 				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>HediffDef</xpath>
-						<value>
-							<stages Operation="Safe">
-								<li Operation="Safe">
-									<statOffsets Operation="Safe">
-										<ShootingAccuracyPawn Operation="SafeAdd">4</ShootingAccuracyPawn>
-										<MeleeHitChance Operation="SafeAdd">4</MeleeHitChance>
-									</statOffsets>
-								</li>
-							</stages>
-						</value>
-					</Operation>
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
 							<li>redmattis.betterprerequisites</li>
@@ -653,8 +640,8 @@
 									<modExtensions Operation="Safe">
 										<li Class="BigAndSmall.PawnExtension" Operation="Safe" CheckAttributes="True">
 											<hediffFilters Operation="Safe">
-												<banlist  Operation="Safe">
-													<li  Operation="SafeAdd" Compare="InnerText">CombatCommandBuff</li>
+												<banlist Operation="Safe">
+													<li Operation="SafeAdd" Compare="InnerText">CombatCommandBuff</li>
 												</banlist>
 											</hediffFilters>
 										</li>
@@ -689,8 +676,8 @@
 									<modExtensions Operation="Safe">
 										<li Class="BigAndSmall.PawnExtension" Operation="Safe" CheckAttributes="True">
 											<hediffFilters Operation="Safe">
-												<banlist  Operation="Safe">
-													<li  Operation="SafeAdd" Compare="InnerText">MarksmanCommandBuff</li>
+												<banlist Operation="Safe">
+													<li Operation="SafeAdd" Compare="InnerText">MarksmanCommandBuff</li>
 												</banlist>
 											</hediffFilters>
 										</li>
@@ -727,8 +714,8 @@
 									<modExtensions Operation="Safe">
 										<li Class="BigAndSmall.PawnExtension" Operation="Safe" CheckAttributes="True">
 											<hediffFilters Operation="Safe">
-												<banlist  Operation="Safe">
-													<li  Operation="SafeAdd" Compare="InnerText">ResearchCommandBuff</li>
+												<banlist Operation="Safe">
+													<li Operation="SafeAdd" Compare="InnerText">ResearchCommandBuff</li>
 												</banlist>
 											</hediffFilters>
 										</li>
@@ -762,8 +749,8 @@
 									<modExtensions Operation="Safe">
 										<li Class="BigAndSmall.PawnExtension" Operation="Safe" CheckAttributes="True">
 											<hediffFilters Operation="Safe">
-												<banlist  Operation="Safe">
-													<li  Operation="SafeAdd" Compare="InnerText">FarmingCommandBuff</li>
+												<banlist Operation="Safe">
+													<li Operation="SafeAdd" Compare="InnerText">FarmingCommandBuff</li>
 												</banlist>
 											</hediffFilters>
 										</li>
@@ -797,8 +784,8 @@
 									<modExtensions Operation="Safe">
 										<li Class="BigAndSmall.PawnExtension" Operation="Safe" CheckAttributes="True">
 											<hediffFilters Operation="Safe">
-												<banlist  Operation="Safe">
-													<li  Operation="SafeAdd" Compare="InnerText">ProductionCommandBuff</li>
+												<banlist Operation="Safe">
+													<li Operation="SafeAdd" Compare="InnerText">ProductionCommandBuff</li>
 												</banlist>
 											</hediffFilters>
 										</li>
@@ -833,8 +820,8 @@
 									<modExtensions Operation="Safe">
 										<li Class="BigAndSmall.PawnExtension" Operation="Safe" CheckAttributes="True">
 											<hediffFilters Operation="Safe">
-												<banlist  Operation="Safe">
-													<li  Operation="SafeAdd" Compare="InnerText">MiningCommandBuff</li>
+												<banlist Operation="Safe">
+													<li Operation="SafeAdd" Compare="InnerText">MiningCommandBuff</li>
 												</banlist>
 											</hediffFilters>
 										</li>
