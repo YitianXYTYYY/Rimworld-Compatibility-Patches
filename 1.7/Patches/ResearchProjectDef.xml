@@ -87,8 +87,9 @@
 		<value>
 			<prerequisites Operation="Safe">
 				<li Operation="SafeRemove" Compare="InnerText">Electricity</li>
-				<li Operation="SafeAdd" Compare="InnerText">Machining</li>
+				<li Operation="SafeAdd" Compare="InnerText">MicroelectronicsBasics</li>
 			</prerequisites>
+			<requiredResearchBuilding Operation="SafeAdd">HiTechResearchBench</requiredResearchBuilding>
 		</value>
 	</Operation>
 	<Operation Class="XmlExtensions.HybridPatch">
@@ -442,14 +443,44 @@
 			<tab Operation="AddOrReplace">TechStarship</tab>
 		</value>
 	</Operation>
-	<Operation Class="XmlExtensions.HybridPatch">
+	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/ResearchProjectDef[defName="ReconArmor"]</xpath>
-		<value>
-			<hiddenPrerequisites Operation="Safe">
-				<li Operation="SafeRemove" Compare="InnerText">ComplexClothing</li>
-				<li Operation="SafeAdd" Compare="InnerText">FlakArmor</li>
-			</hiddenPrerequisites>
-		</value>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>ResearchProjectDef</xpath>
+				<value>
+					<hiddenPrerequisites Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">ComplexClothing</li>
+					</hiddenPrerequisites>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaexpanded.varme</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseFalse>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ResearchProjectDef</xpath>
+						<value>
+							<hiddenPrerequisites Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">FlakArmor</li>
+							</hiddenPrerequisites>
+						</value>
+					</Operation>
+				</caseFalse>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ResearchProjectDef</xpath>
+						<value>
+							<hiddenPrerequisites Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">VAE_TrooperArmor</li>
+							</hiddenPrerequisites>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
 	</Operation>
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ResearchProjectDef[defName="ChargedShot"]</xpath>
@@ -1224,7 +1255,6 @@
 		</caseTrue>
 	</Operation>
 
-
 	<!-- Security and Blast Doors Expanded -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
@@ -1249,11 +1279,14 @@
 				<xpath>Defs/ResearchProjectDef[defName="UniqueMachining"]</xpath>
 				<value>
 					<prerequisites Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">Gunsmithing</li>
+						<li Operation="SafeAdd" Compare="InnerText">Machining</li>
 						<li Operation="SafeRemove" Compare="InnerText">UniqueSmithing</li>
 					</prerequisites>
 					<hiddenPrerequisites Operation="Safe">
 						<li Operation="SafeAdd" Compare="InnerText">UniqueSmithing</li>
 					</hiddenPrerequisites>
+					<requiredResearchBuilding Operation="SafeAdd">HiTechResearchBench</requiredResearchBuilding>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
@@ -1300,6 +1333,38 @@
 						<li Operation="SafeAdd" Compare="InnerText">FlakArmor</li>
 					</hiddenPrerequisites>
 				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Vanilla Factions Expanded - Empire -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>oskarpotocki.vfe.empire</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ResearchProjectDef[defName="VFEE_JanissaryGear"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaexpanded.varme</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ResearchProjectDef</xpath>
+								<value>
+									<prerequisites Operation="Safe">
+										<li Operation="SafeRemove" Compare="InnerText">ReconArmor</li>
+										<li Operation="SafeAdd" Compare="InnerText">VAE_TrooperArmor</li>
+									</prerequisites>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
 			</Operation>
 		</caseTrue>
 	</Operation>
@@ -1395,6 +1460,9 @@
 						<li Operation="SafeAdd" Compare="InnerText">WatermillGenerator</li>
 					</prerequisites>
 					<requiredResearchBuilding Operation="SafeAdd">HiTechResearchBench</requiredResearchBuilding>
+					<requiredResearchFacilities Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
+					</requiredResearchFacilities>
 				</value>
 			</Operation>
 		</caseTrue>
