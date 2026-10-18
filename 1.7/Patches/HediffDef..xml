@@ -79,6 +79,16 @@
 			</Operation>
 		</apply>
 	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/HediffDef[defName="PsychicShock"]</xpath>
+		<value>
+			<comps Operation="Safe">
+				<li Class="HediffCompProperties_Disappears" Operation="Safe" CheckAttributes="True">
+					<showRemainingTime Operation="SafeAdd">true</showRemainingTime>
+				</li>
+			</comps>
+		</value>
+	</Operation>
 	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/HediffDef[defName="PsychicHangover"]</xpath>
 		<apply>
