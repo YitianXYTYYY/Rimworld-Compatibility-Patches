@@ -813,6 +813,7 @@
 						<Mass Operation="SafeReplace">20</Mass>
 					</statBases>
 					<weaponTags Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">GunHeavy</li>
 						<li Operation="Add">ammoDef_AmmoSpacer/120/1</li>
 					</weaponTags>
 				</value>
