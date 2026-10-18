@@ -113,23 +113,10 @@
 						<value>
 							<displayCategory Operation="AddOrReplace">Health_Eye</displayCategory>
 							<displayOrderInCategory Operation="AddOrReplace">0</displayOrderInCategory>
+							<exclusionTags Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">VRE_SuperiorDarkVision</li>
+							</exclusionTags>
 						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>vanillaracesexpanded.lycanthrope</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>GeneDef</xpath>
-								<value>
-									<exclusionTags Operation="Safe">
-										<li Operation="SafeAdd" Compare="InnerText">VRE_SuperiorDarkVision</li>
-									</exclusionTags>
-								</value>
-							</Operation>
-						</caseTrue>
 					</Operation>
 				</apply>
 			</Operation>

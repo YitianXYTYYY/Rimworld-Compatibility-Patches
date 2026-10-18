@@ -156,9 +156,7 @@
 								<value>
 									<exclusionTags Operation="Safe">
 										<li Operation="SafeRemove" Compare="InnerText">ShootingAccuracy</li>
-										<li Operation="SafeAdd" Compare="InnerText">Turn_Exclusion_Blindness</li>
 										<li Operation="SafeAdd" Compare="InnerText">Turn_Exclusion_NearSighted</li>
-										<li Operation="SafeAdd" Compare="InnerText">Turn_Exclusion_NightVision</li>
 									</exclusionTags>
 								</value>
 							</Operation>
