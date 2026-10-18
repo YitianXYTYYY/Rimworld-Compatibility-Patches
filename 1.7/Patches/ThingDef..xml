@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
+	<!-- reinforced barrel -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="ReinforcedBarrel"]</xpath>
+		<value>
+			<thingCategories Operation="Safe">
+				<li Operation="SafeRemove" Compare="InnerText">ItemsMisc</li>
+				<li Operation="SafeAdd" Compare="InnerText">Manufactured</li>
+			</thingCategories>
+		</value>
+	</Operation>
+
 	<!-- Biotech -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
