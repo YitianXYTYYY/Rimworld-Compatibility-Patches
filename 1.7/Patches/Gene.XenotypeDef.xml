@@ -90,6 +90,16 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/VanillaRacesExpandedHighmate.HighmateBondEffectDef/bondHediffTraits/li[hediff="VRE_PsychicBondFastLearner"]</xpath>
+				<value>
+					<traitRequirements Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText"	XPathLocal="def">
+							<def>TooSmart</def>
+						</li>
+					</traitRequirements>
+				</value>
+			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
 					<li>redmattis.bettergeneinheritance</li>
