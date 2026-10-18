@@ -228,7 +228,7 @@
 	</ThingDef>
 	<RecipeDef MayRequire="mlie.yayoscombat3">
 		<defName>Make_AmmoSpacerEMP</defName>
-		<label>make spacer ammo - special</label>
+		<label>make energy ammo</label>
 		<description>Spacer ammunition used for special weapons.</description>
 		<jobString>Making spacer ammo - special.</jobString>
 		<workAmount>2100</workAmount>
