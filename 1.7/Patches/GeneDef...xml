@@ -172,6 +172,18 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
+					<!--Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="Goji_FocusLoop"]</xpath>
+						<value>
+							<displayOrderInCategory Operation="AddOrReplace">-599</displayOrderInCategory>
+						</value>
+					</Operation-->
+					<!--Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="Goji_ImposingPsyforce"]</xpath>
+						<value>
+							<displayOrderInCategory Operation="AddOrReplace">-598</displayOrderInCategory>
+						</value>
+					</Operation-->
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="Goji_NatureRhythm"]</xpath>
 						<value>
@@ -242,16 +254,14 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
-					<Operation Class="XmlExtensions.SetScope">
+					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="VacuumResistance_Total"]</xpath>
-						<apply>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>GeneDef</xpath>
-								<value>
-									<displayOrderInCategory Operation="AddOrReplace">-490</displayOrderInCategory>
-								</value>
-							</Operation>
-						</apply>
+						<value>
+							<displayOrderInCategory Operation="AddOrReplace">-490</displayOrderInCategory>
+							<statOffsets Operation="Safe">
+								<ComfyTemperatureMin Operation="SafeReplace">-20</ComfyTemperatureMin>
+							</statOffsets>
+						</value>
 					</Operation>
 				</caseTrue>
 			</Operation>
@@ -316,6 +326,12 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
+					<!--Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="Goji_PainFortitude"]</xpath>
+						<value>
+							<displayOrderInCategory Operation="AddOrReplace">-371</displayOrderInCategory>
+						</value>
+					</Operation-->
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="Goji_PainStimulated"]</xpath>
 						<value>
@@ -808,18 +824,30 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
+					<!--Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="Goji_ExoticDiseaseProne"]</xpath>
+						<value>
+							<displayOrderInCategory Operation="AddOrReplace">2050</displayOrderInCategory>
+						</value>
+					</Operation-->
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="Goji_MechaniteProne"]</xpath>
 						<value>
-							<displayOrderInCategory Operation="AddOrReplace">2000</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">2130</displayOrderInCategory>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/GeneDef[defName="Goji_PathogenHost"]</xpath>
 						<value>
-							<displayOrderInCategory Operation="AddOrReplace">2010</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">2160</displayOrderInCategory>
 						</value>
 					</Operation>
+					<!--Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="Goji_PlaceboEffect"]</xpath>
+						<value>
+							<displayOrderInCategory Operation="AddOrReplace">2161</displayOrderInCategory>
+						</value>
+					</Operation-->
 				</caseTrue>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
@@ -834,7 +862,7 @@
 							<customEffectDescriptions Operation="SafeAdd">
 								<li>Disease progression speed x50%</li>
 							</customEffectDescriptions>
-							<displayOrderInCategory Operation="AddOrReplace">2020</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">2190</displayOrderInCategory>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -980,7 +1008,7 @@
 						<xpath>Defs/GeneDef[defName="VRESaurids_ColdBlooded"]</xpath>
 						<value>
 							<displayCategory Operation="AddOrReplace">Temperature</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">100</displayOrderInCategory>
+							<displayOrderInCategory Operation="AddOrReplace">1030</displayOrderInCategory>
 						</value>
 					</Operation>
 				</caseTrue>
@@ -1001,7 +1029,7 @@
 								<xpath>Defs/GeneDef[defName="VREStarjack_Cryostasis"]</xpath>
 								<value>
 									<displayCategory Operation="AddOrReplace">Temperature</displayCategory>
-									<displayOrderInCategory Operation="AddOrReplace">200</displayOrderInCategory>
+									<displayOrderInCategory Operation="AddOrReplace">1031</displayOrderInCategory>
 								</value>
 							</Operation>
 						</caseFalse>
@@ -1020,7 +1048,7 @@
 							<Operation Class="XmlExtensions.HybridPatch">
 								<xpath>GeneDef</xpath>
 								<value>
-									<displayOrderInCategory Operation="AddOrReplace">300</displayOrderInCategory>
+									<displayOrderInCategory Operation="AddOrReplace">1080</displayOrderInCategory>
 									<makeImmuneTo Operation="Safe">
 										<li Operation="SafeAdd" Compare="InnerText">Hypothermia</li>
 									</makeImmuneTo>
@@ -1185,6 +1213,20 @@
 						<RestFallRateFactor Operation="SafeAdd">0.4</RestFallRateFactor>
 					</statOffsets>
 				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>goji.gojismiscgenes</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<!--Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="Goji_PeaceRest"]</xpath>
+						<value>
+							<displayOrderInCategory Operation="AddOrReplace">160</displayOrderInCategory>
+						</value>
+					</Operation-->
+				</caseTrue>
 			</Operation>
 		</caseTrue>
 	</Operation>
@@ -1380,6 +1422,20 @@
 							<displayOrderInCategory Operation="AddOrReplace">-90</displayOrderInCategory>
 						</value>
 					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>goji.gojismiscgenes</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<!--Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="Goji_PassiveAggressive"]</xpath>
+						<value>
+							<displayOrderInCategory Operation="AddOrReplace">9</displayOrderInCategory>
+						</value>
+					</Operation-->
 				</caseTrue>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
@@ -2073,6 +2129,20 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
+			<!--Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>goji.gojismiscgenes</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="Goji_JinxedBloodline"]</xpath>
+						<value>
+							<displayOrderInCategory Operation="AddOrReplace">100</displayOrderInCategory>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation-->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="MoveSpeed_Space"]</xpath>
 				<apply>
