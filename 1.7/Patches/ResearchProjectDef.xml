@@ -1263,6 +1263,9 @@
 		<packageId>true</packageId>
 		<caseTrue>
 			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/ThingDef/researchPrerequisites[li="SDE_ArmoredSecurityDoors"]</xpath>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 				<xpath>Defs/ResearchProjectDef[defName="SDE_ArmoredSecurityDoors"]</xpath>
 			</Operation>
 		</caseTrue>
@@ -1409,6 +1412,9 @@
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/ThingDef/researchPrerequisites[li="MF_WasteDisposal"]</xpath>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 				<xpath>Defs/ResearchProjectDef[defName="MF_WasteDisposal"]</xpath>
 			</Operation>
 		</caseTrue>
@@ -1515,9 +1521,6 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-				<xpath>Defs/ResearchProjectDef[defName="VWE_TrenchWarfare"]</xpath>
-			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ResearchProjectDef[defName="VWE_HeavyWeapons"]</xpath>
 				<value>
