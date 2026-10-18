@@ -96,7 +96,7 @@
 
 	<ThingDef ParentName="Apparel_ArmorHelmetReconPrestige" MayRequire="ludeon.rimworld.royalty,wasterbreath.mod">
 		<defName>Apparel_ToxArmorHelmetReconPrestige</defName>
-		<label>recon helmet - tox prestige</label>
+		<label>recon prestige helmet - tox</label>
 		<description>A high-tech armored helmet with a built-in status computer and a protective plasteel-weave plate.\n\nExpensive and beautiful, prestige armor like this is usually made for those of high status. Embedded eltex threads also enhance the wearer's psychic sensitivity.\n\nA special filter delivers toxins to stimulate toxic genes.</description>
 		<descriptionHyperlinks>
 			<HediffDef>ToxicBuildup</HediffDef>
@@ -127,7 +127,7 @@
 
 	<ThingDef ParentName="Apparel_ArmorMarineHelmetPrestige" MayRequire="ludeon.rimworld.royalty,wasterbreath.mod">
 		<defName>Apparel_ToxArmorMarineHelmetPrestige</defName>
-		<label>marine helmet - tox prestige</label>
+		<label>marine prestige helmet - tox</label>
 		<description>A marine armor helmet, with a built-in status computer and layered plasteel-weave plates.\n\nExpensive and beautiful, prestige armor like this is usually made for those of high status. Embedded eltex threads also enhance the wearer's psychic sensitivity.\n\nA special filter delivers toxins to stimulate toxic genes.</description>
 		<descriptionHyperlinks>
 			<HediffDef>ToxicBuildup</HediffDef>
@@ -189,7 +189,7 @@
 
 	<ThingDef ParentName="Apparel_ArmorHelmetCataphractPrestige" MayRequire="ludeon.rimworld.royalty,wasterbreath.mod">
 		<defName>Apparel_ToxArmorHelmetCataphractPrestige</defName>
-		<label>cataphract helmet - tox prestige</label>
+		<label>cataphract prestige helmet - tox</label>
 		<description>A heavily-armored high-tech helmet, with a solid plasteel-weave shell and indirect visual system for non-frontal view angles. It protects against all but the most powerful or luckily-aimed shots.\n\nExpensive and beautiful, prestige armor like this is usually made for those of high status. Embedded eltex threads also enhance the wearer's psychic sensitivity.\n\nA special filter delivers toxins to stimulate toxic genes.</description>
 		<descriptionHyperlinks>
 			<HediffDef>ToxicBuildup</HediffDef>
@@ -344,7 +344,7 @@
 
 	<ThingDef ParentName="VAE_Headgear_RoyalTrooperHelmet" MayRequire="ludeon.rimworld.royalty,vanillaexpanded.varme,wasterbreath.mod">
 		<defName>Apparel_ToxVAE_RoyalTrooperHelmet</defName>
-		<label>trooper helmet - tox prestige</label>
+		<label>trooper prestige helmet - tox</label>
 		<description>A high-tech and lightweight armored helmet with a protective plasteel-weave plate.\n\nExpensive and beautiful, prestige armor like this is usually made for those of high status. Embedded eltex threads also enhance the wearer's psychic sensitivity.\n\nA special filter delivers toxins to stimulate toxic genes.</description>
 		<descriptionHyperlinks>
 			<HediffDef>ToxicBuildup</HediffDef>
@@ -374,7 +374,7 @@
 
 	<ThingDef ParentName="VAE_Headgear_RoyalSiegeHelmet" MayRequire="wasterbreath.mod,vanillaexpanded.varme">
 		<defName>Apparel_ToxVAE_RoyalSiegeHelmet</defName>
-		<label>siegebreaker helmet - tox prestige</label>
+		<label>siegebreaker prestige helmet - tox</label>
 		<description>A heavily-armored high-tech helmet, with a solid plasteel-weave shell and omni-spectrum camera.\n\nExpensive and beautiful, prestige armor like this is usually made for those of high status. Embedded eltex threads also enhance the wearer's psychic sensitivity.\n\nA special filter delivers toxins to stimulate toxic genes.</description>
 		<descriptionHyperlinks>
 			<HediffDef>ToxicBuildup</HediffDef>

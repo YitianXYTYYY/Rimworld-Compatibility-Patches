@@ -320,7 +320,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef</xpath>
 						<value>
-							<label Operation="SafeReplace">recon armor - prestige</label>
+							<label Operation="SafeReplace">recon prestige armor</label>
 							<equippedStatOffsets Operation="Safe">
 								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
@@ -340,7 +340,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef</xpath>
 						<value>
-							<label Operation="SafeReplace">recon helmet - prestige</label>
+							<label Operation="SafeReplace">recon prestige helmet</label>
 							<equippedStatOffsets Operation="Safe">
 								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
@@ -360,7 +360,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef</xpath>
 						<value>
-							<label Operation="SafeReplace">marine armor - prestige</label>
+							<label Operation="SafeReplace">marine prestige armor</label>
 							<equippedStatOffsets Operation="Safe">
 								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
@@ -380,7 +380,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef</xpath>
 						<value>
-							<label Operation="SafeReplace">marine helmet - prestige</label>
+							<label Operation="SafeReplace">marine prestige helmet</label>
 							<equippedStatOffsets Operation="Safe">
 								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
@@ -405,7 +405,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef</xpath>
 						<value>
-							<label Operation="SafeReplace">cataphract armor - prestige</label>
+							<label Operation="SafeReplace">cataphract prestige armor</label>
 							<equippedStatOffsets Operation="Safe">
 								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
@@ -425,7 +425,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef</xpath>
 						<value>
-							<label Operation="SafeReplace">cataphract helmet - prestige</label>
+							<label Operation="SafeReplace">cataphract prestige helmet</label>
 							<equippedStatOffsets Operation="Safe">
 								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
@@ -923,6 +923,16 @@
 				<value>VAE_Headgear_HeavyMarineHelmet</value>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="VAE_Apparel_HeavyMarineArmor"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
+						<xpath>ThingDef/apparel/layers</xpath>
+						<attribute>Inherit</attribute>
+						<value>False</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="VAE_Headgear_RoyalTrooperHelmet"]</xpath>
 				<apply>
 					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
@@ -933,7 +943,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef</xpath>
 						<value>
-							<label Operation="SafeReplace">trooper helmet - prestige</label>
+							<label Operation="SafeReplace">trooper prestige helmet</label>
 							<equippedStatOffsets Operation="Safe">
 								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
@@ -945,7 +955,7 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="VAE_Apparel_RoyalTrooperArmor"]</xpath>
 				<value>
-					<label Operation="SafeReplace">trooper armor - prestige</label>
+					<label Operation="SafeReplace">trooper prestige armor</label>
 					<equippedStatOffsets Operation="Safe">
 						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 						<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
@@ -963,7 +973,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef</xpath>
 						<value>
-							<label Operation="SafeReplace">siegebreaker helmet - prestige</label>
+							<label Operation="SafeReplace">siegebreaker prestige helmet</label>
 							<equippedStatOffsets Operation="Safe">
 								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
@@ -978,12 +988,17 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef</xpath>
 						<value>
-							<label Operation="SafeReplace">siegebreaker armor - prestige</label>
+							<label Operation="SafeReplace">siegebreaker prestige armor</label>
 							<equippedStatOffsets Operation="Safe">
 								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
 							</equippedStatOffsets>
 						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
+						<xpath>ThingDef/apparel/layers</xpath>
+						<attribute>Inherit</attribute>
+						<value>False</value>
 					</Operation>
 				</apply>
 			</Operation>
@@ -1056,7 +1071,7 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="Apparel_ArmorPhoenixPrestige"]</xpath>
 				<value>
-    				<label Operation="SafeReplace">phoenix armor - prestige</label>
+    				<label Operation="SafeReplace">phoenix prestige armor</label>
 					<equippedStatOffsets Operation="Safe">
 						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 						<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
@@ -1066,7 +1081,7 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="Apparel_ArmorLocustPrestige"]</xpath>
 				<value>
-    				<label Operation="SafeReplace">locust armor - prestige</label>
+    				<label Operation="SafeReplace">locust prestige armor</label>
 					<equippedStatOffsets Operation="Safe">
 						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 						<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
@@ -1079,7 +1094,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef</xpath>
 						<value>
-							<label Operation="SafeReplace">grenadier armor - prestige</label>
+							<label Operation="SafeReplace">grenadier prestige armor</label>
 							<equippedStatOffsets Operation="Safe">
 								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
