@@ -216,9 +216,8 @@
 				<xpath>Defs/ThingDef[defName="RB_GravshipWindowHull"]</xpath>
 				<value>
 					<costStuffCount Operation="SafeReplace">4</costStuffCount>
-					<costList Operation="Safe">
-						<RB_BallisticGlass Operation="SafeAdd">3</RB_BallisticGlass>
-						<RB_Glass Operation="SafeRemove">3</RB_Glass>
+					<costList Operation="SafeReplace">
+						<RB_BallisticGlass>3</RB_BallisticGlass>
 					</costList>
 					<terrainAffordanceNeeded Operation="SafeReplace">Substructure</terrainAffordanceNeeded>
 				</value>
@@ -226,9 +225,8 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="RB_GravshipPanoramaHull"]</xpath>
 				<value>
-					<costList Operation="Safe">
-						<RB_BallisticGlass Operation="SafeAdd">5</RB_BallisticGlass>
-						<RB_Glass Operation="SafeRemove">6</RB_Glass>
+					<costList Operation="SafeReplace">
+						<RB_BallisticGlass>5</RB_BallisticGlass>
 					</costList>
 					<terrainAffordanceNeeded Operation="SafeReplace">Substructure</terrainAffordanceNeeded>
 				</value>
@@ -323,17 +321,49 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<!-- longwave radio -->
+			<!-- joy -->
+			<!-- industrial radio -->
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Radio_Spacer"]</xpath>
+				<xpath>Defs/ThingDef[defName="Radio_Industrial"]</xpath>
 				<value>
-					<costList Operation="Safe">
-						<Steel Operation="SafeReplace">75</Steel>
-						<Plasteel Operation="SafeReplace">25</Plasteel>
-						<ComponentIndustrial Operation="SafeReplace">6</ComponentIndustrial>
-						<ComponentSpacer Operation="SafeRemove">0</ComponentSpacer>
+					<costList Operation="SafeReplace">
+						<Steel>50</Steel>
+						<ComponentIndustrial>4</ComponentIndustrial>
 					</costList>
 				</value>
+			</Operation>
+			<!-- longwave radio -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="Radio_Spacer"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<costList Operation="SafeReplace">
+								<Steel>75</Steel>
+								<Plasteel>25</Plasteel>
+								<ComponentIndustrial>6</ComponentIndustrial>
+							</costList>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>rebuild.cotr.doorsandcorners</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<costList Operation="Safe">
+										<Plasteel Operation="SafeRemove">25</Plasteel>
+										<RB_Glass Operation="SafeAdd">25</RB_Glass>
+									</costList>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/JoyGiverDef[defName="VFE_ListenToMusic"]</xpath>
@@ -342,6 +372,114 @@
 						<li Operation="SafeAdd" Compare="InnerText">Hearing</li>
 					</requiredCapacities>
 				</value>
+			</Operation>
+			<!-- arcade machine -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Joy_Arcade"]</xpath>
+				<value>
+					<costList Operation="Safe">
+						<Steel Operation="SafeReplace">25</Steel>
+					</costList>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="Joy_Arcade"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<costList Operation="Safe">
+								<Plasteel Operation="SafeAdd">25</Plasteel>
+								<Steel Operation="SafeReplace">25</Steel>
+							</costList>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>rebuild.cotr.doorsandcorners</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<costList Operation="Safe">
+										<Plasteel Operation="SafeRemove">25</Plasteel>
+										<RB_Glass Operation="SafeAdd">25</RB_Glass>
+									</costList>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+			<!-- old computer -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="Joy_InudstrialComputer"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<costStuffCount Operation="SafeReplace">25</costStuffCount>
+							<costList Operation="SafeReplace">
+								<ComponentSpacer>2</ComponentSpacer>
+								<Steel>50</Steel>
+								<Plasteel>25</Plasteel>
+							</costList>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>rebuild.cotr.doorsandcorners</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<costList Operation="Safe">
+										<Plasteel Operation="SafeRemove">25</Plasteel>
+										<RB_Glass Operation="SafeAdd">25</RB_Glass>
+									</costList>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+			<!-- modern computer -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="Joy_ModernComputer"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<costStuffCount Operation="SafeReplace">50</costStuffCount>
+							<costList Operation="SafeReplace">
+								<ComponentSpacer>4</ComponentSpacer>
+								<Steel>75</Steel>
+								<Plasteel>25</Plasteel>
+							</costList>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>rebuild.cotr.doorsandcorners</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<costList Operation="Safe">
+										<Plasteel Operation="SafeRemove">25</Plasteel>
+										<RB_Glass Operation="SafeAdd">25</RB_Glass>
+									</costList>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
 			</Operation>
 		</caseTrue>
 	</Operation>
@@ -418,10 +556,11 @@
 							<Operation Class="XmlExtensions.HybridPatch">
 								<xpath>ThingDef</xpath>
 								<value>
-									<costList Operation="Safe">
-										<ComponentSpacer Operation="SafeAdd">4</ComponentSpacer>
-										<Plasteel Operation="SafeRemove">0</Plasteel>
-										<RB_BallisticGlass Operation="SafeAdd">50</RB_BallisticGlass>
+									<costList Operation="SafeReplace">
+										<Steel>100</Steel>
+										<RB_BallisticGlass>25</RB_BallisticGlass>
+										<Gold>100</Gold>
+										<ComponentSpacer>5</ComponentSpacer>
 									</costList>
 								</value>
 							</Operation>
@@ -439,8 +578,10 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/ThingDef[defName="GR_ElectroWomb"]</xpath>
 						<value>
-							<costList Operation="Safe">
-								<RB_Glass Operation="SafeAdd">10</RB_Glass>
+							<costList Operation="SafeReplace">
+								<ComponentSpacer>1</ComponentSpacer>
+								<Steel>25</Steel>
+								<RB_Glass>25</RB_Glass>
 							</costList>
 						</value>
 					</Operation>
@@ -448,9 +589,10 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>Defs/ThingDef[defName="GR_LargeElectroWomb"]</xpath>
 						<value>
-							<costList Operation="Safe">
-								<Steel Operation="SafeReplace">75</Steel>
-								<RB_Glass Operation="SafeAdd">50</RB_Glass>
+							<costList Operation="SafeReplace">
+								<ComponentSpacer>2</ComponentSpacer>
+								<Steel>75</Steel>
+								<RB_Glass>50</RB_Glass>
 							</costList>
 						</value>
 					</Operation>
@@ -467,47 +609,33 @@
 		<packageId>true</packageId>
 		<caseTrue>
 			<!-- gas cooler -->
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="VHGE_GasCooler"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ThingDef</xpath>
-						<value>
-							<blockLight Operation="SafeRemove"/>
-							<building Operation="Safe">
-								<canPlaceOverWall Operation="SafeRemove">true</canPlaceOverWall>
-							</building>
-							<canOverlapZones Operation="SafeRemove"/>
-							<castEdgeShadows Operation="SafeRemove"/>
-							<coversFloor Operation="SafeRemove"/>
-							<minifiedDef Operation="SafeAdd">MinifiedThing</minifiedDef>
-							<pathCost Operation="SafeAdd">40</pathCost>
-							<statBases Operation="Safe">
-								<Mass Operation="SafeAdd">10</Mass>
-							</statBases>
-							<staticSunShadowHeight Operation="SafeRemove"/>
-							<terrainAffordanceNeeded Operation="SafeReplace">Light</terrainAffordanceNeeded>
-							<thingCategories Operation="Safe">
-								<li Operation="SafeAdd" Compare="InnerText">BuildingsTemperature</li>
-							</thingCategories>
-						</value>
-					</Operation>
-				</apply>
+				<value>
+					<blockLight Operation="SafeRemove"/>
+					<building Operation="Safe">
+						<canPlaceOverWall Operation="SafeRemove">true</canPlaceOverWall>
+					</building>
+					<canOverlapZones Operation="SafeRemove"/>
+					<castEdgeShadows Operation="SafeRemove"/>
+					<coversFloor Operation="SafeRemove"/>
+					<minifiedDef Operation="SafeAdd">MinifiedThing</minifiedDef>
+					<pathCost Operation="SafeAdd">30</pathCost>
+					<statBases Operation="Safe">
+						<Mass Operation="SafeAdd">10</Mass>
+					</statBases>
+					<staticSunShadowHeight Operation="SafeRemove"/>
+					<terrainAffordanceNeeded Operation="SafeReplace">Light</terrainAffordanceNeeded>
+					<thingCategories Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">BuildingsTemperature</li>
+					</thingCategories>
+				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>rebuild.cotr.doorsandcorners</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<!-- gas wall lamp -->
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="VHGE_GasWallLamp"]</xpath>
-						<value>
-							<altitudeLayer Operation="SafeReplace">BuildingBelowTop</altitudeLayer>
-						</value>
-					</Operation>
-				</caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VHGE_GasHeater"]</xpath>
+				<value>
+					<pathCost Operation="SafeReplace">30</pathCost>
+				</value>
 			</Operation>
 		</caseTrue>
 	</Operation>
