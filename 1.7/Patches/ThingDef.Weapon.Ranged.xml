@@ -448,21 +448,13 @@
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 						<xpath>ThingDef/comps/li[@Class="CompProperties_Art"]</xpath>
 					</Operation>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>mlie.yayoscombat3</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>ThingDef</xpath>
-								<value>
-									<weaponTags Operation="Safe">
-										<li Operation="Add">ammoDef_AmmoIndustrial/30/1</li>
-									</weaponTags>
-								</value>
-							</Operation>
-						</caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<weaponTags Operation="Safe">
+								<li Operation="Add">ammoDef_AmmoIndustrial/30/1</li>
+							</weaponTags>
+						</value>
 					</Operation>
 				</apply>
 			</Operation>
@@ -541,13 +533,30 @@
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="VWE_Bow_Long" or 
-					defName="VWE_Bow_Crossbow" or 
-					defName="VWE_Bow_Compound"]</xpath>
+					defName="VWE_Bow_Crossbow"]</xpath>
 				<value>
 					<weaponTags Operation="Safe">
 						<li Operation="Add">ammoDef_AmmoPrimitive/10/1</li>
 					</weaponTags>
 				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="VWE_Bow_Compound"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
+						<xpath>ThingDef/recipeMaker/recipeUsers</xpath>
+						<attribute>Inherit</attribute>
+						<value>False</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<weaponTags Operation="Safe">
+								<li Operation="Add">ammoDef_AmmoPrimitive/10/1</li>
+							</weaponTags>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="VWE_Gun_HandCannon"]</xpath>
