@@ -19,7 +19,7 @@
 						<value>
 							<costList Operation="SafeReplace">
 								<ComponentIndustrial>10</ComponentIndustrial>
-								<Plasteel>75</Plasteel>
+								<Plasteel>50</Plasteel>
 								<Steel>150</Steel>
 							</costList>
 							<equippedStatOffsets Operation="Safe">
@@ -58,7 +58,7 @@
 							<Operation Class="XmlExtensions.HybridPatch">
 								<xpath>ThingDef/recipeMaker</xpath>
 								<value>
-									<researchPrerequisite Operation="SafeReplace"/>
+									<researchPrerequisite Operation="SafeRemove"/>
 									<researchPrerequisites Inherit="False" Operation="Safe">
 										<li Operation="SafeAdd" Compare="InnerText">HeavyTurrets</li>
 										<li Operation="SafeAdd" Compare="InnerText">VWE_HeavyWeapons</li>
@@ -198,7 +198,7 @@
 							<Operation Class="XmlExtensions.HybridPatch">
 								<xpath>ThingDef/recipeMaker</xpath>
 								<value>
-									<researchPrerequisite Operation="SafeReplace"/>
+									<researchPrerequisite Operation="SafeRemove"/>
 									<researchPrerequisites Inherit="False" Operation="Safe">
 										<li Operation="SafeAdd" Compare="InnerText">Mortars</li>
 										<li Operation="SafeAdd" Compare="InnerText">VWE_HeavyWeapons</li>
@@ -254,7 +254,7 @@
 						<xpath>ThingDef</xpath>
 						<value>
 							<costList Operation="SafeReplace">
-								<ComponentIndustrial>10</ComponentIndustrial>
+								<ComponentIndustrial>20</ComponentIndustrial>
 								<ReinforcedBarrel>5</ReinforcedBarrel>
 								<Plasteel>25</Plasteel>
 								<Steel>75</Steel>
@@ -293,7 +293,7 @@
 							<Operation Class="XmlExtensions.HybridPatch">
 								<xpath>ThingDef/recipeMaker</xpath>
 								<value>
-									<researchPrerequisite Operation="SafeReplace"/>
+									<researchPrerequisite Operation="SafeRemove"/>
 									<researchPrerequisites Inherit="False" Operation="Safe">
 										<li Operation="SafeAdd" Compare="InnerText">MultibarrelWeapons</li>
 										<li Operation="SafeAdd" Compare="InnerText">RocketswarmLauncher</li>
@@ -388,7 +388,7 @@
 									<Operation Class="XmlExtensions.HybridPatch">
 										<xpath>ThingDef/recipeMaker</xpath>
 										<value>
-											<researchPrerequisite Operation="SafeReplace"/>
+											<researchPrerequisite Operation="SafeRemove"/>
 											<researchPrerequisites Inherit="False" Operation="Safe">
 												<li Operation="SafeAdd" Compare="InnerText">MultibarrelWeapons</li>
 												<li Operation="SafeAdd" Compare="InnerText">RocketswarmLauncher</li>
@@ -431,7 +431,6 @@
 								<ComponentIndustrial>10</ComponentIndustrial>
 								<Plasteel>75</Plasteel>
 								<Steel>150</Steel>
-								<Uranium>50</Uranium>
 							</costList>
 							<equippedStatOffsets Operation="Safe">
 								<MoveSpeed Operation="SafeReplace">-0.5</MoveSpeed>
@@ -470,7 +469,7 @@
 							<Operation Class="XmlExtensions.HybridPatch">
 								<xpath>ThingDef/recipeMaker</xpath>
 								<value>
-									<researchPrerequisite Operation="SafeReplace"/>
+									<researchPrerequisite Operation="SafeRemove"/>
 									<researchPrerequisites Inherit="False" Operation="Safe">
 										<li Operation="SafeAdd" Compare="InnerText">SniperTurret</li>
 										<li Operation="SafeAdd" Compare="InnerText">VWE_HeavyWeapons</li>

@@ -91,7 +91,7 @@
 				<xpath>Defs/ThingDef[defName="Apparel_PsyfocusHelmet"]</xpath>
 				<value>
 					<costList Operation="Safe">
-						<Gold Operation="SafeAdd">2</Gold>
+						<Gold Operation="SafeAdd">5</Gold>
 					</costList>
 					<costStuffCount Operation="SafeAdd">50</costStuffCount>
 					<equippedStatOffsets Operation="Safe">
@@ -136,7 +136,7 @@
 				<xpath>Defs/ThingDef[defName="Apparel_EltexSkullcap"]</xpath>
 				<value>
 					<costList Operation="Safe">
-						<Gold Operation="SafeAdd">4</Gold>
+						<Gold Operation="SafeAdd">5</Gold>
 					</costList>
 					<costStuffCount Operation="SafeAdd">40</costStuffCount>
 					<equippedStatOffsets Operation="Safe">
@@ -176,7 +176,7 @@
 				<xpath>Defs/ThingDef[defName="Apparel_PsyfocusShirt"]</xpath>
 				<value>
 					<costList Operation="Safe">
-						<Gold Operation="SafeAdd">2</Gold>
+						<Gold Operation="SafeAdd">5</Gold>
 					</costList>
 					<costStuffCount Operation="SafeAdd">45</costStuffCount>
 					<equippedStatOffsets Operation="Safe">
@@ -221,7 +221,7 @@
 				<xpath>Defs/ThingDef[defName="Apparel_PsyfocusVest"]</xpath>
 				<value>
 					<costList Operation="Safe">
-						<Gold Operation="SafeAdd">2</Gold>
+						<Gold Operation="SafeAdd">5</Gold>
 					</costList>
 					<costStuffCount Operation="SafeAdd">45</costStuffCount>
 					<equippedStatOffsets Operation="Safe">
@@ -266,7 +266,7 @@
 				<xpath>Defs/ThingDef[defName="Apparel_PsyfocusRobe"]</xpath>
 				<value>
 					<costList Operation="Safe">
-						<Gold Operation="SafeAdd">4</Gold>
+						<Gold Operation="SafeAdd">5</Gold>
 					</costList>
 					<costStuffCount Operation="SafeAdd">100</costStuffCount>
 					<equippedStatOffsets Operation="Safe">
@@ -520,6 +520,11 @@
 									<li Operation="SafeAdd" Compare="InnerText">Eyes</li>
 								</bodyPartGroups>
 							</apparel>
+							<costList Operation="SafeReplace">
+								<ComponentSpacer>5</ComponentSpacer>
+								<Plasteel>50</Plasteel>
+								<PowerfocusChip>1</PowerfocusChip>
+							</costList>
 							<equippedStatOffsets Operation="Safe">
 								<VacuumResistance Operation="SafeRemove">0</VacuumResistance>
 							</equippedStatOffsets>
@@ -912,19 +917,67 @@
 			</Operation>
 
 			<!-- spacer -->
-			<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="VAE_Headgear_TrooperHelmet"]</xpath>
-				<attribute>Name</attribute>
-				<value>VAE_Headgear_TrooperHelmet</value>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef</xpath>
+						<attribute>Name</attribute>
+						<value>VAE_Headgear_TrooperHelmet</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<costList Operation="SafeReplace">
+								<ComponentSpacer>1</ComponentSpacer>
+								<Plasteel>50</Plasteel>
+							</costList>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
-			<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VAE_Apparel_TrooperArmor"]</xpath>
+				<value>
+					<costList Operation="SafeReplace">
+						<ComponentSpacer>2</ComponentSpacer>
+						<Plasteel>100</Plasteel>
+						<Uranium>25</Uranium>
+					</costList>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="VAE_Headgear_HeavyMarineHelmet"]</xpath>
-				<attribute>Name</attribute>
-				<value>VAE_Headgear_HeavyMarineHelmet</value>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef</xpath>
+						<attribute>Name</attribute>
+						<value>VAE_Headgear_HeavyMarineHelmet</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<costList Operation="SafeReplace">
+								<ComponentSpacer>2</ComponentSpacer>
+								<Plasteel>75</Plasteel>
+							</costList>
+						</value>
+					</Operation>
+				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="VAE_Apparel_HeavyMarineArmor"]</xpath>
 				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<costList Operation="SafeReplace">
+								<ComponentSpacer>8</ComponentSpacer>
+								<Plasteel>175</Plasteel>
+								<Uranium>75</Uranium>
+							</costList>
+						</value>
+					</Operation>
 					<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
 						<xpath>ThingDef/apparel/layers</xpath>
 						<attribute>Inherit</attribute>
@@ -944,6 +997,11 @@
 						<xpath>ThingDef</xpath>
 						<value>
 							<label Operation="SafeReplace">trooper prestige helmet</label>
+							<costList Operation="SafeReplace">
+								<ComponentSpacer>1</ComponentSpacer>
+								<Plasteel>50</Plasteel>
+								<Gold>5</Gold>
+							</costList>
 							<equippedStatOffsets Operation="Safe">
 								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
@@ -956,6 +1014,12 @@
 				<xpath>Defs/ThingDef[defName="VAE_Apparel_RoyalTrooperArmor"]</xpath>
 				<value>
 					<label Operation="SafeReplace">trooper prestige armor</label>
+					<costList Operation="SafeReplace">
+						<ComponentSpacer>2</ComponentSpacer>
+						<Plasteel>100</Plasteel>
+						<Uranium>25</Uranium>
+						<Gold>10</Gold>
+					</costList>
 					<equippedStatOffsets Operation="Safe">
 						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 						<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
@@ -974,6 +1038,11 @@
 						<xpath>ThingDef</xpath>
 						<value>
 							<label Operation="SafeReplace">siegebreaker prestige helmet</label>
+							<costList Operation="SafeReplace">
+								<ComponentSpacer>2</ComponentSpacer>
+								<Plasteel>75</Plasteel>
+								<Gold>10</Gold>
+							</costList>
 							<equippedStatOffsets Operation="Safe">
 								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
@@ -989,6 +1058,12 @@
 						<xpath>ThingDef</xpath>
 						<value>
 							<label Operation="SafeReplace">siegebreaker prestige armor</label>
+							<costList Operation="SafeReplace">
+								<ComponentSpacer>8</ComponentSpacer>
+								<Plasteel>175</Plasteel>
+								<Uranium>75</Uranium>
+								<Gold>20</Gold>
+							</costList>
 							<equippedStatOffsets Operation="Safe">
 								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
@@ -1175,12 +1250,10 @@
 					<apparel Operation="Safe">
 						<wearPerDay Operation="SafeRemove">0</wearPerDay>
 					</apparel>
-					<costList Operation="Safe">
-						<ComponentIndustrial Operation="SafeRemove">0</ComponentIndustrial>
-						<ComponentSpacer Operation="SafeReplace">2</ComponentSpacer>
-						<Plasteel Operation="SafeReplace">60</Plasteel>
-						<Steel Operation="SafeRemove">0</Steel>
-						<Uranium Operation="SafeAdd">20</Uranium>
+					<costList Operation="SafeReplace">
+						<ComponentSpacer>4</ComponentSpacer>
+						<Plasteel>75</Plasteel>
+						<Uranium>25</Uranium>
 					</costList>
 					<equippedStatOffsets Operation="Safe">
 						<CarryingCapacity Operation="SafeAdd">30</CarryingCapacity>

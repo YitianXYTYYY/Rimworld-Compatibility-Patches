@@ -268,6 +268,16 @@
 					</addedPartProps>
 				</value>
 			</Operation>
+			<!-- mechanitor -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="ControlSublinkHigh"]</xpath>
+				<value>
+					<costList Operation="SafeReplace">
+						<ComponentSpacer>4</ComponentSpacer>
+						<PowerfocusChip>1</PowerfocusChip>
+					</costList>
+				</value>
+			</Operation>
 		</caseTrue>
 	</Operation>
 
@@ -726,6 +736,27 @@
 					<recipeUsers Operation="Safe">
 						<li MayRequire="ludeon.rimworld.anomaly" Operation="SafeAdd" Compare="InnerText">CreepJoiner</li>
 					</recipeUsers>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!--Vanilla Races Expanded - Android -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.android</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- reactor -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VREA_Reactor"]</xpath>
+				<value>
+					<costList Operation="SafeReplace">
+						<ComponentSpacer>2</ComponentSpacer>
+						<Plasteel>25</Plasteel>
+						<Uranium>25</Uranium>
+					</costList>
 				</value>
 			</Operation>
 		</caseTrue>
