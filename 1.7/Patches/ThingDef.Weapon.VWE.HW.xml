@@ -58,7 +58,7 @@
 							<Operation Class="XmlExtensions.HybridPatch">
 								<xpath>ThingDef/recipeMaker</xpath>
 								<value>
-									<researchPrerequisite Operation="SafeRemove"/>
+									<researchPrerequisite Operation="SafeReplace"/>
 									<researchPrerequisites Inherit="False" Operation="Safe">
 										<li Operation="SafeAdd" Compare="InnerText">HeavyTurrets</li>
 										<li Operation="SafeAdd" Compare="InnerText">VWE_HeavyWeapons</li>
@@ -198,7 +198,7 @@
 							<Operation Class="XmlExtensions.HybridPatch">
 								<xpath>ThingDef/recipeMaker</xpath>
 								<value>
-									<researchPrerequisite Operation="SafeRemove"/>
+									<researchPrerequisite Operation="SafeReplace"/>
 									<researchPrerequisites Inherit="False" Operation="Safe">
 										<li Operation="SafeAdd" Compare="InnerText">Mortars</li>
 										<li Operation="SafeAdd" Compare="InnerText">VWE_HeavyWeapons</li>
@@ -293,7 +293,7 @@
 							<Operation Class="XmlExtensions.HybridPatch">
 								<xpath>ThingDef/recipeMaker</xpath>
 								<value>
-									<researchPrerequisite Operation="SafeRemove"/>
+									<researchPrerequisite Operation="SafeReplace"/>
 									<researchPrerequisites Inherit="False" Operation="Safe">
 										<li Operation="SafeAdd" Compare="InnerText">MultibarrelWeapons</li>
 										<li Operation="SafeAdd" Compare="InnerText">RocketswarmLauncher</li>
@@ -388,7 +388,7 @@
 									<Operation Class="XmlExtensions.HybridPatch">
 										<xpath>ThingDef/recipeMaker</xpath>
 										<value>
-											<researchPrerequisite Operation="SafeRemove"/>
+											<researchPrerequisite Operation="SafeReplace"/>
 											<researchPrerequisites Inherit="False" Operation="Safe">
 												<li Operation="SafeAdd" Compare="InnerText">MultibarrelWeapons</li>
 												<li Operation="SafeAdd" Compare="InnerText">RocketswarmLauncher</li>
@@ -469,7 +469,7 @@
 							<Operation Class="XmlExtensions.HybridPatch">
 								<xpath>ThingDef/recipeMaker</xpath>
 								<value>
-									<researchPrerequisite Operation="SafeRemove"/>
+									<researchPrerequisite Operation="SafeReplace"/>
 									<researchPrerequisites Inherit="False" Operation="Safe">
 										<li Operation="SafeAdd" Compare="InnerText">SniperTurret</li>
 										<li Operation="SafeAdd" Compare="InnerText">VWE_HeavyWeapons</li>
