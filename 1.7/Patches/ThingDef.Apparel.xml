@@ -5,9 +5,9 @@
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ThingDef[defName="Apparel_ShieldBelt"]</xpath>
 		<value>
-			<costList Operation="Safe">
-				<ComponentIndustrial Operation="SafeRemove">0</ComponentIndustrial>
-				<ComponentSpacer Operation="SafeAdd">1</ComponentSpacer>
+			<costList Operation="SafeAdd">
+				<ComponentSpacer>2</ComponentSpacer>
+				<Plasteel>25</Plasteel>
 			</costList>
 			<recipeMaker Operation="Safe">
 				<recipeUsers Operation="Safe">
@@ -56,8 +56,43 @@
 		</value>
 	</Operation>
 	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[@Name="ApparelArmorHelmetReconBase"]</xpath>
+		<value>
+			<costList Operation="SafeReplace">
+				<ComponentSpacer>1</ComponentSpacer>
+				<Plasteel>50</Plasteel>
+				<RB_BallisticGlass MayRequire="rebuild.cotr.doorsandcorners">5</RB_BallisticGlass>
+			</costList>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[@Name="ApparelArmorReconBase"]</xpath>
+		<value>
+			<costList Operation="SafeReplace">
+				<ComponentSpacer>4</ComponentSpacer>
+				<Plasteel>100</Plasteel>
+				<Uranium>25</Uranium>
+			</costList>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[@Name="ApparelArmorHelmetPowerBase"]</xpath>
+		<value>
+			<costList Operation="SafeReplace">
+				<ComponentSpacer>1</ComponentSpacer>
+				<Plasteel>50</Plasteel>
+				<RB_BallisticGlass MayRequire="rebuild.cotr.doorsandcorners">5</RB_BallisticGlass>
+			</costList>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ThingDef[@Name="ApparelArmorPowerBase"]</xpath>
 		<value>
+			<costList Operation="SafeReplace">
+				<ComponentSpacer>6</ComponentSpacer>
+				<Plasteel>125</Plasteel>
+				<Uranium>50</Uranium>
+			</costList>
 			<equippedStatOffsets Operation="Safe">
 				<MoveSpeed Operation="SafeReplace">-0.2</MoveSpeed>
 			</equippedStatOffsets>
@@ -95,7 +130,7 @@
 					</costList>
 					<costStuffCount Operation="SafeAdd">50</costStuffCount>
 					<equippedStatOffsets Operation="Safe">
-						<PsychicSensitivityOffset Operation="SafeReplace">0.4</PsychicSensitivityOffset>
+						<PsychicSensitivityOffset Operation="SafeReplace">0.2</PsychicSensitivityOffset>
 					</equippedStatOffsets>
 					<recipeMaker Operation="Safe">
 						<recipeUsers Operation="Safe">
@@ -140,7 +175,7 @@
 					</costList>
 					<costStuffCount Operation="SafeAdd">40</costStuffCount>
 					<equippedStatOffsets Operation="Safe">
-						<PsychicSensitivityOffset Operation="SafeReplace">0.6</PsychicSensitivityOffset>
+						<PsychicSensitivityOffset Operation="SafeReplace">0.4</PsychicSensitivityOffset>
 					</equippedStatOffsets>
 					<recipeMaker Operation="Safe">
 						<recipeUsers Operation="Safe">
@@ -180,7 +215,7 @@
 					</costList>
 					<costStuffCount Operation="SafeAdd">45</costStuffCount>
 					<equippedStatOffsets Operation="Safe">
-						<PsychicSensitivityOffset Operation="SafeReplace">0.4</PsychicSensitivityOffset>
+						<PsychicSensitivityOffset Operation="SafeReplace">0.2</PsychicSensitivityOffset>
 					</equippedStatOffsets>
 					<recipeMaker Operation="Safe">
 						<recipeUsers Operation="Safe">
@@ -308,27 +343,8 @@
 				</value>
 			</Operation>
 
-			<!-- Apparel Various -->
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/ThingDef[defName="Apparel_ArmorReconPrestige"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
-						<xpath>ThingDef</xpath>
-						<attribute>Name</attribute>
-						<value>Apparel_ArmorReconPrestige</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ThingDef</xpath>
-						<value>
-							<label Operation="SafeReplace">recon prestige armor</label>
-							<equippedStatOffsets Operation="Safe">
-								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
-								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
-							</equippedStatOffsets>
-						</value>
-					</Operation>
-				</apply>
-			</Operation>
+			<!-- apparel various -->
+			<!-- prestige armor -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetReconPrestige"]</xpath>
 				<apply>
@@ -341,6 +357,9 @@
 						<xpath>ThingDef</xpath>
 						<value>
 							<label Operation="SafeReplace">recon prestige helmet</label>
+							<costList Operation="SafeReplace">
+								<Gold>5</Gold>
+							</costList>
 							<equippedStatOffsets Operation="Safe">
 								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
@@ -350,17 +369,20 @@
 				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/ThingDef[defName="Apparel_ArmorMarinePrestige"]</xpath>
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorReconPrestige"]</xpath>
 				<apply>
 					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
 						<xpath>ThingDef</xpath>
 						<attribute>Name</attribute>
-						<value>Apparel_ArmorMarinePrestige</value>
+						<value>Apparel_ArmorReconPrestige</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef</xpath>
 						<value>
-							<label Operation="SafeReplace">marine prestige armor</label>
+							<label Operation="SafeReplace">recon prestige armor</label>
+							<costList Operation="SafeReplace">
+								<Gold>10</Gold>
+							</costList>
 							<equippedStatOffsets Operation="Safe">
 								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
@@ -381,6 +403,9 @@
 						<xpath>ThingDef</xpath>
 						<value>
 							<label Operation="SafeReplace">marine prestige helmet</label>
+							<costList Operation="SafeReplace">
+								<Gold>5</Gold>
+							</costList>
 							<equippedStatOffsets Operation="Safe">
 								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
@@ -388,31 +413,56 @@
 						</value>
 					</Operation>
 				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorMarinePrestige"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef</xpath>
+						<attribute>Name</attribute>
+						<value>Apparel_ArmorMarinePrestige</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<label Operation="SafeReplace">marine prestige armor</label>
+							<costList Operation="SafeReplace">
+								<Gold>10</Gold>
+							</costList>
+							<equippedStatOffsets Operation="Safe">
+								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+							</equippedStatOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+
+			<!-- cataphract armor -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[@Name="ApparelArmorHelmetCataphractBase"]</xpath>
+				<value>
+					<costList Operation="SafeReplace">
+						<ComponentSpacer>1</ComponentSpacer>
+						<Plasteel>75</Plasteel>
+						<RB_BallisticGlass MayRequire="rebuild.cotr.doorsandcorners">5</RB_BallisticGlass>
+					</costList>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[@Name="ApparelArmorCataphractBase"]</xpath>
+				<value>
+					<costList Operation="SafeReplace">
+						<ComponentSpacer>8</ComponentSpacer>
+						<Plasteel>150</Plasteel>
+						<Uranium>75</Uranium>
+					</costList>
+				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.PatchOperationAttributeSet">
 				<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetCataphract"]</xpath>
 				<attribute>Name</attribute>
 				<value>Apparel_ArmorHelmetCataphract</value>
-			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPrestige"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
-						<xpath>ThingDef</xpath>
-						<attribute>Name</attribute>
-						<value>Apparel_ArmorCataphractPrestige</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ThingDef</xpath>
-						<value>
-							<label Operation="SafeReplace">cataphract prestige armor</label>
-							<equippedStatOffsets Operation="Safe">
-								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
-								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
-							</equippedStatOffsets>
-						</value>
-					</Operation>
-				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetCataphractPrestige"]</xpath>
@@ -426,6 +476,32 @@
 						<xpath>ThingDef</xpath>
 						<value>
 							<label Operation="SafeReplace">cataphract prestige helmet</label>
+							<costList Operation="SafeReplace">
+								<Gold>10</Gold>
+							</costList>
+							<equippedStatOffsets Operation="Safe">
+								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+							</equippedStatOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPrestige"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef</xpath>
+						<attribute>Name</attribute>
+						<value>Apparel_ArmorCataphractPrestige</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<label Operation="SafeReplace">cataphract prestige armor</label>
+							<costList Operation="SafeReplace">
+								<Gold>20</Gold>
+							</costList>
 							<equippedStatOffsets Operation="Safe">
 								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
@@ -435,10 +511,32 @@
 				</apply>
 			</Operation>
 
-			<!-- apparel various -->
+			<!-- armor variants -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorLocust"]</xpath>
+				<value>
+					<label Operation="SafeReplace">recon locust armor</label>
+					<costList Operation="SafeReplace">
+						<ComponentSpacer>5</ComponentSpacer>
+						<Plasteel>125</Plasteel>
+						<Chemfuel>100</Chemfuel>
+					</costList>
+				</value>
+			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]</xpath>
 				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<label Operation="SafeReplace">marine grenadier armor</label>
+							<costList Operation="SafeReplace">
+								<ComponentSpacer>7</ComponentSpacer>
+								<Plasteel>150</Plasteel>
+								<Steel>75</Steel>
+							</costList>
+						</value>
+					</Operation>
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
 							<li>mlie.yayoscombat3</li>
@@ -448,6 +546,10 @@
 							<Operation Class="XmlExtensions.HybridPatch">
 								<xpath>ThingDef</xpath>
 								<value>
+									<costList Operation="Safe">
+										<Steel Operation="SafeRemove">0</Steel>
+										<WeaponGrenadeFrag Operation="SafeAdd">2</WeaponGrenadeFrag>
+									</costList>
 									<comps Operation="Safe">
 										<li Class="CompProperties_ApparelReloadable" Operation="Safe" CheckAttributes="True">
 											<ammoDef Operation="SafeReplace">WeaponGrenadeFrag</ammoDef>
@@ -460,6 +562,18 @@
 					</Operation>
 				</apply>
 			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPhoenix"]</xpath>
+				<value>
+					<label Operation="SafeReplace">cataphract phoenix armor</label>
+					<costList Operation="SafeReplace">
+						<ComponentSpacer>9</ComponentSpacer>
+						<Plasteel>175</Plasteel>
+						<Chemfuel>50</Chemfuel>
+					</costList>
+				</value>
+			</Operation>
+
 			<!-- gunlink -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="Apparel_Gunlink"]</xpath>
@@ -550,6 +664,9 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef</xpath>
 						<value>
+							<costList Operation="Safe">
+								<Plasteel Operation="SafeReplace">100</Plasteel>
+							</costList>
 							<equippedStatOffsets Operation="Safe">
 								<ShootingAccuracyPawn Operation="SafeReplace">-4</ShootingAccuracyPawn>
 								<MeleeHitChance Operation="SafeReplace">-1</MeleeHitChance>
@@ -561,6 +678,13 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="Apparel_MechlordSuit"]</xpath>
 				<value>
+					<costList Operation="SafeReplace">
+						<ComponentSpacer>8</ComponentSpacer>
+						<Plasteel>150</Plasteel>
+						<Uranium>50</Uranium>
+						<NanostructuringChip>2</NanostructuringChip>
+						<PowerfocusChip>1</PowerfocusChip>
+					</costList>
 					<equippedStatOffsets Operation="Safe">
 						<ShootingAccuracyPawn Operation="SafeReplace">-4</ShootingAccuracyPawn>
 						<MeleeHitChance Operation="SafeReplace">-1</MeleeHitChance>
@@ -917,6 +1041,7 @@
 			</Operation>
 
 			<!-- spacer -->
+			<!-- trooper -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="VAE_Headgear_TrooperHelmet"]</xpath>
 				<apply>
@@ -930,7 +1055,8 @@
 						<value>
 							<costList Operation="SafeReplace">
 								<ComponentSpacer>1</ComponentSpacer>
-								<Plasteel>50</Plasteel>
+								<Plasteel>25</Plasteel>
+								<RB_BallisticGlass MayRequire="rebuild.cotr.doorsandcorners">5</RB_BallisticGlass>
 							</costList>
 						</value>
 					</Operation>
@@ -941,49 +1067,10 @@
 				<value>
 					<costList Operation="SafeReplace">
 						<ComponentSpacer>2</ComponentSpacer>
-						<Plasteel>100</Plasteel>
+						<Plasteel>75</Plasteel>
 						<Uranium>25</Uranium>
 					</costList>
 				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/ThingDef[defName="VAE_Headgear_HeavyMarineHelmet"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
-						<xpath>ThingDef</xpath>
-						<attribute>Name</attribute>
-						<value>VAE_Headgear_HeavyMarineHelmet</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ThingDef</xpath>
-						<value>
-							<costList Operation="SafeReplace">
-								<ComponentSpacer>2</ComponentSpacer>
-								<Plasteel>75</Plasteel>
-							</costList>
-						</value>
-					</Operation>
-				</apply>
-			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/ThingDef[defName="VAE_Apparel_HeavyMarineArmor"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ThingDef</xpath>
-						<value>
-							<costList Operation="SafeReplace">
-								<ComponentSpacer>8</ComponentSpacer>
-								<Plasteel>175</Plasteel>
-								<Uranium>75</Uranium>
-							</costList>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
-						<xpath>ThingDef/apparel/layers</xpath>
-						<attribute>Inherit</attribute>
-						<value>False</value>
-					</Operation>
-				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="VAE_Headgear_RoyalTrooperHelmet"]</xpath>
@@ -999,7 +1086,8 @@
 							<label Operation="SafeReplace">trooper prestige helmet</label>
 							<costList Operation="SafeReplace">
 								<ComponentSpacer>1</ComponentSpacer>
-								<Plasteel>50</Plasteel>
+								<Plasteel>25</Plasteel>
+								<RB_BallisticGlass MayRequire="rebuild.cotr.doorsandcorners">5</RB_BallisticGlass>
 								<Gold>5</Gold>
 							</costList>
 							<equippedStatOffsets Operation="Safe">
@@ -1016,7 +1104,7 @@
 					<label Operation="SafeReplace">trooper prestige armor</label>
 					<costList Operation="SafeReplace">
 						<ComponentSpacer>2</ComponentSpacer>
-						<Plasteel>100</Plasteel>
+						<Plasteel>75</Plasteel>
 						<Uranium>25</Uranium>
 						<Gold>10</Gold>
 					</costList>
@@ -1025,6 +1113,48 @@
 						<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
 					</equippedStatOffsets>
 				</value>
+			</Operation>
+
+			<!-- siegebreaker -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="VAE_Headgear_HeavyMarineHelmet"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef</xpath>
+						<attribute>Name</attribute>
+						<value>VAE_Headgear_HeavyMarineHelmet</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<costList Operation="SafeReplace">
+								<ComponentSpacer>1</ComponentSpacer>
+								<Plasteel>75</Plasteel>
+								<RB_BallisticGlass MayRequire="rebuild.cotr.doorsandcorners">5</RB_BallisticGlass>
+							</costList>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="VAE_Apparel_HeavyMarineArmor"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<costList Operation="SafeReplace">
+								<ComponentSpacer>10</ComponentSpacer>
+								<Plasteel>200</Plasteel>
+								<Uranium>75</Uranium>
+							</costList>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
+						<xpath>ThingDef/apparel/layers</xpath>
+						<attribute>Inherit</attribute>
+						<value>False</value>
+					</Operation>
+				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="VAE_Headgear_RoyalSiegeHelmet"]</xpath>
@@ -1039,8 +1169,9 @@
 						<value>
 							<label Operation="SafeReplace">siegebreaker prestige helmet</label>
 							<costList Operation="SafeReplace">
-								<ComponentSpacer>2</ComponentSpacer>
+								<ComponentSpacer>1</ComponentSpacer>
 								<Plasteel>75</Plasteel>
+								<RB_BallisticGlass MayRequire="rebuild.cotr.doorsandcorners">5</RB_BallisticGlass>
 								<Gold>10</Gold>
 							</costList>
 							<equippedStatOffsets Operation="Safe">
@@ -1059,8 +1190,8 @@
 						<value>
 							<label Operation="SafeReplace">siegebreaker prestige armor</label>
 							<costList Operation="SafeReplace">
-								<ComponentSpacer>8</ComponentSpacer>
-								<Plasteel>175</Plasteel>
+								<ComponentSpacer>10</ComponentSpacer>
+								<Plasteel>200</Plasteel>
 								<Uranium>75</Uranium>
 								<Gold>20</Gold>
 							</costList>
@@ -1087,9 +1218,15 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- absolver -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="VFEE_Apparel_AbsolverHelmet"]</xpath>
 				<value>
+					<costList Operation="SafeAdd">
+						<ComponentSpacer>2</ComponentSpacer>
+						<Plasteel>100</Plasteel>
+						<Gold>15</Gold>
+					</costList>
 					<equippedStatOffsets Operation="Safe">
 						<ShootingAccuracyPawn Operation="SafeReplace">8</ShootingAccuracyPawn>
 					</equippedStatOffsets>
@@ -1104,6 +1241,12 @@
 							<!--li Operation="SafeAdd" Compare="InnerText">Shell</li-->
 						</layers>
 					</apparel>
+					<costList Operation="SafeAdd">
+						<ComponentSpacer>8</ComponentSpacer>
+						<Plasteel>175</Plasteel>
+						<Uranium>75</Uranium>
+						<Gold>25</Gold>
+					</costList>
 					<equippedStatOffsets Operation="Safe">
 						<MoveSpeed Operation="SafeAdd">0.6</MoveSpeed>
 					</equippedStatOffsets>
@@ -1116,9 +1259,16 @@
 					</modExtensions>
 				</value>
 			</Operation>
+
+			<!-- deserter -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="VFEE_Apparel_DeserterHelmet"]</xpath>
 				<value>
+					<costList Operation="SafeAdd">
+						<ComponentSpacer>2</ComponentSpacer>
+						<Plasteel>100</Plasteel>
+						<Gold>20</Gold>
+					</costList>
 					<equippedStatOffsets Operation="Safe">
 						<ShootingAccuracyPawn Operation="SafeReplace">4</ShootingAccuracyPawn>
 					</equippedStatOffsets>
@@ -1127,10 +1277,37 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="VFEE_Apparel_ArmorDeserter"]</xpath>
 				<value>
+					<costList Operation="SafeAdd">
+						<ComponentSpacer>6</ComponentSpacer>
+						<Plasteel>150</Plasteel>
+						<Uranium>75</Uranium>
+						<Gold>40</Gold>
+					</costList>
 					<equippedStatOffsets Operation="Safe">
 						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 						<PsychicSensitivityOffset Operation="SafeAdd">0.2</PsychicSensitivityOffset>
 					</equippedStatOffsets>
+				</value>
+			</Operation>
+		
+			<!-- janissary -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VFEE_Apparel_JanissaryHelmet"]</xpath>
+				<value>
+					<costList Operation="SafeReplace">
+						<ComponentSpacer>2</ComponentSpacer>
+						<Plasteel>50</Plasteel>
+					</costList>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VFEE_Apparel_JanissaryCuirass"]</xpath>
+				<value>
+					<costList Operation="SafeAdd">
+						<ComponentSpacer>3</ComponentSpacer>
+						<Plasteel>50</Plasteel>
+						<Uranium>25</Uranium>
+					</costList>
 				</value>
 			</Operation>
 		</caseTrue>
@@ -1144,19 +1321,15 @@
 		<packageId>true</packageId>
 		<caseTrue>
 			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Apparel_ArmorPhoenixPrestige"]</xpath>
-				<value>
-    				<label Operation="SafeReplace">phoenix prestige armor</label>
-					<equippedStatOffsets Operation="Safe">
-						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
-						<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
-					</equippedStatOffsets>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="Apparel_ArmorLocustPrestige"]</xpath>
 				<value>
-    				<label Operation="SafeReplace">locust prestige armor</label>
+    				<label Operation="SafeReplace">recon locust prestige armor</label>
+					<costList Operation="SafeReplace">
+						<ComponentSpacer>6</ComponentSpacer>
+						<Plasteel>125</Plasteel>
+						<Chemfuel>100</Chemfuel>
+						<Gold>10</Gold>
+					</costList>
 					<equippedStatOffsets Operation="Safe">
 						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 						<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
@@ -1169,7 +1342,13 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef</xpath>
 						<value>
-							<label Operation="SafeReplace">grenadier prestige armor</label>
+							<label Operation="SafeReplace">marine grenadier prestige armor</label>
+							<costList Operation="SafeReplace">
+								<ComponentSpacer>7</ComponentSpacer>
+								<Plasteel>150</Plasteel>
+								<Steel>75</Steel>
+								<Gold>10</Gold>
+							</costList>
 							<equippedStatOffsets Operation="Safe">
 								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
@@ -1185,6 +1364,10 @@
 							<Operation Class="XmlExtensions.HybridPatch">
 								<xpath>ThingDef</xpath>
 								<value>
+									<costList Operation="Safe">
+										<Steel Operation="SafeRemove">0</Steel>
+										<WeaponGrenadeFrag Operation="SafeAdd">2</WeaponGrenadeFrag>
+									</costList>
 									<comps Operation="Safe">
 										<li Class="CompProperties_ApparelReloadable" Operation="Safe" CheckAttributes="True">
 											<ammoDef Operation="SafeReplace">WeaponGrenadeFrag</ammoDef>
@@ -1196,6 +1379,22 @@
 						</caseTrue>
 					</Operation>
 				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorPhoenixPrestige"]</xpath>
+				<value>
+    				<label Operation="SafeReplace">cataphract phoenix prestige armor</label>
+					<costList Operation="SafeReplace">
+						<ComponentSpacer>9</ComponentSpacer>
+						<Plasteel>175</Plasteel>
+						<Chemfuel>50</Chemfuel>
+						<Gold>20</Gold>
+					</costList>
+					<equippedStatOffsets Operation="Safe">
+						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+						<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+					</equippedStatOffsets>
+				</value>
 			</Operation>
 		</caseTrue>
 	</Operation>
