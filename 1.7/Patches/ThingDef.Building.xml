@@ -636,25 +636,6 @@
 		</caseTrue>
 	</Operation>
 
-	<!-- Vanilla Factions Expanded - Empire -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>oskarpotocki.vfe.empire</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<!-- grande table -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="VFEE_GrandTable"]</xpath>
-				<value>
-					<costList Operation="Safe">
-						<Gold Operation="SafeReplace">100</Gold>
-					</costList>
-				</value>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
 	<!-- Vanilla Furniture Expanded -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
