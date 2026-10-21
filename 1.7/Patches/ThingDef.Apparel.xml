@@ -515,7 +515,7 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="Apparel_ArmorLocust"]</xpath>
 				<value>
-					<label Operation="SafeReplace">recon locust armor</label>
+					<label Operation="SafeReplace">recon armor - locust</label>
 					<costList Operation="SafeReplace">
 						<ComponentSpacer>5</ComponentSpacer>
 						<Plasteel>125</Plasteel>
@@ -529,7 +529,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef</xpath>
 						<value>
-							<label Operation="SafeReplace">marine grenadier armor</label>
+							<label Operation="SafeReplace">marine armor - grenadier</label>
 							<costList Operation="SafeReplace">
 								<ComponentSpacer>7</ComponentSpacer>
 								<Plasteel>150</Plasteel>
@@ -565,7 +565,7 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPhoenix"]</xpath>
 				<value>
-					<label Operation="SafeReplace">cataphract phoenix armor</label>
+					<label Operation="SafeReplace">cataphract armor - phoenix</label>
 					<costList Operation="SafeReplace">
 						<ComponentSpacer>9</ComponentSpacer>
 						<Plasteel>175</Plasteel>
@@ -1323,7 +1323,7 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="Apparel_ArmorLocustPrestige"]</xpath>
 				<value>
-    				<label Operation="SafeReplace">recon locust prestige armor</label>
+    				<label Operation="SafeReplace">recon prestige armor - locust</label>
 					<costList Operation="SafeReplace">
 						<ComponentSpacer>6</ComponentSpacer>
 						<Plasteel>125</Plasteel>
@@ -1342,7 +1342,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef</xpath>
 						<value>
-							<label Operation="SafeReplace">marine grenadier prestige armor</label>
+							<label Operation="SafeReplace">marine prestige armor - grenadier</label>
 							<costList Operation="SafeReplace">
 								<ComponentSpacer>7</ComponentSpacer>
 								<Plasteel>150</Plasteel>
@@ -1383,7 +1383,7 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="Apparel_ArmorPhoenixPrestige"]</xpath>
 				<value>
-    				<label Operation="SafeReplace">cataphract phoenix prestige armor</label>
+    				<label Operation="SafeReplace">cataphract prestige armor - phoenix</label>
 					<costList Operation="SafeReplace">
 						<ComponentSpacer>9</ComponentSpacer>
 						<Plasteel>175</Plasteel>
