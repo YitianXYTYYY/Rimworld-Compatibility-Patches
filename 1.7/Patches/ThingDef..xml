@@ -213,6 +213,21 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingCategoryDef[defName="GR_ImplantCategory"]</xpath>
+				<value>
+					<label Operation="SafeReplace">hybrid animal implants</label>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[@Name="GR_HumanImplantBase"]</xpath>
+				<value>
+					<thingCategories Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">GR_ImplantCategory</li>
+						<li Operation="SafeAdd" Compare="InnerText">GRImplantHuman</li>
+					</thingCategories>
+				</value>
+			</Operation>
 			<!-- Items Resource GenomeExcavators -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="GR_ArchotechGenomeExcavator"]</xpath>
