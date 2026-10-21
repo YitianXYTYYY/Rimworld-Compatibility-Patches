@@ -164,7 +164,7 @@
 						<xpath>VanillaRacesExpandedInsector.GenelineGeneDef</xpath>
 						<value>
 							<statOffsets Operation="Safe">
-								<PsychicSensitivity Operation="SafeReplace">0.4</PsychicSensitivity>
+								<PsychicSensitivity Operation="SafeReplace">0.2</PsychicSensitivity>
 							</statOffsets>
 						</value>
 					</Operation>
