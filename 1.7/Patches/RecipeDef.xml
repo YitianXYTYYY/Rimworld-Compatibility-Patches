@@ -53,7 +53,7 @@
 								</categories>
 							</fixedIngredientFilter>
 							<ingredients Operation="Safe">
-								<li Operation="SafeAdd">
+								<li Operation="Add">
 									<filter>
 										<categories>
 											<li>StoneBlocks</li>
@@ -83,7 +83,7 @@
 								</categories>
 							</fixedIngredientFilter>
 							<ingredients Operation="Safe">
-								<li Operation="SafeAdd">
+								<li Operation="Add">
 									<filter>
 										<categories>
 											<li>StoneBlocks</li>
