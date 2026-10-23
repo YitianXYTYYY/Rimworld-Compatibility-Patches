@@ -99,6 +99,7 @@
 		</value>
 	</Operation>
 
+	<!-- Royalty -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
 			<li>Ludeon.RimWorld.Royalty</li>
@@ -603,6 +604,7 @@
 		</caseTrue>
 	</Operation>
 
+	<!-- Biotech -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
 			<li>Ludeon.RimWorld.Biotech</li>
@@ -711,6 +713,7 @@
 		</caseTrue>
 	</Operation>
 
+	<!-- Odyssey -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
 			<li>ludeon.rimworld.odyssey</li>
@@ -729,6 +732,19 @@
 				<xpath>Defs/ThingDef[defName="Apparel_VacsuitHelmet"]</xpath>
 				<attribute>Name</attribute>
 				<value>Apparel_VacsuitHelmet</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Packs Are Not Belts -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>turnovus.submod.backpacksarenotbelts</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/ApparelLayerDef[defName="PacksAreNotBelts_Exoskeleton"]/modExtensions/li[@Class="HeavyWeaponsAcceptAllUtilities.DefExtension_IsUtilityLayer""]</xpath>
 			</Operation>
 		</caseTrue>
 	</Operation>
@@ -1465,6 +1481,10 @@
 							<li Operation="SafeAdd" Compare="InnerText">AdvancedFabrication</li>
 						</researchPrerequisites>
 					</recipeMaker>
+					<statBases Operation="Safe">
+						<Mass Operation="SafeReplace">5</Mass>
+						<MaxHitPoints Operation="SafeAdd">300</MaxHitPoints>
+					</statBases>
 				</value>
 			</Operation>
 		</caseTrue>
