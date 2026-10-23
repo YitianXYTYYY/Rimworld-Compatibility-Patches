@@ -4,6 +4,32 @@
 	<Operation Class="XmlExtensions.SetScope" MayRequire="ferny.replacelib">
 		<xpath>Defs/ReplaceLib.ReplacerDef[defName="ReplaceLib_XYTYYY"]</xpath>
 		<apply>
+			<!-- Vanilla Chemfuel Expanded -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaexpanded.vchemfuele</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaexpanded.vgeneticse</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>ReplaceLib.ReplacerDef/replacers</xpath>
+								<value>
+									<li>
+										<replace>GR_CompressedChemfuel</replace>
+										<with>VCHE_Deepchem</with>
+									</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
 			<!-- Vanilla Factions Expanded - Insectoids 2 -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>

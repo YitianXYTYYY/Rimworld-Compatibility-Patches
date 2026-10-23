@@ -70,20 +70,6 @@
 							<li>RecipeDef/BS_SmashRobot</li>
 						</value>
 					</Operation>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>vanillaracesexpanded.phytokin</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="PatchOperationAdd">
-								<xpath>defs</xpath>
-								<value>
-									<li>GeneDef/VRE_Female</li>
-								</value>
-							</Operation>
-						</caseTrue>
-					</Operation>
 				</caseTrue>
 			</Operation>
 			<!-- Biotech for Gravship -->
@@ -180,7 +166,6 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
-					<!--Vanilla Races Expanded - Android -->
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
 							<li>vanillaracesexpanded.android</li>
@@ -340,7 +325,6 @@
 							</Operation>
 						</caseTrue>
 					</Operation>
-					<!--Vanilla Races Expanded - Insector -->
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
 							<li>vanillaracesexpanded.insector</li>
@@ -779,29 +763,6 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
-			<!-- Vanilla Genetics Expanded -->
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaexpanded.vgeneticse</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>vanillaexpanded.vchemfuele</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="PatchOperationAdd">
-								<xpath>defs</xpath>
-								<value>
-									<li>ThingDef/GR_CompressedChemfuel</li>
-								</value>
-							</Operation>
-						</caseTrue>
-					</Operation>
-				</caseTrue>
-			</Operation>
 			<!-- Vanilla Nutrient Paste Expanded -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
@@ -838,6 +799,29 @@
 									<li>GeneDef/VRE_RecessiveGenome</li>
 									<li>GeneDef/VRE_DominantGenome</li>
 									<li>GeneDef/VRE_DominantGenome_Astrogene</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- Vanilla Races Expanded - Phytokin -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.phytokin</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>redmattis.betterprerequisites</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>GeneDef/VRE_Female</li>
 								</value>
 							</Operation>
 						</caseTrue>
