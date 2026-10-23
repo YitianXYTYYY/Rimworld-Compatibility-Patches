@@ -7,146 +7,12 @@
 		</mods>
 		<match Class="PatchOperationSequence">
 			<operations>
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/ThingDef[defName="RB_GlassAutodoor"]/researchPrerequisites</xpath>
-					<value>
-						<researchPrerequisites Inherit="False">
-							<li>Autodoors</li>
-						</researchPrerequisites>
-					</value>
-				</li>
-			</operations>
-		</match>
-	</Operation>
-
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>ReBuild: Doors and Corners</li>
-		</mods>
-		<match Class="PatchOperationFindMod">
-			<mods>
-				<li>Anomaly</li>
-			</mods>
-			<match Class="PatchOperationSequence">
-				<operations>
-					<li Class="PatchOperationReplace">
-						<xpath>Defs/ThingDef[defName="RB_ReinforcedGlassAutodoor" or defName="RB_ReinforcedClerestoryWall" or defName="RB_ReinforcedGlassWall"]/researchPrerequisites</xpath>
-						<value>
-							<researchPrerequisites Inherit="False">
-								<li>Fabrication</li>
-								<li>SecurityDoor</li>
-							</researchPrerequisites>
-						</value>
-					</li>
-					<li Class="PatchOperationReplace">
-						<xpath>/Defs/ThingDef[defName="RB_OverwallArmor"]/researchPrerequisites</xpath>
-						<value>
-							<researchPrerequisites>
-								<li>SecurityDoor</li>
-							</researchPrerequisites>
-						</value>
-					</li>
-				</operations>
-			</match>
-		</match>
-	</Operation>
-
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>ReBuild: Doors and Corners</li>
-		</mods>
-		<match Class="PatchOperationFindMod">
-			<mods>
-				<li>Vanilla Furniture Expanded</li>
-			</mods>
-			<match Class="PatchOperationSequence">
-				<operations>
-					<li Class="PatchOperationReplace">
-						<xpath>Defs/ThingDef[defName="RB_FloorLamp"]/statBases/MaxHitPoints</xpath>
-						<value>
-							<MaxHitPoints>50</MaxHitPoints>
-						</value>
-					</li>
-				</operations>
-			</match>
-		</match>
-	</Operation>
-
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>ReBuild: Doors and Corners</li>
-		</mods>
-		<match Class="PatchOperationSequence">
-			<operations>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/ThingDef[defName="StandingLamp"]/costList</xpath>
-					<value>
-						<costList>
-							<Steel>15</Steel>
-							<RB_Glass>5</RB_Glass>
-						</costList>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/ThingDef[defName="SunLamp"]/costList</xpath>
-					<value>
-						<costList>
-							<Steel>30</Steel>
-							<RB_Glass>10</RB_Glass>
-						</costList>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/ThingDef[defName="FloodLight"]/costList</xpath>
-					<value>
-						<costList>
-							<Steel>45</Steel>
-							<RB_Glass>5</RB_Glass>
-						</costList>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/ThingDef[defName="RB_FloorLamp"]/costList</xpath>
-					<value>
-						<costList>
-							<RB_Glass>5</RB_Glass>
-						</costList>
-					</value>
-				</li>
-				<li Class="PatchOperationReplace">
-					<xpath>Defs/ThingDef[defName="WallLamp"]/costList</xpath>
-					<value>
-						<!-- now stuffable, changed by ReBuild  -->
-						<costList>
-							<Steel>5</Steel>
-							<RB_Glass>5</RB_Glass>
-						</costList>
-					</value>
-				</li>
 				<li Class="PatchOperationFindMod">
 					<mods>
 						<li>Vanilla Furniture Expanded</li>
 					</mods>
 					<match Class="PatchOperationSequence">
 						<operations>
-							<li Class="PatchOperationReplace">
-								<xpath>Defs/ThingDef[defName="VFE_DeskLamp"]/costList</xpath>
-								<value>
-									<costList>
-										<Steel>10</Steel>
-										<RB_Glass>5</RB_Glass>
-									</costList>
-								</value>
-							</li>
-							<li Class="PatchOperationReplace">
-								<xpath>Defs/ThingDef[defName="VFE_FloorLamp"]/costList</xpath>
-								<value>
-									<costList>
-										<Steel>15</Steel>
-										<RB_Glass>5</RB_Glass>
-									</costList>
-								</value>
-							</li>
 							<li Class="PatchOperationReplace">
 								<xpath>Defs/ThingDef[defName="Light_Streetlamp"]/costList</xpath>
 								<value>
@@ -155,25 +21,6 @@
 										<RB_Glass>5</RB_Glass>
 									</costList>
 								</value>
-							</li>
-							<li Class="PatchOperationFindMod">
-								<mods>
-									<li>Royalty</li>
-								</mods>
-								<match Class="PatchOperationSequence">
-									<operations>
-										<li Class="PatchOperationReplace">
-											<xpath>Defs/ThingDef[defName="VFE_RoyalLamp"]/costList</xpath>
-											<value>
-												<costList>
-													<Steel>15</Steel>
-													<RB_Glass>5</RB_Glass>
-													<Gold>5</Gold>
-												</costList>
-											</value>
-										</li>
-									</operations>
-								</match>
 							</li>
 						</operations>
 					</match>
@@ -226,24 +73,6 @@
 								<xpath>Defs/ThingDef[defName="ChemlampPost"]/costStuffCount</xpath>
 								<value>
 									<costStuffCount>15</costStuffCount>
-								</value>
-							</li>
-						</operations>
-					</match>
-				</li>
-				<li Class="PatchOperationFindMod">
-					<mods>
-						<li>Vanilla Factions Expanded - Empire</li>
-					</mods>
-					<match Class="PatchOperationSequence">
-						<operations>
-							<li Class="PatchOperationReplace">
-								<xpath>Defs/ThingDef[defName="VFEE_Candelabra"]/costList</xpath>
-								<value>
-									<costList>
-										<Steel>15</Steel>
-										<RB_Glass>5</RB_Glass>
-									</costList>
 								</value>
 							</li>
 						</operations>
