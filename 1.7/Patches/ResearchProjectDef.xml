@@ -1,53 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-	<!-- Neolithic -->
-	<Operation Class="XmlExtensions.SetScope">
-		<xpath>Defs/ResearchProjectDef[defName="PassiveCooler"]</xpath>
-		<apply>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaexpanded.vfecore</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ResearchProjectDef</xpath>
-						<value>
-							<prerequisites Operation="Safe">
-								<li Operation="SafeAdd" Compare="InnerText">MF_BasicFurniture</li>
-							</prerequisites>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-		</apply>
-	</Operation>
-	<!-- Medieval -->
-	<Operation Class="XmlExtensions.SetScope">
-		<xpath>Defs/ResearchProjectDef[defName="ComplexFurniture"]</xpath>
-		<apply>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaexpanded.vfecore</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ResearchProjectDef</xpath>
-						<value>
-							<prerequisites Operation="Safe">
-								<li Operation="SafeRemove" Compare="InnerText">MF_BasicFurniture</li>
-							</prerequisites>
-							<hiddenPrerequisites Operation="Safe">
-								<li Operation="SafeAdd" Compare="InnerText">MF_BasicFurniture</li>
-							</hiddenPrerequisites>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-		</apply>
-	</Operation>
 	<!-- Industrial -->
 	<!-- Electricity -->
 	<Operation Class="XmlExtensions.HybridPatch">
@@ -60,17 +13,6 @@
 				<li Operation="SafeAdd" Compare="InnerText">Electricity</li>
 			</hiddenPrerequisites>
 			<requiredResearchBuilding Operation="SafeAdd">HiTechResearchBench</requiredResearchBuilding>
-		</value>
-	</Operation>
-	<Operation Class="XmlExtensions.HybridPatch">
-		<xpath>Defs/ResearchProjectDef[defName="BiofuelRefining"]</xpath>
-		<value>
-			<prerequisites Operation="Safe">
-				<li Operation="SafeRemove" Compare="InnerText">Electricity</li>
-			</prerequisites>
-			<hiddenPrerequisites Operation="Safe">
-				<li Operation="SafeAdd" Compare="InnerText">Electricity</li>
-			</hiddenPrerequisites>
 		</value>
 	</Operation>
 	<Operation Class="XmlExtensions.HybridPatch">
@@ -108,8 +50,9 @@
 		<value>
 			<prerequisites Operation="Safe">
 				<li Operation="SafeRemove" Compare="InnerText">Electricity</li>
-				<li Operation="SafeAdd" Compare="InnerText">Machining</li>
+				<li Operation="SafeAdd" Compare="InnerText">MicroelectronicsBasics</li>
 			</prerequisites>
+			<requiredResearchBuilding Operation="SafeAdd">HiTechResearchBench</requiredResearchBuilding>
 		</value>
 	</Operation>
 	<Operation Class="XmlExtensions.HybridPatch">
@@ -153,6 +96,7 @@
 		<value>
 			<prerequisites Operation="Safe">
 				<li Operation="SafeRemove" Compare="InnerText">Electricity</li>
+				<li Operation="SafeAdd" Compare="InnerText">Machining</li>
 			</prerequisites>
 		</value>
 	</Operation>
@@ -175,7 +119,7 @@
 				<xpath>ResearchProjectDef</xpath>
 				<value>
 					<requiredResearchBuilding Operation="SafeAdd">HiTechResearchBench</requiredResearchBuilding>
-					<tab Operation="AddOrReplace">TechProsthetics</tab>
+					<!--tab Operation="AddOrReplace">TechProsthetics</tab-->
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
@@ -242,39 +186,6 @@
 				<li Operation="SafeRemove" Compare="InnerText">Machining</li>
 			</hiddenPrerequisites>
 		</value>
-	</Operation>
-	<Operation Class="XmlExtensions.SetScope">
-		<xpath>Defs/ResearchProjectDef[defName="HospitalBed"]</xpath>
-		<apply>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>ResearchProjectDef</xpath>
-				<value>
-					<prerequisites Operation="Safe">
-						<li Operation="SafeRemove" Compare="InnerText">MicroelectronicsBasics</li>
-						<li Operation="SafeAdd" Compare="InnerText">SterileMaterials</li>
-					</prerequisites>
-					<hiddenPrerequisites Operation="Safe">
-						<li Operation="SafeRemove" Compare="InnerText">SterileMaterials</li>
-					</hiddenPrerequisites>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaexpanded.vfecore</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ResearchProjectDef</xpath>
-						<value>
-							<hiddenPrerequisites Operation="Safe">
-								<li Operation="SafeAdd" Compare="InnerText">MF_ModernFurniture</li>
-							</hiddenPrerequisites>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-		</apply>
 	</Operation>
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ResearchProjectDef[defName="TransportPod"]</xpath>
@@ -425,44 +336,14 @@
 			<tab Operation="AddOrReplace">TechStarship</tab>
 		</value>
 	</Operation>
-	<Operation Class="XmlExtensions.SetScope">
+	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ResearchProjectDef[defName="ReconArmor"]</xpath>
-		<apply>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>ResearchProjectDef</xpath>
-				<value>
-					<hiddenPrerequisites Operation="Safe">
-						<li Operation="SafeRemove" Compare="InnerText">ComplexClothing</li>
-					</hiddenPrerequisites>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaexpanded.varme</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseFalse>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ResearchProjectDef</xpath>
-						<value>
-							<hiddenPrerequisites Operation="Safe">
-								<li Operation="SafeAdd" Compare="InnerText">FlakArmor</li>
-							</hiddenPrerequisites>
-						</value>
-					</Operation>
-				</caseFalse>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ResearchProjectDef</xpath>
-						<value>
-							<hiddenPrerequisites Operation="Safe">
-								<li Operation="SafeAdd" Compare="InnerText">VAE_TrooperArmor</li>
-							</hiddenPrerequisites>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-		</apply>
+		<value>
+			<hiddenPrerequisites Operation="Safe">
+				<li Operation="SafeRemove" Compare="InnerText">ComplexClothing</li>
+				<li Operation="SafeAdd" Compare="InnerText">FlakArmor</li>
+			</hiddenPrerequisites>
+		</value>
 	</Operation>
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ResearchProjectDef[defName="ChargedShot"]</xpath>
@@ -489,7 +370,7 @@
 					<hiddenPrerequisites Operation="Safe">
 						<li Operation="SafeRemove" Compare="InnerText">Prosthetics</li>
 					</hiddenPrerequisites>
-					<tab Operation="AddOrReplace">TechProsthetics</tab>
+					<!--tab Operation="AddOrReplace">TechProsthetics</tab-->
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
@@ -578,9 +459,6 @@
 					<prerequisites Operation="Safe">
 						<li Operation="SafeRemove" Compare="InnerText">Smithing</li>
 					</prerequisites>
-					<hiddenPrerequisites Operation="Safe">
-						<li Operation="SafeAdd" Compare="InnerText">Smithing</li>
-					</hiddenPrerequisites>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
@@ -626,8 +504,8 @@
 							</hiddenPrerequisites>
 							<requiredResearchFacilities Operation="Safe">
 								<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
-							</requiredResearchFacilities>				
-							<tab Operation="AddOrReplace">TechProsthetics</tab>
+							</requiredResearchFacilities>
+							<!--tab Operation="AddOrReplace">TechProsthetics</tab-->
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
@@ -636,7 +514,7 @@
 							<prerequisites Operation="Safe">
 								<li Operation="SafeRemove" Compare="InnerText">Prosthetics</li>
 							</prerequisites>
-							<tab Operation="AddOrReplace">TechProsthetics</tab>
+							<!--tab Operation="AddOrReplace">TechProsthetics</tab-->
 						</value>
 					</Operation>
 				</caseFalse>
@@ -654,7 +532,7 @@
 							<requiredResearchFacilities Operation="Safe">
 								<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
 							</requiredResearchFacilities>
-							<tab Operation="AddOrReplace">TechProsthetics</tab>
+							<!--tab Operation="AddOrReplace">TechProsthetics</tab-->
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
@@ -663,7 +541,7 @@
 							<prerequisites Operation="Safe">
 								<li Operation="SafeRemove" Compare="InnerText">BoneProstheticsPlasteel</li>
 							</prerequisites>
-							<tab Operation="AddOrReplace">TechProsthetics</tab>
+							<!--tab Operation="AddOrReplace">TechProsthetics</tab-->
 						</value>
 					</Operation>
 				</caseTrue>
@@ -776,7 +654,7 @@
 					<hiddenPrerequisites Operation="Safe">
 						<li Operation="SafeRemove" Compare="InnerText">Prosthetics</li>
 					</hiddenPrerequisites>
-					<tab Operation="AddOrReplace">TechProsthetics</tab>
+					<!--tab Operation="AddOrReplace">TechProsthetics</tab-->
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
@@ -831,6 +709,12 @@
 					<hiddenPrerequisites Operation="Safe">
 						<li Operation="SafeRemove" Compare="InnerText">GunTurrets</li>
 					</hiddenPrerequisites>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ResearchProjectDef[defName="TurretPack"]</xpath>
+				<value>
+					<requiredResearchBuilding Operation="SafeAdd">HiTechResearchBench</requiredResearchBuilding>
 				</value>
 			</Operation>
 		</caseTrue>
@@ -968,7 +852,7 @@
 						<li Operation="SafeAdd" Compare="InnerText">Machining</li>
 						<li Operation="SafeRemove" Compare="InnerText">Prosthetics</li>
 					</prerequisites>
-					<tab Operation="AddOrReplace">TechProsthetics</tab>
+					<!--tab Operation="AddOrReplace">TechProsthetics</tab-->
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
@@ -982,7 +866,7 @@
 					<requiredResearchFacilities Operation="Safe">
 						<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
 					</requiredResearchFacilities>
-					<tab Operation="AddOrReplace">TechProsthetics</tab>
+					<!--tab Operation="AddOrReplace">TechProsthetics</tab-->
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
@@ -1356,38 +1240,6 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/ResearchProjectDef[defName="MF_BasicFurniture"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>oskarpotocki.vfe.tribals</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>ResearchProjectDef</xpath>
-								<value>
-									<prerequisites Operation="Safe">
-										<li Operation="SafeAdd" Compare="InnerText">VFET_Furniture</li>
-									</prerequisites>
-								</value>
-							</Operation>
-						</caseTrue>
-					</Operation>
-				</apply>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ResearchProjectDef[defName="MF_ModernFurniture"]</xpath>
-				<value>
-					<prerequisites Operation="Safe">
-						<li Operation="SafeRemove" Compare="InnerText">ComplexFurniture</li>
-					</prerequisites>
-					<hiddenPrerequisites Operation="Safe">
-						<li Operation="SafeAdd" Compare="InnerText">ComplexFurniture</li>
-					</hiddenPrerequisites>
-				</value>
-			</Operation>
 			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 				<xpath>Defs/ThingDef/researchPrerequisites[li="MF_WasteDisposal"]</xpath>
 			</Operation>

@@ -495,43 +495,6 @@
 		</caseTrue>
 	</Operation>
 
-	<!-- ReBuild: Doors and Corners -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>rebuild.cotr.doorsandcorners</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<!-- gravship hull -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="RB_SmoothGravshipHull"]</xpath>
-				<value>
-					<label Operation="SafeReplace">smooth gravship hull</label>
-					<terrainAffordanceNeeded Operation="SafeReplace">Substructure</terrainAffordanceNeeded>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="RB_GravshipWindowHull"]</xpath>
-				<value>
-					<costStuffCount Operation="SafeReplace">4</costStuffCount>
-					<costList Operation="SafeReplace">
-						<RB_BallisticGlass>3</RB_BallisticGlass>
-					</costList>
-					<terrainAffordanceNeeded Operation="SafeReplace">Substructure</terrainAffordanceNeeded>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="RB_GravshipPanoramaHull"]</xpath>
-				<value>
-					<costList Operation="SafeReplace">
-						<RB_BallisticGlass>5</RB_BallisticGlass>
-					</costList>
-					<terrainAffordanceNeeded Operation="SafeReplace">Substructure</terrainAffordanceNeeded>
-				</value>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
 	<!-- Reel's Expanded Storage -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
