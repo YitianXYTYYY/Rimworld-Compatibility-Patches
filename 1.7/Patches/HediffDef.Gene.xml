@@ -59,7 +59,14 @@
 							<tools Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="label">
 									<label Operation="Safe">plasteel claw</label>
+									<capacities>
+										<li Operation="SafeRemove" Compare="InnerText">Cut</li>
+										<li Operation="SafeAdd" Compare="InnerText">Scratch</li>
+									</capacities>
 									<armorPenetration Operation="SafeRemove">0</armorPenetration>
+            						<!--alwaysTreatAsWeapon Operation="SafeAdd">true</alwaysTreatAsWeapon-->
+									<soundMeleeHit Operation="SafeAdd">Pawn_Melee_PowerClaw_Hit</soundMeleeHit>
+									<soundMeleeMiss Operation="SafeAdd">Pawn_Melee_PowerClaw_Miss</soundMeleeMiss>
 								</li>
 							</tools>
 						</li>
