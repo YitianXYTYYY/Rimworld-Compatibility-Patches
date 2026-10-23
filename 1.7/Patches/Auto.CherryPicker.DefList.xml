@@ -604,6 +604,21 @@
 							</Operation>
 						</caseTrue>
 					</Operation>
+					<!-- Security and Blast Doors Expanded -->
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaexpanded.vfecore</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>ThingDef/RB_Floorlamp</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
 				</caseTrue>
 			</Operation>
 			<!-- Reel's Turret Pipeline -->
@@ -743,6 +758,7 @@
 							<li>ThingDef/Bin_Large</li>
 							<li>ThingDef/Joy_Piano</li>
 							<li>ThingDef/Light_Streetlamp</li>
+							<li>ThingDef/VFE_Lounger</li>
 						</value>
 					</Operation>
 					<!-- Reel's Expanded Storage -->
@@ -755,6 +771,7 @@
 							<Operation Class="PatchOperationAdd">
 								<xpath>defs</xpath>
 								<value>
+									<li>ThingDef/Misc_FileCabinet</li>
 									<li>ThingDef/Shelf_WeaponRack</li>
 								</value>
 							</Operation>
