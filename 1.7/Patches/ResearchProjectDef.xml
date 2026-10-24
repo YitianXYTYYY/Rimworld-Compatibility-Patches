@@ -640,7 +640,7 @@
 				<value>
 					<prerequisites Operation="Safe">
 						<li Operation="SafeRemove" Compare="InnerText">Electricity</li>
-						<li Operation="SafeAdd" Compare="InnerText">HospitalBed</li>
+						<li Operation="SafeAdd" Compare="InnerText">SterileMaterials</li>
 					</prerequisites>
 				</value>
 			</Operation>
