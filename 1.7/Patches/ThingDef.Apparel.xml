@@ -744,7 +744,7 @@
 		<packageId>true</packageId>
 		<caseTrue>
 			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-				<xpath>Defs/ApparelLayerDef[defName="PacksAreNotBelts_Exoskeleton"]/modExtensions/li[@Class="HeavyWeaponsAcceptAllUtilities.DefExtension_IsUtilityLayer""]</xpath>
+				<xpath>Defs/ApparelLayerDef[defName="PacksAreNotBelts_Exoskeleton"]/modExtensions/li[@Class="HeavyWeaponsAcceptAllUtilities.DefExtension_IsUtilityLayer"]</xpath>
 			</Operation>
 		</caseTrue>
 	</Operation>
@@ -1314,6 +1314,9 @@
 						<ComponentSpacer>2</ComponentSpacer>
 						<Plasteel>50</Plasteel>
 					</costList>
+					<equippedStatOffsets Operation="Safe">
+						<ToxicResistance Operation="SafeRemove">0</ToxicResistance>
+					</equippedStatOffsets>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
