@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
+	<!-- artifacts -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="PsychicSoothePulser"]</xpath>
+		<value>
+			<tradeNeverStack Operation="SafeRemove"/>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="PsychicAnimalPulser"]</xpath>
+		<value>
+			<tradeNeverStack Operation="SafeRemove"/>
+		</value>
+	</Operation>
+
+	<!-- resource manufactured -->
 	<!-- reinforced barrel -->
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ThingDef[defName="ReinforcedBarrel"]</xpath>
@@ -49,6 +64,18 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="ShardAnimalPulser"]</xpath>
+				<value>
+					<tradeNeverStack Operation="SafeRemove"/>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="BiomutationPulser"]</xpath>
+				<value>
+					<tradeNeverStack Operation="SafeRemove"/>
+				</value>
+			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="GoldenCube"]</xpath>
 				<value>

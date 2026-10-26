@@ -18,6 +18,20 @@
 		</value>
 	</Operation>
 
+	<!-- Apparel Utility -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Apparel_PsychicShockLance"]</xpath>
+		<value>
+			<tradeNeverStack Operation="SafeRemove"/>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Apparel_PsychicInsanityLance"]</xpath>
+		<value>
+			<tradeNeverStack Operation="SafeRemove"/>
+		</value>
+	</Operation>
+
 	<!-- Apparel Headgear -->
 	<Operation Class="XmlExtensions.PatchOperationAttributeSet">
 		<xpath>Defs/ThingDef[defName="Apparel_PowerArmorHelmet"]</xpath>
@@ -708,6 +722,34 @@
 							</equippedStatFactors>
 						</li>
 					</modExtensions>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Anomaly -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ludeon.rimworld.anomaly</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Apparel_ShardPsychicShockLance"]</xpath>
+				<value>
+					<tradeNeverStack Operation="SafeRemove"/>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Apparel_ShardPsychicInsanityLance"]</xpath>
+				<value>
+					<tradeNeverStack Operation="SafeRemove"/>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Apparel_BiomutationLance"]</xpath>
+				<value>
+					<tradeNeverStack Operation="SafeRemove"/>
 				</value>
 			</Operation>
 		</caseTrue>
