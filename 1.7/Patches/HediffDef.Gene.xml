@@ -64,7 +64,7 @@
 										<li Operation="SafeAdd" Compare="InnerText">Scratch</li>
 									</capacities>
 									<armorPenetration Operation="SafeRemove">0</armorPenetration>
-            						<!--alwaysTreatAsWeapon Operation="SafeAdd">true</alwaysTreatAsWeapon-->
+            						<alwaysTreatAsWeapon Operation="SafeAdd">true</alwaysTreatAsWeapon>
 									<soundMeleeHit Operation="SafeAdd">Pawn_Melee_PowerClaw_Hit</soundMeleeHit>
 									<soundMeleeMiss Operation="SafeAdd">Pawn_Melee_PowerClaw_Miss</soundMeleeMiss>
 								</li>
