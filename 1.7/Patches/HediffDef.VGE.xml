@@ -1,0 +1,1331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!--Vanilla Genetics Expanded -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaexpanded.vgeneticse</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/RecipeDef[defName="GR_InstallBearClaws" or defName="GR_InstallDiggingBearClaws" or defName="GR_InstallBearMuscleTissue" or defName="GR_InstallHibernationModule" or defName="GR_InstallOvipositor" or defName="GR_InstallMuffaloMuscles" or defName="GR_InstallMuffaloMammaries" or defName="GR_InstallMuffaloSkin" or defName="GR_InstallBoomalopeNodules" or defName="GR_InstallChemfuelStomach" or defName="GR_InstallChemfuelHeart" or defName="GR_InstallWolfMuscularFibers" or defName="GR_InstallDevouringJaws" or defName="GR_InstallNeuronReinforcement" or defName="GR_InstallMousePheromones" or defName="GR_InstallMoleratNerveDampener" or defName="GR_InstallBunnyEars" or defName="GR_InstallCompoundEye" or defName="GR_InstallCatEye" or defName="GR_InstallInsectoidAntennae" or defName="GR_InstallPsychicDampeners" or defName="GR_InstallKidneyToxicFilters" or defName="GR_InstallHumanThrumboHorn" or defName="GR_InstallThrumboSkin" or defName="GR_InstallVenomousFangs" or defName="GR_InstallIguanaScales"]</xpath>
+				<value>
+					<recipeUsers Operation="Safe">
+						<li MayRequire="ludeon.rimworld.anomaly" Operation="SafeAdd" Compare="InnerText">CreepJoiner</li>
+					</recipeUsers>
+				</value>
+			</Operation>
+			<!-- implant human -->
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="GR_BearMuscleTissue"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Manipulation</capacity>
+									<offset Operation="SafeReplace">-0.1</offset>
+								</li>
+							</capMods>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.1"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText" XPathLocal="capacity">
+									<capacity>Manipulation</capacity>
+								</li>
+							</capMods>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.2"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Manipulation</capacity>
+									<offset Operation="SafeReplace">0.1</offset>
+								</li>
+							</capMods>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.3"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Manipulation</capacity>
+									<offset Operation="SafeReplace">0.15</offset>
+								</li>
+							</capMods>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.4"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Manipulation</capacity>
+									<offset Operation="SafeReplace">0.2</offset>
+								</li>
+							</capMods>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.5"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Manipulation</capacity>
+									<offset Operation="SafeReplace">0.25</offset>
+								</li>
+							</capMods>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.6"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Manipulation</capacity>
+									<offset Operation="SafeReplace">0.3</offset>
+								</li>
+							</capMods>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="GR_HibernationModule"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Consciousness</capacity>
+									<offset Operation="SafeReplace">-0.05</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<RestRateMultiplier Operation="SafeRemove">0</RestRateMultiplier>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.1"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText" XPathLocal="capacity">
+									<capacity>Consciousness</capacity>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<RestRateMultiplier Operation="SafeRemove">0</RestRateMultiplier>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.2"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText" XPathLocal="capacity">
+									<capacity>Consciousness</capacity>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<RestRateMultiplier Operation="SafeReplace">0.1</RestRateMultiplier>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.3"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Consciousness</capacity>
+									<offset Operation="SafeReplace">0.05</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<RestRateMultiplier Operation="SafeReplace">0.2</RestRateMultiplier>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.4"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Consciousness</capacity>
+									<offset Operation="SafeReplace">0.1</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<RestRateMultiplier Operation="SafeReplace">0.3</RestRateMultiplier>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.5"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Consciousness</capacity>
+									<offset Operation="SafeReplace">0.15</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<RestRateMultiplier Operation="SafeReplace">0.4</RestRateMultiplier>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.6"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Consciousness</capacity>
+									<offset Operation="SafeReplace">0.2</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<RestRateMultiplier Operation="SafeReplace">0.5</RestRateMultiplier>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="GR_MuffaloMuscles"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Manipulation</capacity>
+									<offset Operation="SafeReplace">-0.1</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<CarryingCapacity Operation="SafeRemove">0</CarryingCapacity>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.1"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Manipulation</capacity>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<CarryingCapacity Operation="SafeRemove">0</CarryingCapacity>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.2"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Manipulation</capacity>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<CarryingCapacity Operation="SafeReplace">10</CarryingCapacity>
+								<VEF_MassCarryCapacity Operation="SafeAdd">5</VEF_MassCarryCapacity>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.3"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Manipulation</capacity>
+									<offset Operation="SafeReplace">0.05</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<CarryingCapacity Operation="SafeReplace">20</CarryingCapacity>
+								<VEF_MassCarryCapacity Operation="SafeAdd">10</VEF_MassCarryCapacity>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.4"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Manipulation</capacity>
+									<offset Operation="SafeReplace">0.05</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<CarryingCapacity Operation="SafeReplace">30</CarryingCapacity>
+								<VEF_MassCarryCapacity Operation="SafeAdd">15</VEF_MassCarryCapacity>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.5"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Manipulation</capacity>
+									<offset Operation="SafeReplace">0.1</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<CarryingCapacity Operation="SafeReplace">40</CarryingCapacity>
+								<VEF_MassCarryCapacity Operation="SafeAdd">20</VEF_MassCarryCapacity>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.6"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Manipulation</capacity>
+									<offset Operation="SafeReplace">0.1</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<CarryingCapacity Operation="SafeReplace">50</CarryingCapacity>
+								<VEF_MassCarryCapacity Operation="SafeAdd">25</VEF_MassCarryCapacity>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="GR_MuffaloSkin"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0"]</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<ComfyTemperatureMin Operation="SafeRemove">0</ComfyTemperatureMin>
+								<ArmorRating_Sharp Operation="SafeRemove">0</ArmorRating_Sharp>
+								<ArmorRating_Blunt Operation="SafeRemove">0</ArmorRating_Blunt>
+								<ArmorRating_Heat Operation="SafeRemove">0</ArmorRating_Heat>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.1"]</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<ComfyTemperatureMin>-10</ComfyTemperatureMin>
+								<ArmorRating_Sharp Operation="SafeRemove">0</ArmorRating_Sharp>
+								<ArmorRating_Blunt Operation="SafeRemove">0</ArmorRating_Blunt>
+								<ArmorRating_Heat Operation="SafeRemove">0</ArmorRating_Heat>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.2"]</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<ComfyTemperatureMin>-20</ComfyTemperatureMin>
+								<ArmorRating_Sharp Operation="SafeRemove">0</ArmorRating_Sharp>
+								<ArmorRating_Blunt Operation="SafeRemove">0</ArmorRating_Blunt>
+								<ArmorRating_Heat Operation="SafeRemove">0</ArmorRating_Heat>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.3"]</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<ComfyTemperatureMin>-20</ComfyTemperatureMin>
+								<ArmorRating_Sharp Operation="SafeReplace">0.1</ArmorRating_Sharp>
+								<ArmorRating_Blunt Operation="SafeReplace">0.1</ArmorRating_Blunt>
+								<ArmorRating_Heat Operation="SafeRemove">0</ArmorRating_Heat>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.4"]</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+								<ArmorRating_Sharp Operation="SafeReplace">0.1</ArmorRating_Sharp>
+								<ArmorRating_Blunt Operation="SafeReplace">0.1</ArmorRating_Blunt>
+								<ArmorRating_Heat Operation="SafeRemove">0</ArmorRating_Heat>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.5"]</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<ComfyTemperatureMin>-40</ComfyTemperatureMin>
+								<ArmorRating_Sharp Operation="SafeReplace">0.2</ArmorRating_Sharp>
+								<ArmorRating_Blunt Operation="SafeReplace">0.2</ArmorRating_Blunt>
+								<ArmorRating_Heat Operation="SafeRemove">0</ArmorRating_Heat>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.6"]</xpath>
+						<value>
+							<statOffsets Operation="Safe">
+								<ComfyTemperatureMin>-40</ComfyTemperatureMin>
+								<ArmorRating_Sharp Operation="SafeReplace">0.3</ArmorRating_Sharp>
+								<ArmorRating_Blunt Operation="SafeReplace">0.3</ArmorRating_Blunt>
+								<ArmorRating_Heat Operation="SafeRemove">0</ArmorRating_Heat>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="GR_ChemfuelStomach"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>HediffDef/stages/li/hungerRateFactorOffset</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Metabolism</capacity>
+									<offset Operation="SafeReplace">-0.1</offset>
+								</li>
+							</capMods>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.1"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText" XPathLocal="capacity">
+									<capacity>Metabolism</capacity>
+								</li>
+							</capMods>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.2"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Metabolism</capacity>
+									<offset Operation="SafeReplace">0.1</offset>
+								</li>
+							</capMods>
+							<hungerRateFactor Operation="SafeAdd">0.9</hungerRateFactor>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.3"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Metabolism</capacity>
+									<offset Operation="SafeReplace">0.15</offset>
+								</li>
+							</capMods>
+							<hungerRateFactor Operation="SafeAdd">0.8</hungerRateFactor>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.4"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Metabolism</capacity>
+									<offset Operation="SafeReplace">0.2</offset>
+								</li>
+							</capMods>
+							<hungerRateFactor Operation="SafeAdd">0.7</hungerRateFactor>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.5"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Metabolism</capacity>
+									<offset Operation="SafeReplace">0.25</offset>
+								</li>
+							</capMods>
+							<hungerRateFactor Operation="SafeAdd">0.6</hungerRateFactor>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.6"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Metabolism</capacity>
+									<offset Operation="SafeReplace">0.3</offset>
+								</li>
+							</capMods>
+							<hungerRateFactor Operation="SafeAdd">0.5</hungerRateFactor>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="GR_ChemfuelHeart"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Metabolism</capacity>
+									<offset Operation="SafeReplace">-0.1</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<WorkSpeedGlobal Operation="SafeRemove">0</WorkSpeedGlobal>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.1"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText" XPathLocal="capacity">
+									<capacity>BloodPumping</capacity>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<WorkSpeedGlobal Operation="SafeRemove">0</WorkSpeedGlobal>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.2"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">BloodPumping</capacity>
+									<offset Operation="SafeReplace">0.1</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<WorkSpeedGlobal Operation="SafeRemove">0</WorkSpeedGlobal>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.3"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">BloodPumping</capacity>
+									<offset Operation="SafeReplace">0.15</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<WorkSpeedGlobal Operation="SafeReplace">0.05</WorkSpeedGlobal>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.4"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">BloodPumping</capacity>
+									<offset Operation="SafeReplace">0.2</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<WorkSpeedGlobal Operation="SafeReplace">0.1</WorkSpeedGlobal>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.5"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">BloodPumping</capacity>
+									<offset Operation="SafeReplace">0.25</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<WorkSpeedGlobal Operation="SafeReplace">0.15</WorkSpeedGlobal>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.6"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">BloodPumping</capacity>
+									<offset Operation="SafeReplace">0.3</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<WorkSpeedGlobal Operation="SafeReplace">0.2</WorkSpeedGlobal>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="GR_WolfMuscularFibers"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Moving</capacity>
+									<offset Operation="SafeReplace">-0.1</offset>
+								</li>
+							</capMods>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.1"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText" XPathLocal="capacity">
+									<capacity>Moving</capacity>
+								</li>
+							</capMods>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.2"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Moving</capacity>
+									<offset Operation="SafeReplace">0.1</offset>
+								</li>
+							</capMods>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.3"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Moving</capacity>
+									<offset Operation="SafeReplace">0.15</offset>
+								</li>
+							</capMods>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.4"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Moving</capacity>
+									<offset Operation="SafeReplace">0.2</offset>
+								</li>
+							</capMods>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.5"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Moving</capacity>
+									<offset Operation="SafeReplace">0.25</offset>
+								</li>
+							</capMods>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.6"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Moving</capacity>
+									<offset Operation="SafeReplace">0.3</offset>
+								</li>
+							</capMods>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="GR_DevouringJaws"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Talking</capacity>
+									<offset Operation="SafeReplace">-0.1</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<EatingSpeed Operation="SafeRemove">0</EatingSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.1"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText" XPathLocal="capacity">
+									<capacity>Talking</capacity>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<EatingSpeed Operation="SafeRemove">0</EatingSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.2"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Talking</capacity>
+									<offset Operation="SafeReplace">0.1</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<EatingSpeed Operation="SafeReplace">0.2</EatingSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.3"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Talking</capacity>
+									<offset Operation="SafeReplace">0.15</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<EatingSpeed Operation="SafeReplace">0.4</EatingSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.4"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Talking</capacity>
+									<offset Operation="SafeReplace">0.2</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<EatingSpeed Operation="SafeReplace">0.6</EatingSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.5"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Talking</capacity>
+									<offset Operation="SafeReplace">0.25</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<EatingSpeed Operation="SafeReplace">0.8</EatingSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.6"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Talking</capacity>
+									<offset Operation="SafeReplace">0.3</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<EatingSpeed Operation="SafeReplace">1</EatingSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="GR_NeuronReinforcement"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Consciousness</capacity>
+									<offset Operation="SafeReplace">-0.05</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<GlobalLearningFactor Operation="SafeRemove">0</GlobalLearningFactor>
+								<ResearchSpeed Operation="SafeRemove">0</ResearchSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.1"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText" XPathLocal="capacity">
+									<capacity>Consciousness</capacity>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<GlobalLearningFactor Operation="SafeRemove">0</GlobalLearningFactor>
+								<ResearchSpeed Operation="SafeRemove">0</ResearchSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.2"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText" XPathLocal="capacity">
+									<capacity>Consciousness</capacity>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<GlobalLearningFactor Operation="SafeRemove">0</GlobalLearningFactor>
+								<ResearchSpeed Operation="SafeReplace">0.1</ResearchSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.3"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Consciousness</capacity>
+									<offset Operation="SafeReplace">0.05</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<GlobalLearningFactor Operation="SafeReplace">0.1</GlobalLearningFactor>
+								<ResearchSpeed Operation="SafeReplace">0.1</ResearchSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.4"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Consciousness</capacity>
+									<offset Operation="SafeReplace">0.1</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<GlobalLearningFactor Operation="SafeReplace">0.2</GlobalLearningFactor>
+								<ResearchSpeed Operation="SafeReplace">0.1</ResearchSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.5"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Consciousness</capacity>
+									<offset Operation="SafeReplace">0.15</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<GlobalLearningFactor Operation="SafeReplace">0.2</GlobalLearningFactor>
+								<ResearchSpeed Operation="SafeReplace">0.2</ResearchSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.6"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Consciousness</capacity>
+									<offset Operation="SafeReplace">0.2</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<GlobalLearningFactor Operation="SafeReplace">0.5</GlobalLearningFactor>
+								<ResearchSpeed Operation="SafeReplace">0.2</ResearchSpeed>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="GR_MousePheromones"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>HediffDef/addedPartProps/partEfficiency</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0"]</xpath>
+						<value>
+							<partEfficiencyOffset Operation="SafeReplace">-0.1</partEfficiencyOffset>
+							<statOffsets Operation="Safe">
+								<TameAnimalChance Operation="SafeRemove">0</TameAnimalChance>
+								<TrainAnimalChance Operation="SafeRemove">0</TrainAnimalChance>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.1"]</xpath>
+						<value>
+							<partEfficiencyOffset Operation="SafeRemove">0</partEfficiencyOffset>
+							<statOffsets Operation="Safe">
+								<TameAnimalChance Operation="SafeRemove">0</TameAnimalChance>
+								<TrainAnimalChance Operation="SafeRemove">0</TrainAnimalChance>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.2"]</xpath>
+						<value>
+							<partEfficiencyOffset Operation="SafeReplace">0.1</partEfficiencyOffset>
+							<statOffsets Operation="Safe">
+								<TameAnimalChance Operation="SafeReplace">0.1</TameAnimalChance>
+								<TrainAnimalChance Operation="SafeRemove">0</TrainAnimalChance>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.3"]</xpath>
+						<value>
+							<partEfficiencyOffset Operation="SafeReplace">0.15</partEfficiencyOffset>
+							<statOffsets Operation="Safe">
+								<TameAnimalChance Operation="SafeReplace">0.1</TameAnimalChance>
+								<TrainAnimalChance Operation="SafeRemove">0</TrainAnimalChance>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.4"]</xpath>
+						<value>
+							<partEfficiencyOffset Operation="SafeReplace">0.2</partEfficiencyOffset>
+							<statOffsets Operation="Safe">
+								<TameAnimalChance Operation="SafeReplace">0.1</TameAnimalChance>
+								<TrainAnimalChance Operation="SafeReplace">0.1</TrainAnimalChance>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.5"]</xpath>
+						<value>
+							<partEfficiencyOffset Operation="SafeReplace">0.25</partEfficiencyOffset>
+							<statOffsets Operation="Safe">
+								<TameAnimalChance Operation="SafeReplace">0.2</TameAnimalChance>
+								<TrainAnimalChance Operation="SafeReplace">0.1</TrainAnimalChance>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.6"]</xpath>
+						<value>
+							<partEfficiencyOffset Operation="SafeReplace">0.3</partEfficiencyOffset>
+							<statOffsets Operation="Safe">
+								<TameAnimalChance Operation="SafeReplace">0.2</TameAnimalChance>
+								<TrainAnimalChance Operation="SafeReplace">0.2</TrainAnimalChance>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="GR_MoleratNerveDampener"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>HediffDef/addedPartProps/partEfficiency</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0"]</xpath>
+						<value>
+							<partEfficiencyOffset Operation="SafeReplace">-0.1</partEfficiencyOffset>
+							<statOffsets Operation="Safe">
+								<PainShockThreshold Operation="SafeRemove">0</PainShockThreshold>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.1"]</xpath>
+						<value>
+							<partEfficiencyOffset Operation="SafeRemove">0</partEfficiencyOffset>
+							<statOffsets Operation="Safe">
+								<PainShockThreshold Operation="SafeRemove">0</PainShockThreshold>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.2"]</xpath>
+						<value>
+							<partEfficiencyOffset Operation="SafeReplace">0.1</partEfficiencyOffset>
+							<statOffsets Operation="Safe">
+								<PainShockThreshold Operation="SafeReplace">0.1</PainShockThreshold>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.3"]</xpath>
+						<value>
+							<partEfficiencyOffset Operation="SafeReplace">0.15</partEfficiencyOffset>
+							<statOffsets Operation="Safe">
+								<PainShockThreshold Operation="SafeReplace">0.15</PainShockThreshold>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.4"]</xpath>
+						<value>
+							<partEfficiencyOffset Operation="SafeReplace">0.2</partEfficiencyOffset>
+							<statOffsets Operation="Safe">
+								<PainShockThreshold Operation="SafeReplace">0.2</PainShockThreshold>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.5"]</xpath>
+						<value>
+							<partEfficiencyOffset Operation="SafeReplace">0.25</partEfficiencyOffset>
+							<statOffsets Operation="Safe">
+								<PainShockThreshold Operation="SafeReplace">0.25</PainShockThreshold>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.6"]</xpath>
+						<value>
+							<partEfficiencyOffset Operation="SafeReplace">0.3</partEfficiencyOffset>
+							<statOffsets Operation="Safe">
+								<PainShockThreshold Operation="SafeReplace">0.3</PainShockThreshold>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="GR_BunnyEars"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Hearing</capacity>
+									<offset Operation="SafeReplace">-0.1</offset>
+								</li>
+							</capMods>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.1"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText" XPathLocal="capacity">
+									<capacity>Hearing</capacity>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<PawnBeauty Operation="SafeAdd">1</PawnBeauty>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.2"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Hearing</capacity>
+									<offset Operation="SafeReplace">0.1</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<PawnBeauty Operation="SafeAdd">1</PawnBeauty>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.3"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Hearing</capacity>
+									<offset Operation="SafeReplace">0.15</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<PawnBeauty Operation="SafeAdd">1</PawnBeauty>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.4"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Hearing</capacity>
+									<offset Operation="SafeReplace">0.2</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<PawnBeauty Operation="SafeAdd">1</PawnBeauty>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.5"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Hearing</capacity>
+									<offset Operation="SafeReplace">0.25</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<PawnBeauty Operation="SafeAdd">1</PawnBeauty>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.6"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Hearing</capacity>
+									<offset Operation="SafeReplace">0.3</offset>
+								</li>
+							</capMods>
+							<statOffsets Operation="Safe">
+								<PawnBeauty Operation="SafeAdd">1</PawnBeauty>
+							</statOffsets>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="GR_InsectoidAntennae"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Hearing</capacity>
+									<offset Operation="SafeReplace">-0.1</offset>
+								</li>
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Sight</capacity>
+									<offset Operation="SafeReplace">-0.1</offset>
+								</li>
+							</capMods>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.1"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText" XPathLocal="capacity">
+									<capacity>Hearing</capacity>
+								</li>
+								<li Operation="SafeRemove" Compare="InnerText" XPathLocal="capacity">
+									<capacity>Sight</capacity>
+								</li>
+							</capMods>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.2"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Hearing</capacity>
+									<offset Operation="SafeReplace">0.1</offset>
+								</li>
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Sight</capacity>
+									<offset Operation="SafeReplace">0.1</offset>
+								</li>
+							</capMods>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.3"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Hearing</capacity>
+									<offset Operation="SafeReplace">0.15</offset>
+								</li>
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Sight</capacity>
+									<offset Operation="SafeReplace">0.15</offset>
+								</li>
+							</capMods>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.4"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Hearing</capacity>
+									<offset Operation="SafeReplace">0.2</offset>
+								</li>
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Sight</capacity>
+									<offset Operation="SafeReplace">0.2</offset>
+								</li>
+							</capMods>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.5"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Hearing</capacity>
+									<offset Operation="SafeReplace">0.25</offset>
+								</li>
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Sight</capacity>
+									<offset Operation="SafeReplace">0.25</offset>
+								</li>
+							</capMods>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.6"]</xpath>
+						<value>
+							<capMods Operation="Safe">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Hearing</capacity>
+									<offset Operation="SafeReplace">0.3</offset>
+								</li>
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Sight</capacity>
+									<offset Operation="SafeReplace">0.3</offset>
+								</li>
+							</capMods>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="GR_CompoundEye"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>HediffDef/addedPartProps/partEfficiency</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0"]</xpath>
+						<value>
+							<partEfficiencyOffset Operation="SafeReplace">-0.1</partEfficiencyOffset>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.1"]</xpath>
+						<value>
+							<partEfficiencyOffset Operation="SafeRemove">0</partEfficiencyOffset>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.2"]</xpath>
+						<value>
+							<partEfficiencyOffset Operation="SafeReplace">0.1</partEfficiencyOffset>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.3"]</xpath>
+						<value>
+							<partEfficiencyOffset Operation="SafeReplace">0.2</partEfficiencyOffset>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.4"]</xpath>
+						<value>
+							<partEfficiencyOffset Operation="SafeReplace">0.3</partEfficiencyOffset>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.5"]</xpath>
+						<value>
+							<partEfficiencyOffset Operation="SafeReplace">0.4</partEfficiencyOffset>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.6"]</xpath>
+						<value>
+							<partEfficiencyOffset Operation="SafeReplace">0.5</partEfficiencyOffset>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="GR_CatEye"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>HediffDef/addedPartProps/partEfficiency</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0"]</xpath>
+						<value>
+							<partEfficiencyOffset Operation="SafeReplace">-0.1</partEfficiencyOffset>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.1"]</xpath>
+						<value>
+							<partEfficiencyOffset Operation="SafeRemove">0</partEfficiencyOffset>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.2"]</xpath>
+						<value>
+							<partEfficiencyOffset Operation="SafeReplace">0.1</partEfficiencyOffset>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.3"]</xpath>
+						<value>
+							<partEfficiencyOffset Operation="SafeReplace">0.15</partEfficiencyOffset>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.4"]</xpath>
+						<value>
+							<partEfficiencyOffset Operation="SafeReplace">0.2</partEfficiencyOffset>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.5"]</xpath>
+						<value>
+							<partEfficiencyOffset Operation="SafeReplace">0.25</partEfficiencyOffset>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li[minSeverity="0.6"]</xpath>
+						<value>
+							<partEfficiencyOffset Operation="SafeReplace">0.3</partEfficiencyOffset>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>

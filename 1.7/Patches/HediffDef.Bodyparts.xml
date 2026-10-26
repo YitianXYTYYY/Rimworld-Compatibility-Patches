@@ -3,6 +3,19 @@
 
 	<!-- Bodyparts -->
 	<!-- bionic -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/HediffDef[defName="ArchotechEye"]</xpath>
+		<value>
+			<stages Operation="Safe">
+				<li Operation="Safe">
+					<statOffsets Operation="Safe">
+						<PawnBeauty Operation="SafeAdd">1</PawnBeauty>
+					</statOffsets>
+				</li>
+			</stages>
+		</value>
+	</Operation>
+	<!-- bionic -->
 	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/HediffDef[defName="BionicStomach"]</xpath>
 		<apply>
@@ -674,69 +687,6 @@
 						</value>
 					</Operation>
 				</caseTrue>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
-	<!--Vanilla Genetics Expanded -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>vanillaexpanded.vgeneticse</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<!-- implant human -->
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/HediffDef[defName="GR_ChemfuelStomach"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>HediffDef/stages/li/hungerRateFactorOffset</xpath>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>HediffDef/stages/li[minSeverity="0.1"]</xpath>
-						<value>
-							<hungerRateFactor Operation="SafeAdd">0.9</hungerRateFactor>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>HediffDef/stages/li[minSeverity="0.2"]</xpath>
-						<value>
-							<hungerRateFactor Operation="SafeAdd">0.8</hungerRateFactor>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>HediffDef/stages/li[minSeverity="0.3"]</xpath>
-						<value>
-							<hungerRateFactor Operation="SafeAdd">0.7</hungerRateFactor>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>HediffDef/stages/li[minSeverity="0.4"]</xpath>
-						<value>
-							<hungerRateFactor Operation="SafeAdd">0.6</hungerRateFactor>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>HediffDef/stages/li[minSeverity="0.5"]</xpath>
-						<value>
-							<hungerRateFactor Operation="SafeAdd">0.5</hungerRateFactor>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>HediffDef/stages/li[minSeverity="0.6"]</xpath>
-						<value>
-							<hungerRateFactor Operation="SafeAdd">0.4</hungerRateFactor>
-						</value>
-					</Operation>
-				</apply>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/RecipeDef[defName="GR_InstallBearClaws" or defName="GR_InstallDiggingBearClaws" or defName="GR_InstallBearMuscleTissue" or defName="GR_InstallHibernationModule" or defName="GR_InstallOvipositor" or defName="GR_InstallMuffaloMuscles" or defName="GR_InstallMuffaloMammaries" or defName="GR_InstallMuffaloSkin" or defName="GR_InstallBoomalopeNodules" or defName="GR_InstallChemfuelStomach" or defName="GR_InstallChemfuelHeart" or defName="GR_InstallWolfMuscularFibers" or defName="GR_InstallDevouringJaws" or defName="GR_InstallNeuronReinforcement" or defName="GR_InstallMousePheromones" or defName="GR_InstallMoleratNerveDampener" or defName="GR_InstallBunnyEars" or defName="GR_InstallCompoundEye" or defName="GR_InstallCatEye" or defName="GR_InstallInsectoidAntennae" or defName="GR_InstallPsychicDampeners" or defName="GR_InstallKidneyToxicFilters" or defName="GR_InstallHumanThrumboHorn" or defName="GR_InstallThrumboSkin" or defName="GR_InstallVenomousFangs" or defName="GR_InstallIguanaScales"]</xpath>
-				<value>
-					<recipeUsers Operation="Safe">
-						<li MayRequire="ludeon.rimworld.anomaly" Operation="SafeAdd" Compare="InnerText">CreepJoiner</li>
-					</recipeUsers>
-				</value>
 			</Operation>
 		</caseTrue>
 	</Operation>
