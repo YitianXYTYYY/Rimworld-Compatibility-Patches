@@ -1516,6 +1516,35 @@
 		</caseTrue>
 	</Operation>
 
+	<!-- Vanilla Races Expanded - Highmate -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaracesexpanded.highmate</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>danzinagri.mmmm.integrations.other</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/HediffDef[defName="TMM_PsychicBondRest"]/stages/li</xpath>
+						<value>
+							<statFactors Operation="Safe">
+								<RestRateMultiplier Operation="SafeRemove">0</RestRateMultiplier>
+							</statFactors>
+							<statOffsets Operation="Safe">
+								<RestRateMultiplier Operation="SafeAdd">0.2</RestRateMultiplier>
+							</statOffsets>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 	<!-- Vanilla Races Expanded - Insector -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
