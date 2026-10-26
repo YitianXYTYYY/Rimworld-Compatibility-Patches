@@ -170,7 +170,7 @@
 					<statFactors Operation="Safe">
 						<LifespanFactor Operation="SafeReplace">0.8</LifespanFactor>
 						<CancerRate Operation="SafeReplace">4</CancerRate>
-						<ImmunityGainSpeed Operation="SafeReplace">0.95</ImmunityGainSpeed>
+						<ImmunityGainSpeed Operation="SafeRemove">0</ImmunityGainSpeed>
 					</statFactors>
 				</value>
 			</Operation>
@@ -180,7 +180,17 @@
 					<statFactors Operation="Safe">
 						<LifespanFactor Operation="SafeReplace">0.6</LifespanFactor>
 						<CancerRate Operation="SafeReplace">6</CancerRate>
-						<ImmunityGainSpeed Operation="SafeReplace">0.90</ImmunityGainSpeed>
+						<ImmunityGainSpeed Operation="SafeReplace">0.9</ImmunityGainSpeed>
+					</statFactors>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_Instability_Extreme"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<LifespanFactor Operation="SafeReplace">0.4</LifespanFactor>
+						<CancerRate Operation="SafeReplace">8</CancerRate>
+						<ImmunityGainSpeed Operation="SafeReplace">0.8</ImmunityGainSpeed>
 					</statFactors>
 				</value>
 			</Operation>
