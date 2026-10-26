@@ -851,6 +851,36 @@
 		</caseTrue>
 	</Operation>
 
+	<!-- Odyssey Transport Shuttle -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>toshtaru.odyssey.transport.shuttle</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>ludeon.rimworld.biotech</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ResearchProjectDef[defName="MechanitorShuttles"]</xpath>
+						<value>
+							<prerequisites Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">Shuttles</li>
+								<li Operation="SafeAdd" Compare="InnerText">TransportDrones</li>
+							</prerequisites>
+							<hiddenPrerequisites Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">BasicMechtech</li>
+							</hiddenPrerequisites>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 	<!-- Medical System Expansion 2 -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
