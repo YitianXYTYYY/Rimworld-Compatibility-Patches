@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>	
 
+	<!-- Vanilla Genetics Expanded -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaexpanded.vgeneticse</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/TraderKindDef[defName="GR_OrbitalTrader"]/stockGenerators</xpath>
+				<value>
+					<li Class="StockGenerator_SingleDef" Operation="Add">
+						<thingDef>Genepack</thingDef>
+						<countRange>4~6</countRange>
+					</li>
+					<li Class="StockGenerator_SingleDef" Operation="Add">
+						<thingDef>ArchiteCapsule</thingDef>
+						<countRange>0~5</countRange>
+					</li>
+					<li Class="StockGenerator_SingleDef" Operation="Add">
+						<thingDef>DeathrestCapacitySerum</thingDef>
+						<countRange>0~1</countRange>
+					</li>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 	<!-- Yayo's Combat 3 (Continued) -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
