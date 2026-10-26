@@ -19,6 +19,9 @@
 								<MarketValue Operation="SafeReplace">5</MarketValue>
 								<Mass Operation="SafeReplace">0.1</Mass>
 							</statBases>
+							<tradeTags Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">Ammo</li>
+							</tradeTags>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.FindMod">
@@ -66,6 +69,7 @@
 					defName="yy_ammo_spacer_fire" or 
 					defName="yy_ammo_spacer_emp"]</xpath>
 				<value>
+					<destroyOnDrop Operation="SafeAdd">true</destroyOnDrop>
 					<statBases Operation="Safe">
 						<Mass Operation="SafeReplace">0</Mass>
 					</statBases>
@@ -87,6 +91,7 @@
 							defName="yy_ammo_spacer_light" or 
 							defName="yy_ammo_spacer_heavy"]</xpath>
 						<value>
+							<destroyOnDrop Operation="SafeAdd">true</destroyOnDrop>
 							<statBases Operation="Safe">
 								<Mass Operation="SafeReplace">0</Mass>
 							</statBases>
