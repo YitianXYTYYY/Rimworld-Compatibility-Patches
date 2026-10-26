@@ -333,6 +333,7 @@
 			</weaponTags>
 		</value>
 	</Operation>
+
 	<!-- Biotech -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
@@ -427,6 +428,7 @@
 			</Operation>
 		</caseTrue>
 	</Operation>
+
 	<!-- Anomaly -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
@@ -468,6 +470,7 @@
 			</Operation>
 		</caseTrue>
 	</Operation>
+
 	<!-- Odyssey -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
@@ -496,6 +499,7 @@
 			</Operation>
 		</caseTrue>
 	</Operation>
+
 	<!-- Uncompromising Tribal Faction -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
@@ -513,6 +517,51 @@
 			</Operation>
 		</caseTrue>
 	</Operation>
+
+	<!-- Vanilla Factions Expanded - Empire -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>oskarpotocki.vfe.empire</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VEE_Gun_Fletcher"]</xpath>
+				<value>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_AmmoSpacerEMP/5/10</li>
+					</weaponTags>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VFEE_Gun_ChargeThumper"]</xpath>
+				<value>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_AmmoSpacer/15/5</li>
+					</weaponTags>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<!-- Vanilla Factions Expanded - Tribals -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>oskarpotocki.vfe.tribals</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="VFET_Throwspikes"]</xpath>
+				<value>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammo_none</li>
+					</weaponTags>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 	<!-- Vanilla Weapons Expanded -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
@@ -841,47 +890,22 @@
 					</weaponTags>
 				</value>
 			</Operation>
-		</caseTrue>
-	</Operation>
-	<!-- Vanilla Factions Expanded - Empire -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>oskarpotocki.vfe.empire</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="VEE_Gun_Fletcher"]</xpath>
-				<value>
-					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_AmmoSpacerEMP/5/10</li>
-					</weaponTags>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="VFEE_Gun_ChargeThumper"]</xpath>
-				<value>
-					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_AmmoSpacer/15/5</li>
-					</weaponTags>
-				</value>
-			</Operation>
-		</caseTrue>
-	</Operation>
-	<!-- Vanilla Factions Expanded - Tribals -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>oskarpotocki.vfe.tribals</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="VFET_Throwspikes"]</xpath>
-				<value>
-					<weaponTags Operation="Safe">
-						<li Operation="Add">ammo_none</li>
-					</weaponTags>
-				</value>
+			<!-- Vanilla Expanded Lance Retexture -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>aliveinyourmind.vanillaexpandedlanceretexture</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[@Name="ALIVE_Gun_MechnoidChargeLanceBase"]</xpath>
+						<value>
+							<graphicData Operation="Safe">
+								<texPath Operation="SafeReplace">NewThings/ChargeLance_PlayerMade</texPath>
+							</graphicData>
+						</value>
+					</Operation>
+				</caseTrue>
 			</Operation>
 		</caseTrue>
 	</Operation>
