@@ -513,7 +513,9 @@
 								<xpath>HediffDef</xpath>
 								<value>
 									<comps Operation="Safe">
-										<li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust" Operation="SafeRemove" CheckAttributes="True">0</li>
+										<li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust" Operation="Safe" CheckAttributes="True">
+											<scaleAdjustment Operation="AddOrReplace">0.5</scaleAdjustment>
+										</li>
 									</comps>
 								</value>
 							</Operation>
@@ -540,7 +542,9 @@
 								<xpath>HediffDef</xpath>
 								<value>
 									<comps Operation="Safe">
-										<li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust" Operation="SafeRemove" CheckAttributes="True">0</li>
+										<li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust" Operation="Safe" CheckAttributes="True">
+											<scaleAdjustment Operation="AddOrReplace">0.25</scaleAdjustment>
+										</li>
 									</comps>
 								</value>
 							</Operation>
@@ -548,33 +552,11 @@
 					</Operation>
 				</apply>
 			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>v1024.ebframework</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/HediffDef[@ParentName="AddedBodyPart_Limb_Archotech" and defName!="ArchotechLeg"]</xpath>
-						<value>
-							<comps Operation="Safe">
-								<li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust" Operation="Safe" CheckAttributes="True">
-									<scaleAdjustment Operation="SafeAdd">0.5</scaleAdjustment>
-								</li>
-							</comps>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/HediffDef[@ParentName="AddedBodyPart_Limb_Bionic" and defName!="BionicLeg"]</xpath>
-						<value>
-							<comps Operation="Safe">
-								<li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust" Operation="Safe" CheckAttributes="True">
-									<scaleAdjustment Operation="SafeAdd">0.25</scaleAdjustment>
-								</li>
-							</comps>
-						</value>
-					</Operation>
-				</caseTrue>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/HediffDef[@ParentName="AddedBodyPart_Limb_Archotech"]/comps/li[@Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust"]</xpath>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/HediffDef[@ParentName="AddedBodyPart_Limb_Bionic"]/comps/li[@Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust"]</xpath>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/HediffDef[defName="BionicInternalSupport"]</xpath>
