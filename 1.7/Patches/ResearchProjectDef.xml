@@ -155,6 +155,19 @@
 			</Operation>
 		</apply>
 	</Operation>
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>Defs/ResearchProjectDef[defName="FoamTurret"]</xpath>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[researchPrerequisites[li="FoamTurret"]]</xpath>
+		<value>
+			<researchPrerequisites Inherit="False" Operation="Safe">
+				<li Operation="SafeAdd" Compare="InnerText">Firefoam</li>
+				<li Operation="SafeRemove" Compare="InnerText">FoamTurret</li>
+				<li Operation="SafeAdd" Compare="InnerText">GunTurrets</li>
+			</researchPrerequisites>
+		</value>
+	</Operation>
 	<!-- Microelectronics -->
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ResearchProjectDef[defName="MicroelectronicsBasics"]</xpath>
