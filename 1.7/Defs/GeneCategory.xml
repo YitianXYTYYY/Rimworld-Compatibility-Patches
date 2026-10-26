@@ -156,12 +156,6 @@
 	</GeneCategoryDef>
 
 	<GeneCategoryDef>
-		<defName>Cosmetic_BodyType</defName>
-		<label>cosmetic - body type</label>
-		<displayPriorityInXenotype>-300</displayPriorityInXenotype>
-	</GeneCategoryDef>
-
-	<GeneCategoryDef>
 		<defName>Cosmetic_Tail</defName>
 		<label>cosmetic - tail</label>
 		<displayPriorityInXenotype>-400</displayPriorityInXenotype>
@@ -176,7 +170,7 @@
 	<GeneCategoryDef>
 		<defName>Cosmetic_EyeColor</defName>
 		<label>cosmetic - eye color</label>
-		<displayPriorityInXenotype>-1010</displayPriorityInXenotype>
+		<displayPriorityInXenotype>-1010.1</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
 </Defs>

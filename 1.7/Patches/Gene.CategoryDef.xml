@@ -272,6 +272,14 @@
 			<displayPriorityInXenotype Operation="AddOrReplace">-200</displayPriorityInXenotype>
 		</value>
 	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneCategoryDef[defName="Cosmetic_Body"]</xpath>
+		<value>
+			<label Operation="SafeReplace">cosmetic - body type</label>
+			<displayPriorityInGenepack Operation="SafeRemove"/>
+			<displayPriorityInXenotype Operation="AddOrReplace">-300</displayPriorityInXenotype>
+		</value>
+	</Operation>
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
 			<li>lucius.eyegenes3</li>

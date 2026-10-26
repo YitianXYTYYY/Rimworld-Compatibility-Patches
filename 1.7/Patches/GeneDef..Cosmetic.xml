@@ -733,14 +733,6 @@
 				</value>
 			</Operation>
 
-			<!-- -300 bodytype -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/GeneDef[@Name="GeneBodyBase"]</xpath>
-				<value>
-					<displayCategory Operation="AddOrReplace">Cosmetic_BodyType</displayCategory>
-				</value>
-			</Operation>
-
 			<!-- -400 tail -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[@Name="GeneTailBase"]</xpath>
