@@ -82,9 +82,29 @@
 					<Operation Class="PatchOperationAdd">
 						<xpath>defs</xpath>
 						<value>
-							<li>ThingDef/BfG_GravFocuser</li>
-							<li>HediffDef/BfG_GravFocuserImplant</li>
+							<li>ThingDef/BfG_Mech_Fidget</li>
+							<li>PawnKindDef/BfG_Mech_Fidget</li>
+							<li>RecipeDef/Fidget</li>
+							<li>ThingDef/BfG_Mech_Shredder</li>
+							<li>PawnKindDef/BfG_Mech_Shredder</li>
+							<li>RecipeDef/Shredder</li>
 						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>ludeon.rimworld.royalty</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>HediffDef/BfG_GravFocuserImplant</li>
+									<li>RecipeDef/Make_BfG_GravFocuser</li>
+									<li>ThingDef/BfG_GravFocuser</li>
+								</value>
+							</Operation>
+						</caseTrue>
 					</Operation>
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
