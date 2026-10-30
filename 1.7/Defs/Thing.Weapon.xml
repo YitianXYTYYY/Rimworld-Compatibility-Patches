@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="Gun_ChargeLance" MayRequire="vanillaexpanded.vwe">
+		<defName>Gun_ChargeLance_Mech</defName>
+		<label>Mechanoid lance</label>
+		<graphicData>
+      		<texPath>Things/Item/Equipment/WeaponRanged/ChargeLance</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<costList>
+			<Plasteel>75</Plasteel>
+			<ComponentSpacer>2</ComponentSpacer>
+		</costList>
+		<destroyOnDrop>true</destroyOnDrop>
+		<recipeMaker Inherit="False"/>
+		<relicChance>0</relicChance>
+		<statBases>
+			<WorkToMake>36000</WorkToMake>
+		</statBases>
+		<thingSetMakerTags Inherit="False"/>
+		<tradeability>None</tradeability>
+		<tradeTags Inherit="False"/>
+		<weaponTags Inherit="False">
+			<li MayRequire="mlie.yayoscombat3">ammoDef_AmmoSpacer/25/1</li>
+			<li>MechanoidGunMedium</li>
+		</weaponTags>
+	</ThingDef>
+
+</Defs>

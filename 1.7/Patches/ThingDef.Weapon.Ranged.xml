@@ -293,13 +293,37 @@
 			</weaponTags>
 		</value>
 	</Operation>
-	<Operation Class="XmlExtensions.HybridPatch">
+	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/ThingDef[defName="Gun_ChargeLance"]</xpath>
-		<value>
-			<weaponTags Operation="Safe">
-				<li Operation="Add">ammoDef_AmmoSpacer/25/1</li>
-			</weaponTags>
-		</value>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>ThingDef</xpath>
+				<value>
+					<weaponTags Operation="Safe">
+						<li Operation="Add">ammoDef_AmmoSpacer/25/1</li>
+					</weaponTags>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaexpanded.vwe</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<graphicData Operation="Safe">
+								<texPath Operation="SafeReplace">NewThings/ChargeLance_PlayerMade</texPath>
+							</graphicData>
+							<weaponTags Operation="Safe">
+								<li Operation="SafeRemove">MechanoidGunMedium</li>
+							</weaponTags>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
 	</Operation>
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ThingDef[defName="Gun_ChargeBlasterHeavy"]</xpath>
@@ -495,6 +519,14 @@
 					<weaponTags Operation="Safe">
 						<li Operation="Add">ammoDef_AmmoIndustrial/25/1</li>
 					</weaponTags>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Gun_ChargeLance_Unique"]</xpath>
+				<value>
+					<graphicData Operation="Safe">
+						<li Operation="SafeReplace">Things/Item/Equipment/WeaponRanged/UniqueWeapons/UniqueChargeLance</li>
+					</graphicData>
 				</value>
 			</Operation>
 		</caseTrue>
@@ -889,23 +921,6 @@
 						<li Operation="Add">ammoDef_AmmoSpacer/5/10</li>
 					</weaponTags>
 				</value>
-			</Operation>
-			<!-- Vanilla Expanded Lance Retexture -->
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>aliveinyourmind.vanillaexpandedlanceretexture</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[@Name="ALIVE_Gun_MechnoidChargeLanceBase"]</xpath>
-						<value>
-							<graphicData Operation="Safe">
-								<texPath Operation="SafeReplace">NewThings/ChargeLance_PlayerMade</texPath>
-							</graphicData>
-						</value>
-					</Operation>
-				</caseTrue>
 			</Operation>
 		</caseTrue>
 	</Operation>
