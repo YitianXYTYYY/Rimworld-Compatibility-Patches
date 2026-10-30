@@ -159,6 +159,34 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
+			<!-- Floor-Mounted Tanks Additions -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>bluesunrise.floormountedtanks.additions</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>defs</xpath>
+						<value>
+							<li>ThingDef/UFSTA_HemogenTankSmall</li>
+							<li>ThingDef/UFSTA_HelixienTankSmall</li>
+							<li>ThingDef/UFSTA_DeepchemTankSmall</li>
+							<li>ThingDef/UFSTA_ScarletTankSmall</li>
+							<li>ThingDef/UFSTA_PropaneTankSmall</li>
+							<li>ThingDef/UFSTA_AmmoTankSmall</li>
+							<li>ThingDef/UFSTA_SunlightfuelTankSmall</li>
+							<li>ThingDef/UFSTA_SteamTankSmall</li>
+							<li>ThingDef/UFST_ChemfuelTankSmall</li>
+							<li>ThingDef/UFST_AstrofuelTankSmall</li>
+							<li>ThingDef/UFST_OxygenTankSmall</li>
+							<li>ThingDef/UFST_WaterTankSmall</li>
+							<li>ThingDef/UFST_NutrientPasteTankSmall</li>
+							<li>ThingDef/UFST_NeutroTankSmall</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
 			<!-- FSF Vanilla Bionics Expansion -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
