@@ -1504,33 +1504,49 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="VWE_Apparel_Exoframe"]</xpath>
-				<value>
-					<apparel Operation="Safe">
-						<wearPerDay Operation="SafeRemove">0</wearPerDay>
-					</apparel>
-					<costList Operation="SafeReplace">
-						<ComponentSpacer>4</ComponentSpacer>
-						<Plasteel>75</Plasteel>
-						<Uranium>25</Uranium>
-					</costList>
-					<equippedStatOffsets Operation="Safe">
-						<CarryingCapacity Operation="SafeAdd">30</CarryingCapacity>
-						<VEF_MassCarryCapacity Operation="SafeReplace">20</VEF_MassCarryCapacity>
-						<WorkSpeedGlobal Operation="SafeRemove">0</WorkSpeedGlobal>
-					</equippedStatOffsets>
-					<recipeMaker Operation="Safe">
-						<researchPrerequisite Operation="SafeRemove">0</researchPrerequisite>
-						<researchPrerequisites Inherit="False" Operation="Safe">
-							<li Operation="SafeAdd" Compare="InnerText">AdvancedFabrication</li>
-						</researchPrerequisites>
-					</recipeMaker>
-					<statBases Operation="Safe">
-						<Mass Operation="SafeReplace">5</Mass>
-						<MaxHitPoints Operation="SafeAdd">300</MaxHitPoints>
-					</statBases>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<apparel Operation="Safe">
+								<wearPerDay Operation="SafeRemove">0</wearPerDay>
+							</apparel>
+							<costList Operation="SafeReplace">
+								<ComponentSpacer>4</ComponentSpacer>
+								<Plasteel>75</Plasteel>
+								<Uranium>25</Uranium>
+							</costList>
+							<equippedStatOffsets Operation="Safe">
+								<CarryingCapacity Operation="SafeAdd">25</CarryingCapacity>
+								<VEF_MassCarryCapacity Operation="SafeReplace">20</VEF_MassCarryCapacity>
+								<WorkSpeedGlobal Operation="SafeReplace">0.1</WorkSpeedGlobal>
+							</equippedStatOffsets>
+							<recipeMaker Operation="Safe">
+								<researchPrerequisite Operation="SafeRemove">0</researchPrerequisite>
+								<researchPrerequisites Inherit="False" Operation="Safe">
+									<li Operation="SafeAdd" Compare="InnerText">AdvancedFabrication</li>
+								</researchPrerequisites>
+							</recipeMaker>
+							<statBases Operation="Safe">
+								<Mass Operation="SafeReplace">5</Mass>
+								<MaxHitPoints Operation="SafeAdd">300</MaxHitPoints>
+							</statBases>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanya.tools.bulkcarrier</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+								<xpath>ThingDef/equippedStatOffsets/VEF_MassCarryCapacity</xpath>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
 			</Operation>
 		</caseTrue>
 	</Operation>
