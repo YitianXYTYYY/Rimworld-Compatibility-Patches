@@ -13,6 +13,9 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef</xpath>
 						<value>
+							<comps Operation="Safe">
+								<li Class="CompProperties_Explosive" Operation="SafeRemove" CheckAttributes="True">0</li>
+							</comps>
 							<stackLimit Operation="SafeReplace">150</stackLimit>
 							<statBases Operation="Safe">
 								<Flammability Operation="SafeReplace">0.6</Flammability>
