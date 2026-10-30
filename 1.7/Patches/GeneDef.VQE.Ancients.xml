@@ -137,11 +137,11 @@
 								<VEF_VerbRangeFactor Operation="SafeRemove">0</VEF_VerbRangeFactor>
 							</statFactors>
 							<statOffsets Operation="Safe">
-								<WorkSpeedGlobal Operation="SafeAdd">0.1</WorkSpeedGlobal>
-								<ShootingAccuracyPawn Operation="SafeAdd">4</ShootingAccuracyPawn>
 								<MeleeHitChance Operation="SafeAdd">4</MeleeHitChance>
 								<MeleeDodgeChance Operation="SafeAdd">4</MeleeDodgeChance>
+								<ShootingAccuracyPawn Operation="SafeAdd">4</ShootingAccuracyPawn>
 								<VEF_VerbRangeFactor Operation="SafeAdd">0.2</VEF_VerbRangeFactor>
+								<WorkSpeedGlobal Operation="SafeAdd">0.1</WorkSpeedGlobal>
 							</statOffsets>
 						</value>
 					</Operation>
@@ -199,22 +199,38 @@
 					</statOffsets>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
+			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/GeneDef[defName="VQEA_Herculean"]</xpath>
-				<value>
-					<displayOrderInCategory Operation="AddOrReplace">-381</displayOrderInCategory>
-					<exclusionTags Operation="Safe">
-						<li Operation="SafeAdd" Compare="InnerText">Unstoppable</li>
-					</exclusionTags>
-					<statFactors Operation="Safe">
-						<MeleeDamageFactor Operation="SafeRemove">0</MeleeDamageFactor>
-						<CarryingCapacity Operation="SafeRemove">0</CarryingCapacity>
-					</statFactors>
-					<statOffsets Operation="Safe">
-						<MeleeDamageFactor Operation="SafeAdd">2</MeleeDamageFactor>
-						<CarryingCapacity Operation="SafeAdd">150</CarryingCapacity>
-					</statOffsets>
-				</value>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<displayOrderInCategory Operation="AddOrReplace">-381</displayOrderInCategory>
+							<exclusionTags Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">Unstoppable</li>
+							</exclusionTags>
+							<statFactors Operation="Safe">
+								<CarryingCapacity Operation="SafeRemove">0</CarryingCapacity>
+								<MeleeDamageFactor Operation="SafeRemove">0</MeleeDamageFactor>
+							</statFactors>
+							<statOffsets Operation="Safe">
+								<CarryingCapacity Operation="SafeAdd">150</CarryingCapacity>
+								<MeleeDamageFactor Operation="SafeAdd">2</MeleeDamageFactor>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanya.tools.bulkcarrier</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+								<xpath>GeneDef/statFactors/VEF_MassCarryCapacity</xpath>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VQEA_Prowess"]</xpath>
