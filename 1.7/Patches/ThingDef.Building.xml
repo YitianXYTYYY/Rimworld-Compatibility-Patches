@@ -235,6 +235,14 @@
 		<caseTrue>
 			<!-- misc -->
 			<!-- smaller gene extractor -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="BfG_DeathrestCasket"]</xpath>
+				<value>
+					<blocksAltitudes Operation="SafeRemove"/>
+				</value>
+			</Operation>
+			<!-- misc -->
+			<!-- smaller gene extractor -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="BfG_GeneExtractor"]</xpath>
 				<apply>
@@ -276,6 +284,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef</xpath>
 						<value>
+							<blocksAltitudes Operation="SafeRemove"/>
 							<costList Operation="SafeReplace">
 								<Steel>75</Steel>
 								<Plasteel>25</Plasteel>
@@ -310,6 +319,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThingDef</xpath>
 						<value>
+							<blocksAltitudes Operation="SafeRemove"/>
 							<costList Operation="SafeReplace">
 								<Steel>150</Steel>
 								<Plasteel>25</Plasteel>
@@ -336,6 +346,27 @@
 						</caseTrue>
 					</Operation>
 				</apply>
+			</Operation>
+			<!-- gravship subcore encoder -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="BfG_SubcoreEncoder"]</xpath>
+				<value>
+					<blocksAltitudes Operation="SafeRemove"/>
+				</value>
+			</Operation>
+			<!-- gravship subcore softscanner -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="BfG_SubcoreSoftscanner"]</xpath>
+				<value>
+					<blocksAltitudes Operation="SafeRemove"/>
+				</value>
+			</Operation>
+			<!-- gravship subcore ripscanner -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="BfG_SubcoreRipscanner"]</xpath>
+				<value>
+					<blocksAltitudes Operation="SafeRemove"/>
+				</value>
 			</Operation>
 		</caseTrue>
 	</Operation>
