@@ -40,7 +40,7 @@
 				<xpath>Defs/RecipeDef[defName="RB_Make_GlassFromChunks"]</xpath>
 				<apply>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>RecipeDef/ingredients/li[filter[categories[li="StoneChunks"]]]</xpath>
+						<xpath>RecipeDef/ingredients/li[filter/categories[li="StoneChunks"]]</xpath>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>RecipeDef</xpath>
@@ -71,7 +71,7 @@
 				<xpath>Defs/RecipeDef[defName="RB_Make_BallisticGlassFromChunks"]</xpath>
 				<apply>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>RecipeDef/ingredients/li[filter[categories[li="StoneChunks"]]]</xpath>
+						<xpath>RecipeDef/ingredients/li[filter/categories[li="StoneChunks"]]</xpath>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>RecipeDef</xpath>
