@@ -233,13 +233,13 @@
 						<xpath>HediffDef/stages/li[minSeverity="0.2"]</xpath>
 						<value>
 							<capMods Operation="Safe">
-								<li Operation="SafeRemove" Compare="InnerText" XPathLocal="capacity">
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
 									<capacity Operation="Safe">Manipulation</capacity>
+									<offset Operation="SafeReplace">0.1</offset>
 								</li>
 							</capMods>
 							<statOffsets Operation="Safe">
-								<CarryingCapacity Operation="SafeReplace">10</CarryingCapacity>
-								<VEF_MassCarryCapacity Operation="SafeAdd">5</VEF_MassCarryCapacity>
+								<CarryingCapacity Operation="SafeReplace">5</CarryingCapacity>
 							</statOffsets>
 						</value>
 					</Operation>
@@ -249,12 +249,11 @@
 							<capMods Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
 									<capacity Operation="Safe">Manipulation</capacity>
-									<offset Operation="SafeReplace">0.05</offset>
+									<offset Operation="SafeReplace">0.1</offset>
 								</li>
 							</capMods>
 							<statOffsets Operation="Safe">
-								<CarryingCapacity Operation="SafeReplace">20</CarryingCapacity>
-								<VEF_MassCarryCapacity Operation="SafeAdd">10</VEF_MassCarryCapacity>
+								<CarryingCapacity Operation="SafeReplace">15</CarryingCapacity>
 							</statOffsets>
 						</value>
 					</Operation>
@@ -264,12 +263,11 @@
 							<capMods Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
 									<capacity Operation="Safe">Manipulation</capacity>
-									<offset Operation="SafeReplace">0.05</offset>
+									<offset Operation="SafeReplace">0.1</offset>
 								</li>
 							</capMods>
 							<statOffsets Operation="Safe">
-								<CarryingCapacity Operation="SafeReplace">30</CarryingCapacity>
-								<VEF_MassCarryCapacity Operation="SafeAdd">15</VEF_MassCarryCapacity>
+								<CarryingCapacity Operation="SafeReplace">25</CarryingCapacity>
 							</statOffsets>
 						</value>
 					</Operation>
@@ -283,8 +281,7 @@
 								</li>
 							</capMods>
 							<statOffsets Operation="Safe">
-								<CarryingCapacity Operation="SafeReplace">40</CarryingCapacity>
-								<VEF_MassCarryCapacity Operation="SafeAdd">20</VEF_MassCarryCapacity>
+								<CarryingCapacity Operation="SafeReplace">35</CarryingCapacity>
 							</statOffsets>
 						</value>
 					</Operation>
@@ -298,8 +295,7 @@
 								</li>
 							</capMods>
 							<statOffsets Operation="Safe">
-								<CarryingCapacity Operation="SafeReplace">50</CarryingCapacity>
-								<VEF_MassCarryCapacity Operation="SafeAdd">25</VEF_MassCarryCapacity>
+								<CarryingCapacity Operation="SafeReplace">45</CarryingCapacity>
 							</statOffsets>
 						</value>
 					</Operation>
@@ -345,7 +341,7 @@
 						<xpath>HediffDef/stages/li[minSeverity="0.3"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
-								<ComfyTemperatureMin>-20</ComfyTemperatureMin>
+								<ComfyTemperatureMin>-30</ComfyTemperatureMin>
 								<ArmorRating_Sharp Operation="SafeReplace">0.1</ArmorRating_Sharp>
 								<ArmorRating_Blunt Operation="SafeReplace">0.1</ArmorRating_Blunt>
 								<ArmorRating_Heat Operation="SafeRemove">0</ArmorRating_Heat>
@@ -356,7 +352,7 @@
 						<xpath>HediffDef/stages/li[minSeverity="0.4"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
-								<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+								<ComfyTemperatureMin>-40</ComfyTemperatureMin>
 								<ArmorRating_Sharp Operation="SafeReplace">0.1</ArmorRating_Sharp>
 								<ArmorRating_Blunt Operation="SafeReplace">0.1</ArmorRating_Blunt>
 								<ArmorRating_Heat Operation="SafeRemove">0</ArmorRating_Heat>
@@ -367,9 +363,9 @@
 						<xpath>HediffDef/stages/li[minSeverity="0.5"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
-								<ComfyTemperatureMin>-40</ComfyTemperatureMin>
-								<ArmorRating_Sharp Operation="SafeReplace">0.2</ArmorRating_Sharp>
-								<ArmorRating_Blunt Operation="SafeReplace">0.2</ArmorRating_Blunt>
+								<ComfyTemperatureMin>-50</ComfyTemperatureMin>
+								<ArmorRating_Sharp Operation="SafeReplace">0.1</ArmorRating_Sharp>
+								<ArmorRating_Blunt Operation="SafeReplace">0.1</ArmorRating_Blunt>
 								<ArmorRating_Heat Operation="SafeRemove">0</ArmorRating_Heat>
 							</statOffsets>
 						</value>
@@ -378,9 +374,9 @@
 						<xpath>HediffDef/stages/li[minSeverity="0.6"]</xpath>
 						<value>
 							<statOffsets Operation="Safe">
-								<ComfyTemperatureMin>-40</ComfyTemperatureMin>
-								<ArmorRating_Sharp Operation="SafeReplace">0.3</ArmorRating_Sharp>
-								<ArmorRating_Blunt Operation="SafeReplace">0.3</ArmorRating_Blunt>
+								<ComfyTemperatureMin>-60</ComfyTemperatureMin>
+								<ArmorRating_Sharp Operation="SafeReplace">0.1</ArmorRating_Sharp>
+								<ArmorRating_Blunt Operation="SafeReplace">0.1</ArmorRating_Blunt>
 								<ArmorRating_Heat Operation="SafeRemove">0</ArmorRating_Heat>
 							</statOffsets>
 						</value>
@@ -584,6 +580,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[minSeverity="0"]</xpath>
 						<value>
+							<partEfficiencyOffset MayRequire="mse2.core" Operation="SafeAdd">-0.1</partEfficiencyOffset>
 							<capMods Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
 									<capacity Operation="Safe">Moving</capacity>
@@ -605,6 +602,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[minSeverity="0.2"]</xpath>
 						<value>
+							<partEfficiencyOffset MayRequire="mse2.core" Operation="SafeAdd">0.1</partEfficiencyOffset>
 							<capMods Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
 									<capacity Operation="Safe">Moving</capacity>
@@ -616,6 +614,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[minSeverity="0.3"]</xpath>
 						<value>
+							<partEfficiencyOffset MayRequire="mse2.core" Operation="SafeAdd">0.15</partEfficiencyOffset>
 							<capMods Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
 									<capacity Operation="Safe">Moving</capacity>
@@ -627,6 +626,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[minSeverity="0.4"]</xpath>
 						<value>
+							<partEfficiencyOffset MayRequire="mse2.core" Operation="SafeAdd">0.2</partEfficiencyOffset>
 							<capMods Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
 									<capacity Operation="Safe">Moving</capacity>
@@ -638,6 +638,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[minSeverity="0.5"]</xpath>
 						<value>
+							<partEfficiencyOffset MayRequire="mse2.core" Operation="SafeAdd">0.25</partEfficiencyOffset>
 							<capMods Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
 									<capacity Operation="Safe">Moving</capacity>
@@ -649,6 +650,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[minSeverity="0.6"]</xpath>
 						<value>
+							<partEfficiencyOffset MayRequire="mse2.core" Operation="SafeAdd">0.3</partEfficiencyOffset>
 							<capMods Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
 									<capacity Operation="Safe">Moving</capacity>
