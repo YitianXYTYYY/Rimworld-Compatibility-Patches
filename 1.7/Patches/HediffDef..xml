@@ -1263,7 +1263,7 @@
 		</caseTrue>
 	</Operation>
 
-	<!--Big and Small - Framework -->
+	<!-- Big and Small - Framework -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
 			<li>redmattis.betterprerequisites</li>
@@ -1276,6 +1276,37 @@
 					<hungerRateFactor Operation="SafeAdd">0.2</hungerRateFactor>
 					<hungerRateFactorOffset Operation="SafeRemove"/>
 				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanya.tools.bulkcarrier</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<!-- race trackers -->
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/HediffDef[defName="BS_CentaurRace"]/stages/li</xpath>
+						<value>
+							<statFactors Operation="Safe">
+								<VEF_MassCarryCapacity Operation="SafeRemove">3</VEF_MassCarryCapacity>
+							</statFactors>
+							<statOffsets Operation="Safe">
+								<CarryingCapacity Operation="SafeAdd">150</CarryingCapacity>
+							</statOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/HediffDef[defName="BS_SpiderPersonRace"]/stages/li</xpath>
+						<value>
+							<statFactors Operation="Safe">
+								<VEF_MassCarryCapacity Operation="SafeRemove">1.5</VEF_MassCarryCapacity>
+							</statFactors>
+							<statOffsets Operation="Safe">
+								<CarryingCapacity Operation="SafeAdd">40</CarryingCapacity>
+							</statOffsets>
+						</value>
+					</Operation>
+				</caseTrue>
 			</Operation>
 		</caseTrue>
 	</Operation>
