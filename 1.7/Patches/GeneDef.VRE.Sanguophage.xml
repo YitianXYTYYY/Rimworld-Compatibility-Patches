@@ -49,21 +49,21 @@
 				<xpath>Defs/GeneDef[defName="VRE_AnimalFeeder"]</xpath>
 				<value>
 					<displayOrderInCategory Operation="AddOrReplace">1</displayOrderInCategory>
-					<prerequisite Operation="SafeAdd">Bloodfeeder</prerequisite>
+					<prerequisite Operation="SafeReplace">Bloodfeeder</prerequisite>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_CorpseFeeder"]</xpath>
 				<value>
 					<displayOrderInCategory Operation="AddOrReplace">2</displayOrderInCategory>
-					<prerequisite Operation="SafeAdd">Bloodfeeder</prerequisite>
+					<prerequisite Operation="SafeReplace">Bloodfeeder</prerequisite>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VRE_SanguoFeeder"]</xpath>
 				<value>
 					<displayOrderInCategory Operation="AddOrReplace">3</displayOrderInCategory>
-					<prerequisite Operation="SafeAdd">Bloodfeeder</prerequisite>
+					<prerequisite Operation="SafeReplace">Bloodfeeder</prerequisite>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
