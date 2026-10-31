@@ -368,6 +368,30 @@
 					<blocksAltitudes Operation="SafeRemove"/>
 				</value>
 			</Operation>
+			<!-- Neural Supercharger Ownership -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>ilyvion.neuralsuperchargerownership</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<!-- floor neural supercharger -->
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="BfG_NeuralSupercharger"]</xpath>
+						<value>
+							<comps Operation="Safe">
+								<li Class="CompProperties_AssignableToPawn" Operation="SafeAdd" CheckAttributes="True">
+									<compClass>NeuralSuperchargerOwnership.Comps.CompAssignableToPawn_NeuralSupercharger</compClass>
+									<maxAssignedPawnsCount>1</maxAssignedPawnsCount>
+									<drawAssignmentOverlay>true</drawAssignmentOverlay>
+									<drawUnownedAssignmentOverlay>false</drawUnownedAssignmentOverlay>
+								</li>
+							</comps>
+							<drawGUIOverlay Operation="SafeAdd">true</drawGUIOverlay>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
 		</caseTrue>
 	</Operation>
 
