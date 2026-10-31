@@ -105,20 +105,15 @@
 			</Operation>
 
 			<!-- 410 sight -->
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="Turn_Gene_Blindness"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>GeneDef</xpath>
-						<value>
-							<displayCategory Operation="AddOrReplace">Health_Eye</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">0</displayOrderInCategory>
-							<exclusionTags Operation="Safe">
-								<li Operation="SafeAdd" Compare="InnerText">VRE_SuperiorDarkVision</li>
-							</exclusionTags>
-						</value>
-					</Operation>
-				</apply>
+				<value>
+					<displayCategory Operation="AddOrReplace">Health_Eye</displayCategory>
+					<displayOrderInCategory Operation="AddOrReplace">0</displayOrderInCategory>
+					<exclusionTags Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">VRE_SuperiorDarkVision</li>
+					</exclusionTags>
+				</value>
 			</Operation>
 
 			<!-- 380 melee -->
@@ -205,6 +200,14 @@
 					<statOffsets Operation="Safe">
             			<RoyalFavorValue MayRequire="Ludeon.RimWorld.Royalty" Operation="SafeReplace">1</RoyalFavorValue>
 					</statOffsets>
+				</value>
+			</Operation>
+
+			<!-- 280 beauty -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="Turn_Gene_LowBeautyStandard"]</xpath>
+				<value>
+					<displayOrderInCategory Operation="AddOrReplace">3061</displayOrderInCategory>
 				</value>
 			</Operation>
 
