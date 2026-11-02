@@ -55,7 +55,7 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_RitualOfQuickFeast"]</xpath>
 				<value>
-					<description Operation="SafeReplace">Eating speed +30%</description>
+					<description Operation="SafeReplace">Eating speed +50%</description>
 					<statFactors Operation="Safe">
 						<EatingSpeed Operation="SafeRemove">0</EatingSpeed>
 					</statFactors>
@@ -79,7 +79,7 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_OrderoftheMendingHands"]</xpath>
 				<value>
-					<description Operation="SafeReplace">Injury healing factor +20%</description>
+					<description Operation="SafeReplace">Injury healing factor +50%</description>
 					<statFactors Operation="Safe">
 						<InjuryHealingFactor Operation="SafeRemove">0</InjuryHealingFactor>
 					</statFactors>
@@ -148,12 +148,12 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_GuildOfDiligence"]</xpath>
 				<value>
-					<description Operation="SafeReplace">Global work speed +5%</description>
+					<description Operation="SafeReplace">Global work speed +10%</description>
 					<statFactors Operation="Safe">
 						<WorkSpeedGlobal Operation="SafeRemove">0</WorkSpeedGlobal>
 					</statFactors>
 					<statOffsets Operation="Safe">
-						<WorkSpeedGlobal Operation="SafeAdd">0.05</WorkSpeedGlobal>
+						<WorkSpeedGlobal Operation="SafeAdd">0.1</WorkSpeedGlobal>
 					</statOffsets>
 				</value>
 			</Operation>
@@ -244,36 +244,36 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_ShadowsOfTheHunt"]</xpath>
 				<value>
-					<description Operation="SafeReplace">Hunting stealth +30%</description>
+					<description Operation="SafeReplace">Hunting stealth +20%</description>
 					<statFactors Operation="Safe">
 						<HuntingStealth Operation="SafeRemove">0</HuntingStealth>
 					</statFactors>
 					<statOffsets Operation="Safe">
-						<HuntingStealth Operation="SafeAdd">0.3</HuntingStealth>
+						<HuntingStealth Operation="SafeAdd">0.2</HuntingStealth>
 					</statOffsets>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_MasonsOfTheFuture"]</xpath>
 				<value>
-					<description Operation="SafeReplace">Construction speed +10%</description>
+					<description Operation="SafeReplace">Construction speed +20%</description>
 					<statFactors Operation="Safe">
 						<ConstructionSpeed Operation="SafeRemove">0</ConstructionSpeed>
 					</statFactors>
 					<statOffsets Operation="Safe">
-						<ConstructionSpeed Operation="SafeAdd">0.1</ConstructionSpeed>
+						<ConstructionSpeed Operation="SafeAdd">0.2</ConstructionSpeed>
 					</statOffsets>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_CustodiansOfPurity"]</xpath>
 				<value>
-					<description Operation="SafeReplace">Cleaning speed +30%</description>
+					<description Operation="SafeReplace">Cleaning speed +50%</description>
 					<statFactors Operation="Safe">
 						<CleaningSpeed Operation="SafeRemove">0</CleaningSpeed>
 					</statFactors>
 					<statOffsets Operation="Safe">
-						<CleaningSpeed Operation="SafeAdd">0.3</CleaningSpeed>
+						<CleaningSpeed Operation="SafeAdd">0.5</CleaningSpeed>
 					</statOffsets>
 				</value>
 			</Operation>
@@ -382,13 +382,13 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_ChemistsOfEfficacy"]</xpath>
 				<value>
-					<description Operation="SafeReplace">Drug synthesis and cooking speed +20%</description>
+					<description Operation="SafeReplace">Drug cooking and synthesis speed +20%</description>
 					<statFactors Operation="Safe">
 						<DrugSynthesisSpeed Operation="SafeRemove">0</DrugSynthesisSpeed>
 					</statFactors>
 					<statOffsets Operation="Safe">
-						<DrugSynthesisSpeed Operation="SafeAdd">0.2</DrugSynthesisSpeed>
 						<DrugCookingSpeed Operation="SafeAdd">0.2</DrugCookingSpeed>
+						<DrugSynthesisSpeed Operation="SafeAdd">0.2</DrugSynthesisSpeed>
 					</statOffsets>
 				</value>
 			</Operation>
@@ -407,7 +407,7 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/VFETribals.CornerstoneDef[defName="VFET_MasterButchers"]</xpath>
 				<value>
-					<description Operation="SafeReplace">Butchery efficiency +20%</description>
+					<description Operation="SafeReplace">Butchery efficiency +10%</description>
 					<statFactors Operation="Safe">
 						<ButcheryFleshEfficiency Operation="SafeRemove">0</ButcheryFleshEfficiency>
 					</statFactors>
