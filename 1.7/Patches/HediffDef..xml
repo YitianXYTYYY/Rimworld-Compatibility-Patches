@@ -1656,10 +1656,11 @@
 				<xpath>Defs/HediffDef[defName="VRE_ConsumedAnimalHemogen"]/stages/li</xpath>
 				<value>
 					<statFactors Operation="Safe">
+						<MeleeCooldownFactor Operation="SafeAdd">0.8</MeleeCooldownFactor>
 						<MeleeDPS Operation="SafeRemove">0</MeleeDPS>
 					</statFactors>
 					<statOffsets Operation="Safe">
-						<InjuryHealingFactor Operation="SafeReplace">0.5</InjuryHealingFactor>
+						<InjuryHealingFactor Operation="SafeReplace">1</InjuryHealingFactor>
 					</statOffsets>
 				</value>
 			</Operation>
