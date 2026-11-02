@@ -15,36 +15,6 @@
 			</stages>
 		</value>
 	</Operation>
-	<!-- bionic -->
-	<Operation Class="XmlExtensions.SetScope">
-		<xpath>Defs/HediffDef[defName="BionicStomach"]</xpath>
-		<apply>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>HediffDef/stages/li</xpath>
-				<value>
-					<foodPoisoningChanceFactor Operation="SafeRemove"/>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>mse2.core</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>HediffDef</xpath>
-						<value>
-							<comps Operation="Safe">
-								<li Class="MSE2.HediffCompProperties_ModuleHolder" Operation="SafeAdd" CheckAttributes="True">
-									<maxModules>1</maxModules>
-								</li>
-							</comps>
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-		</apply>
-	</Operation>
 
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
@@ -217,36 +187,61 @@
 					</statOffsets>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>mse2.core</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseFalse>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="ReprocessorStomach"]</xpath>
+				<apply>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/HediffDef[defName="ReprocessorStomach"]/stages/li</xpath>
+						<xpath>HediffDef/stages/li</xpath>
 						<value>
-							<hungerRateFactor Operation="Safe">0.8</hungerRateFactor>
+							<hungerRateFactor Operation="SafeReplace">0.5</hungerRateFactor>
 						</value>
 					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>ebsg.framework</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>HediffDef/stages/li</xpath>
+								<value>
+									<hungerRateFactor Operation="SafeRemove"/>
+									<statFactors Operation="Safe">
+										<EBSG_HungerRateFactor Operation="SafeAdd">0.5</EBSG_HungerRateFactor>
+									</statFactors>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/HediffDef[defName="NuclearStomach"]</xpath>
+				<apply>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/HediffDef[defName="NuclearStomach"]/stages/li</xpath>
+						<xpath>HediffDef/stages/li</xpath>
 						<value>
-							<hungerRateFactor Operation="Safe">0.2</hungerRateFactor>
+							<hungerRateFactor Operation="SafeReplace">0.2</hungerRateFactor>
 						</value>
 					</Operation>
-				</caseFalse>
-				<caseTrue>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>Defs/HediffDef[(defName="DetoxifierStomach" or defName="ReprocessorStomach" or defName="NuclearStomach") and @ParentName!="MSE_ModuleAddedBionic"]</xpath>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>ebsg.framework</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>HediffDef/stages/li</xpath>
+								<value>
+									<hungerRateFactor Operation="SafeRemove"/>
+									<statFactors Operation="Safe">
+										<EBSG_HungerRateFactor Operation="SafeAdd">0.2</EBSG_HungerRateFactor>
+									</statFactors>
+								</value>
+							</Operation>
+						</caseTrue>
 					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>Defs/ThingDef[(defName="DetoxifierStomach" or defName="ReprocessorStomach" or defName="NuclearStomach") and @ParentName!="MSE_ModuleBionic"]</xpath>
-					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-						<xpath>Defs/RecipeDef[(defName="InstallDetoxifierStomach" or defName="InstallReprocessorStomach" or defName="InstallNuclearStomach") and @ParentName!="MSE_SurgeryInstallModuleBase"]</xpath>
-					</Operation>
-				</caseTrue>
+				</apply>
 			</Operation>
 			<!-- prosthetic -->
 			<Operation Class="XmlExtensions.HybridPatch">
@@ -445,30 +440,22 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li</xpath>
 						<value>
-							<hungerRateFactor MayRequire="Ludeon.RimWorld.Royalty" Operation="SafeReplace">0.2</hungerRateFactor>
+							<hungerRateFactor Operation="SafeReplace">0.2</hungerRateFactor>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
-							<li>mse2.core</li>
+							<li>ebsg.framework</li>
 						</mods>
 						<packageId>true</packageId>
 						<caseTrue>
 							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>HediffDef</xpath>
-								<value>
-									<comps Operation="Safe">
-										<li Class="MSE2.HediffCompProperties_ModuleHolder" Operation="SafeAdd" CheckAttributes="True">
-											<maxModules>1</maxModules>
-										</li>
-									</comps>
-								</value>
-							</Operation>
-							<Operation Class="XmlExtensions.HybridPatch">
 								<xpath>HediffDef/stages/li</xpath>
 								<value>
-									<foodPoisoningChanceFactor Operation="SafeRemove"/>
 									<hungerRateFactor Operation="SafeRemove"/>
+									<statFactors Operation="Safe">
+										<EBSG_HungerRateFactor Operation="SafeAdd">0.2</EBSG_HungerRateFactor>
+									</statFactors>
 								</value>
 							</Operation>
 						</caseTrue>

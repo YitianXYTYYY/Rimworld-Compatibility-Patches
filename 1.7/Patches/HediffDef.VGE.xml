@@ -398,6 +398,10 @@
 									<offset Operation="SafeReplace">-0.1</offset>
 								</li>
 							</capMods>
+							<foodPoisoningChanceFactor Operation="SafeAdd">0</foodPoisoningChanceFactor>
+							<makeImmuneTo Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">GutWorms</li>
+							</makeImmuneTo>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
@@ -408,6 +412,10 @@
 									<capacity>Metabolism</capacity>
 								</li>
 							</capMods>
+							<foodPoisoningChanceFactor Operation="SafeAdd">0</foodPoisoningChanceFactor>
+							<makeImmuneTo Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">GutWorms</li>
+							</makeImmuneTo>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
@@ -419,7 +427,10 @@
 									<offset Operation="SafeReplace">0.1</offset>
 								</li>
 							</capMods>
-							<hungerRateFactor Operation="SafeAdd">0.9</hungerRateFactor>
+							<foodPoisoningChanceFactor Operation="SafeAdd">0</foodPoisoningChanceFactor>
+							<makeImmuneTo Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">GutWorms</li>
+							</makeImmuneTo>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
@@ -431,7 +442,11 @@
 									<offset Operation="SafeReplace">0.15</offset>
 								</li>
 							</capMods>
+							<foodPoisoningChanceFactor Operation="SafeAdd">0</foodPoisoningChanceFactor>
 							<hungerRateFactor Operation="SafeAdd">0.8</hungerRateFactor>
+							<makeImmuneTo Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">GutWorms</li>
+							</makeImmuneTo>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
@@ -443,7 +458,11 @@
 									<offset Operation="SafeReplace">0.2</offset>
 								</li>
 							</capMods>
-							<hungerRateFactor Operation="SafeAdd">0.7</hungerRateFactor>
+							<foodPoisoningChanceFactor Operation="SafeAdd">0</foodPoisoningChanceFactor>
+							<hungerRateFactor Operation="SafeAdd">0.6</hungerRateFactor>
+							<makeImmuneTo Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">GutWorms</li>
+							</makeImmuneTo>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
@@ -455,7 +474,11 @@
 									<offset Operation="SafeReplace">0.25</offset>
 								</li>
 							</capMods>
-							<hungerRateFactor Operation="SafeAdd">0.6</hungerRateFactor>
+							<foodPoisoningChanceFactor Operation="SafeAdd">0</foodPoisoningChanceFactor>
+							<hungerRateFactor Operation="SafeAdd">0.4</hungerRateFactor>
+							<makeImmuneTo Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">GutWorms</li>
+							</makeImmuneTo>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
@@ -467,8 +490,55 @@
 									<offset Operation="SafeReplace">0.3</offset>
 								</li>
 							</capMods>
-							<hungerRateFactor Operation="SafeAdd">0.5</hungerRateFactor>
+							<foodPoisoningChanceFactor Operation="SafeAdd">0</foodPoisoningChanceFactor>
+							<hungerRateFactor Operation="SafeAdd">0.2</hungerRateFactor>
+							<makeImmuneTo Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">GutWorms</li>
+							</makeImmuneTo>
 						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>ebsg.framework</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+								<xpath>HediffDef/stages/li/hungerRateFactor</xpath>
+							</Operation>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>HediffDef/stages/li[minSeverity="0.3"]</xpath>
+								<value>
+									<statFactors Operation="Safe">
+										<EBSG_HungerRateFactor Operation="SafeAdd">0.8</EBSG_HungerRateFactor>
+									</statFactors>
+								</value>
+							</Operation>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>HediffDef/stages/li[minSeverity="0.4"]</xpath>
+								<value>
+									<statFactors Operation="Safe">
+										<EBSG_HungerRateFactor Operation="SafeAdd">0.6</EBSG_HungerRateFactor>
+									</statFactors>
+								</value>
+							</Operation>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>HediffDef/stages/li[minSeverity="0.5"]</xpath>
+								<value>
+									<statFactors Operation="Safe">
+										<EBSG_HungerRateFactor Operation="SafeAdd">0.4</EBSG_HungerRateFactor>
+									</statFactors>
+								</value>
+							</Operation>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>HediffDef/stages/li[minSeverity="0.6"]</xpath>
+								<value>
+									<statFactors Operation="Safe">
+										<EBSG_HungerRateFactor Operation="SafeAdd">0.2</EBSG_HungerRateFactor>
+									</statFactors>
+								</value>
+							</Operation>
+						</caseTrue>
 					</Operation>
 				</apply>
 			</Operation>
