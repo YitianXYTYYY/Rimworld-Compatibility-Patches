@@ -67,6 +67,9 @@
 						<li>Bleeding wounds close very quickly.</li>
 					</customEffectDescriptions>
 					<displayOrderInCategory Operation="AddOrReplace">-500</displayOrderInCategory>
+					<exclusionTags Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">Superclotting</li>
+					</exclusionTags>
 					<modExtensions Operation="Safe">
 						<li Class="VEF.Genes.GeneExtension" Operation="Safe" CheckAttributes="True">
 							<hediffToWholeBody Operation="SafeRemove" Compare="Both">VQEA_Woundless</hediffToWholeBody>
