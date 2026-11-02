@@ -970,6 +970,41 @@
 					<pathCost Operation="SafeReplace">30</pathCost>
 				</value>
 			</Operation>
+			<!-- Helixien Gas Brazier -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>cixwow.helixienbrazier</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<!-- helixien gas brazier -->
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="HelixienGasBrazier"]</xpath>
+						<value>
+							<comps Operation="Safe">
+								<li Class="HelixienBrazier.CompProperties_GasFireOverlay" Operation="SafeRemove" CheckAttributes="True">0</li>
+								<li Class="CompProperties_FireOverlay" Operation="SafeAdd" CheckAttributes="True">
+									<fireSize>1</fireSize>
+									<offset>(0,0,0.18)</offset>
+								</li>
+							</comps>
+						</value>
+					</Operation>
+					<!-- helixien gas darklight brazier -->
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="HelixienGasDarklightBrazier"]</xpath>
+						<value>
+							<comps Operation="Safe">
+								<li Class="HelixienBrazier.CompProperties_GasDarklightOverlay" Operation="SafeRemove" CheckAttributes="True">0</li>
+								<li Class="CompProperties_DarklightOverlay" Operation="SafeAdd" CheckAttributes="True">
+									<fireSize>1</fireSize>
+									<offset>(0,0,0.18)</offset>
+								</li>
+							</comps>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
 		</caseTrue>
 	</Operation>
 
