@@ -59,7 +59,7 @@
 							<tools Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="label">
 									<label Operation="Safe">plasteel claw</label>
-									<capacities>
+									<capacities Operation="Safe">
 										<li Operation="SafeRemove" Compare="InnerText">Cut</li>
 										<li Operation="SafeAdd" Compare="InnerText">Scratch</li>
 									</capacities>
