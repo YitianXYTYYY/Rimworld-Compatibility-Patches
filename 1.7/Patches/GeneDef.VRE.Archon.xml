@@ -47,14 +47,14 @@
 				<xpath>Defs/GeneDef[defName="VRE_SwiftMeditation"]</xpath>
 				<value>
 					<biostatCpx Operation="SafeRemove"/>
-					<biostatMet Operation="SafeReplace">-2</biostatMet>
+					<biostatMet Operation="SafeReplace">-1</biostatMet>
 					<displayCategory Operation="AddOrReplace">Psychic_Meditation</displayCategory>
 					<displayOrderInCategory Operation="AddOrReplace">10</displayOrderInCategory>
 					<statFactors Operation="Safe">
 						<MeditationFocusGain Operation="SafeRemove">0</MeditationFocusGain>
 					</statFactors>
 					<statOffsets Operation="Safe">
-						<MeditationFocusGain Operation="SafeAdd">0.1</MeditationFocusGain>
+						<MeditationFocusGain Operation="SafeAdd">0.05</MeditationFocusGain>
 					</statOffsets>
 				</value>
 			</Operation>
@@ -62,14 +62,14 @@
 				<xpath>Defs/GeneDef[defName="VRE_ExtremeMeditation"]</xpath>
 				<value>
 					<biostatCpx Operation="SafeReplace">2</biostatCpx>
-					<biostatMet Operation="SafeReplace">-5</biostatMet>
+					<biostatMet Operation="SafeReplace">-3</biostatMet>
 					<displayCategory Operation="AddOrReplace">Psychic_Meditation</displayCategory>
 					<displayOrderInCategory Operation="AddOrReplace">20</displayOrderInCategory>
 					<statFactors Operation="Safe">
 						<MeditationFocusGain Operation="SafeRemove">0</MeditationFocusGain>
 					</statFactors>
 					<statOffsets Operation="Safe">
-						<MeditationFocusGain Operation="SafeAdd">0.2</MeditationFocusGain>
+						<MeditationFocusGain Operation="SafeAdd">0.1</MeditationFocusGain>
 					</statOffsets>
 				</value>
 			</Operation>
