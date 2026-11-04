@@ -155,6 +155,47 @@
 		</caseTrue>
 	</Operation>
 
+	<!-- Glass Roofs -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>wailor.glassroofs</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>rebuild.cotr.doorsandcorners</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.SetScope">
+						<xpath>Defs/ThingDef[defName="GR_Glass"]</xpath>
+						<apply>
+							<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+								<xpath>ThingDef</xpath>
+								<attribute>ParentName</attribute>
+								<value>RB_Glass</value>
+							</Operation>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<description Operation="SafeReplace">Transparent, brittle sheets of silica-based material, widely utilised for windows and various other applications where clarity and rigidity are essential.</description>		
+									<graphicData Operation="SafeReplace">
+										<texPath>Things/Item/Resource/RB_Glass</texPath>
+										<graphicClass>Graphic_StackCount</graphicClass>
+									</graphicData>
+									<healthAffectsPrice Operation="SafeRemove"/>
+									<statBases Operation="SafeRemove"/>
+									<thingCategories Operation="SafeRemove"/>
+								</value>
+							</Operation>
+						</apply>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 	<!-- Medical System Expansion 2 -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
@@ -180,19 +221,19 @@
 		<packageId>true</packageId>
 		<caseTrue>
 			<!-- Glass -->
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[@Name="RB_GlassBase"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ThingDef</xpath>
-						<value>
-							<thingCategories Operation="Safe">
-								<li Operation="SafeRemove" Compare="InnerText">Manufactured</li>
-								<li Operation="SafeAdd" Compare="InnerText">ResourcesRaw</li>
-							</thingCategories>
-						</value>
-					</Operation>
-				</apply>
+				<value>
+					<thingCategories Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">Manufactured</li>
+						<li Operation="SafeAdd" Compare="InnerText">ResourcesRaw</li>
+					</thingCategories>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+				<xpath>Defs/ThingDef[defName="RB_Glass"]</xpath>
+				<attribute>Name</attribute>
+				<value>RB_Glass</value>
 			</Operation>
 		</caseTrue>
 	</Operation>
