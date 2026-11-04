@@ -206,7 +206,7 @@
 				<value>
 					<thingCategories Operation="Safe">
 						<li Operation="SafeRemove" Compare="InnerText">Manufactured</li>
-						<li Operation="SafeAdd" Compare="InnerText">ResourcesRaw</li>
+						<li Operation="SafeAdd" Compare="InnerText">RBGlasses</li>
 					</thingCategories>
 				</value>
 			</Operation>

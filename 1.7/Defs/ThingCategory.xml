@@ -15,6 +15,12 @@
 		<iconPath>Things/Item/Resource/SubcoreBasic</iconPath>
 	</ThingCategoryDef>
 
+	<ThingCategoryDef MayRequire="rebuild.cotr.doorsandcorners">
+		<defName>RBGlasses</defName>
+		<label>glasses</label>
+		<parent>ResourcesRaw</parent>
+	</ThingCategoryDef>
+
 	<ThingCategoryDef MayRequire="oskarpotocki.vfe.insectoid2">
 		<defName>VFEI2Pherocores</defName>
 		<label>pherocores</label>
