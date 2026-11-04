@@ -193,6 +193,33 @@
 					</costList>
 				</value>
 			</Operation>
+			<!-- Raycast Lighting -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>lexif.raycastlighting</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<!-- structure doors -->
+					<!-- glass autodoor -->
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="VacBarrier"]</xpath>
+						<value>
+							<blockLight Operation="AddOrReplace">false</blockLight>
+							<castEdgeShadows Operation="AddOrReplace">false</castEdgeShadows>
+							<modExtensions Operation="Safe">
+								<li Class="RaycastLighting.Integration.LightTransmission" Operation="SafeAdd" CheckAttributes="True">
+									<transmission>0.9</transmission>
+								</li>
+							</modExtensions>
+							<researchPrerequisites Operation="Safe">
+								<li MayRequire="oskarpotocki.vfe.tribals" Operation="SafeAdd" Compare="InnerText">VFET_Construction</li>
+							</researchPrerequisites>
+							<staticSunShadowHeight Operation="AddOrReplace">0</staticSunShadowHeight>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
 		</caseTrue>
 	</Operation>
 
@@ -546,6 +573,185 @@
 						</caseTrue>
 					</Operation>
 				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+	
+	<!-- ReBuild: Doors and Corners -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>rebuild.cotr.doorsandcorners</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- Raycast Lighting -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>lexif.raycastlighting</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<!-- structure doors -->
+					<!-- glass autodoor -->
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="RB_GlassAutodoor"]</xpath>
+						<value>
+							<castEdgeShadows Operation="AddOrReplace">false</castEdgeShadows>
+							<modExtensions Operation="Safe">
+								<li Class="RaycastLighting.Integration.LightTransmission" Operation="SafeAdd" CheckAttributes="True">
+									<transmission>0.9</transmission>
+								</li>
+							</modExtensions>
+							<staticSunShadowHeight Operation="AddOrReplace">0</staticSunShadowHeight>
+						</value>
+					</Operation>
+					<!-- reinforced glass autodoor -->
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="RB_ReinforcedGlassAutodoor"]</xpath>
+						<value>
+							<castEdgeShadows Operation="AddOrReplace">false</castEdgeShadows>
+							<modExtensions Operation="Safe">
+								<li Class="RaycastLighting.Integration.LightTransmission" Operation="SafeAdd" CheckAttributes="True">
+									<transmission>0.9</transmission>
+								</li>
+							</modExtensions>
+							<staticSunShadowHeight Operation="AddOrReplace">0</staticSunShadowHeight>
+						</value>
+					</Operation>
+					<!-- structure walls -->
+					<!-- clerestory wall -->
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="RB_ClerestoryWall"]</xpath>
+						<value>
+							<castEdgeShadows Operation="AddOrReplace">false</castEdgeShadows>
+							<comps Operation="Safe">
+								<li Class="ReBuildDoorsAndCorners.CompProperties_GlassWall" Operation="SafeRemove" CheckAttributes="True">0</li>
+							</comps>
+							<modExtensions Operation="Safe">
+								<li Class="RaycastLighting.Integration.LightTransmission" Operation="SafeAdd" CheckAttributes="True">
+									<transmission>0.9</transmission>
+								</li>
+							</modExtensions>
+						</value>
+					</Operation>
+					<!-- reinforced clerestory wall -->
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="RB_ReinforcedClerestoryWall"]</xpath>
+						<value>
+							<comps Operation="Safe">
+								<li Class="ReBuildDoorsAndCorners.CompProperties_GlassWall" Operation="SafeRemove" CheckAttributes="True">0</li>
+							</comps>
+							<modExtensions Operation="Safe">
+								<li Class="RaycastLighting.Integration.LightTransmission" Operation="SafeAdd" CheckAttributes="True">
+									<transmission>0.6</transmission>
+								</li>
+							</modExtensions>
+						</value>
+					</Operation>
+					<!-- glass wall -->
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="RB_GlassWall"]</xpath>
+						<value>
+							<castEdgeShadows Operation="AddOrReplace">false</castEdgeShadows>
+							<comps Operation="Safe">
+								<li Class="ReBuildDoorsAndCorners.CompProperties_GlassWall" Operation="SafeRemove" CheckAttributes="True">0</li>
+							</comps>
+							<modExtensions Operation="Safe">
+								<li Class="RaycastLighting.Integration.LightTransmission" Operation="SafeAdd" CheckAttributes="True">
+									<transmission>0.9</transmission>
+								</li>
+							</modExtensions>
+						</value>
+					</Operation>
+					<!-- reinforced glass wall -->
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="RB_ReinforcedGlassWall"]</xpath>
+						<value>
+							<castEdgeShadows Operation="AddOrReplace">false</castEdgeShadows>
+							<comps Operation="Safe">
+								<li Class="ReBuildDoorsAndCorners.CompProperties_GlassWall" Operation="SafeRemove" CheckAttributes="True">0</li>
+							</comps>
+							<modExtensions Operation="Safe">
+								<li Class="RaycastLighting.Integration.LightTransmission" Operation="SafeAdd" CheckAttributes="True">
+									<transmission>0.9</transmission>
+								</li>
+							</modExtensions>
+						</value>
+					</Operation>
+					<!-- cell wall -->
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="RB_CellWall"]</xpath>
+						<value>
+							<modExtensions Operation="Safe">
+								<li Class="RaycastLighting.Integration.LightTransmission" Operation="SafeAdd" CheckAttributes="True">
+									<transmission>0.8</transmission>
+								</li>
+							</modExtensions>
+						</value>
+					</Operation>
+					<!-- barrier wall -->
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="RB_BarriersWall"]</xpath>
+						<value>
+							<modExtensions Operation="Safe">
+								<li Class="RaycastLighting.Integration.LightTransmission" Operation="SafeAdd" CheckAttributes="True">
+									<transmission>0.8</transmission>
+								</li>
+							</modExtensions>
+						</value>
+					</Operation>
+					<!-- Odyssey -->
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>ludeon.rimworld.odyssey</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<!-- gravship smooth hull -->
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>Defs/ThingDef[defName="RB_SmoothGravshipHull"]</xpath>
+								<value>
+									<modExtensions Operation="Safe">
+										<li Class="RaycastLighting.Integration.LightMirror" Operation="SafeAdd" CheckAttributes="True">
+											<reflectivity>0.6</reflectivity>
+											<reach>1.5</reach>
+										</li>
+									</modExtensions>
+								</value>
+							</Operation>
+							<!-- gravship glasshull -->
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>Defs/ThingDef[defName="RB_GravshipWindowHull"]</xpath>
+								<value>
+									<castEdgeShadows Operation="AddOrReplace">false</castEdgeShadows>
+									<comps Operation="Safe">
+										<li Class="ReBuildDoorsAndCorners.CompProperties_GlassWall" Operation="SafeRemove" CheckAttributes="True">0</li>
+									</comps>
+									<modExtensions Operation="Safe">
+										<li Class="RaycastLighting.Integration.LightTransmission" Operation="SafeAdd" CheckAttributes="True">
+											<transmission>0.9</transmission>
+										</li>
+									</modExtensions>
+								</value>
+							</Operation>
+							<!-- gravship panorama hull -->
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>Defs/ThingDef[defName="RB_GravshipPanoramaHull"]</xpath>
+								<value>
+									<castEdgeShadows Operation="AddOrReplace">false</castEdgeShadows>
+									<comps Operation="Safe">
+										<li Class="ReBuildDoorsAndCorners.CompProperties_GlassWall" Operation="SafeRemove" CheckAttributes="True">0</li>
+									</comps>
+									<modExtensions Operation="Safe">
+										<li Class="RaycastLighting.Integration.LightTransmission" Operation="SafeAdd" CheckAttributes="True">
+											<transmission>0.9</transmission>
+										</li>
+									</modExtensions>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
 			</Operation>
 		</caseTrue>
 	</Operation>
