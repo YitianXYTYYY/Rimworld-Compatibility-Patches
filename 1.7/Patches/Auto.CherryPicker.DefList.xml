@@ -468,6 +468,31 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
+			<!-- Glass Roofs -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>wailor.glassroofs</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>rebuild.cotr.doorsandcorners</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>RecipeDef/GR_MakeGlass</li>
+									<li>RecipeDef/GR_MakeSand</li>
+									<li>ThingDef/GR_Sand</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
 			<!-- Gojis-Misc-Genes -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
@@ -621,6 +646,22 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
+					<!-- Raycast Lighting -->
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>lexif.raycastlighting</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="PatchOperationAdd">
+								<xpath>defs</xpath>
+								<value>
+									<li>ThingDef/RaycastLighting_GlassWall</li>
+									<li>ThingDef/RaycastLighting_PolishedWall</li>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
 					<!-- Security and Blast Doors Expanded -->
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
@@ -636,7 +677,7 @@
 							</Operation>
 						</caseTrue>
 					</Operation>
-					<!-- Security and Blast Doors Expanded -->
+					<!-- Vanilla Furniture Expanded -->
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
 							<li>vanillaexpanded.vfecore</li>
