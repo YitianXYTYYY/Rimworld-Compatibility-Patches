@@ -64,6 +64,22 @@
 							</ingredients>
 						</value>
 					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>wailor.glassroofs</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>RecipeDef</xpath>
+								<value>
+									<researchPrerequisites Inherit="False" Operation="Safe">
+										<li Operation="SafeAdd" Compare="InnerText">GR_Glassworks</li>
+									</researchPrerequisites>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
 				</apply>
 			</Operation>
 			<!-- make ballistic glass -->
@@ -76,6 +92,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>RecipeDef</xpath>
 						<value>
+							<label Operation="SafeReplace">make reinforced glass</label>
 							<fixedIngredientFilter Operation="Safe">
 								<categories Operation="Safe">
 									<li Operation="SafeRemove" Compare="InnerText">StoneChunks</li>
@@ -93,6 +110,23 @@
 								</li>
 							</ingredients>
 						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>wailor.glassroofs</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>RecipeDef</xpath>
+								<value>
+									<researchPrerequisites Inherit="False" Operation="Safe">
+										<li Operation="SafeAdd" Compare="InnerText">Fabrication</li>
+										<li Operation="SafeAdd" Compare="InnerText">GR_Glassworks</li>
+									</researchPrerequisites>
+								</value>
+							</Operation>
+						</caseTrue>
 					</Operation>
 				</apply>
 			</Operation>

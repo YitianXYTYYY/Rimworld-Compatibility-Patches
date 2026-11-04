@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="RB_Glass" MayRequire="rebuild.cotr.doorsandcorners,wailor.glassroofs">
+		<defName>GR_Glass</defName>
+	</ThingDef>
+
+</Defs>
