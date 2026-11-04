@@ -159,7 +159,7 @@
 		<xpath>Defs/ResearchProjectDef[defName="FoamTurret"]</xpath>
 	</Operation>
 	<Operation Class="XmlExtensions.HybridPatch">
-		<xpath>Defs/ThingDef[researchPrerequisites[li="FoamTurret"]]</xpath>
+		<xpath>Defs/ThingDef[researchPrerequisites/li="FoamTurret"]</xpath>
 		<value>
 			<researchPrerequisites Inherit="False" Operation="Safe">
 				<li Operation="SafeAdd" Compare="InnerText">Firefoam</li>
