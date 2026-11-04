@@ -851,6 +851,27 @@
 		</caseTrue>
 	</Operation>
 
+	<!-- Glass Roofs -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>wailor.glassroofs</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ResearchProjectDef[defName="GR_Glassworks"]</xpath>
+				<value>
+					<prerequisites Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">Electricity</li>
+						<li Operation="SafeAdd" Compare="InnerText">Smithing</li>
+						<li Operation="SafeRemove" Compare="InnerText">Stonecutting</li>
+					</prerequisites>
+					<techLevel Operation="SafeReplace">Medieval</techLevel>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 	<!-- Odyssey Transport Shuttle -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
