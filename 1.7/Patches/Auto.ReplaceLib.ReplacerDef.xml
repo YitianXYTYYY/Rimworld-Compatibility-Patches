@@ -4,6 +4,35 @@
 	<Operation Class="XmlExtensions.SetScope" MayRequire="ferny.replacelib">
 		<xpath>Defs/ReplaceLib.ReplacerDef[defName="ReplaceLib_XYTYYY"]</xpath>
 		<apply>
+			<!-- Glass Roofs -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>wailor.glassroofs</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>ReplaceLib.ReplacerDef/replacers</xpath>
+						<value>
+							<li MayRequire="rebuild.cotr.doorsandcorners">
+								<replace>RB_Glass</replace>
+								<with>GR_Glass</with>
+							</li>
+						</value>
+					</Operation>
+				</caseTrue>
+				<caseFalse>
+					<Operation Class="PatchOperationAdd">
+						<xpath>ReplaceLib.ReplacerDef/replacers</xpath>
+						<value>
+							<li MayRequire="rebuild.cotr.doorsandcorners">
+								<replace>GR_Glass</replace>
+								<with>RB_Glass</with>
+							</li>
+						</value>
+					</Operation>
+				</caseFalse>
+			</Operation>
 			<!-- Vanilla Chemfuel Expanded -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
@@ -11,24 +40,27 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>vanillaexpanded.vgeneticse</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="PatchOperationAdd">
-								<xpath>ReplaceLib.ReplacerDef/replacers</xpath>
-								<value>
-									<li>
-										<replace>GR_CompressedChemfuel</replace>
-										<with>VCHE_Deepchem</with>
-									</li>
-								</value>
-							</Operation>
-						</caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>ReplaceLib.ReplacerDef/replacers</xpath>
+						<value>
+							<li MayRequire="vanillaexpanded.vgeneticse">
+								<replace>GR_CompressedChemfuel</replace>
+								<with>VCHE_Deepchem</with>
+							</li>
+						</value>
 					</Operation>
 				</caseTrue>
+				<caseFalse>
+					<Operation Class="PatchOperationAdd">
+						<xpath>ReplaceLib.ReplacerDef/replacers</xpath>
+						<value>
+							<li MayRequire="vanillaexpanded.vgeneticse">
+								<replace>VCHE_Deepchem</replace>
+								<with>GR_CompressedChemfuel</with>
+							</li>
+						</value>
+					</Operation>
+				</caseFalse>
 			</Operation>
 			<!-- Vanilla Factions Expanded - Insectoids 2 -->
 			<Operation Class="XmlExtensions.FindMod">
@@ -37,24 +69,27 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>com.abobashark.zoologymod</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="PatchOperationAdd">
-								<xpath>ReplaceLib.ReplacerDef/replacers</xpath>
-								<value>
-									<li>
-										<replace>Leather_Chitin</replace>
-										<with>VFEI2_Chitin</with>
-									</li>
-								</value>
-							</Operation>
-						</caseTrue>
+					<Operation Class="PatchOperationAdd">
+						<xpath>ReplaceLib.ReplacerDef/replacers</xpath>
+						<value>
+							<li MayRequire="com.abobashark.zoologymod">
+								<replace>Leather_Chitin</replace>
+								<with>VFEI2_Chitin</with>
+							</li>
+						</value>
 					</Operation>
 				</caseTrue>
+				<caseFalse>
+					<Operation Class="PatchOperationAdd">
+						<xpath>ReplaceLib.ReplacerDef/replacers</xpath>
+						<value>
+							<li MayRequire="com.abobashark.zoologymod">
+								<replace>VFEI2_Chitin</replace>
+								<with>Leather_Chitin</with>
+							</li>
+						</value>
+					</Operation>
+				</caseFalse>
 			</Operation>
 			<!-- Yayo's Combat 3 (Continued) -->
 			<Operation Class="XmlExtensions.FindMod">
@@ -78,45 +113,19 @@
 								<replace>Weapon_GrenadeEMP</replace>
 								<with>WeaponGrenadeEMP</with>
 							</li>
+							<li MayRequire="ludeon.rimworld.biotech">
+								<replace>Weapon_GrenadeTox</replace>
+								<with>WeaponGrenadeTox</with>
+							</li>
+							<li MayRequire="vanillaexpanded.vwe">
+								<replace>VWE_SmokeGrenade</replace>
+								<with>VWESmokeGrenade</with>
+							</li>
+							<li MayRequire="vanillaexpanded.vwe">
+								<replace>VWE_FlashGrenade</replace>
+								<with>VWEFlashGrenade</with>
+							</li>
 						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>ludeon.rimworld.biotech</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="PatchOperationAdd">
-								<xpath>ReplaceLib.ReplacerDef/replacers</xpath>
-								<value>
-									<li>
-										<replace>Weapon_GrenadeTox</replace>
-										<with>WeaponGrenadeTox</with>
-									</li>
-								</value>
-							</Operation>
-						</caseTrue>
-					</Operation>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>vanillaexpanded.vwe</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="PatchOperationAdd">
-								<xpath>ReplaceLib.ReplacerDef/replacers</xpath>
-								<value>
-									<li>
-										<replace>VWE_SmokeGrenade</replace>
-										<with>VWESmokeGrenade</with>
-									</li>
-									<li>
-										<replace>VWE_FlashGrenade</replace>
-										<with>VWEFlashGrenade</with>
-									</li>
-								</value>
-							</Operation>
-						</caseTrue>
 					</Operation>
 					<Operation Class="PatchOperationAdd">
 						<xpath>ReplaceLib.ReplacerDef/replacers</xpath>
