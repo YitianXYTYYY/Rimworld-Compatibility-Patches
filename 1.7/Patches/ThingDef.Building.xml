@@ -599,7 +599,7 @@
 							<castEdgeShadows Operation="AddOrReplace">false</castEdgeShadows>
 							<modExtensions Operation="Safe">
 								<li Class="RaycastLighting.Integration.LightTransmission" Operation="SafeAdd" CheckAttributes="True">
-									<transmission>0.9</transmission>
+									<transmission>0.8</transmission>
 								</li>
 							</modExtensions>
 							<staticSunShadowHeight Operation="AddOrReplace">0</staticSunShadowHeight>
@@ -612,10 +612,21 @@
 							<castEdgeShadows Operation="AddOrReplace">false</castEdgeShadows>
 							<modExtensions Operation="Safe">
 								<li Class="RaycastLighting.Integration.LightTransmission" Operation="SafeAdd" CheckAttributes="True">
-									<transmission>0.9</transmission>
+									<transmission>0.8</transmission>
 								</li>
 							</modExtensions>
 							<staticSunShadowHeight Operation="AddOrReplace">0</staticSunShadowHeight>
+						</value>
+					</Operation>
+					<!-- cell door -->
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="RB_CellDoor"]</xpath>
+						<value>
+							<modExtensions Operation="Safe">
+								<li Class="RaycastLighting.Integration.LightTransmission" Operation="SafeAdd" CheckAttributes="True">
+									<transmission>0.8</transmission>
+								</li>
+							</modExtensions>
 						</value>
 					</Operation>
 					<!-- structure walls -->
@@ -629,7 +640,7 @@
 							</comps>
 							<modExtensions Operation="Safe">
 								<li Class="RaycastLighting.Integration.LightTransmission" Operation="SafeAdd" CheckAttributes="True">
-									<transmission>0.9</transmission>
+									<transmission>0.8</transmission>
 								</li>
 							</modExtensions>
 						</value>
@@ -643,7 +654,7 @@
 							</comps>
 							<modExtensions Operation="Safe">
 								<li Class="RaycastLighting.Integration.LightTransmission" Operation="SafeAdd" CheckAttributes="True">
-									<transmission>0.6</transmission>
+									<transmission>0.8</transmission>
 								</li>
 							</modExtensions>
 						</value>
@@ -729,7 +740,7 @@
 									</comps>
 									<modExtensions Operation="Safe">
 										<li Class="RaycastLighting.Integration.LightTransmission" Operation="SafeAdd" CheckAttributes="True">
-											<transmission>0.9</transmission>
+											<transmission>0.8</transmission>
 										</li>
 									</modExtensions>
 								</value>
