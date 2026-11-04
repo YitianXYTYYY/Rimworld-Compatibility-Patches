@@ -5,8 +5,11 @@
 		<xpath>Defs/ThinkTreeDef[defName="Humanlike"]</xpath>
 		<apply>
 			<!-- Prevent Packing Food -->
-			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-				<xpath>ThinkTreeDef/thinkRoot//li[@Class="ThinkNode_ConditionalNeedPercentageAbove"][need="Food"][subNodes/li[@Class="JobGiver_PackFood"]]</xpath>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>ThinkTreeDef/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalColonist"]/subNodes/li[@Class="ThinkNode_ConditionalNeedPercentageAbove"][need="Food"]</xpath>
+				<value>
+					<threshold Operation="SafeReplace">1</threshold>
+				</value>
 			</Operation>
 		</apply>
 	</Operation>
