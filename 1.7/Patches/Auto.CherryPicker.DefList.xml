@@ -639,17 +639,16 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
-			<!-- ReBuild: Doors and Corners -->
+			<!-- Raycast Lighting -->
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
-					<li>rebuild.cotr.doorsandcorners</li>
+					<li>lexif.raycastlighting</li>
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
-					<!-- Raycast Lighting -->
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
-							<li>lexif.raycastlighting</li>
+							<li>rebuild.cotr.doorsandcorners</li>
 						</mods>
 						<packageId>true</packageId>
 						<caseTrue>
@@ -662,6 +661,15 @@
 							</Operation>
 						</caseTrue>
 					</Operation>
+				</caseTrue>
+			</Operation>
+			<!-- ReBuild: Doors and Corners -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>rebuild.cotr.doorsandcorners</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
 					<!-- Security and Blast Doors Expanded -->
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
