@@ -736,4 +736,8 @@
 		</caseTrue>
 	</Operation>
 
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>Defs/WeaponTraitDef[exclusionTags/li="AmmoType"]</xpath>
+	</Operation>
+
 </Patch>
