@@ -8,6 +8,13 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<!-- modules -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingCategoryDef[defName="MU_SmallArmor"]</xpath>
+				<value>
+					<parent Operation="SafeReplace">MU_Armor</parent>
+				</value>
+			</Operation>
 			<!-- Armor -->
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/MU.MechUpgradeDef[defName="MU_MechArmor_Large_C" or
