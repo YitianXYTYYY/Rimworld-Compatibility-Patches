@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	<CherryPicker.DefList MayRequire="Owlchemist.CherryPicker">
+	<CherryPicker.DefList>
 		<defName>CherryPicker_XYTYYY</defName>
 		<label>uncheck to enable xytyyy removals</label>
 		<defs/>
