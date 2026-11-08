@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<HediffDef MayRequire="ebsg.framework,redmattis.betterprerequisites">
+		<defName>VRE_Pigskin_EverGrowing</defName>
+		<label>ever growing</label>
+		<description>Ever growing gene prevents pawn from stopping growing body size until they reach a biological age of 60.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<minSeverity>0.001</minSeverity>
+		<maxSeverity>0.6</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_SeverityByAge">
+				<divideByLifespanFactor>False</divideByLifespanFactor>
+				<accountForLifeExpectancyDifference>False</accountForLifeExpectancyDifference>
+				<additionalFactor>0.01</additionalFactor>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<minSeverity>0.001</minSeverity>
+			</li>
+			<li>
+				<minSeverity>0.1</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
+				<statOffsets>
+					<StaggerDurationFactor>-0.05</StaggerDurationFactor>
+					<SM_BodySizeOffset>0.1</SM_BodySizeOffset>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>0.2</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.1</offset>
+					</li>
+				</capMods>
+				<statOffsets>
+					<StaggerDurationFactor>-0.1</StaggerDurationFactor>
+					<SM_BodySizeOffset>0.2</SM_BodySizeOffset>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>0.3</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.15</offset>
+					</li>
+				</capMods>
+				<statOffsets>
+					<StaggerDurationFactor>-0.15</StaggerDurationFactor>
+					<SM_BodySizeOffset>0.3</SM_BodySizeOffset>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>0.4</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.2</offset>
+					</li>
+				</capMods>
+				<statOffsets>
+					<StaggerDurationFactor>-0.2</StaggerDurationFactor>
+					<SM_BodySizeOffset>0.4</SM_BodySizeOffset>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>0.5</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.25</offset>
+					</li>
+				</capMods>
+				<statOffsets>
+					<StaggerDurationFactor>-0.25</StaggerDurationFactor>
+					<SM_BodySizeOffset>0.5</SM_BodySizeOffset>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>0.6</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.3</offset>
+					</li>
+				</capMods>
+				<statOffsets>
+					<StaggerDurationFactor>-0.3</StaggerDurationFactor>
+					<SM_BodySizeOffset>0.6</SM_BodySizeOffset>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>

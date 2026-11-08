@@ -1022,20 +1022,12 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>goji.gojismiscgenes</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseFalse>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>Defs/GeneDef[defName="VREStarjack_Cryostasis"]</xpath>
-								<value>
-									<displayCategory Operation="AddOrReplace">Temperature</displayCategory>
-									<displayOrderInCategory Operation="AddOrReplace">1031</displayOrderInCategory>
-								</value>
-							</Operation>
-						</caseFalse>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/GeneDef[defName="VREStarjack_Cryostasis"]</xpath>
+						<value>
+							<displayCategory Operation="AddOrReplace">Temperature</displayCategory>
+							<displayOrderInCategory Operation="AddOrReplace">1031</displayOrderInCategory>
+						</value>
 					</Operation>
 				</caseTrue>
 			</Operation>
@@ -1347,6 +1339,9 @@
 				<value>
 					<displayCategory Operation="AddOrReplace">Health_Eye</displayCategory>
 					<displayOrderInCategory Operation="AddOrReplace">10</displayOrderInCategory>
+					<exclusionTags Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">Nearsighted</li>
+					</exclusionTags>
 					<statFactors Operation="Safe">
 						<ShootingAccuracyFactor_Long Operation="SafeReplace">0.3</ShootingAccuracyFactor_Long>
 						<ShootingAccuracyFactor_Medium Operation="SafeReplace">0.6</ShootingAccuracyFactor_Medium>
@@ -1358,6 +1353,9 @@
 				<value>
 					<displayCategory Operation="AddOrReplace">Health_Eye</displayCategory>
 					<displayOrderInCategory Operation="AddOrReplace">100</displayOrderInCategory>
+					<exclusionTags Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">VRE_SuperiorDarkVision</li>
+					</exclusionTags>
 				</value>
 			</Operation>
 		</caseTrue>
@@ -1641,7 +1639,7 @@
 											<displayCategory Operation="AddOrReplace">Social</displayCategory>
 											<displayOrderInCategory Operation="AddOrReplace">-100</displayOrderInCategory>
 											<exclusionTags Operation="Safe">
-												<li Operation="SafeAdd" Compare="InnerText">XYTYYY_RequireSpeechAbility</li>
+												<li Operation="SafeAdd" Compare="InnerText">VRE_SpeechInability</li>
 											</exclusionTags>
 										</value>
 									</Operation>
@@ -1682,11 +1680,11 @@
 										<value>
 											<iconPath Operation="SafeReplace">UI/Icons/Genes/Gene_Speechless</iconPath>
 											<symbolPack Operation="Safe">
-												<prefixSymbols Operation="Safe">
+												<prefixSymbols Operation="SafeAdd">
 													<li><symbol>hush</symbol></li>
 													<li><symbol>quiet</symbol></li>
 												</prefixSymbols>
-												<suffixSymbols Operation="Safe">
+												<suffixSymbols Operation="SafeAdd">
 													<li><symbol>mute</symbol></li>
 												</suffixSymbols>
 											</symbolPack>
@@ -1698,42 +1696,14 @@
 					</Operation>
 				</caseTrue>
 			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThoughtDef[defName="MissingTongue"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>vanillaracesexpanded.insector</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseFalse>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>ThoughtDef</xpath>
-								<value>
-									<nullifyingGenes Operation="Safe">
-										<li Operation="SafeAdd" Compare="InnerText">VRE_VocalChitters</li>
-									</nullifyingGenes>
-								</value>
-							</Operation>
-						</caseFalse>
-					</Operation>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>vanillaracesexpanded.lycanthrope</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseFalse>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>ThoughtDef</xpath>
-								<value>
-									<nullifyingGenes Operation="Safe">
-										<li Operation="SafeAdd" Compare="InnerText">VRE_SpeechInability</li>
-									</nullifyingGenes>
-								</value>
-							</Operation>
-						</caseFalse>
-					</Operation>
-				</apply>
+				<value>
+					<nullifyingGenes Operation="Safe">
+						<li MayRequire="vanillaracesexpanded.lycanthrope" Operation="SafeAdd" Compare="InnerText">VRE_SpeechInability</li>
+						<li MayRequire="vanillaracesexpanded.insector" Operation="SafeAdd" Compare="InnerText">VRE_VocalChitters</li>
+					</nullifyingGenes>
+				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
@@ -2021,30 +1991,68 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
+					<Operation Class="XmlExtensions.SetScope">
 						<xpath>Defs/GeneDef[defName="VRE_EverGrowing"]</xpath>
-						<value>
-							<biostatMet Operation="SafeReplace">-3</biostatMet>
-							<capMods Operation="Safe">
-								<li Operation="SafeAdd" Compare="InnerText" XPathLocal="capacity">
-									<capacity>Moving</capacity>
-									<offset>-0.15</offset>
-								</li>
-							</capMods>
-							<displayCategory Operation="AddOrReplace">Miscellaneous</displayCategory>
-							<displayOrderInCategory Operation="AddOrReplace">50</displayOrderInCategory>
-							<statOffsets Operation="Safe">
-								<StaggerDurationFactor Operation="SafeAdd">-0.3</StaggerDurationFactor>
-							</statOffsets>
-							<modExtensions Operation="Safe">
-								<li Class="VEF.Genes.GeneExtension" Operation="Safe" CheckAttributes="True">
-									<sizeByAge Operation="Safe">
-										<maxOffset Operation="SafeReplace">0.6</maxOffset>
-										<range Operation="SafeReplace">0~60</range>
-									</sizeByAge>
-								</li>
-							</modExtensions>
-						</value>
+						<apply>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>GeneDef</xpath>
+								<value>
+									<biostatMet Operation="SafeReplace">-3</biostatMet>
+									<capMods Operation="Safe">
+										<li Operation="SafeAdd" Compare="InnerText" XPathLocal="capacity">
+											<capacity>Moving</capacity>
+											<offset>-0.15</offset>
+										</li>
+									</capMods>
+									<displayCategory Operation="AddOrReplace">Miscellaneous</displayCategory>
+									<displayOrderInCategory Operation="AddOrReplace">50</displayOrderInCategory>
+									<statOffsets Operation="Safe">
+										<StaggerDurationFactor Operation="SafeAdd">-0.3</StaggerDurationFactor>
+									</statOffsets>
+									<modExtensions Operation="Safe">
+										<li Class="VEF.Genes.GeneExtension" Operation="Safe" CheckAttributes="True">
+											<sizeByAge Operation="Safe">
+												<maxOffset Operation="SafeReplace">0.6</maxOffset>
+												<range Operation="SafeReplace">0~60</range>
+											</sizeByAge>
+										</li>
+									</modExtensions>
+								</value>
+							</Operation>
+							<Operation Class="XmlExtensions.FindMod">
+								<mods>
+									<li>ebsg.framework</li>
+									<li>redmattis.betterprerequisites</li>
+								</mods>
+								<packageId>true</packageId>
+								<logic>and</logic>
+								<caseTrue>
+									<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+										<xpath>GeneDef/modExtensions/li[@Class="VEF.Genes.GeneExtension"]/sizeByAge</xpath>
+									</Operation>
+									<Operation Class="XmlExtensions.HybridPatch">
+										<xpath>GeneDef</xpath>
+										<value>
+											<biostatCpx Operation="SafeReplace">3</biostatCpx>
+											<biostatMet Operation="SafeRemove"/>
+											<capMods Operation="SafeRemove"/>
+											<geneClass Operation="AddOrReplace">EBSGFramework.HediffAdder</geneClass>
+											<modExtensions Operation="Safe">
+												<li Class="EBSGFramework.EBSGExtension" Operation="Safe" CheckAttributes="True">
+													<hediffsToApply Operation="Safe">
+														<li Operation="SafeAdd" Compare="InnerText" XPathLocal="hediff">
+															<hediff>VRE_Pigskin_EverGrowing</hediff>
+															<severity>0.001</severity>
+														</li>
+													</hediffsToApply>
+												</li>
+											</modExtensions>
+											<statOffsets Operation="SafeRemove"/>
+										</value>
+									</Operation>
+								</caseTrue>
+							</Operation>
+						</apply>
 					</Operation>
 				</caseTrue>
 			</Operation>
@@ -2054,25 +2062,49 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
-					<Operation Class="XmlExtensions.HybridPatch">
+					<Operation Class="XmlExtensions.SetScope">
 						<xpath>Defs/GeneDef[defName="VREH_Giant"]</xpath>
-						<value>
-							<biostatMet Operation="SafeReplace">-2</biostatMet>
-							<capMods Operation="Safe">
-								<li Operation="SafeAdd" Compare="InnerText" XPathLocal="capacity">
-									<capacity>Moving</capacity>
-									<offset>-0.1</offset>
-								</li>
-							</capMods>
-							<displayOrderInCategory Operation="AddOrReplace">70</displayOrderInCategory>
-							<statFactors Operation="Safe">
-								<VEF_BodySize_Multiplier Operation="SafeRemove">0</VEF_BodySize_Multiplier>
-							</statFactors>
-							<statOffsets Operation="Safe">
-								<StaggerDurationFactor Operation="SafeAdd">-0.2</StaggerDurationFactor>
-								<VEF_BodySize_Offset Operation="SafeAdd">0.4</VEF_BodySize_Offset>
-							</statOffsets>
-						</value>
+						<apply>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>GeneDef</xpath>
+								<value>
+									<biostatMet Operation="SafeReplace">-2</biostatMet>
+									<capMods Operation="Safe">
+										<li Operation="SafeAdd" Compare="InnerText" XPathLocal="capacity">
+											<capacity>Moving</capacity>
+											<offset>-0.1</offset>
+										</li>
+									</capMods>
+									<displayOrderInCategory Operation="AddOrReplace">70</displayOrderInCategory>
+									<statFactors Operation="Safe">
+										<VEF_BodySize_Multiplier Operation="SafeRemove">0</VEF_BodySize_Multiplier>
+									</statFactors>
+									<statOffsets Operation="Safe">
+										<StaggerDurationFactor Operation="SafeAdd">-0.2</StaggerDurationFactor>
+										<VEF_BodySize_Offset Operation="SafeAdd">0.4</VEF_BodySize_Offset>
+									</statOffsets>
+								</value>
+							</Operation>
+							<Operation Class="XmlExtensions.FindMod">
+								<mods>
+									<li>redmattis.betterprerequisites</li>
+								</mods>
+								<packageId>true</packageId>
+								<caseTrue>
+									<Operation Class="XmlExtensions.HybridPatch">
+										<xpath>GeneDef</xpath>
+										<value>
+											<biostatCpx Operation="SafeReplace">2</biostatCpx>
+											<biostatMet Operation="SafeRemove"/>
+											<statOffsets Operation="Safe">
+												<SM_BodySizeOffset Operation="SafeAdd">0.4</SM_BodySizeOffset>
+												<VEF_BodySize_Offset Operation="SafeRemove"/>
+											</statOffsets>
+										</value>
+									</Operation>
+								</caseTrue>
+							</Operation>
+						</apply>
 					</Operation>
 				</caseTrue>
 			</Operation>
