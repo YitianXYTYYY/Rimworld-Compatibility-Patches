@@ -111,6 +111,8 @@
 					<displayCategory Operation="AddOrReplace">Health_Eye</displayCategory>
 					<displayOrderInCategory Operation="AddOrReplace">0</displayOrderInCategory>
 					<exclusionTags Operation="Safe">
+						<li Operation="SafeAdd" Compare="InnerText">InsectorEye</li>
+						<li Operation="SafeAdd" Compare="InnerText">Nearsighted</li>
 						<li Operation="SafeAdd" Compare="InnerText">VRE_SuperiorDarkVision</li>
 					</exclusionTags>
 				</value>
