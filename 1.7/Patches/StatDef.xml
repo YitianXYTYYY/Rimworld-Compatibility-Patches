@@ -142,4 +142,21 @@
 			<toStringStyleUnfinalized Operation="SafeRemove"/>
 		</value>
 	</Operation>
+
+	<!-- Big and Small - Framework -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>redmattis.betterprerequisites</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/StatDef[defName="SM_BodySizeOffset"]</xpath>
+				<value>
+					<toStringStyle Operation="SafeReplace">PercentZero</toStringStyle>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 </Patch>
