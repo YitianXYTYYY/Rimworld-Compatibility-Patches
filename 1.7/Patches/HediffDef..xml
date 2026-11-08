@@ -1554,6 +1554,98 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="VRE_PsychicBondBloodlust"]</xpath>
+				<value>
+					<label Operation="SafeReplace">psychic bond (combative)</label>
+					<stages Operation="Safe">
+						<li Operation="Safe">
+							<statFactors Operation="Safe">
+								<MeleeDamageFactor Operation="SafeRemove">0</MeleeDamageFactor>
+							</statFactors>
+							<statOffsets Operation="Safe">								
+								<MeleeHitChance Operation="SafeAdd">4</MeleeHitChance>
+							</statOffsets>
+						</li>
+					</stages>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="VRE_PsychicBondFastLearner"]</xpath>
+				<value>
+					<label Operation="SafeReplace">psychic bond (quick-learner)</label>
+					<stages Operation="Safe">
+						<li Operation="Safe">
+							<statOffsets Operation="Safe">								
+								<GlobalLearningFactor Operation="SafeReplace">0.2</GlobalLearningFactor>
+							</statOffsets>
+						</li>
+					</stages>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="VRE_PsychicBondIndustrious"]</xpath>
+				<value>
+					<label Operation="SafeReplace">psychic bond (diligent)</label>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="VRE_PsychicBondSanguine"]</xpath>
+				<value>
+					<label Operation="SafeReplace">psychic bond (optimist)</label>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThoughtDef[defName="VRE_PsychicBondSanguine"]/stages/li</xpath>
+				<value>
+					<label Operation="SafeReplace">psychic bond (optimist)</label>
+					<baseMoodEffect Operation="SafeReplace">5</baseMoodEffect>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="VRE_PsychicBondIronWilled"]</xpath>
+				<value>
+					<label Operation="SafeReplace">psychic bond (steadfast)</label>
+					<stages Operation="Safe">
+						<li Operation="Safe">
+							<statOffsets Operation="Safe">								
+								<MentalBreakThreshold Operation="SafeReplace">-0.1</MentalBreakThreshold>
+							</statOffsets>
+						</li>
+					</stages>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="VRE_PsychicBondCarefulShooter"]</xpath>
+				<value>
+					<label Operation="SafeReplace">psychic bond (precise)</label>
+					<stages Operation="Safe">
+						<li Operation="Safe">
+							<statOffsets Operation="Safe">								
+								<ShootingAccuracyPawn Operation="SafeReplace">4</ShootingAccuracyPawn>
+							</statOffsets>
+						</li>
+					</stages>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="VRE_PsychicBondPsychicallyHypersensitive"]</xpath>
+				<value>
+					<label Operation="SafeReplace">psychic bond (psy-sensitive)</label>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="VRE_PsychicBondGreatMemory"]</xpath>
+				<value>
+					<label Operation="SafeReplace">psychic bond (wise)</label>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef[defName="VRE_PsychicBondAbrasive"]</xpath>
+				<value>
+					<label Operation="SafeReplace">psychic bond (abrasive)</label>
+				</value>
+			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
 					<li>danzinagri.mmmm.integrations.other</li>
@@ -1561,14 +1653,19 @@
 				<packageId>true</packageId>
 				<caseTrue>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/HediffDef[defName="TMM_PsychicBondRest"]/stages/li</xpath>
+						<xpath>Defs/HediffDef[defName="TMM_PsychicBondRest"]</xpath>
 						<value>
-							<statFactors Operation="Safe">
-								<RestRateMultiplier Operation="SafeRemove">0</RestRateMultiplier>
-							</statFactors>
-							<statOffsets Operation="Safe">
-								<RestRateMultiplier Operation="SafeAdd">0.2</RestRateMultiplier>
-							</statOffsets>
+							<label Operation="SafeReplace">psychic bond (vitalized)</label>
+							<stages Operation="Safe">
+								<li Operation="Safe">
+									<statFactors Operation="Safe">
+										<RestRateMultiplier Operation="SafeRemove">0</RestRateMultiplier>
+									</statFactors>
+									<statOffsets Operation="Safe">
+										<RestRateMultiplier Operation="SafeAdd">0.2</RestRateMultiplier>
+									</statOffsets>
+								</li>
+							</stages>
 						</value>
 					</Operation>
 				</caseTrue>
