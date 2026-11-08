@@ -14,11 +14,11 @@
 		<soundDrop>Wood_Drop</soundDrop>
 		<stackLimit>75</stackLimit>
 		<statBases>
-			<MarketValue>1.5</MarketValue>
-			<MaxHitPoints>20</MaxHitPoints>
-			<Mass>0.04</Mass>
-			<Flammability>1</Flammability>
 			<DeteriorationRate>1.0</DeteriorationRate>
+			<Flammability>1</Flammability>
+			<MarketValue>1.5</MarketValue>
+			<Mass>0.04</Mass>
+			<MaxHitPoints>20</MaxHitPoints>
 		</statBases>
     	<techLevel>Neolithic</techLevel>
 		<thingCategories>
@@ -76,11 +76,11 @@
 		<soundDrop>Standard_Drop</soundDrop>
 		<stackLimit>150</stackLimit>
 		<statBases>
-			<MarketValue>3.5</MarketValue>
-			<MaxHitPoints>20</MaxHitPoints>
-			<Mass>0.02</Mass>
-			<Flammability>0.6</Flammability>
 			<DeteriorationRate>1.0</DeteriorationRate>
+			<Flammability>0.8</Flammability>
+			<MarketValue>3.5</MarketValue>
+			<Mass>0.02</Mass>
+			<MaxHitPoints>40</MaxHitPoints>
 		</statBases>
     	<techLevel>Industrial</techLevel>
 		<thingCategories>
@@ -145,11 +145,11 @@
 		<soundDrop>Standard_Drop</soundDrop>
 		<stackLimit>150</stackLimit>
 		<statBases>
-			<MarketValue>11</MarketValue>
-			<MaxHitPoints>20</MaxHitPoints>
-			<Mass>0.01</Mass>
+			<DeteriorationRate>0.5</DeteriorationRate>
 			<Flammability>0.6</Flammability>
-			<DeteriorationRate>1.0</DeteriorationRate>
+			<MarketValue>11</MarketValue>
+			<Mass>0.01</Mass>
+			<MaxHitPoints>60</MaxHitPoints>
 		</statBases>
     	<techLevel>Spacer</techLevel>
 		<thingCategories>
@@ -213,10 +213,11 @@
 		<soundDrop>Standard_Drop</soundDrop>
 		<stackLimit>150</stackLimit>
 		<statBases>
+			<DeteriorationRate>0.5</DeteriorationRate>
+			<Flammability>0.6</Flammability>
 			<MarketValue>15</MarketValue>
 			<Mass>0.01</Mass>
-			<Flammability>0.6</Flammability>
-			<DeteriorationRate>1.0</DeteriorationRate>
+			<MaxHitPoints>60</MaxHitPoints>
 		</statBases>
     	<techLevel>Spacer</techLevel>
 		<thingCategories>
@@ -286,7 +287,7 @@
 		<label>unfinished ammo</label>
 		<description>An unfinished ammo.</description>
 		<statBases>
-			<Flammability>0.6</Flammability>
+			<Flammability>0.8</Flammability>
 		</statBases>
 		<graphicData>
 			<texPath>Things/Item/Unfinished/UnfinishedBelt</texPath>

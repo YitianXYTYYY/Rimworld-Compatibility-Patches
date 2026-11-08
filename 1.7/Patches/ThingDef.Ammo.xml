@@ -21,6 +21,7 @@
 								<Flammability Operation="SafeReplace">0.6</Flammability>
 								<MarketValue Operation="SafeReplace">5</MarketValue>
 								<Mass Operation="SafeReplace">0.1</Mass>
+								<MaxHitPoints Operation="SafeReplace">40</MaxHitPoints>
 							</statBases>
 							<tradeTags Operation="Safe">
 								<li Operation="SafeAdd" Compare="InnerText">Ammo</li>

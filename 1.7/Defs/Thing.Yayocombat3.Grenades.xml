@@ -11,6 +11,7 @@
 		<stackLimit>25</stackLimit>
 		<statBases>
 			<Mass>0.2</Mass>
+			<MaxHitPoints>60</MaxHitPoints>
 			<WorkToMake>900</WorkToMake>
 		</statBases>
 		<weaponTags>
@@ -27,6 +28,7 @@
 		<stackLimit>25</stackLimit>
 		<statBases>
 			<Mass>0.2</Mass>
+			<MaxHitPoints>60</MaxHitPoints>
 			<WorkToMake>1200</WorkToMake>
 		</statBases>
 		<weaponTags>
@@ -43,6 +45,7 @@
 		<stackLimit>25</stackLimit>
 		<statBases>
 			<Mass>0.2</Mass>
+			<MaxHitPoints>60</MaxHitPoints>
 			<WorkToMake>1800</WorkToMake>
 		</statBases>
 		<weaponTags>
@@ -59,6 +62,7 @@
 		<stackLimit>25</stackLimit>
 		<statBases>
 			<Mass>0.2</Mass>
+			<MaxHitPoints>60</MaxHitPoints>
 			<WorkToMake>1800</WorkToMake>
 		</statBases>
 		<weaponTags>
@@ -75,6 +79,7 @@
 		<stackLimit>25</stackLimit>
 		<statBases>
 			<Mass>0.2</Mass>
+			<MaxHitPoints>60</MaxHitPoints>
 			<WorkToMake>900</WorkToMake>
 		</statBases>
 		<weaponTags>
@@ -91,6 +96,7 @@
 		<stackLimit>25</stackLimit>
 		<statBases>
 			<Mass>0.2</Mass>
+			<MaxHitPoints>60</MaxHitPoints>
 			<WorkToMake>1800</WorkToMake>
 		</statBases>
 		<weaponTags>
