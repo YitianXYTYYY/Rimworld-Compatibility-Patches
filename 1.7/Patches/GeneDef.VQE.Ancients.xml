@@ -159,29 +159,13 @@
 								<value>
 									<exclusionTags Operation="Safe">
 										<li Operation="SafeRemove" Compare="InnerText">ShootingAccuracy</li>
-										<li Operation="SafeAdd" Compare="InnerText">Turn_Exclusion_NearSighted</li>
+										<li Operation="SafeAdd" Compare="InnerText">Nearsighted</li>
 									</exclusionTags>
 								</value>
 							</Operation>
 						</caseTrue>
 					</Operation>
 				</apply>
-			</Operation>
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>vanillaracesexpanded.lycanthrope</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseFalse>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/GeneDef[defName="DarkVision"]</xpath>
-						<value>
-							<exclusionTags Operation="Safe">
-								<li Operation="SafeAdd" Compare="InnerText">VRE_SuperiorDarkVision</li>
-							</exclusionTags>
-						</value>
-					</Operation>
-				</caseFalse>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/GeneDef[defName="VQEA_Serene"]</xpath>
@@ -193,6 +177,9 @@
 				<xpath>Defs/GeneDef[defName="VQEA_Marksman"]</xpath>
 				<value>
 					<displayOrderInCategory Operation="AddOrReplace">-390</displayOrderInCategory>
+					<exclusionTags Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">ShootingAccuracy</li>
+					</exclusionTags>
 					<statFactors Operation="Safe">
 						<AimingDelayFactor Operation="SafeAdd">0.5</AimingDelayFactor>
 						<RangedCooldownFactor Operation="SafeReplace">0.8</RangedCooldownFactor>
@@ -308,6 +295,25 @@
 								<StaggerDurationFactor Operation="SafeAdd">-0.5</StaggerDurationFactor>
 							</statOffsets>
 						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>redmattis.betterprerequisites</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>GeneDef</xpath>
+								<value>
+									<biostatMet Operation="SafeRemove"/>
+									<biostatCpx Operation="SafeReplace">5</biostatCpx>
+									<statOffsets Operation="Safe">
+										<SM_BodySizeOffset Operation="SafeAdd">1</SM_BodySizeOffset>
+										<VEF_BodySize_Offset Operation="SafeRemove"/>
+									</statOffsets>
+								</value>
+							</Operation>
+						</caseTrue>
 					</Operation>
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>

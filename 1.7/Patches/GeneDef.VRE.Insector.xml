@@ -508,6 +508,24 @@
 									</statOffsets>
 								</value>
 							</Operation>
+							<Operation Class="XmlExtensions.FindMod">
+								<mods>
+									<li>redmattis.betterprerequisites</li>
+								</mods>
+								<packageId>true</packageId>
+								<caseTrue>
+									<Operation Class="XmlExtensions.HybridPatch">
+										<xpath>VanillaRacesExpandedInsector.GenelineGeneDef</xpath>
+										<value>
+											<biostatMet Operation="SafeRemove"/>
+											<statOffsets Operation="Safe">
+												<SM_BodySizeOffset Operation="SafeAdd">-0.4</SM_BodySizeOffset>
+												<VEF_BodySize_Offset Operation="SafeRemove"/>
+											</statOffsets>
+										</value>
+									</Operation>
+								</caseTrue>
+							</Operation>
 						</apply>
 					</Operation>
 					<Operation Class="XmlExtensions.SetScope">
@@ -541,6 +559,24 @@
 										<VEF_BodySize_Offset Operation="SafeReplace">0.6</VEF_BodySize_Offset>
 									</statOffsets>
 								</value>
+							</Operation>
+							<Operation Class="XmlExtensions.FindMod">
+								<mods>
+									<li>redmattis.betterprerequisites</li>
+								</mods>
+								<packageId>true</packageId>
+								<caseTrue>
+									<Operation Class="XmlExtensions.HybridPatch">
+										<xpath>VanillaRacesExpandedInsector.GenelineGeneDef</xpath>
+										<value>
+											<biostatMet Operation="SafeRemove"/>
+											<statOffsets Operation="Safe">
+												<SM_BodySizeOffset Operation="SafeAdd">0.6</SM_BodySizeOffset>
+												<VEF_BodySize_Offset Operation="SafeRemove"/>
+											</statOffsets>
+										</value>
+									</Operation>
+								</caseTrue>
 							</Operation>
 						</apply>
 					</Operation>
