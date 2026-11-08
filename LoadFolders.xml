@@ -1,10 +1,8 @@
 <loadFolders>
-	<v1.6>
-		<li>/</li>
-		<li>1.6</li>
-	</v1.6>
 	<v1.7>
 		<li>/</li>
 		<li>1.7</li>
+		<li IfModActive="owlchemist.cherrypicker">1.7/Mods/Cherry Picker</li>
+		<li IfModActive="ferny.replacelib">1.7/Mods/ReplaceLib</li>
 	</v1.7>
 </loadFolders>
