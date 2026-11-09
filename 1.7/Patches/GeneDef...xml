@@ -291,7 +291,6 @@
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
 					<li>goji.gojismiscgenes</li>
-					<li>arquebus.stagzmerfolk</li>
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>

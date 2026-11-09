@@ -52,13 +52,13 @@
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>/Defs/ThoughtDef[defName="MyFatherDied"]/stages/li[label="my father {0} died"]</xpath>
 		<value>
-			<baseMoodEffect>-20</baseMoodEffect>
+			<baseMoodEffect>-30</baseMoodEffect>
 		</value>
 	</Operation>
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>/Defs/ThoughtDef[defName="MyMotherDied"]/stages/li[label="my mother {0} died"]</xpath>
 		<value>
-			<baseMoodEffect>-20</baseMoodEffect>
+			<baseMoodEffect>-30</baseMoodEffect>
 		</value>
 	</Operation>
 
