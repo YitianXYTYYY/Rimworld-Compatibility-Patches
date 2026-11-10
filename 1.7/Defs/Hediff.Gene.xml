@@ -6,6 +6,7 @@
 		<label>ever growing</label>
 		<description>Ever growing gene prevents pawn from stopping growing body size until they reach a biological age of 60.</description>
 		<hediffClass>HediffWithComps</hediffClass>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
 		<scenarioCanAdd>false</scenarioCanAdd>
 		<minSeverity>0.001</minSeverity>
 		<maxSeverity>0.6</maxSeverity>
