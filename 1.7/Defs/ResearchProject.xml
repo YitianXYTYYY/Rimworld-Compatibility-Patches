@@ -4,7 +4,7 @@
 	<ResearchProjectDef MayRequire="ludeon.rimworld.royalty">
 		<defName>EltexApparel</defName>
 		<label>eltex apparel</label>
-		<description>Craft eltex apparel for psycasters, like royal robes and crowns.</description>
+		<description>Craft eltex apparel for psycasters that enhances psy-sensitivity.</description>
 		<baseCost>4000</baseCost>
 		<techLevel>Ultra</techLevel>
 		<hiddenPrerequisites>
