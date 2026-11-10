@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/HediffDef[defName="VQEA_PlasteelClaws"]</xpath>
+		<value>
+			<comps Operation="Safe">
+				<li Class="HediffCompProperties_VerbGiver" Operation="Safe" CheckAttributes="True">
+					<tools Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="label">
+							<label Operation="Safe">plasteel claw</label>
+							<capacities Operation="Safe">
+								<li Operation="SafeRemove" Compare="InnerText">Cut</li>
+								<li Operation="SafeAdd" Compare="InnerText">Scratch</li>
+							</capacities>
+							<armorPenetration Operation="SafeRemove">0</armorPenetration>
+							<alwaysTreatAsWeapon Operation="SafeAdd">true</alwaysTreatAsWeapon>
+							<soundMeleeHit Operation="SafeAdd">Pawn_Melee_PowerClaw_Hit</soundMeleeHit>
+							<soundMeleeMiss Operation="SafeAdd">Pawn_Melee_PowerClaw_Miss</soundMeleeMiss>
+						</li>
+					</tools>
+				</li>
+			</comps>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/HediffDef[defName="VQEA_MasterfulIntellectual"]</xpath>
+		<value>
+			<comps Operation="Safe">
+				<li Class="VEF.AnimalBehaviours.HediffCompProperties_PassiveResearch" Operation="Safe" CheckAttributes="True">
+					<tickInterval Operation="SafeReplace">2,500</tickInterval>
+				</li>
+			</comps>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/HediffDef[defName="VQEA_HemocollapseSyndrome"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[minSeverity="0.0"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<ImmunityGainSpeed Operation="SafeAdd">0.9</ImmunityGainSpeed>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<ImmunityGainSpeed Operation="SafeRemove">0</ImmunityGainSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[minSeverity="0.25"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<ImmunityGainSpeed Operation="SafeAdd">0.8</ImmunityGainSpeed>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<ImmunityGainSpeed Operation="SafeRemove">0</ImmunityGainSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[minSeverity="0.55"]</xpath>
+				<value>
+					<statFactors Operation="Safe">
+						<ImmunityGainSpeed Operation="SafeAdd">0.5</ImmunityGainSpeed>
+					</statFactors>
+					<statOffsets Operation="Safe">
+						<ImmunityGainSpeed Operation="SafeRemove">0</ImmunityGainSpeed>
+					</statOffsets>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
+
+</Patch>

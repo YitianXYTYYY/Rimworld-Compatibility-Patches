@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneDef[defName="VQEA_MasterfulShooting"]</xpath>
+		<value>
+			<displayOrderInCategory Operation="AddOrReplace">1</displayOrderInCategory>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneDef[defName="VQEA_MasterfulMelee"]</xpath>
+		<value>
+			<displayOrderInCategory Operation="AddOrReplace">2</displayOrderInCategory>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneDef[defName="VQEA_MasterfulConstruction"]</xpath>
+		<value>
+			<displayOrderInCategory Operation="AddOrReplace">3</displayOrderInCategory>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneDef[defName="VQEA_MasterfulMining"]</xpath>
+		<value>
+			<displayOrderInCategory Operation="AddOrReplace">4</displayOrderInCategory>
+			<statOffsets Operation="Safe">
+				<MiningYield Operation="SafeReplace">0.2</MiningYield>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneDef[defName="VQEA_MasterfulCooking"]</xpath>
+		<value>
+			<displayOrderInCategory Operation="AddOrReplace">5</displayOrderInCategory>
+			<statOffsets Operation="Safe">
+				<ButcheryFleshEfficiency Operation="SafeReplace">0.2</ButcheryFleshEfficiency>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneDef[defName="VQEA_MasterfulPlants"]</xpath>
+		<value>
+			<displayOrderInCategory Operation="AddOrReplace">6</displayOrderInCategory>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneDef[defName="VQEA_MasterfulAnimals"]</xpath>
+		<value>
+			<displayOrderInCategory Operation="AddOrReplace">7</displayOrderInCategory>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneDef[defName="VQEA_MasterfulCrafting"]</xpath>
+		<value>
+			<displayOrderInCategory Operation="AddOrReplace">8</displayOrderInCategory>
+			<statOffsets Operation="Safe">
+				<ButcheryMechanoidEfficiency Operation="SafeReplace">0.2</ButcheryMechanoidEfficiency>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneDef[defName="VQEA_MasterfulArtistic"]</xpath>
+		<value>
+			<displayOrderInCategory Operation="AddOrReplace">9</displayOrderInCategory>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneDef[defName="VQEA_MasterfulMedical"]</xpath>
+		<value>
+			<displayOrderInCategory Operation="AddOrReplace">10</displayOrderInCategory>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneDef[defName="VQEA_MasterfulSocial"]</xpath>
+		<value>
+			<displayOrderInCategory Operation="AddOrReplace">11</displayOrderInCategory>
+		</value>
+	</Operation>
+	
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneDef[defName="VQEA_MasterfulIntellectual"]</xpath>
+		<value>
+			<displayOrderInCategory Operation="AddOrReplace">12</displayOrderInCategory>
+		</value>
+	</Operation>
+
+</Patch>
