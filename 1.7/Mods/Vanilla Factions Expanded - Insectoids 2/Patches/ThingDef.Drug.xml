@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- royal insect jelly -->
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/ThingDef[defName="VFEI2_RoyalInsectJelly"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>ThingDef/comps/li[@Class="CompProperties_Rottable"]</xpath>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>ThingDef</xpath>
+				<value>
+					<ingestible Operation="Safe">
+						<drugCategory Operation="SafeReplace">Social</drugCategory>
+					</ingestible>
+					<thingCategories Operation="Safe">
+						<li Operation="SafeRemove" Compare="InnerText">AnimalProductRaw</li>
+					</thingCategories>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
+
+</Patch>

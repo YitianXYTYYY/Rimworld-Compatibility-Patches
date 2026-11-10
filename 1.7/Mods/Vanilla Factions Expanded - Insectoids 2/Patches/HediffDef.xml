@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- Reproduction -->
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/HediffDef[defName="VFEI2_EmpressSpawn"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="egg"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeReplace">1.2</hungerRateFactor>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="larva"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeReplace">1.5</hungerRateFactor>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="pupa"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeReplace">2</hungerRateFactor>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="juvenile"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeReplace">2</hungerRateFactor>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/HediffDef[defName="VFEI2_GigamiteSpawn"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="egg"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeReplace">1.2</hungerRateFactor>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="larva"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeReplace">1.5</hungerRateFactor>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="pupa"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeReplace">2</hungerRateFactor>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="juvenile"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeReplace">2</hungerRateFactor>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/HediffDef[defName="VFEI2_SilverfishSpawn"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="egg"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeReplace">1.2</hungerRateFactor>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="larva"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeReplace">1.5</hungerRateFactor>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="pupa"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeReplace">2</hungerRateFactor>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="juvenile"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeReplace">2</hungerRateFactor>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/HediffDef[defName="VFEI2_TitantickSpawn"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="egg"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeReplace">1.2</hungerRateFactor>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="larva"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeReplace">1.5</hungerRateFactor>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="pupa"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeReplace">2</hungerRateFactor>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="juvenile"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeReplace">2</hungerRateFactor>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/HediffDef[defName="VFEI2_TeramantisSpawn"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="egg"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeReplace">1.2</hungerRateFactor>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="larva"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeReplace">1.5</hungerRateFactor>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="pupa"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeReplace">2</hungerRateFactor>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li[label="juvenile"]</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeReplace">2</hungerRateFactor>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
+
+</Patch>

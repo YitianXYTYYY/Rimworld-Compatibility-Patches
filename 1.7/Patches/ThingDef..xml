@@ -224,42 +224,6 @@
 		</caseTrue>
 	</Operation>
 
-	<!-- Vanilla Factions Expanded - Insectoids 2 -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>oskarpotocki.vfe.insectoid2</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<!-- Pherocore -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[@Name="VFEI2_PherocoreBase"]</xpath>
-				<value>
-					<thingCategories Operation="Safe">
-						<li Operation="SafeRemove" Compare="InnerText">ItemsMisc</li>
-						<li Operation="SafeAdd" Compare="InnerText">VFEI2Pherocores</li>
-					</thingCategories>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[@ParentName="VFEI2_PherocoreBase"][defName="VFEI2_PherocoreSorne"]</xpath>
-				<value>
-					<statBases Operation="Safe">
-						<MarketValue Operation="SafeReplace">1500</MarketValue>
-					</statBases>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[@ParentName="VFEI2_PherocoreBase"][defName!="VFEI2_PherocoreSorne"]</xpath>
-				<value>
-					<statBases Operation="Safe">
-						<MarketValue Operation="SafeReplace">2500</MarketValue>
-					</statBases>
-				</value>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
 	<!-- Vanilla Genetics Expanded -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
