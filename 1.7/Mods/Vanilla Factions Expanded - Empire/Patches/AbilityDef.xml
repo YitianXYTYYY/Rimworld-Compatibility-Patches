@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/AbilityDef[defName="VFEE_RoyalAddress"]/meats</xpath>
+		<value>
+			<showWhenDrafted Operation="SafeAdd">false</showWhenDrafted>
+		</value>
+	</Operation>
+
+</Patch>

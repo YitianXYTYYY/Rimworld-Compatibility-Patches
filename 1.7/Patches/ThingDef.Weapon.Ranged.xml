@@ -550,32 +550,6 @@
 		</caseTrue>
 	</Operation>
 
-	<!-- Vanilla Factions Expanded - Empire -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>oskarpotocki.vfe.empire</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="VEE_Gun_Fletcher"]</xpath>
-				<value>
-					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_AmmoSpacerEMP/5/10</li>
-					</weaponTags>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="VFEE_Gun_ChargeThumper"]</xpath>
-				<value>
-					<weaponTags Operation="Safe">
-						<li Operation="Add">ammoDef_AmmoSpacer/15/5</li>
-					</weaponTags>
-				</value>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
 	<!-- Vanilla Factions Expanded - Tribals -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
