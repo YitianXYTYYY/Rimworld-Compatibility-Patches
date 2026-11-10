@@ -573,31 +573,31 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThoughtDef/stages/li[label="psychic soothe"]</xpath>
 						<value>
-							<baseMoodEffect Operation="SafeReplace">10</baseMoodEffect>
+							<baseMoodEffect Operation="SafeReplace">8</baseMoodEffect>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThoughtDef/stages/li[label="low psychic drone"]</xpath>
 						<value>
-							<baseMoodEffect Operation="SafeReplace">-20</baseMoodEffect>
+							<baseMoodEffect Operation="SafeReplace">-16</baseMoodEffect>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThoughtDef/stages/li[label="moderate psychic drone"]</xpath>
 						<value>
-							<baseMoodEffect Operation="SafeReplace">-30</baseMoodEffect>
+							<baseMoodEffect Operation="SafeReplace">-24</baseMoodEffect>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThoughtDef/stages/li[label="high psychic drone"]</xpath>
 						<value>
-							<baseMoodEffect Operation="SafeReplace">-40</baseMoodEffect>
+							<baseMoodEffect Operation="SafeReplace">-36</baseMoodEffect>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThoughtDef/stages/li[label="extreme psychic drone"]</xpath>
 						<value>
-							<baseMoodEffect Operation="SafeReplace">-50</baseMoodEffect>
+							<baseMoodEffect Operation="SafeReplace">-48</baseMoodEffect>
 						</value>
 					</Operation>
 				</apply>
