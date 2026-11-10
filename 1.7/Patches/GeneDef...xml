@@ -312,7 +312,7 @@
 						<xpath>Defs/GeneDef[defName="VRE_Photosynthesis"]</xpath>
 						<value>
 							<customEffectDescriptions Operation="SafeAdd">
-								<li>Hunger rate x0% (in sunlight)</li>
+								<li>Hunger rate x0% (100% lit)</li>
 							</customEffectDescriptions>
 							<displayOrderInCategory Operation="AddOrReplace">-430</displayOrderInCategory>
 						</value>

@@ -387,11 +387,81 @@
 				<xpath>Defs/HediffDef[defName="VRE_Photosynthetic"]</xpath>
 				<apply>
 					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef</xpath>
+						<value>
+							<allowMothballIfLowPriorityWorldPawn Operation="SafeAdd">true</allowMothballIfLowPriorityWorldPawn>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[minSeverity="0.1"]</xpath>
 						<value>
 							<hungerRateFactor Operation="SafeAdd">0</hungerRateFactor>
 							<hungerRateFactorOffset Operation="SafeRemove"/>
 						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>ebsg.framework</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+						<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+							<xpath>HediffDef/comps/li[@Class="VEF.AnimalBehaviours.HediffCompProperties_StageBySunlight"]</xpath>
+						</Operation>
+						<Operation Class="XmlExtensions.HybridPatch">
+							<xpath>HediffDef</xpath>
+							<value>
+								<comps Operation="Safe">
+									<li Class="EBSGFramework.HediffCompProperties_SeverityByLightLevel" Operation="SafeAdd" CheckAttributes="True">
+										<lightToSeverityCurve>
+											<points>
+												<li>(0.50, 0.6)</li>
+												<li>(1, 0.1)</li>
+											</points>
+										</lightToSeverityCurve>
+										<timeToSeverityCurve>
+											<points>
+												<li>(0, 0.6)</li>
+												<li>(1, 0.6)</li>
+											</points>
+										</timeToSeverityCurve>
+									</li>
+								</comps>
+								<minSeverity Operation="SafeAdd">0.1</minSeverity>
+								<stages Operation="SafeReplace">
+									<li>
+										<label>100% lit</label>
+										<minSeverity>0.1</minSeverity>
+										<hungerRateFactor>0</hungerRateFactor>
+									</li>
+									<li>
+										<label>90% lit</label>
+										<minSeverity>0.2</minSeverity>
+										<hungerRateFactor>0.2</hungerRateFactor>
+									</li>
+									<li>
+										<label>80% lit</label>
+										<minSeverity>0.3</minSeverity>
+										<hungerRateFactor>0.4</hungerRateFactor>
+									</li>
+									<li>
+										<label>70% lit</label>
+										<minSeverity>0.4</minSeverity>
+										<hungerRateFactor>0.6</hungerRateFactor>
+									</li>
+									<li>
+										<label>60% lit</label>
+										<minSeverity>0.5</minSeverity>
+										<hungerRateFactor>0.8</hungerRateFactor>
+									</li>
+									<li>
+										<label>inactive</label>
+										<minSeverity>0.6</minSeverity>
+									</li>
+								</stages>
+							</value>
+						</Operation>
+						</caseTrue>
 					</Operation>
 				</apply>
 			</Operation>
@@ -700,13 +770,13 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThoughtDef/stages/li[label="moderate pollution happiness"]</xpath>
 						<value>
-							<baseMoodEffect Operation="SafeReplace">5</baseMoodEffect>
+							<baseMoodEffect Operation="SafeReplace">4</baseMoodEffect>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>ThoughtDef/stages/li[label="extreme pollution happiness"]</xpath>
 						<value>
-							<baseMoodEffect Operation="SafeReplace">10</baseMoodEffect>
+							<baseMoodEffect Operation="SafeReplace">8</baseMoodEffect>
 						</value>
 					</Operation>
 				</apply>
