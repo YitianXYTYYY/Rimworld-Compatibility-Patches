@@ -1,23 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>Ludeon.RimWorld.Royalty</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="MeleeWeapon_PsyfocusStaff"]</xpath>
-				<value>
-					<equippedStatOffsets Operation="Safe">
-						<PsychicSensitivityOffset Operation="SafeReplace">0.8</PsychicSensitivityOffset>
-					</equippedStatOffsets>
-				</value>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
 	<!-- Vanilla Weapons Expanded -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>

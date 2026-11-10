@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- prosthetics -->
+	<!-- archotech -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/HediffDef[defName="PsychicSensitizer"]/stages/li</xpath>
+		<value>
+			<statOffsets Operation="Safe">
+				<PsychicSensitivity Operation="SafeReplace">0.4</PsychicSensitivity>
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThoughtDef[defName="PsychicHarmonization"]/stages/li[label="psychic harmony: {HARMONIZER_labelShort}"]</xpath>
+		<value>
+			<baseMoodEffect Operation="SafeReplace">4</baseMoodEffect>
+		</value>
+	</Operation>
+
+	<!-- bionic -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/HediffDef[defName="Immunoenhancer"]/stages/li</xpath>
+		<value>
+			<statOffsets Operation="Safe">
+				<ImmunityGainSpeed Operation="SafeReplace">0.1</ImmunityGainSpeed>
+			</statOffsets>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/HediffDef[defName="HealingEnhancer"]/stages/li</xpath>
+		<value>
+			<naturalHealingFactor Operation="SafeRemove"/>
+			<statFactors Operation="Safe">
+				<InjuryHealingFactor Operation="SafeRemove">0</InjuryHealingFactor>
+			</statFactors>
+			<statOffsets Operation="Safe">
+				<InjuryHealingFactor Operation="SafeAdd">1</InjuryHealingFactor>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/HediffDef[defName="ToughskinGland"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Moving</capacity>
+							<offset Operation="SafeAdd">-0.1</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+					</capMods>
+					<statOffsets Operation="Safe">
+						<ArmorRating_Sharp Operation="SafeReplace">0.4</ArmorRating_Sharp>
+						<ArmorRating_Blunt Operation="SafeReplace">0.2</ArmorRating_Blunt>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>v1024.ebframework</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef</xpath>
+						<value>
+							<comps Operation="Safe">
+								<li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust" Operation="Safe" CheckAttributes="True">
+									<scaleAdjustment Operation="AddOrReplace">0.25</scaleAdjustment>
+								</li>
+							</comps>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
+	</Operation>
+
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/HediffDef[defName="ArmorskinGland"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Moving</capacity>
+							<offset Operation="SafeAdd">-0.15</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+					</capMods>
+					<statOffsets Operation="Safe">
+						<ArmorRating_Sharp Operation="SafeReplace">0.5</ArmorRating_Sharp>
+						<ArmorRating_Blunt Operation="SafeReplace">0.3</ArmorRating_Blunt>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>v1024.ebframework</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef</xpath>
+						<value>
+							<comps Operation="Safe">
+								<li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust" Operation="Safe" CheckAttributes="True">
+									<scaleAdjustment Operation="AddOrReplace">0.25</scaleAdjustment>
+								</li>
+							</comps>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
+	</Operation>
+
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/HediffDef[defName="StoneskinGland"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Moving</capacity>
+							<offset Operation="SafeAdd">-0.2</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+					</capMods>
+					<statOffsets Operation="Safe">
+						<ArmorRating_Sharp Operation="SafeReplace">0.6</ArmorRating_Sharp>
+						<ArmorRating_Blunt Operation="SafeReplace">0.4</ArmorRating_Blunt>
+					</statOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>v1024.ebframework</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef</xpath>
+						<value>
+							<comps Operation="Safe">
+								<li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust" Operation="Safe" CheckAttributes="True">
+									<scaleAdjustment Operation="AddOrReplace">0.25</scaleAdjustment>
+								</li>
+							</comps>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/HediffDef[defName="CircadianAssistant"]/stages/li</xpath>
+		<value>
+			<statFactors Operation="Safe">
+				<RestFallRateFactor Operation="SafeAdd">0.8</RestFallRateFactor>
+			</statFactors>
+			<statOffsets Operation="Safe">
+				<RestFallRateFactor Operation="SafeRemove">0</RestFallRateFactor>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/HediffDef[defName="ReprocessorStomach"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeReplace">0.5</hungerRateFactor>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>ebsg.framework</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeRemove"/>
+							<statFactors Operation="Safe">
+								<EBSG_HungerRateFactor Operation="SafeAdd">0.5</EBSG_HungerRateFactor>
+							</statFactors>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
+	</Operation>
+
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/HediffDef[defName="NuclearStomach"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li</xpath>
+				<value>
+					<hungerRateFactor Operation="SafeReplace">0.2</hungerRateFactor>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>ebsg.framework</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef/stages/li</xpath>
+						<value>
+							<hungerRateFactor Operation="SafeRemove"/>
+							<statFactors Operation="Safe">
+								<EBSG_HungerRateFactor Operation="SafeAdd">0.2</EBSG_HungerRateFactor>
+							</statFactors>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
+	</Operation>
+
+	<!-- prosthetic -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/HediffDef[defName="Mindscrew"]/stages/li</xpath>
+		<value>
+			<painOffset Operation="SafeReplace">0.3</painOffset>
+		</value>
+	</Operation>
+
+</Patch>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	<ResearchProjectDef MayRequire="ludeon.rimworld.royalty">
+	<ResearchProjectDef>
 		<defName>EltexApparel</defName>
 		<label>eltex apparel</label>
 		<description>Craft eltex apparel for psycasters that enhances psy-sensitivity.</description>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/ThoughtDef[defName="PsychicDrone"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>ThoughtDef/stages/li[label="psychic soothe"]</xpath>
+				<value>
+					<baseMoodEffect Operation="SafeReplace">8</baseMoodEffect>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>ThoughtDef/stages/li[label="low psychic drone"]</xpath>
+				<value>
+					<baseMoodEffect Operation="SafeReplace">-16</baseMoodEffect>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>ThoughtDef/stages/li[label="moderate psychic drone"]</xpath>
+				<value>
+					<baseMoodEffect Operation="SafeReplace">-24</baseMoodEffect>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>ThoughtDef/stages/li[label="high psychic drone"]</xpath>
+				<value>
+					<baseMoodEffect Operation="SafeReplace">-36</baseMoodEffect>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>ThoughtDef/stages/li[label="extreme psychic drone"]</xpath>
+				<value>
+					<baseMoodEffect Operation="SafeReplace">-48</baseMoodEffect>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
+
+	<!-- psycasts -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/HediffDef[defName="PsychicFocus"]/stages/li</xpath>
+		<value>
+			<capMods Operation="Safe">
+				<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+					<capacity Operation="Safe">Sight</capacity>
+					<offset Operation="SafeAdd">0.3</offset>
+					<postFactor Operation="SafeRemove">0</postFactor>
+				</li>
+				<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+					<capacity Operation="Safe">Hearing</capacity>
+					<offset Operation="SafeAdd">0.3</offset>
+					<postFactor Operation="SafeRemove">0</postFactor>
+				</li>
+				<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+					<capacity Operation="Safe">Moving</capacity>
+					<offset Operation="SafeAdd">0.3</offset>
+					<postFactor Operation="SafeRemove">0</postFactor>
+				</li>
+			</capMods>
+		</value>
+	</Operation>
+
+</Patch>

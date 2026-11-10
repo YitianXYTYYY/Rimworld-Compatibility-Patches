@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- Apparel Belts -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Apparel_PackBroadshield"]</xpath>
+		<value>
+			<costList Operation="Safe">
+				<ComponentIndustrial Operation="SafeRemove">0</ComponentIndustrial>
+				<ComponentSpacer Operation="SafeAdd">1</ComponentSpacer>
+			</costList>
+			<recipeMaker Operation="Safe">
+				<recipeUsers Operation="Safe">
+					<li Operation="SafeAdd" Compare="InnerText">FabricationBench</li>
+					<li Operation="SafeRemove" Compare="InnerText">TableMachining</li>
+				</recipeUsers>
+			</recipeMaker>
+		</value>
+	</Operation>
+
+	<!-- Apparel Psychic -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Apparel_PsyfocusHelmet"]</xpath>
+		<value>
+			<costList Operation="Safe">
+				<Gold Operation="SafeAdd">5</Gold>
+			</costList>
+			<costStuffCount Operation="SafeAdd">50</costStuffCount>
+			<equippedStatOffsets Operation="Safe">
+				<PsychicSensitivityOffset Operation="SafeReplace">0.2</PsychicSensitivityOffset>
+			</equippedStatOffsets>
+			<recipeMaker Operation="Safe">
+				<recipeUsers Operation="Safe">
+					<li Operation="SafeAdd" Compare="InnerText">ElectricSmithy</li>
+					<li Operation="SafeAdd" Compare="InnerText">FueledSmithy</li>
+					<li MayRequire="vanillaexpanded.helixiengas" Operation="SafeAdd" Compare="InnerText">VHGE_GasPoweredSmithy</li>
+				</recipeUsers>
+				<researchPrerequisites Inherit="False" Operation="Safe">
+					<li Operation="SafeAdd" Compare="InnerText">EltexApparel</li>
+				</researchPrerequisites>
+				<effectWorking Operation="SafeAdd">Smith</effectWorking>
+				<soundWorking Operation="SafeAdd">Recipe_Smith</soundWorking>
+				<unfinishedThingDef Operation="SafeAdd">UnfinishedMetallicTechArmor</unfinishedThingDef>
+				<workSkill Operation="SafeAdd">Crafting</workSkill>
+				<workSpeedStat Operation="SafeAdd">GeneralLaborSpeed</workSpeedStat>
+				<skillRequirements Operation="Safe">
+					<Crafting Operation="SafeAdd">8</Crafting>
+				</skillRequirements>
+			</recipeMaker>
+			<statBases Operation="Safe">
+				<ArmorRating_Blunt Operation="SafeRemove">0</ArmorRating_Blunt>
+				<ArmorRating_Heat Operation="SafeRemove">0</ArmorRating_Heat>
+				<ArmorRating_Sharp Operation="SafeRemove">0</ArmorRating_Sharp>
+				<Insulation_Cold Operation="SafeRemove">0</Insulation_Cold>
+				<Insulation_Heat Operation="SafeRemove">0</Insulation_Heat>
+				<MarketValue Operation="SafeRemove">0</MarketValue>
+				<StuffEffectMultiplierArmor Operation="SafeAdd">0.5</StuffEffectMultiplierArmor>
+				<StuffEffectMultiplierInsulation_Cold Operation="SafeAdd">0.40</StuffEffectMultiplierInsulation_Cold>
+				<StuffEffectMultiplierInsulation_Heat Operation="SafeAdd">0.10</StuffEffectMultiplierInsulation_Heat>
+				<WorkToMake Operation="SafeAdd">18000</WorkToMake>
+			</statBases>
+			<stuffCategories Operation="Safe">
+				<li Operation="SafeAdd" Compare="InnerText">Metallic</li>
+			</stuffCategories>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Apparel_EltexSkullcap"]</xpath>
+		<value>
+			<costList Operation="Safe">
+				<Gold Operation="SafeAdd">5</Gold>
+			</costList>
+			<costStuffCount Operation="SafeAdd">40</costStuffCount>
+			<equippedStatOffsets Operation="Safe">
+				<PsychicSensitivityOffset Operation="SafeReplace">0.4</PsychicSensitivityOffset>
+			</equippedStatOffsets>
+			<recipeMaker Operation="Safe">
+				<recipeUsers Operation="Safe">
+					<li Operation="SafeAdd" Compare="InnerText">ElectricTailoringBench</li>
+					<li Operation="SafeAdd" Compare="InnerText">HandTailoringBench</li>
+				</recipeUsers>
+				<researchPrerequisites Inherit="False" Operation="Safe">
+					<li Operation="SafeAdd" Compare="InnerText">EltexApparel</li>
+				</researchPrerequisites>
+				<effectWorking Operation="SafeAdd">Tailor</effectWorking>
+				<soundWorking Operation="SafeAdd">Recipe_Tailor</soundWorking>
+				<unfinishedThingDef Operation="SafeAdd">UnfinishedApparel</unfinishedThingDef>
+				<workSkill Operation="SafeAdd">Crafting</workSkill>
+				<workSpeedStat Operation="SafeAdd">GeneralLaborSpeed</workSpeedStat>
+				<skillRequirements Operation="Safe">
+					<Crafting Operation="SafeAdd">8</Crafting>
+				</skillRequirements>
+			</recipeMaker>
+			<statBases Operation="Safe">
+				<MarketValue Operation="SafeRemove">0</MarketValue>
+				<StuffEffectMultiplierArmor Operation="SafeAdd">0.2</StuffEffectMultiplierArmor>
+				<StuffEffectMultiplierInsulation_Cold Operation="SafeAdd">0.10</StuffEffectMultiplierInsulation_Cold>
+				<StuffEffectMultiplierInsulation_Heat Operation="SafeAdd">0.40</StuffEffectMultiplierInsulation_Heat>
+				<WorkToMake Operation="SafeAdd">12000</WorkToMake>
+			</statBases>
+			<stuffCategories Operation="Safe">
+				<li Operation="SafeAdd" Compare="InnerText">Fabric</li>
+				<li Operation="SafeAdd" Compare="InnerText">Leathery</li>
+			</stuffCategories>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Apparel_PsyfocusShirt"]</xpath>
+		<value>
+			<costList Operation="Safe">
+				<Gold Operation="SafeAdd">5</Gold>
+			</costList>
+			<costStuffCount Operation="SafeAdd">45</costStuffCount>
+			<equippedStatOffsets Operation="Safe">
+				<PsychicSensitivityOffset Operation="SafeReplace">0.2</PsychicSensitivityOffset>
+			</equippedStatOffsets>
+			<recipeMaker Operation="Safe">
+				<recipeUsers Operation="Safe">
+					<li Operation="SafeAdd" Compare="InnerText">ElectricTailoringBench</li>
+					<li Operation="SafeAdd" Compare="InnerText">HandTailoringBench</li>
+				</recipeUsers>
+				<researchPrerequisites Inherit="False" Operation="Safe">
+					<li Operation="SafeAdd" Compare="InnerText">EltexApparel</li>
+				</researchPrerequisites>
+				<effectWorking Operation="SafeAdd">Tailor</effectWorking>
+				<soundWorking Operation="SafeAdd">Recipe_Tailor</soundWorking>
+				<unfinishedThingDef Operation="SafeAdd">UnfinishedApparel</unfinishedThingDef>
+				<workSkill Operation="SafeAdd">Crafting</workSkill>
+				<workSpeedStat Operation="SafeAdd">GeneralLaborSpeed</workSpeedStat>
+				<skillRequirements Operation="Safe">
+					<Crafting Operation="SafeAdd">8</Crafting>
+				</skillRequirements>
+			</recipeMaker>
+			<statBases Operation="Safe">
+				<ArmorRating_Blunt Operation="SafeRemove">0</ArmorRating_Blunt>
+				<ArmorRating_Heat Operation="SafeRemove">0</ArmorRating_Heat>
+				<ArmorRating_Sharp Operation="SafeRemove">0</ArmorRating_Sharp>
+				<Insulation_Cold Operation="SafeRemove">0</Insulation_Cold>
+				<Insulation_Heat Operation="SafeRemove">0</Insulation_Heat>
+				<MarketValue Operation="SafeRemove">0</MarketValue>
+				<StuffEffectMultiplierArmor Operation="SafeAdd">0.2</StuffEffectMultiplierArmor>
+				<StuffEffectMultiplierInsulation_Cold Operation="SafeAdd">0.4</StuffEffectMultiplierInsulation_Cold>
+				<StuffEffectMultiplierInsulation_Heat Operation="SafeAdd">0.1</StuffEffectMultiplierInsulation_Heat>
+				<WorkToMake Operation="SafeAdd">24000</WorkToMake>
+			</statBases>
+			<stuffCategories Operation="Safe">
+				<li Operation="SafeAdd" Compare="InnerText">Fabric</li>
+				<li Operation="SafeAdd" Compare="InnerText">Leathery</li>
+			</stuffCategories>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Apparel_PsyfocusVest"]</xpath>
+		<value>
+			<costList Operation="Safe">
+				<Gold Operation="SafeAdd">5</Gold>
+			</costList>
+			<costStuffCount Operation="SafeAdd">45</costStuffCount>
+			<equippedStatOffsets Operation="Safe">
+				<PsychicSensitivityOffset Operation="SafeReplace">0.4</PsychicSensitivityOffset>
+			</equippedStatOffsets>
+			<recipeMaker Operation="Safe">
+				<recipeUsers Operation="Safe">
+					<li Operation="SafeAdd" Compare="InnerText">ElectricTailoringBench</li>
+					<li Operation="SafeAdd" Compare="InnerText">HandTailoringBench</li>
+				</recipeUsers>
+				<researchPrerequisites Inherit="False" Operation="Safe">
+					<li Operation="SafeAdd" Compare="InnerText">EltexApparel</li>
+				</researchPrerequisites>
+				<effectWorking Operation="SafeAdd">Tailor</effectWorking>
+				<soundWorking Operation="SafeAdd">Recipe_Tailor</soundWorking>
+				<unfinishedThingDef Operation="SafeAdd">UnfinishedApparel</unfinishedThingDef>
+				<workSkill Operation="SafeAdd">Crafting</workSkill>
+				<workSpeedStat Operation="SafeAdd">GeneralLaborSpeed</workSpeedStat>
+				<skillRequirements Operation="Safe">
+					<Crafting Operation="SafeAdd">8</Crafting>
+				</skillRequirements>
+			</recipeMaker>
+			<statBases Operation="Safe">
+				<ArmorRating_Blunt Operation="SafeRemove">0</ArmorRating_Blunt>
+				<ArmorRating_Heat Operation="SafeRemove">0</ArmorRating_Heat>
+				<ArmorRating_Sharp Operation="SafeRemove">0</ArmorRating_Sharp>
+				<Insulation_Cold Operation="SafeRemove">0</Insulation_Cold>
+				<Insulation_Heat Operation="SafeRemove">0</Insulation_Heat>
+				<MarketValue Operation="SafeRemove">0</MarketValue>
+				<StuffEffectMultiplierArmor Operation="SafeAdd">0.2</StuffEffectMultiplierArmor>
+				<StuffEffectMultiplierInsulation_Cold Operation="SafeAdd">0.6</StuffEffectMultiplierInsulation_Cold>
+				<StuffEffectMultiplierInsulation_Heat Operation="SafeAdd">0.1</StuffEffectMultiplierInsulation_Heat>
+				<WorkToMake Operation="SafeAdd">24000</WorkToMake>
+			</statBases>
+			<stuffCategories Operation="Safe">
+				<li Operation="SafeAdd" Compare="InnerText">Fabric</li>
+				<li Operation="SafeAdd" Compare="InnerText">Leathery</li>
+			</stuffCategories>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Apparel_PsyfocusRobe"]</xpath>
+		<value>
+			<costList Operation="Safe">
+				<Gold Operation="SafeAdd">5</Gold>
+			</costList>
+			<costStuffCount Operation="SafeAdd">100</costStuffCount>
+			<equippedStatOffsets Operation="Safe">
+				<PsychicSensitivityOffset Operation="SafeReplace">0.6</PsychicSensitivityOffset>
+			</equippedStatOffsets>
+			<recipeMaker Operation="Safe">
+				<recipeUsers Operation="Safe">
+					<li Operation="SafeAdd" Compare="InnerText">ElectricTailoringBench</li>
+					<li Operation="SafeAdd" Compare="InnerText">HandTailoringBench</li>
+				</recipeUsers>
+				<researchPrerequisites Inherit="False" Operation="Safe">
+					<li Operation="SafeAdd" Compare="InnerText">EltexApparel</li>
+				</researchPrerequisites>
+				<effectWorking Operation="SafeAdd">Tailor</effectWorking>
+				<soundWorking Operation="SafeAdd">Recipe_Tailor</soundWorking>
+				<unfinishedThingDef Operation="SafeAdd">UnfinishedApparel</unfinishedThingDef>
+				<workSkill Operation="SafeAdd">Crafting</workSkill>
+				<workSpeedStat Operation="SafeAdd">GeneralLaborSpeed</workSpeedStat>
+				<skillRequirements Operation="Safe">
+					<Crafting Operation="SafeAdd">8</Crafting>
+				</skillRequirements>
+			</recipeMaker>
+			<statBases Operation="Safe">
+				<ArmorRating_Blunt Operation="SafeRemove">0</ArmorRating_Blunt>
+				<ArmorRating_Heat Operation="SafeRemove">0</ArmorRating_Heat>
+				<ArmorRating_Sharp Operation="SafeRemove">0</ArmorRating_Sharp>
+				<Insulation_Cold Operation="SafeRemove">0</Insulation_Cold>
+				<Insulation_Heat Operation="SafeRemove">0</Insulation_Heat>
+				<MarketValue Operation="SafeRemove">0</MarketValue>
+				<StuffEffectMultiplierArmor Operation="SafeAdd">0.2</StuffEffectMultiplierArmor>
+				<StuffEffectMultiplierInsulation_Cold Operation="SafeAdd">0.8</StuffEffectMultiplierInsulation_Cold>
+				<StuffEffectMultiplierInsulation_Heat Operation="SafeAdd">0.25</StuffEffectMultiplierInsulation_Heat>
+				<WorkToMake Operation="SafeAdd">36000</WorkToMake>
+			</statBases>
+			<stuffCategories Operation="Safe">
+				<li Operation="SafeAdd" Compare="InnerText">Fabric</li>
+				<li Operation="SafeAdd" Compare="InnerText">Leathery</li>
+			</stuffCategories>
+		</value>
+	</Operation>
+
+	<!-- apparel various -->
+	<!-- prestige armor -->
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetReconPrestige"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+				<xpath>ThingDef</xpath>
+				<attribute>Name</attribute>
+				<value>Apparel_ArmorHelmetReconPrestige</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>ThingDef</xpath>
+				<value>
+					<label Operation="SafeReplace">recon prestige helmet</label>
+					<costList Operation="SafeReplace">
+						<Gold>5</Gold>
+					</costList>
+					<equippedStatOffsets Operation="Safe">
+						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+						<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+					</equippedStatOffsets>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
+
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/ThingDef[defName="Apparel_ArmorReconPrestige"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+				<xpath>ThingDef</xpath>
+				<attribute>Name</attribute>
+				<value>Apparel_ArmorReconPrestige</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>ThingDef</xpath>
+				<value>
+					<label Operation="SafeReplace">recon prestige armor</label>
+					<costList Operation="SafeReplace">
+						<Gold>10</Gold>
+					</costList>
+					<equippedStatOffsets Operation="Safe">
+						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+						<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+					</equippedStatOffsets>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
+
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/ThingDef[defName="Apparel_ArmorMarineHelmetPrestige"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+				<xpath>ThingDef</xpath>
+				<attribute>Name</attribute>
+				<value>Apparel_ArmorMarineHelmetPrestige</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>ThingDef</xpath>
+				<value>
+					<label Operation="SafeReplace">marine prestige helmet</label>
+					<costList Operation="SafeReplace">
+						<Gold>5</Gold>
+					</costList>
+					<equippedStatOffsets Operation="Safe">
+						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+						<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+					</equippedStatOffsets>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
+
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/ThingDef[defName="Apparel_ArmorMarinePrestige"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+				<xpath>ThingDef</xpath>
+				<attribute>Name</attribute>
+				<value>Apparel_ArmorMarinePrestige</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>ThingDef</xpath>
+				<value>
+					<label Operation="SafeReplace">marine prestige armor</label>
+					<costList Operation="SafeReplace">
+						<Gold>10</Gold>
+					</costList>
+					<equippedStatOffsets Operation="Safe">
+						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+						<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+					</equippedStatOffsets>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
+
+	<!-- cataphract armor -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[@Name="ApparelArmorHelmetCataphractBase"]</xpath>
+		<value>
+			<costList Operation="SafeReplace">
+				<ComponentSpacer>1</ComponentSpacer>
+				<Plasteel>75</Plasteel>
+				<RB_BallisticGlass MayRequire="rebuild.cotr.doorsandcorners">5</RB_BallisticGlass>
+			</costList>
+		</value>
+	</Operation>
+	
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[@Name="ApparelArmorCataphractBase"]</xpath>
+		<value>
+			<costList Operation="SafeReplace">
+				<ComponentSpacer>8</ComponentSpacer>
+				<Plasteel>150</Plasteel>
+				<Uranium>75</Uranium>
+			</costList>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+		<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetCataphract"]</xpath>
+		<attribute>Name</attribute>
+		<value>Apparel_ArmorHelmetCataphract</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetCataphractPrestige"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+				<xpath>ThingDef</xpath>
+				<attribute>Name</attribute>
+				<value>Apparel_ArmorHelmetCataphractPrestige</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>ThingDef</xpath>
+				<value>
+					<label Operation="SafeReplace">cataphract prestige helmet</label>
+					<costList Operation="SafeReplace">
+						<Gold>10</Gold>
+					</costList>
+					<equippedStatOffsets Operation="Safe">
+						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+						<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+					</equippedStatOffsets>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
+
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPrestige"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+				<xpath>ThingDef</xpath>
+				<attribute>Name</attribute>
+				<value>Apparel_ArmorCataphractPrestige</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>ThingDef</xpath>
+				<value>
+					<label Operation="SafeReplace">cataphract prestige armor</label>
+					<costList Operation="SafeReplace">
+						<Gold>20</Gold>
+					</costList>
+					<equippedStatOffsets Operation="Safe">
+						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+						<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+					</equippedStatOffsets>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
+
+	<!-- armor variants -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Apparel_ArmorLocust"]</xpath>
+		<value>
+			<label Operation="SafeReplace">recon armor - locust</label>
+			<costList Operation="SafeReplace">
+				<ComponentSpacer>5</ComponentSpacer>
+				<Plasteel>125</Plasteel>
+				<Chemfuel>100</Chemfuel>
+			</costList>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>ThingDef</xpath>
+				<value>
+					<label Operation="SafeReplace">marine armor - grenadier</label>
+					<costList Operation="SafeReplace">
+						<ComponentSpacer>7</ComponentSpacer>
+						<Plasteel>150</Plasteel>
+						<Steel>75</Steel>
+					</costList>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>mlie.yayoscombat3</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<costList Operation="Safe">
+								<Steel Operation="SafeRemove">0</Steel>
+								<WeaponGrenadeFrag Operation="SafeAdd">2</WeaponGrenadeFrag>
+							</costList>
+							<comps Operation="Safe">
+								<li Class="CompProperties_ApparelReloadable" Operation="Safe" CheckAttributes="True">
+									<ammoDef Operation="SafeReplace">WeaponGrenadeFrag</ammoDef>
+									<ammoCountPerCharge Operation="SafeReplace">1</ammoCountPerCharge>
+								</li>
+							</comps>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
+	</Operation>
+	
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPhoenix"]</xpath>
+		<value>
+			<label Operation="SafeReplace">cataphract armor - phoenix</label>
+			<costList Operation="SafeReplace">
+				<ComponentSpacer>9</ComponentSpacer>
+				<Plasteel>175</Plasteel>
+				<Chemfuel>50</Chemfuel>
+			</costList>
+		</value>
+	</Operation>
+
+	<!-- gunlink -->
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/ThingDef[defName="Apparel_Gunlink"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>ThingDef</xpath>
+				<value>
+					<apparel Operation="Safe">
+						<bodyPartGroups Operation="Safe">
+							<li Operation="SafeRemove" Compare="InnerText">UpperHead</li>
+							<li Operation="SafeAdd" Compare="InnerText">Eyes</li>
+						</bodyPartGroups>
+					</apparel>
+					<equippedStatOffsets Operation="Safe">
+						<ShootingAccuracyPawn Operation="SafeReplace">4</ShootingAccuracyPawn>
+						<VacuumResistance Operation="SafeRemove">0</VacuumResistance>
+					</equippedStatOffsets>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
+				<xpath>ThingDef/equippedStatOffsets</xpath>
+				<attribute>Inherit</attribute>
+				<value>False</value>
+			</Operation>
+		</apply>
+	</Operation>
+
+</Patch>

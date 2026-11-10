@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>Defs/ResearchProjectDef[defName="ToxFilterApparel"]</xpath>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ResearchProjectDef[defName="ToxFilterArmor"]</xpath>
+		<value>
+			<prerequisites Operation="Safe">
+				<li Operation="SafeAdd" Compare="InnerText">Fabrication</li>
+				<li Operation="SafeRemove" Compare="InnerText">ReconArmor</li>
+				<li Operation="SafeRemove" Compare="InnerText">ToxFilterApparel</li>
+			</prerequisites>
+			<hiddenPrerequisites Operation="Safe">
+				<li Operation="SafeAdd" Compare="InnerText">ToxGas</li>
+			</hiddenPrerequisites>
+		</value>
+	</Operation>
+	
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaexpanded.varme</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/ResearchProjectDef[defName="ToxFilterVAEHelmets"]</xpath>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>

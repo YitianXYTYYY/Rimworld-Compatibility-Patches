@@ -27,11 +27,6 @@ Personal Made compatibility patches for mods.
 			<steamWorkshopUrl>steam://url/CommunityFilePage/2574315206</steamWorkshopUrl>
 		</li>
 		<li>
-			<packageId>oskarpotocki.vanillafactionsexpanded.core</packageId>
-			<displayName>Vanilla Expanded Framework</displayName>
-			<steamWorkshopUrl>steam://url/CommunityFilePage/2023507013</steamWorkshopUrl>
-		</li>
-		<li>
 			<packageId>owlchemist.cherrypicker</packageId>
 			<displayName>Cherry Picker</displayName>
 			<steamWorkshopUrl>steam://url/CommunityFilePage/3521312241</steamWorkshopUrl>
