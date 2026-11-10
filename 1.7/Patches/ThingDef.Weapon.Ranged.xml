@@ -550,24 +550,6 @@
 		</caseTrue>
 	</Operation>
 
-	<!-- Vanilla Factions Expanded - Tribals -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>oskarpotocki.vfe.tribals</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="VFET_Throwspikes"]</xpath>
-				<value>
-					<weaponTags Operation="Safe">
-						<li Operation="Add">ammo_none</li>
-					</weaponTags>
-				</value>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
 	<!-- Vanilla Weapons Expanded -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>

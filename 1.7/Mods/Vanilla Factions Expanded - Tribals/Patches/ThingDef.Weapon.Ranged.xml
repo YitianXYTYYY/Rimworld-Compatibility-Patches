@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="VFET_Throwspikes"]</xpath>
+		<value>
+			<weaponTags Operation="Safe">
+				<li Operation="Add">ammo_none</li>
+			</weaponTags>
+		</value>
+	</Operation>
+
+</Patch>
