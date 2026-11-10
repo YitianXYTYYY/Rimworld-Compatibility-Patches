@@ -244,6 +244,12 @@
 					</stages>
 				</value>
 			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThoughtDef[defName="GR_ElectroEggHigh"]/stages/li</xpath>
+				<value>
+					<baseMoodEffect Operation="SafeReplace">8</baseMoodEffect>
+				</value>
+			</Operation>
 			<!-- featherdust joint -->
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="GR_FeatherdustJoint"]</xpath>
