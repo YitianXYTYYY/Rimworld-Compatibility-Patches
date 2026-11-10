@@ -35,7 +35,7 @@
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThoughtDef[defName="PsychicHarmonization"]/stages/li[label="psychic harmony: {HARMONIZER_labelShort}"]</xpath>
 				<value>
-					<baseMoodEffect Operation="SafeReplace">5</baseMoodEffect>
+					<baseMoodEffect Operation="SafeReplace">4</baseMoodEffect>
 				</value>
 			</Operation>
 			<!-- bionic -->
