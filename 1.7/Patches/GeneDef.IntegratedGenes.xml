@@ -163,7 +163,7 @@
 					<stages Operation="Safe">
 						<li Operation="Safe" Compare="InnerText" XPathLocal="label">
 							<label Operation="Safe">imprisoned</label>
-							<baseMoodEffect Operation="SafeReplace">-15</baseMoodEffect>
+							<baseMoodEffect Operation="SafeReplace">-12</baseMoodEffect>
 						</li>
 					</stages>
 				</value>
