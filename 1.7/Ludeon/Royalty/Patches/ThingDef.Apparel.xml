@@ -497,13 +497,13 @@
 							<li Operation="SafeAdd" Compare="InnerText">Eyes</li>
 						</bodyPartGroups>
 					</apparel>
-					<equippedStatOffsets Operation="Safe">
+					<equippedStatOffsets Inherit="False" Operation="Safe">
 						<ShootingAccuracyPawn Operation="SafeReplace">4</ShootingAccuracyPawn>
 						<VacuumResistance Operation="SafeRemove">0</VacuumResistance>
 					</equippedStatOffsets>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
+			<Operation Class="XmlExtensions.PatchOperationAttributeSet">
 				<xpath>ThingDef/equippedStatOffsets</xpath>
 				<attribute>Inherit</attribute>
 				<value>False</value>

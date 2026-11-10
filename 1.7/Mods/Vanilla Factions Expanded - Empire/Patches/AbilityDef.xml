@@ -2,7 +2,7 @@
 <Patch>
 
 	<Operation Class="XmlExtensions.HybridPatch">
-		<xpath>Defs/AbilityDef[defName="VFEE_RoyalAddress"]/meats</xpath>
+		<xpath>Defs/AbilityDef[defName="VFEE_RoyalAddress"]</xpath>
 		<value>
 			<showWhenDrafted Operation="SafeAdd">false</showWhenDrafted>
 		</value>
