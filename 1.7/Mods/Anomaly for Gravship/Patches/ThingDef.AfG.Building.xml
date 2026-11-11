@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- grav holding platform -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="GravHoldingPlatform"]</xpath>
+		<value>
+			<statBases Operation="Safe">
+				<ContainmentStrength Operation="SafeAdd">20</ContainmentStrength>
+			</statBases>
+			<comps Operation="Safe">
+				<li Class="CompProperties_Power" Operation="Safe" CheckAttributes="True">
+					<basePowerConsumption Operation="SafeReplace">100</basePowerConsumption>
+				</li>
+				<li Class="CompProperties_Facility" Operation="Safe" CheckAttributes="True">
+					<maxSimultaneous Operation="SafeReplace">2</maxSimultaneous>
+					<statOffsets Operation="Safe">
+						<ContainmentStrength Operation="SafeReplace">20</ContainmentStrength>
+					</statOffsets>
+				</li>
+			</comps>
+		</value>
+	</Operation>
+	
+</Patch>

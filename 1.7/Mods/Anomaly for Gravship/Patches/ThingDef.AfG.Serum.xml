@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- vac protect serum -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="VacProtectSerum"]</xpath>
+		<value>
+			<costList Operation="Safe">
+				<Bioferrite Operation="SafeAdd">20</Bioferrite>
+				<GravlitePanel Operation="SafeRemove">0</GravlitePanel>
+				<Meat_Twisted Operation="SafeReplace">20</Meat_Twisted>
+			</costList>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/HediffDef[defName="VacProtect"]/stages/li</xpath>
+		<value>
+			<restFallFactorOffset Operation="SafeRemove"/>
+			<statOffsets Operation="Safe">
+				<RestFallRateFactor Operation="SafeAdd">0.2</RestFallRateFactor>
+			</statOffsets>
+		</value>
+	</Operation>
+
+</Patch>
