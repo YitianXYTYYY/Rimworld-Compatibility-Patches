@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Gun_BeamRepeater"]</xpath>
+		<value>
+			<equippedStatOffsets Operation="Safe">
+				<MoveSpeed Operation="SafeReplace">-0.2</MoveSpeed>
+			</equippedStatOffsets>
+			<weaponTags Operation="Safe">
+				<li Operation="Add">ammoDef_AmmoSpacerEMP/150/1</li>
+			</weaponTags>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Gun_Scattergun"]</xpath>
+		<value>
+			<weaponTags Operation="Safe">
+				<li Operation="Add">ammoDef_AmmoIndustrial/25/1</li>
+			</weaponTags>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Gun_ChargeLance_Unique"]</xpath>
+		<value>
+			<graphicData Operation="Safe">
+				<li Operation="SafeReplace">Things/Item/Equipment/WeaponRanged/UniqueWeapons/UniqueChargeLance</li>
+			</graphicData>
+		</value>
+	</Operation>
+
+</Patch>

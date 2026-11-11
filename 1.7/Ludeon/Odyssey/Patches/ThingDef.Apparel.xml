@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+		<xpath>Defs/ThingDef[defName="Apparel_VacsuitHelmet"]</xpath>
+		<attribute>Name</attribute>
+		<value>Apparel_VacsuitHelmet</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Apparel_Vacsuit" or defName="Apparel_VacsuitChildren"]</xpath>
+		<value>
+			<equippedStatOffsets Operation="Safe">
+				<MoveSpeed Operation="SafeReplace">-1.2</MoveSpeed>
+			</equippedStatOffsets>
+		</value>
+	</Operation>
+
+</Patch>

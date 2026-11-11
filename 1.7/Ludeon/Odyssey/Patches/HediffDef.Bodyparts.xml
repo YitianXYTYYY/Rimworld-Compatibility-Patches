@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- prosthetics -->
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/HediffDef[defName="BloodWarmer"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef</xpath>
+				<value>
+					<addedPartProps Operation="Safe">
+						<partEfficiency Operation="SafeRemove">0</partEfficiency>
+					</addedPartProps>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li</xpath>
+				<value>
+					<statOffsets Operation="Safe">
+						<ComfyTemperatureMin Operation="SafeReplace">-20</ComfyTemperatureMin>
+					</statOffsets>
+				</value>
+			</Operation>
+		</apply>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/HediffDef[defName="PilotAssistant"]/stages/li</xpath>
+		<value>
+			<statOffsets Operation="Safe">
+				<PilotingAbility Operation="SafeReplace">0.5</PilotingAbility>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/HediffDef[defName="VacskinGland"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>HediffDef/stages/li</xpath>
+				<value>
+					<capMods Operation="Safe">
+						<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+							<capacity Operation="Safe">Moving</capacity>
+							<offset Operation="SafeAdd">-0.1</offset>
+							<postFactor Operation="SafeRemove">0</postFactor>
+						</li>
+					</capMods>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>v1024.ebframework</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>HediffDef</xpath>
+						<value>
+							<comps Operation="Safe">
+								<li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust" Operation="Safe" CheckAttributes="True">
+									<scaleAdjustment Operation="AddOrReplace">0.25</scaleAdjustment>
+								</li>
+							</comps>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
+	</Operation>
+
+</Patch>

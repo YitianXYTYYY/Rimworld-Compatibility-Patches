@@ -113,29 +113,6 @@
 		</value>
 	</Operation>
 
-	<!-- Odyssey -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>ludeon.rimworld.odyssey</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Apparel_Vacsuit" or defName="Apparel_VacsuitChildren"]</xpath>
-				<value>
-					<equippedStatOffsets Operation="Safe">
-						<MoveSpeed Operation="SafeReplace">-1.2</MoveSpeed>
-					</equippedStatOffsets>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.PatchOperationAttributeSet">
-				<xpath>Defs/ThingDef[defName="Apparel_VacsuitHelmet"]</xpath>
-				<attribute>Name</attribute>
-				<value>Apparel_VacsuitHelmet</value>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
 	<!-- Packs Are Not Belts -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>

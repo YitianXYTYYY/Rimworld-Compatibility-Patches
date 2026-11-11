@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/XenotypeDef[defName="Starjack"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>goji.gojismiscgenes</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>XenotypeDef/genes</xpath>
+						<value>
+							<li Operation="SafeAdd" Compare="InnerText">Goji_Hibernation</li>
+							<li Operation="SafeRemove" Compare="InnerText">VREStarjack_Cryostasis</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>vanillaracesexpanded.starjack</li>
+					<li>als.biotechgravship</li>
+				</mods>
+				<packageId>true</packageId>
+				<logic>and</logic>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>XenotypeDef/genes</xpath>
+						<value>
+							<li Operation="SafeAdd" Compare="InnerText">MoveSpeed_Space</li>
+							<li Operation="SafeRemove" Compare="InnerText">VREStarjack_VacuumEfficiency</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
+	</Operation>
+
+</Patch>

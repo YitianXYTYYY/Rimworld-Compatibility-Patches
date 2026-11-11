@@ -1,59 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-	<!-- Odyssey -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>ludeon.rimworld.odyssey</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/XenotypeDef[defName="Starjack"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>goji.gojismiscgenes</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>XenotypeDef/genes</xpath>
-								<value>
-									<li Operation="SafeAdd" Compare="InnerText">Goji_Hibernation</li>
-									<li Operation="SafeRemove" Compare="InnerText">VREStarjack_Cryostasis</li>
-								</value>
-							</Operation>
-						</caseTrue>
-					</Operation>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>vanillaracesexpanded.starjack</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.FindMod">
-								<mods>
-									<li>als.biotechgravship</li>
-								</mods>
-								<packageId>true</packageId>
-								<caseTrue>
-									<Operation Class="XmlExtensions.HybridPatch">
-										<xpath>XenotypeDef/genes</xpath>
-										<value>
-											<li Operation="SafeAdd" Compare="InnerText">MoveSpeed_Space</li>
-											<li Operation="SafeRemove" Compare="InnerText">VREStarjack_VacuumEfficiency</li>
-										</value>
-									</Operation>
-								</caseTrue>
-							</Operation>
-						</caseTrue>
-					</Operation>
-				</apply>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
 	<!-- Vanilla Races Expanded - Highmate -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>

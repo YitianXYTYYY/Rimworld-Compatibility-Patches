@@ -118,63 +118,6 @@
 		</value>
 	</Operation>
 
-	<!-- Odyssey -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>ludeon.rimworld.odyssey</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<!-- gravship -->
-			<!-- grav field extender -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="GravFieldExtender"]</xpath>
-				<value>
-					<comps Operation="Safe">
-						<li Class="CompProperties_GravshipFacility" Operation="Safe" CheckAttributes="True">
-							<maxDistance Operation="SafeReplace">100</maxDistance>
-						</li>
-					</comps>
-				</value>
-			</Operation>
-			<!-- orbital -->
-			<!-- orbital scanner -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="OrbitalScanner"]</xpath>
-				<value>
-					<costList Operation="SafeReplace">
-						<Steel>150</Steel>
-						<Plasteel>50</Plasteel>
-						<ComponentSpacer>3</ComponentSpacer>
-					</costList>
-				</value>
-			</Operation>
-			<!-- Raycast Lighting -->
-			<Operation Class="XmlExtensions.FindMod">
-				<mods>
-					<li>lexif.raycastlighting</li>
-				</mods>
-				<packageId>true</packageId>
-				<caseTrue>
-					<!-- vac barrier -->
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="VacBarrier"]</xpath>
-						<value>
-							<blockLight Operation="AddOrReplace">false</blockLight>
-							<!--castEdgeShadows Operation="AddOrReplace">false</castEdgeShadows-->
-							<modExtensions Operation="Safe">
-								<li Class="RaycastLighting.Integration.LightTransmission" Operation="SafeAdd" CheckAttributes="True">
-									<transmission>0.9</transmission>
-								</li>
-							</modExtensions>
-							<!--staticSunShadowHeight Operation="AddOrReplace">0</staticSunShadowHeight-->
-						</value>
-					</Operation>
-				</caseTrue>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
 	<!-- Anomaly for Gravship -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
