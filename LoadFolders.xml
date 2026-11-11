@@ -10,6 +10,7 @@
 		<li IfModActive="ludeon.rimworld.anomaly">1.7/Ludeon/Anomaly</li>
 		<li IfModActive="ludeon.rimworld.odyssey">1.7/Ludeon/Odyssey</li>
 
+		<li IfModActive="als.biotechgravship">1.7/Mods/Biotech for Gravship</li>
 		<li IfModActive="gogatio.mechanoidupgrades">1.7/Mods/Mechanoid Upgrades</li>
 		<li IfModActive="oskarpotocki.vfe.empire">1.7/Mods/Vanilla Factions Expanded - Empire</li>
 		<li IfModActive="oskarpotocki.vfe.insectoid2">1.7/Mods/Vanilla Factions Expanded - Insectoids 2</li>

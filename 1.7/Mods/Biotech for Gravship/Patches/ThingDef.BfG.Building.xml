@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- misc -->
+	<!-- smaller gene extractor -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="BfG_DeathrestCasket"]</xpath>
+		<value>
+			<blocksAltitudes Operation="SafeRemove"/>
+		</value>
+	</Operation>
+
+	<!-- misc -->
+	<!-- smaller gene extractor -->
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/ThingDef[defName="BfG_GeneExtractor"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>ThingDef</xpath>
+				<value>
+					<costList Operation="SafeReplace">
+						<Steel>100</Steel>
+						<Plasteel>25</Plasteel>
+						<GravlitePanel>25</GravlitePanel>
+						<ComponentSpacer>2</ComponentSpacer>
+					</costList>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>rebuild.cotr.doorsandcorners</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<costList Operation="Safe">
+								<Plasteel Operation="SafeRemove">25</Plasteel>
+								<RB_BallisticGlass Operation="SafeAdd">25</RB_BallisticGlass>
+							</costList>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
+	</Operation>
+
+	<!-- production -->
+	<!-- gravship mech gestator -->
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/ThingDef[defName="BfG_MechGestator"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>ThingDef</xpath>
+				<value>
+					<blocksAltitudes Operation="SafeRemove"/>
+					<costList Operation="SafeReplace">
+						<Steel>75</Steel>
+						<Plasteel>25</Plasteel>
+						<GravlitePanel>10</GravlitePanel>
+						<ComponentSpacer>2</ComponentSpacer>
+					</costList>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>rebuild.cotr.doorsandcorners</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<costList Operation="Safe">
+								<Plasteel Operation="SafeRemove">25</Plasteel>
+								<RB_BallisticGlass Operation="SafeAdd">25</RB_BallisticGlass>
+							</costList>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
+	</Operation>
+
+	<!-- gravship large mech gestator -->
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/ThingDef[defName="BfG_LargeMechGestator"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>ThingDef</xpath>
+				<value>
+					<blocksAltitudes Operation="SafeRemove"/>
+					<costList Operation="SafeReplace">
+						<Steel>150</Steel>
+						<Plasteel>25</Plasteel>
+						<GravlitePanel>25</GravlitePanel>
+						<ComponentSpacer>3</ComponentSpacer>
+					</costList>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>rebuild.cotr.doorsandcorners</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<costList Operation="Safe">
+								<Plasteel Operation="SafeRemove">25</Plasteel>
+								<RB_BallisticGlass Operation="SafeAdd">25</RB_BallisticGlass>
+							</costList>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
+	</Operation>
+
+	<!-- gravship subcore encoder -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="BfG_SubcoreEncoder"]</xpath>
+		<value>
+			<blocksAltitudes Operation="SafeRemove"/>
+		</value>
+	</Operation>
+
+	<!-- gravship subcore softscanner -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="BfG_SubcoreSoftscanner"]</xpath>
+		<value>
+			<blocksAltitudes Operation="SafeRemove"/>
+		</value>
+	</Operation>
+
+	<!-- gravship subcore ripscanner -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="BfG_SubcoreRipscanner"]</xpath>
+		<value>
+			<blocksAltitudes Operation="SafeRemove"/>
+		</value>
+	</Operation>
+
+	<!-- Neural Supercharger Ownership -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ilyvion.neuralsuperchargerownership</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<!-- floor neural supercharger -->
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="BfG_NeuralSupercharger"]</xpath>
+				<value>
+					<comps Operation="Safe">
+						<li Class="CompProperties_AssignableToPawn" Operation="SafeAdd" CheckAttributes="True">
+							<compClass>NeuralSuperchargerOwnership.Comps.CompAssignableToPawn_NeuralSupercharger</compClass>
+							<maxAssignedPawnsCount>1</maxAssignedPawnsCount>
+							<drawAssignmentOverlay>true</drawAssignmentOverlay>
+							<drawUnownedAssignmentOverlay>false</drawUnownedAssignmentOverlay>
+						</li>
+					</comps>
+					<drawGUIOverlay Operation="SafeAdd">true</drawGUIOverlay>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>

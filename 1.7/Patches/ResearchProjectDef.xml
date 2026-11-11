@@ -33,40 +33,6 @@
 		</caseTrue>
 	</Operation>
 
-	<!-- Biotech for Gravship -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>als.biotechgravship</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ResearchProjectDef[defName="GravBiotech"]</xpath>
-				<value>
-					<requiredResearchFacilities Operation="Safe">
-						<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
-					</requiredResearchFacilities>
-					<tab Operation="AddOrReplace">TechGravship</tab>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ResearchProjectDef[defName="GravDeathrest"]</xpath>
-				<value>
-					<prerequisites Operation="Safe">
-						<li Operation="SafeRemove" Compare="InnerText">Deathrest</li>
-					</prerequisites>
-					<hiddenPrerequisites Operation="Safe">
-						<li Operation="SafeAdd" Compare="InnerText">Deathrest</li>
-					</hiddenPrerequisites>
-					<requiredResearchFacilities Operation="Safe">
-						<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
-					</requiredResearchFacilities>
-					<tab Operation="AddOrReplace">TechGravship</tab>
-				</value>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
 	<!-- Glass Roofs -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
