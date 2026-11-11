@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ResearchProjectDef[defName="Biosculpting"]</xpath>
+		<value>
+			<prerequisites Operation="Safe">
+				<li Operation="SafeRemove" Compare="InnerText">MicroelectronicsBasics</li>
+				<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
+			</prerequisites>
+			<requiredResearchFacilities Operation="Safe">
+				<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
+			</requiredResearchFacilities>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ResearchProjectDef[defName="Bioregeneration"]</xpath>
+		<value>
+			<prerequisites Operation="Safe">
+				<li Operation="SafeRemove" Compare="InnerText">MultiAnalyzer</li>
+			</prerequisites>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ResearchProjectDef[defName="NeuralSupercharger"]</xpath>
+		<value>
+			<prerequisites Operation="Safe">
+				<li Operation="SafeRemove" Compare="InnerText">MicroelectronicsBasics</li>
+				<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
+			</prerequisites>
+			<requiredResearchFacilities Operation="Safe">
+				<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
+			</requiredResearchFacilities>
+		</value>
+	</Operation>
+
+</Patch>

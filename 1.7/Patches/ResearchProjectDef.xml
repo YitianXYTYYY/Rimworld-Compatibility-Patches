@@ -443,47 +443,6 @@
 
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>ludeon.rimworld.ideology</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ResearchProjectDef[defName="Biosculpting"]</xpath>
-				<value>
-					<prerequisites Operation="Safe">
-						<li Operation="SafeRemove" Compare="InnerText">MicroelectronicsBasics</li>
-						<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
-					</prerequisites>
-					<requiredResearchFacilities Operation="Safe">
-						<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
-					</requiredResearchFacilities>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ResearchProjectDef[defName="Bioregeneration"]</xpath>
-				<value>
-					<prerequisites Operation="Safe">
-						<li Operation="SafeRemove" Compare="InnerText">MultiAnalyzer</li>
-					</prerequisites>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ResearchProjectDef[defName="NeuralSupercharger"]</xpath>
-				<value>
-					<prerequisites Operation="Safe">
-						<li Operation="SafeRemove" Compare="InnerText">MicroelectronicsBasics</li>
-						<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
-					</prerequisites>
-					<requiredResearchFacilities Operation="Safe">
-						<li Operation="SafeAdd" Compare="InnerText">MultiAnalyzer</li>
-					</requiredResearchFacilities>
-				</value>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
 			<li>ludeon.rimworld.biotech</li>
 		</mods>
 		<packageId>true</packageId>
