@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- detoxifier -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/HediffDef[defName="DetoxifierLung"]</xpath>
+		<value>
+			<addedPartProps Operation="Safe">
+				<partEfficiency Operation="SafeReplace">1.25</partEfficiency>
+			</addedPartProps>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/HediffDef[defName="DetoxifierKidney"]</xpath>
+		<value>
+			<addedPartProps Operation="Safe">
+				<partEfficiency Operation="SafeReplace">1.25</partEfficiency>
+			</addedPartProps>
+		</value>
+	</Operation>
+
+	<!-- mechanitor -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="ControlSublinkHigh"]</xpath>
+		<value>
+			<costList Operation="SafeReplace">
+				<ComponentSpacer>4</ComponentSpacer>
+				<PowerfocusChip>1</PowerfocusChip>
+			</costList>
+		</value>
+	</Operation>
+
+</Patch>

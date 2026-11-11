@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- -10 skin -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneDef[defName="Furskin"]</xpath>
+		<value>
+			<displayCategory Operation="AddOrReplace">Skin</displayCategory>
+			<displayOrderInCategory Operation="AddOrReplace">60</displayOrderInCategory>
+		</value>
+	</Operation>
+
+	<!-- -30 hands -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneDef[@Name="GeneHandsBase"]</xpath>
+		<value>
+			<displayCategory Operation="AddOrReplace">Hands</displayCategory>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneDef[defName="ElongatedFingers"]</xpath>
+		<value>
+			<capMods Operation="Safe">
+				<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+					<capacity Operation="Safe">Manipulation</capacity>
+					<offset Operation="SafeAdd">0.1</offset>
+					<postFactor Operation="SafeRemove">0</postFactor>
+				</li>
+			</capMods>
+			<displayOrderInCategory Operation="AddOrReplace">310</displayOrderInCategory>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneDef[defName="Hands_Pig"]</xpath>
+		<value>
+			<biostatMet Operation="SafeReplace">2</biostatMet>
+			<capMods Operation="Safe">
+				<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+					<capacity Operation="Safe">Manipulation</capacity>
+					<offset Operation="SafeAdd">-0.20</offset>
+					<postFactor Operation="SafeRemove">0</postFactor>
+				</li>
+			</capMods>
+			<displayOrderInCategory Operation="AddOrReplace">340</displayOrderInCategory>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneDef[defName="WebbedPhalanges"]</xpath>
+		<value>
+			<displayCategory Operation="AddOrReplace">Hands</displayCategory>
+			<displayOrderInCategory Operation="AddOrReplace">1000</displayOrderInCategory>
+		</value>
+	</Operation>
+
+	<!-- -50 tail(functional) -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneDef[defName="Tail_Furry"]</xpath>
+		<value>
+			<displayCategory Operation="AddOrReplace">Tail</displayCategory>
+			<displayOrderInCategory Operation="AddOrReplace">20</displayOrderInCategory>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneDef[defName="Tail_Smooth"]</xpath>
+		<value>
+			<displayCategory Operation="AddOrReplace">Tail</displayCategory>
+			<displayOrderInCategory Operation="AddOrReplace">30</displayOrderInCategory>
+		</value>
+	</Operation>
+
+	<!-- -160 voice -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneDef[@Name="GeneVoiceBase"]</xpath>
+		<value>
+			<displayCategory Operation="AddOrReplace">Cosmetic_Voice</displayCategory>
+		</value>
+	</Operation>
+
+	<!-- -170 hairstyle -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneDef[@Name="GeneHairStyleBase"]</xpath>
+		<value>
+			<displayCategory Operation="AddOrReplace">Cosmetic_HairStyle</displayCategory>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneDef[defName="Hair_Grayless"]</xpath>
+		<value>
+			<biostatCpx Operation="SafeAdd">0</biostatCpx>
+			<displayCategory Operation="AddOrReplace">Cosmetic_HairStyle</displayCategory>
+			<displayOrderInCategory Operation="AddOrReplace">1000</displayOrderInCategory>
+		</value>
+	</Operation>
+
+	<!-- -180 headbone -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneDef[@Name="GeneHeadboneBase"]</xpath>
+		<value>
+			<displayCategory Operation="AddOrReplace">Cosmetic_Headbone</displayCategory>
+		</value>
+	</Operation>
+
+	<!-- -190 ear -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneDef[@Name="GeneEarsBase"]</xpath>
+		<value>
+			<displayCategory Operation="AddOrReplace">Cosmetic_Ears</displayCategory>
+		</value>
+	</Operation>
+
+	<!-- -210 nose -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneDef[@Name="GeneNoseBase"]</xpath>
+		<value>
+			<displayCategory Operation="AddOrReplace">Cosmetic_Nose</displayCategory>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>Defs/GeneDef[defName="Nose_Pig"]/displayCategory</xpath>
+	</Operation>
+
+	<!-- -220 jaw -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneDef[@Name="GeneJawBase"]</xpath>
+		<value>
+			<displayCategory Operation="AddOrReplace">Cosmetic_Jaw</displayCategory>
+		</value>
+	</Operation>
+
+	<!-- -230 beard -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneDef[@Name="GeneBeardStyleBase"]</xpath>
+		<value>
+			<displayCategory Operation="AddOrReplace">Cosmetic_Beard</displayCategory>
+		</value>
+	</Operation>
+
+	<!-- -400 tail -->
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/GeneDef[@Name="GeneTailBase"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>GeneDef</xpath>
+				<value>
+					<displayCategory Operation="AddOrReplace">Cosmetic_Tail</displayCategory>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>redmattis.betterprerequisites</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<modExtensions Operation="Safe">
+								<li Class="BigAndSmall.PawnExtension" Operation="Safe" CheckAttributes="True">
+									<thingDefSwap Operation="SafeAdd">BS_HumanoidWithTail</thingDefSwap>
+								</li>
+							</modExtensions>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
+	</Operation>
+
+	<!-- -1000 haircolor -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneDef[@Name="GeneHairColorBase"]</xpath>
+		<value>
+			<displayCategory Operation="AddOrReplace">Cosmetic_HairColor</displayCategory>
+		</value>
+	</Operation>
+
+</Patch>

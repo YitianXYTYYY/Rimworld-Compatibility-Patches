@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneCategoryDef[defName="Ability"]</xpath>
+		<value>
+			<displayPriorityInXenotype Operation="AddOrReplace">700</displayPriorityInXenotype>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneCategoryDef[defName="Hemogen"]</xpath>
+		<value>
+			<displayPriorityInXenotype Operation="AddOrReplace">690</displayPriorityInXenotype>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneCategoryDef[defName="Psychic"]</xpath>
+		<value>
+			<displayPriorityInXenotype Operation="AddOrReplace">600</displayPriorityInXenotype>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneCategoryDef[defName="ResistanceAndWeakness"]</xpath>
+		<value>
+			<displayPriorityInXenotype Operation="AddOrReplace">490</displayPriorityInXenotype>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneCategoryDef[defName="Temperature"]</xpath>
+		<value>
+			<displayPriorityInXenotype Operation="AddOrReplace">480</displayPriorityInXenotype>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneCategoryDef[defName="Movement"]</xpath>
+		<value>
+			<displayPriorityInXenotype Operation="AddOrReplace">470</displayPriorityInXenotype>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneCategoryDef[defName="Violence"]</xpath>
+		<value>
+			<displayPriorityInXenotype Operation="AddOrReplace">400</displayPriorityInXenotype>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneCategoryDef[defName="Pain"]</xpath>
+		<value>
+			<displayPriorityInXenotype Operation="AddOrReplace">370</displayPriorityInXenotype>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneCategoryDef[defName="Mood"]</xpath>
+		<value>
+			<displayPriorityInXenotype Operation="AddOrReplace">300</displayPriorityInXenotype>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneCategoryDef[defName="Beauty"]</xpath>
+		<value>
+			<displayPriorityInXenotype Operation="AddOrReplace">280</displayPriorityInXenotype>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneCategoryDef[defName="Reproduction"]</xpath>
+		<value>
+			<displayPriorityInXenotype Operation="AddOrReplace">250</displayPriorityInXenotype>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneCategoryDef[defName="Drugs"]</xpath>
+		<value>
+			<displayPriorityInXenotype Operation="AddOrReplace">200</displayPriorityInXenotype>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneCategoryDef[defName="Aptitudes"]</xpath>
+		<value>
+			<displayPriorityInXenotype Operation="AddOrReplace">100</displayPriorityInXenotype>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneCategoryDef[defName="Miscellaneous"]</xpath>
+		<value>
+			<displayPriorityInXenotype Operation="AddOrReplace">0</displayPriorityInXenotype>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneCategoryDef[defName="Cosmetic"]</xpath>
+		<value>
+			<displayPriorityInGenepack Operation="SafeRemove"/>
+			<displayPriorityInXenotype Operation="AddOrReplace">-200</displayPriorityInXenotype>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneCategoryDef[defName="Cosmetic_Body"]</xpath>
+		<value>
+			<label Operation="SafeReplace">cosmetic - body type</label>
+			<displayPriorityInGenepack Operation="SafeRemove"/>
+			<displayPriorityInXenotype Operation="AddOrReplace">-300</displayPriorityInXenotype>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/GeneCategoryDef[defName="Cosmetic_Skin"]</xpath>
+		<value>
+			<displayPriorityInGenepack Operation="SafeRemove"/>
+			<displayPriorityInXenotype Operation="AddOrReplace">-1020</displayPriorityInXenotype>
+		</value>
+	</Operation>
+
+</Patch>

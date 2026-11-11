@@ -27,36 +27,6 @@
 		</value>
 	</Operation>
 
-	<!-- Biotech -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>ludeon.rimworld.biotech</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<!-- Subcore -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[@Name="SubcoreBase"]</xpath>
-				<value>
-					<thingCategories Operation="Safe">
-						<li Operation="SafeRemove" Compare="InnerText">Manufactured</li>
-						<li Operation="SafeAdd" Compare="InnerText">BiotechSubcores</li>
-					</thingCategories>
-				</value>
-			</Operation>
-			<!-- Chips -->
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[@Name="MechResourceBase"]</xpath>
-				<value>
-					<thingCategories Operation="Safe">
-						<li Operation="SafeRemove" Compare="InnerText">Manufactured</li>
-						<li Operation="SafeAdd" Compare="InnerText">BiotechChips</li>
-					</thingCategories>
-				</value>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
 	<!-- Anomaly -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>

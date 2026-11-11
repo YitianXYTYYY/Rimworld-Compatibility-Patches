@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- delicate -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/TraitDef[defName="Delicate"]/degreeDatas/li[label="delicate"]</xpath>
+		<value>
+			<statFactors Operation="Safe">
+				<IncomingDamageFactor Operation="SafeRemove">0</IncomingDamageFactor>
+			</statFactors>
+			<statOffsets Operation="Safe">
+				<IncomingDamageFactor Operation="SafeAdd">0.2</IncomingDamageFactor>
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<!-- recluse -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/TraitDef[defName="Recluse"]/degreeDatas/li[label="recluse"]</xpath>
+		<value>
+			<disallowedInspirations Operation="Safe">
+				<li Operation="SafeAdd" Compare="InnerText">Inspired_Recruitment</li>
+			</disallowedInspirations>
+		</value>
+	</Operation>
+
+</Patch>

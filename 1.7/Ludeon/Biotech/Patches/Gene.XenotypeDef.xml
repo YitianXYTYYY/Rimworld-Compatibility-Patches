@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/XenotypeDef[defName="Sanguophage"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>als.biotechgravship</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>XenotypeDef/genes</xpath>
+						<value>
+							<li Operation="SafeRemove" Compare="InnerText">BfG_RandomGene_Blood</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
+	</Operation>
+
+</Patch>

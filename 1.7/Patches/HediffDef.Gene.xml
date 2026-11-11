@@ -1,49 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-	<!-- Biotech -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>ludeon.rimworld.biotech</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/HediffDef[defName="PsychicBond"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>HediffDef/stages/li[minSeverity="0"]</xpath>
-						<value>
-							<capMods Operation="Safe">
-								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-									<capacity Operation="Safe">Consciousness</capacity>
-									<offset Operation="SafeReplace">0.1</offset>
-								</li>
-							</capMods>
-							<statOffsets Operation="Safe">
-								<PsychicSensitivity Operation="SafeReplace">0.2</PsychicSensitivity>
-							</statOffsets>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>HediffDef/stages/li[minSeverity="1"]</xpath>
-						<value>
-							<capMods Operation="Safe">
-								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-									<capacity Operation="Safe">Consciousness</capacity>
-									<offset Operation="SafeReplace">-0.2</offset>
-								</li>
-							</capMods>
-							<statOffsets Operation="Safe">
-								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
-							</statOffsets>
-						</value>
-					</Operation>
-				</apply>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
 	<!-- VRE.Fungoid -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>

@@ -2,6 +2,7 @@
 	<v1.7>
 		<li IfModActive="ludeon.rimworld.royalty">1.7/Ludeon/Royalty</li>
 		<li IfModActive="ludeon.rimworld.ideology">1.7/Ludeon/Ideology</li>
+		<li IfModActive="ludeon.rimworld.biotech">1.7/Ludeon/Biotech</li>
 		<li IfModActive="owlchemist.cherrypicker">1.7/Mods/Cherry Picker</li>
 		<li IfModActive="ferny.replacelib">1.7/Mods/ReplaceLib</li>
 		<li IfModActive="oskarpotocki.vfe.empire">1.7/Mods/Vanilla Factions Expanded - Empire</li>

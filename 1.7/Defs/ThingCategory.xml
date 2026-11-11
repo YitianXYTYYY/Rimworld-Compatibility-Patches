@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	<ThingCategoryDef MayRequire="ludeon.rimworld.biotech">
-		<defName>BiotechChips</defName>
-		<label>mechanoid chips</label>
-		<parent>Manufactured</parent>
-		<iconPath>Things/Item/Resource/SignalChip</iconPath>
-	</ThingCategoryDef>
-
-	<ThingCategoryDef MayRequire="ludeon.rimworld.biotech">
-		<defName>BiotechSubcores</defName>
-		<label>subcores</label>
-		<parent>Manufactured</parent>
-		<iconPath>Things/Item/Resource/SubcoreBasic</iconPath>
-	</ThingCategoryDef>
-
 	<ThingCategoryDef MayRequire="rebuild.cotr.doorsandcorners">
 		<defName>RBGlasses</defName>
 		<label>glasses</label>
