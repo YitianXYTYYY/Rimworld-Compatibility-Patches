@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- Bodyparts -->
+	<!-- bionic -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/HediffDef[defName="ArchotechEye"]</xpath>
+		<value>
+			<stages Operation="Safe">
+				<li Operation="Safe">
+					<statOffsets Operation="Safe">
+						<PawnBeauty Operation="SafeAdd">1</PawnBeauty>
+					</statOffsets>
+				</li>
+			</stages>
+		</value>
+	</Operation>
+
+</Patch>

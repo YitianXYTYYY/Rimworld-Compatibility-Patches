@@ -1,31 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-	<!-- go-juice -->
-	<Operation Class="XmlExtensions.HybridPatch">
-		<xpath>Defs/HediffDef[defName="GoJuiceAddiction"]/stages/li[label="withdrawal"]</xpath>
-		<value>
-			<hungerRateFactor Operation="SafeAdd">1.5</hungerRateFactor>
-			<hungerRateFactorOffset Operation="SafeRemove"/>
-		</value>
-	</Operation>
-
-	<!-- smokeleaf -->
-	<Operation Class="XmlExtensions.HybridPatch">
-		<xpath>Defs/ChemicalDef[defName="Smokeleaf"]</xpath>
-		<value>
-			<label Operation="SafeReplace">smokeleaf</label>
-		</value>
-	</Operation>
-	<Operation Class="XmlExtensions.HybridPatch">
-		<xpath>Defs/HediffDef[defName="SmokeleafHigh"]/stages/li</xpath>
-		<value>
-			<hungerRateFactor Operation="SafeAdd">1.2</hungerRateFactor>
-			<hungerRateFactorOffset Operation="SafeRemove"/>
-		</value>
-	</Operation>
-
-	<!-- Vanilla Factions Expanded - Empire -->
+	<!-- Anomaly for Gravship -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
 			<li>als.anomalygravship</li>

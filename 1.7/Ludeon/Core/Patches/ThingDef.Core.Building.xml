@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- misc -->
+	<!-- ground-penetrating scanner -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]</xpath>
+		<value>
+			<costList Operation="SafeReplace">
+				<Steel>225</Steel>
+				<Plasteel>25</Plasteel>
+				<ComponentSpacer>2</ComponentSpacer>
+			</costList>
+		</value>
+	</Operation>
+	<!-- long-range mineral scanner -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="LongRangeMineralScanner"]</xpath>
+		<value>
+			<costList Operation="SafeReplace">
+				<Steel>225</Steel>
+				<Plasteel>50</Plasteel>
+				<ComponentSpacer>3</ComponentSpacer>
+			</costList>
+		</value>
+	</Operation>
+	<!-- cryptosleep casket -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="CryptosleepCasket"]</xpath>
+		<value>
+			<costList Operation="SafeReplace">
+				<Steel>50</Steel>
+				<Plasteel>25</Plasteel>
+				<ComponentSpacer>2</ComponentSpacer>
+			</costList>
+		</value>
+	</Operation>
+
+	<!-- natural -->
+	<!-- compacted machinery -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="MineableComponentsIndustrial"]</xpath>
+		<value>
+			<building Operation="Safe">
+				<mineableScatterCommonality Operation="SafeReplace">0</mineableScatterCommonality>
+				<mineableScatterLumpSizeRange Operation="SafeReplace">0~0</mineableScatterLumpSizeRange>
+			</building>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+		<xpath>Defs/ThingDef[defName="PreciousLump"]/genStep/li[text()=MineableComponentsIndustrial]</xpath>
+	</Operation>
+
+	<!-- production -->
+	<!-- fabrication bench -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="FabricationBench"]</xpath>
+		<value>
+			<costList Operation="SafeReplace">
+				<Steel>250</Steel>
+				<ComponentSpacer>4</ComponentSpacer>
+			</costList>
+		</value>
+	</Operation>
+
+	<!-- ship -->
+	<!-- ship structural beam -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Ship_Beam"]</xpath>
+		<value>
+			<costList Operation="SafeReplace">
+				<Steel>300</Steel>
+				<Plasteel>50</Plasteel>
+				<ComponentSpacer>2</ComponentSpacer>
+			</costList>
+		</value>
+	</Operation>
+	<!-- ship cryptosleep casket -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Ship_CryptosleepCasket"]</xpath>
+		<value>
+			<costList Operation="SafeReplace">
+				<Steel>50</Steel>
+				<Plasteel>25</Plasteel>
+				<Uranium>25</Uranium>
+				<ComponentSpacer>2</ComponentSpacer>
+			</costList>
+		</value>
+	</Operation>
+	<!-- ship computer core -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Ship_ComputerCore"]</xpath>
+		<value>
+			<costList Operation="Safe">
+				<Gold Operation="SafeReplace">75</Gold>
+			</costList>
+		</value>
+	</Operation>
+	<!-- sensor cluster -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Ship_SensorCluster"]</xpath>
+		<value>
+			<costList Operation="SafeReplace">
+				<Steel>150</Steel>
+				<Plasteel>25</Plasteel>
+				<Gold>10</Gold>
+				<ComponentSpacer>6</ComponentSpacer>
+			</costList>
+		</value>
+	</Operation>
+
+	<!-- special -->
+	<!-- vanometric power cell -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="VanometricPowerCell"]</xpath>
+		<value>
+			<techLevel Operation="SafeAdd">Archotech</techLevel>
+		</value>
+	</Operation>
+
+</Patch>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>/Defs/ThoughtDef[defName="PawnWithGoodOpinionDied"]/stages/li[label="my friend {0} died"]</xpath>
+		<value>
+			<baseMoodEffect Operation="SafeReplace">-20</baseMoodEffect>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>/Defs/ThoughtDef[defName="MySonDied"]/stages/li[label="my son {0} died"]</xpath>
+		<value>
+			<baseMoodEffect>-40</baseMoodEffect>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>/Defs/ThoughtDef[defName="MyDaughterDied"]/stages/li[label="my daughter {0} died"]</xpath>
+		<value>
+			<baseMoodEffect>-40</baseMoodEffect>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>/Defs/ThoughtDef[defName="MyHusbandDied"]/stages/li[label="my husband {0} died"]</xpath>
+		<value>
+			<baseMoodEffect>-40</baseMoodEffect>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>/Defs/ThoughtDef[defName="MyWifeDied"]/stages/li[label="my wife {0} died"]</xpath>
+		<value>
+			<baseMoodEffect>-40</baseMoodEffect>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>/Defs/ThoughtDef[defName="MyFianceDied"]/stages/li[label="my fiance {0} died"]</xpath>
+		<value>
+			<baseMoodEffect>-40</baseMoodEffect>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>/Defs/ThoughtDef[defName="MyFianceeDied"]/stages/li[label="my fiancée {0} died"]</xpath>
+		<value>
+			<baseMoodEffect>-40</baseMoodEffect>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>/Defs/ThoughtDef[defName="MyLoverDied"]/stages/li[label="my lover {0} died"]</xpath>
+		<value>
+			<baseMoodEffect>-40</baseMoodEffect>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>/Defs/ThoughtDef[defName="MyFatherDied"]/stages/li[label="my father {0} died"]</xpath>
+		<value>
+			<baseMoodEffect>-30</baseMoodEffect>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>/Defs/ThoughtDef[defName="MyMotherDied"]/stages/li[label="my mother {0} died"]</xpath>
+		<value>
+			<baseMoodEffect>-30</baseMoodEffect>
+		</value>
+	</Operation>
+
+</Patch>

@@ -1,8 +1,7 @@
 <loadFolders>
 	<v1.7>
-		<li IfModActive="owlchemist.cherrypicker">1.7/Mods/Cherry Picker</li>
-		<li IfModActive="ferny.replacelib">1.7/Mods/ReplaceLib</li>
-
+		<li>/</li>
+		<li IfModActive="ludeon.rimworld.royalty">1.7/Ludeon/Core</li>
 		<li IfModActive="ludeon.rimworld.royalty">1.7/Ludeon/Royalty</li>
 		<li IfModActive="ludeon.rimworld.ideology">1.7/Ludeon/Ideology</li>
 		<li IfModActive="ludeon.rimworld.biotech">1.7/Ludeon/Biotech</li>
@@ -16,6 +15,5 @@
 		<li IfModActive="wasterbreath.mod">1.7/Mods/Waster's Breath</li>
 
 		<li>1.7</li>
-		<li>/</li>
 	</v1.7>
 </loadFolders>

@@ -16,12 +16,6 @@
 			</Operation>
 		</caseTrue>
 	</Operation>
-	<!--Operation Class="XmlExtensions.HybridPatch">
-		<xpath>Defs/GeneCategoryDef[defName="Archite"]</xpath>
-		<value>
-			<displayPriorityInXenotype Operation="AddOrReplace">1000</displayPriorityInXenotype>
-		</value>
-	</Operation-->
 	<!-- Vanilla Quests Expanded - Ancients -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
