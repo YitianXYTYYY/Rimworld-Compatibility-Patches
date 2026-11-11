@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
+	<!--Yayo's Combat 3 (Continued) -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>mlie.yayoscombat3</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>			
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Pilum_Thrown"]</xpath>
+				<value>
+					<projectile Operation="SafeReplace">
+						<damageDef>RangedStab</damageDef>
+						<damageAmountBase>25</damageAmountBase>
+						<stoppingPower>2.5</stoppingPower>
+						<armorPenetrationBase>0.10</armorPenetrationBase>
+						<speed>26</speed>
+					</projectile>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Bullet_AssaultRifle"]</xpath>
+				<value>
+					<projectile Operation="SafeReplace">
+						<damageDef>Bullet</damageDef>
+						<damageAmountBase>11</damageAmountBase>
+						<speed>70</speed>
+					</projectile>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/ThingDef[defName="Bullet_BoltActionRifle"]</xpath>
+				<value>
+					<projectile Operation="SafeReplace">
+						<damageDef>Bullet</damageDef>
+						<damageAmountBase>18</damageAmountBase>
+						<stoppingPower>1.5</stoppingPower>
+						<speed>70</speed>
+					</projectile>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
 	<!-- Core -->
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ThingDef[defName="Gun_ChargeBlasterHeavyTurret"]</xpath>
@@ -912,49 +955,6 @@
 					<weaponTags Operation="Safe">
 						<li Operation="Add">ammoDef_AmmoSpacer/5/10</li>
 					</weaponTags>
-				</value>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
-	<!--Yayo's Combat 3 (Continued) -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>mlie.yayoscombat3</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>			
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Pilum_Thrown"]</xpath>
-				<value>
-					<projectile Operation="SafeReplace">
-						<damageDef>RangedStab</damageDef>
-						<damageAmountBase>25</damageAmountBase>
-						<stoppingPower>2.5</stoppingPower>
-						<armorPenetrationBase>0.10</armorPenetrationBase>
-						<speed>26</speed>
-					</projectile>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Bullet_AssaultRifle"]</xpath>
-				<value>
-					<projectile Operation="SafeReplace">
-						<damageDef>Bullet</damageDef>
-						<damageAmountBase>11</damageAmountBase>
-						<speed>70</speed>
-					</projectile>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Bullet_BoltActionRifle"]</xpath>
-				<value>
-					<projectile Operation="SafeReplace">
-						<damageDef>Bullet</damageDef>
-						<damageAmountBase>18</damageAmountBase>
-						<stoppingPower>1.5</stoppingPower>
-						<speed>70</speed>
-					</projectile>
 				</value>
 			</Operation>
 		</caseTrue>
