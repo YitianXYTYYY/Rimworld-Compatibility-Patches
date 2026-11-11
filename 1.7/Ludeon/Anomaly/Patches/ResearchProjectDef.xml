@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ResearchProjectDef[defName="TurretPack"]</xpath>
+		<value>
+			<prerequisites Operation="Safe">
+				<li Operation="SafeAdd" Compare="InnerText">GunTurrets</li>
+				<li Operation="SafeRemove" Compare="InnerText">MicroelectronicsBasics</li>
+			</prerequisites>
+			<hiddenPrerequisites Operation="Safe">
+				<li Operation="SafeRemove" Compare="InnerText">GunTurrets</li>
+			</hiddenPrerequisites>
+			<requiredResearchBuilding Operation="SafeAdd">HiTechResearchBench</requiredResearchBuilding>
+		</value>
+	</Operation>
+
+</Patch>

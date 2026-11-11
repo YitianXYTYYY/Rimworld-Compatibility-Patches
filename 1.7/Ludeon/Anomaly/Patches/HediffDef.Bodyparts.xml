@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- prosthetics -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/HediffDef[defName="GhoulPlating"]/stages/li</xpath>
+		<value>
+			<capMods Operation="Safe">
+				<li Operation="SafeAdd" Compare="InnerText" XPathLocal="capacity">
+					<capacity>Moving</capacity>
+					<offset>-0.1</offset>
+				</li>
+			</capMods>
+			<statOffsets Operation="Safe">
+				<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/HediffDef[defName="GhoulBarbs"]/stages/li</xpath>
+		<value>
+			<capMods Operation="Safe">
+				<li Operation="SafeAdd" Compare="InnerText" XPathLocal="capacity">
+					<capacity>Moving</capacity>
+					<offset>-0.1</offset>
+				</li>
+			</capMods>
+			<statFactors Operation="Safe">
+				<MeleeDamageFactor Operation="SafeRemove">0</MeleeDamageFactor>
+			</statFactors>
+			<statOffsets Operation="Safe">
+				<MeleeDamageFactor Operation="SafeAdd">0.5</MeleeDamageFactor>
+				<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/HediffDef[defName="AdrenalHeart"]/stages/li</xpath>
+		<value>
+			<hungerRateFactor Operation="SafeAdd">1.2</hungerRateFactor>
+			<hungerRateFactorOffset Operation="SafeRemove"/>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/HediffDef[defName="MetalbloodHeart"]/stages/li</xpath>
+		<value>
+			<capMods Operation="Safe">
+				<li Operation="SafeAdd" Compare="InnerText" XPathLocal="capacity">
+					<capacity>Moving</capacity>
+					<offset>-0.05</offset>
+				</li>
+			</capMods>
+			<statOffsets Operation="Safe">
+				<MoveSpeed Operation="SafeRemove">0</MoveSpeed>
+			</statOffsets>
+		</value>
+	</Operation>
+
+</Patch>

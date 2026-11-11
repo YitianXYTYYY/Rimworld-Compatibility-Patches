@@ -443,33 +443,6 @@
 
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>ludeon.rimworld.anomaly</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ResearchProjectDef[defName="TurretPack"]</xpath>
-				<value>
-					<prerequisites Operation="Safe">
-						<li Operation="SafeAdd" Compare="InnerText">GunTurrets</li>
-						<li Operation="SafeRemove" Compare="InnerText">MicroelectronicsBasics</li>
-					</prerequisites>
-					<hiddenPrerequisites Operation="Safe">
-						<li Operation="SafeRemove" Compare="InnerText">GunTurrets</li>
-					</hiddenPrerequisites>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ResearchProjectDef[defName="TurretPack"]</xpath>
-				<value>
-					<requiredResearchBuilding Operation="SafeAdd">HiTechResearchBench</requiredResearchBuilding>
-				</value>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
 			<li>ludeon.rimworld.odyssey</li>
 		</mods>
 		<packageId>true</packageId>

@@ -113,34 +113,6 @@
 		</value>
 	</Operation>
 
-	<!-- Anomaly -->
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
-			<li>ludeon.rimworld.anomaly</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Apparel_ShardPsychicShockLance"]</xpath>
-				<value>
-					<tradeNeverStack Operation="SafeRemove"/>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Apparel_ShardPsychicInsanityLance"]</xpath>
-				<value>
-					<tradeNeverStack Operation="SafeRemove"/>
-				</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="Apparel_BiomutationLance"]</xpath>
-				<value>
-					<tradeNeverStack Operation="SafeRemove"/>
-				</value>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
 	<!-- Odyssey -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
