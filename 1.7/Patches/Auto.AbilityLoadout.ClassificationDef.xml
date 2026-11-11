@@ -10,13 +10,6 @@
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/Dreadarm.AbilityLoadout.AbilityLoadoutClassificationDef[defName="AbilityLoadout_CoreAndDlcClassifications"]/entries</xpath>
 				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>entries/li[targetDefName="Waterskip"]</xpath>
-						<value>
-							<category Operation="SafeReplace">Utility</category>
-							<friendlyFireRisk Operation="SafeRemove"/>
-						</value>
-					</Operation>
 					<!-- [FSF] More Psycast Powers -->
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
