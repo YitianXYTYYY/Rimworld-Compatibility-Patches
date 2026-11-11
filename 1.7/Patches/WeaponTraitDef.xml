@@ -446,8 +446,27 @@
 		</caseTrue>
 	</Operation>
 
-	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+	<!--Operation Class="XmlExtensions.PatchOperationSafeRemove">
 		<xpath>Defs/WeaponTraitDef[exclusionTags/li="AmmoType"]</xpath>
+	</Operation-->
+	<Operation Class="XmlExtensions.ForEach">
+		<xpath>Defs/WeaponTraitDef[exclusionTags/li="AmmoType"]/defName</xpath>
+		<storeIn>defPath</storeIn>
+		<apply>
+			<Operation Class="XmlExtensions.CreateVariable">
+				<storeIn>TraitName</storeIn>
+				<value>{defPath}/defName</value>
+				<fromXml>true</fromXml>
+				<apply> 
+					<Operation Class="PatchOperationAdd">
+						<xpath>Defs/CherryPicker.DefList[defName="CherryPicker_XYTYYY"]/defs</xpath>
+						<value>
+							<li>WeaponTraitDef/{TraitName}</li>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>					
+		</apply>
 	</Operation>
 
 </Patch>
