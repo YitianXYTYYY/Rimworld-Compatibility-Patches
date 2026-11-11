@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>	
+
+	<!-- Vanilla Genetics Expanded -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>vanillaexpanded.vgeneticse</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/TraderKindDef[defName="GR_OrbitalTrader"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>TraderKindDef/stockGenerators</xpath>
+				<value>
+					<li Class="StockGenerator_SingleDef" Operation="SafeAdd" Compare="InnerText" XPathLocal="thingDef">
+						<thingDef>Genepack</thingDef>
+						<countRange>4~6</countRange>
+					</li>
+					<li Class="StockGenerator_SingleDef" Operation="SafeAdd" Compare="InnerText" XPathLocal="thingDef">
+						<thingDef>ArchiteCapsule</thingDef>
+						<countRange>0~5</countRange>
+					</li>
+					<li Class="StockGenerator_SingleDef" Operation="SafeAdd" Compare="InnerText" XPathLocal="thingDef">
+						<thingDef>DeathrestCapacitySerum</thingDef>
+						<countRange>0~2</countRange>
+					</li>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.OptionalPatch">
+				<modId>FrozenSnowFox.FrozenSnowFoxTweaks</modId>
+				<key>FSFMoreGenepacksOnTradersOn</key>
+				<defaultValue>false</defaultValue>
+				<caseTrue>	
+					<Operation Class="XmlExtensions.UseSettings">
+						<modId>FrozenSnowFox.FrozenSnowFoxTweaks</modId>
+						<keys>
+							<li>FSFMoreGenepacksOnTradersGenepackMin</li>
+							<li>FSFMoreGenepacksOnTradersGenepackMax</li>
+							<li>FSFMoreGenepacksOnTradersArchiteCapulesMin</li>
+							<li>FSFMoreGenepacksOnTradersArchiteCapulesMax</li>
+						</keys>
+						<defaultValues>
+							<li>5</li>
+							<li>6</li>
+							<li>6</li>
+							<li>7</li>
+						</defaultValues>
+						<apply>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>TraderKindDef/stockGenerators</xpath>
+								<value>
+									<li Class="StockGenerator_SingleDef" Operation="Safe" Compare="InnerText" XPathLocal="thingDef">
+										<thingDef Operation="Safe">Genepack</thingDef>
+										<countRange Operation="SafeReplace">{FSFMoreGenepacksOnTradersGenepackMin}~{FSFMoreGenepacksOnTradersGenepackMax}</countRange>
+									</li>
+									<li Class="StockGenerator_SingleDef" Operation="Safe" Compare="InnerText" XPathLocal="thingDef">
+										<thingDef Operation="Safe">ArchiteCapsule</thingDef>
+										<countRange Operation="SafeReplace">{FSFMoreGenepacksOnTradersArchiteCapulesMin}~{FSFMoreGenepacksOnTradersArchiteCapulesMax}</countRange>
+									</li>				
+									<li Class="StockGenerator_SingleDef" MayRequire="sarg.alphagenes" Operation="SafeAdd" Compare="InnerText" XPathLocal="thingDef">
+										<thingDef>AG_Alphapack</thingDef>
+										<countRange>1</countRange>
+									</li>
+									<li Class="StockGenerator_SingleDef" MayRequire="sarg.alphagenes" Operation="SafeAdd" Compare="InnerText" XPathLocal="thingDef">
+										<thingDef>AG_Mixedpack</thingDef>
+										<countRange>1</countRange>
+									</li>
+								</value>
+							</Operation>							
+						</apply>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
+	</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>

@@ -3,53 +3,6 @@
 
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
-			<li>reel.turretpipeline</li>
-		</mods>
-		<packageId>true</packageId>
-		<caseTrue>
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/ThingDef[defName="ReelTurretAmmo"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ThingDef</xpath>
-						<value>
-							<comps Operation="Safe">
-								<li Class="CompProperties_Explosive" Operation="SafeRemove" CheckAttributes="True">0</li>
-							</comps>
-							<stackLimit Operation="SafeReplace">150</stackLimit>
-							<statBases Operation="Safe">
-								<Flammability Operation="SafeReplace">0.6</Flammability>
-								<MarketValue Operation="SafeReplace">5</MarketValue>
-								<Mass Operation="SafeReplace">0.1</Mass>
-								<MaxHitPoints Operation="SafeReplace">40</MaxHitPoints>
-							</statBases>
-							<tradeTags Operation="Safe">
-								<li Operation="SafeAdd" Compare="InnerText">Ammo</li>
-							</tradeTags>
-						</value>
-					</Operation>
-					<Operation Class="XmlExtensions.FindMod">
-						<mods>
-							<li>mlie.yayoscombat3</li>
-						</mods>
-						<packageId>true</packageId>
-						<caseTrue>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>ThingDef/thingCategories</xpath>
-								<value>
-									<li Operation="SafeAdd" Compare="InnerText">yy_ammo_category</li>
-									<li Operation="SafeRemove" Compare="InnerText">Manufactured</li>
-								</value>
-							</Operation>
-						</caseTrue>
-					</Operation>
-				</apply>
-			</Operation>
-		</caseTrue>
-	</Operation>
-
-	<Operation Class="XmlExtensions.FindMod">
-		<mods>
 			<li>mlie.yayoscombat3</li>
 		</mods>
 		<packageId>true</packageId>
