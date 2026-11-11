@@ -4,6 +4,21 @@
 
 	<!-- misc -->
 	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/HediffDef[defName="DeathRefusalSickness"]/stages/li</xpath>
+		<value>
+			<capMods Operation="Safe">
+				<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+					<capacity Operation="Safe">Consciousness</capacity>
+					<offset Operation="SafeAdd">-0.1</offset>
+					<postFactor Operation="SafeRemove">0</postFactor>
+					<setMax Operation="SafeAdd">0.9</setMax>
+				</li>
+			</capMods>
+			<painOffset Operation="SafeReplace">0.1</painOffset>
+		</value>
+	</Operation>
+
+	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/HediffDef[defName="PsychicTrance"]/stages/li</xpath>
 		<value>
 			<statFactors Operation="Safe">
