@@ -55,7 +55,7 @@
 			<capMods Operation="Safe">
 				<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
 					<capacity Operation="Safe">Consciousness</capacity>
-					<offset Operation="SafeRemove">0</offset>
+					<offset Operation="SafeReplace">-0.1</offset>
 					<setMax Operation="SafeAdd">0.9</setMax>
 				</li>
 			</capMods>
