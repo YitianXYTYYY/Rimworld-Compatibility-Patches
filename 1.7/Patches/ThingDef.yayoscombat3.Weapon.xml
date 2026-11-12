@@ -351,9 +351,6 @@
 							<graphicData Operation="Safe">
 								<texPath Operation="SafeReplace">NewThings/ChargeLance_PlayerMade</texPath>
 							</graphicData>
-							<weaponTags Operation="Safe">
-								<li Operation="SafeRemove">MechanoidGunMedium</li>
-							</weaponTags>
 						</value>
 					</Operation>
 				</caseTrue>

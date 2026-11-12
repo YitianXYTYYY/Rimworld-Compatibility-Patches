@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>	
+	
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/PawnKindDef[weaponTags/li="MechanoidGunMedium"]</xpath>
+		<value>
+			<weaponStyleDef Operation="Add">Mechanoid_ChargeLance</weaponStyleDef>
+		</value>
+	</Operation>
+
+</Patch>

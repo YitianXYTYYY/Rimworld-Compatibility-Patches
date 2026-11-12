@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingStyleDef MayRequire="vanillaexpanded.vwe">
+		<defName>Mechanoid_ChargeLance</defName>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponRanged/ChargeLance</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+
+</Defs>
