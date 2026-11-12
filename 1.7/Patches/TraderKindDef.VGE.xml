@@ -9,24 +9,49 @@
 		<packageId>true</packageId>
 		<caseTrue>
 	<Operation Class="XmlExtensions.SetScope">
-		<xpath>Defs/TraderKindDef[defName="GR_OrbitalTrader"]</xpath>
+		<xpath>Defs/TraderKindDef[defName="GR_Outlander_CaravanTrader"]</xpath>
 		<apply>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>TraderKindDef/stockGenerators</xpath>
-				<value>
-					<li Class="StockGenerator_SingleDef" Operation="SafeAdd" Compare="InnerText" XPathLocal="thingDef">
-						<thingDef>Genepack</thingDef>
-						<countRange>4~6</countRange>
-					</li>
-					<li Class="StockGenerator_SingleDef" Operation="SafeAdd" Compare="InnerText" XPathLocal="thingDef">
-						<thingDef>ArchiteCapsule</thingDef>
-						<countRange>0~5</countRange>
-					</li>
-					<li Class="StockGenerator_SingleDef" Operation="SafeAdd" Compare="InnerText" XPathLocal="thingDef">
-						<thingDef>DeathrestCapacitySerum</thingDef>
-						<countRange>0~2</countRange>
-					</li>
-				</value>
+			<Operation Class="XmlExtensions.Conditional">
+				<xpath>TraderKindDef/stockGenerators/li[@Class="StockGenerator_SingleDef"][thingDef="Genepack"]</xpath>
+				<caseFalse>
+					<Operation Class="PatchOperationAdd">
+						<xpath>TraderKindDef/stockGenerators</xpath>
+						<value>
+							<li Class="StockGenerator_SingleDef" MayRequire="ludeon.rimworld.biotech">
+								<thingDef>Genepack</thingDef>
+								<countRange>1~1</countRange>
+							</li>
+						</value>
+					</Operation>
+				</caseFalse>
+			</Operation>
+			<Operation Class="XmlExtensions.Conditional">
+				<xpath>TraderKindDef/stockGenerators/li[@Class="StockGenerator_SingleDef"][thingDef="ArchiteCapsule"]</xpath>
+				<caseFalse>
+					<Operation Class="PatchOperationAdd">
+						<xpath>TraderKindDef/stockGenerators</xpath>
+						<value>
+							<li Class="StockGenerator_SingleDef" MayRequire="ludeon.rimworld.biotech">
+								<thingDef>ArchiteCapsule</thingDef>
+								<countRange>-8~1</countRange>
+							</li>
+						</value>
+					</Operation>
+				</caseFalse>
+			</Operation>
+			<Operation Class="XmlExtensions.Conditional">
+				<xpath>TraderKindDef/stockGenerators/li[@Class="StockGenerator_SingleDef"][thingDef="DeathrestCapacitySerum"]</xpath>
+				<caseFalse>
+					<Operation Class="PatchOperationAdd">
+						<xpath>TraderKindDef/stockGenerators</xpath>
+						<value>
+							<li Class="StockGenerator_SingleDef" MayRequire="ludeon.rimworld.biotech">
+								<thingDef>DeathrestCapacitySerum</thingDef>
+								<countRange>0~1</countRange>
+							</li>
+						</value>
+					</Operation>
+				</caseFalse>
 			</Operation>
 			<Operation Class="XmlExtensions.OptionalPatch">
 				<modId>FrozenSnowFox.FrozenSnowFoxTweaks</modId>
@@ -48,27 +73,157 @@
 							<li>7</li>
 						</defaultValues>
 						<apply>
-							<Operation Class="XmlExtensions.HybridPatch">
-								<xpath>TraderKindDef/stockGenerators</xpath>
+							<Operation Class="PatchOperationReplace">
+								<xpath>TraderKindDef/stockGenerators/li[@Class="StockGenerator_SingleDef"][thingDef="Genepack"]/countRange</xpath>
 								<value>
-									<li Class="StockGenerator_SingleDef" Operation="Safe" Compare="InnerText" XPathLocal="thingDef">
-										<thingDef Operation="Safe">Genepack</thingDef>
-										<countRange Operation="SafeReplace">{FSFMoreGenepacksOnTradersGenepackMin}~{FSFMoreGenepacksOnTradersGenepackMax}</countRange>
-									</li>
-									<li Class="StockGenerator_SingleDef" Operation="Safe" Compare="InnerText" XPathLocal="thingDef">
-										<thingDef Operation="Safe">ArchiteCapsule</thingDef>
-										<countRange Operation="SafeReplace">{FSFMoreGenepacksOnTradersArchiteCapulesMin}~{FSFMoreGenepacksOnTradersArchiteCapulesMax}</countRange>
-									</li>				
-									<li Class="StockGenerator_SingleDef" MayRequire="sarg.alphagenes" Operation="SafeAdd" Compare="InnerText" XPathLocal="thingDef">
-										<thingDef>AG_Alphapack</thingDef>
-										<countRange>1</countRange>
-									</li>
-									<li Class="StockGenerator_SingleDef" MayRequire="sarg.alphagenes" Operation="SafeAdd" Compare="InnerText" XPathLocal="thingDef">
-										<thingDef>AG_Mixedpack</thingDef>
-										<countRange>1</countRange>
-									</li>
+									<countRange>{FSFMoreGenepacksOnTradersGenepackMin}~{FSFMoreGenepacksOnTradersGenepackMax}</countRange>
 								</value>
-							</Operation>							
+							</Operation>
+							<Operation Class="PatchOperationReplace">
+								<xpath>TraderKindDef/stockGenerators/li[@Class="StockGenerator_SingleDef"][thingDef="ArchiteCapsule"]/countRange</xpath>
+								<value>
+									<countRange Operation="SafeReplace">{FSFMoreGenepacksOnTradersArchiteCapulesMin}~{FSFMoreGenepacksOnTradersArchiteCapulesMax}</countRange>
+								</value>
+							</Operation>
+							<Operation Class="XmlExtensions.Conditional">
+								<xpath>TraderKindDef/stockGenerators/li[@Class="StockGenerator_SingleDef"][thingDef="AG_Alphapack"]</xpath>
+								<caseFalse>
+									<Operation Class="XmlExtensions.HybridPatch">
+										<xpath>TraderKindDef/stockGenerators</xpath>
+										<value>
+											<li Class="StockGenerator_SingleDef" MayRequire="sarg.alphagenes" Operation="Add">
+												<thingDef>AG_Alphapack</thingDef>
+												<countRange>1</countRange>
+											</li>
+										</value>
+									</Operation>
+								</caseFalse>
+							</Operation>
+							<Operation Class="XmlExtensions.Conditional">
+								<xpath>TraderKindDef/stockGenerators/li[@Class="StockGenerator_SingleDef"][thingDef="AG_Mixedpack"]</xpath>
+								<caseFalse>
+									<Operation Class="XmlExtensions.HybridPatch">
+										<xpath>TraderKindDef/stockGenerators</xpath>
+										<value>
+											<li Class="StockGenerator_SingleDef" MayRequire="sarg.alphagenes" Operation="Add">
+												<thingDef>AG_Mixedpack</thingDef>
+												<countRange>1</countRange>
+											</li>
+										</value>
+									</Operation>
+								</caseFalse>
+							</Operation>
+						</apply>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
+	</Operation>
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/TraderKindDef[defName="GR_OrbitalTrader"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.Conditional">
+				<xpath>TraderKindDef/stockGenerators/li[@Class="StockGenerator_SingleDef"][thingDef="Genepack"]</xpath>
+				<caseFalse>
+					<Operation Class="PatchOperationAdd">
+						<xpath>TraderKindDef/stockGenerators</xpath>
+						<value>
+							<li Class="StockGenerator_SingleDef" MayRequire="ludeon.rimworld.biotech">
+								<thingDef>Genepack</thingDef>
+								<countRange>1~1</countRange>
+							</li>
+						</value>
+					</Operation>
+				</caseFalse>
+			</Operation>
+			<Operation Class="XmlExtensions.Conditional">
+				<xpath>TraderKindDef/stockGenerators/li[@Class="StockGenerator_SingleDef"][thingDef="ArchiteCapsule"]</xpath>
+				<caseFalse>
+					<Operation Class="PatchOperationAdd">
+						<xpath>TraderKindDef/stockGenerators</xpath>
+						<value>
+							<li Class="StockGenerator_SingleDef" MayRequire="ludeon.rimworld.biotech">
+								<thingDef>ArchiteCapsule</thingDef>
+								<countRange>-8~1</countRange>
+							</li>
+						</value>
+					</Operation>
+				</caseFalse>
+			</Operation>
+			<Operation Class="XmlExtensions.Conditional">
+				<xpath>TraderKindDef/stockGenerators/li[@Class="StockGenerator_SingleDef"][thingDef="DeathrestCapacitySerum"]</xpath>
+				<caseFalse>
+					<Operation Class="PatchOperationAdd">
+						<xpath>TraderKindDef/stockGenerators</xpath>
+						<value>
+							<li Class="StockGenerator_SingleDef" MayRequire="ludeon.rimworld.biotech">
+								<thingDef>DeathrestCapacitySerum</thingDef>
+								<countRange>0~1</countRange>
+							</li>
+						</value>
+					</Operation>
+				</caseFalse>
+			</Operation>
+			<Operation Class="XmlExtensions.OptionalPatch">
+				<modId>FrozenSnowFox.FrozenSnowFoxTweaks</modId>
+				<key>FSFMoreGenepacksOnTradersOn</key>
+				<defaultValue>false</defaultValue>
+				<caseTrue>	
+					<Operation Class="XmlExtensions.UseSettings">
+						<modId>FrozenSnowFox.FrozenSnowFoxTweaks</modId>
+						<keys>
+							<li>FSFMoreGenepacksOnTradersGenepackMin</li>
+							<li>FSFMoreGenepacksOnTradersGenepackMax</li>
+							<li>FSFMoreGenepacksOnTradersArchiteCapulesMin</li>
+							<li>FSFMoreGenepacksOnTradersArchiteCapulesMax</li>
+						</keys>
+						<defaultValues>
+							<li>5</li>
+							<li>6</li>
+							<li>6</li>
+							<li>7</li>
+						</defaultValues>
+						<apply>
+							<Operation Class="PatchOperationReplace">
+								<xpath>TraderKindDef/stockGenerators/li[@Class="StockGenerator_SingleDef"][thingDef="Genepack"]/countRange</xpath>
+								<value>
+									<countRange>{FSFMoreGenepacksOnTradersGenepackMin}~{FSFMoreGenepacksOnTradersGenepackMax}</countRange>
+								</value>
+							</Operation>
+							<Operation Class="PatchOperationReplace">
+								<xpath>TraderKindDef/stockGenerators/li[@Class="StockGenerator_SingleDef"][thingDef="ArchiteCapsule"]/countRange</xpath>
+								<value>
+									<countRange Operation="SafeReplace">{FSFMoreGenepacksOnTradersArchiteCapulesMin}~{FSFMoreGenepacksOnTradersArchiteCapulesMax}</countRange>
+								</value>
+							</Operation>
+							<Operation Class="XmlExtensions.Conditional">
+								<xpath>TraderKindDef/stockGenerators/li[@Class="StockGenerator_SingleDef"][thingDef="AG_Alphapack"]</xpath>
+								<caseFalse>
+									<Operation Class="XmlExtensions.HybridPatch">
+										<xpath>TraderKindDef/stockGenerators</xpath>
+										<value>
+											<li Class="StockGenerator_SingleDef" MayRequire="sarg.alphagenes" Operation="Add">
+												<thingDef>AG_Alphapack</thingDef>
+												<countRange>1</countRange>
+											</li>
+										</value>
+									</Operation>
+								</caseFalse>
+							</Operation>
+							<Operation Class="XmlExtensions.Conditional">
+								<xpath>TraderKindDef/stockGenerators/li[@Class="StockGenerator_SingleDef"][thingDef="AG_Mixedpack"]</xpath>
+								<caseFalse>
+									<Operation Class="XmlExtensions.HybridPatch">
+										<xpath>TraderKindDef/stockGenerators</xpath>
+										<value>
+											<li Class="StockGenerator_SingleDef" MayRequire="sarg.alphagenes" Operation="Add">
+												<thingDef>AG_Mixedpack</thingDef>
+												<countRange>1</countRange>
+											</li>
+										</value>
+									</Operation>
+								</caseFalse>
+							</Operation>
 						</apply>
 					</Operation>
 				</caseTrue>
