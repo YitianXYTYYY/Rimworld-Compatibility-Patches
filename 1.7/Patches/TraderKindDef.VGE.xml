@@ -130,7 +130,7 @@
 						<value>
 							<li Class="StockGenerator_SingleDef" MayRequire="ludeon.rimworld.biotech">
 								<thingDef>Genepack</thingDef>
-								<countRange>1~1</countRange>
+								<countRange>3~5</countRange>
 							</li>
 						</value>
 					</Operation>
@@ -144,7 +144,7 @@
 						<value>
 							<li Class="StockGenerator_SingleDef" MayRequire="ludeon.rimworld.biotech">
 								<thingDef>ArchiteCapsule</thingDef>
-								<countRange>-8~1</countRange>
+								<countRange>1~2</countRange>
 							</li>
 						</value>
 					</Operation>
@@ -158,7 +158,7 @@
 						<value>
 							<li Class="StockGenerator_SingleDef" MayRequire="ludeon.rimworld.biotech">
 								<thingDef>DeathrestCapacitySerum</thingDef>
-								<countRange>0~1</countRange>
+								<countRange>1</countRange>
 							</li>
 						</value>
 					</Operation>
