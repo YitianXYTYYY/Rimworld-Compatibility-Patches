@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<RecipeDef MayRequire="fuu.uncompromisingtribalfaction">
+		<defName>Make_UncompromisingTribalFaction_Apparel_SmokeBomb</defName>
+		<label>make smoke bomb</label>
+		<description>Make an smoke bomb.</description>
+		<jobString>Making smoke bomb.</jobString>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Smith</effectWorking>
+		<soundWorking>Recipe_Smith</soundWorking>
+		<workAmount>1500</workAmount>
+		<recipeUsers>
+			<li>CraftingSpot</li>
+		</recipeUsers>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>StoneChunks</li>
+					</categories>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WoodLog</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>StoneChunks</li>
+			</categories>
+			<thingDefs>
+				<li>WoodLog</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<UncompromisingTribalFaction_Apparel_SmokeBomb>1</UncompromisingTribalFaction_Apparel_SmokeBomb>
+		</products>
+		<researchPrerequisites>
+			<li MayRequire="oskarpotocki.vfe.tribals">VFET_Weapons</li>
+		</researchPrerequisites>
+		<workSkill>Crafting</workSkill>
+	</RecipeDef>
+</Defs>

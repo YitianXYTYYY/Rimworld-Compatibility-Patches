@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- Uncompromising Tribal Faction -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>fuu.uncompromisingtribalfaction</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/ThingDef[defName="UncompromisingTribalFaction_Apparel_SmokeBomb"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>ThingDef</xpath>
+						<attribute>ParentName</attribute>
+						<value>ApparelNoQualityBase</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>ThingDef</xpath>
+						<value>
+							<colorGenerator Class="ColorGenerator_Options" Operation="SafeRemove"/>
+							<costStuffCount Operation="SafeRemove"/>
+							<recipeMaker Operation="SafeRemove">
+								<researchPrerequisites Inherit="False" Operation="Safe">
+									<li MayRequire="oskarpotocki.vfe.tribals" Operation="SafeAdd" Compare="InnerText">VFET_Weapons</li>
+								</researchPrerequisites>
+								<unfinishedThingDef Operation="SafeRemove">UnfinishedPack</unfinishedThingDef>
+								<useIngredientsForColor Operation="SafeReplace">true</useIngredientsForColor>
+							</recipeMaker>
+							<smeltable Operation="SafeAdd">false</smeltable>
+							<statBases>
+								<MarketValue Operation="SafeAdd">15</MarketValue>
+								<WorkToMake Operation="SafeRemove">0</WorkToMake>
+							</statBases>
+							<stuffCategories Operation="SafeRemove"/>
+						</value>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>
