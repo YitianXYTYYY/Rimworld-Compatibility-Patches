@@ -385,6 +385,20 @@
 	<!-- -170 hairstyle -->
 	<Operation Class="XmlExtensions.FindMod">
 		<mods>
+			<li>vanillaracesexpanded.highmate</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/GeneDef[defName="VRE_HighmateHair"]</xpath>
+				<value>
+					<displayCategory Operation="SafeRemove"/>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
 			<li>vanillaracesexpanded.phytokin</li>
 		</mods>
 		<packageId>true</packageId>
