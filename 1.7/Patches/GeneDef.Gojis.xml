@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>goji.gojismiscgenes</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.SetScope">
+				<xpath>Defs/GeneDef[defName="Goji_Hibernation"]</xpath>
+				<apply>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>GeneDef</xpath>
+						<value>
+							<exclusionTags Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">InsectorHypothermia</li>
+							</exclusionTags>
+							<makeImmuneTo Operation="Safe">
+								<li Operation="SafeAdd" Compare="InnerText">Hypothermia</li>
+							</makeImmuneTo>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>vanillaracesexpanded.starjack</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>GeneDef</xpath>
+								<value>
+									<iconPath Operation="SafeReplace">UI/Icons/Genes/Gene_Cryostasis</iconPath>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</apply>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>

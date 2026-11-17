@@ -214,7 +214,7 @@
 				</mods>
 				<packageId>true</packageId>
 				<caseTrue>
-					<Operation Class="XmlExtensions.FindMod">
+					<!--Operation Class="XmlExtensions.FindMod">
 						<mods>
 							<li>vanillaracesexpanded.android</li>
 						</mods>
@@ -244,6 +244,10 @@
 									<li>RecipeDef/Make_Genepack_VREA_Skin_DeepYellow</li>
 									<li>RecipeDef/Make_Genepack_VREA_Skin_Orange</li>
 									<li>RecipeDef/Make_Genepack_VREA_Skin_Green</li>
+									<li>RecipeDef/Make_Genepack_VREA_Body_Fat</li>
+									<li>RecipeDef/Make_Genepack_VREA_Body_Thin</li>
+									<li>RecipeDef/Make_Genepack_VREA_Body_Hulk</li>
+									<li>RecipeDef/Make_Genepack_VREA_Body_Standard</li>
 									<li>RecipeDef/Make_Genepack_VREA_MemoryProcessing</li>
 									<li>RecipeDef/Make_Genepack_VREA_Power</li>
 									<li>RecipeDef/Make_Genepack_VREA_JoyDisabled</li>
@@ -372,7 +376,7 @@
 								</value>
 							</Operation>
 						</caseTrue>
-					</Operation>
+					</Operation-->
 					<Operation Class="XmlExtensions.FindMod">
 						<mods>
 							<li>vanillaracesexpanded.insector</li>
@@ -506,6 +510,9 @@
 							<li>GeneDef/Goji_CheekPouch</li>
 							<li>GeneDef/Goji_WindRider</li>
 							<li>GeneDef/Goji_RouteMemory</li>
+							<li>GeneDef/Goji_DrugReceptive_Psychite</li>
+							<li>GeneDef/Goji_DrugReceptive_GoJuice</li>
+							<li>GeneDef/Goji_DrugReceptive_WakeUp</li>
 						</value>
 					</Operation>
 				</caseTrue>
