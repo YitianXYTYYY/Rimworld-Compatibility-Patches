@@ -10,6 +10,31 @@
 		</value>
 	</Operation>
 
+	<!-- luciferium -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/HediffDef[defName="LuciferiumHigh"]/stages/li</xpath>
+		<value>
+			<capMods Operation="Safe">
+				<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+					<capacity Operation="Safe">BloodFiltration</capacity>
+					<offset Operation="SafeReplace">0.75</offset>
+				</li>
+				<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+					<capacity Operation="Safe">BloodPumping</capacity>
+					<offset Operation="SafeReplace">0.05</offset>
+				</li>
+				<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+					<capacity Operation="Safe">Breathing</capacity>
+					<offset Operation="SafeReplace">0.3</offset>
+				</li>
+				<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+					<capacity Operation="Safe">Sight</capacity>
+					<offset Operation="SafeReplace">0.1</offset>
+				</li>
+			</capMods>
+		</value>
+	</Operation>
+
 	<!-- smokeleaf -->
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ChemicalDef[defName="Smokeleaf"]</xpath>
