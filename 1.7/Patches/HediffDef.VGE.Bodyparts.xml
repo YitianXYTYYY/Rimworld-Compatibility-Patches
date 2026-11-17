@@ -132,7 +132,7 @@
 							<capMods Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
 									<capacity Operation="Safe">Consciousness</capacity>
-									<offset Operation="SafeReplace">-0.05</offset>
+									<offset Operation="SafeReplace">-0.1</offset>
 								</li>
 							</capMods>
 							<statOffsets Operation="Safe">
@@ -172,7 +172,7 @@
 							<capMods Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
 									<capacity Operation="Safe">Consciousness</capacity>
-									<offset Operation="SafeReplace">0.05</offset>
+									<offset Operation="SafeReplace">0.1</offset>
 								</li>
 							</capMods>
 							<statOffsets Operation="Safe">
@@ -200,7 +200,7 @@
 							<capMods Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
 									<capacity Operation="Safe">Consciousness</capacity>
-									<offset Operation="SafeReplace">0.15</offset>
+									<offset Operation="SafeReplace">0.1</offset>
 								</li>
 							</capMods>
 							<statOffsets Operation="Safe">
@@ -214,7 +214,7 @@
 							<capMods Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
 									<capacity Operation="Safe">Consciousness</capacity>
-									<offset Operation="SafeReplace">0.2</offset>
+									<offset Operation="SafeReplace">0.1</offset>
 								</li>
 							</capMods>
 							<statOffsets Operation="Safe">
@@ -418,17 +418,15 @@
 				<xpath>Defs/HediffDef[defName="GR_ChemfuelStomach"]</xpath>
 				<apply>
 					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>HediffDef/stages/li/capMods/li[capacity="Metabolism"]</xpath>
+					</Operation>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 						<xpath>HediffDef/stages/li/hungerRateFactorOffset</xpath>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[minSeverity="0"]</xpath>
 						<value>
-							<capMods Operation="Safe">
-								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-									<capacity Operation="Safe">Metabolism</capacity>
-									<offset Operation="SafeReplace">-0.1</offset>
-								</li>
-							</capMods>
+							<partEfficiencyOffset Operation="SafeAdd">-0.1</partEfficiencyOffset>
 							<foodPoisoningChanceFactor Operation="SafeAdd">0</foodPoisoningChanceFactor>
 							<makeImmuneTo Operation="Safe">
 								<li Operation="SafeAdd" Compare="InnerText">GutWorms</li>
@@ -438,11 +436,6 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[minSeverity="0.1"]</xpath>
 						<value>
-							<capMods Operation="Safe">
-								<li Operation="SafeRemove" Compare="InnerText" XPathLocal="capacity">
-									<capacity>Metabolism</capacity>
-								</li>
-							</capMods>
 							<foodPoisoningChanceFactor Operation="SafeAdd">0</foodPoisoningChanceFactor>
 							<makeImmuneTo Operation="Safe">
 								<li Operation="SafeAdd" Compare="InnerText">GutWorms</li>
@@ -452,12 +445,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[minSeverity="0.2"]</xpath>
 						<value>
-							<capMods Operation="Safe">
-								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-									<capacity Operation="Safe">Metabolism</capacity>
-									<offset Operation="SafeReplace">0.1</offset>
-								</li>
-							</capMods>
+							<partEfficiencyOffset Operation="SafeAdd">0.1</partEfficiencyOffset>
 							<foodPoisoningChanceFactor Operation="SafeAdd">0</foodPoisoningChanceFactor>
 							<makeImmuneTo Operation="Safe">
 								<li Operation="SafeAdd" Compare="InnerText">GutWorms</li>
@@ -467,12 +455,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[minSeverity="0.3"]</xpath>
 						<value>
-							<capMods Operation="Safe">
-								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-									<capacity Operation="Safe">Metabolism</capacity>
-									<offset Operation="SafeReplace">0.15</offset>
-								</li>
-							</capMods>
+							<partEfficiencyOffset Operation="SafeAdd">0.15</partEfficiencyOffset>
 							<foodPoisoningChanceFactor Operation="SafeAdd">0</foodPoisoningChanceFactor>
 							<hungerRateFactor Operation="SafeAdd">0.8</hungerRateFactor>
 							<makeImmuneTo Operation="Safe">
@@ -483,12 +466,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[minSeverity="0.4"]</xpath>
 						<value>
-							<capMods Operation="Safe">
-								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-									<capacity Operation="Safe">Metabolism</capacity>
-									<offset Operation="SafeReplace">0.2</offset>
-								</li>
-							</capMods>
+							<partEfficiencyOffset Operation="SafeAdd">0.20</partEfficiencyOffset>
 							<foodPoisoningChanceFactor Operation="SafeAdd">0</foodPoisoningChanceFactor>
 							<hungerRateFactor Operation="SafeAdd">0.6</hungerRateFactor>
 							<makeImmuneTo Operation="Safe">
@@ -499,12 +477,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[minSeverity="0.5"]</xpath>
 						<value>
-							<capMods Operation="Safe">
-								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-									<capacity Operation="Safe">Metabolism</capacity>
-									<offset Operation="SafeReplace">0.25</offset>
-								</li>
-							</capMods>
+							<partEfficiencyOffset Operation="SafeAdd">0.25</partEfficiencyOffset>
 							<foodPoisoningChanceFactor Operation="SafeAdd">0</foodPoisoningChanceFactor>
 							<hungerRateFactor Operation="SafeAdd">0.4</hungerRateFactor>
 							<makeImmuneTo Operation="Safe">
@@ -515,12 +488,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[minSeverity="0.6"]</xpath>
 						<value>
-							<capMods Operation="Safe">
-								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-									<capacity Operation="Safe">Metabolism</capacity>
-									<offset Operation="SafeReplace">0.3</offset>
-								</li>
-							</capMods>
+							<partEfficiencyOffset Operation="SafeAdd">0.30</partEfficiencyOffset>
 							<foodPoisoningChanceFactor Operation="SafeAdd">0</foodPoisoningChanceFactor>
 							<hungerRateFactor Operation="SafeAdd">0.2</hungerRateFactor>
 							<makeImmuneTo Operation="Safe">
@@ -576,15 +544,13 @@
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/HediffDef[defName="GR_ChemfuelHeart"]</xpath>
 				<apply>
+					<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+						<xpath>HediffDef/stages/li/capMods/li[capacity="BloodPumping"]</xpath>
+					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[minSeverity="0"]</xpath>
 						<value>
-							<capMods Operation="Safe">
-								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-									<capacity Operation="Safe">Metabolism</capacity>
-									<offset Operation="SafeReplace">-0.1</offset>
-								</li>
-							</capMods>
+							<partEfficiencyOffset Operation="SafeAdd">-0.10</partEfficiencyOffset>
 							<statOffsets Operation="Safe">
 								<WorkSpeedGlobal Operation="SafeRemove">0</WorkSpeedGlobal>
 							</statOffsets>
@@ -593,11 +559,6 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[minSeverity="0.1"]</xpath>
 						<value>
-							<capMods Operation="Safe">
-								<li Operation="SafeRemove" Compare="InnerText" XPathLocal="capacity">
-									<capacity>BloodPumping</capacity>
-								</li>
-							</capMods>
 							<statOffsets Operation="Safe">
 								<WorkSpeedGlobal Operation="SafeRemove">0</WorkSpeedGlobal>
 							</statOffsets>
@@ -606,12 +567,7 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[minSeverity="0.2"]</xpath>
 						<value>
-							<capMods Operation="Safe">
-								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-									<capacity Operation="Safe">BloodPumping</capacity>
-									<offset Operation="SafeReplace">0.1</offset>
-								</li>
-							</capMods>
+							<partEfficiencyOffset Operation="SafeAdd">0.10</partEfficiencyOffset>
 							<statOffsets Operation="Safe">
 								<WorkSpeedGlobal Operation="SafeRemove">0</WorkSpeedGlobal>
 							</statOffsets>
@@ -620,26 +576,16 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[minSeverity="0.3"]</xpath>
 						<value>
-							<capMods Operation="Safe">
-								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-									<capacity Operation="Safe">BloodPumping</capacity>
-									<offset Operation="SafeReplace">0.15</offset>
-								</li>
-							</capMods>
+							<partEfficiencyOffset Operation="SafeAdd">0.15</partEfficiencyOffset>
 							<statOffsets Operation="Safe">
-								<WorkSpeedGlobal Operation="SafeReplace">0.05</WorkSpeedGlobal>
+								<WorkSpeedGlobal Operation="SafeReplace">0.1</WorkSpeedGlobal>
 							</statOffsets>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[minSeverity="0.4"]</xpath>
 						<value>
-							<capMods Operation="Safe">
-								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-									<capacity Operation="Safe">BloodPumping</capacity>
-									<offset Operation="SafeReplace">0.2</offset>
-								</li>
-							</capMods>
+							<partEfficiencyOffset Operation="SafeAdd">0.20</partEfficiencyOffset>
 							<statOffsets Operation="Safe">
 								<WorkSpeedGlobal Operation="SafeReplace">0.1</WorkSpeedGlobal>
 							</statOffsets>
@@ -648,28 +594,18 @@
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[minSeverity="0.5"]</xpath>
 						<value>
-							<capMods Operation="Safe">
-								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-									<capacity Operation="Safe">BloodPumping</capacity>
-									<offset Operation="SafeReplace">0.25</offset>
-								</li>
-							</capMods>
+							<partEfficiencyOffset Operation="SafeAdd">0.25</partEfficiencyOffset>
 							<statOffsets Operation="Safe">
-								<WorkSpeedGlobal Operation="SafeReplace">0.15</WorkSpeedGlobal>
+								<WorkSpeedGlobal Operation="SafeReplace">0.1</WorkSpeedGlobal>
 							</statOffsets>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
 						<xpath>HediffDef/stages/li[minSeverity="0.6"]</xpath>
 						<value>
-							<capMods Operation="Safe">
-								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
-									<capacity Operation="Safe">BloodPumping</capacity>
-									<offset Operation="SafeReplace">0.3</offset>
-								</li>
-							</capMods>
+							<partEfficiencyOffset Operation="SafeAdd">0.30</partEfficiencyOffset>
 							<statOffsets Operation="Safe">
-								<WorkSpeedGlobal Operation="SafeReplace">0.2</WorkSpeedGlobal>
+								<WorkSpeedGlobal Operation="SafeReplace">0.1</WorkSpeedGlobal>
 							</statOffsets>
 						</value>
 					</Operation>
@@ -886,8 +822,9 @@
 						<xpath>HediffDef/stages/li[minSeverity="0.1"]</xpath>
 						<value>
 							<capMods Operation="Safe">
-								<li Operation="SafeRemove" Compare="InnerText" XPathLocal="capacity">
-									<capacity>Consciousness</capacity>
+								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
+									<capacity Operation="Safe">Consciousness</capacity>
+									<offset Operation="SafeReplace">-0.1</offset>
 								</li>
 							</capMods>
 							<statOffsets Operation="Safe">
@@ -906,7 +843,7 @@
 							</capMods>
 							<statOffsets Operation="Safe">
 								<GlobalLearningFactor Operation="SafeRemove">0</GlobalLearningFactor>
-								<ResearchSpeed Operation="SafeReplace">0.1</ResearchSpeed>
+								<ResearchSpeed Operation="SafeRemove">0</ResearchSpeed>
 							</statOffsets>
 						</value>
 					</Operation>
@@ -916,11 +853,11 @@
 							<capMods Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
 									<capacity Operation="Safe">Consciousness</capacity>
-									<offset Operation="SafeReplace">0.05</offset>
+									<offset Operation="SafeReplace">0.1</offset>
 								</li>
 							</capMods>
 							<statOffsets Operation="Safe">
-								<GlobalLearningFactor Operation="SafeReplace">0.1</GlobalLearningFactor>
+								<GlobalLearningFactor Operation="SafeRemove">0</GlobalLearningFactor>
 								<ResearchSpeed Operation="SafeReplace">0.1</ResearchSpeed>
 							</statOffsets>
 						</value>
@@ -946,7 +883,7 @@
 							<capMods Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
 									<capacity Operation="Safe">Consciousness</capacity>
-									<offset Operation="SafeReplace">0.15</offset>
+									<offset Operation="SafeReplace">0.1</offset>
 								</li>
 							</capMods>
 							<statOffsets Operation="Safe">
@@ -961,7 +898,7 @@
 							<capMods Operation="Safe">
 								<li Operation="Safe" Compare="InnerText" XPathLocal="capacity">
 									<capacity Operation="Safe">Consciousness</capacity>
-									<offset Operation="SafeReplace">0.2</offset>
+									<offset Operation="SafeReplace">0.1</offset>
 								</li>
 							</capMods>
 							<statOffsets Operation="Safe">
