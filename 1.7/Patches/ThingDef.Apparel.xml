@@ -339,6 +339,10 @@
 								<Plasteel>25</Plasteel>
 								<RB_BallisticGlass MayRequire="rebuild.cotr.doorsandcorners">5</RB_BallisticGlass>
 							</costList>
+							<equippedStatOffsets Operation="Safe">
+								<MentalBreakThreshold Operation="SafeRemove">-0.05</MentalBreakThreshold>
+								<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology" Operation="SafeAdd">-0.1</SlaveSuppressionOffset>
+							</equippedStatOffsets>
 						</value>
 					</Operation>
 				</apply>
@@ -351,6 +355,10 @@
 						<Plasteel>75</Plasteel>
 						<Uranium>25</Uranium>
 					</costList>
+					<equippedStatOffsets Operation="Safe">
+						<MentalBreakThreshold Operation="SafeRemove">-0.05</MentalBreakThreshold>
+						<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology" Operation="SafeAdd">-0.3</SlaveSuppressionOffset>
+					</equippedStatOffsets>
 				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
@@ -372,8 +380,10 @@
 								<Gold>5</Gold>
 							</costList>
 							<equippedStatOffsets Operation="Safe">
+								<MentalBreakThreshold Operation="SafeRemove">-0.05</MentalBreakThreshold>
 								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+								<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology" Operation="SafeAdd">-0.1</SlaveSuppressionOffset>
 							</equippedStatOffsets>
 						</value>
 					</Operation>
@@ -390,8 +400,10 @@
 						<Gold>10</Gold>
 					</costList>
 					<equippedStatOffsets Operation="Safe">
+						<MentalBreakThreshold Operation="SafeRemove">-0.05</MentalBreakThreshold>
 						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 						<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+						<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology" Operation="SafeAdd">-0.3</SlaveSuppressionOffset>
 					</equippedStatOffsets>
 				</value>
 			</Operation>
@@ -413,6 +425,10 @@
 								<Plasteel>75</Plasteel>
 								<RB_BallisticGlass MayRequire="rebuild.cotr.doorsandcorners">5</RB_BallisticGlass>
 							</costList>
+							<equippedStatOffsets Operation="Safe">
+								<PainShockThreshold Operation="SafeRemove">0</PainShockThreshold>
+								<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology" Operation="SafeAdd">-0.1</SlaveSuppressionOffset>
+							</equippedStatOffsets>
 						</value>
 					</Operation>
 				</apply>
@@ -428,6 +444,10 @@
 								<Plasteel>200</Plasteel>
 								<Uranium>75</Uranium>
 							</costList>
+							<equippedStatOffsets Operation="Safe">
+								<PainShockThreshold Operation="SafeRemove">0</PainShockThreshold>
+								<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology" Operation="SafeAdd">-0.3</SlaveSuppressionOffset>
+							</equippedStatOffsets>
 						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
@@ -456,8 +476,10 @@
 								<Gold>10</Gold>
 							</costList>
 							<equippedStatOffsets Operation="Safe">
+								<PainShockThreshold Operation="SafeRemove">0</PainShockThreshold>
 								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+								<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology" Operation="SafeAdd">-0.1</SlaveSuppressionOffset>
 							</equippedStatOffsets>
 						</value>
 					</Operation>
@@ -477,8 +499,10 @@
 								<Gold>20</Gold>
 							</costList>
 							<equippedStatOffsets Operation="Safe">
+								<PainShockThreshold Operation="SafeRemove">0</PainShockThreshold>
 								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
 								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+								<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology" Operation="SafeAdd">-0.3</SlaveSuppressionOffset>
 							</equippedStatOffsets>
 						</value>
 					</Operation>
