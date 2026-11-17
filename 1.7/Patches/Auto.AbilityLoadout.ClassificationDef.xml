@@ -17,6 +17,16 @@
 						</mods>
 						<packageId>true</packageId>
 						<caseTrue>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>entries</xpath>
+								<value>
+									<li Operation="Safe" Compare="InnerText" XPathLocal="targetDefName">
+										<targetDefName Operation="Safe">Waterskip</targetDefName>
+										<category Operation="SafeReplace">Support</category>
+										<neverAutoFire Operation="SafeRemove">false</neverAutoFire>
+									</li>
+								</value>
+							</Operation>
 							<Operation Class="PatchOperationAdd">
 								<xpath>entries</xpath>
 								<value>
