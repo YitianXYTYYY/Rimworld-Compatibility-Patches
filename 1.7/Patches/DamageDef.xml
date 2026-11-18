@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/DamageDef[defName="Thump"]</xpath>
+		<value>
+			<armorCategory Operation="SafeReplace">Blunt</armorCategory>
+		</value>
+	</Operation>
+
+	<!-- Biotech -->
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>ludeon.rimworld.biotech</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/DamageDef[defName="AcidBurn"]</xpath>
+				<value>
+					<armorCategory Operation="SafeReplace">Heat</armorCategory>
+				</value>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+</Patch>
