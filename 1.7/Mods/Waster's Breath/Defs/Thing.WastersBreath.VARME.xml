@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="VAE_Headgear_TrooperHelmet" MayRequire="vanillaexpanded.varme">
+		<defName>VAE_Headgear_TrooperHelmetTox</defName>
+		<label>trooper helmet - tox</label>
+		<description>A high-tech and lightweight armored helmet with a protective plasteel-weave plate.\n\nArmor like this is often used by imperial conscripts and late-midworld military forces.\n\nA special filter delivers toxins to stimulate toxic genes.</description>
+		<descriptionHyperlinks>
+			<HediffDef>ToxicBuildup</HediffDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="Tox.CompProperties_ToxFilterCharge">
+				<fuelDef>Chemfuel</fuelDef>
+				<fuelAmount>20</fuelAmount>
+				<chargeDays>5</chargeDays>
+				<hediff>ToxApparelPoisoningHelmet</hediff>
+				<wasterHediff>ToxApparelWasterStimulusHelmet</wasterHediff>
+				<part>Head</part>
+			</li>
+		</comps>
+		<costList>
+			<Chemfuel>20</Chemfuel>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite Inherit="False"/>
+			<researchPrerequisites Inherit="False">
+				<li>ToxFilterArmor</li>
+				<li>VAE_TrooperArmor</li>
+			</researchPrerequisites>
+			<displayPriority>112</displayPriority>
+		</recipeMaker>
+		<tickerType>Normal</tickerType>
+	</ThingDef>
+
+	<ThingDef ParentName="VAE_Headgear_HeavyMarineHelmet" MayRequire="vanillaexpanded.varme">
+		<defName>VAE_Headgear_HeavyMarineHelmetTox</defName>
+		<label>siegebreaker helmet - tox</label>
+		<description>A heavily-armored high-tech helmet, with a solid plasteel-weave plate and omni-spectrum camera.\n\nArmor like this is often used by imperial stormtroopers and glitterworld peacekeepers.\n\nA special filter delivers toxins to stimulate toxic genes.</description>
+		<descriptionHyperlinks>
+			<HediffDef>ToxicBuildup</HediffDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="Tox.CompProperties_ToxFilterCharge">
+				<fuelDef>Chemfuel</fuelDef>
+				<fuelAmount>20</fuelAmount>
+				<chargeDays>5</chargeDays>
+				<hediff>ToxApparelPoisoningHelmet</hediff>
+				<wasterHediff>ToxApparelWasterStimulusHelmet</wasterHediff>
+				<part>Head</part>
+			</li>
+		</comps>
+		<costList>
+			<Chemfuel>20</Chemfuel>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite Inherit="False"/>
+			<researchPrerequisites Inherit="False">
+				<li>ToxFilterArmor</li>
+				<li>VAE_SiegebreakerArmor</li>
+			</researchPrerequisites>
+			<displayPriority>122</displayPriority>
+		</recipeMaker>
+		<tickerType>Normal</tickerType>
+	</ThingDef>
+
+	<ThingDef ParentName="VAE_Headgear_RoyalTrooperHelmet" MayRequire="ludeon.rimworld.royalty,vanillaexpanded.varme">
+		<defName>VAE_Headgear_RoyalTrooperHelmetTox</defName>
+		<label>trooper prestige helmet - tox</label>
+		<description>A high-tech and lightweight armored helmet with a protective plasteel-weave plate.\n\nExpensive and beautiful, prestige armor like this is usually made for those of high status. Embedded eltex threads also enhance the wearer's psychic sensitivity.\n\nA special filter delivers toxins to stimulate toxic genes.</description>
+		<descriptionHyperlinks>
+			<HediffDef>ToxicBuildup</HediffDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="Tox.CompProperties_ToxFilterCharge">
+				<fuelDef>Chemfuel</fuelDef>
+				<fuelAmount>20</fuelAmount>
+				<chargeDays>5</chargeDays>
+				<hediff>ToxApparelPoisoningHelmet</hediff>
+				<wasterHediff>ToxApparelWasterStimulusHelmet</wasterHediff>
+				<part>Head</part>
+			</li>
+		</comps>
+		<costList>
+			<Chemfuel>20</Chemfuel>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite Inherit="False"/>
+			<researchPrerequisites Inherit="False">
+				<li>ToxFilterArmor</li>
+				<li>VAE_TrooperArmor</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<tickerType>Normal</tickerType>
+	</ThingDef>
+
+	<ThingDef ParentName="VAE_Headgear_RoyalSiegeHelmet" MayRequire="ludeon.rimworld.royalty,vanillaexpanded.varme">
+		<defName>VAE_Headgear_RoyalSiegeHelmetTox</defName>
+		<label>siegebreaker prestige helmet - tox</label>
+		<description>A heavily-armored high-tech helmet, with a solid plasteel-weave shell and omni-spectrum camera.\n\nExpensive and beautiful, prestige armor like this is usually made for those of high status. Embedded eltex threads also enhance the wearer's psychic sensitivity.\n\nA special filter delivers toxins to stimulate toxic genes.</description>
+		<descriptionHyperlinks>
+			<HediffDef>ToxicBuildup</HediffDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="Tox.CompProperties_ToxFilterCharge">
+				<fuelDef>Chemfuel</fuelDef>
+				<fuelAmount>20</fuelAmount>
+				<chargeDays>5</chargeDays>
+				<hediff>ToxApparelPoisoningHelmet</hediff>
+				<wasterHediff>ToxApparelWasterStimulusHelmet</wasterHediff>
+				<part>Head</part>
+			</li>
+		</comps>
+		<costList>
+			<Chemfuel>20</Chemfuel>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite Inherit="False"/>
+			<researchPrerequisites Inherit="False">
+				<li>ToxFilterArmor</li>
+				<li>VAE_SiegebreakerArmor</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<tickerType>Normal</tickerType>
+	</ThingDef>
+
+</Defs>

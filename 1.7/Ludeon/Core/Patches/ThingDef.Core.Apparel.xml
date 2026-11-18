@@ -34,18 +34,6 @@
 	</Operation>
 
 	<!-- Apparel Headgear -->
-	<Operation Class="XmlExtensions.PatchOperationAttributeSet">
-		<xpath>Defs/ThingDef[defName="Apparel_PowerArmorHelmet"]</xpath>
-		<attribute>Name</attribute>
-		<value>Apparel_PowerArmorHelmet</value>
-	</Operation>
-
-	<Operation Class="XmlExtensions.PatchOperationAttributeSet">
-		<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetRecon"]</xpath>
-		<attribute>Name</attribute>
-		<value>Apparel_ArmorHelmetRecon</value>
-	</Operation>
-
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ThingDef[defName="Apparel_PsychicFoilHelmet"]</xpath>
 		<value>
@@ -54,12 +42,6 @@
 				<PsychicSensitivityOffset Operation="SafeAdd">-1</PsychicSensitivityOffset>
 			</equippedStatOffsets>
 		</value>
-	</Operation>
-
-	<Operation Class="XmlExtensions.PatchOperationAttributeSet">
-		<xpath>Defs/ThingDef[defName="Apparel_ClothMask"]</xpath>
-		<attribute>Name</attribute>
-		<value>Apparel_ClothMask</value>
 	</Operation>
 
 	<!-- Apparel Various -->

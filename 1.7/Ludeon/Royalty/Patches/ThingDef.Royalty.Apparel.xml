@@ -245,59 +245,60 @@
 	</Operation>
 
 	<!-- apparel various -->
-	<!-- prestige armor -->
-	<Operation Class="XmlExtensions.SetScope">
-		<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetReconPrestige"]</xpath>
-		<apply>
-			<Operation Class="XmlExtensions.PatchOperationAttributeSet">
-				<xpath>ThingDef</xpath>
-				<attribute>Name</attribute>
-				<value>Apparel_ArmorHelmetReconPrestige</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>ThingDef</xpath>
-				<value>
-					<label Operation="SafeReplace">recon prestige helmet</label>
-					<costList Operation="SafeReplace">
-						<Gold>5</Gold>
-					</costList>
-					<equippedStatOffsets Operation="Safe">
-						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
-						<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
-					</equippedStatOffsets>
-				</value>
-			</Operation>
-		</apply>
+	<!-- cataphract armor -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[@Name="ApparelArmorHelmetCataphractBase"]</xpath>
+		<value>
+			<costList Operation="SafeReplace">
+				<ComponentSpacer>1</ComponentSpacer>
+				<Plasteel>75</Plasteel>
+				<RB_BallisticGlass MayRequire="rebuild.cotr.doorsandcorners">5</RB_BallisticGlass>
+			</costList>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[@Name="ApparelArmorCataphractBase"]</xpath>
+		<value>
+			<costList Operation="SafeReplace">
+				<ComponentSpacer>8</ComponentSpacer>
+				<Plasteel>150</Plasteel>
+				<Uranium>75</Uranium>
+			</costList>
+		</value>
 	</Operation>
 
-	<Operation Class="XmlExtensions.SetScope">
+	<!-- prestige armor -->
+	<Operation Class="XmlExtensions.HybridPatch">
+		<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetReconPrestige"]</xpath>
+		<value>
+			<label Operation="SafeReplace">recon prestige helmet</label>
+			<costList Operation="SafeReplace">
+				<Gold>5</Gold>
+			</costList>
+			<equippedStatOffsets Operation="Safe">
+				<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+				<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+			</equippedStatOffsets>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ThingDef[defName="Apparel_ArmorReconPrestige"]</xpath>
-		<apply>
-			<Operation Class="XmlExtensions.PatchOperationAttributeSet">
-				<xpath>ThingDef</xpath>
-				<attribute>Name</attribute>
-				<value>Apparel_ArmorReconPrestige</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>ThingDef</xpath>
-				<value>
-					<label Operation="SafeReplace">recon prestige armor</label>
-					<costList Operation="SafeReplace">
-						<Gold>10</Gold>
-					</costList>
-					<equippedStatOffsets Operation="Safe">
-						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
-						<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
-					</equippedStatOffsets>
-				</value>
-			</Operation>
-		</apply>
+		<value>
+			<label Operation="SafeReplace">recon prestige armor</label>
+			<costList Operation="SafeReplace">
+				<Gold>10</Gold>
+			</costList>
+			<equippedStatOffsets Operation="Safe">
+				<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+				<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+			</equippedStatOffsets>
+		</value>
 	</Operation>
 
 	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/ThingDef[defName="Apparel_ArmorMarineHelmetPrestige"]</xpath>
 		<apply>
-			<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+			<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
 				<xpath>ThingDef</xpath>
 				<attribute>Name</attribute>
 				<value>Apparel_ArmorMarineHelmetPrestige</value>
@@ -317,11 +318,10 @@
 			</Operation>
 		</apply>
 	</Operation>
-
 	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/ThingDef[defName="Apparel_ArmorMarinePrestige"]</xpath>
 		<apply>
-			<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+			<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
 				<xpath>ThingDef</xpath>
 				<attribute>Name</attribute>
 				<value>Apparel_ArmorMarinePrestige</value>
@@ -342,81 +342,31 @@
 		</apply>
 	</Operation>
 
-	<!-- cataphract armor -->
 	<Operation Class="XmlExtensions.HybridPatch">
-		<xpath>Defs/ThingDef[@Name="ApparelArmorHelmetCataphractBase"]</xpath>
-		<value>
-			<costList Operation="SafeReplace">
-				<ComponentSpacer>1</ComponentSpacer>
-				<Plasteel>75</Plasteel>
-				<RB_BallisticGlass MayRequire="rebuild.cotr.doorsandcorners">5</RB_BallisticGlass>
-			</costList>
-		</value>
-	</Operation>
-	
-	<Operation Class="XmlExtensions.HybridPatch">
-		<xpath>Defs/ThingDef[@Name="ApparelArmorCataphractBase"]</xpath>
-		<value>
-			<costList Operation="SafeReplace">
-				<ComponentSpacer>8</ComponentSpacer>
-				<Plasteel>150</Plasteel>
-				<Uranium>75</Uranium>
-			</costList>
-		</value>
-	</Operation>
-
-	<Operation Class="XmlExtensions.PatchOperationAttributeSet">
-		<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetCataphract"]</xpath>
-		<attribute>Name</attribute>
-		<value>Apparel_ArmorHelmetCataphract</value>
-	</Operation>
-
-	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetCataphractPrestige"]</xpath>
-		<apply>
-			<Operation Class="XmlExtensions.PatchOperationAttributeSet">
-				<xpath>ThingDef</xpath>
-				<attribute>Name</attribute>
-				<value>Apparel_ArmorHelmetCataphractPrestige</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>ThingDef</xpath>
-				<value>
-					<label Operation="SafeReplace">cataphract prestige helmet</label>
-					<costList Operation="SafeReplace">
-						<Gold>10</Gold>
-					</costList>
-					<equippedStatOffsets Operation="Safe">
-						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
-						<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
-					</equippedStatOffsets>
-				</value>
-			</Operation>
-		</apply>
+		<value>
+			<label Operation="SafeReplace">cataphract prestige helmet</label>
+			<costList Operation="SafeReplace">
+				<Gold>10</Gold>
+			</costList>
+			<equippedStatOffsets Operation="Safe">
+				<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+				<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+			</equippedStatOffsets>
+		</value>
 	</Operation>
-
-	<Operation Class="XmlExtensions.SetScope">
+	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPrestige"]</xpath>
-		<apply>
-			<Operation Class="XmlExtensions.PatchOperationAttributeSet">
-				<xpath>ThingDef</xpath>
-				<attribute>Name</attribute>
-				<value>Apparel_ArmorCataphractPrestige</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>ThingDef</xpath>
-				<value>
-					<label Operation="SafeReplace">cataphract prestige armor</label>
-					<costList Operation="SafeReplace">
-						<Gold>20</Gold>
-					</costList>
-					<equippedStatOffsets Operation="Safe">
-						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
-						<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
-					</equippedStatOffsets>
-				</value>
-			</Operation>
-		</apply>
+		<value>
+			<label Operation="SafeReplace">cataphract prestige armor</label>
+			<costList Operation="SafeReplace">
+				<Gold>20</Gold>
+			</costList>
+			<equippedStatOffsets Operation="Safe">
+				<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+				<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+			</equippedStatOffsets>
+		</value>
 	</Operation>
 
 	<!-- armor variants -->

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="Apparel_ArmorHelmetRecon">
+		<defName>Apparel_ArmorHelmetReconTox</defName>
+		<label>recon helmet - tox</label>
+		<description>A high-tech armored helmet with a built-in status computer and a protective plasteel-weave plate.\n\nArmor like this is often used by imperial scout troops or glitterworld police forces.\n\nA special filter delivers toxins to stimulate toxic genes.</description>
+		<descriptionHyperlinks>
+			<HediffDef>ToxicBuildup</HediffDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="Tox.CompProperties_ToxFilterCharge">
+				<fuelDef>Chemfuel</fuelDef>
+				<fuelAmount>20</fuelAmount>
+				<chargeDays>5</chargeDays>
+				<hediff>ToxApparelPoisoningHelmet</hediff>
+				<wasterHediff>ToxApparelWasterStimulusHelmet</wasterHediff>
+				<part>Head</part>
+			</li>
+		</comps>
+		<costList>
+			<Chemfuel>20</Chemfuel>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite Inherit="False"/>
+			<researchPrerequisites Inherit="False">
+				<li>ReconArmor</li>
+				<li>ToxFilterArmor</li>
+			</researchPrerequisites>
+			<displayPriority>111</displayPriority>
+		</recipeMaker>
+		<tickerType>Normal</tickerType>
+	</ThingDef>
+
+	<ThingDef ParentName="Apparel_PowerArmorHelmet">
+		<defName>Apparel_PowerArmorHelmetTox</defName>
+		<label>marine helmet - tox</label>
+		<description>A marine armor helmet, with a built-in status computer and layered plasteel-weave plates.\n\nArmor like this is often used by rapid-incursion space marines.\n\nA special filter delivers toxins to stimulate toxic genes.</description>
+		<descriptionHyperlinks>
+			<HediffDef>ToxicBuildup</HediffDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="Tox.CompProperties_ToxFilterCharge">
+				<fuelDef>Chemfuel</fuelDef>
+				<fuelAmount>20</fuelAmount>
+				<chargeDays>5</chargeDays>
+				<hediff>ToxApparelPoisoningHelmet</hediff>
+				<wasterHediff>ToxApparelWasterStimulusHelmet</wasterHediff>
+				<part>Head</part>
+			</li>
+		</comps>
+		<costList>
+			<Chemfuel>20</Chemfuel>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite Inherit="False"/>
+			<researchPrerequisites Inherit="False">
+				<li>PoweredArmor</li>
+				<li>ToxFilterArmor</li>
+			</researchPrerequisites>
+			<displayPriority>101</displayPriority>
+		</recipeMaker>
+		<tickerType>Normal</tickerType>
+	</ThingDef>
+
+</Defs>

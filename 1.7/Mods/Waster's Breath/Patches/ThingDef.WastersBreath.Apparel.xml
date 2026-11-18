@@ -1,13 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-
 	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 		<xpath>Defs/ThingDef[defName="Apparel_ToxClothMask"][@ParentName!="Apparel_ClothMask"]</xpath>
 	</Operation>
 
 	<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 		<xpath>Defs/ThingDef[defName="Apparel_ToxArmorHelmetRecon"][@ParentName!="Apparel_ArmorHelmetRecon"]</xpath>
+	</Operation>
+	<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
+		<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetRecon"]</xpath>
+		<attribute>Name</attribute>
+		<value>Apparel_ArmorHelmetRecon</value>
+	</Operation>
+	<Operation Class="XmlExtensions.GetAttribute">
+		<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetRecon"]</xpath>
+		<attribute>Name</attribute>
+		<storeIn>attr</storeIn>
+		<apply>
+			<Operation Class="XmlExtensions.IfStatement">
+				<condition Class="XmlExtensions.Boolean.Comparison">
+					<value1>{attr}</value1>
+					<value2>Defs/ThingDef[defName="Apparel_ArmorHelmetRecon"]/defName</value2>
+					<fromXml2>true</fromXml2>
+					<nonNumeric>true</nonNumeric>
+					<relation>eq</relation>
+				</condition>
+				<caseFalse>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetReconTox"]</xpath>
+						<attribute>ParentName</attribute>
+						<value>{attr}</value>
+					</Operation>
+				</caseFalse>
+			</Operation>
+		</apply>
+	</Operation>
+
+	<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
+		<xpath>Defs/ThingDef[defName="Apparel_PowerArmorHelmet"]</xpath>
+		<attribute>Name</attribute>
+		<value>Apparel_PowerArmorHelmet</value>
+	</Operation>
+	<Operation Class="XmlExtensions.GetAttribute">
+		<xpath>Defs/ThingDef[defName="Apparel_PowerArmorHelmet"]</xpath>
+		<attribute>Name</attribute>
+		<storeIn>attr</storeIn>
+		<apply>
+			<Operation Class="XmlExtensions.IfStatement">
+				<condition Class="XmlExtensions.Boolean.Comparison">
+					<value1>{attr}</value1>
+					<value2>Defs/ThingDef[defName="Apparel_PowerArmorHelmet"]/defName</value2>
+					<fromXml2>true</fromXml2>
+					<nonNumeric>true</nonNumeric>
+					<relation>eq</relation>
+				</condition>
+				<caseFalse>
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+						<xpath>Defs/ThingDef[defName="Apparel_PowerArmorHelmetTox"]</xpath>
+						<attribute>ParentName</attribute>
+						<value>{attr}</value>
+					</Operation>
+				</caseFalse>
+			</Operation>
+		</apply>
 	</Operation>
 
 	<Operation Class="XmlExtensions.FindMod">
@@ -19,6 +75,121 @@
 			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 				<xpath>Defs/ThingDef[defName="Apparel_ToxArmorHelmetCataphract"][@ParentName!="Apparel_ArmorHelmetCataphract"]</xpath>
 			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetCataphract"]</xpath>
+				<attribute>Name</attribute>
+				<value>Apparel_ArmorHelmetCataphract</value>
+			</Operation>
+			<Operation Class="XmlExtensions.GetAttribute">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetCataphract"]</xpath>
+				<attribute>Name</attribute>
+				<storeIn>attr</storeIn>
+				<apply>
+					<Operation Class="XmlExtensions.IfStatement">
+						<condition Class="XmlExtensions.Boolean.Comparison">
+							<value1>{attr}</value1>
+							<value2>Defs/ThingDef[defName="Apparel_ArmorHelmetCataphract"]/defName</value2>
+							<fromXml2>true</fromXml2>
+							<nonNumeric>true</nonNumeric>
+							<relation>eq</relation>
+						</condition>
+						<caseFalse>
+							<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+								<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetCataphractTox"]</xpath>
+								<attribute>ParentName</attribute>
+								<value>{attr}</value>
+							</Operation>
+						</caseFalse>
+					</Operation>
+				</apply>
+			</Operation>
+
+			<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetReconPrestige"]</xpath>
+				<attribute>Name</attribute>
+				<value>Apparel_ArmorHelmetReconPrestige</value>
+			</Operation>
+			<Operation Class="XmlExtensions.GetAttribute">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetReconPrestige"]</xpath>
+				<attribute>Name</attribute>
+				<storeIn>attr</storeIn>
+				<apply>
+					<Operation Class="XmlExtensions.IfStatement">
+						<condition Class="XmlExtensions.Boolean.Comparison">
+							<value1>{attr}</value1>
+							<value2>Defs/ThingDef[defName="Apparel_ArmorHelmetReconPrestige"]/defName</value2>
+							<fromXml2>true</fromXml2>
+							<nonNumeric>true</nonNumeric>
+							<relation>eq</relation>
+						</condition>
+						<caseFalse>
+							<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+								<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetReconPrestigeTox"]</xpath>
+								<attribute>ParentName</attribute>
+								<value>{attr}</value>
+							</Operation>
+						</caseFalse>
+					</Operation>
+				</apply>
+			</Operation>
+
+			<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorMarineHelmetPrestige"]</xpath>
+				<attribute>Name</attribute>
+				<value>Apparel_ArmorMarineHelmetPrestige</value>
+			</Operation>
+			<Operation Class="XmlExtensions.GetAttribute">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorMarineHelmetPrestige"]</xpath>
+				<attribute>Name</attribute>
+				<storeIn>attr</storeIn>
+				<apply>
+					<Operation Class="XmlExtensions.IfStatement">
+						<condition Class="XmlExtensions.Boolean.Comparison">
+							<value1>{attr}</value1>
+							<value2>Defs/ThingDef[defName="Apparel_ArmorMarineHelmetPrestige"]/defName</value2>
+							<fromXml2>true</fromXml2>
+							<nonNumeric>true</nonNumeric>
+							<relation>eq</relation>
+						</condition>
+						<caseFalse>
+							<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+								<xpath>Defs/ThingDef[defName="Apparel_ArmorMarineHelmetPrestigeTox"]</xpath>
+								<attribute>ParentName</attribute>
+								<value>{attr}</value>
+							</Operation>
+						</caseFalse>
+					</Operation>
+				</apply>
+			</Operation>
+
+			<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetCataphractPrestige"]</xpath>
+				<attribute>Name</attribute>
+				<value>Apparel_ArmorHelmetCataphractPrestige</value>
+			</Operation>
+			<Operation Class="XmlExtensions.GetAttribute">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetCataphractPrestige"]</xpath>
+				<attribute>Name</attribute>
+				<storeIn>attr</storeIn>
+				<apply>
+					<Operation Class="XmlExtensions.IfStatement">
+						<condition Class="XmlExtensions.Boolean.Comparison">
+							<value1>{attr}</value1>
+							<value2>Defs/ThingDef[defName="Apparel_ArmorHelmetCataphractPrestige"]/defName</value2>
+							<fromXml2>true</fromXml2>
+							<nonNumeric>true</nonNumeric>
+							<relation>eq</relation>
+						</condition>
+						<caseFalse>
+							<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+								<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetCataphractPrestigeTox"]</xpath>
+								<attribute>ParentName</attribute>
+								<value>{attr}</value>
+							</Operation>
+						</caseFalse>
+					</Operation>
+				</apply>
+			</Operation>
 		</caseTrue>
 	</Operation>
 
@@ -28,8 +199,33 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
-			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
-				<xpath>Defs/ThingDef[defName="Apparel_ToxArmorHelmetMechlord"][@ParentName!="Apparel_ArmorHelmetMechlordHelmet"]</xpath>
+			<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetMechCommander"]</xpath>
+				<attribute>Name</attribute>
+				<value>Apparel_ArmorHelmetMechCommander</value>
+			</Operation>
+			<Operation Class="XmlExtensions.GetAttribute">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetMechCommander"]</xpath>
+				<attribute>Name</attribute>
+				<storeIn>attr</storeIn>
+				<apply>
+					<Operation Class="XmlExtensions.IfStatement">
+						<condition Class="XmlExtensions.Boolean.Comparison">
+							<value1>{attr}</value1>
+							<value2>Defs/ThingDef[defName="Apparel_ArmorHelmetMechCommander"]/defName</value2>
+							<fromXml2>true</fromXml2>
+							<nonNumeric>true</nonNumeric>
+							<relation>eq</relation>
+						</condition>
+						<caseFalse>
+							<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+								<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetMechCommanderTox"]</xpath>
+								<attribute>ParentName</attribute>
+								<value>{attr}</value>
+							</Operation>
+						</caseFalse>
+					</Operation>
+				</apply>
 			</Operation>
 			<Operation Class="XmlExtensions.FindMod">
 				<mods>
@@ -38,7 +234,58 @@
 				<packageId>true</packageId>
 				<caseTrue>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>Defs/ThingDef[defName="Apparel_ToxArmorHelmetMechlord"]</xpath>
+						<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetMechCommanderTox"]</xpath>
+						<value>
+							<recipeMaker Operation="Safe">
+								<researchPrerequisites Operation="Safe">
+									<li Operation="SafeRemove" Compare="InnerText">StandardMechtech</li>
+									<li Operation="SafeAdd" Compare="InnerText">Ferny_MechCommanderHelmet</li>
+								</researchPrerequisites>
+							</recipeMaker>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+
+			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>Defs/ThingDef[defName="Apparel_ToxArmorHelmetMechlord"][@ParentName!="Apparel_ArmorHelmetMechlordHelmet"]</xpath>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetMechlordHelmet"]</xpath>
+				<attribute>Name</attribute>
+				<value>Apparel_ArmorHelmetMechlordHelmet</value>
+			</Operation>
+			<Operation Class="XmlExtensions.GetAttribute">
+				<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetMechlordHelmet"]</xpath>
+				<attribute>Name</attribute>
+				<storeIn>attr</storeIn>
+				<apply>
+					<Operation Class="XmlExtensions.IfStatement">
+						<condition Class="XmlExtensions.Boolean.Comparison">
+							<value1>{attr}</value1>
+							<value2>Defs/ThingDef[defName="Apparel_ArmorHelmetMechlordHelmet"]/defName</value2>
+							<fromXml2>true</fromXml2>
+							<nonNumeric>true</nonNumeric>
+							<relation>eq</relation>
+						</condition>
+						<caseFalse>
+							<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+								<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetMechlordHelmetTox"]</xpath>
+								<attribute>ParentName</attribute>
+								<value>{attr}</value>
+							</Operation>
+						</caseFalse>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>ferny.progressionrobotics2</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetMechlordHelmetTox"]</xpath>
 						<value>
 							<recipeMaker Operation="Safe">
 								<researchPrerequisites Operation="Safe">
@@ -62,6 +309,34 @@
 			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 				<xpath>Defs/ThingDef[defName="Apparel_ToxVacsuitHelmet"][@ParentName!="Apparel_VacsuitHelmet"]</xpath>
 			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
+				<xpath>Defs/ThingDef[defName="Apparel_VacsuitHelmet"]</xpath>
+				<attribute>Name</attribute>
+				<value>Apparel_VacsuitHelmet</value>
+			</Operation>
+			<Operation Class="XmlExtensions.GetAttribute">
+				<xpath>Defs/ThingDef[defName="Apparel_VacsuitHelmet"]</xpath>
+				<attribute>Name</attribute>
+				<storeIn>attr</storeIn>
+				<apply>
+					<Operation Class="XmlExtensions.IfStatement">
+						<condition Class="XmlExtensions.Boolean.Comparison">
+							<value1>{attr}</value1>
+							<value2>Defs/ThingDef[defName="Apparel_VacsuitHelmet"]/defName</value2>
+							<fromXml2>true</fromXml2>
+							<nonNumeric>true</nonNumeric>
+							<relation>eq</relation>
+						</condition>
+						<caseFalse>
+							<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+								<xpath>Defs/ThingDef[defName="Apparel_VacsuitHelmetTox"]</xpath>
+								<attribute>ParentName</attribute>
+								<value>{attr}</value>
+							</Operation>
+						</caseFalse>
+					</Operation>
+				</apply>
+			</Operation>
 		</caseTrue>
 	</Operation>
 
@@ -74,8 +349,168 @@
 			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 				<xpath>Defs/ThingDef[defName="Apparel_ToxVAE_TrooperHelmet"][@ParentName!="VAE_Headgear_TrooperHelmet"]</xpath>
 			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
+				<xpath>Defs/ThingDef[defName="VAE_Headgear_TrooperHelmet"]</xpath>
+				<attribute>Name</attribute>
+				<value>VAE_Headgear_TrooperHelmet</value>
+			</Operation>
+			<Operation Class="XmlExtensions.GetAttribute">
+				<xpath>Defs/ThingDef[defName="VAE_Headgear_TrooperHelmet"]</xpath>
+				<attribute>Name</attribute>
+				<storeIn>attr</storeIn>
+				<apply>
+					<Operation Class="XmlExtensions.IfStatement">
+						<condition Class="XmlExtensions.Boolean.Comparison">
+							<value1>{attr}</value1>
+							<value2>Defs/ThingDef[defName="VAE_Headgear_TrooperHelmet"]/defName</value2>
+							<fromXml2>true</fromXml2>
+							<nonNumeric>true</nonNumeric>
+							<relation>eq</relation>
+						</condition>
+						<caseFalse>
+							<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+								<xpath>Defs/ThingDef[defName="VAE_Headgear_TrooperHelmetTox"]</xpath>
+								<attribute>ParentName</attribute>
+								<value>{attr}</value>
+							</Operation>
+						</caseFalse>
+					</Operation>
+				</apply>
+			</Operation>
+
 			<Operation Class="XmlExtensions.PatchOperationSafeRemove">
 				<xpath>Defs/ThingDef[defName="Apparel_ToxVAE_SiegebreakerHelmet"][@ParentName!="VAE_Headgear_HeavyMarineHelmet"]</xpath>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
+				<xpath>Defs/ThingDef[defName="VAE_Headgear_HeavyMarineHelmet"]</xpath>
+				<attribute>Name</attribute>
+				<value>VAE_Headgear_HeavyMarineHelmet</value>
+			</Operation>
+			<Operation Class="XmlExtensions.GetAttribute">
+				<xpath>Defs/ThingDef[defName="VAE_Headgear_HeavyMarineHelmet"]</xpath>
+				<attribute>Name</attribute>
+				<storeIn>attr</storeIn>
+				<apply>
+					<Operation Class="XmlExtensions.IfStatement">
+						<condition Class="XmlExtensions.Boolean.Comparison">
+							<value1>{attr}</value1>
+							<value2>Defs/ThingDef[defName="VAE_Headgear_HeavyMarineHelmet"]/defName</value2>
+							<fromXml2>true</fromXml2>
+							<nonNumeric>true</nonNumeric>
+							<relation>eq</relation>
+						</condition>
+						<caseFalse>
+							<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+								<xpath>Defs/ThingDef[defName="VAE_Headgear_HeavyMarineHelmetTox"]</xpath>
+								<attribute>ParentName</attribute>
+								<value>{attr}</value>
+							</Operation>
+						</caseFalse>
+					</Operation>
+				</apply>
+			</Operation>
+
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>ludeon.rimworld.royalty</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
+						<xpath>Defs/ThingDef[defName="VAE_Headgear_RoyalTrooperHelmet"]</xpath>
+						<attribute>Name</attribute>
+						<value>VAE_Headgear_RoyalTrooperHelmet</value>
+					</Operation>
+					<Operation Class="XmlExtensions.GetAttribute">
+						<xpath>Defs/ThingDef[defName="VAE_Headgear_RoyalTrooperHelmet"]</xpath>
+						<attribute>Name</attribute>
+						<storeIn>attr</storeIn>
+						<apply>
+							<Operation Class="XmlExtensions.IfStatement">
+								<condition Class="XmlExtensions.Boolean.Comparison">
+									<value1>{attr}</value1>
+									<value2>Defs/ThingDef[defName="VAE_Headgear_RoyalTrooperHelmet"]/defName</value2>
+									<fromXml2>true</fromXml2>
+									<nonNumeric>true</nonNumeric>
+									<relation>eq</relation>
+								</condition>
+								<caseFalse>
+									<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+										<xpath>Defs/ThingDef[defName="VAE_Headgear_RoyalTrooperHelmetTox"]</xpath>
+										<attribute>ParentName</attribute>
+										<value>{attr}</value>
+									</Operation>
+								</caseFalse>
+							</Operation>
+						</apply>
+					</Operation>
+
+					<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
+						<xpath>Defs/ThingDef[defName="VAE_Headgear_RoyalSiegeHelmet"]</xpath>
+						<attribute>Name</attribute>
+						<value>VAE_Headgear_RoyalSiegeHelmet</value>
+					</Operation>
+					<Operation Class="XmlExtensions.GetAttribute">
+						<xpath>Defs/ThingDef[defName="VAE_Headgear_RoyalSiegeHelmet"]</xpath>
+						<attribute>Name</attribute>
+						<storeIn>attr</storeIn>
+						<apply>
+							<Operation Class="XmlExtensions.IfStatement">
+								<condition Class="XmlExtensions.Boolean.Comparison">
+									<value1>{attr}</value1>
+									<value2>Defs/ThingDef[defName="VAE_Headgear_RoyalSiegeHelmet"]/defName</value2>
+									<fromXml2>true</fromXml2>
+									<nonNumeric>true</nonNumeric>
+									<relation>eq</relation>
+								</condition>
+								<caseFalse>
+									<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+										<xpath>Defs/ThingDef[defName="VAE_Headgear_RoyalSiegeHelmetTox"]</xpath>
+										<attribute>ParentName</attribute>
+										<value>{attr}</value>
+									</Operation>
+								</caseFalse>
+							</Operation>
+						</apply>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</caseTrue>
+	</Operation>
+
+	<Operation Class="XmlExtensions.FindMod">
+		<mods>
+			<li>oskarpotocki.vfe.empire</li>
+		</mods>
+		<packageId>true</packageId>
+		<caseTrue>
+			<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
+				<xpath>Defs/ThingDef[defName="VFEE_Apparel_JanissaryHelmet"]</xpath>
+				<attribute>Name</attribute>
+				<value>VFEE_Apparel_JanissaryHelmet</value>
+			</Operation>
+			<Operation Class="XmlExtensions.GetAttribute">
+				<xpath>Defs/ThingDef[defName="VFEE_Apparel_JanissaryHelmet"]</xpath>
+				<attribute>Name</attribute>
+				<storeIn>attr</storeIn>
+				<apply>
+					<Operation Class="XmlExtensions.IfStatement">
+						<condition Class="XmlExtensions.Boolean.Comparison">
+							<value1>{attr}</value1>
+							<value2>Defs/ThingDef[defName="VFEE_Apparel_JanissaryHelmet"]/defName</value2>
+							<fromXml2>true</fromXml2>
+							<nonNumeric>true</nonNumeric>
+							<relation>eq</relation>
+						</condition>
+						<caseFalse>
+							<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+								<xpath>Defs/ThingDef[defName="VFEE_Apparel_JanissaryHelmetTox"]</xpath>
+								<attribute>ParentName</attribute>
+								<value>{attr}</value>
+							</Operation>
+						</caseFalse>
+					</Operation>
+				</apply>
 			</Operation>
 		</caseTrue>
 	</Operation>

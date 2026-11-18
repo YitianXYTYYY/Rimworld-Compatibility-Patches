@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="Apparel_ArmorHelmetMechCommander" MayRequire="ludeon.rimworld.biotech">
+		<defName>Apparel_ArmorHelmetMechCommanderTox</defName>
+		<label>mechcommander helmet - tox</label>
+		<description>A plasteel-weave combat helmet designed for battle mechanitors. It is embedded with computers and signal enhancers that moderately increase the wearer's maximum control bandwidth. This allows the mechanitor to control more mechs.\n\nA special filter delivers toxins to stimulate toxic genes.</description>
+		<descriptionHyperlinks>
+			<HediffDef>ToxicBuildup</HediffDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="Tox.CompProperties_ToxFilterCharge">
+				<fuelDef>Chemfuel</fuelDef>
+				<fuelAmount>20</fuelAmount>
+				<chargeDays>5</chargeDays>
+				<hediff>ToxApparelPoisoningHelmet</hediff>
+				<wasterHediff>ToxApparelWasterStimulusHelmet</wasterHediff>
+				<part>Head</part>
+			</li>
+		</comps>
+		<costList>
+			<Chemfuel>20</Chemfuel>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite Inherit="False"/>
+			<researchPrerequisites Inherit="False">
+				<li>StandardMechtech</li>
+				<li>ToxFilterArmor</li>
+			</researchPrerequisites>
+			<displayPriority>521</displayPriority>
+		</recipeMaker>
+		<tickerType>Normal</tickerType>
+	</ThingDef>
+
+	<ThingDef ParentName="Apparel_ArmorHelmetMechlordHelmet" MayRequire="ludeon.rimworld.biotech">
+		<defName>Apparel_ArmorHelmetMechlordHelmetTox</defName>
+		<label>mechlord helmet - tox</label>
+		<description>A heavy plasteel-weave helmet packed with mechanitor-assistance gear. The mechlord helmet dramatically amplifies a mechanitor's bandwidth, but is somewhat less protective than dedicated heavy armor.\n\nA special filter delivers toxins to stimulate toxic genes.</description>
+		<descriptionHyperlinks>
+			<HediffDef>ToxicBuildup</HediffDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="Tox.CompProperties_ToxFilterCharge">
+				<fuelDef>Chemfuel</fuelDef>
+				<fuelAmount>20</fuelAmount>
+				<chargeDays>5</chargeDays>
+				<hediff>ToxApparelPoisoningHelmet</hediff>
+				<wasterHediff>ToxApparelWasterStimulusHelmet</wasterHediff>
+				<part>Head</part>
+			</li>
+		</comps>
+		<costList>
+			<Chemfuel>20</Chemfuel>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite Inherit="False"/>
+			<researchPrerequisites Inherit="False">
+				<li>UltraMechtech</li>
+				<li>ToxFilterArmor</li>
+			</researchPrerequisites>
+			<displayPriority>521</displayPriority>
+		</recipeMaker>
+		<tickerType>Normal</tickerType>
+	</ThingDef>
+
+</Defs>

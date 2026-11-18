@@ -36,7 +36,7 @@
 					</equippedStatOffsets>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
+			<Operation Class="XmlExtensions.PatchOperationAttributeSet">
 				<xpath>ThingDef/equippedStatOffsets</xpath>
 				<attribute>Inherit</attribute>
 				<value>False</value>
@@ -44,28 +44,25 @@
 		</apply>
 	</Operation>
 
+	<!-- mechcommander -->
+	<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
+		<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetMechCommander"]</xpath>
+		<attribute>Name</attribute>
+		<value>Apparel_ArmorHelmetMechCommander</value>
+	</Operation>
+
 	<!-- mechlord -->
-	<Operation Class="XmlExtensions.SetScope">
+	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetMechlordHelmet"]</xpath>
-		<apply>
-			<Operation Class="XmlExtensions.PatchOperationAttributeSet">
-				<xpath>ThingDef</xpath>
-				<attribute>Name</attribute>
-				<value>Apparel_ArmorHelmetMechlordHelmet</value>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>ThingDef</xpath>
-				<value>
-					<costList Operation="Safe">
-						<Plasteel Operation="SafeReplace">100</Plasteel>
-					</costList>
-					<equippedStatOffsets Operation="Safe">
-						<ShootingAccuracyPawn Operation="SafeReplace">-4</ShootingAccuracyPawn>
-						<MeleeHitChance Operation="SafeReplace">-1</MeleeHitChance>
-					</equippedStatOffsets>
-				</value>
-			</Operation>
-		</apply>
+		<value>
+			<costList Operation="Safe">
+				<Plasteel Operation="SafeReplace">100</Plasteel>
+			</costList>
+			<equippedStatOffsets Operation="Safe">
+				<ShootingAccuracyPawn Operation="SafeReplace">-4</ShootingAccuracyPawn>
+				<MeleeHitChance Operation="SafeReplace">-1</MeleeHitChance>
+			</equippedStatOffsets>
+		</value>
 	</Operation>
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ThingDef[defName="Apparel_MechlordSuit"]</xpath>

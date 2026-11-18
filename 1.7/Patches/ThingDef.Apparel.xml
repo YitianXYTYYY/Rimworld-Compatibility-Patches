@@ -323,29 +323,19 @@
 
 			<!-- spacer -->
 			<!-- trooper -->
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="VAE_Headgear_TrooperHelmet"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
-						<xpath>ThingDef</xpath>
-						<attribute>Name</attribute>
-						<value>VAE_Headgear_TrooperHelmet</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ThingDef</xpath>
-						<value>
-							<costList Operation="SafeReplace">
-								<ComponentSpacer>1</ComponentSpacer>
-								<Plasteel>25</Plasteel>
-								<RB_BallisticGlass MayRequire="rebuild.cotr.doorsandcorners">5</RB_BallisticGlass>
-							</costList>
-							<equippedStatOffsets Operation="Safe">
-								<MentalBreakThreshold Operation="SafeRemove">-0.05</MentalBreakThreshold>
-								<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology" Operation="SafeAdd">-0.1</SlaveSuppressionOffset>
-							</equippedStatOffsets>
-						</value>
-					</Operation>
-				</apply>
+				<value>
+					<costList Operation="SafeReplace">
+						<ComponentSpacer>1</ComponentSpacer>
+						<Plasteel>25</Plasteel>
+						<RB_BallisticGlass MayRequire="rebuild.cotr.doorsandcorners">5</RB_BallisticGlass>
+					</costList>
+					<equippedStatOffsets Operation="Safe">
+						<MentalBreakThreshold Operation="SafeRemove">-0.05</MentalBreakThreshold>
+						<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology" Operation="SafeAdd">-0.1</SlaveSuppressionOffset>
+					</equippedStatOffsets>
+				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="VAE_Apparel_TrooperArmor"]</xpath>
@@ -361,77 +351,21 @@
 					</equippedStatOffsets>
 				</value>
 			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/ThingDef[defName="VAE_Headgear_RoyalTrooperHelmet"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
-						<xpath>ThingDef</xpath>
-						<attribute>Name</attribute>
-						<value>VAE_Headgear_RoyalTrooperHelmet</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ThingDef</xpath>
-						<value>
-							<label Operation="SafeReplace">trooper prestige helmet</label>
-							<costList Operation="SafeReplace">
-								<ComponentSpacer>1</ComponentSpacer>
-								<Plasteel>25</Plasteel>
-								<RB_BallisticGlass MayRequire="rebuild.cotr.doorsandcorners">5</RB_BallisticGlass>
-								<Gold>5</Gold>
-							</costList>
-							<equippedStatOffsets Operation="Safe">
-								<MentalBreakThreshold Operation="SafeRemove">-0.05</MentalBreakThreshold>
-								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
-								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
-								<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology" Operation="SafeAdd">-0.1</SlaveSuppressionOffset>
-							</equippedStatOffsets>
-						</value>
-					</Operation>
-				</apply>
-			</Operation>
-			<Operation Class="XmlExtensions.HybridPatch">
-				<xpath>Defs/ThingDef[defName="VAE_Apparel_RoyalTrooperArmor"]</xpath>
-				<value>
-					<label Operation="SafeReplace">trooper prestige armor</label>
-					<costList Operation="SafeReplace">
-						<ComponentSpacer>2</ComponentSpacer>
-						<Plasteel>75</Plasteel>
-						<Uranium>25</Uranium>
-						<Gold>10</Gold>
-					</costList>
-					<equippedStatOffsets Operation="Safe">
-						<MentalBreakThreshold Operation="SafeRemove">-0.05</MentalBreakThreshold>
-						<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
-						<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
-						<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology" Operation="SafeAdd">-0.3</SlaveSuppressionOffset>
-					</equippedStatOffsets>
-				</value>
-			</Operation>
 
 			<!-- siegebreaker -->
-			<Operation Class="XmlExtensions.SetScope">
+			<Operation Class="XmlExtensions.HybridPatch">
 				<xpath>Defs/ThingDef[defName="VAE_Headgear_HeavyMarineHelmet"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
-						<xpath>ThingDef</xpath>
-						<attribute>Name</attribute>
-						<value>VAE_Headgear_HeavyMarineHelmet</value>
-					</Operation>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ThingDef</xpath>
-						<value>
-							<costList Operation="SafeReplace">
-								<ComponentSpacer>1</ComponentSpacer>
-								<Plasteel>75</Plasteel>
-								<RB_BallisticGlass MayRequire="rebuild.cotr.doorsandcorners">5</RB_BallisticGlass>
-							</costList>
-							<equippedStatOffsets Operation="Safe">
-								<PainShockThreshold Operation="SafeRemove">0</PainShockThreshold>
-								<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology" Operation="SafeAdd">-0.1</SlaveSuppressionOffset>
-							</equippedStatOffsets>
-						</value>
-					</Operation>
-				</apply>
+				<value>
+					<costList Operation="SafeReplace">
+						<ComponentSpacer>1</ComponentSpacer>
+						<Plasteel>75</Plasteel>
+						<RB_BallisticGlass MayRequire="rebuild.cotr.doorsandcorners">5</RB_BallisticGlass>
+					</costList>
+					<equippedStatOffsets Operation="Safe">
+						<PainShockThreshold Operation="SafeRemove">0</PainShockThreshold>
+						<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology" Operation="SafeAdd">-0.1</SlaveSuppressionOffset>
+					</equippedStatOffsets>
+				</value>
 			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/ThingDef[defName="VAE_Apparel_HeavyMarineArmor"]</xpath>
@@ -450,23 +384,59 @@
 							</equippedStatOffsets>
 						</value>
 					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
+					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
 						<xpath>ThingDef/apparel/layers</xpath>
 						<attribute>Inherit</attribute>
 						<value>False</value>
 					</Operation>
 				</apply>
 			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/ThingDef[defName="VAE_Headgear_RoyalSiegeHelmet"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.PatchOperationAttributeSet">
-						<xpath>ThingDef</xpath>
-						<attribute>Name</attribute>
-						<value>VAE_Headgear_RoyalSiegeHelmet</value>
+
+			<!-- prestige -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>ludeon.rimworld.royalty</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="VAE_Headgear_RoyalTrooperHelmet"]</xpath>
+						<value>
+							<label Operation="SafeReplace">trooper prestige helmet</label>
+							<costList Operation="SafeReplace">
+								<ComponentSpacer>1</ComponentSpacer>
+								<Plasteel>25</Plasteel>
+								<RB_BallisticGlass MayRequire="rebuild.cotr.doorsandcorners">5</RB_BallisticGlass>
+								<Gold>5</Gold>
+							</costList>
+							<equippedStatOffsets Operation="Safe">
+								<MentalBreakThreshold Operation="SafeRemove">-0.05</MentalBreakThreshold>
+								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+								<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology" Operation="SafeAdd">-0.1</SlaveSuppressionOffset>
+							</equippedStatOffsets>
+						</value>
 					</Operation>
 					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ThingDef</xpath>
+						<xpath>Defs/ThingDef[defName="VAE_Apparel_RoyalTrooperArmor"]</xpath>
+						<value>
+							<label Operation="SafeReplace">trooper prestige armor</label>
+							<costList Operation="SafeReplace">
+								<ComponentSpacer>2</ComponentSpacer>
+								<Plasteel>75</Plasteel>
+								<Uranium>25</Uranium>
+								<Gold>10</Gold>
+							</costList>
+							<equippedStatOffsets Operation="Safe">
+								<MentalBreakThreshold Operation="SafeRemove">-0.05</MentalBreakThreshold>
+								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+								<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology" Operation="SafeAdd">-0.3</SlaveSuppressionOffset>
+							</equippedStatOffsets>
+						</value>
+					</Operation>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="VAE_Headgear_RoyalSiegeHelmet"]</xpath>
 						<value>
 							<label Operation="SafeReplace">siegebreaker prestige helmet</label>
 							<costList Operation="SafeReplace">
@@ -483,35 +453,35 @@
 							</equippedStatOffsets>
 						</value>
 					</Operation>
-				</apply>
-			</Operation>
-			<Operation Class="XmlExtensions.SetScope">
-				<xpath>Defs/ThingDef[defName="VAE_Apparel_RoyalSiegeArmor"]</xpath>
-				<apply>
-					<Operation Class="XmlExtensions.HybridPatch">
-						<xpath>ThingDef</xpath>
-						<value>
-							<label Operation="SafeReplace">siegebreaker prestige armor</label>
-							<costList Operation="SafeReplace">
-								<ComponentSpacer>10</ComponentSpacer>
-								<Plasteel>200</Plasteel>
-								<Uranium>75</Uranium>
-								<Gold>20</Gold>
-							</costList>
-							<equippedStatOffsets Operation="Safe">
-								<PainShockThreshold Operation="SafeRemove">0</PainShockThreshold>
-								<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
-								<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
-								<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology" Operation="SafeAdd">-0.3</SlaveSuppressionOffset>
-							</equippedStatOffsets>
-						</value>
+					<Operation Class="XmlExtensions.SetScope">
+						<xpath>Defs/ThingDef[defName="VAE_Apparel_RoyalSiegeArmor"]</xpath>
+						<apply>
+							<Operation Class="XmlExtensions.HybridPatch">
+								<xpath>ThingDef</xpath>
+								<value>
+									<label Operation="SafeReplace">siegebreaker prestige armor</label>
+									<costList Operation="SafeReplace">
+										<ComponentSpacer>10</ComponentSpacer>
+										<Plasteel>200</Plasteel>
+										<Uranium>75</Uranium>
+										<Gold>20</Gold>
+									</costList>
+									<equippedStatOffsets Operation="Safe">
+										<PainShockThreshold Operation="SafeRemove">0</PainShockThreshold>
+										<PsychicSensitivity Operation="SafeRemove">0</PsychicSensitivity>
+										<PsychicSensitivityOffset Operation="SafeAdd">0.1</PsychicSensitivityOffset>
+										<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology" Operation="SafeAdd">-0.3</SlaveSuppressionOffset>
+									</equippedStatOffsets>
+								</value>
+							</Operation>
+							<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+								<xpath>ThingDef/apparel/layers</xpath>
+								<attribute>Inherit</attribute>
+								<value>False</value>
+							</Operation>
+						</apply>
 					</Operation>
-					<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
-						<xpath>ThingDef/apparel/layers</xpath>
-						<attribute>Inherit</attribute>
-						<value>False</value>
-					</Operation>
-				</apply>
+				</caseTrue>
 			</Operation>
 		</caseTrue>
 	</Operation>

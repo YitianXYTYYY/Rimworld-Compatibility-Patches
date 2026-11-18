@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-
 	<!-- misc -->
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/HediffDef[defName="DeathRefusalSickness"]/stages/li</xpath>
