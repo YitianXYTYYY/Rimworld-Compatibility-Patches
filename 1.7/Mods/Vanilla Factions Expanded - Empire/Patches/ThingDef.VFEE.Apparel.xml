@@ -77,6 +77,9 @@
 	<Operation Class="XmlExtensions.HybridPatch">
 		<xpath>Defs/ThingDef[defName="VFEE_Apparel_JanissaryHelmet"]</xpath>
 		<value>
+			<apparel Operation="Safe">
+				<immuneToToxGasExposure Operation="SafeAdd">true</immuneToToxGasExposure>
+			</apparel>
 			<costList Operation="SafeReplace">
 				<ComponentSpacer>2</ComponentSpacer>
 				<Plasteel>50</Plasteel>
