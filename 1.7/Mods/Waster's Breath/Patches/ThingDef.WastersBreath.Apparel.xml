@@ -200,6 +200,55 @@
 		<packageId>true</packageId>
 		<caseTrue>
 			<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
+				<xpath>Defs/ThingDef[defName="Apparel_GasMask"]</xpath>
+				<attribute>Name</attribute>
+				<value>Apparel_GasMask</value>
+			</Operation>
+			<Operation Class="XmlExtensions.GetAttribute">
+				<xpath>Defs/ThingDef[defName="Apparel_GasMask"]</xpath>
+				<attribute>Name</attribute>
+				<storeIn>attr</storeIn>
+				<apply>
+					<Operation Class="XmlExtensions.IfStatement">
+						<condition Class="XmlExtensions.Boolean.Comparison">
+							<value1>{attr}</value1>
+							<value2>Defs/ThingDef[defName="Apparel_GasMask"]/defName</value2>
+							<fromXml2>true</fromXml2>
+							<nonNumeric>true</nonNumeric>
+							<relation>eq</relation>
+						</condition>
+						<caseFalse>
+							<Operation Class="XmlExtensions.PatchOperationAttributeSet">
+								<xpath>Defs/ThingDef[defName="Apparel_GasMaskTox"]</xpath>
+								<attribute>ParentName</attribute>
+								<value>{attr}</value>
+							</Operation>
+						</caseFalse>
+					</Operation>
+				</apply>
+			</Operation>
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>cruesoe.progressionlessattire</li>
+					<li>ferny.progressionattire</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.HybridPatch">
+						<xpath>Defs/ThingDef[defName="Apparel_GasMaskTox"]</xpath>
+						<value>
+							<recipeMaker Operation="Safe">
+								<researchPrerequisites Operation="Safe">
+									<li Operation="SafeAdd" Compare="InnerText">LemonSkin_GasMask</li>
+									<li Operation="SafeRemove" Compare="InnerText">Machining</li>
+								</researchPrerequisites>
+							</recipeMaker>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+
+			<Operation Class="XmlExtensions.PatchOperationAttributeAdd">
 				<xpath>Defs/ThingDef[defName="Apparel_ArmorHelmetMechCommander"]</xpath>
 				<attribute>Name</attribute>
 				<value>Apparel_ArmorHelmetMechCommander</value>
