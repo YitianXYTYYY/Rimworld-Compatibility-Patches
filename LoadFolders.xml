@@ -17,6 +17,6 @@
 		<li IfModActive="oskarpotocki.vfe.insectoid2">1.7/Mods/Vanilla Factions Expanded - Insectoids 2</li>
 		<li IfModActive="oskarpotocki.vfe.tribals">1.7/Mods/Vanilla Factions Expanded - Tribals</li>
 		<li IfModActive="vanillaquestsexpanded.ancients">1.7/Mods/Vanilla Quests Expanded - Ancients</li>
-		<li IfModActive="wasterbreath.mod">1.7/Mods/Waster's Breath</li>
+		<li IfModActive="wasterbreath.mod,xytyyy.wasterbreath">1.7/Mods/Waster's Breath</li>
 	</v1.7>
 </loadFolders>
