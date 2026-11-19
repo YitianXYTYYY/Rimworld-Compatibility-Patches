@@ -418,6 +418,14 @@
 		</mods>
 		<packageId>true</packageId>
 		<caseTrue>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>Defs/HediffDef/comps/li[@Class="VanillaRacesExpandedWaster.HediffCompProperties_GeneDependentPollution"]</xpath>
+				<value>
+					<pollutedSeverity Operation="SafeReplace">0.1</pollutedSeverity>
+					<unpollutedSeverity Operation="SafeReplace">-0.01</unpollutedSeverity>
+					<interval Operation="SafeReplace">180</interval>
+				</value>
+			</Operation>
 			<Operation Class="XmlExtensions.SetScope">
 				<xpath>Defs/HediffDef[defName="PollutionStimulus"]</xpath>
 				<apply>
@@ -428,9 +436,9 @@
 							<comps Operation="Safe">
 								<li Class="HediffCompProperties_Pollution" Operation="SafeRemove" CheckAttributes="True">0</li>
 								<li Class="VanillaRacesExpandedWaster.HediffCompProperties_GeneDependentPollution" Operation="SafeAdd" CheckAttributes="True">
-									<pollutedSeverity>0.0333</pollutedSeverity>
-									<unpollutedSeverity>-0.003</unpollutedSeverity>
-									<interval>60</interval>
+									<pollutedSeverity>0.1</pollutedSeverity>
+									<unpollutedSeverity>-0.01</unpollutedSeverity>
+									<interval>180</interval>
 								</li>
 							</comps>
     						<initialSeverity Operation="SafeReplace">0.002</initialSeverity>
