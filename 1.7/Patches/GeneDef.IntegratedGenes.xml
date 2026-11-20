@@ -24,7 +24,7 @@
 						<PsychicEntropyRecoveryRate Operation="SafeRemove">0</PsychicEntropyRecoveryRate>
 					</statFactors>
 					<statOffsets Operation="Safe">
-						<PsychicEntropyRecoveryRate Operation="SafeAdd">0.15</PsychicEntropyRecoveryRate>
+						<PsychicEntropyRecoveryRate Operation="SafeAdd">0.1</PsychicEntropyRecoveryRate>
 					</statOffsets>
 				</value>
 			</Operation>
@@ -37,7 +37,7 @@
 						<PsychicEntropyRecoveryRate Operation="SafeRemove">0</PsychicEntropyRecoveryRate>
 					</statFactors>
 					<statOffsets Operation="Safe">
-						<PsychicEntropyRecoveryRate Operation="SafeAdd">0.3</PsychicEntropyRecoveryRate>
+						<PsychicEntropyRecoveryRate Operation="SafeAdd">0.25</PsychicEntropyRecoveryRate>
 					</statOffsets>
 				</value>
 			</Operation>

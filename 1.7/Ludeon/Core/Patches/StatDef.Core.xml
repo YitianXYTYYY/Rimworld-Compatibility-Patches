@@ -90,11 +90,63 @@
 			<factorLegendary Operation="SafeReplace">2</factorLegendary>
 		</value>
 	</Operation>
-	<Operation Class="XmlExtensions.HybridPatch">
+	<Operation Class="XmlExtensions.SetScope">
 		<xpath>Defs/StatDef[defName="PsychicEntropyRecoveryRate"]</xpath>
-		<value>
-			<defaultBaseValue Operation="SafeReplace">0.6</defaultBaseValue>
-		</value>
+		<apply>
+			<Operation Class="XmlExtensions.HybridPatch">
+				<xpath>StatDef</xpath>
+				<value>
+					<defaultBaseValue Operation="SafeReplace">0.5</defaultBaseValue>
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.OptionalPatch">
+				<modId>FrozenSnowFox.FrozenSnowFoxTweaks</modId>
+				<key>FSFPsychicSensBonuses</key>
+				<defaultValue>false</defaultValue>
+				<caseTrue>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>jaeger972.psyfocussensitivityscaling</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+								<xpath>StatDef/statFactors/li[text()="PsychicSensitivity"]</xpath>
+							</Operation>
+							<Operation Class="XmlExtensions.PatchOperationAdd">
+								<xpath>StatDef/parts</xpath>
+								<value>
+									<li Class="PsyfocusSensitivityScaling.StatPart_MeditationFocusSensitivity"/>
+								</value>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
+	</Operation>
+	<Operation Class="XmlExtensions.SetScope">
+		<xpath>Defs/StatDef[defName="MeditationFocusGain"]</xpath>
+		<apply>
+			<Operation Class="XmlExtensions.OptionalPatch">
+				<modId>FrozenSnowFox.FrozenSnowFoxTweaks</modId>
+				<key>FSFPsychicSensBonuses</key>
+				<defaultValue>false</defaultValue>
+				<caseTrue>
+					<Operation Class="XmlExtensions.FindMod">
+						<mods>
+							<li>jaeger972.psyfocussensitivityscaling</li>
+						</mods>
+						<packageId>true</packageId>
+						<caseTrue>
+							<Operation Class="XmlExtensions.PatchOperationSafeRemove">
+								<xpath>StatDef/statFactors/li[text()="PsychicSensitivity"]</xpath>
+							</Operation>
+						</caseTrue>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		</apply>
 	</Operation>
 
 </Patch>

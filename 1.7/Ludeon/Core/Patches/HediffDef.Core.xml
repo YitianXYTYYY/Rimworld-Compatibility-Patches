@@ -457,7 +457,7 @@
 				<value>
 					<statOffsets Operation="Safe">
 						<PsychicEntropyMax Operation="SafeAdd">10</PsychicEntropyMax>
-						<PsychicEntropyRecoveryRate Operation="SafeAdd">0.06</PsychicEntropyRecoveryRate>
+						<PsychicEntropyRecoveryRate Operation="SafeAdd">0.05</PsychicEntropyRecoveryRate>
 					</statOffsets>
 				</value>
 			</Operation>
@@ -466,7 +466,7 @@
 				<value>
 					<statOffsets Operation="Safe">
 						<PsychicEntropyMax Operation="SafeAdd">20</PsychicEntropyMax>
-						<PsychicEntropyRecoveryRate Operation="SafeAdd">0.12</PsychicEntropyRecoveryRate>
+						<PsychicEntropyRecoveryRate Operation="SafeAdd">0.10</PsychicEntropyRecoveryRate>
 					</statOffsets>
 				</value>
 			</Operation>
@@ -475,7 +475,7 @@
 				<value>
 					<statOffsets Operation="Safe">
 						<PsychicEntropyMax Operation="SafeAdd">30</PsychicEntropyMax>
-						<PsychicEntropyRecoveryRate Operation="SafeAdd">0.18</PsychicEntropyRecoveryRate>
+						<PsychicEntropyRecoveryRate Operation="SafeAdd">0.15</PsychicEntropyRecoveryRate>
 					</statOffsets>
 				</value>
 			</Operation>
@@ -484,7 +484,7 @@
 				<value>
 					<statOffsets Operation="Safe">
 						<PsychicEntropyMax Operation="SafeAdd">40</PsychicEntropyMax>
-						<PsychicEntropyRecoveryRate Operation="SafeAdd">0.24</PsychicEntropyRecoveryRate>
+						<PsychicEntropyRecoveryRate Operation="SafeAdd">0.20</PsychicEntropyRecoveryRate>
 					</statOffsets>
 				</value>
 			</Operation>
@@ -493,7 +493,7 @@
 				<value>
 					<statOffsets Operation="Safe">
 						<PsychicEntropyMax Operation="SafeAdd">50</PsychicEntropyMax>
-						<PsychicEntropyRecoveryRate Operation="SafeAdd">0.30</PsychicEntropyRecoveryRate>
+						<PsychicEntropyRecoveryRate Operation="SafeAdd">0.25</PsychicEntropyRecoveryRate>
 					</statOffsets>
 				</value>
 			</Operation>
